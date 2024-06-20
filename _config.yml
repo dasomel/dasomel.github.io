@@ -7,7 +7,7 @@ title                    : #"K-Paas Local"
 title_separator          : #"-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "dasomel"
-description              : "Local Install"
+description              : "K-PaaS Local Install"
 url                      : "https://dasomel.github.io"
 baseurl                  :  # "/"
 repository               : "dasomel/dasomel.github.io"
