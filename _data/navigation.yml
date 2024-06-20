@@ -1,0 +1,31 @@
+# main links
+main:
+  - title: "OPDC"
+    url: /opdc/
+  - title: "OPA"
+    url: /opa/
+  - title: "K-PaaS"
+    url: /kpaas/about/
+  - title: "sitemap"
+    url: /sitemap/
+
+kpaas:
+  - title: K-PaaS란?
+    children:
+      - title: "K-PaaS 소개"
+        url: /kpaas/about/
+      - title: "컨테이너 플랫폼 동작원리"
+        url: /kpaas/operating/
+
+  - title: Install
+    children:
+      - title: "적용기술"
+        url: /kpaas/technology/
+      - title: "Vagrant"
+        url: /kpaas/vagrant/
+      - title: "Variable"
+        url: /kpaas/variable/
+      - title: "Account"
+        url: /kpaas/account/
+      - title: "Release Note"
+        url: /kpaas/release/
