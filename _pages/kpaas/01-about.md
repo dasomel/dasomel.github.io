@@ -38,7 +38,17 @@ toc_icon: "note-sticky"
 {: .full}
 
 ### 인증
-- 쿠버네티스 국제 공인기관인 CNCF*로부터 쿠버네티스 인증(CK, Certified Kubernetes) 획득(23.3.25)
+- 쿠버네티스 국제 공인기관인 CNCF<sup>1)</sup>로부터 쿠버네티스 인증(CK, Certified Kubernetes) 획득
+
+| Date      | Kubernetes | K-PaaS                 |
+|-----------|------------|------------------------|
+| 2023.3.25 | v1.25.6    | CP<sup>2)</sup> v1.4.1 |
+| 2023.9.7  | v1.26.5    | CP v1.4.2              |
+| 2023.12.1 | v1.27.5    | CP v1.27.5             |
+
+> CNCF<sup>1)</sup>: Cloud Native Computing Foundation   
+> CP<sup>2)</sup>: Container Platform
+
 - Cloud Native Computing Foundation(클라우드 네이티브 컴퓨팅 재단)
 ![benefit.png](/assets/images/kpaas/cncf_certification_k-paas.png)
 {: .full}
