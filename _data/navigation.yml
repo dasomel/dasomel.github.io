@@ -21,6 +21,10 @@ kpaas:
     children:
       - title: "적용기술"
         url: /kpaas/technology/
+      - title: "구성요소"
+        url: /kpaas/component/
+      - title: "설치과정"
+        url: /kpaas/process/
       - title: "Vagrant"
         url: /kpaas/vagrant/
       - title: "Variable"
