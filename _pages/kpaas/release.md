@@ -17,10 +17,8 @@ toc_icon: "note-sticky"
 -->
 
 {% raw %}
-## [1.0.0](https://github.com/dasomel/k-paas/releases)
-### Documentation & Maintenance
+## [v1.0.0](https://github.com/dasomel/k-paas/releases)
 - Support for K-PaaS v1.5.1
-### Enhancements
 - All-in-one installation version
 - Multi-master node support
 - 경량화 된 shell script 제공
