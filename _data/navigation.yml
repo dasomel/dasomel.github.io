@@ -31,5 +31,9 @@ kpaas:
         url: /kpaas/variable/
       - title: "Account"
         url: /kpaas/account/
+      - title: "Tips & Tricks"
+        url: /kpaas/tipsntricks/
+      - title: "TroubleShutting"
+        url: /kpaas/troubleShutting/
       - title: "Release Note"
         url: /kpaas/release/
