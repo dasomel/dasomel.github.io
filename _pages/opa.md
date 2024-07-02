@@ -2,6 +2,7 @@
 title: "OPA"
 subtitle: "Open cloud Platform Alliance"
 permalink: /opa/
+date: 2024-06-17
 last_modified_at: 2024-06-17
 toc: true
 toc_label: "OPA"

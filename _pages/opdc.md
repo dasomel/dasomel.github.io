@@ -2,6 +2,7 @@
 title: "OPDC"
 subtitle: "Open Platform Developer Community"
 permalink: /opdc/
+date: 2024-06-17
 last_modified_at: 2024-06-17
 toc: true
 toc_label: "OPDC"
