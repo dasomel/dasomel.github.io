@@ -5,7 +5,8 @@ permalink: /kpaas/tipsntricks/
 author_profile: false
 sidebar:
   nav: kpaas
-last_modified_at: 2024-06-17
+date: 2024-07-03
+last_modified_at: 2024-07-03
 toc: true
 toc_label: "Tips & Tricks"
 #toc_icon: "cogs"
@@ -36,7 +37,7 @@ ssh vagrant@192.168.100.112
 ### log view
 
 - master01 node안에서 조회
-- master01 node가 ansibel server 역할을 하기 때문임
+  - master01 node가 ansibel server 역할을 하기 때문임
 
 ```shell
 # platform

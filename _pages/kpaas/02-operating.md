@@ -3,6 +3,8 @@
 title: "컨테이너 플랫폼 동작원리"
 permalink: /kpaas/operating/
 author_profile: false
+date: 2024-06-17
+last_modified_at: 2024-06-17
 sidebar:
   nav: "kpaas"
 ---

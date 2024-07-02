@@ -5,7 +5,7 @@ permalink: /kpaas/component/
 author_profile: false
 sidebar:
   nav: kpaas
-last_modified_at: 2024-06-26
+last_modified_at: 2024-07-03
 toc: true
 toc_label: "구성요소"
 #toc_icon: "cogs"
@@ -15,19 +15,19 @@ toc_label: "구성요소"
 
 ![component_color.png](/assets/images/kpaas/component_color.png)
 {: .align-left}
-K-PaaS Local Version 제외 컴포넌트
+&nbsp;&nbsp;K-PaaS Local Version 제외 컴포넌트
 
 
 ## 컴포넌트
 - Core 기능
  
-| Component  | 용도                                | 비고          |
-|------------|-----------------------------------|-------------|
-| Kubernetes | 컨테이너 플랫폼                          |             |
-| Portal     | 플랫폼 관리화면                          |             |
-| Harbor     | Container Image 저장                | Portal에서 사용 |
-| Keycloak   | SSO 로그인                           | Portal에서 사용 |
-| Vault      | 플랫폼 메트릭 수집 시 활용</br>(Metrics-API) | Portal에서 사용 |
+| Component  | 용도                                | 비고        |
+|------------|-----------------------------------|-----------|
+| Kubernetes | 컨테이너 플랫폼                          |           |
+| Portal     | 플랫폼 관리화면                          |           |
+| Harbor     | Container Image 저장                | Portal 사용 |
+| Keycloak   | SSO 로그인                           | Portal 사용 |
+| Vault      | 플랫폼 메트릭 수집 시 활용</br>(Metrics-API) | Portal 사용 |
  
 - 제외 컴포넌트
 

@@ -6,6 +6,7 @@ author_profile: false
 sidebar:
   nav: kpaas
 breadcrumbs: true
+date: 2024-06-17
 last_modified_at: 2024-06-17
 toc: true
 toc_label: "Global Variable"

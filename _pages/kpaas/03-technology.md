@@ -5,6 +5,7 @@ permalink: /kpaas/technology/
 author_profile: false
 sidebar:
   nav: kpaas
+date: 2024-06-17
 last_modified_at: 2024-06-17
 toc: true
 toc_label: "적용기술"
