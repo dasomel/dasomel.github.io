@@ -46,6 +46,7 @@ toc_icon: "note-sticky"
 | 2023.3.25 | v1.25.6    | CP<sup>2)</sup> v1.4.1 |
 | 2023.9.7  | v1.26.5    | CP v1.4.2              |
 | 2023.12.1 | v1.27.5    | CP v1.5                |
+| 2024.4.16 | v1.28.6    | CP v1.5.1              |
 
 > CNCF<sup>1)</sup>: Cloud Native Computing Foundation   
 > CP<sup>2)</sup>: Container Platform
