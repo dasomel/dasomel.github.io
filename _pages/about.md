@@ -14,8 +14,8 @@ toc_label: "About"
 toc_icon: "user"
 ---
 
-## 2st SI Company(2021~)
-- Data Platform 개발(2022 ~)
+## 2st SI Company(2021 ~ 2025)
+- Data Platform 개발(2022 ~ 2025)
 - AI Platform 운영(2022)
 - Kubernetes Platform 개발 리딩(2021)
 - 사내 학습조직 우수상(2021)
@@ -26,6 +26,8 @@ toc_icon: "user"
 - 사내 개발자 대회 다수 분야 3등(2018)
 
 ## 세미나 발표 
+- Mac ARM 환경 대응을 위한 K-PaaS Local Install 2.0.0 발표
+- Cilium과 Istio Ambient 통합전략 발표
 - <나도 해보자!시리즈> 오픈커뮤니티 세미나 발표
 - 나도 해보자! 표준프레임워크 개발환경 구축
 - 나도 해보자! Cloud Project with Kubernetes 
@@ -34,12 +36,14 @@ toc_icon: "user"
 - 오픈플랫폼(PaaS) 전문가과정 강의(2016)
  
 ## 수상 내역
-- OPA Awards OPA 우수기여자 부문(2024)
+- OPA Awards - OPA 커뮤니티 히어로 부문 수상(2025)
+- OPA Awards OPA 우수기여자 부문 수상(2024)
 - 행정안정부장관 표창 수상(2021)
 - 슈퍼개발자K 시즌3 동상 수상(2014)
  
 ## 커뮤니티 활동 
-- 現OPA(Open Platform Alliance) 리더(2022 ~)
 - 現OPDC(Open Platform Developer Community) 리더(2015 ~)
+- 現OPA(Open Platform Alliance) 리더(2022 ~)
+- 現CloudBro Bro(2022 ~)
 - 前T-Hub(SK그룹 기술커뮤니티)(2020 ~ 2021)
   - DevOps Master
