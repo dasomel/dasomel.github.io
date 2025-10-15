@@ -37,13 +37,13 @@ toc_icon: "user"
  
 ## 수상 내역
 - OPA Awards - OPA 커뮤니티 히어로 부문 수상(2025)
-- OPA Awards OPA 우수기여자 부문 수상(2024)
+- OPA Awards - OPA 우수기여자 부문 수상(2024)
 - 행정안정부장관 표창 수상(2021)
 - 슈퍼개발자K 시즌3 동상 수상(2014)
  
 ## 커뮤니티 활동 
 - 現OPDC(Open Platform Developer Community) 리더(2015 ~)
 - 現OPA(Open Platform Alliance) 리더(2022 ~)
-- 現CloudBro Bro(2022 ~)
+- 現CloudBro Bro(2025 ~)
 - 前T-Hub(SK그룹 기술커뮤니티)(2020 ~ 2021)
   - DevOps Master
