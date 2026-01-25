@@ -12,7 +12,7 @@ lastModified: 2025-01-15
 **Release Date**: December 1, 2025
 
 - Support for K-PaaS v1.6.2
-- Improved ARM-based CPU support (MacMini M1/M2/M3)
+- Improved ARM-based CPU support
 - Enhanced installation process automation
 - Improved troubleshooting guide
 
