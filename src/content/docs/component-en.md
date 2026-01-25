@@ -1,17 +1,17 @@
 ---
 title: "Components"
-description: "K-PaaS Local Version Components"
+description: "K-PaaS Lite Components"
 order: 4
 lastModified: 2024-07-03
 ---
 
-## K-PaaS Local Version
+## K-PaaS Lite Components
 
 ![Components](/images/kpaas/component.png)
 
 ![Component Colors](/images/kpaas/component_color.png)
 
-Components excluded from K-PaaS Local Version
+Components excluded from K-PaaS Lite
 
 ## Components
 

@@ -1,6 +1,6 @@
 ---
 title: "Technology Stack"
-description: "Technology Stack Used in K-PaaS Local Installation"
+description: "Technology Stack Used in K-PaaS Lite Installation"
 order: 3
 date: 2024-06-17
 lastModified: 2024-06-17

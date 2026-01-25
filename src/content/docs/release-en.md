@@ -1,6 +1,6 @@
 ---
 title: "Release Note"
-description: "K-PaaS Local Release Notes"
+description: "K-PaaS Lite Release Notes"
 order: 99
 lastModified: 2025-01-15
 ---
@@ -9,7 +9,7 @@ lastModified: 2025-01-15
 
 [GitHub Releases](https://github.com/dasomel/k-paas/releases/tag/v2.1.0)
 
-**Release Date**: December 1, 2025
+**Release Date**: December 1, 2024
 
 - Support for K-PaaS v1.6.2
 - Improved ARM-based CPU support (MacMini M1/M2/M3)

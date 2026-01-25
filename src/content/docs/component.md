@@ -1,17 +1,17 @@
 ---
 title: "구성요소"
-description: "K-PaaS Local Version 구성요소"
+description: "K-PaaS Lite 구성요소"
 order: 4
 lastModified: 2024-07-03
 ---
 
-## K-PaaS Local Version
+## K-PaaS Lite 구성요소
 
 ![구성요소](/images/kpaas/component.png)
 
 ![구성요소 색상](/images/kpaas/component_color.png)
 
-K-PaaS Local Version 제외 컴포넌트
+K-PaaS Lite 제외 컴포넌트
 
 ## 컴포넌트
 
