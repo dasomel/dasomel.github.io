@@ -18,7 +18,7 @@ Vagrant Cloud에서 `dasomel/ubuntu-24.04`로 배포되며, 컨테이너 오케�
 ### 멀티 아키텍처 및 프로바이더 지원
 - **AMD64 / ARM64**: 두 아키텍처 모두 지원
 - **VirtualBox 7.1+**: Intel/AMD 기반 시스템
-- **VMware Fusion**: Apple Silicon 호환 (M1/M2/M3)
+- **VMware Fusion**: Apple Silicon 호환
 
 ### Kubernetes 최적화
 

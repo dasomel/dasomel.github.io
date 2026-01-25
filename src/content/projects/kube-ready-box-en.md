@@ -18,7 +18,7 @@ Distributed on Vagrant Cloud as `dasomel/ubuntu-24.04`, it comes with pre-applie
 ### Multi-Architecture & Provider Support
 - **AMD64 / ARM64**: Both architectures supported
 - **VirtualBox 7.1+**: For Intel/AMD-based systems
-- **VMware Fusion**: Apple Silicon compatible (M1/M2/M3)
+- **VMware Fusion**: Apple Silicon compatible
 
 ### Kubernetes Optimizations
 
