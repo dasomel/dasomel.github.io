@@ -3,7 +3,8 @@ title: "Harbor Multi-Arch"
 description: "Harbor 컨테이너 레지스트리를 fork하여 멀티아키텍처(AMD64/ARM64) 빌드를 지원하도록 수정"
 github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
-order: 1
+order: 2
+type: "contributing"
 ---
 
 ## 프로젝트 소개

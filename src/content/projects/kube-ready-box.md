@@ -3,7 +3,8 @@ title: "Kube-Ready-Box"
 description: "Kubernetes 최적화된 Ubuntu 24.04 LTS Vagrant Box"
 github: "https://github.com/dasomel/kube-ready-box"
 tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch"]
-order: 3
+order: 1
+type: "own"
 ---
 
 ## 프로젝트 소개

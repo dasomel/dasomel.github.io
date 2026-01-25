@@ -3,7 +3,8 @@ title: "Harbor Multi-Arch"
 description: "Forked Harbor container registry with multi-architecture (AMD64/ARM64) build support"
 github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
-order: 1
+order: 2
+type: "contributing"
 ---
 
 ## Project Overview
