@@ -4,7 +4,7 @@ description: "Terraform 상태를 시각화하고 쿼리할 수 있는 웹 대�
 github: "https://github.com/dasomel/terraboard"
 tags: ["Terraform", "IaC", "Dashboard", "DevOps"]
 order: 3
-type: "contributing"
+type: "fork"
 ---
 
 ## 프로젝트 소개

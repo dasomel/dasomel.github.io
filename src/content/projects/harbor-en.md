@@ -4,7 +4,7 @@ description: "Forked Harbor container registry with multi-architecture (AMD64/AR
 github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
 order: 2
-type: "contributing"
+type: "fork"
 ---
 
 ## Project Overview

@@ -4,7 +4,7 @@ description: "Harbor 컨테이너 레지스트리를 fork하여 멀티아키텍�
 github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
 order: 2
-type: "contributing"
+type: "fork"
 ---
 
 ## 프로젝트 소개

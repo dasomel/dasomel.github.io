@@ -7,7 +7,7 @@ const projects = allProjects.filter((p) => !p.slug.endsWith('-en'));
 const sortedProjects = projects.sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
 
 const myProjects = sortedProjects.filter((p) => p.data.type === 'own');
-const contributingProjects = sortedProjects.filter((p) => p.data.type === 'contributing');
+const forkProjects = sortedProjects.filter((p) => p.data.type === 'fork');
 ---
 
 <BaseLayout title="Projects" description="오픈소스 프로젝트">
@@ -17,7 +17,7 @@ const contributingProjects = sortedProjects.filter((p) => p.data.type === 'contr
         <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Open Source</span> Projects
       </h1>
       <p class="text-lg text-gray-500">
-        자체 프로젝트 및 기여하고 있는 오픈소스
+        자체 프로젝트 및 Fork 프로젝트
       </p>
     </header>
 
@@ -72,15 +72,15 @@ const contributingProjects = sortedProjects.filter((p) => p.data.type === 'contr
       </section>
     )}
 
-    <!-- Contributing to -->
-    {contributingProjects.length > 0 && (
+    <!-- Fork Projects -->
+    {forkProjects.length > 0 && (
       <section>
         <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-          <span class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Contributing to</span>
-          <span class="ml-3 text-sm text-gray-400 font-normal">기여하고 있는 오픈소스</span>
+          <span class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Fork Projects</span>
+          <span class="ml-3 text-sm text-gray-400 font-normal">Fork 프로젝트</span>
         </h2>
         <div class="space-y-6">
-          {contributingProjects.map((project) => (
+          {forkProjects.map((project) => (
             <div class="p-6 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl hover:border-gray-200 hover:shadow-lg transition-all group">
               <div class="flex items-start justify-between mb-4">
                 <a href={`/projects/${project.slug}`} class="flex-1">
