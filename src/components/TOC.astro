@@ -1,0 +1,65 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en');
+---
+
+{filteredHeadings.length > 0 && (
+  <aside class="w-56 shrink-0 hidden xl:block">
+    <nav class="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pb-10 pl-4 border-l border-gray-200 scrollbar-thin">
+      <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+        {isEnglish ? 'On this page' : '목차'}
+      </h4>
+      <ul class="space-y-2" id="toc-list">
+        {filteredHeadings.map((heading) => (
+          <li style={`padding-left: ${(heading.depth - 2) * 0.75}rem`}>
+            <a
+              href={`#${heading.slug}`}
+              class="toc-link block py-1 leading-snug"
+              data-heading={heading.slug}
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </aside>
+)}
+
+<script>
+  // 현재 보이는 헤딩에 따라 TOC 활성화
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute('id');
+        const tocLink = document.querySelector(`a[data-heading="${id}"]`);
+
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.toc-link').forEach((link) => {
+            link.classList.remove('toc-link-active');
+          });
+          tocLink?.classList.add('toc-link-active');
+        }
+      });
+    },
+    {
+      rootMargin: '-80px 0px -80% 0px',
+    }
+  );
+
+  document.querySelectorAll('article h2, article h3').forEach((heading) => {
+    observer.observe(heading);
+  });
+</script>

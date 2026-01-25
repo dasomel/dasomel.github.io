@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = allPosts.filter((p) => !p.slug.endsWith('-en'));
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Posts" description="활동 소식 및 인사이트">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Posts</span>
+      </h1>
+      <p class="text-lg text-gray-500">
+        자문, 세미나, 프로젝트 등 활동 소식
+      </p>
+    </header>
+
+    {sortedPosts.length === 0 ? (
+      <div class="text-center py-16 text-gray-500">
+        <p class="text-lg">아직 작성된 포스트가 없습니다.</p>
+        <p class="mt-2">곧 새로운 글이 올라올 예정입니다!</p>
+      </div>
+    ) : (
+      <div class="space-y-4">
+        {sortedPosts.map((post) => (
+          <article class="group">
+            <a href={`/posts/${post.slug}`} class="block p-5 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl hover:border-gray-200 hover:shadow-md transition-all">
+              <div class="flex gap-6">
+                {post.data.image && (
+                  <div class="flex-shrink-0 w-32 h-24 rounded-xl overflow-hidden bg-gray-100">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div class="flex-1 min-w-0">
+                  <time class="text-sm text-gray-400">
+                    {post.data.pubDate.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </time>
+                  <h2 class="text-xl font-bold text-gray-900 mt-1 mb-2 group-hover:text-blue-600 transition-colors">
+                    {post.data.title}
+                  </h2>
+                  {post.data.description && (
+                    <p class="text-gray-500 line-clamp-2">{post.data.description}</p>
+                  )}
+                  {post.data.tags.length > 0 && (
+                    <div class="flex gap-2 mt-3">
+                      {post.data.tags.map((tag: string) => (
+                        <span class="px-2 py-0.5 bg-gray-100 rounded-full text-xs text-gray-500">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

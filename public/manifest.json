@@ -1,0 +1,20 @@
+{
+  "name": "dasomel - Cloud & DevOps Engineer",
+  "short_name": "dasomel",
+  "description": "Cloud & DevOps Engineer - K-PaaS, Kubernetes, DevOps 기술 블로그",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "blog", "education"],
+  "lang": "ko-KR"
+}

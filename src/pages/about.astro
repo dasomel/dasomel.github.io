@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="dasomel 소개">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+    <header class="text-center mb-16">
+      <div class="mb-8">
+        <img
+          src="/images/dasomel.jpg"
+          alt="dasomel"
+          class="w-36 h-36 rounded-full mx-auto object-cover ring-4 ring-gray-100 shadow-xl"
+        />
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">Cloud</span> & <span class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">DevOps</span> Engineer
+      </h1>
+      <p class="text-lg text-gray-500">
+        오픈소스 프로젝트와 커뮤니티 활동을 하고 있습니다
+      </p>
+    </header>
+
+    <div class="space-y-12">
+      <!-- Career -->
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Career</h2>
+        <div class="space-y-4">
+          <div class="p-5 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-gray-900">2nd SI Company</h3>
+              <span class="text-sm text-gray-400">2021 ~ 2025</span>
+            </div>
+            <ul class="text-gray-600 text-sm space-y-1.5">
+              <li>Data Platform 개발 (2022 ~ 2025)</li>
+              <li>AI Platform 운영 (2022)</li>
+              <li>Kubernetes Platform 개발 리딩 (2021)</li>
+            </ul>
+          </div>
+          <div class="p-5 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-gray-900">1st SI Company</h3>
+              <span class="text-sm text-gray-400">2012 ~ 2021</span>
+            </div>
+            <ul class="text-gray-600 text-sm space-y-1.5">
+              <li>Cloud 프로젝트 다수 구축 (2017 ~ 2020)</li>
+              <li>사내 강의 다수</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards -->
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Awards</h2>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div class="p-4 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-2xl">
+            <p class="font-bold text-gray-900">OPA Awards - 커뮤니티 히어로</p>
+            <p class="text-sm text-gray-400">2025</p>
+          </div>
+          <div class="p-4 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-2xl">
+            <p class="font-bold text-gray-900">OPA Awards - 우수기여자</p>
+            <p class="text-sm text-gray-400">2024</p>
+          </div>
+          <div class="p-4 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl">
+            <p class="font-bold text-gray-900">행정안전부장관 표창</p>
+            <p class="text-sm text-gray-400">2021</p>
+          </div>
+          <div class="p-4 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl">
+            <p class="font-bold text-gray-900">슈퍼개발자K 시즌3 동상</p>
+            <p class="text-sm text-gray-400">2014</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community -->
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Community</h2>
+        <div class="space-y-3">
+          <a href="https://opdc.kr" target="_blank" rel="noopener noreferrer"
+             class="block p-5 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl hover:border-gray-200 transition-all group">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">OPDC</h3>
+              <span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">리더</span>
+            </div>
+            <p class="text-gray-500 text-sm">Open Platform Developer Community</p>
+          </a>
+
+          <a href="https://opakorea.org" target="_blank" rel="noopener noreferrer"
+             class="block p-5 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl hover:border-gray-200 transition-all group">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">OPA</h3>
+              <span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">리더</span>
+            </div>
+            <p class="text-gray-500 text-sm">Open cloud Platform Alliance</p>
+          </a>
+
+          <a href="https://www.cloudbro.ai" target="_blank" rel="noopener noreferrer"
+             class="block p-5 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl hover:border-gray-200 transition-all group">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">CloudBro</h3>
+              <span class="px-2.5 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">멤버</span>
+            </div>
+            <p class="text-gray-500 text-sm">클라우드 기술 커뮤니티</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
