@@ -45,6 +45,7 @@ const projectsCollection = defineCollection({
     github: z.string(),
     tags: z.array(z.string()).default([]),
     order: z.number().optional(),
+    type: z.enum(['own', 'contributing']).optional(),
   }),
 });
 
