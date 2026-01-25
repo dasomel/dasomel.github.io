@@ -1,0 +1,72 @@
+---
+interface NavItem {
+  title: string;
+  titleEn: string;
+  href: string;
+}
+
+interface NavGroup {
+  title: string;
+  titleEn: string;
+  items: NavItem[];
+}
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en');
+const basePath = isEnglish ? '/en/docs' : '/docs';
+
+const docsNav: NavGroup[] = [
+  {
+    title: 'K-PaaS란?',
+    titleEn: 'About K-PaaS',
+    items: [
+      { title: 'K-PaaS 소개', titleEn: 'Introduction', href: `${basePath}/about` },
+      { title: '컨테이너 플랫폼 동작원리', titleEn: 'How it Works', href: `${basePath}/operating` },
+    ],
+  },
+  {
+    title: 'Install',
+    titleEn: 'Install',
+    items: [
+      { title: '적용기술', titleEn: 'Technology', href: `${basePath}/technology` },
+      { title: '구성요소', titleEn: 'Components', href: `${basePath}/component` },
+      { title: '설치과정', titleEn: 'Process', href: `${basePath}/process` },
+      { title: 'Vagrant', titleEn: 'Vagrant', href: `${basePath}/vagrant` },
+      { title: 'Variable', titleEn: 'Variable', href: `${basePath}/variable` },
+      { title: 'Account', titleEn: 'Account', href: `${basePath}/account` },
+      { title: 'Tips & Tricks', titleEn: 'Tips & Tricks', href: `${basePath}/tipsntricks` },
+      { title: 'TroubleShutting', titleEn: 'Troubleshooting', href: `${basePath}/troubleshutting` },
+      { title: 'Release Note', titleEn: 'Release Note', href: `${basePath}/release` },
+    ],
+  },
+];
+---
+
+<aside class="w-64 shrink-0 hidden lg:block">
+  <nav class="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto pb-10 pr-4 scrollbar-thin">
+    {docsNav.map((group) => (
+      <div class="mb-6">
+        <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">
+          {isEnglish ? group.titleEn : group.title}
+        </h3>
+        <ul class="space-y-1">
+          {group.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'block px-3 py-2 text-sm rounded-lg transition-all',
+                  currentPath === item.href || currentPath === item.href + '/'
+                    ? 'text-primary-600 bg-primary-50 font-medium border-l-2 border-primary-600 -ml-0.5'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50',
+                ]}
+              >
+                {isEnglish ? item.titleEn : item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>

@@ -1,0 +1,81 @@
+/* Google Fonts - Optimized for performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  /* 사이드바 네비게이션 활성 상태 */
+  .nav-link-active {
+    @apply text-primary-600 font-medium border-l-2 border-primary-600 bg-primary-50;
+  }
+
+  /* 코드 블록 스타일 - Shiki github-light 테마 */
+  .prose pre {
+    @apply rounded-xl border border-gray-200 shadow-sm overflow-x-auto;
+  }
+
+  .prose pre > code {
+    @apply block p-4 text-sm leading-relaxed bg-transparent;
+  }
+
+  /* Shiki 코드 블록 스타일 */
+  pre.astro-code {
+    @apply rounded-xl border border-gray-200 shadow-sm p-4;
+  }
+
+  pre.astro-code code {
+    @apply text-sm leading-relaxed;
+  }
+
+  /* TOC 스타일 */
+  .toc-link {
+    @apply text-gray-500 hover:text-primary-600 transition-colors text-sm;
+  }
+
+  .toc-link-active {
+    @apply text-primary-600 font-medium;
+  }
+}
+
+@layer utilities {
+  /* 스크롤바 스타일링 */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded hover:bg-gray-400;
+  }
+
+  /* 이미지 최적화 */
+  img {
+    content-visibility: auto;
+  }
+}
+
+/* 성능 최적화 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

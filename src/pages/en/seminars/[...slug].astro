@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const seminars = await getCollection('seminars');
+  return seminars
+    .filter((s) => s.slug.endsWith('-en'))
+    .map((seminar) => ({
+      params: { slug: seminar.slug.replace(/-en$/, '') },
+      props: { seminar },
+    }));
+}
+
+const { seminar } = Astro.props;
+const { Content } = await seminar.render();
+---
+
+<BaseLayout title={seminar.data.title} description={`${seminar.data.event} Presentation`}>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+    <header class="mb-10">
+      <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+        <span>{seminar.data.event}</span>
+        <span>•</span>
+        <time>{seminar.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{seminar.data.title}</h1>
+
+      {seminar.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-6">
+          {seminar.data.tags.map((tag) => (
+            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div class="flex flex-wrap gap-3">
+        {seminar.data.slides && (
+          <a
+            href={seminar.data.slides}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors text-sm"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Slides
+          </a>
+        )}
+        {seminar.data.video && (
+          <a
+            href={seminar.data.video}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors text-sm"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Watch Video
+          </a>
+        )}
+      </div>
+    </header>
+
+    <div class="prose prose-lg prose-gray max-w-none prose-headings:scroll-mt-20 prose-a:text-blue-600">
+      <Content />
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-gray-200">
+      <a
+        href="/en/seminars"
+        class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+      >
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Seminars
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
