@@ -1,6 +1,6 @@
 ---
 title: "About K-PaaS Lite"
-description: "Lightweight K-PaaS for local development"
+description: "Lightweight K-PaaS for easy development and testing"
 order: 1
 date: 2026-01-22
 lastModified: 2026-01-22
@@ -8,11 +8,11 @@ lastModified: 2026-01-22
 
 ## What is K-PaaS Lite?
 
-K-PaaS Lite is a **lightweight version of the K-PaaS Container Platform designed for easy setup and testing in local environments**.
+K-PaaS Lite is a **lightweight version of the K-PaaS Container Platform designed for easy setup and testing**.
 
 ## Development Background
 
-- The K-PaaS Container Platform provides complete functionality for production environments, but it's overly complex and resource-intensive for local development and testing
+- The K-PaaS Container Platform provides complete functionality for production environments, but it's overly complex and resource-intensive for development and testing
 - Developers needed an accessible environment to easily experience and learn K-PaaS
 - Provides an easy-to-install environment for anyone using Vagrant and VirtualBox
 
@@ -25,7 +25,7 @@ K-PaaS Lite is a **lightweight version of the K-PaaS Container Platform designed
 
 ### 2. Lightweight Architecture
 - Runs with minimal resources (4 CPU cores, 8GB RAM)
-- Optimized for local development environments
+- Optimized for development environments
 - Fast installation and startup time
 
 ### 3. Ideal for Learning and Testing
