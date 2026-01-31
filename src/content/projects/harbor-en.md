@@ -26,12 +26,17 @@ The official Harbor only officially supports AMD64 architecture, making it diffi
 ### Multi-Architecture Builds
 - **Simultaneous AMD64/ARM64 builds**: Multi-platform image creation using Docker buildx
 - **Unified Manifest**: Automatic architecture selection with a single image tag
-- **ARM64 Optimization**: Support for Apple Silicon (M1/M2/M3), AWS Graviton, Raspberry Pi
+- **ARM64 Optimization**: Support for Apple Silicon, AWS Graviton, Raspberry Pi
 
 ### Software Supply Chain Security
 - **SBOM (Software Bill of Materials)**: Container image component list generation using Syft
 - **SLSA Build Attestation**: Build process integrity proof via GitHub Actions
 - **Cosign OIDC Keyless Signing**: Keyless image signing using GitHub OIDC
+
+### CI/CD Improvements
+- **GitHub Actions Workflow Optimization**: Build triggers based on release tags
+- **Automatic Upstream Sync**: Auto-resolve merge conflicts for fork-specific files
+- **ghcr.io Image Registry**: Using GitHub Container Registry instead of Docker Hub
 
 ## Build Pipeline
 
@@ -48,23 +53,32 @@ The official Harbor only officially supports AMD64 architecture, making it diffi
 
 ## Usage
 
+Images follow the official Helm chart compatible naming convention.
+
 ```bash
 # Pull Harbor images (architecture auto-selected)
-docker pull ghcr.io/dasomel/harbor-core:latest
-docker pull ghcr.io/dasomel/harbor-portal:latest
-docker pull ghcr.io/dasomel/harbor-registry:latest
-docker pull ghcr.io/dasomel/harbor-jobservice:latest
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.12.0
+
+# Trivy adapter
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.12.0
 ```
 
 ## Upstream Synchronization
 
-This fork is regularly synchronized with the official Harbor repository:
+This fork is automatically synchronized with the official Harbor repository. Upstream changes are synced automatically, while fork-specific modifications are managed separately.
 
 | Version | AMD64 | ARM64 | Upstream |
 |---------|-------|-------|----------|
+| v2.12.x | ✅ | ✅ | goharbor/harbor v2.12 |
 | v2.11.x | ✅ | ✅ | goharbor/harbor v2.11 |
 | v2.10.x | ✅ | ✅ | goharbor/harbor v2.10 |
-| v2.9.x | ✅ | ✅ | goharbor/harbor v2.9 |
+
+## Change History
+
+For detailed change history, see [FORK_CHANGES.md](https://github.com/dasomel/harbor/blob/main/FORK_CHANGES.md).
 
 ## Contributing & Issues
 
