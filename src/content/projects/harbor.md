@@ -78,7 +78,7 @@ docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.12.0
 
 ## 주요 변경 이력
 
-자세한 변경 이력은 [FORK_CHANGES_ko.md](https://github.com/dasomel/harbor/blob/main/FORK_CHANGES_ko.md)를 참조하세요.
+자세한 변경 이력은 [FORK_CHANGES.ko.md](https://github.com/dasomel/harbor/blob/main/FORK_CHANGES.ko.md)를 참조하세요.
 
 ## 기여 및 이슈
 
