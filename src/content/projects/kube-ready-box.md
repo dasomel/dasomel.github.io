@@ -16,9 +16,11 @@ Vagrant Cloud에서 `dasomel/ubuntu-24.04`로 배포되며, 컨테이너 오케�
 ## 주요 특징
 
 ### 멀티 아키텍처 및 프로바이더 지원
-- **AMD64 / ARM64**: 두 아키텍처 모두 지원
-- **VirtualBox 7.1+**: Intel/AMD 기반 시스템
-- **VMware Fusion**: Apple Silicon 호환
+
+| Provider | AMD64 | ARM64 | 비고 |
+|----------|-------|-------|------|
+| VirtualBox | ✅ | ✅ | ARM64는 VirtualBox 7.1+ 필요 |
+| VMware Fusion | ✅ | ✅ | Apple Silicon 지원 |
 
 ### Kubernetes 최적화
 
@@ -85,36 +87,30 @@ vagrant up --provider=vmware_desktop
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "dasomel/ubuntu-24.04"
-  config.vm.box_version = "1.0.0"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "4096"
+    vb.memory = 4096
     vb.cpus = 2
   end
 
-  config.vm.provider "vmware_desktop" do |vmware|
-    vmware.vmx["memsize"] = "4096"
-    vmware.vmx["numvcpus"] = "2"
+  config.vm.provider "vmware_desktop" do |v|
+    v.vmx["memsize"] = "4096"
+    v.vmx["numvcpus"] = "2"
   end
+
+  config.vm.hostname = "k8s-node"
+  config.vm.network "private_network", ip: "192.168.56.10"
 end
 ```
 
 ### 최적화 검증
 
 ```bash
-# VM 접속
-vagrant ssh
+# Box 정보 확인
+vagrant ssh -c "cat /etc/vagrant-box/info.json"
 
-# 커널 파라미터 확인
-sysctl net.ipv4.ip_forward
-sysctl net.bridge.bridge-nf-call-iptables
-
-# 리소스 제한 확인
-ulimit -n
-ulimit -u
-
-# 스왑 비활성화 확인
-free -h
+# 튜닝 설정 검증 스크립트
+vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 ```
 
 ## Kubernetes 설치 예제
@@ -122,19 +118,24 @@ free -h
 Box 생성 후 Kubernetes 설치:
 
 ```bash
-# Container Runtime 설치 (containerd)
-sudo apt-get update
-sudo apt-get install -y containerd
+# 1. containerd 설치 및 설정
+sudo apt-get update && sudo apt-get install -y containerd
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+sudo systemctl restart containerd && sudo systemctl enable containerd
 
-# Kubernetes 설치
-sudo apt-get install -y kubelet kubeadm kubectl
+# 2. Kubernetes 설치 (버전 선택)
+K8S_VERSION="v1.31"
+curl -fsSL "https://pkgs.k8s.io/core:/stable:/${K8S_VERSION}/deb/Release.key" | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${K8S_VERSION}/deb/ /" | \
+  sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-# 클러스터 초기화
-sudo kubeadm init
-
-# CNI 플러그인 설치 (예: Calico)
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+# 3. 클러스터 초기화 (마스터 노드)
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 
 ## 빌드 정보
@@ -142,27 +143,29 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 이 Box는 [Packer](https://www.packer.io/)를 사용하여 빌드됩니다:
 
 ```bash
-# Packer 빌드
-packer build packer/ubuntu-24.04.pkr.hcl
+cd packer
 
-# Vagrant Cloud 업로드
-vagrant cloud publish dasomel/ubuntu-24.04 1.0.0 virtualbox \
-  output/ubuntu-24.04-amd64-virtualbox.box
+# Packer 플러그인 초기화
+./build.sh init
+
+# 특정 Box 빌드
+./build.sh vmware-arm64      # VMware ARM64
+./build.sh virtualbox-arm64  # VirtualBox ARM64
+
+# 전체 Box 빌드 (4개)
+./build.sh all
 ```
 
 ## AI 협업 디렉토리
 
-이 저장소는 AI 기반 개발을 위한 `.agent/` 디렉토리를 포함합니다:
+이 저장소는 AI 코딩 어시스턴트를 위한 `.agent/` 디렉토리를 포함합니다:
 
-```
-.agent/
-├── context.md          # 프로젝트 컨텍스트
-├── tasks/              # 작업 정의
-└── docs/               # 참고 문서
-```
+- **AGENT.md**: 기술 가이드 (Packer, K8s 튜닝, 최적화)
+- **SECURITY.md**: 보안 가이드라인
+- **skills/**: AI 에이전트 스킬 (자동 리뷰)
 
 ## 참고 링크
 
 - **Vagrant Cloud**: [dasomel/ubuntu-24.04](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04)
-- **공식 문서**: [GitHub Repository](https://github.com/dasomel/kube-ready-box)
+- **GitHub**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
 - **Kubernetes 공식 문서**: [kubernetes.io](https://kubernetes.io/)

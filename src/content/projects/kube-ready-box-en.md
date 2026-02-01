@@ -16,9 +16,11 @@ Distributed on Vagrant Cloud as `dasomel/ubuntu-24.04`, it comes with pre-applie
 ## Key Features
 
 ### Multi-Architecture & Provider Support
-- **AMD64 / ARM64**: Both architectures supported
-- **VirtualBox 7.1+**: For Intel/AMD-based systems
-- **VMware Fusion**: Apple Silicon compatible
+
+| Provider | AMD64 | ARM64 | Notes |
+|----------|-------|-------|-------|
+| VirtualBox | ✅ | ✅ | VirtualBox 7.1+ required for ARM64 |
+| VMware Fusion | ✅ | ✅ | Apple Silicon supported |
 
 ### Kubernetes Optimizations
 
@@ -85,36 +87,30 @@ vagrant up --provider=vmware_desktop
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "dasomel/ubuntu-24.04"
-  config.vm.box_version = "1.0.0"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "4096"
+    vb.memory = 4096
     vb.cpus = 2
   end
 
-  config.vm.provider "vmware_desktop" do |vmware|
-    vmware.vmx["memsize"] = "4096"
-    vmware.vmx["numvcpus"] = "2"
+  config.vm.provider "vmware_desktop" do |v|
+    v.vmx["memsize"] = "4096"
+    v.vmx["numvcpus"] = "2"
   end
+
+  config.vm.hostname = "k8s-node"
+  config.vm.network "private_network", ip: "192.168.56.10"
 end
 ```
 
 ### Verify Optimizations
 
 ```bash
-# SSH into VM
-vagrant ssh
+# Check box info
+vagrant ssh -c "cat /etc/vagrant-box/info.json"
 
-# Check kernel parameters
-sysctl net.ipv4.ip_forward
-sysctl net.bridge.bridge-nf-call-iptables
-
-# Check resource limits
-ulimit -n
-ulimit -u
-
-# Verify swap is disabled
-free -h
+# Run tuning verification script
+vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 ```
 
 ## Kubernetes Installation Example
@@ -122,19 +118,24 @@ free -h
 After creating the box, install Kubernetes:
 
 ```bash
-# Install Container Runtime (containerd)
-sudo apt-get update
-sudo apt-get install -y containerd
+# 1. Install and configure containerd
+sudo apt-get update && sudo apt-get install -y containerd
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+sudo systemctl restart containerd && sudo systemctl enable containerd
 
-# Install Kubernetes
-sudo apt-get install -y kubelet kubeadm kubectl
+# 2. Install Kubernetes (choose version)
+K8S_VERSION="v1.31"
+curl -fsSL "https://pkgs.k8s.io/core:/stable:/${K8S_VERSION}/deb/Release.key" | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${K8S_VERSION}/deb/ /" | \
+  sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-# Initialize cluster
-sudo kubeadm init
-
-# Install CNI plugin (e.g., Calico)
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+# 3. Initialize cluster (master node)
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 
 ## Build Information
@@ -142,27 +143,29 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 This box is built using [Packer](https://www.packer.io/):
 
 ```bash
-# Packer build
-packer build packer/ubuntu-24.04.pkr.hcl
+cd packer
 
-# Upload to Vagrant Cloud
-vagrant cloud publish dasomel/ubuntu-24.04 1.0.0 virtualbox \
-  output/ubuntu-24.04-amd64-virtualbox.box
+# Initialize Packer plugins
+./build.sh init
+
+# Build specific box
+./build.sh vmware-arm64      # VMware ARM64
+./build.sh virtualbox-arm64  # VirtualBox ARM64
+
+# Build all boxes (4 boxes)
+./build.sh all
 ```
 
 ## AI Collaboration Directory
 
-This repository includes an `.agent/` directory for AI-assisted development:
+This repository includes an `.agent/` directory for AI coding assistants:
 
-```
-.agent/
-├── context.md          # Project context
-├── tasks/              # Task definitions
-└── docs/               # Reference documentation
-```
+- **AGENT.md**: Technical guide (Packer, K8s tuning, optimizations)
+- **SECURITY.md**: Security guidelines
+- **skills/**: AI agent skills (automated reviews)
 
 ## References
 
 - **Vagrant Cloud**: [dasomel/ubuntu-24.04](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04)
-- **Documentation**: [GitHub Repository](https://github.com/dasomel/kube-ready-box)
+- **GitHub**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
 - **Kubernetes Docs**: [kubernetes.io](https://kubernetes.io/)
