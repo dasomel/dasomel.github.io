@@ -24,6 +24,9 @@ Components excluded from K-PaaS Lite
 | Harbor | Container Image Storage | Used by Portal |
 | Keycloak | SSO Login | Bitnami Helm chart |
 | OpenBao | Platform Metrics Collection (Metrics-API) | Used by Portal |
+| ChartMuseum | Helm Chart Repository | |
+| Chaos Mesh | Chaos Engineering | Used by Portal |
+| Kyverno | Kubernetes Policy Engine | |
 
 ### Excluded Components
 

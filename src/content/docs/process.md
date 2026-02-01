@@ -55,57 +55,50 @@ vagrant destroy -f
 
 ```shell
 vagrant@master01:~$ kubectl get po -A
-NAMESPACE        NAME                                               READY   STATUS      RESTARTS      AGE
-cp-portal        cp-portal-api-deployment-55ffb6495b-b285b          1/1     Running     0             19m
-cp-portal        cp-portal-common-api-deployment-76887f945f-r5zwn   1/1     Running     0             19m
-cp-portal        cp-portal-metric-api-deployment-6cb7ff679d-vqxcg   1/1     Running     0             19m
-cp-portal        cp-portal-terraman-deployment-f84c47bd7-zjb4w      1/1     Running     0             23m
-cp-portal        cp-portal-ui-deployment-7cf58c847c-xmcwq           1/1     Running     0             19m
-default          nfs-pod-provisioner-5fdb9dd5d6-ld49k               1/1     Running     3 (38m ago)   39m
-harbor           cp-harbor-chartmuseum-8456b8856b-7f9b9             1/1     Running     0             34m
-harbor           cp-harbor-core-856df8bb99-r2dnq                    1/1     Running     0             34m
-harbor           cp-harbor-database-0                               1/1     Running     3 (14m ago)   34m
-harbor           cp-harbor-jobservice-59f674897b-n8j9p              1/1     Running     3 (32m ago)   34m
-harbor           cp-harbor-notary-server-5f58f65769-kc242           1/1     Running     6 (14m ago)   34m
-harbor           cp-harbor-notary-signer-5ffbfccc6c-nzxpg           1/1     Running     1 (33m ago)   34m
-harbor           cp-harbor-portal-776646487f-dcrjz                  1/1     Running     0             34m
-harbor           cp-harbor-redis-0                                  1/1     Running     0             34m
-harbor           cp-harbor-registry-68899d8bfb-xvxgg                2/2     Running     0             34m
-harbor           cp-harbor-trivy-0                                  1/1     Running     0             34m
-ingress-nginx    ingress-nginx-admission-create-fc8dg               0/1     Completed   0             39m
-ingress-nginx    ingress-nginx-admission-patch-zx5hq                0/1     Completed   1             39m
-ingress-nginx    ingress-nginx-controller-6dc9c5fb7c-pf6mp          1/1     Running     0             39m
-keycloak         cp-keycloak-667678f5bd-2qfxt                       1/1     Running     0             19m
-keycloak         cp-keycloak-667678f5bd-x42z7                       1/1     Running     0             18m
-kube-system      calico-kube-controllers-648dffd99-nth7x            1/1     Running     0             46m
-kube-system      calico-node-f4r57                                  1/1     Running     0             47m
-kube-system      calico-node-k2f4x                                  1/1     Running     0             47m
-kube-system      calico-node-lxzqp                                  1/1     Running     0             47m
-kube-system      calico-node-twvjn                                  1/1     Running     0             47m
-kube-system      coredns-77f7cc69db-rx9g4                           1/1     Running     0             45m
-kube-system      coredns-77f7cc69db-scqz9                           1/1     Running     0             45m
-kube-system      dns-autoscaler-8576bb9f5b-fzxp6                    1/1     Running     0             45m
-kube-system      kube-apiserver-master01                            1/1     Running     0             38m
-kube-system      kube-apiserver-master02                            1/1     Running     0             38m
-kube-system      kube-controller-manager-master01                   1/1     Running     2             49m
-kube-system      kube-controller-manager-master02                   1/1     Running     3 (38m ago)   48m
-kube-system      kube-proxy-4xfxk                                   1/1     Running     0             48m
-kube-system      kube-proxy-5m6hk                                   1/1     Running     0             48m
-kube-system      kube-proxy-6rtws                                   1/1     Running     0             48m
-kube-system      kube-proxy-mkbwh                                   1/1     Running     0             48m
-kube-system      kube-scheduler-master01                            1/1     Running     2 (38m ago)   49m
-kube-system      kube-scheduler-master02                            1/1     Running     2 (42m ago)   48m
-kube-system      metrics-server-bd6df7764-lllq6                     1/1     Running     0             44m
-kube-system      nodelocaldns-2cm6z                                 1/1     Running     0             45m
-kube-system      nodelocaldns-2w9pn                                 1/1     Running     0             45m
-kube-system      nodelocaldns-976pm                                 1/1     Running     0             45m
-kube-system      nodelocaldns-h8x4h                                 1/1     Running     0             45m
-mariadb          cp-mariadb-0                                       1/1     Running     0             23m
-metallb-system   controller-666f99f6ff-jgd4p                        1/1     Running     0             44m
-metallb-system   speaker-dw6lt                                      1/1     Running     0             44m
-metallb-system   speaker-fvh7b                                      1/1     Running     0             44m
-metallb-system   speaker-tff9j                                      1/1     Running     0             44m
-metallb-system   speaker-zrj6m                                      1/1     Running     0             44m
-vault            cp-vault-0                                         1/1     Running     0             34m
-vault            cp-vault-agent-injector-7b84c58f45-cmw4g           1/1     Running     0             34m
+NAMESPACE        NAME                                                    READY   STATUS      RESTARTS      AGE
+chaos-mesh       chaos-controller-manager-6648dff67b-8dv6w               1/1     Running     0             26h
+chaos-mesh       chaos-daemon-49qvk                                      1/1     Running     0             26h
+chaos-mesh       chaos-dashboard-58d8d8589c-tvsl5                        1/1     Running     0             26h
+chaos-mesh       chaos-dns-server-6cbc94c77-q8mc4                        1/1     Running     0             26h
+chartmuseum      chartmuseum-648968c7dd-n7cjg                            1/1     Running     0             26h
+cp-portal        cp-portal-api-deployment-56b5c87fcd-295cs               1/1     Running     0             22h
+cp-portal        cp-portal-catalog-api-deployment-6f94b7d5c-qmp9p        1/1     Running     0             23h
+cp-portal        cp-portal-chaos-api-deployment-74f5955f8d-22697         1/1     Running     0             23h
+cp-portal        cp-portal-chaos-collector-deployment-69f847bff9-9jc8k   1/1     Running     0             23h
+cp-portal        cp-portal-common-api-deployment-7b48b54788-zk75r        1/1     Running     0             22h
+cp-portal        cp-portal-metric-api-deployment-575f9d4df8-qvf85        1/1     Running     0             23h
+cp-portal        cp-portal-terraman-deployment-db5544bb4-v6lcz           1/1     Running     0             23h
+cp-portal        cp-portal-ui-deployment-788d99bb45-x8hn4                1/1     Running     0             21h
+default          nfs-subdir-external-provisioner-59b6cdb74d-dkwlm        1/1     Running     0             46h
+harbor           harbor-core-547d8bcf7b-vhr5r                            1/1     Running     0             26h
+harbor           harbor-jobservice-5db8b59574-hbn49                      1/1     Running     0             26h
+harbor           harbor-portal-7c8cf785d6-h6bg4                          1/1     Running     0             26h
+harbor           harbor-postgresql-0                                     1/1     Running     0             26h
+harbor           harbor-redis-master-0                                   1/1     Running     0             26h
+harbor           harbor-registry-6fd978fbf5-nchs8                        2/2     Running     0             26h
+harbor           harbor-trivy-0                                          1/1     Running     0             26h
+ingress-nginx    ingress-nginx-controller-74f695ff79-mp5xx               1/1     Running     0             46h
+keycloak         keycloak-0                                              1/1     Running     0             21h
+keycloak         keycloak-1                                              1/1     Running     0             21h
+kube-system      calico-kube-controllers-695788f969-6kp65                1/1     Running     0             46h
+kube-system      calico-node-6m8st                                       1/1     Running     0             46h
+kube-system      coredns-dbd95956c-mp6k4                                 1/1     Running     0             20h
+kube-system      coredns-dbd95956c-stbd5                                 1/1     Running     0             20h
+kube-system      dns-autoscaler-846b5fbd88-pvvfg                         1/1     Running     0             46h
+kube-system      kube-apiserver-master01                                 1/1     Running     0             46h
+kube-system      kube-apiserver-master02                                 1/1     Running     0             46h
+kube-system      kube-controller-manager-master01                        1/1     Running     0             46h
+kube-system      kube-controller-manager-master02                        1/1     Running     0             46h
+kube-system      kube-scheduler-master01                                 1/1     Running     0             46h
+kube-system      kube-scheduler-master02                                 1/1     Running     0             46h
+kube-system      metrics-server-65765bb6cf-qtzdb                         1/1     Running     0             46h
+kyverno          kyverno-admission-controller-7b74bfcfcb-gtjjx           1/1     Running     0             46h
+kyverno          kyverno-background-controller-7ff58cc7cb-sdgdg          1/1     Running     0             46h
+kyverno          kyverno-cleanup-controller-6999cc56d9-s4qvk             1/1     Running     0             46h
+kyverno          kyverno-reports-controller-64d994cdc5-nxb6n             1/1     Running     0             46h
+mariadb          mariadb-0                                               1/1     Running     0             26h
+metallb-system   controller-68cccbf98c-8s2m9                             1/1     Running     0             46h
+metallb-system   speaker-2kzd8                                           1/1     Running     0             46h
+openbao          openbao-0                                               1/1     Running     0             26h
+openbao          openbao-agent-injector-6567764cc9-rx54t                 1/1     Running     0             26h
 ```

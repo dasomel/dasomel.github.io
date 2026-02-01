@@ -24,6 +24,9 @@ K-PaaS Lite 제외 컴포넌트
 | Harbor | Container Image 저장 | Portal 사용 |
 | Keycloak | SSO 로그인 | Bitnami Helm chart |
 | OpenBao | 플랫폼 메트릭 수집 시 활용 (Metrics-API) | Portal 사용 |
+| ChartMuseum | Helm Chart 저장소 | |
+| Chaos Mesh | Chaos Engineering | Portal 사용 |
+| Kyverno | Kubernetes Policy Engine | |
 
 ### 제외 컴포넌트
 
