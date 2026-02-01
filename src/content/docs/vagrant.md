@@ -3,8 +3,30 @@ title: "Vagrant"
 description: "Vagrant 설정 및 팁"
 order: 6
 date: 2024-06-17
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
+
+## Provider 선택
+
+### VirtualBox (x86/Intel)
+
+```shell
+brew install --cask virtualbox
+vagrant up
+```
+
+### VMware (ARM64/Apple Silicon)
+
+```shell
+# VMware Fusion 설치
+brew install --cask vmware-fusion
+
+# Vagrant VMware 플러그인 설치
+vagrant plugin install vagrant-vmware-desktop
+
+# VMware provider로 실행
+vagrant up --provider=vmware_desktop
+```
 
 ## Vagrant 접속 오류 수정
 

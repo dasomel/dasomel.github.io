@@ -2,7 +2,7 @@
 title: "Installation Process"
 description: "K-PaaS Local Installation Process"
 order: 5
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
 
 ## What You'll Get
@@ -17,9 +17,16 @@ After installing K-PaaS Lite, you'll have access to the Container Platform Porta
 
 ## Installation
 
+### VirtualBox (x86/Intel)
+
 ```shell
-# ex: vagrant_20240607_201213.log
 vagrant up &> ./logs/vagrant_$(date +%Y%m%d_%H%M%S).log
+```
+
+### VMware (ARM64/Apple Silicon)
+
+```shell
+vagrant up --provider=vmware_desktop &> ./logs/vagrant_$(date +%Y%m%d_%H%M%S).log
 ```
 
 ## VM stop

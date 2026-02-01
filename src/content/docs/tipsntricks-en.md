@@ -3,7 +3,7 @@ title: "Tips & Tricks"
 description: "Useful Tips for K-PaaS Local"
 order: 9
 date: 2024-07-03
-lastModified: 2024-07-03
+lastModified: 2026-02-02
 ---
 
 ## SSH Access

@@ -2,7 +2,7 @@
 title: "설치과정"
 description: "K-PaaS Local 설치 프로세스"
 order: 5
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
 
 ## 설치 후 사용 화면
@@ -17,9 +17,16 @@ K-PaaS Lite를 설치하면 다음과 같은 Container Platform Portal을 사용
 
 ## Installation
 
+### VirtualBox (x86/Intel)
+
 ```shell
-# ex: vagrant_20240607_201213.log
 vagrant up &> ./logs/vagrant_$(date +%Y%m%d_%H%M%S).log
+```
+
+### VMware (ARM64/Apple Silicon)
+
+```shell
+vagrant up --provider=vmware_desktop &> ./logs/vagrant_$(date +%Y%m%d_%H%M%S).log
 ```
 
 ## VM stop

@@ -3,7 +3,7 @@ title: "About K-PaaS Lite"
 description: "Lightweight K-PaaS for easy development and testing"
 order: 1
 date: 2026-01-22
-lastModified: 2026-01-22
+lastModified: 2026-02-02
 ---
 
 ## What is K-PaaS Lite?

@@ -2,7 +2,7 @@
 title: "Components"
 description: "K-PaaS Lite Components"
 order: 4
-lastModified: 2024-07-03
+lastModified: 2026-02-02
 ---
 
 ## K-PaaS Lite Components
@@ -19,11 +19,11 @@ Components excluded from K-PaaS Lite
 
 | Component | Purpose | Notes |
 |-----------|---------|-------|
-| Kubernetes | Container Platform | |
+| Kubernetes | Container Platform | v1.33.5 |
 | Portal | Platform Management UI | |
 | Harbor | Container Image Storage | Used by Portal |
-| Keycloak | SSO Login | Used by Portal |
-| Vault | Platform Metrics Collection (Metrics-API) | Used by Portal |
+| Keycloak | SSO Login | Bitnami Helm chart |
+| OpenBao | Platform Metrics Collection (Metrics-API) | Used by Portal |
 
 ### Excluded Components
 

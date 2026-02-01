@@ -2,7 +2,7 @@
 title: "구성요소"
 description: "K-PaaS Lite 구성요소"
 order: 4
-lastModified: 2024-07-03
+lastModified: 2026-02-02
 ---
 
 ## K-PaaS Lite 구성요소
@@ -19,11 +19,11 @@ K-PaaS Lite 제외 컴포넌트
 
 | Component | 용도 | 비고 |
 |-----------|------|------|
-| Kubernetes | 컨테이너 플랫폼 | |
+| Kubernetes | 컨테이너 플랫폼 | v1.33.5 |
 | Portal | 플랫폼 관리화면 | |
 | Harbor | Container Image 저장 | Portal 사용 |
-| Keycloak | SSO 로그인 | Portal 사용 |
-| Vault | 플랫폼 메트릭 수집 시 활용 (Metrics-API) | Portal 사용 |
+| Keycloak | SSO 로그인 | Bitnami Helm chart |
+| OpenBao | 플랫폼 메트릭 수집 시 활용 (Metrics-API) | Portal 사용 |
 
 ### 제외 컴포넌트
 

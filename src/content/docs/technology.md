@@ -3,7 +3,7 @@ title: "적용기술"
 description: "K-PaaS Lite 설치에 사용되는 기술 스택"
 order: 3
 date: 2024-06-17
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
 
 ## Vagrant
@@ -20,12 +20,22 @@ lastModified: 2024-06-17
 
 [공식 사이트](https://www.virtualbox.org)
 
-- x86 가상화 소프트웨어
+- x86 가상화 소프트웨어 (Intel/AMD 전용)
 - 이 소프트웨어는 다양한 운영 체제에서 동작하며, 가상머신을 생성하고 관리
 - 하나의 컴퓨터에서 여러 개의 가상머신을 실행
 - 다양한 운영 체제나 환경에서 소프트웨어를 테스트하거나 개발
 - 무료이며 오픈 소스로 제공되어 사용자들이 자유롭게 활용 가능
 - Oracle Corporation에 의해 개발되었으며, 다양한 운영 체제와 호환되는 특징
+
+## VMware
+
+[공식 사이트](https://www.vmware.com)
+
+- VMware Fusion Pro (macOS) 및 VMware Workstation Pro (Windows/Linux) 제공
+- VMware Fusion은 Apple Silicon (ARM64) Mac에서 가상화 지원
+- VirtualBox 대비 향상된 성능과 안정성 제공
+- Vagrant 연동을 위해 VMware Desktop Provider 플러그인 필요
+- **2024년 11월부터 모든 사용자(개인, 교육, 상업)에게 무료 제공**, 라이센스 키 불필요
 
 ## Kubespray
 

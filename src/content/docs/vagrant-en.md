@@ -3,8 +3,30 @@ title: "Vagrant"
 description: "Vagrant Configuration and Tips"
 order: 6
 date: 2024-06-17
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
+
+## Provider Selection
+
+### VirtualBox (x86/Intel)
+
+```shell
+brew install --cask virtualbox
+vagrant up
+```
+
+### VMware (ARM64/Apple Silicon)
+
+```shell
+# Install VMware Fusion
+brew install --cask vmware-fusion
+
+# Install Vagrant VMware plugin
+vagrant plugin install vagrant-vmware-desktop
+
+# Run with VMware provider
+vagrant up --provider=vmware_desktop
+```
 
 ## Fixing Vagrant Connection Error
 

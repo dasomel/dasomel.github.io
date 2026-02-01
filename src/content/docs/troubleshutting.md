@@ -3,7 +3,7 @@ title: "TroubleShutting"
 description: "K-PaaS 문제 해결 가이드"
 order: 10
 date: 2024-07-03
-lastModified: 2024-07-03
+lastModified: 2026-02-02
 ---
 
 ## 01. Harbor
@@ -76,29 +76,25 @@ sudo systemctl restart crio
 sudo journalctl -xfeu kubelet
 ```
 
-## 03. Vault
+## 03. OpenBao
 
-### Unseal Vault
+### Unseal OpenBao
 
 | NAME | READY | STATUS |
 |------|-------|--------|
-| cp-vault-0 | 0/1 | Running |
+| openbao-0 | 0/1 | Running |
 
-Pod(vault)이 재시작 후 not ready 상태일 때:
+Pod(openbao)이 재시작 후 not ready 상태일 때:
+
+> v2.2.0부터 OpenBao unseal key 자동 관리 기능이 추가되어 수동 unseal이 필요 없습니다.
 
 ```shell
+# 수동 unseal이 필요한 경우
 source /vagrant/scripts/00.global_variable.sh
-source ~/workspace/container-platform/cp-portal-deployment/script/cp-portal-vars.sh
 CURL_CMD="curl --silent --show-error -k"
 
-# node restart or pod(vault) restart
 ${CURL_CMD} --output /dev/null \
     -X POST \
-    -d '{"key":'"\"$(sed 's/"/ " /g' ~/workspace/container-platform/cp-portal-deployment/vault/cp-vault-unseal-key | awk '{ print $6 }')\""'}' \
-    "${VAULT_URL}/v1/sys/unseal"
-
-${CURL_CMD} --output /dev/null \
-    -X POST \
-    -d '{"key":'"\"$(sed 's/"/ " /g' ~/workspace/container-platform/cp-portal-deployment/vault/cp-vault-unseal-key | awk '{ print $10 }')\""'}' \
-    "${VAULT_URL}/v1/sys/unseal"
+    -d '{"key":"<unseal-key>"}' \
+    "https://openbao.k-paas.io/v1/sys/unseal"
 ```

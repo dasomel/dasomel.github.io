@@ -2,7 +2,7 @@
 title: "Global Variable"
 description: "K-PaaS Local Environment Variable Configuration"
 order: 7
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
 
 ## Vagrant Home Path
@@ -46,11 +46,13 @@ export PORTAL_HOST_DOMAIN=k-paas.io
 ### Local(PC) Configuration
 
 ```shell
+192.168.100.200 cluster-endpoint
 192.168.100.201 k-paas.io
-192.168.100.201 vault.k-paas.io
+192.168.100.201 openbao.k-paas.io
 192.168.100.201 harbor.k-paas.io
 192.168.100.201 keycloak.k-paas.io
 192.168.100.201 portal.k-paas.io
+192.168.100.201 chartmuseum.k-paas.io
 ```
 
 ### CLUSTER_ENDPOINT

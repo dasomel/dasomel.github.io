@@ -3,7 +3,7 @@ title: "Container Platform Architecture"
 description: "How K-PaaS Container Platform Works"
 order: 2
 date: 2024-06-17
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
 
 ## Overview

@@ -3,7 +3,7 @@ title: "Technology Stack"
 description: "Technology Stack Used in K-PaaS Lite Installation"
 order: 3
 date: 2024-06-17
-lastModified: 2024-06-17
+lastModified: 2026-02-02
 ---
 
 ## Vagrant
@@ -20,12 +20,22 @@ lastModified: 2024-06-17
 
 [Official Website](https://www.virtualbox.org)
 
-- x86 virtualization software
+- x86 virtualization software (Intel/AMD only)
 - This software runs on various operating systems and creates and manages virtual machines
 - Run multiple virtual machines on a single computer
 - Test or develop software in various operating systems or environments
 - Free and open source, allowing users to use it freely
 - Developed by Oracle Corporation, compatible with various operating systems
+
+## VMware
+
+[Official Website](https://www.vmware.com)
+
+- VMware Fusion Pro (macOS) and VMware Workstation Pro (Windows/Linux) available
+- VMware Fusion supports virtualization on Apple Silicon (ARM64) Macs
+- Provides improved performance and stability compared to VirtualBox
+- Requires VMware Desktop Provider plugin for Vagrant integration
+- **Free for all users (personal, educational, commercial) since November 2024**, no license key required
 
 ## Kubespray
 
