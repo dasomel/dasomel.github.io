@@ -1,5 +1,19 @@
 # Changelog
 
+## [2026-02-26]
+
+### Security
+
+- npm 의존성 보안 취약점 수정 (`npm audit fix`)
+  - `basic-ftp` 5.1.0→5.2.0: Path Traversal 취약점 수정 (Critical) ([GHSA-5rq4-664w-9x2c](https://github.com/advisories/GHSA-5rq4-664w-9x2c))
+  - `rollup` 4.55.1→4.59.0: Arbitrary File Write via Path Traversal 취약점 수정 (High) ([GHSA-mw96-cpmx-2vgc](https://github.com/advisories/GHSA-mw96-cpmx-2vgc))
+
+### Known Issues
+
+- `@lhci/cli` 의존성 체인의 `tmp` 패키지 Low severity 취약점 4건 잔존
+  - 개발 도구(Lighthouse CI) 전용이며 production에 영향 없음
+  - `--force` 적용 시 `@lhci/cli` 다운그레이드로 기능 손상 → upstream 업데이트 대기 중
+
 ## [2026-02-25]
 
 ### Security
