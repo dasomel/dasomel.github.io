@@ -68,6 +68,16 @@
   }
 }
 
+/* 터미널 커서 블링크 */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1.2s step-end infinite;
+}
+
 /* 성능 최적화 */
 @media (prefers-reduced-motion: reduce) {
   *,
