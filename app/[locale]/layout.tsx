@@ -32,13 +32,16 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#16a34a" />
+        <meta name="theme-color" content="#059669" />
       </head>
-      <body className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-800 antialiased">
+      <body
+        className="min-h-screen flex flex-col font-sans"
+        style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}
+      >
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale as 'ko' | 'en'} />
           <main className="flex-1">{children}</main>

@@ -1,31 +1,28 @@
-import { useTranslations } from 'next-intl';
 import { Github, Linkedin, Rss } from 'lucide-react';
 
 export default function Footer() {
-  const t = useTranslations('footer');
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-gray-100 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1">
-            <p className="font-mono text-xs text-gray-400">© {year} dasomel</p>
-            <span className="hidden sm:inline font-mono text-xs text-gray-200 mx-1">·</span>
-            <p className="font-mono text-xs text-gray-300">{t('built_with')}</p>
-          </div>
-          <div className="flex items-center gap-5">
-            <a href="https://github.com/dasomel" target="_blank" rel="noopener noreferrer"
-               className="text-gray-300 hover:text-gray-900 transition-colors" aria-label="GitHub">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/ba909924" target="_blank" rel="noopener noreferrer"
-               className="text-gray-300 hover:text-gray-900 transition-colors" aria-label="LinkedIn">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="/rss.xml" className="text-gray-300 hover:text-gray-900 transition-colors" aria-label="RSS">
-              <Rss className="w-5 h-5" />
-            </a>
-          </div>
+    <footer className="mt-auto" style={{ borderTop: '1px solid var(--border)' }}>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between gap-4">
+        <p className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>
+          © {year} dasomel
+        </p>
+        <div className="flex items-center gap-4">
+          <a href="https://github.com/dasomel" target="_blank" rel="noopener noreferrer"
+             className="transition-opacity hover:opacity-60" aria-label="GitHub"
+             style={{ color: 'var(--text-faint)' }}>
+            <Github className="w-4 h-4" />
+          </a>
+          <a href="https://www.linkedin.com/in/ba909924" target="_blank" rel="noopener noreferrer"
+             className="transition-opacity hover:opacity-60" aria-label="LinkedIn"
+             style={{ color: 'var(--text-faint)' }}>
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a href="/rss.xml" className="transition-opacity hover:opacity-60" aria-label="RSS"
+             style={{ color: 'var(--text-faint)' }}>
+            <Rss className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </footer>
