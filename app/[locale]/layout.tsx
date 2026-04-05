@@ -40,7 +40,7 @@ export default async function LocaleLayout({
       </head>
       <body
         className="min-h-screen flex flex-col font-sans"
-        style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}
+        style={{ backgroundColor: 'var(--bg)', color: 'var(--text)', minHeight: '100svh' }}
       >
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale as 'ko' | 'en'} />

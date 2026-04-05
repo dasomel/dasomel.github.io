@@ -2,116 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Design tokens ─────────────────────────────────── */
+/* ── Design tokens (dark-first) ────────────────────── */
 :root {
-  --bg: #ffffff;
-  --bg-subtle: #fafafa;
-  --surface: #f4f4f5;
-  --border: #e4e4e7;
-  --text: #18181b;
-  --text-muted: #71717a;
-  --text-faint: #a1a1aa;
-  --accent: #059669;
-  --accent-light: #d1fae5;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1117;
-    --bg-subtle: #161b27;
-    --surface: #1e2433;
-    --border: rgba(255,255,255,0.07);
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-    --text-faint: #475569;
-    --accent: #10b981;
-    --accent-light: rgba(16,185,129,0.1);
-  }
+  --bg:         #0a0b0f;
+  --bg-subtle:  #111218;
+  --surface:    #161820;
+  --surface-hi: #1e2130;
+  --border:     rgba(255,255,255,0.07);
+  --border-hi:  rgba(255,255,255,0.12);
+  --text:       #e2e8f0;
+  --text-muted: #64748b;
+  --text-faint: #334155;
+  --accent:     #10b981;
+  --accent-dim: rgba(16,185,129,0.10);
+  --accent-glow:rgba(16,185,129,0.18);
 }
 
 /* ── Base ──────────────────────────────────────────── */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    color-scheme: light dark;
-  }
+  html { scroll-behavior: smooth; color-scheme: dark; }
 
   body {
     background-color: var(--bg);
     color: var(--text);
     @apply antialiased;
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: var(--accent-light);
+    background-color: var(--accent-dim);
     color: var(--accent);
   }
-
-  a { color: inherit; }
 }
 
-/* ── Animations ────────────────────────────────────── */
-@keyframes cursor-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+/* ── Diagonal grid bg (Tailwind-inspired) ──────────── */
+.grid-bg {
+  background-image:
+    repeating-linear-gradient(
+      315deg,
+      rgba(16,185,129,0.035) 0,
+      rgba(16,185,129,0.035) 1px,
+      transparent 0,
+      transparent 50%
+    );
+  background-size: 24px 24px;
 }
 
+/* ── Radial glow (Linear-inspired) ────────────────── */
+.hero-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%,
+      rgba(16,185,129,0.18) 0%,
+      transparent 70%),
+    radial-gradient(ellipse 40% 30% at 70% 60%,
+      rgba(16,185,129,0.06) 0%,
+      transparent 60%);
+}
+
+/* ── Outline card (Tailwind CSS-inspired) ─────────── */
+.card-outline {
+  background-color: var(--surface);
+  border-radius: 1rem;
+  outline: 1px solid var(--border);
+  transition: outline-color 0.2s ease, background-color 0.2s ease;
+}
+.card-outline:hover {
+  outline-color: rgba(16,185,129,0.4);
+  background-color: var(--surface-hi);
+}
+
+/* inner glow on hover */
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at top, var(--accent-dim), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.card-glow:hover::before { opacity: 1; }
+
+/* ── Slide-enter stagger (antfu-inspired) ─────────── */
 @keyframes slide-enter {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes cursor-blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .cursor-blink { animation: cursor-blink 1.2s step-end infinite; }
 
-/* stagger enter — antfu.me 스타일 */
 .slide-enter-content > * {
   animation: slide-enter 0.4s ease both;
 }
 .slide-enter-content > *:nth-child(1) { animation-delay: 0ms; }
-.slide-enter-content > *:nth-child(2) { animation-delay: 60ms; }
-.slide-enter-content > *:nth-child(3) { animation-delay: 120ms; }
-.slide-enter-content > *:nth-child(4) { animation-delay: 180ms; }
-.slide-enter-content > *:nth-child(5) { animation-delay: 240ms; }
-.slide-enter-content > *:nth-child(6) { animation-delay: 300ms; }
-.slide-enter-content > *:nth-child(7) { animation-delay: 360ms; }
-.slide-enter-content > *:nth-child(8) { animation-delay: 420ms; }
+.slide-enter-content > *:nth-child(2) { animation-delay: 80ms; }
+.slide-enter-content > *:nth-child(3) { animation-delay: 160ms; }
+.slide-enter-content > *:nth-child(4) { animation-delay: 240ms; }
+.slide-enter-content > *:nth-child(5) { animation-delay: 320ms; }
 
-/* ── Typography tokens ─────────────────────────────── */
-.text-token      { color: var(--text); }
-.text-muted-token { color: var(--text-muted); }
-.text-faint-token { color: var(--text-faint); }
-.bg-token        { background-color: var(--bg); }
-.bg-subtle-token { background-color: var(--bg-subtle); }
-.surface-token   { background-color: var(--surface); }
-.border-token    { border-color: var(--border); }
-
-/* ── Prose overrides ───────────────────────────────── */
-.prose {
-  --tw-prose-body: var(--text);
-  --tw-prose-headings: var(--text);
-  --tw-prose-links: var(--accent);
-  --tw-prose-bold: var(--text);
-  --tw-prose-quotes: var(--text-muted);
-  --tw-prose-hr: var(--border);
-  --tw-prose-pre-bg: var(--bg-subtle);
+/* ── Full-width section divider ───────────────────── */
+.section-divider {
+  position: relative;
+}
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: var(--border);
 }
 
+/* ── Prose (dark) ─────────────────────────────────── */
+.prose {
+  --tw-prose-body:     var(--text);
+  --tw-prose-headings: var(--text);
+  --tw-prose-links:    var(--accent);
+  --tw-prose-bold:     var(--text);
+  --tw-prose-quotes:   var(--text-muted);
+  --tw-prose-hr:       var(--border);
+  --tw-prose-pre-bg:   var(--bg-subtle);
+  --tw-prose-code:     var(--accent);
+}
 .prose code {
   background-color: var(--surface);
-  color: var(--accent);
   padding: 0.15em 0.4em;
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   font-size: 0.875em;
   font-weight: 500;
 }
 .prose code::before, .prose code::after { content: none; }
-.prose pre {
-  border: 1px solid var(--border);
-  border-radius: 0.625rem;
-}
-.prose a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
+.prose pre { border: 1px solid var(--border); border-radius: 0.75rem; }
+.prose a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
