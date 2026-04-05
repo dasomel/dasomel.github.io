@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "seminars": "Seminars",
+    "docs": "K-PaaS Lite",
+    "posts": "Posts",
+    "about": "About",
+    "lang": "EN"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Cloud & DevOps",
+      "role": "Engineer",
+      "description": "오픈소스 프로젝트 개발과 커뮤니티 활동을 하고 있습니다",
+      "cta_projects": "Projects",
+      "cta_seminars": "Seminars"
+    },
+    "sections": {
+      "projects": "01 — Projects",
+      "overview": "02 — Overview",
+      "recent": "03 — Recent",
+      "view_all": "view all →"
+    },
+    "overview": {
+      "oss_title": "OSS",
+      "oss_desc": "Harbor, Terraboard 등 오픈소스 프로젝트",
+      "kpaas_title": "K-PaaS Lite",
+      "kpaas_desc": "설치 가이드 및 운영 문서",
+      "community_title": "Community",
+      "community_desc": "OPA, OPDC 커뮤니티 리더"
+    }
+  },
+  "posts": {
+    "title": "Posts",
+    "empty": "포스트가 없습니다."
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "seminars": {
+    "title": "Seminars",
+    "slides": "슬라이드",
+    "video": "영상"
+  },
+  "about": {
+    "title": "About"
+  },
+  "common": {
+    "github": "GitHub",
+    "back": "← 목록으로"
+  },
+  "footer": {
+    "built_with": "built with next.js"
+  }
+}

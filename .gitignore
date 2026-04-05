@@ -1,11 +1,16 @@
 # Build output
 dist/
+.astro/
+
+# TypeScript
+tsconfig.tsbuildinfo
 
 # Dependencies
 node_modules/
 
-# Astro
-.astro/
+# Next.js
+.next/
+out/
 
 # Environment
 .env
@@ -31,3 +36,5 @@ Thumbs.db
 
 # Debug
 *.log
+/.bkit/
+/.omc/

@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "seminars": "Seminars",
+    "docs": "K-PaaS Lite",
+    "posts": "Posts",
+    "about": "About",
+    "lang": "한국어"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Cloud & DevOps",
+      "role": "Engineer",
+      "description": "Open source projects and community activities.",
+      "cta_projects": "Projects",
+      "cta_seminars": "Seminars"
+    },
+    "sections": {
+      "projects": "01 — Projects",
+      "overview": "02 — Overview",
+      "recent": "03 — Recent",
+      "view_all": "view all →"
+    },
+    "overview": {
+      "oss_title": "OSS",
+      "oss_desc": "Open source projects including Harbor, Terraboard",
+      "kpaas_title": "K-PaaS Lite",
+      "kpaas_desc": "Installation guides and operation docs",
+      "community_title": "Community",
+      "community_desc": "OPA, OPDC community leader"
+    }
+  },
+  "posts": {
+    "title": "Posts",
+    "empty": "No posts yet."
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "seminars": {
+    "title": "Seminars",
+    "slides": "Slides",
+    "video": "Video"
+  },
+  "about": {
+    "title": "About"
+  },
+  "common": {
+    "github": "GitHub",
+    "back": "← Back"
+  },
+  "footer": {
+    "built_with": "built with next.js"
+  }
+}
