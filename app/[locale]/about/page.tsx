@@ -30,13 +30,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       role: 'Adjunct Professor, Dept. of IT Management (School of Business Administration)',
       org: 'Tech University of Korea (TUK)',
       period: '2024 — Present',
-      desc: 'Lecturing on cloud infrastructure and DevOps practices.',
+      desc: 'Lecturing on SW Framework.',
     },
     {
       role: 'Cloud & DevOps Engineer',
       org: 'Open Source Community',
       period: '2018 — Present',
-      desc: 'K-PaaS open source contributor. OPA (Open PaaS Association) and OPDC (Open PaaS Developer Community) leader.',
+      desc: 'OPA (Open cloud Platform Alliance) leader, OPDC (Open Platform Developer Community) leader.',
     },
   ] : [
     {
@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       role: 'Cloud & DevOps Engineer',
       org: '오픈소스 커뮤니티',
       period: '2018 — 현재',
-      desc: 'K-PaaS 오픈소스 컨트리뷰터. OPA(오픈파스 협의회) 및 OPDC(오픈파스 개발자 커뮤니티) 리더.',
+      desc: 'OPA(Open cloud Platform Alliance) 리더, OPDC(Open Platform Developer Community) 리더.',
     },
   ];
 
