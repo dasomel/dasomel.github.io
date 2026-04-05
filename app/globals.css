@@ -4,18 +4,18 @@
 
 /* ── Design tokens (dark-first) ────────────────────── */
 :root {
-  --bg:         #0a0b0f;
-  --bg-subtle:  #111218;
-  --surface:    #161820;
-  --surface-hi: #1e2130;
-  --border:     rgba(255,255,255,0.07);
-  --border-hi:  rgba(255,255,255,0.12);
-  --text:       #e2e8f0;
-  --text-muted: #64748b;
-  --text-faint: #334155;
+  --bg:         #0c0e14;
+  --bg-subtle:  #12151e;
+  --surface:    #191d2a;
+  --surface-hi: #21263a;
+  --border:     rgba(255,255,255,0.10);
+  --border-hi:  rgba(255,255,255,0.18);
+  --text:       #f0f2f5;
+  --text-muted: #9aa5b8;
+  --text-faint: #5a6478;
   --accent:     #10b981;
-  --accent-dim: rgba(16,185,129,0.10);
-  --accent-glow:rgba(16,185,129,0.18);
+  --accent-dim: rgba(16,185,129,0.12);
+  --accent-glow:rgba(16,185,129,0.20);
 }
 
 /* ── Base ──────────────────────────────────────────── */
@@ -25,8 +25,12 @@
   body {
     background-color: var(--bg);
     color: var(--text);
+    font-size: 17px;
+    line-height: 1.65;
     @apply antialiased;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
   }
 
   ::selection {
