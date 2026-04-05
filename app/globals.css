@@ -2,25 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Design tokens (dark-first) ────────────────────── */
+/* ── Design tokens (light mode) ────────────────────── */
 :root {
-  --bg:         #0c0e14;
-  --bg-subtle:  #12151e;
-  --surface:    #191d2a;
-  --surface-hi: #21263a;
-  --border:     rgba(255,255,255,0.10);
-  --border-hi:  rgba(255,255,255,0.18);
-  --text:       #f0f2f5;
-  --text-muted: #9aa5b8;
-  --text-faint: #5a6478;
-  --accent:     #10b981;
-  --accent-dim: rgba(16,185,129,0.12);
-  --accent-glow:rgba(16,185,129,0.20);
+  --bg:         #ffffff;
+  --bg-subtle:  #f9fafb;
+  --surface:    #f3f4f6;
+  --surface-hi: #e9ecf0;
+  --border:     #e5e7eb;
+  --border-hi:  #d1d5db;
+  --text:       #111827;
+  --text-muted: #4b5563;
+  --text-faint: #9ca3af;
+  --accent:     #059669;
+  --accent-dim: rgba(5,150,105,0.08);
+  --accent-glow:rgba(5,150,105,0.15);
 }
 
 /* ── Base ──────────────────────────────────────────── */
 @layer base {
-  html { scroll-behavior: smooth; color-scheme: dark; }
+  html { scroll-behavior: smooth; color-scheme: light; }
 
   body {
     background-color: var(--bg);
@@ -39,40 +39,37 @@
   }
 }
 
-/* ── Diagonal grid bg (Tailwind-inspired) ──────────── */
+/* ── Diagonal grid bg ──────────────────────────────── */
 .grid-bg {
   background-image:
     repeating-linear-gradient(
       315deg,
-      rgba(16,185,129,0.035) 0,
-      rgba(16,185,129,0.035) 1px,
+      rgba(5,150,105,0.04) 0,
+      rgba(5,150,105,0.04) 1px,
       transparent 0,
       transparent 50%
     );
   background-size: 24px 24px;
 }
 
-/* ── Radial glow (Linear-inspired) ────────────────── */
+/* ── Radial glow ───────────────────────────────────── */
 .hero-glow {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%,
-      rgba(16,185,129,0.18) 0%,
-      transparent 70%),
-    radial-gradient(ellipse 40% 30% at 70% 60%,
-      rgba(16,185,129,0.06) 0%,
-      transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% -10%,
+      rgba(5,150,105,0.10) 0%,
+      transparent 70%);
 }
 
-/* ── Outline card (Tailwind CSS-inspired) ─────────── */
+/* ── Outline card ─────────────────────────────────── */
 .card-outline {
-  background-color: var(--surface);
-  border-radius: 1rem;
-  outline: 1px solid var(--border);
-  transition: outline-color 0.2s ease, background-color 0.2s ease;
+  background-color: var(--bg);
+  border-radius: 0.875rem;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .card-outline:hover {
-  outline-color: rgba(16,185,129,0.4);
-  background-color: var(--surface-hi);
+  border-color: rgba(5,150,105,0.35);
+  box-shadow: 0 4px 16px -4px rgba(5,150,105,0.10), 0 1px 4px rgba(0,0,0,0.04);
 }
 
 /* inner glow on hover */

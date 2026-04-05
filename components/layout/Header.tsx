@@ -38,7 +38,7 @@ export default function Header({ locale }: HeaderProps) {
     <header
       className="sticky top-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? 'rgba(10,11,15,0.85)' : 'transparent',
+        backgroundColor: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px) saturate(180%)' : 'none',
         borderBottom: `1px solid ${scrolled ? 'var(--border)' : 'transparent'}`,
       }}

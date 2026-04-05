@@ -27,7 +27,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="absolute inset-0 hero-glow" />
         {/* Vignette */}
         <div className="absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse at center, transparent 30%, var(--bg) 80%)' }} />
+          style={{ background: 'radial-gradient(ellipse at center, transparent 40%, var(--bg) 90%)' }} />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-28 sm:py-36">
           {/* Status badge */}
