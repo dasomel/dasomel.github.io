@@ -55,8 +55,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   const contributions = [
     { name: 'K-PaaS', desc: isEn ? 'Korean government PaaS platform contributor' : '공공 PaaS 플랫폼 컨트리뷰터', url: 'https://github.com/K-PaaS' },
-    { name: 'Harbor', desc: isEn ? 'Container registry — Korean localization & bug fixes' : '컨테이너 레지스트리 — 한국어 번역 및 버그 수정', url: 'https://github.com/goharbor/harbor' },
-    { name: 'Terraboard', desc: isEn ? 'Terraform state dashboard contributor' : 'Terraform 상태 대시보드 컨트리뷰터', url: 'https://github.com/camptocamp/terraboard' },
+    { name: 'Harbor', desc: isEn ? 'Container registry — fork for ARM architecture support' : '컨테이너 레지스트리 — ARM 아키텍처 지원을 위한 포크', url: 'https://github.com/goharbor/harbor' },
+    { name: 'Terraboard', desc: isEn ? 'Terraform state dashboard — fork with latest Terraform version support' : 'Terraform 상태 대시보드 — 최신 Terraform 버전 적용 포크', url: 'https://github.com/camptocamp/terraboard' },
   ];
 
   return (
