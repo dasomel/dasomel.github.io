@@ -14,7 +14,7 @@ export default async function SeminarsPage({ params }: { params: Promise<{ local
   const lang = locale as 'ko' | 'en';
   const t = await getTranslations({ locale, namespace: 'seminars' });
   const seminars = getSeminars(lang);
-  const base = lang === 'en' ? '/en' : '';
+  const base = lang === 'en' ? '/en' : '/ko';
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">

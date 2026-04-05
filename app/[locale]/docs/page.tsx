@@ -12,7 +12,7 @@ export default async function DocsIndexPage({ params }: { params: Promise<{ loca
   const lang = locale as 'ko' | 'en';
   const t = await getTranslations({ locale, namespace: 'nav' });
   const docs = getDocs(lang);
-  const base = lang === 'en' ? '/en' : '';
+  const base = lang === 'en' ? '/en' : '/ko';
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">

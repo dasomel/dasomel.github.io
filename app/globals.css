@@ -5,10 +5,40 @@
 @layer base {
   html { scroll-behavior: smooth; }
   body { @apply font-sans text-gray-800 antialiased; }
+
+  ::selection {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
 }
 
 @keyframes cursor-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .cursor-blink { animation: cursor-blink 1.2s step-end infinite; }
+.animate-fade-up { animation: fade-up 0.45s ease-out both; }
+
+/* Card lift effect */
+.card-lift {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(5,150,105,0.12), 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Prose */
+.prose {
+  --tw-prose-links: #059669;
+  --tw-prose-code: #065f46;
+}
+.prose code { background: #f0fdf4; padding: 0.15em 0.35em; border-radius: 0.25rem; font-size: 0.875em; }
+.prose code::before, .prose code::after { content: none; }
+.prose pre { border: 1px solid #e5e7eb; }
