@@ -9,11 +9,15 @@ export default function TOC() {
 
   useEffect(() => {
     const els = document.querySelectorAll('article h2, article h3');
-    setHeadings(Array.from(els).map(el => ({
-      id: el.id,
-      text: el.textContent ?? '',
-      level: parseInt(el.tagName[1]),
-    })));
+    setHeadings(
+      Array.from(els)
+        .map((el, i) => ({
+          id: el.id || `heading-${i}`,
+          text: el.textContent ?? '',
+          level: parseInt(el.tagName[1]),
+        }))
+        .filter(h => h.text.trim())
+    );
 
     const observer = new IntersectionObserver(
       (entries) => {
