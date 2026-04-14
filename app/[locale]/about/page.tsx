@@ -39,7 +39,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       icon: '🌐',
       role: 'Community Leader',
       period: '2015 — Present',
-      desc: 'OPA (Open cloud Platform Alliance) · OPDC (Open Platform Developer Community)',
+      desc: 'CloudBro · OPA (Open cloud Platform Alliance) · OPDC (Open Platform Developer Community)',
     },
   ] : [
     {
@@ -59,7 +59,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       icon: '🌐',
       role: '커뮤니티 리더',
       period: '2015 — 현재',
-      desc: 'OPA (Open cloud Platform Alliance) · OPDC (Open Platform Developer Community)',
+      desc: 'CloudBro · OPA (Open cloud Platform Alliance) · OPDC (Open Platform Developer Community)',
     },
   ];
 
