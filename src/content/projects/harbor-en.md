@@ -5,6 +5,9 @@ github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
 order: 3
 type: "fork"
+featured: true
+problem: "Harbor lacks official ARM architecture support, unusable on ARM-based Kubernetes clusters"
+solution: "Configured multi-architecture build pipeline to generate ARM-compatible images"
 ---
 
 ## Project Overview

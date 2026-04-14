@@ -5,6 +5,9 @@ github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
 order: 3
 type: "fork"
+featured: true
+problem: "Harbor가 ARM 아키텍처를 공식 지원하지 않아 ARM 기반 Kubernetes 클러스터에서 사용 불가"
+solution: "멀티 아키텍처 빌드 파이프라인을 구성하여 ARM 호환 이미지 생성"
 ---
 
 ## 프로젝트 소개

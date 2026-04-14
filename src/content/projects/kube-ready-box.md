@@ -5,6 +5,9 @@ github: "https://github.com/dasomel/kube-ready-box"
 tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch"]
 order: 1
 type: "own"
+featured: true
+problem: "Kubernetes 개발/테스트 환경 구축에 반복적인 수작업 필요"
+solution: "원커맨드로 로컬 K8s 클러스터 + 필수 도구 자동 세팅"
 ---
 
 ## 프로젝트 소개

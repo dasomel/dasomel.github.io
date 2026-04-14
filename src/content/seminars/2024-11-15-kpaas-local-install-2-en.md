@@ -4,6 +4,7 @@ event: "OPA Seminar"
 date: 2024-11-15
 slides: "https://github.com/dasomel/seminar"
 tags: ["K-PaaS", "ARM64", "Mac", "Container", "Docker"]
+featured: true
 ---
 
 ## Presentation Overview

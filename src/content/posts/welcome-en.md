@@ -3,6 +3,7 @@ title: "Migrated My Blog to Astro"
 description: "The story of revamping my blog from Jekyll to Astro"
 pubDate: 2026-01-22
 tags: ["Astro", "Blog", "Migration"]
+featured: true
 ---
 
 Hello! I've migrated my existing Jekyll-based blog to Astro.

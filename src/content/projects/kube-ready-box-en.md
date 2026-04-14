@@ -5,6 +5,9 @@ github: "https://github.com/dasomel/kube-ready-box"
 tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch"]
 order: 1
 type: "own"
+featured: true
+problem: "Setting up Kubernetes dev/test environments requires repetitive manual work"
+solution: "One-command local K8s cluster + essential tools auto-setup"
 ---
 
 ## Project Overview

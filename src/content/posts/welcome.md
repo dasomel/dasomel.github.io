@@ -3,6 +3,7 @@ title: "블로그를 Astro로 마이그레이션 했습니다"
 description: "Jekyll에서 Astro로 블로그를 새롭게 단장한 이야기"
 pubDate: 2026-01-22
 tags: ["Astro", "블로그", "마이그레이션"]
+featured: true
 ---
 
 안녕하세요! 기존 Jekyll 기반 블로그를 Astro로 마이그레이션 했습니다.

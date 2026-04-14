@@ -4,6 +4,7 @@ event: "CloudBro"
 date: 2024-09-20
 slides: "https://github.com/dasomel/seminar"
 tags: ["Cilium", "Istio", "Service Mesh", "eBPF", "CloudBro"]
+featured: true
 ---
 
 ## Presentation Overview
