@@ -65,18 +65,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   const contributions = [
     {
-      name: 'Harbor',
+      name: 'OpenMetadata',
       desc: isEn
-        ? 'ARM architecture not supported → Forked and built multi-arch pipeline'
-        : 'ARM 아키텍처 미지원 문제 → 직접 포크하여 해결',
-      url: 'https://github.com/goharbor/harbor',
+        ? 'Added Korean (ko-kr) language support — merged into v1.7.1 release'
+        : '한국어(ko-kr) 지원 추가 — v1.7.1 릴리즈에 공식 반영',
+      url: 'https://github.com/open-metadata/OpenMetadata/pull/21035',
     },
     {
-      name: 'Terraboard',
+      name: 'KakaoCloud Terraform Provider',
       desc: isEn
-        ? 'Stuck on old Terraform version → Forked with latest version support'
-        : '구버전 고착 문제 → 최신 Terraform 버전 적용 포크',
-      url: 'https://github.com/camptocamp/terraboard',
+        ? 'Reported SDK bug (Issue #1) — ProvisioningStatus enum missing "in_use" state, quickly resolved'
+        : 'SDK 버그 리포트 (Issue #1) — ProvisioningStatus enum 누락 발견 및 수정 제안, 빠르게 해결',
+      url: 'https://github.com/kakaoenterprise/terraform-provider-kakaocloud/issues/1',
     },
   ];
 
