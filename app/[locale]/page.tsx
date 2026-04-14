@@ -34,7 +34,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const featuredPost = postsWithReadTime.find(p => p.featured);
   const regularPosts = postsWithReadTime.filter(p => !p.featured).slice(0, 3);
 
-  const yearsActive = new Date().getFullYear() - 2013;
+  const yearsActive = new Date().getFullYear() - 2011;
 
   return (
     <div>
@@ -60,7 +60,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             style={{ letterSpacing: '-0.03em', color: 'var(--text)' }}>
             {t('hero.headline_1')}
             <span style={{ color: 'var(--accent)' }}>{t('hero.headline_accent')}</span>
-            {t('hero.headline_2').split('\n').map((line, i) => (
+            {t('hero.headline_2', { years: yearsActive }).split('\n').map((line, i) => (
               i === 0 ? line : <span key={i}><br />{line}</span>
             ))}
           </h1>
