@@ -32,7 +32,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       icon: '🎓',
       role: 'Adjunct Professor',
       org: 'Tech University of Korea (TUK)',
-      period: '2024 — Present',
+      period: '2026 — Present',
       desc: 'Dept. of IT Management · Lecturing on SW Framework',
     },
     {
@@ -52,7 +52,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       icon: '🎓',
       role: '겸임교수',
       org: '한국공학대학교 (TUK)',
-      period: '2024 — 현재',
+      period: '2026 — 현재',
       desc: 'IT경영전공 · SW프레임워크 강의',
     },
     {
