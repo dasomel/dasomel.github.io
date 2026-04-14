@@ -118,9 +118,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               </a>
             </div>
           </div>
-          <div className="hidden sm:flex w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-            D
-          </div>
+          <img
+            src="/profile.png"
+            alt="dasomel"
+            className="hidden sm:block w-20 h-20 rounded-2xl object-cover flex-shrink-0"
+          />
         </div>
       </section>
 
