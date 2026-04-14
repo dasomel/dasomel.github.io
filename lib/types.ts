@@ -8,6 +8,7 @@ export interface Post {
   image?: string;
   draft: boolean;
   lang: 'ko' | 'en';
+  featured?: boolean;
 }
 
 export interface Seminar {
@@ -20,6 +21,7 @@ export interface Seminar {
   video?: string;
   tags: string[];
   lang: 'ko' | 'en';
+  featured?: boolean;
 }
 
 export interface Project {
@@ -31,6 +33,9 @@ export interface Project {
   order?: number;
   type?: 'own' | 'fork';
   lang: 'ko' | 'en';
+  featured?: boolean;
+  problem?: string;
+  solution?: string;
 }
 
 export interface Doc {
