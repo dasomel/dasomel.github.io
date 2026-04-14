@@ -79,6 +79,7 @@ export const mentoringActivities: ProfessionalActivity[] = [
 ];
 
 export const expertActivities: ProfessionalActivity[] = [
+  { title: '차세대 표준프레임워크 발전방안 수립을 위한 전문가 자문회의', role: '전문가 자문', org: 'NIA', year: 2026 },
   { title: '국산 SW 컨테이너 이미지 제작·유통 지원 프로젝트 자문', role: '자문위원', org: 'OPA', year: 2025 },
   { title: '클라우드 네이티브 특화 결과물 전문가 검토', role: '전문가 검토', org: '(주)브이티더블류', year: 2025 },
   { title: '공공부문 이용 SaaS 개발·검증(교육SaaS트랙) 과제조정위원회', role: '과제조정위원 (클라우드 전문가)', org: 'NIA', year: 2024 },
