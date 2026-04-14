@@ -1,44 +1,58 @@
 {
   "nav": {
-    "projects": "Projects",
-    "seminars": "Seminars",
+    "work": "Work",
+    "speaking": "Speaking",
     "docs": "K-PaaS Lite",
-    "posts": "Posts",
+    "blog": "Blog",
     "about": "About",
     "lang": "한국어"
   },
   "home": {
     "hero": {
-      "tagline": "Cloud & DevOps",
-      "role": "Engineer",
-      "description": "Open source projects and community activities.",
-      "cta_projects": "Projects",
-      "cta_seminars": "Seminars"
+      "tagline": "Cloud & DevOps Engineer · Adjunct Professor",
+      "headline_1": "Building",
+      "headline_accent": "Cloud Infrastructure",
+      "headline_2": "\nfor 11 years and counting",
+      "description": "K-PaaS core contributor · OPA/OPDC community leader · Adjunct Professor at TUK",
+      "cta_work": "View projects",
+      "cta_speaking": "Speaking history"
     },
     "sections": {
-      "projects": "01 — Projects",
-      "overview": "02 — Overview",
-      "recent": "03 — Recent",
-      "view_all": "view all →"
+      "featured_work": "Featured Work",
+      "speaking": "Speaking Highlights",
+      "latest_posts": "Latest Posts",
+      "view_all": "View all"
     },
-    "overview": {
-      "oss_title": "OSS",
-      "oss_desc": "Open source projects including Harbor, Terraboard",
-      "kpaas_title": "K-PaaS Lite",
-      "kpaas_desc": "Installation guides and operation docs",
-      "community_title": "Community",
-      "community_desc": "OPA, OPDC community leader"
+    "stats": {
+      "talks": "Conference Talks",
+      "experience": "Cloud Experience",
+      "projects": "OSS Projects"
     }
   },
-  "posts": {
-    "title": "Posts",
-    "empty": "No posts yet."
+  "work": {
+    "title": "Work",
+    "subtitle": "Open source projects and infrastructure tools",
+    "problem": "Problem",
+    "solution": "Solution"
   },
-  "projects": {
-    "title": "Projects"
+  "speaking": {
+    "title": "Speaking",
+    "subtitle_prefix": " years,",
+    "subtitle_suffix": " conference talks",
+    "highlights": "Highlights",
+    "timeline": "Timeline",
+    "total": "Total Talks",
+    "conferences": "Conferences",
+    "years_active": "Years Active"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Writing about cloud-native infrastructure",
+    "featured": "Featured",
+    "all_posts": "All Posts",
+    "min_read": "min"
   },
   "seminars": {
-    "title": "Seminars",
     "slides": "Slides",
     "video": "Video"
   },

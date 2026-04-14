@@ -10,7 +10,7 @@ export function generateStaticParams() {
 export default async function PostsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const lang = locale as 'ko' | 'en';
-  const t = await getTranslations({ locale, namespace: 'posts' });
+  const t = await getTranslations({ locale, namespace: 'blog' });
   const posts = getPosts(lang);
   const base = lang === 'en' ? '/en' : '/ko';
 
@@ -32,7 +32,7 @@ export default async function PostsPage({ params }: { params: Promise<{ locale: 
       </div>
 
       {posts.length === 0 ? (
-        <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{t('empty')}</p>
+        <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{lang === 'en' ? 'No posts yet.' : '포스트가 없습니다.'}</p>
       ) : (
         <div className="space-y-10 slide-enter-content">
           {years.map(year => (

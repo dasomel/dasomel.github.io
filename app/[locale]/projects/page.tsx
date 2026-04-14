@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const lang = locale as 'ko' | 'en';
-  const t = await getTranslations({ locale, namespace: 'projects' });
+  const t = await getTranslations({ locale, namespace: 'work' });
   const projects = getProjects(lang);
   const base = lang === 'en' ? '/en' : '/ko';
 

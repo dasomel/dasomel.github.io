@@ -63,7 +63,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <Link href={`${base}/projects`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all"
               style={{ backgroundColor: 'var(--accent)', color: '#fff' }}>
-              {t('hero.cta_projects')}
+              {t('hero.cta_work')}
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <Link href={`${base}/posts`}
@@ -93,7 +93,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <section>
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xs font-mono uppercase tracking-widest" style={{ color: 'var(--text-faint)' }}>
-              {t('sections.projects')}
+              {t('sections.featured_work')}
             </h2>
             <Link href={`${base}/projects`}
               className="inline-flex items-center gap-1 text-xs font-mono transition-colors hover:opacity-80"
@@ -147,7 +147,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <section>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xs font-mono uppercase tracking-widest" style={{ color: 'var(--text-faint)' }}>
-                {t('sections.recent')}
+                {t('sections.latest_posts')}
               </h2>
               <Link href={`${base}/posts`}
                 className="inline-flex items-center gap-1 text-xs font-mono transition-colors hover:opacity-80"
@@ -190,9 +190,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <h2 className="text-xs font-mono uppercase tracking-widest mb-6" style={{ color: 'var(--text-faint)' }}>
             {isEn ? 'Open Source' : '오픈소스 기여'}
           </h2>
-          <div className="grid sm:grid-cols-3 gap-3">
+          <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { name: 'K-PaaS', desc: isEn ? 'Korean gov PaaS platform' : '공공 클라우드 플랫폼', url: 'https://github.com/K-PaaS' },
               { name: 'Harbor', desc: isEn ? 'Fork · ARM support' : '포크 · ARM 아키텍처 지원', url: 'https://github.com/goharbor/harbor' },
               { name: 'Terraboard', desc: isEn ? 'Fork · Latest Terraform' : '포크 · 최신 Terraform 적용', url: 'https://github.com/camptocamp/terraboard' },
             ].map(item => (

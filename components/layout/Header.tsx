@@ -25,10 +25,10 @@ export default function Header({ locale }: HeaderProps) {
     : pathname.replace(/^\/ko/, '/en') || '/en/';
 
   const navItems = [
-    { href: `${base}/projects`, label: t('projects') },
-    { href: `${base}/seminars`, label: t('seminars') },
+    { href: `${base}/projects`, label: t('work') },
+    { href: `${base}/seminars`, label: t('speaking') },
     { href: `${base}/docs/about`, label: t('docs') },
-    { href: `${base}/posts`, label: t('posts') },
+    { href: `${base}/posts`, label: t('blog') },
     { href: `${base}/about`, label: t('about') },
   ];
 

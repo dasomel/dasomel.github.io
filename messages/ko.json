@@ -1,44 +1,58 @@
 {
   "nav": {
-    "projects": "Projects",
-    "seminars": "Seminars",
+    "work": "Work",
+    "speaking": "Speaking",
     "docs": "K-PaaS Lite",
-    "posts": "Posts",
+    "blog": "Blog",
     "about": "About",
     "lang": "EN"
   },
   "home": {
     "hero": {
-      "tagline": "Cloud & DevOps",
-      "role": "Engineer",
-      "description": "오픈소스 프로젝트 개발과 커뮤니티 활동을 하고 있습니다",
-      "cta_projects": "Projects",
-      "cta_seminars": "Seminars"
+      "tagline": "Cloud & DevOps Engineer · Adjunct Professor",
+      "headline_1": "11년간",
+      "headline_accent": "클라우드 인프라",
+      "headline_2": "를\n만들고, 가르치고, 나눕니다",
+      "description": "K-PaaS 핵심 컨트리뷰터 · OPA/OPDC 커뮤니티 리더 · 한국공학대학교 겸임교수",
+      "cta_work": "프로젝트 보기",
+      "cta_speaking": "발표 이력"
     },
     "sections": {
-      "projects": "01 — Projects",
-      "overview": "02 — Overview",
-      "recent": "03 — Recent",
-      "view_all": "view all →"
+      "featured_work": "Featured Work",
+      "speaking": "Speaking Highlights",
+      "latest_posts": "Latest Posts",
+      "view_all": "전체 보기"
     },
-    "overview": {
-      "oss_title": "OSS",
-      "oss_desc": "Harbor, Terraboard 등 오픈소스 프로젝트",
-      "kpaas_title": "K-PaaS Lite",
-      "kpaas_desc": "설치 가이드 및 운영 문서",
-      "community_title": "Community",
-      "community_desc": "OPA, OPDC 커뮤니티 리더"
+    "stats": {
+      "talks": "컨퍼런스 발표",
+      "experience": "클라우드 경력",
+      "projects": "OSS 프로젝트"
     }
   },
-  "posts": {
-    "title": "Posts",
-    "empty": "포스트가 없습니다."
+  "work": {
+    "title": "Work",
+    "subtitle": "오픈소스 프로젝트와 인프라 도구",
+    "problem": "문제",
+    "solution": "해결"
   },
-  "projects": {
-    "title": "Projects"
+  "speaking": {
+    "title": "Speaking",
+    "subtitle_prefix": "년간",
+    "subtitle_suffix": "컨퍼런스 발표 기록",
+    "highlights": "Highlights",
+    "timeline": "Timeline",
+    "total": "총 발표",
+    "conferences": "컨퍼런스",
+    "years_active": "활동 기간"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "클라우드 네이티브 인프라에 대한 글",
+    "featured": "추천",
+    "all_posts": "All Posts",
+    "min_read": "min"
   },
   "seminars": {
-    "title": "Seminars",
     "slides": "슬라이드",
     "video": "영상"
   },
