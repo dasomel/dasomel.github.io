@@ -26,7 +26,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       icon: '🔧',
       role: 'Cloud & DevOps Engineer',
       period: '2013 — Present',
-      desc: 'K-PaaS core contributor · Harbor/Terraboard forks · Kubernetes infrastructure design & operations',
+      desc: 'K-PaaS Lite founder · Harbor/Terraboard forks · Kubernetes infrastructure design & operations',
     },
     {
       icon: '🎓',
@@ -46,7 +46,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       icon: '🔧',
       role: 'Cloud & DevOps Engineer',
       period: '2013 — 현재',
-      desc: 'K-PaaS 핵심 컨트리뷰터 · Harbor/Terraboard 포크 · Kubernetes 인프라 설계 및 운영',
+      desc: 'K-PaaS Lite 파운더 · Harbor/Terraboard 포크 · Kubernetes 인프라 설계 및 운영',
     },
     {
       icon: '🎓',
