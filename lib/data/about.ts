@@ -94,12 +94,12 @@ export const awards: Award[] = [
   { title: '전자정부 표준프레임워크 컨트리뷰션 감사장', org: 'NIA', year: 2023 },
   { title: '전자정부 표준프레임워크 컨트리뷰션 감사장', org: 'NIA', year: 2022 },
   { title: '행정안전부장관 표창장', org: '행정안전부', year: 2021, highlight: true, url: 'https://www.egovframe.go.kr/home/ntt/nttRead.do?menuNo=74&bbsId=6&nttId=1836' },
-  { title: '학습조직 우수상 (Cloud Native DevOps)', org: '한화시스템', year: 2021 },
+  { title: '학습조직 우수상 (Cloud Native DevOps)', org: '사내', year: 2021 },
   { title: '전자정부 표준프레임워크 컨트리뷰션 감사장', org: 'NIA', year: 2021, url: 'https://www.egovframe.go.kr/home/ntt/nttRead.do?pagerOffset=10&searchKey=&searchValue=&menuNo=74&bbsId=6&nttId=1820' },
   { title: '표준프레임워크 오픈커뮤니티 공로상', org: 'OPDC', year: 2021 },
-  { title: 'Open Tech Lounge Recognition (3위)', org: 'SK holdings C&C', year: 2018 },
-  { title: '부문 Idea Festival (3등) — NateOn 챗봇', org: 'SK holdings C&C', year: 2018 },
-  { title: '하반기 부문장 Recognition', org: 'SK holdings C&C', year: 2018 },
+  { title: 'Open Tech Lounge Recognition (3위)', org: '사내', year: 2018 },
+  { title: '부문 Idea Festival (3등) — NateOn 챗봇', org: '사내', year: 2018 },
+  { title: '하반기 부문장 Recognition', org: '사내', year: 2018 },
   { title: '슈퍼개발자K 시즌3 동상 — eGov OAuth', org: '표준프레임워크 오픈커뮤니티', year: 2014 },
 ];
 
