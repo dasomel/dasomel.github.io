@@ -10,7 +10,7 @@ interface SidebarProps {
 
 export default function Sidebar({ docs, locale }: SidebarProps) {
   const pathname = usePathname();
-  const base = locale === 'en' ? '/en' : '';
+  const base = locale === 'en' ? '/en' : '/ko';
 
   return (
     <aside className="w-64 flex-shrink-0">
