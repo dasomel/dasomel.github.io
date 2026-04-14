@@ -1,9 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { Github, MapPin, Briefcase, Shield, Award, FileText, Globe, Code } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Github, MapPin, Briefcase, Award, FileText, Globe, Code, ExternalLink, Users, ClipboardCheck } from 'lucide-react';
 import { narrativeIntro, communityActivities, mentoringActivities, expertActivities, awards, researchReports } from '@/lib/data/about';
-import { ExternalLink, Users, ClipboardCheck } from 'lucide-react';
 import { getSeminars } from '@/lib/content';
 
 export function generateStaticParams() {
@@ -14,6 +12,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'about' });
   return { title: t('title') };
+}
+
+function SectionHeader({ icon: Icon, title }: { icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>; title: string }) {
+  return (
+    <div className="flex items-center gap-4 mb-6">
+      <Icon className="w-4 h-4" style={{ color: 'var(--text-faint)' }} />
+      <h2 className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--text-faint)' }}>
+        {title}
+      </h2>
+      <div className="flex-1 border-t border-dashed" style={{ borderColor: 'var(--border)' }} />
+    </div>
+  );
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -86,22 +96,23 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const sortedAwards = [...awards].sort((a, b) => b.year - a.year);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 slide-enter-content">
       {/* Profile Header */}
       <section className="mb-16">
         <div className="flex items-start justify-between gap-6 mb-6">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">dasomel</h1>
-            <p className="text-lg text-emerald-600 font-medium mb-3">
+            <h1 className="text-4xl font-bold mb-2" style={{ color: 'var(--text)' }}>dasomel</h1>
+            <p className="text-lg font-medium mb-3" style={{ color: 'var(--accent)' }}>
               Cloud Engineer · Professor · Community Leader
             </p>
-            <div className="flex items-center gap-1.5 text-sm text-gray-500 mb-4">
+            <div className="flex items-center gap-1.5 text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
               <MapPin className="w-4 h-4" />
               <span>{isEn ? 'Korea' : '대한민국'}</span>
             </div>
             <div className="flex gap-3">
               <a href="https://github.com/dasomel" target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-gray-900 hover:bg-gray-50 transition-all">
+                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all hover:opacity-70"
+                 style={{ border: '1px solid var(--border)', color: 'var(--text)' }}>
                 <Github className="w-4 h-4" />
                 GitHub
               </a>
@@ -114,7 +125,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Narrative Intro */}
-      <div className="border-l-2 border-emerald-500 pl-4 my-8">
+      <div className="border-l-2 pl-4 my-8" style={{ borderColor: 'var(--accent)' }}>
         <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
           {isEn ? narrativeIntro.en : narrativeIntro.ko}
         </p>
@@ -122,42 +133,31 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Roles */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <Briefcase className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Roles' : '역할'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={Briefcase} title={isEn ? 'Roles' : '역할'} />
         <div className="space-y-4">
           {roles.map((r, i) => (
-            <Card key={i} className="p-5 border-l-4 border-l-emerald-500">
+            <div key={i} className="p-5 rounded-xl border-l-4"
+              style={{ border: '1px solid var(--border)', borderLeft: '4px solid var(--accent)' }}>
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div>
-                  <h3 className="font-bold text-gray-900">
+                  <h3 className="font-bold" style={{ color: 'var(--text)' }}>
                     {r.icon} {r.role}
                   </h3>
                   {'org' in r && r.org && (
-                    <p className="text-emerald-600 text-sm font-medium">{r.org}</p>
+                    <p className="text-sm font-medium" style={{ color: 'var(--accent)' }}>{r.org}</p>
                   )}
                 </div>
-                <span className="font-mono text-xs text-gray-400 whitespace-nowrap">{r.period}</span>
+                <span className="font-mono text-xs whitespace-nowrap" style={{ color: 'var(--text-faint)' }}>{r.period}</span>
               </div>
-              <p className="text-sm text-gray-500">{r.desc}</p>
-            </Card>
+              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{r.desc}</p>
+            </div>
           ))}
         </div>
       </section>
 
       {/* Community Activities */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <Globe className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Community' : '커뮤니티 활동'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={Globe} title={isEn ? 'Community' : '커뮤니티 활동'} />
         <div className="space-y-3">
           {communityActivities.map((a, i) => (
             <div key={i} className="p-4 rounded-xl" style={{ border: '1px solid var(--border)' }}>
@@ -173,7 +173,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <div className="flex gap-2 mt-2">
                   {a.urls.map((url, j) => (
                     <a key={j} href={url} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs hover:text-emerald-500 transition-colors" style={{ color: 'var(--text-faint)' }}>
+                      className="inline-flex items-center gap-1 text-xs transition-colors hover:opacity-70" style={{ color: 'var(--accent)' }}>
                       <ExternalLink className="w-3 h-3" /> {isEn ? 'Link' : '관련 기사'}
                     </a>
                   ))}
@@ -186,20 +186,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Mentoring */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <Users className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Mentoring' : '멘토링'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={Users} title={isEn ? 'Mentoring' : '멘토링'} />
         <div className="space-y-1">
           {mentoringActivities.map((a, i) => (
-            <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg transition-colors"
+              style={{ ['--hover-bg' as string]: 'var(--surface)' }}>
               <div className="flex-1 min-w-0">
                 <span className="text-sm" style={{ color: 'var(--text)' }}>
                   {a.url ? (
-                    <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">
+                    <a href={a.url} target="_blank" rel="noopener noreferrer" className="transition-colors hover:opacity-70">
                       {a.title}
                     </a>
                   ) : a.title}
@@ -219,16 +214,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Expert Activities */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <ClipboardCheck className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Expert Activities' : '전문가 활동'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={ClipboardCheck} title={isEn ? 'Expert Activities' : '전문가 활동'} />
         <div className="space-y-1">
           {expertActivities.map((a, i) => (
-            <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg transition-colors">
               <div className="flex-1 min-w-0">
                 <span className="text-sm" style={{ color: 'var(--text)' }}>{a.title}</span>
                 <span className="text-xs ml-2" style={{ color: 'var(--accent)' }}>({a.role})</span>
@@ -244,13 +233,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Awards */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <Award className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Awards' : '수상 이력'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={Award} title={isEn ? 'Awards' : '수상 이력'} />
         <div className="space-y-1">
           {sortedAwards.map((award, i) => (
             <div key={i} className="flex items-center justify-between py-2">
@@ -258,7 +241,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 className={`text-sm ${award.highlight ? 'font-bold' : ''}`}
                 style={{ color: award.highlight ? 'var(--accent)' : 'var(--text)' }}
               >
-                🏆 {award.title}
+                {award.url ? (
+                  <a href={award.url} target="_blank" rel="noopener noreferrer" className="transition-colors hover:opacity-70">
+                    🏆 {award.title}
+                  </a>
+                ) : (
+                  <>🏆 {award.title}</>
+                )}
               </span>
               <div className="flex items-center gap-2">
                 <span className="text-xs" style={{ color: 'var(--text-faint)' }}>{award.org}</span>
@@ -271,19 +260,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Research Reports */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <FileText className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Research Reports' : '연구보고서'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={FileText} title={isEn ? 'Research Reports' : '연구보고서'} />
         <div className="space-y-1">
           {researchReports.map((report, i) => (
             <div key={i} className="flex items-center justify-between py-2">
               {report.url ? (
                 <a href={report.url} target="_blank" rel="noopener noreferrer"
-                  className="text-sm hover:text-emerald-500 transition-colors" style={{ color: 'var(--text)' }}>
+                  className="text-sm transition-colors hover:opacity-70" style={{ color: 'var(--text)' }}>
                   📄 {report.title}
                 </a>
               ) : (
@@ -299,13 +282,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* Conference Wall */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <Globe className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Conferences' : '컨퍼런스'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={Globe} title={isEn ? 'Conferences' : '컨퍼런스'} />
         <div className="flex flex-wrap gap-2">
           {conferences.map(conf => (
             <span key={conf} className="px-2 py-1 text-xs rounded-md"
@@ -318,21 +295,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       {/* OSS Contributions */}
       <section className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <Code className="w-4 h-4 text-gray-400" />
-          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
-            {isEn ? 'Open Source' : '오픈소스 기여'}
-          </h2>
-          <div className="flex-1 border-t border-dashed border-gray-200" />
-        </div>
+        <SectionHeader icon={Code} title={isEn ? 'Open Source' : '오픈소스 기여'} />
         <div className="space-y-3">
           {contributions.map((c) => (
             <a key={c.name} href={c.url} target="_blank" rel="noopener noreferrer"
-               className="flex items-center justify-between p-4 border border-gray-100 rounded-xl hover:border-l-emerald-500 hover:shadow-sm transition-all group">
+               className="card-outline card-glow group flex items-center justify-between p-4 block">
               <div>
-                <span className="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">{c.name}</span>
-                <p className="text-sm text-gray-500 mt-0.5">{c.desc}</p>
+                <span className="font-bold transition-colors group-hover:text-emerald-400" style={{ color: 'var(--text)' }}>{c.name}</span>
+                <p className="text-sm mt-0.5" style={{ color: 'var(--text-muted)' }}>{c.desc}</p>
               </div>
+              <ExternalLink className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-faint)' }} />
             </a>
           ))}
         </div>
