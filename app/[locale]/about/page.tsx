@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Github, MapPin, Briefcase, Shield, Award, FileText, Globe, Code } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { narrativeIntro, expertActivities, awards, researchReports } from '@/lib/data/about';
-import { ExpertActivities } from '@/components/about/ExpertActivities';
+import { narrativeIntro, communityActivities, mentoringActivities, expertActivities, awards, researchReports } from '@/lib/data/about';
+import { ExternalLink, Users, ClipboardCheck } from 'lucide-react';
 import { getSeminars } from '@/lib/content';
 
 export function generateStaticParams() {
@@ -149,22 +149,97 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
+      {/* Community Activities */}
+      <section className="mb-16">
+        <div className="flex items-center gap-4 mb-6">
+          <Globe className="w-4 h-4 text-gray-400" />
+          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
+            {isEn ? 'Community' : '커뮤니티 활동'}
+          </h2>
+          <div className="flex-1 border-t border-dashed border-gray-200" />
+        </div>
+        <div className="space-y-3">
+          {communityActivities.map((a, i) => (
+            <div key={i} className="p-4 rounded-xl" style={{ border: '1px solid var(--border)' }}>
+              <div className="flex items-start justify-between gap-4 mb-1">
+                <div>
+                  <h3 className="text-sm font-bold" style={{ color: 'var(--text)' }}>{a.org}</h3>
+                  <span className="text-xs" style={{ color: 'var(--accent)' }}>{a.role}</span>
+                </div>
+                <span className="text-xs font-mono whitespace-nowrap" style={{ color: 'var(--text-faint)' }}>{a.period}</span>
+              </div>
+              <p className="text-xs mt-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>{a.desc}</p>
+              {a.urls && a.urls.length > 0 && (
+                <div className="flex gap-2 mt-2">
+                  {a.urls.map((url, j) => (
+                    <a key={j} href={url} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs hover:text-emerald-500 transition-colors" style={{ color: 'var(--text-faint)' }}>
+                      <ExternalLink className="w-3 h-3" /> {isEn ? 'Link' : '관련 기사'}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Mentoring */}
+      <section className="mb-16">
+        <div className="flex items-center gap-4 mb-6">
+          <Users className="w-4 h-4 text-gray-400" />
+          <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
+            {isEn ? 'Mentoring' : '멘토링'}
+          </h2>
+          <div className="flex-1 border-t border-dashed border-gray-200" />
+        </div>
+        <div className="space-y-1">
+          {mentoringActivities.map((a, i) => (
+            <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex-1 min-w-0">
+                <span className="text-sm" style={{ color: 'var(--text)' }}>
+                  {a.url ? (
+                    <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">
+                      {a.title}
+                    </a>
+                  ) : a.title}
+                </span>
+                {a.note && (
+                  <span className="text-xs ml-2" style={{ color: 'var(--accent)' }}>({a.note})</span>
+                )}
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0 ml-4">
+                <span className="text-xs" style={{ color: 'var(--text-faint)' }}>{a.org}</span>
+                <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{a.year}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Expert Activities */}
       <section className="mb-16">
         <div className="flex items-center gap-4 mb-6">
-          <Shield className="w-4 h-4 text-gray-400" />
+          <ClipboardCheck className="w-4 h-4 text-gray-400" />
           <h2 className="font-mono text-xs text-gray-400 uppercase tracking-wider">
             {isEn ? 'Expert Activities' : '전문가 활동'}
           </h2>
           <div className="flex-1 border-t border-dashed border-gray-200" />
         </div>
-        <ExpertActivities
-          activities={expertActivities}
-          labels={isEn
-            ? { all: 'All', advisory: 'Advisory', review: 'Review', mentoring: 'Mentoring' }
-            : { all: '전체', advisory: '자문', review: '심사', mentoring: '멘토링' }
-          }
-        />
+        <div className="space-y-1">
+          {expertActivities.map((a, i) => (
+            <div key={i} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex-1 min-w-0">
+                <span className="text-sm" style={{ color: 'var(--text)' }}>{a.title}</span>
+                <span className="text-xs ml-2" style={{ color: 'var(--accent)' }}>({a.role})</span>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0 ml-4">
+                <span className="text-xs" style={{ color: 'var(--text-faint)' }}>{a.org}</span>
+                <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{a.year}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Awards */}
