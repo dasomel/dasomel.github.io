@@ -40,6 +40,7 @@ export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
         tags: data.tags ?? [],
         image: data.image,
         draft: data.draft ?? false,
+        featured: data.featured ?? false,
         lang,
       };
     })
@@ -85,6 +86,7 @@ export function getSeminars(lang: 'ko' | 'en' = 'ko'): Seminar[] {
         slides: data.slides,
         video: data.video,
         tags: data.tags ?? [],
+        featured: data.featured ?? false,
         lang,
       };
     })
@@ -128,6 +130,9 @@ export function getProjects(lang: 'ko' | 'en' = 'ko'): Project[] {
         tags: data.tags ?? [],
         order: data.order,
         type: data.type,
+        featured: data.featured ?? false,
+        problem: data.problem,
+        solution: data.solution,
         lang,
       };
     })
@@ -149,6 +154,9 @@ export function getProjectBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta
       tags: data.tags ?? [],
       order: data.order,
       type: data.type,
+      featured: data.featured ?? false,
+      problem: data.problem,
+      solution: data.solution,
       lang,
     },
     content,
