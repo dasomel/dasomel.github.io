@@ -1,5 +1,40 @@
 # Changelog
 
+## [2026-04-15]
+
+### Design — Narrative Authority 사이트 전체 재설계
+
+- **홈페이지**: Hero 개인화 ("개발자에서 클라우드 인프라까지, N년의 여정"), Impact Bar (동적 계산), Featured Work (문제→해결 스토리 카드), Speaking Highlights
+- **About**: 내러티브 인트로, 역할 카드 3개, 커뮤니티 활동 (CloudBro/OPA/OPDC), 멘토링 9건, 전문가 활동 7건, 수상 이력 12건, 연구보고서 5편, 컨퍼런스 월, 오픈소스 기여, 프로필 이미지
+- **Speaking**: Summary Stats, Highlights, 타임라인 UI
+- **Work**: 태그 필터, 케이스 스터디 카드 (문제/해결 2컬럼), 컴팩트 카드
+- **Blog**: 태그 필터, 추천글 상단 고정, 읽기 시간 표시
+- **네비게이션**: Projects→Work, Seminars→Speaking, Posts→Blog 라벨 변경
+- **디자인 시스템**: 전 페이지 CSS 변수 기반 디자인 토큰 통일
+
+### Features
+
+- `rehype-pretty-code` + `shiki` 코드 블록 구문 하이라이트 추가
+- `remark-gfm` GFM 테이블 지원 추가
+- `mermaid` 아키텍처 다이어그램 렌더링 지원
+- 공통 컴포넌트: `ImpactStats`, `TagFilter`, `FeaturedCard`
+- Terraboard 아키텍처 ASCII → Mermaid 다이어그램 변환
+- OpenMetadata, KakaoCloud Terraform Provider 오픈소스 기여 반영
+
+### Content
+
+- 2025~2026년 세미나 8건 추가 (CloudBro, 숭실대, OpenInfra Days Korea 등)
+- 2016~2024년 누락 세미나 13건 추가
+- 수상 이력 실데이터 12건 반영
+- 멘토링 활동 9건, 전문가 활동 7건, 연구보고서 5편 반영
+- 문구 수정: K-PaaS Lite 파운더, 커뮤니티 참여 표현 변경
+
+### Fixes
+
+- Docs 사이드바 `/ko` 로케일 프리픽스 누락 수정
+- MDX `prose` 이중 래핑 제거
+- GFM 테이블 렌더링 수정
+
 ## [2026-02-26]
 
 ### Security
