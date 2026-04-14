@@ -90,7 +90,7 @@ export const expertActivities: ProfessionalActivity[] = [
 
 export const awards: Award[] = [
   { title: 'OPA Awards — 커뮤니티 히어로 부문', org: 'OPA', year: 2025, highlight: true, url: 'https://www.koit.co.kr/news/articleView.html?idxno=202085' },
-  { title: 'OPA Awards — 우수기여자 부문', org: 'OPA', year: 2024, url: 'https://opakorea.org/bbs/board.php?bo_table=notice&wr_id=59' },
+  { title: 'OPA Awards — 우수기여자 부문', org: 'OPA', year: 2024, highlight: true, url: 'https://opakorea.org/bbs/board.php?bo_table=notice&wr_id=59' },
   { title: '전자정부 표준프레임워크 컨트리뷰션 감사장', org: 'NIA', year: 2023 },
   { title: '전자정부 표준프레임워크 컨트리뷰션 감사장', org: 'NIA', year: 2022 },
   { title: '행정안전부장관 표창장', org: '행정안전부', year: 2021, highlight: true, url: 'https://www.egovframe.go.kr/home/ntt/nttRead.do?menuNo=74&bbsId=6&nttId=1836' },
