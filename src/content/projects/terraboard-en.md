@@ -33,17 +33,15 @@ This is a fork of [Camptocamp/terraboard](https://github.com/camptocamp/terraboa
 
 ## Architecture
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Browser   │────▶│  Terraboard │────▶│   Backend   │
-│   (Vue.js)  │     │   (Go API)  │     │ (S3/GCS/TC) │
-└─────────────┘     └─────────────┘     └─────────────┘
-                           │
-                           ▼
-                    ┌─────────────┐
-                    │  PostgreSQL │
-                    └─────────────┘
-```
+<Mermaid chart={`graph LR
+  A["🖥️ Browser<br/>(Vue.js)"] -->|HTTP| B["⚙️ Terraboard<br/>(Go API)"]
+  B -->|Query| C["☁️ Backend<br/>(S3 / GCS / TC)"]
+  B -->|Read/Write| D["🗄️ PostgreSQL"]
+  style A fill:#f0fdf4,stroke:#059669,color:#111
+  style B fill:#f0fdf4,stroke:#059669,color:#111
+  style C fill:#f9fafb,stroke:#d1d5db,color:#111
+  style D fill:#f9fafb,stroke:#d1d5db,color:#111
+`} />
 
 ## References
 
