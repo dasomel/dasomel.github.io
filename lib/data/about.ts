@@ -25,8 +25,8 @@ export interface NarrativeIntro {
 }
 
 export const narrativeIntro: NarrativeIntro = {
-  ko: '2013년 eGovFrame 커뮤니티에서 시작해, 클라우드 네이티브 인프라를 만들고 운영해왔습니다. K-PaaS Lite의 파운더로 참여하며, OPA와 OPDC 커뮤니티를 이끌고, 현재는 한국공학대학교에서 후배 엔지니어를 가르치고 있습니다.',
-  en: 'Starting from the eGovFrame community in 2013, I have been building and operating cloud-native infrastructure. As the founder of K-PaaS Lite, I lead the OPA and OPDC communities, and currently teach the next generation of engineers at Tech University of Korea.',
+  ko: '2013년 eGovFrame 커뮤니티에서 시작해, 클라우드 네이티브 인프라를 만들고 운영해왔습니다. K-PaaS Lite의 파운더로 참여하며, OPA와 OPDC 커뮤니티에 참여하고, 현재는 일과 병행하여 한국공학대학교에서 겸임교수로 수업하고 있습니다.',
+  en: 'Starting from the eGovFrame community in 2013, I have been building and operating cloud-native infrastructure. As the founder of K-PaaS Lite, I participate in the OPA and OPDC communities, and currently teach as an adjunct professor at Tech University of Korea alongside my engineering work.',
 };
 
 // TODO: 사용자가 실제 데이터로 교체해야 함
