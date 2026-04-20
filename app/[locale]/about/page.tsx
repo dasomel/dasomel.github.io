@@ -176,7 +176,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   {a.urls.map((url, j) => (
                     <a key={j} href={url} target="_blank" rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs transition-colors hover:opacity-70" style={{ color: 'var(--accent)' }}>
-                      <ExternalLink className="w-3 h-3" /> {isEn ? 'Link' : '관련 기사'}
+                      <ExternalLink className="w-3 h-3" /> {isEn ? 'Link' : '관련 링크'}
                     </a>
                   ))}
                 </div>
