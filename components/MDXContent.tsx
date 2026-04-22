@@ -23,6 +23,7 @@ export function MDXContent({ source }: MDXContentProps) {
       source={source}
       components={components}
       options={{
+        blockJS: false,
         mdxOptions: {
           remarkPlugins: [remarkGfm],
           rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
