@@ -78,6 +78,9 @@ npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
 > 실행하고 변경된 포스트를 커밋·PR로 올린다. (요약은 Cloud/DevOps
 > 엔지니어 관점, 한국어/영어 각각.)
 
+**바로 사용할 수 있는 전체 프롬프트 템플릿: [`scripts/digest-enrich-prompt.md`](../scripts/digest-enrich-prompt.md)**
+— Cowork 스케줄 태스크에 이 파일 내용을 그대로 붙여 넣으면 된다.
+
 ## 카테고리 매핑 (소스 기반, AI 불필요)
 
 | 카테고리 | 피드 |
