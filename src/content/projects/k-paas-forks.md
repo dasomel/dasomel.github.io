@@ -22,7 +22,15 @@ type: "fork"
 
 ### Chaos Engineering
 - **cp-chaos-api**: Chaos Engineering API
-- **cp-chaos-collector**: Chaos Engineering 모니터링 및 데이터 수집
+- **cp-chaos-collector**: Chaos Engineering으로 주입된 정책에 적용되는 리소스를 모니터링하고 데이터를 데이터베이스에 저장하는 수집 도구
+
+### Migration
+- **cp-migration-api**: 마이그레이션 API (Go)
+- **cp-migration-auth-api**: 마이그레이션 인증 API (Go)
+- **cp-migration-ui**: 마이그레이션 UI (JavaScript)
+
+### Remote
+- **cp-remote-api**: 원격 관리 API (Go)
 
 ### 인프라 관리
 - **cp-terraman**: Terraform 기반 인프라 관리

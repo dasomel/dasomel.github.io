@@ -60,7 +60,7 @@ export default async function SeminarPage({ params }: { params: Promise<{ locale
           </div>
         )}
       </header>
-      <article className="prose prose-gray max-w-none prose-a:text-emerald-600">
+      <article className="prose prose-lg prose-gray max-w-none prose-a:text-emerald-600">
         <MDXContent source={content} />
       </article>
     </div>

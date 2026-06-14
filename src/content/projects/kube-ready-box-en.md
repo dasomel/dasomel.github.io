@@ -1,6 +1,6 @@
 ---
 title: "Kube-Ready-Box"
-description: "Kubernetes-optimized Ubuntu 24.04 LTS Vagrant Box"
+description: "Kubernetes-optimized Ubuntu 24.04 / 26.04 LTS Vagrant Box"
 github: "https://github.com/dasomel/kube-ready-box"
 tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch"]
 order: 1
@@ -12,9 +12,27 @@ solution: "One-command local K8s cluster + essential tools auto-setup"
 
 ## Project Overview
 
-Kube-Ready-Box is an **OS-level optimized Ubuntu 24.04 LTS Vagrant Box for Kubernetes deployments**.
+Kube-Ready-Box is an **OS-level optimized Ubuntu LTS Vagrant Box for Kubernetes deployments**.
 
-Distributed on Vagrant Cloud as `dasomel/ubuntu-24.04`, it comes with pre-applied system tuning for container orchestration environments.
+It supports both **24.04 LTS** (Noble Numbat, default) and **26.04 LTS** (Resolute Raccoon, kernel Linux 7.0), with pre-applied system tuning for container orchestration environments.
+
+Distributed on Vagrant Cloud per version and filesystem:
+
+- 24.04 ext4: `dasomel/ubuntu-24.04-ext4` / xfs: `dasomel/ubuntu-24.04-xfs`
+- 26.04 ext4: `dasomel/ubuntu-26.04-ext4` / xfs: `dasomel/ubuntu-26.04-xfs`
+
+## 24.04 vs 26.04
+
+| | 24.04 LTS (Noble Numbat) | 26.04 LTS (Resolute Raccoon) |
+|---|---|---|
+| Kernel | 6.8 | **7.0** |
+| init / cgroup | systemd 255, cgroup v2 default | systemd 259, **cgroup v1 removed (v2-only)** |
+| Container runtime | containerd 1.7 | containerd 2.2 / runc 1.4 |
+| Crypto | TLS 1.2+ | **Post-quantum default** (OpenSSL 3.5 / OpenSSH 10.2) |
+| Core utilities | GNU coreutils, sudo | partial Rust rewrite (uutils, sudo-rs) |
+| Choose when | Maximum stability (**default**) | Latest LTS, kernel 7.0 features |
+
+> **K8s note**: 26.04 is cgroup v2-only, so set `SystemdCgroup=true` for kubelet/containerd. Both lines are tuned identically for Kubernetes.
 
 ## Key Features
 
@@ -24,6 +42,20 @@ Distributed on Vagrant Cloud as `dasomel/ubuntu-24.04`, it comes with pre-applie
 |----------|-------|-------|-------|
 | VirtualBox | ✅ | ✅ | VirtualBox 7.1+ required for ARM64 |
 | VMware Fusion | ✅ | ✅ | Apple Silicon supported |
+
+### Filesystem Selection (ext4 / xfs)
+
+| | ext4 | xfs |
+|---|---|---|
+| **Best for** | General purpose | K8s workloads, large files |
+| **K8s Quota** | No native support | `--local-storage-capacity-isolation` |
+| **Online Shrink** | Supported | Not supported |
+| **Box Size** | ~2.2GB | ~3.4GB |
+
+### Large Disk & Auto-Extension
+
+- **1TB Disk**: Large disk with thin provisioning (ext4 ~2.2GB, xfs ~3.4GB on disk)
+- **Auto-Extension**: Disk auto-extends on boot (partition → PV → LV → filesystem)
 
 ### Kubernetes Optimizations
 
@@ -58,6 +90,15 @@ net.bridge.bridge-nf-call-iptables = 1
 **Swap Disabled**
 - Completely removed to meet Kubernetes requirements
 
+### Pre-installed Tools
+
+| Category | Tools |
+|----------|-------|
+| **K8s Ecosystem** | jq, yq, bash-completion, nfs-common, sshpass |
+| **Monitoring** | sysstat, iotop, iftop, nload, nethogs, dool |
+| **Network Diag** | ipvsadm, ipset, conntrack, ethtool, tcpdump, nmap |
+| **Performance** | linux-tools, bpfcc-tools, bpftrace |
+
 ### What's NOT Included
 
 Intentionally excluded components (user choice):
@@ -75,13 +116,16 @@ Intentionally excluded components (user choice):
 ### Basic Usage
 
 ```bash
-# Initialize Vagrant
-vagrant init dasomel/ubuntu-24.04
+# 24.04 ext4 (default, stable, general purpose)
+vagrant init dasomel/ubuntu-24.04-ext4
+vagrant up --provider=vmware_desktop
 
-# Start VM (VirtualBox)
-vagrant up
+# 24.04 xfs (better for K8s ephemeral storage quota, large files)
+vagrant init dasomel/ubuntu-24.04-xfs
+vagrant up --provider=vmware_desktop
 
-# Start VM (VMware)
+# 26.04 (Resolute Raccoon, kernel Linux 7.0)
+vagrant init dasomel/ubuntu-26.04-ext4
 vagrant up --provider=vmware_desktop
 ```
 
@@ -89,7 +133,9 @@ vagrant up --provider=vmware_desktop
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.box = "dasomel/ubuntu-24.04"
+  # 24.04: "dasomel/ubuntu-24.04-ext4" or "dasomel/ubuntu-24.04-xfs"
+  # 26.04: "dasomel/ubuntu-26.04-ext4" or "dasomel/ubuntu-26.04-xfs"
+  config.vm.box = "dasomel/ubuntu-24.04-ext4"
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 4096
@@ -151,13 +197,20 @@ cd packer
 # Initialize Packer plugins
 ./build.sh init
 
-# Build specific box
-./build.sh vmware-arm64      # VMware ARM64
-./build.sh virtualbox-arm64  # VirtualBox ARM64
+# Build 24.04 (default)
+./build.sh vmware-arm64
+./build.sh vmware-arm64 --fs=xfs
 
-# Build all boxes (4 boxes)
-./build.sh all
+# Build 26.04
+./build.sh vmware-arm64 --version=26.04
+./build.sh vmware-arm64 --version=26.04 --fs=xfs
+
+# Build all boxes
+./build.sh all                  # 24.04 ext4
+./build.sh all --version=26.04  # 26.04 ext4
 ```
+
+> **CI**: Use the `ubuntu_version` input in the GitHub Actions `workflow_dispatch` trigger to select 24.04 or 26.04.
 
 ## AI Collaboration Directory
 
@@ -169,6 +222,7 @@ This repository includes an `.agent/` directory for AI coding assistants:
 
 ## References
 
-- **Vagrant Cloud**: [dasomel/ubuntu-24.04](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04)
+- **Vagrant Cloud (24.04)**: [ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-ext4) / [xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-xfs)
+- **Vagrant Cloud (26.04)**: [ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-ext4) / [xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-xfs)
 - **GitHub**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
 - **Kubernetes Docs**: [kubernetes.io](https://kubernetes.io/)

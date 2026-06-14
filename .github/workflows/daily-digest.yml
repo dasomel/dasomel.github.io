@@ -1,0 +1,81 @@
+name: Daily Tech Digest
+
+on:
+  schedule:
+    # 00:00 UTC = 09:00 KST
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install --no-save rss-parser @anthropic-ai/sdk
+
+      - name: Generate digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run digest
+
+      - name: Check for new posts
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain src/content/posts)" ]; then
+            echo "created=true" >> "$GITHUB_OUTPUT"
+            echo "date=$(TZ=Asia/Seoul date +%F)" >> "$GITHUB_OUTPUT"
+          else
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            echo "No new digest files — nothing to commit."
+          fi
+
+      - name: Build PR body
+        if: steps.changes.outputs.created == 'true'
+        id: body
+        run: |
+          DATE="${{ steps.changes.outputs.date }}"
+          {
+            echo "Automated daily tech digest for **${DATE}**."
+            echo ""
+            echo "Curated from Kubernetes, CNCF, The New Stack, AWS, Google Cloud, OpenAI, Hugging Face, HashiCorp, and Grafana feeds."
+            echo ""
+            echo "## Headlines"
+            # Pull each '### ' headline from the Korean digest as a checklist.
+            grep -h '^### ' "src/content/posts/daily-digest-${DATE}.md" \
+              | sed 's/^### /- /' || true
+            echo ""
+            echo "---"
+            echo "_🤖 Generated automatically. Review summaries against the original sources before merging._"
+          } > pr-body.md
+          echo "Generated PR body:"
+          cat pr-body.md
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.created == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: daily-digest/${{ steps.changes.outputs.date }}
+          base: main
+          commit-message: "docs: daily tech digest - ${{ steps.changes.outputs.date }}"
+          title: "📰 Daily Digest - ${{ steps.changes.outputs.date }}"
+          body-path: pr-body.md
+          draft: true
+          add-paths: |
+            src/content/posts/*.md
+          delete-branch: true

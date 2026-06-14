@@ -195,7 +195,7 @@ For external NFS servers, the agent supports running as a binary, Docker contain
 
 ## Tech Stack
 
-- **Language**: Go 1.24
+- **Language**: Go 1.25
 - **Kubernetes**: client-go v0.29 (PV/PVC/Namespace watching)
 - **Filesystem**: XFS, ext4 project quotas
 - **Deployment**: Helm Chart, Multi-arch container images (amd64, arm64, armv7)

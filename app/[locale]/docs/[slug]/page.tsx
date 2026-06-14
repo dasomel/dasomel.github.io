@@ -34,7 +34,7 @@ export default async function DocPage({ params }: { params: Promise<{ locale: st
               <p className="font-mono text-xs text-gray-400 mt-2">{meta.lastModified.slice(0, 10)}</p>
             )}
           </header>
-          <article className="prose prose-gray max-w-none prose-a:text-emerald-600 prose-headings:scroll-mt-20">
+          <article className="prose prose-lg prose-gray max-w-none prose-a:text-emerald-600 prose-headings:scroll-mt-20">
             <MDXContent source={content} />
           </article>
         </div>

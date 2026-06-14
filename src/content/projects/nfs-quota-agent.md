@@ -195,7 +195,7 @@ nfs_quota_exceeded_count 1
 
 ## 기술 스택
 
-- **언어**: Go 1.24
+- **언어**: Go 1.25
 - **Kubernetes**: client-go v0.29 (PV/PVC/Namespace 감시)
 - **파일시스템**: XFS, ext4 프로젝트 쿼터
 - **배포**: Helm Chart, Multi-arch 컨테이너 이미지 (amd64, arm64, armv7)
