@@ -104,7 +104,14 @@ async function main() {
   log('by category:', JSON.stringify(byCat));
 }
 
-main().catch((err) => {
-  console.error('[digest] FATAL:', err);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // rss-parser may leave keep-alive sockets open, which keeps the Node event
+    // loop alive and hangs the process (and the CI step) after work is done.
+    // Exit explicitly now that all output is written synchronously.
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error('[digest] FATAL:', err);
+    process.exit(1);
+  });

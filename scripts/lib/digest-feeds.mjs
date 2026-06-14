@@ -76,9 +76,22 @@ export function cleanText(s) {
     .trim();
 }
 
+/**
+ * Strip WordPress feed boilerplate like
+ * "The post <title> appeared first on <site>." which many RSS feeds
+ * (e.g. The New Stack) append to every item's content.
+ */
+export function stripBoilerplate(text) {
+  if (!text) return '';
+  return text
+    .replace(/\s*The post\b.*?\bappeared first on\b.*?(?:\.|$)/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /** First 1-2 sentences from an RSS description/summary, capped in length. */
 export function excerptFrom(raw, maxLen = 320) {
-  const text = cleanText(raw);
+  const text = stripBoilerplate(cleanText(raw));
   if (!text) return '';
   const sentences = text.match(/[^.!?。]+[.!?。]?/g) || [text];
   let out = '';
