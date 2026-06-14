@@ -1,0 +1,67 @@
+{
+  "date": "2026-06-15",
+  "generatedAt": "2026-06-14T15:57:01.781Z",
+  "count": 5,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "PagerDuty’s CAIO says most AI incident tools are missing a critical layer",
+      "link": "https://thenewstack.io/ai-incident-management-harness/",
+      "date": "2026-06-14T15:00:00.000Z",
+      "excerpt": "AI is empowering software teams to ship code faster than ever. Given that an average of 70% of incidents stem",
+      "summaryKo": "PagerDuty의 최고 AI 책임자(CAIO)는 대부분의 AI 장애 대응 도구가 MCP만으로는 부족하며 핵심 계층을 놓치고 있다고 지적한다. AI 덕분에 팀이 코드를 더 빠르게 배포하는 만큼 장애도 늘어나는 상황에서, 과거 인시던트 맥락을 기억하는 '에이전트 하니스(agentic harness)'가 있어야 실제로 다운타임을 줄일 수 있다는 주장이다.",
+      "summaryEn": "PagerDuty's Chief AI Officer argues that most AI incident-response tools, even those built on MCP, are missing a critical layer. As AI lets teams ship code faster, he says preventing downtime requires an agentic 'harness' with persistent memory of past incidents and context, not just model access.",
+      "insightKo": "장애 대응에 LLM이나 MCP를 붙이는 SRE·DevOps 팀이라면, 단발성 호출보다 과거 인시던트 맥락을 유지하는 상태(메모리) 설계가 MTTR 개선의 실질적 관건임을 시사한다.",
+      "insightEn": "For SRE/DevOps teams wiring LLMs or MCP into incident response, the real lever for reducing MTTR is persistent incident context (memory), not one-off model calls."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Fable 5 and Mythos 5 remain suspended: “The ball is in Anthropic’s court”",
+      "link": "https://thenewstack.io/fable-5-and-mythos-5-remain-suspended-the-ball-is-in-anthropics-court/",
+      "date": "2026-06-13T21:09:17.000Z",
+      "excerpt": "On Friday evening, Anthropic suddenly disabled its new flagship models, Fable 5 and Mythos 5, after the U.S.",
+      "summaryKo": "Anthropic이 미국의 수출 통제 명령 이후 신규 플래그십 모델 Fable 5와 Mythos 5를 갑자기 비활성화했고, 두 모델은 여전히 중단된 상태다. Anthropic은 이를 사소한 취약점을 둘러싼 '오해'라고 설명한 반면, 백악관은 회사가 안전보다 소비자용 모델을 앞세웠다고 비판하고 있다.",
+      "summaryEn": "Anthropic abruptly disabled its new flagship models, Fable 5 and Mythos 5, following a U.S. export-control order, and both remain suspended. Anthropic frames the order as a 'misunderstanding' over minor vulnerabilities, while the White House says the company prioritized its consumer model over safety.",
+      "insightKo": "특정 상용 LLM에 종속된 파이프라인을 운영한다면, 규제·정책 리스크로 모델이 하룻밤 사이에 중단될 수 있으므로 모델 추상화와 대체(failover) 전략을 미리 갖춰야 한다.",
+      "insightEn": "If your pipeline depends on a single commercial LLM, regulatory action can pull it offline overnight, making model abstraction and failover plans a real operational concern."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why AI retrieval and ranking need more than vector search",
+      "link": "https://thenewstack.io/tensors-beyond-vector-search/",
+      "date": "2026-06-13T18:00:00.000Z",
+      "excerpt": "A recent GigaOm CxO Decision Brief explores how AI retrieval architectures are evolving beyond flat vector databases as organizations combine",
+      "summaryKo": "GigaOm의 CxO 결정 브리핑은 프로덕션 환경의 AI 검색·랭킹이 단순한 벡터 검색만으로는 부족하다고 설명한다. 조직들이 평면적인 벡터 데이터베이스를 넘어, 텐서를 활용해 랭킹 신호와 머신러닝 피처를 하나의 아키텍처로 통합하는 방향으로 나아가고 있다는 분석이다.",
+      "summaryEn": "A GigaOm CxO Decision Brief argues that production AI retrieval and ranking need more than flat vector search. It explores how organizations are moving beyond vector databases to use tensors that unify ranking signals and machine-learning features in a single architecture.",
+      "insightKo": "RAG나 검색 시스템을 운영하는 팀이라면, 벡터 유사도라는 단일 지표에만 의존하기보다 랭킹·ML 신호를 함께 다루는 아키텍처를 검토할 시점임을 보여준다.",
+      "insightEn": "Teams running RAG or search should weigh architectures that combine ranking and ML signals rather than relying on vector similarity alone."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Can JetBrains close the IDE skills gap before AI widens it further?",
+      "link": "https://thenewstack.io/jetbrains-course-creators-program/",
+      "date": "2026-06-13T17:00:00.000Z",
+      "excerpt": "JetBrains recently launched a program to bring hands-on coding practice into its professional development environments, targeting the gap between how",
+      "summaryKo": "JetBrains는 교육자가 자사 IDE 안에 실습형 코딩 연습을 직접 넣을 수 있는 'Course Creators Program'을 새로 출시했다. AI가 코드를 점점 더 많이 작성하는 시대일수록 기초적인 개발 역량이 오히려 더 중요해진다는 것이 이 프로그램의 전제다.",
+      "summaryEn": "JetBrains launched a new Course Creators Program that lets educators embed hands-on coding practice directly inside its IDEs. The program's premise is that as AI writes more code, foundational developer skills matter more, not less.",
+      "insightKo": "팀의 온보딩과 역량 강화를 고민하는 엔지니어링 리더에게, AI 보조 코딩 시대에도 기본기를 쌓고 검증하는 학습 경로 설계가 여전히 필요함을 환기한다.",
+      "insightEn": "For engineering leaders thinking about onboarding and upskilling, it is a reminder that AI-assisted coding still requires deliberate paths to build and verify fundamentals."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Loops are replacing prompts. Verification is about to be your biggest problem.",
+      "link": "https://thenewstack.io/agent-loops-cloud-native-verification/",
+      "date": "2026-06-13T16:00:00.000Z",
+      "excerpt": "Something shifted in the AI coding discourse this month. The argument is no longer about whether agents can write production",
+      "summaryKo": "AI 코딩의 패러다임이 단발성 프롬프트에서 자율적으로 반복 실행되는 '루프(loop)'로 옮겨가고 있다. 에이전트가 프로덕션 코드를 점점 더 많이 생성하면서, 그 결과물을 검증(verification)하는 일이 클라우드 네이티브 엔지니어링 팀의 가장 큰 과제가 될 것이라는 전망이다.",
+      "summaryEn": "AI coding is shifting from one-shot prompts to autonomous agent 'loops.' As agents generate more production code, verifying that output becomes the central challenge for cloud-native engineering teams.",
+      "insightKo": "에이전트가 생성한 코드를 배포 파이프라인에 태우는 팀이라면, 테스트·정책 게이트·런타임 검증 등 '검증 자동화'에 대한 투자가 곧 병목이자 차별화 요소가 될 것이다.",
+      "insightEn": "For teams shipping agent-generated code, investment in automated verification (tests, policy gates, runtime checks) will be both the bottleneck and the differentiator."
+    }
+  ]
+}
