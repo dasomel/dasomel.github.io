@@ -4,7 +4,7 @@ Next.js 15 + next-intl 정적 사이트(GitHub Pages, `output: export`). 빌드:
 
 ## ⚠️ package-lock.json 재생성 규칙 (CI 빌드 깨짐 방지)
 
-CI는 **Linux + Node 20(npm 10)** 에서 `npm ci`로 설치한다. macOS(특히 Apple Silicon) 로컬에서 lock을 생성하면 두 가지가 어긋나 **로컬은 통과하지만 CI는 실패**한다. 반드시 아래를 지킨다.
+CI는 **Linux + Node 22(npm 10)** 에서 `npm ci`로 설치한다. macOS(특히 Apple Silicon) 로컬에서 lock을 생성하면 두 가지가 어긋나 **로컬은 통과하지만 CI는 실패**한다. 반드시 아래를 지킨다.
 
 1. **플랫폼별 optional 네이티브 의존성을 모두 보존할 것.**
    `next-intl` → `@parcel/watcher`는 13개 플랫폼 변종(`linux-x64-glibc` 등)을 갖는다. macOS에서 `package-lock.json`을 **삭제 후 재생성**하면 호스트(`darwin-arm64`)만 기록되어 CI(linux)에서 `No prebuild or local build of @parcel/watcher found` 빌드 에러가 난다.
