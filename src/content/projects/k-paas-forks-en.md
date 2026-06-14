@@ -22,7 +22,15 @@ Forked Portal components from [K-PaaS Container Platform](https://github.com/k-p
 
 ### Chaos Engineering
 - **cp-chaos-api**: Chaos Engineering API
-- **cp-chaos-collector**: Chaos Engineering monitoring and data collection
+- **cp-chaos-collector**: Ingestion tool that monitors resources applied by Chaos Engineering policies and stores the data in a database
+
+### Migration
+- **cp-migration-api**: Migration API (Go)
+- **cp-migration-auth-api**: Migration Auth API (Go)
+- **cp-migration-ui**: Migration UI (JavaScript)
+
+### Remote
+- **cp-remote-api**: Remote management API (Go)
 
 ### Infrastructure Management
 - **cp-terraman**: Terraform-based infrastructure management

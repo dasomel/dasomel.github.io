@@ -26,15 +26,28 @@ This is a fork of [Camptocamp/terraboard](https://github.com/camptocamp/terraboa
 - **Module Grouping**: Group resources by module
 
 ### Backend Support
-- AWS S3
+- AWS S3 (state) + DynamoDB (lock)
+- S3-compatible backends (e.g. MinIO)
 - Google Cloud Storage
-- Azure Blob Storage
-- Terraform Cloud/Enterprise
+- Terraform Cloud (remote)
+- GitLab
+
+Multiple buckets/providers can be configured at once, and a PostgreSQL database is required to store Terraboard's internal dataset.
+
+## What This Fork Adds
+
+This fork modernizes the container build and release pipeline.
+
+- **Multi-architecture images**: amd64/arm64 Docker images published to GHCR
+- **Supply chain security**: SBOM generation, SLSA provenance attestation, and Cosign keyless signing with verification
+- **Updated toolchain**: Go 1.23, upgraded to Terraform 1.13.5 internal packages (removing the hashicorp/terraform dependency)
+- **Automated releases**: automatic GitHub Release creation and refined OCI labels/annotations
+- Latest version: v2.5.1
 
 ## Architecture
 
 <Mermaid chart={`graph LR
-  A["🖥️ Browser<br/>(Vue.js)"] -->|HTTP| B["⚙️ Terraboard<br/>(Go API)"]
+  A["🖥️ Browser<br/>(AngularJS)"] -->|HTTP| B["⚙️ Terraboard<br/>(Go API)"]
   B -->|Query| C["☁️ Backend<br/>(S3 / GCS / TC)"]
   B -->|Read/Write| D["🗄️ PostgreSQL"]
   style A fill:#f0fdf4,stroke:#059669,color:#111

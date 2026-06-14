@@ -60,13 +60,23 @@ solution: "멀티 아키텍처 빌드 파이프라인을 구성하여 ARM 호환
 
 ```bash
 # Harbor 이미지 Pull (아키텍처 자동 선택)
-docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.12.0
-docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.12.0
-docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.12.0
-docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.14.2
 
 # Trivy 어댑터
-docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.14.2
+```
+
+### 이미지 서명 검증
+
+Cosign으로 이미지 서명을 검증할 수 있습니다.
+
+```bash
+cosign verify ghcr.io/dasomel/goharbor/harbor-core:latest \
+  --certificate-identity-regexp="https://github.com/dasomel/harbor" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
 
 ## 업스트림 동기화
@@ -75,9 +85,9 @@ docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.12.0
 
 | 버전 | AMD64 | ARM64 | 업스트림 |
 |------|-------|-------|----------|
+| v2.14.x | ✅ | ✅ | goharbor/harbor v2.14 |
+| v2.13.x | ✅ | ✅ | goharbor/harbor v2.13 |
 | v2.12.x | ✅ | ✅ | goharbor/harbor v2.12 |
-| v2.11.x | ✅ | ✅ | goharbor/harbor v2.11 |
-| v2.10.x | ✅ | ✅ | goharbor/harbor v2.10 |
 
 ## 주요 변경 이력
 

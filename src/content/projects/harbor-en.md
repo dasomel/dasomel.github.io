@@ -60,13 +60,23 @@ Images follow the official Helm chart compatible naming convention.
 
 ```bash
 # Pull Harbor images (architecture auto-selected)
-docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.12.0
-docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.12.0
-docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.12.0
-docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.14.2
 
 # Trivy adapter
-docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.12.0
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.14.2
+```
+
+### Verifying Image Signatures
+
+Image signatures can be verified with Cosign.
+
+```bash
+cosign verify ghcr.io/dasomel/goharbor/harbor-core:latest \
+  --certificate-identity-regexp="https://github.com/dasomel/harbor" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
 
 ## Upstream Synchronization
@@ -75,9 +85,9 @@ This fork is automatically synchronized with the official Harbor repository. Ups
 
 | Version | AMD64 | ARM64 | Upstream |
 |---------|-------|-------|----------|
+| v2.14.x | ✅ | ✅ | goharbor/harbor v2.14 |
+| v2.13.x | ✅ | ✅ | goharbor/harbor v2.13 |
 | v2.12.x | ✅ | ✅ | goharbor/harbor v2.12 |
-| v2.11.x | ✅ | ✅ | goharbor/harbor v2.11 |
-| v2.10.x | ✅ | ✅ | goharbor/harbor v2.10 |
 
 ## Change History
 
