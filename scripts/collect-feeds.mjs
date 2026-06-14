@@ -89,6 +89,35 @@ async function main() {
 
   fs.mkdirSync(DATA_DIR, { recursive: true });
   const outPath = path.join(DATA_DIR, `${date}.json`);
+  /**
+   * Output JSON schema — src/content/posts/.digest-data/YYYY-MM-DD.json
+   *
+   * {
+   *   date: "YYYY-MM-DD",            // KST date
+   *   generatedAt: ISO-8601 string,
+   *   count: number,
+   *   articles: [
+   *     {
+   *       // --- written by this collector ---
+   *       source:   string,          // feed name, e.g. "Kubernetes"
+   *       category: "k8s"|"ai"|"cloud"|"devops",
+   *       title:    string,          // original article title
+   *       link:     string,          // original URL
+   *       date:     ISO-8601 string, // article publish date
+   *       excerpt:  string,          // 1-2 sentence RSS excerpt (may be "")
+   *
+   *       // --- optional, added later by the Phase 2 Cowork/Claude step ---
+   *       // All optional. `generate-daily-digest.mjs --enrich` uses these when
+   *       // present and falls back to `excerpt` per-field when absent.
+   *       summaryKo?: string,        // 2-3 sentence Korean summary
+   *       summaryEn?: string,        // 2-3 sentence English summary
+   *       insightKo?: string,        // 1 sentence "why it matters" (Korean)
+   *       insightEn?: string,        // 1 sentence "why it matters" (English)
+   *     },
+   *     ...
+   *   ]
+   * }
+   */
   const payload = {
     date,
     generatedAt: new Date().toISOString(),
