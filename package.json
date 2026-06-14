@@ -20,7 +20,7 @@
     "lucide-react": "^0.468.0",
     "mermaid": "^11.14.0",
     "next": "^15.5.18",
-    "next-intl": "^4.9.1",
+    "next-intl": "~4.11.2",
     "next-mdx-remote": "^6.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
