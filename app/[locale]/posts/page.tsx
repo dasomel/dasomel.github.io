@@ -40,7 +40,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text)' }}>
         {t('title')}
       </h1>
-      <p className="text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
+      <p className="text-base mb-8" style={{ color: 'var(--text-muted)' }}>
         {t('subtitle')}
       </p>
       <PostList

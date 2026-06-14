@@ -53,11 +53,11 @@ export function PostList({ posts, base, translations }: Props) {
                 {featuredPost.readTime}
               </span>
             </div>
-            <h3 className="text-sm font-semibold mb-1" style={{ color: 'var(--text)' }}>
+            <h3 className="text-base font-semibold mb-1" style={{ color: 'var(--text)' }}>
               {featuredPost.title}
             </h3>
             {featuredPost.description && (
-              <p className="text-xs leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-sm leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>
                 {featuredPost.description}
               </p>
             )}
@@ -86,12 +86,12 @@ export function PostList({ posts, base, translations }: Props) {
             style={{ border: '1px solid var(--border)' }}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-medium mb-1 group-hover:text-emerald-400 transition-colors"
+                <h3 className="text-base font-medium mb-1 group-hover:text-emerald-400 transition-colors"
                   style={{ color: 'var(--text)' }}>
                   {post.title}
                 </h3>
                 {post.description && (
-                  <p className="text-xs mb-2 line-clamp-1" style={{ color: 'var(--text-muted)' }}>
+                  <p className="text-sm mb-2 line-clamp-1" style={{ color: 'var(--text-muted)' }}>
                     {post.description}
                   </p>
                 )}

@@ -68,7 +68,7 @@ export function ProjectList({ projects, base, translations }: Props) {
               </div>
 
               {project.problem && project.solution && (
-                <div className="flex gap-4 mb-3 text-xs">
+                <div className="flex gap-4 mb-3 text-sm">
                   <div className="flex-1">
                     <div className="font-semibold mb-1" style={{ color: 'var(--accent)' }}>{translations.problem}</div>
                     <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed">{project.problem}</p>
@@ -100,11 +100,11 @@ export function ProjectList({ projects, base, translations }: Props) {
             style={{ border: '1px solid var(--border)' }}>
             <div>
               <Link href={`${base}/projects/${project.slug}`}
-                className="text-sm font-semibold hover:text-emerald-400 transition-colors"
+                className="text-base font-semibold hover:text-emerald-400 transition-colors"
                 style={{ color: 'var(--text)' }}>
                 {project.title}
               </Link>
-              <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-sm mt-0.5" style={{ color: 'var(--text-muted)' }}>
                 {project.description}
               </p>
             </div>
