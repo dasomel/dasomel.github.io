@@ -24,13 +24,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: |
-          npm ci
-          npm install --no-save rss-parser @anthropic-ai/sdk
+        run: npm ci
 
-      - name: Generate digest
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Collect RSS feeds
+        run: npm run digest:collect
+
+      - name: Generate digest posts
         run: npm run digest
 
       - name: Check for new posts
@@ -78,4 +77,5 @@ jobs:
           draft: true
           add-paths: |
             src/content/posts/*.md
+            src/content/posts/.digest-data/*.json
           delete-branch: true
