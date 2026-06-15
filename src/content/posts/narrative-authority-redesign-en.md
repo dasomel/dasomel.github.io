@@ -3,7 +3,7 @@ title: "Redesigned the Site with Narrative Authority Design"
 description: "The story of transforming a flat blog into a professional portfolio combining narrative and authority"
 pubDate: 2026-04-15
 tags: ["Design", "Next.js", "Portfolio"]
-featured: true
+featured: false
 ---
 
 ## Why Redesign

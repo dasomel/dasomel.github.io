@@ -3,7 +3,7 @@ title: "사이트를 Narrative Authority 디자인으로 재설계했습니다"
 description: "평면적 블로그에서 '내러티브 + 권위'가 결합된 전문가 포트폴리오로 전환한 이야기"
 pubDate: 2026-04-15
 tags: ["디자인", "Next.js", "포트폴리오"]
-featured: true
+featured: false
 ---
 
 ## 왜 재설계했나
