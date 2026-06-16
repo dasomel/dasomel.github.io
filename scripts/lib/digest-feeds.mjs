@@ -40,7 +40,7 @@ export const FEEDS = [
   { name: 'Kubernetes', url: 'https://kubernetes.io/feed.xml', category: 'k8s' },
   { name: 'CNCF', url: 'https://www.cncf.io/blog/feed/', category: 'k8s' },
   { name: 'AWS Containers', url: 'https://aws.amazon.com/blogs/containers/feed/', category: 'k8s' },
-  { name: 'OpenAI', url: 'https://openai.com/blog/rss/', category: 'ai' },
+  { name: 'OpenAI', url: 'https://openai.com/news/rss.xml', category: 'ai' },
   { name: 'Hugging Face', url: 'https://huggingface.co/blog/feed.xml', category: 'ai' },
   { name: 'Google Cloud', url: 'https://cloudblog.withgoogle.com/rss/', category: 'cloud' },
   { name: 'HashiCorp', url: 'https://www.hashicorp.com/blog/feed.xml', category: 'devops' },
