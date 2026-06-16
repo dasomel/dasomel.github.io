@@ -1,0 +1,103 @@
+{
+  "date": "2026-06-16",
+  "generatedAt": "2026-06-16T02:29:07.308Z",
+  "count": 12,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The Anthropic Fable mess, explained",
+      "link": "https://thenewstack.io/anthropic-fable-mess-explained/",
+      "date": "2026-06-15T18:24:34.000Z",
+      "excerpt": "The Anthropic-Mythos-Fable story has been The Topic since Friday, and it moved fast enough to lose anyone who blinked. Here’s my opinionated"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new in data agents: Supercharging your AI workflows",
+      "link": "https://cloud.google.com/blog/products/data-analytics/new-data-agents-across-the-agentic-data-cloud/",
+      "date": "2026-06-15T17:00:00.000Z",
+      "excerpt": "The rise of AI agents is fundamentally disrupting applications and analytical systems. Generic AI platforms don't usually have access to the context stored within enterprise databases."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense",
+      "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-the-4-lessons-that-guided-ai-threat-defense/",
+      "date": "2026-06-15T16:00:00.000Z",
+      "excerpt": "Welcome to the first Cloud CISO Perspectives for June 2026. Today, we introduce Chris Betz as the new CISO of Google Cloud."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Architecting a trusted agentic platform with graph technologies: A Yahoo case study",
+      "link": "https://cloud.google.com/blog/products/databases/graph-technologies-underpin-yahoo-system-of-action/",
+      "date": "2026-06-15T16:00:00.000Z",
+      "excerpt": "As enterprises adopt agentic AI, they need to shift from reactive systems of intelligence to proactive systems of action to equip the agents they’re building with the context and performance they need, plus regulator-grade accountability, where every decision is explainable and auditable."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Implementing workload identity with HashiCorp Vault and SPIFFE",
+      "link": "https://www.hashicorp.com/blog/implementing-workload-identity-with-hashicorp-vault-and-spiffe",
+      "date": "2026-06-15T16:00:00.000Z",
+      "excerpt": "Modern workloads are making machine identity strategy harder, not easier. Teams want a standard way to name and verify workloads, but they also need a realistic path from identity to access control."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cohere sold sovereign AI to enterprises, now it’s targeting developers with its first coding model",
+      "link": "https://thenewstack.io/cohere-sovereign-coding-model-north-mini-code/",
+      "date": "2026-06-15T14:54:16.000Z",
+      "excerpt": "Canadian foundation model company Cohere has spent the past few years selling a specific idea to banks, governments, and healthcare"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "date": "2026-06-15T14:00:00.000Z",
+      "excerpt": "Written by: Patrick Whitsell, John McGuiness Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI-generated app runs on their cloud, and that’s the problem",
+      "link": "https://thenewstack.io/your-ai-generated-app-runs-on-their-cloud-and-thats-the-problem/",
+      "date": "2026-06-15T13:50:16.000Z",
+      "excerpt": "The prompt-to-app loop has gotten genuinely good. Describe the thing, watch it appear, click deploy."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "We’ve been measuring AI wrong; why economically valuable work is the new benchmark",
+      "link": "https://thenewstack.io/agents-last-exam-benchmark/",
+      "date": "2026-06-15T13:42:33.000Z",
+      "excerpt": "As the AI industry gradually builds standardization guidelines and systems, such as those overseen by the Tokenonmics Foundation, the need"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Code is a message to the future",
+      "link": "https://thenewstack.io/code-message-to-future/",
+      "date": "2026-06-15T12:00:00.000Z",
+      "excerpt": "Engineers communicate constantly. Slack messages, design docs, RFC threads, code review comments: the job is as much about sharing intent"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Improving Arm64 support in CNCF projects with OCI credits",
+      "link": "https://www.cncf.io/blog/2026/06/15/improving-arm64-support-in-cncf-projects-with-oci-credits/",
+      "date": "2026-06-15T11:00:00.000Z",
+      "excerpt": "In recent years, Arm64 has been taking the cloud service provider world by storm. Recent reports indicate that, as of the end of 2025, over 50% of new instances on AWS and over 33% on Azure."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How I learned Go in a Day with Antigravity 2.0 and How You Can Do the Same",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/how-i-learned-go-in-a-day-with-antigravity-20-and-how-you-can-do-the-same/",
+      "date": "2026-06-15T09:29:00.000Z",
+      "excerpt": "I have been exploring how to reclaim my software stack from NPM dependency overhead and replace my resource-intensive Node.js runtime with a compiled, single-binary Go CLI."
+    }
+  ]
+}
