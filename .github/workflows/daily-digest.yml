@@ -2,17 +2,27 @@ name: Daily Tech Digest
 
 on:
   schedule:
-    # 00:00 UTC = 09:00 KST
-    - cron: '0 0 * * *'
+    # 21:40 UTC = 06:40 KST (next day).
+    # Deliberately OFF the top-of-hour (and off 00:00 UTC, the single most
+    # congested cron slot) to reduce GitHub's scheduled-run delay, and early
+    # enough that the data is ready well before the KST-afternoon enrich step.
+    - cron: '40 21 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
 
+# Never let two digest runs (e.g. a delayed cron + a manual dispatch) overlap.
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
 jobs:
   digest:
     runs-on: ubuntu-latest
+    # Bound the known feed-collection hang risk so a stuck run can't burn minutes.
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6

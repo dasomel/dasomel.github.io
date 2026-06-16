@@ -33,6 +33,14 @@ import {
 
 const WINDOW_MS = 24 * 60 * 60 * 1000;
 const MAX_ARTICLES = 60; // generous cap; markdown step trims for display
+const FETCH_TIMEOUT_MS = 20000;
+const RETRIES = 2; // total attempts per feed = RETRIES + 1
+const FAIL_RATIO_ABORT = 0.5; // if > this fraction of feeds fail, treat the whole run as failed
+// Some feeds (e.g. OpenAI) reject the default rss-parser UA with 403; send a real one.
+const USER_AGENT =
+  'Mozilla/5.0 (compatible; dasomel-digest-bot/1.0; +https://github.com/dasomel/dasomel.github.io)';
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function articleDate(item) {
   const raw = item.isoDate || item.pubDate || item.published || item.date;
@@ -42,46 +50,80 @@ function articleDate(item) {
 }
 
 async function collectArticles() {
-  const parser = new Parser({ timeout: 20000 });
+  const parser = new Parser({
+    timeout: FETCH_TIMEOUT_MS,
+    headers: { 'User-Agent': USER_AGENT },
+  });
   const cutoff = Date.now() - WINDOW_MS;
   const articles = [];
+  const failures = [];
+  let ok = 0;
 
   for (const feed of FEEDS) {
-    try {
-      const parsed = await parser.parseURL(feed.url);
-      let count = 0;
-      for (const item of parsed.items || []) {
-        const date = articleDate(item);
-        if (!date || date.getTime() < cutoff) continue;
-        const link = (item.link || '').trim();
-        const title = cleanText(item.title);
-        if (!link || !title) continue;
-        articles.push({
-          source: feed.name,
-          category: feed.category, // stable category key from source
-          title,
-          link,
-          date: date.toISOString(),
-          excerpt: excerptFrom(item.contentSnippet || item.content || item.summary),
-        });
-        count++;
+    // Retry transient errors (5xx / timeouts) with linear backoff.
+    let parsed = null;
+    let lastErr = null;
+    for (let attempt = 0; attempt <= RETRIES; attempt++) {
+      try {
+        parsed = await parser.parseURL(feed.url);
+        lastErr = null;
+        break;
+      } catch (err) {
+        lastErr = err;
+        if (attempt < RETRIES) await sleep(1000 * (attempt + 1));
       }
-      log(`${feed.name}: ${count} recent article(s)`);
-    } catch (err) {
-      log(`WARN: failed to fetch ${feed.name} (${feed.url}): ${err.message}`);
     }
+    if (!parsed) {
+      failures.push({ name: feed.name, url: feed.url, error: lastErr ? lastErr.message : 'unknown' });
+      log(`WARN: failed to fetch ${feed.name} (${feed.url}) after ${RETRIES + 1} attempt(s): ${lastErr ? lastErr.message : 'unknown'}`);
+      continue;
+    }
+    ok++;
+    let count = 0;
+    for (const item of parsed.items || []) {
+      const date = articleDate(item);
+      if (!date || date.getTime() < cutoff) continue;
+      const link = (item.link || '').trim();
+      const title = cleanText(item.title);
+      if (!link || !title) continue;
+      articles.push({
+        source: feed.name,
+        category: feed.category, // stable category key from source
+        title,
+        link,
+        date: date.toISOString(),
+        excerpt: excerptFrom(item.contentSnippet || item.content || item.summary),
+      });
+      count++;
+    }
+    log(`${feed.name}: ${count} recent article(s)`);
   }
 
   // Newest first, then cap.
   articles.sort((a, b) => new Date(b.date) - new Date(a.date));
-  return articles.slice(0, MAX_ARTICLES);
+  return { articles: articles.slice(0, MAX_ARTICLES), ok, failed: failures.length, failures };
 }
 
 async function main() {
   const date = kstDateString();
   log(`collecting feeds for ${date}`);
 
-  const articles = await collectArticles();
+  const { articles, ok, failed, failures } = await collectArticles();
+  log(`feed health: ${ok}/${FEEDS.length} ok, ${failed} failed`);
+
+  // Distinguish an infrastructure failure from a genuinely quiet news day.
+  // If every feed failed, or more than half failed, exit non-zero so the CI
+  // run is marked failed (and visible) instead of silently writing no file —
+  // which previously looked identical to "no news today".
+  if (ok === 0 || failed / FEEDS.length > FAIL_RATIO_ABORT) {
+    console.error(
+      `[digest] ERROR: ${failed}/${FEEDS.length} feeds failed — aborting. ` +
+        `This is likely a network/feed outage, not a quiet news day.`,
+    );
+    for (const f of failures) console.error(`  - ${f.name} (${f.url}): ${f.error}`);
+    process.exit(1);
+  }
+
   if (articles.length === 0) {
     log('no articles found in the last 24h — skipping today (no file written)');
     process.exit(0);
