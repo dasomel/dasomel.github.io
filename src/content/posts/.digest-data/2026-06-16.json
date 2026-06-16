@@ -9,7 +9,11 @@
       "title": "The Anthropic Fable mess, explained",
       "link": "https://thenewstack.io/anthropic-fable-mess-explained/",
       "date": "2026-06-15T18:24:34.000Z",
-      "excerpt": "The Anthropic-Mythos-Fable story has been The Topic since Friday, and it moved fast enough to lose anyone who blinked. Here’s my opinionated"
+      "excerpt": "The Anthropic-Mythos-Fable story has been The Topic since Friday, and it moved fast enough to lose anyone who blinked. Here’s my opinionated",
+      "summaryKo": "The New Stack가 지난 금요일부터 빠르게 번진 Anthropic 관련 'Fable/Mythos' 논란을 시간순으로 정리한 의견 기사다. 짧은 시간에 여러 갈래로 전개돼 맥락을 놓치기 쉬웠던 사안을 필자 관점에서 해설한다.",
+      "summaryEn": "An opinionated explainer from The New Stack that untangles the fast-moving Anthropic 'Fable/Mythos' story that dominated discussion since Friday. It reconstructs the sequence of events for readers who lost the thread.",
+      "insightKo": "벤더의 모델·브랜딩 변화는 API 통합과 모델 선택에 직접 영향을 주므로, 빠르게 도는 소문보다 공식 발표로 사실관계를 확인한 뒤 통합을 조정하는 편이 안전하다.",
+      "insightEn": "Vendor model/branding shifts ripple into API integrations and model choice, so confirm the facts against official announcements before changing integrations rather than reacting to fast-moving rumor."
     },
     {
       "source": "Google Cloud",
@@ -17,7 +21,11 @@
       "title": "What’s new in data agents: Supercharging your AI workflows",
       "link": "https://cloud.google.com/blog/products/data-analytics/new-data-agents-across-the-agentic-data-cloud/",
       "date": "2026-06-15T17:00:00.000Z",
-      "excerpt": "The rise of AI agents is fundamentally disrupting applications and analytical systems. Generic AI platforms don't usually have access to the context stored within enterprise databases."
+      "excerpt": "The rise of AI agents is fundamentally disrupting applications and analytical systems. Generic AI platforms don't usually have access to the context stored within enterprise databases.",
+      "summaryKo": "Google Cloud가 엔터프라이즈 데이터에 접근하는 'data agents' 신규 기능을 소개한다. 범용 AI가 갖지 못한 사내 데이터베이스 컨텍스트를 에이전트가 활용하도록 해 분석·AI 워크플로를 강화하는 데 초점을 둔다.",
+      "summaryEn": "Google Cloud outlines new 'data agents' capabilities that connect AI agents to enterprise data. The focus is giving agents the in-database context that generic AI platforms lack, to strengthen analytical and AI workflows.",
+      "insightKo": "데이터 웨어하우스에 에이전트를 직접 붙이는 흐름이 강해지는 만큼, 도입 전에 데이터 접근 권한과 거버넌스 설계를 점검해 둘 필요가 있다.",
+      "insightEn": "As agents get wired directly into the data warehouse, revisit data-access controls and governance before adopting them."
     },
     {
       "source": "Google Cloud",
@@ -25,7 +33,11 @@
       "title": "Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense",
       "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-the-4-lessons-that-guided-ai-threat-defense/",
       "date": "2026-06-15T16:00:00.000Z",
-      "excerpt": "Welcome to the first Cloud CISO Perspectives for June 2026. Today, we introduce Chris Betz as the new CISO of Google Cloud."
+      "excerpt": "Welcome to the first Cloud CISO Perspectives for June 2026. Today, we introduce Chris Betz as the new CISO of Google Cloud.",
+      "summaryKo": "Google Cloud의 6월 첫 'Cloud CISO Perspectives'로, AI 위협 방어를 이끈 네 가지 교훈을 공유한다. 또한 Chris Betz를 Google Cloud의 신임 CISO로 소개한다.",
+      "summaryEn": "Google Cloud's first June 2026 Cloud CISO Perspectives shares the four lessons that shaped its AI Threat Defense work. It also introduces Chris Betz as the new CISO of Google Cloud.",
+      "insightKo": "클라우드 보안 리더십 교체와 AI 위협 방어 원칙은 보안팀이 위협 모델과 대응 전략을 갱신할 때 참고할 입력이 된다.",
+      "insightEn": "A change in cloud security leadership plus stated AI-defense principles are useful inputs when security teams update their threat models and response playbooks."
     },
     {
       "source": "Google Cloud",
@@ -33,7 +45,11 @@
       "title": "Architecting a trusted agentic platform with graph technologies: A Yahoo case study",
       "link": "https://cloud.google.com/blog/products/databases/graph-technologies-underpin-yahoo-system-of-action/",
       "date": "2026-06-15T16:00:00.000Z",
-      "excerpt": "As enterprises adopt agentic AI, they need to shift from reactive systems of intelligence to proactive systems of action to equip the agents they’re building with the context and performance they need, plus regulator-grade accountability, where every decision is explainable and auditable."
+      "excerpt": "As enterprises adopt agentic AI, they need to shift from reactive systems of intelligence to proactive systems of action to equip the agents they’re building with the context and performance they need, plus regulator-grade accountability, where every decision is explainable and auditable.",
+      "summaryKo": "Yahoo 사례로 그래프 기술을 활용해 신뢰할 수 있는 에이전트 플랫폼을 설계하는 방법을 다룬다. 반응형 '인텔리전스 시스템'에서 능동형 '액션 시스템'으로 전환하면서 모든 결정이 설명·감사 가능하도록 규제 수준의 책임성을 확보하는 데 초점을 둔다.",
+      "summaryEn": "A Yahoo case study on architecting a trusted agentic platform using graph technologies. It covers moving from reactive systems of intelligence to proactive systems of action while keeping every decision explainable and auditable to a regulator-grade standard.",
+      "insightKo": "에이전트 결정의 추적·감사 가능성이 요구되는 규제 산업이라면, 그래프 기반 컨텍스트 저장이 감사 로깅·설명가능성 설계의 현실적 선택지가 될 수 있다.",
+      "insightEn": "For regulated domains that need traceable, auditable agent decisions, graph-based context stores are a practical option for audit logging and explainability."
     },
     {
       "source": "HashiCorp",
@@ -41,7 +57,11 @@
       "title": "Implementing workload identity with HashiCorp Vault and SPIFFE",
       "link": "https://www.hashicorp.com/blog/implementing-workload-identity-with-hashicorp-vault-and-spiffe",
       "date": "2026-06-15T16:00:00.000Z",
-      "excerpt": "Modern workloads are making machine identity strategy harder, not easier. Teams want a standard way to name and verify workloads, but they also need a realistic path from identity to access control."
+      "excerpt": "Modern workloads are making machine identity strategy harder, not easier. Teams want a standard way to name and verify workloads, but they also need a realistic path from identity to access control.",
+      "summaryKo": "HashiCorp Vault와 SPIFFE를 결합해 워크로드 아이덴티티를 구현하는 방법을 설명한다. 워크로드를 표준 방식으로 명명·검증하고, 그 아이덴티티를 실제 접근 제어로 연결하는 현실적 경로를 제시한다.",
+      "summaryEn": "A walkthrough of implementing workload identity by combining HashiCorp Vault with SPIFFE. It covers a standard way to name and verify workloads and a realistic path from that identity to access control.",
+      "insightKo": "정적 시크릿 대신 SPIFFE 기반 워크로드 아이덴티티로 옮기면 시크릿 유출 면을 줄일 수 있어, 제로트러스트를 추진하는 플랫폼팀이 참고할 패턴이다.",
+      "insightEn": "Moving from static secrets to SPIFFE-based workload identity shrinks the secret-leak surface, a useful pattern for platform teams pursuing zero trust."
     },
     {
       "source": "The New Stack",
@@ -49,7 +69,11 @@
       "title": "Cohere sold sovereign AI to enterprises, now it’s targeting developers with its first coding model",
       "link": "https://thenewstack.io/cohere-sovereign-coding-model-north-mini-code/",
       "date": "2026-06-15T14:54:16.000Z",
-      "excerpt": "Canadian foundation model company Cohere has spent the past few years selling a specific idea to banks, governments, and healthcare"
+      "excerpt": "Canadian foundation model company Cohere has spent the past few years selling a specific idea to banks, governments, and healthcare",
+      "summaryKo": "그동안 은행·정부·의료에 '소버린(주권) AI'를 판매해 온 Cohere가 첫 코딩 모델을 내놓으며 개발자 시장을 겨냥한다. 규제·데이터 주권을 중시하는 고객층을 기반으로 코드 생성 영역으로 확장하는 행보다.",
+      "summaryEn": "Cohere, which has spent years selling 'sovereign AI' to banks, governments, and healthcare, is releasing its first coding model to target developers. It extends from a regulation- and data-sovereignty-focused base into code generation.",
+      "insightKo": "데이터 주권·온프레미스 배포가 가능한 코딩 모델 선택지가 늘면 규제 산업의 사내 개발 도구 도입 검토에 영향을 준다.",
+      "insightEn": "More coding-model options with data-sovereignty and on-prem deployment expand the choices for regulated industries evaluating in-house dev tooling."
     },
     {
       "source": "Google Cloud",
@@ -57,7 +81,11 @@
       "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
       "link": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
       "date": "2026-06-15T14:00:00.000Z",
-      "excerpt": "Written by: Patrick Whitsell, John McGuiness Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community."
+      "excerpt": "Written by: Patrick Whitsell, John McGuiness Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community.",
+      "summaryKo": "Google Threat Intelligence Group(GTIG)이 PRC 연계 위협 행위자 'UNC6508'의 정교한 캠페인을 식별했다고 보고했다. 북미 학계·의료·군사 연구 기관을 표적으로 AI·사이버·의료·국방 연구를 노린 정황이 드러났다.",
+      "summaryEn": "Google Threat Intelligence Group (GTIG) reports it identified a sophisticated campaign by UNC6508, a PRC-nexus threat actor. The activity targeted North American academic, medical, and military research institutions across AI, cyber, medical, and national-defense research.",
+      "insightKo": "연구·의료 인프라를 운영하는 조직은 해당 행위자의 TTP를 위협 인텔리전스 피드와 탐지 룰에 반영해 침해 지표를 점검해야 한다.",
+      "insightEn": "Organizations running research or medical infrastructure should fold this actor's TTPs into their threat-intel feeds and detection rules and check for indicators of compromise."
     },
     {
       "source": "The New Stack",
@@ -65,7 +93,11 @@
       "title": "Your AI-generated app runs on their cloud, and that’s the problem",
       "link": "https://thenewstack.io/your-ai-generated-app-runs-on-their-cloud-and-thats-the-problem/",
       "date": "2026-06-15T13:50:16.000Z",
-      "excerpt": "The prompt-to-app loop has gotten genuinely good. Describe the thing, watch it appear, click deploy."
+      "excerpt": "The prompt-to-app loop has gotten genuinely good. Describe the thing, watch it appear, click deploy.",
+      "summaryKo": "프롬프트로 앱을 생성해 곧바로 배포하는 흐름이 정교해졌지만, 그 앱이 결국 특정 벤더의 클라우드에 종속된다는 점을 문제로 짚는 의견 기사다. 편리함의 이면에 있는 락인과 통제권 상실을 지적한다.",
+      "summaryEn": "An opinion piece arguing that while the prompt-to-app-to-deploy loop has gotten good, the generated app ends up locked to a specific vendor's cloud. It highlights the lock-in and loss of control behind the convenience.",
+      "insightKo": "AI 앱 빌더의 편의가 곧 인프라 종속으로 이어질 수 있으므로, 이식성(포터빌리티)과 출구 전략을 도입 초기에 평가해야 한다.",
+      "insightEn": "The convenience of AI app builders can translate into infrastructure lock-in, so evaluate portability and an exit strategy early in adoption."
     },
     {
       "source": "The New Stack",
@@ -73,7 +105,11 @@
       "title": "We’ve been measuring AI wrong; why economically valuable work is the new benchmark",
       "link": "https://thenewstack.io/agents-last-exam-benchmark/",
       "date": "2026-06-15T13:42:33.000Z",
-      "excerpt": "As the AI industry gradually builds standardization guidelines and systems, such as those overseen by the Tokenonmics Foundation, the need"
+      "excerpt": "As the AI industry gradually builds standardization guidelines and systems, such as those overseen by the Tokenonmics Foundation, the need",
+      "summaryKo": "AI 성능 측정 기준을 기존 시험형 벤치마크에서 '경제적으로 가치 있는 실제 업무' 수행 능력으로 옮겨야 한다고 주장하는 기사다. 표준화 논의가 진전되는 가운데 새로운 벤치마크 방향을 제시한다.",
+      "summaryEn": "An article arguing that AI evaluation should shift from exam-style benchmarks to the ability to perform economically valuable real-world work. It frames a new benchmark direction as industry standardization efforts mature.",
+      "insightKo": "모델 도입을 검토하는 팀은 추상적 벤치마크 점수보다 자사 업무 시나리오에서의 실제 성과로 평가 기준을 잡는 편이 현실적이다.",
+      "insightEn": "Teams evaluating models are better served judging them on real performance in their own task scenarios than on abstract benchmark scores."
     },
     {
       "source": "The New Stack",
@@ -81,7 +117,11 @@
       "title": "Code is a message to the future",
       "link": "https://thenewstack.io/code-message-to-future/",
       "date": "2026-06-15T12:00:00.000Z",
-      "excerpt": "Engineers communicate constantly. Slack messages, design docs, RFC threads, code review comments: the job is as much about sharing intent"
+      "excerpt": "Engineers communicate constantly. Slack messages, design docs, RFC threads, code review comments: the job is as much about sharing intent",
+      "summaryKo": "코드를 미래의 동료(그리고 미래의 자신)에게 보내는 '의도의 메시지'로 바라보는 에세이다. 슬랙·설계 문서·리뷰 코멘트처럼 코드 역시 의도를 전달하는 커뮤니케이션 수단임을 강조한다.",
+      "summaryEn": "An essay framing code as a message to the future—to other engineers and to your future self. It stresses that, like Slack messages, design docs, and review comments, code is fundamentally about communicating intent.",
+      "insightKo": "가독성과 명확한 의도 표현이 유지보수 비용을 좌우하므로, 리뷰·문서화 관행에 '미래 독자' 관점을 넣는 것이 장기적으로 이득이다.",
+      "insightEn": "Readability and clear intent drive maintenance cost, so baking a 'future reader' lens into review and documentation practices pays off long term."
     },
     {
       "source": "CNCF",
@@ -89,7 +129,11 @@
       "title": "Improving Arm64 support in CNCF projects with OCI credits",
       "link": "https://www.cncf.io/blog/2026/06/15/improving-arm64-support-in-cncf-projects-with-oci-credits/",
       "date": "2026-06-15T11:00:00.000Z",
-      "excerpt": "In recent years, Arm64 has been taking the cloud service provider world by storm. Recent reports indicate that, as of the end of 2025, over 50% of new instances on AWS and over 33% on Azure."
+      "excerpt": "In recent years, Arm64 has been taking the cloud service provider world by storm. Recent reports indicate that, as of the end of 2025, over 50% of new instances on AWS and over 33% on Azure.",
+      "summaryKo": "CNCF가 OCI(Oracle Cloud Infrastructure) 크레딧을 활용해 CNCF 프로젝트의 Arm64 지원을 개선하는 노력을 소개한다. 2025년 말 기준 AWS 신규 인스턴스의 50% 이상, Azure의 33% 이상이 Arm64일 만큼 확산된 상황을 배경으로 든다.",
+      "summaryEn": "CNCF describes using OCI (Oracle Cloud Infrastructure) credits to improve Arm64 support across CNCF projects. It cites that, by the end of 2025, over 50% of new AWS instances and over 33% on Azure were Arm64.",
+      "insightKo": "오픈소스 클라우드 네이티브 도구의 Arm64 지원이 강화되면 비용·전력 효율을 노린 Arm 이전이 쉬워져 인프라팀의 아키텍처 선택지가 넓어진다.",
+      "insightEn": "Stronger Arm64 support across cloud native tooling makes cost- and power-efficiency-driven Arm migrations easier, widening infra teams' architecture options."
     },
     {
       "source": "Google Cloud",
@@ -97,7 +141,11 @@
       "title": "How I learned Go in a Day with Antigravity 2.0 and How You Can Do the Same",
       "link": "https://cloud.google.com/blog/topics/developers-practitioners/how-i-learned-go-in-a-day-with-antigravity-20-and-how-you-can-do-the-same/",
       "date": "2026-06-15T09:29:00.000Z",
-      "excerpt": "I have been exploring how to reclaim my software stack from NPM dependency overhead and replace my resource-intensive Node.js runtime with a compiled, single-binary Go CLI."
+      "excerpt": "I have been exploring how to reclaim my software stack from NPM dependency overhead and replace my resource-intensive Node.js runtime with a compiled, single-binary Go CLI.",
+      "summaryKo": "NPM 의존성 과부하에서 벗어나 무거운 Node.js 런타임을 컴파일된 단일 바이너리 Go CLI로 대체한 경험을, 'Antigravity 2.0' 도구의 도움으로 하루 만에 Go를 익힌 과정과 함께 소개한다. AI 보조 도구를 활용한 빠른 언어 학습 사례다.",
+      "summaryEn": "A developer recounts replacing a heavy Node.js runtime and NPM dependency overhead with a compiled, single-binary Go CLI, learning Go in a day with help from the 'Antigravity 2.0' tool. It's a case study in AI-assisted rapid language learning.",
+      "insightKo": "AI 보조 도구가 새 언어·런타임 전환 비용을 낮추는 만큼, 의존성·콜드스타트가 부담인 CLI/도구를 Go 같은 단일 바이너리로 재작성하는 선택을 재고할 만하다.",
+      "insightEn": "As AI assistants lower the cost of switching languages and runtimes, it's worth reconsidering rewriting dependency-heavy or cold-start-sensitive CLIs as single-binary Go tools."
     }
   ]
 }
