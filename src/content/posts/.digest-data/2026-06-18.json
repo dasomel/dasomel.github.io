@@ -1,0 +1,167 @@
+{
+  "date": "2026-06-18",
+  "generatedAt": "2026-06-17T23:06:54.412Z",
+  "count": 20,
+  "articles": [
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cloud Network Insights: end-to-end observability for the Cross-Cloud Network",
+      "link": "https://cloud.google.com/blog/products/networking/cloud-network-insights-end-to-end-cross-cloud-observability/",
+      "date": "2026-06-17T19:30:00.000Z",
+      "excerpt": "In today’s digital landscape, the network is no longer confined to a single data center or even a single cloud provider."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“A data lake of nuance for AI agents to swim in”: AWS Context gets shipshape on reasoning",
+      "link": "https://thenewstack.io/aws-context-knowledge-graph-agents/",
+      "date": "2026-06-17T18:00:00.000Z",
+      "excerpt": "AI consumes a lot of data, but all-you-can-eat data in the world of agentic intelligence eventually loses its flavor. Simply"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Kiro goes mobile: AWS brings agentic coding supervision to the iPhone",
+      "link": "https://thenewstack.io/aws-kiro-mobile-ios-agentic-coding/",
+      "date": "2026-06-17T17:00:00.000Z",
+      "excerpt": "AWS has launched a native iOS app for Kiro, its AI-powered development environment, giving developers a way to monitor, steer,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Vercel launches eve, an open-source framework that treats agents as directories",
+      "link": "https://thenewstack.io/vercel-launches-eve-an-open-source-framework-that-treats-agents-as-directories/",
+      "date": "2026-06-17T16:59:00.000Z",
+      "excerpt": "Vercel on Wednesday launched eve, a new open-source framework for building AI agents that treats each agent as a directory of"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "How Block manages its fleet of AI coding agents from Slack",
+      "link": "https://thenewstack.io/how-block-manages-its-fleet-of-ai-coding-agents-from-slack/",
+      "date": "2026-06-17T16:01:00.000Z",
+      "excerpt": "Most AI coding tools work well inside a single repository. But few of them can operate across hundreds of services"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Chainguard Agent Skills matures",
+      "link": "https://thenewstack.io/chainguard-agent-skills-matures/",
+      "date": "2026-06-17T16:00:00.000Z",
+      "excerpt": "Chainguard is expanding its push to secure the fast‑growing world of AI coding agents with a new public registry of"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "MolmoMotion: Language-guided 3D motion forecasting",
+      "link": "https://huggingface.co/blog/allenai/molmomotion",
+      "date": "2026-06-17T15:26:44.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AWS puts an AI bouncer at the merge queue",
+      "link": "https://thenewstack.io/aws-devops-agent-ai-delivery-pipeline/",
+      "date": "2026-06-17T15:00:00.000Z",
+      "excerpt": "The bottleneck in software development has moved. Writing code is no longer the constraint."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Agents need boring infrastructure around them”: Why we need to take an interest in ‘invisible’ AI",
+      "link": "https://thenewstack.io/tailscale-aperture-ai-agent-infrastructure/",
+      "date": "2026-06-17T13:44:22.000Z",
+      "excerpt": "AI is already inside most enterprises’ IT stacks, but it’s had a somewhat shambolic and unsystematic early adolescence. Employees use"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google, Microsoft, and OpenAI join forces to help create AI’s missing trust layer",
+      "link": "https://thenewstack.io/google-microsoft-and-openai-join-forces-to-help-create-ais-missing-trust-layer/",
+      "date": "2026-06-17T13:27:38.000Z",
+      "excerpt": "The Linux Foundation has long transcended its roots as a steward of the Linux kernel, emerging as a “foundation of"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI isn’t broken. Your data is.",
+      "link": "https://thenewstack.io/clario-data-enterprise-ai-rot/",
+      "date": "2026-06-17T13:00:00.000Z",
+      "excerpt": "Enterprises are pouring billions into AI and getting garbage back. A new startup says it knows why and has built"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/06/17/why-cloud-native-belongs-at-the-heart-of-agentic-ai-lessons-from-building-a-multi-agent-security-platform-on-kubernetes/",
+      "date": "2026-06-17T11:00:00.000Z",
+      "excerpt": "In March, I gave a talk at KubeCon + CloudNativeCon Europe 2026 in Amsterdam. After the session, the same questions kept coming up on the CNCF Slack and in person: why build agentic AI on cloud."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot",
+      "link": "https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware",
+      "date": "2026-06-17T10:18:05.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry",
+      "link": "https://openai.com/index/ai-chemist-improves-reaction",
+      "date": "2026-06-17T10:00:00.000Z",
+      "excerpt": "OpenAI and Molecule.one show how a near-autonomous AI chemist using GPT-5."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "GLM-5.2: Built for Long-Horizon Tasks",
+      "link": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "date": "2026-06-17T09:01:25.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How growing UK midsize businesses are building in the AI era",
+      "link": "https://cloud.google.com/blog/topics/startups/london-summit-2026-smb-sme-ai-innovation/",
+      "date": "2026-06-17T08:00:00.000Z",
+      "excerpt": "The UK’s 5-million-plus small and midsize businesses and enterprises (SMBs) are the backbone of our economy. Today, we’re seeing these critical businesses begin to put AI to work, to operate more efficiently, move faster, and ultimately deliver better outcomes for their customers."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "From AI potential to agentic reality: Driving the UK’s next chapter",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/london-summit-2026-uk-leads-agentic-enterprise-ai-infrastructure-data-cloud/",
+      "date": "2026-06-17T08:00:00.000Z",
+      "excerpt": "The United Kingdom, and London in particular, continues to be one of the great hubs for AI development in Europe and the world."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing LifeSciBench",
+      "link": "https://openai.com/index/introducing-life-sci-bench",
+      "date": "2026-06-17T00:00:00.000Z",
+      "excerpt": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Agentic Resource Discovery: Let agents search",
+      "link": "https://huggingface.co/blog/agentic-resource-discovery-launch",
+      "date": "2026-06-17T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Build and Deploy a Remote MCP Server to GKE in 30 Minutes",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-gke-in-30-minutes/",
+      "date": "2026-06-17T00:00:00.000Z",
+      "excerpt": "Build and Deploy a Remote MCP Server to GKE in 30 Minutes Integrating context from tools and data sources into LLMs can be challenging, which impacts the ease of development for AI agents."
+    }
+  ]
+}
