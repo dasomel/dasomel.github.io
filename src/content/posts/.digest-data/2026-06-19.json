@@ -1,0 +1,151 @@
+{
+  "date": "2026-06-19",
+  "generatedAt": "2026-06-18T23:23:27.871Z",
+  "count": 18,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Gusto Cofounder: An AI agent that runs payroll, HR, and benefits without waiting to be asked",
+      "link": "https://thenewstack.io/gusto-cofounder-small-business-ai/",
+      "date": "2026-06-18T20:40:59.000Z",
+      "excerpt": "Almost every startup or small business today has a wingperson, a principal working partner, or a co-founder. When it comes"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "MCP gets its missing enterprise authorization layer",
+      "link": "https://thenewstack.io/mcp-gets-its-missing-enterprise-authorization-layer/",
+      "date": "2026-06-18T18:21:43.000Z",
+      "excerpt": "Every enterprise company is seemingly trying to adopt the Model Context Protocol (MCP) to connect its AI agents to tools. But so"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "MosaicLeaks: Can your research agent keep a secret?",
+      "link": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+      "date": "2026-06-18T18:13:13.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cursor, GitLab and Zed agree GitHub is breaking. They disagree on how to rebuild it.",
+      "link": "https://thenewstack.io/cursor-origin-github-disruption/",
+      "date": "2026-06-18T17:32:35.000Z",
+      "excerpt": "The biggest news to emerge from the AI world this week was undoubtedly that Elon Musk’s SpaceX had agreed to"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "New usage analytics and updated spend controls for enterprises",
+      "link": "https://openai.com/index/chatgpt-enterprise-spend-controls",
+      "date": "2026-06-18T17:00:00.000Z",
+      "excerpt": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Scaling Ray Serve LLM on GKE: Performance without losing the developer experience",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/improving-ray-serve-llm-on-gke-throughput-latency/",
+      "date": "2026-06-18T16:00:00.000Z",
+      "excerpt": "Developers looking for LLM inference and model serving often turn to Ray Serve, a scalable model serving library with developer-friendly, Python-native APIs built by Anyscale."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Neoclouds, sovereign AI and Postgres: The new operating model for regulated enterprises",
+      "link": "https://thenewstack.io/neoclouds-postgres-sovereign-ai/",
+      "date": "2026-06-18T15:00:00.000Z",
+      "excerpt": "Inference is now the dominant force in enterprise AI — and with it has come an inconvenient reality: Data is"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The database storage problem is solved. Here’s what comes next.",
+      "link": "https://thenewstack.io/postgres-data-movement-interoperability/",
+      "date": "2026-06-18T14:00:00.000Z",
+      "excerpt": "For most of its 30-year history, Postgres has been viewed as a transactional database. Organizations trust it with customer records,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Fable 5 ban: 4 open models responded before Anthropic could restore access",
+      "link": "https://thenewstack.io/fable-ban-open-weights/",
+      "date": "2026-06-18T13:34:01.000Z",
+      "excerpt": "On Friday, June 12, the United States government ordered Anthropic to suspend Claude Fable 5 and Mythos 5 for all"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI pipeline is broken, and your dashboards don’t know it",
+      "link": "https://thenewstack.io/debugging-probabilistic-ai-systems/",
+      "date": "2026-06-18T13:00:00.000Z",
+      "excerpt": "Recently, a crucial RAG pipeline used by one of our corporate clients began hallucinating about financial numbers without notifying us"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Scaling the Next Generation of Global Innovation: How Google Supports Top Startups Around the World",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/scaling-the-next-generation-of-global-innovation-how-google-supports-top-startups-around-the-world/",
+      "date": "2026-06-18T12:51:00.000Z",
+      "excerpt": "In the high-stakes world of tech entrepreneurship, the leap from a brilliant prototype to a scalable, market-defining business can be brutal. Founders need much more than capital; they need deep architectural guidance, sovereign-level policy alignment, and technical systems engineered to enable rapid growth."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Improving health intelligence in ChatGPT",
+      "link": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
+      "date": "2026-06-18T11:00:00.000Z",
+      "excerpt": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
+      "link": "https://openai.com/index/diagnose-rare-childhood-diseases",
+      "date": "2026-06-18T08:00:00.000Z",
+      "excerpt": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Agent Factory Recap: 100X engineering with AI agents in Google Antigravity 2.0",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/agent-factory-recap-100x-engineering-with-ai-agents-in-google-antigravity-20/",
+      "date": "2026-06-18T07:00:00.000Z",
+      "excerpt": "In this episode of the Agent Factory, I sat down with Rody Davis, one of Google’s top agentic engineers. We dive into the massive shift from traditional IDEs to agent-first platforms, the reality of code reviews in an AI-driven world, and how to use \"skills\" to perform at a 100X level."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Choice, compliance, and collaboration: Europe’s path to open digital sovereignty",
+      "link": "https://cloud.google.com/blog/products/identity-security/choice-compliance-and-collaboration-europes-path-to-open-digital-sovereignty/",
+      "date": "2026-06-18T07:00:00.000Z",
+      "excerpt": "The European Commission’s Tech Sovereignty Package comes at a defining moment for the continent's digital future. European competitiveness and security are top of the agenda for European business, institutions, and citizens, and a significant investment in European digital capacity is needed to deliver those goals."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Expanding CARE: Passing CKS can now extend your CKA certification",
+      "link": "https://www.cncf.io/blog/2026/06/17/expanding-care-passing-cks-can-now-extend-your-cka-certification/",
+      "date": "2026-06-18T04:50:00.000Z",
+      "excerpt": "A few months ago, CNCF introduced the CARE Program — Certification Advancement & Recertification Experience — to make it easier for certified professionals to keep their credentials current as they continue growing their cloud native skills."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Beyond LoRA: Can you beat the most popular fine-tuning technique?",
+      "link": "https://huggingface.co/blog/peft-beyond-lora",
+      "date": "2026-06-18T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Is it agentic enough? Benchmarking open models on your own tooling",
+      "link": "https://huggingface.co/blog/is-it-agentic-enough",
+      "date": "2026-06-18T00:00:00.000Z",
+      "excerpt": ""
+    }
+  ]
+}
