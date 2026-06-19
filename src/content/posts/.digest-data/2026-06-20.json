@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-20",
+  "generatedAt": "2026-06-19T22:34:30.207Z",
+  "count": 5,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Time to clean up human slop”: Why AI now reviews code better than your teammate.",
+      "link": "https://thenewstack.io/ai-code-review-self-review/",
+      "date": "2026-06-19T17:30:00.000Z",
+      "excerpt": "As AI models now take over the core processes of writing code, the conversation has shifted to how effectively we"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-06-19T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Checkmarx’s new SAST engine isn’t about the LLM. It’s about what happens after.",
+      "link": "https://thenewstack.io/checkmarx-ai-llm-sast-security/",
+      "date": "2026-06-19T16:00:00.000Z",
+      "excerpt": "The major static application security testing (SAST) vendors are now wrapping a large language model around their legacy scanning engines"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“I think this is costing us more than we realize”: what permissionless ownership really asks of you",
+      "link": "https://thenewstack.io/permissionless-ownership-raising-hand/",
+      "date": "2026-06-19T14:30:00.000Z",
+      "excerpt": "Most people do not stay quiet because they have nothing to say. They stay quiet because speaking up changes their"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic overhauled Claude Design to fix the handoff. A designer and an engineer disagree on whether it worked.",
+      "link": "https://thenewstack.io/anthropic-claude-design-overhaul/",
+      "date": "2026-06-19T13:35:00.000Z",
+      "excerpt": "Anthropic this week announced a major overhaul of Claude Design, the design tool it launched in April as a research"
+    }
+  ]
+}
