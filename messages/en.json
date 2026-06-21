@@ -4,6 +4,7 @@
     "speaking": "Speaking",
     "docs": "K-PaaS Lite",
     "blog": "Blog",
+    "events": "Seoul Events",
     "about": "About",
     "lang": "한국어"
   },
@@ -55,6 +56,17 @@
   "seminars": {
     "slides": "Slides",
     "video": "Video"
+  },
+  "events": {
+    "title": "Seoul Events",
+    "subtitle": "Cultural events & festivals in Seoul (via Seoul Open Data Plaza)",
+    "updated_at": "As of {date}",
+    "upcoming": "Ongoing · Upcoming",
+    "past": "Past Events",
+    "free": "Free",
+    "paid": "Paid",
+    "no_events": "No events available",
+    "no_events_desc": "Updated automatically every day"
   },
   "about": {
     "title": "About"

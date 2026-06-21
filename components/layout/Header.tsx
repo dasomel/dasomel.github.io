@@ -29,6 +29,7 @@ export default function Header({ locale }: HeaderProps) {
     { href: `${base}/seminars`, label: t('speaking') },
     { href: `${base}/docs/about`, label: t('docs') },
     { href: `${base}/posts`, label: t('blog') },
+    { href: `${base}/events`, label: t('events') },
     { href: `${base}/about`, label: t('about') },
   ];
 

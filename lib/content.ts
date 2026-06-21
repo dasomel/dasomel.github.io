@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import type { Post, Seminar, Project, Doc } from './types';
+import type { Post, Seminar, Project, Doc, SeoulEventsData } from './types';
 
 const contentDir = path.join(process.cwd(), 'src/content');
 
@@ -201,4 +201,14 @@ export function getDocBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Do
     },
     content,
   };
+}
+
+export function getSeoulEvents(): SeoulEventsData {
+  const filePath = path.join(contentDir, 'events', 'data.json');
+  if (!fs.existsSync(filePath)) return { updatedAt: '', events: [] };
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as SeoulEventsData;
+  } catch {
+    return { updatedAt: '', events: [] };
+  }
 }

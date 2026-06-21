@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/generate-rss.js",
+    "events:fetch": "node scripts/fetch-seoul-events.mjs",
     "start": "next start",
     "lint": "next lint",
     "digest:collect": "node scripts/collect-feeds.mjs",
