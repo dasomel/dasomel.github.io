@@ -47,3 +47,24 @@ export interface Doc {
   lastModified?: string;
   lang: 'ko' | 'en';
 }
+
+export interface SeoulEvent {
+  id: string;
+  title: string;
+  category: string;
+  place: string;
+  guName: string;
+  startDate: string;
+  endDate: string;
+  dateRange: string;
+  isFree: boolean;
+  link: string;
+  imageUrl: string;
+  organizer: string;
+  thema: string;
+}
+
+export interface SeoulEventsData {
+  updatedAt: string;
+  events: SeoulEvent[];
+}

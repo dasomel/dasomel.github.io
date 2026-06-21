@@ -4,6 +4,7 @@
     "speaking": "Speaking",
     "docs": "K-PaaS Lite",
     "blog": "Blog",
+    "events": "서울 행사",
     "about": "About",
     "lang": "EN"
   },
@@ -55,6 +56,17 @@
   "seminars": {
     "slides": "슬라이드",
     "video": "영상"
+  },
+  "events": {
+    "title": "서울 행사",
+    "subtitle": "서울시 문화·축제 행사 정보 (서울 열린데이터광장 제공)",
+    "updated_at": "{date} 기준",
+    "upcoming": "진행 중 · 예정",
+    "past": "종료된 행사",
+    "free": "무료",
+    "paid": "유료",
+    "no_events": "현재 등록된 행사가 없습니다",
+    "no_events_desc": "매일 자동으로 업데이트됩니다"
   },
   "about": {
     "title": "About"
