@@ -33,7 +33,7 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-const BASE_URL = `http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo`;
+const BASE_URL = `https://openapi.seoul.go.kr:443/${API_KEY}/json/culturalEventInfo`;
 const PAGE_SIZE = 100;
 const MAX_PAGES = 5;
 const FETCH_TIMEOUT_MS = 15000;
@@ -59,7 +59,10 @@ async function fetchPage(start, end) {
   const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
   try {
     const res = await fetch(url, { signal: ctrl.signal });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) {
+      const body = await res.text().catch(() => '');
+      throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+    }
     return await res.json();
   } finally {
     clearTimeout(timer);
@@ -105,13 +108,18 @@ async function main() {
     }
 
     const result = data?.culturalEventInfo;
-    if (!result || result.RESULT?.CODE !== 'INFO-000') {
-      const code = result?.RESULT?.CODE;
-      const msg = result?.RESULT?.MESSAGE;
+    if (!result) {
+      log(`Unexpected API response shape: ${JSON.stringify(data).slice(0, 200)}`);
+      process.exit(1);
+    }
+    if (result.RESULT?.CODE !== 'INFO-000') {
+      const code = result.RESULT?.CODE;
+      const msg = result.RESULT?.MESSAGE;
       if (code === 'INFO-200') {
         log('No more results.');
       } else {
         log(`API error: ${code} — ${msg}`);
+        process.exit(1);
       }
       break;
     }

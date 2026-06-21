@@ -2,8 +2,8 @@ name: Update Seoul Events
 
 on:
   schedule:
-    # 00:30 UTC = 09:30 KST — morning refresh before people browse
-    - cron: '30 0 * * *'
+    # 23:30 UTC = 08:30 KST — morning refresh before people browse
+    - cron: '30 23 * * *'
   workflow_dispatch:
 
 permissions:
