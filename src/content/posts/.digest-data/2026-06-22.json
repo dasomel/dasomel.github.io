@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-22",
+  "generatedAt": "2026-06-21T22:47:10.323Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex",
+      "link": "https://thenewstack.io/agentjacking-sentry-mcp-attack/",
+      "date": "2026-06-21T17:00:00.000Z",
+      "excerpt": "On June 17, the Threat Labs team at Tenet Security, an AI-agent security startup newly out of stealth, documented an"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your agent wants to search like a 2010 quant",
+      "link": "https://thenewstack.io/search-like-2010-quant/",
+      "date": "2026-06-21T16:00:00.000Z",
+      "excerpt": "AI agents need the right information to work well. Whether they manage to find it is the difference between success"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“An agent is an LLM and a harness”: What Nvidia really thinks about OpenClaw",
+      "link": "https://thenewstack.io/nvidia-openclaw-agent-blueprints/",
+      "date": "2026-06-21T15:00:00.000Z",
+      "excerpt": "How much of Nvidia is reflected by their visionary CEO, Jenson Huang? With his praise and later support of OpenClaw,"
+    }
+  ]
+}
