@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 /**
- * Seoul cultural events fetcher.
+ * Seoul cultural events fetcher — 한국관광공사 Tour API (apis.data.go.kr)
  *
- * Fetches upcoming cultural events and festivals from Seoul Open Data Plaza API
- * (data.seoul.go.kr) and writes the result to:
+ * 공공데이터포털(data.go.kr) 한국관광공사 Tour API를 통해 서울(areaCode=1) 축제/행사 정보를 수집.
+ * openapi.seoul.go.kr은 GitHub Actions 미국 서버에서 차단되어 이 API로 대체.
  *
- *   src/content/events/data.json
- *
- * The page reads this JSON at build time and renders event cards.
+ * API 신청: https://www.data.go.kr/data/15101578/openapi.do
+ *   (한국관광공사_국문 관광정보 서비스_GW → festivalList1)
  *
  * Environment variables:
- *   SEOUL_API_KEY   — API key from data.seoul.go.kr (required in production)
- *                     Sign up at: https://data.seoul.go.kr/
+ *   KOREA_API_KEY  — 공공데이터포털에서 발급받은 Decoding 키
  *
  * Usage:
  *   node scripts/fetch-seoul-events.mjs
@@ -26,42 +24,45 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const OUT_FILE = path.join(ROOT, 'src/content/events/data.json');
 
-const API_KEY = process.env.SEOUL_API_KEY;
+const API_KEY = process.env.KOREA_API_KEY;
 if (!API_KEY) {
-  console.error('[events] Error: SEOUL_API_KEY env var is required.');
-  console.error('  Get one at: https://data.seoul.go.kr/');
+  console.error('[events] Error: KOREA_API_KEY env var is required.');
+  console.error('  Register at: https://www.data.go.kr/data/15101578/openapi.do');
   process.exit(1);
 }
 
-const BASE_URL = `https://openapi.seoul.go.kr:443/${API_KEY}/json/culturalEventInfo`;
-const PAGE_SIZE = 100;
-const MAX_PAGES = 5;
-const FETCH_TIMEOUT_MS = 15000;
+const BASE_URL = 'https://apis.data.go.kr/B551011/KorService2/festivalList2';
+const FETCH_TIMEOUT_MS = 20000;
 
-function log(msg) {
-  console.log(`[events] ${msg}`);
-}
+function log(msg) { console.log(`[events] ${msg}`); }
 
-function todayKST() {
+function kstToday() {
   return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10).replace(/-/g, '');
 }
 
-function parseDate(raw) {
-  if (!raw) return '';
-  // Seoul API returns "YYYY-MM-DD" or "YYYY.MM.DD" or "YYYYMMDD"
-  const cleaned = String(raw).replace(/\./g, '-').replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
-  return cleaned.slice(0, 10);
-}
+async function fetchPage(start, end, eventStartDate) {
+  const params = new URLSearchParams({
+    serviceKey: API_KEY,
+    numOfRows: String(end - start + 1),
+    pageNo: String(Math.ceil(start / (end - start + 1))),
+    MobileOS: 'ETC',
+    MobileApp: 'dasomel-blog',
+    _type: 'json',
+    areaCode: '1',        // 서울
+    eventStartDate,       // YYYYMMDD
+    listYN: 'Y',
+    arrange: 'A',
+  });
 
-async function fetchPage(start, end) {
-  const url = `${BASE_URL}/${start}/${end}/`;
+  const url = `${BASE_URL}?${params}`;
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
   try {
+    log(`Fetching: ${BASE_URL}?areaCode=1&eventStartDate=${eventStartDate}&pageNo=${params.get('pageNo')}`);
     const res = await fetch(url, { signal: ctrl.signal });
     if (!res.ok) {
       const body = await res.text().catch(() => '');
-      throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
+      throw new Error(`HTTP ${res.status}: ${body.slice(0, 300)}`);
     }
     return await res.json();
   } finally {
@@ -69,86 +70,79 @@ async function fetchPage(start, end) {
   }
 }
 
-function normalizeEvent(raw) {
-  const ticket = String(raw.TICKET || '').trim().toLowerCase();
-  const isFree = ticket === '무료' || ticket === 'free' || ticket === '';
+function normalizeEvent(item) {
+  const startDate = String(item.eventstartdate || '');
+  const endDate = String(item.eventenddate || '');
+  const formatDate = (d) => d.length === 8 ? `${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}` : d;
+
   return {
-    id: String(raw.CULTCODE || raw.TITLE || Math.random()),
-    title: String(raw.TITLE || '').trim(),
-    category: String(raw.CODENAME || '').trim(),
-    place: String(raw.PLACE || '').trim(),
-    guName: String(raw.GUNAME || '').trim(),
-    startDate: parseDate(raw.STRTDATE),
-    endDate: parseDate(raw.END_DATE),
-    dateRange: String(raw.DATE_RANGE || '').trim(),
-    isFree,
-    link: String(raw.MAIN_LINK || raw.ORG_LINK || '').trim(),
-    imageUrl: String(raw.MAIN_IMG || '').trim(),
-    organizer: String(raw.ORG_NAME || '').trim(),
-    thema: String(raw.THEMA || '').trim(),
+    id: String(item.contentid || item.title || Math.random()),
+    title: String(item.title || '').trim(),
+    category: String(item.cat2 || '행사').trim(),
+    place: String(item.addr1 || '서울').trim(),
+    guName: String(item.addr2 || '').trim(),
+    startDate: formatDate(startDate),
+    endDate: formatDate(endDate),
+    dateRange: startDate && endDate
+      ? `${formatDate(startDate)} ~ ${formatDate(endDate)}`
+      : formatDate(startDate),
+    isFree: false,
+    link: item.firstimage ? '' : '',
+    imageUrl: String(item.firstimage || item.firstimage2 || '').trim(),
+    organizer: '',
+    thema: String(item.cat3 || '').trim(),
   };
 }
 
 async function main() {
-  const today = todayKST();
-  log(`Fetching Seoul cultural events (today KST: ${today})...`);
+  const today = kstToday();
+  log(`Fetching Seoul festivals/events (today KST: ${today})...`);
 
-  const allEvents = [];
-  let totalCount = 0;
+  // 오늘부터 3개월 후까지
+  const threeMonthsLater = new Date(Date.now() + 9 * 60 * 60 * 1000 + 90 * 24 * 60 * 60 * 1000)
+    .toISOString().slice(0, 10).replace(/-/g, '');
 
-  for (let page = 0; page < MAX_PAGES; page++) {
-    const start = page * PAGE_SIZE + 1;
-    const end = start + PAGE_SIZE - 1;
-    let data;
-    try {
-      data = await fetchPage(start, end);
-    } catch (err) {
-      log(`Page ${page + 1} fetch failed: ${err.message}`);
-      break;
-    }
-
-    const result = data?.culturalEventInfo;
-    if (!result) {
-      log(`Unexpected API response shape: ${JSON.stringify(data).slice(0, 200)}`);
-      process.exit(1);
-    }
-    if (result.RESULT?.CODE !== 'INFO-000') {
-      const code = result.RESULT?.CODE;
-      const msg = result.RESULT?.MESSAGE;
-      if (code === 'INFO-200') {
-        log('No more results.');
-      } else {
-        log(`API error: ${code} — ${msg}`);
-        process.exit(1);
-      }
-      break;
-    }
-
-    if (page === 0) {
-      totalCount = result.list_total_count || 0;
-      log(`Total events in API: ${totalCount}`);
-    }
-
-    const rows = result.row || [];
-    allEvents.push(...rows.map(normalizeEvent));
-    log(`Page ${page + 1}: ${rows.length} events fetched (total so far: ${allEvents.length})`);
-
-    if (allEvents.length >= totalCount) break;
+  let data;
+  try {
+    data = await fetchPage(1, 100, today);
+  } catch (err) {
+    log(`Fetch failed: ${err.message}`);
+    process.exit(1);
   }
 
-  // Keep only events that haven't ended yet (endDate >= today)
-  const todayDash = `${today.slice(0, 4)}-${today.slice(4, 6)}-${today.slice(6, 8)}`;
-  const upcoming = allEvents
-    .filter(e => e.endDate >= todayDash || !e.endDate)
+  const response = data?.response;
+  if (!response) {
+    log(`Unexpected response shape: ${JSON.stringify(data).slice(0, 300)}`);
+    process.exit(1);
+  }
+
+  const header = response.header;
+  if (header?.resultCode !== '0000' && header?.resultCode !== '00') {
+    log(`API error: ${header?.resultCode} — ${header?.resultMessage}`);
+    process.exit(1);
+  }
+
+  const items = response.body?.items?.item;
+  if (!items) {
+    log('No items in response.');
+    const output = { updatedAt: new Date().toISOString(), events: [] };
+    fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
+    fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2) + '\n', 'utf-8');
+    return;
+  }
+
+  const list = Array.isArray(items) ? items : [items];
+  log(`Total events fetched: ${list.length}`);
+
+  const todayDash = `${today.slice(0,4)}-${today.slice(4,6)}-${today.slice(6,8)}`;
+  const upcoming = list
+    .map(normalizeEvent)
+    .filter(e => !e.endDate || e.endDate >= todayDash)
     .sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
 
-  log(`Upcoming events: ${upcoming.length} / ${allEvents.length}`);
+  log(`Upcoming events: ${upcoming.length}`);
 
-  const output = {
-    updatedAt: new Date().toISOString(),
-    events: upcoming,
-  };
-
+  const output = { updatedAt: new Date().toISOString(), events: upcoming };
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2) + '\n', 'utf-8');
   log(`Saved ${upcoming.length} events to ${path.relative(ROOT, OUT_FILE)}`);

@@ -30,9 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Network check
+        run: |
+          echo "=== DNS check ==="
+          nslookup apis.data.go.kr || true
+          echo "=== Connectivity check ==="
+          curl -s -o /dev/null -w "%{http_code}" --max-time 5 https://apis.data.go.kr/ || echo "failed"
+
       - name: Fetch Seoul events
         env:
-          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+          KOREA_API_KEY: ${{ secrets.KOREA_API_KEY }}
         run: node scripts/fetch-seoul-events.mjs
 
       - name: Check for changes
