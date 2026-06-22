@@ -1,10 +1,7 @@
 name: Update Seoul Events
 
 on:
-  schedule:
-    # 23:30 UTC = 08:30 KST — morning refresh before people browse
-    - cron: '30 23 * * *'
-  workflow_dispatch:
+  workflow_dispatch:  # 수동 실행만 (로컬 cron이 주 스케줄러)
 
 permissions:
   contents: write
@@ -30,16 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Network check
-        run: |
-          echo "=== DNS check ==="
-          nslookup apis.data.go.kr || true
-          echo "=== Connectivity check ==="
-          curl -s -o /dev/null -w "%{http_code}" --max-time 5 https://apis.data.go.kr/ || echo "failed"
-
       - name: Fetch Seoul events
         env:
-          KOREA_API_KEY: ${{ secrets.KOREA_API_KEY }}
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
         run: node scripts/fetch-seoul-events.mjs
 
       - name: Check for changes
@@ -47,7 +37,6 @@ jobs:
         run: |
           if git diff --quiet src/content/events/data.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No changes in events data."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
             COUNT=$(node -e "const d=require('./src/content/events/data.json');console.log(d.events.length)")
