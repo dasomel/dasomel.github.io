@@ -162,7 +162,11 @@ async function main() {
   fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2) + '\n', 'utf-8');
   log(`Saved ${upcoming.length} events to ${path.relative(ROOT, OUT_FILE)}`);
 
-  gitPush(upcoming.length);
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    log('GitHub Actions detected — skipping internal git push (workflow handles commit/push).');
+  } else {
+    gitPush(upcoming.length);
+  }
 }
 
 main().catch(err => {
