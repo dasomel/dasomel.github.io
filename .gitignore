@@ -39,3 +39,6 @@ Thumbs.db
 /.bkit/
 /.omc/
 .superpowers/
+
+# Claude Code local settings (contains API keys)
+.claude/settings.local.json
