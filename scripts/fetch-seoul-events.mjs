@@ -32,7 +32,7 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-const BASE_URL = `https://openapi.seoul.go.kr:443/${API_KEY}/json/culturalEventInfo`;
+const BASE_URL = `http://openapi.seoul.go.kr:8088/${API_KEY}/json/culturalEventInfo`;
 const PAGE_SIZE = 100;
 const MAX_PAGES = 5;
 const FETCH_TIMEOUT_MS = 20000;

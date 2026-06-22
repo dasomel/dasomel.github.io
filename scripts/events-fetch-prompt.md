@@ -46,7 +46,7 @@ npm run events:fetch
 
 ## 참고
 
-- API: `https://openapi.seoul.go.kr:443/{KEY}/json/culturalEventInfo`
+- API: `http://openapi.seoul.go.kr:8088/{KEY}/json/culturalEventInfo`
 - 수집 범위: 최대 500건(5페이지 × 100건), 오늘 이후 종료 행사만 저장
 - 스크립트 위치: `scripts/fetch-seoul-events.mjs`
 - 출력 파일: `src/content/events/data.json`
