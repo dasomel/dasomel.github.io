@@ -1,7 +1,9 @@
 name: Update Seoul Events
 
 on:
-  workflow_dispatch:  # 수동 실행만 (로컬 cron이 주 스케줄러)
+  schedule:
+    - cron: '30 23 * * *'   # 08:30 KST (UTC+9) 매일 — 주 스케줄러
+  workflow_dispatch:        # 수동 실행도 가능
 
 permissions:
   contents: write
