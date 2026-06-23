@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T14:22:21.796Z",
+  "updatedAt": "2026-06-23T01:28:57.038Z",
   "events": [
     {
       "id": "[중구문화재단] 연극 [렁스]",
@@ -1409,21 +1409,6 @@
       "link": "https://ddmac.or.kr/sub09/sub03.php?type=view&uid=9242",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e16a303b746947bab758d1e1deb6e096&thumb=Y",
       "organizer": "동대문문화재단",
-      "thema": ""
-    },
-    {
-      "id": "윤지원 피아노 독주회",
-      "title": "윤지원 피아노 독주회",
-      "category": "독주/독창회",
-      "place": "세종체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-06-22",
-      "endDate": "2026-06-22",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37253&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2cbac9c180604946a0b005b4ee7bad82&thumb=Y",
-      "organizer": "세종문화회관",
       "thema": ""
     },
     {
