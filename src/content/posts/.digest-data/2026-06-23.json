@@ -1,0 +1,87 @@
+{
+  "date": "2026-06-23",
+  "generatedAt": "2026-06-22T23:09:11.071Z",
+  "count": 10,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cursor quietly acquires Continue, an open-source alternative to GitHub Copilot",
+      "link": "https://thenewstack.io/cursor-acquires-continue-coding/",
+      "date": "2026-06-22T19:48:42.000Z",
+      "excerpt": "The AI developer tools consolidation continues apace, with news that Cursor has snapped up open-source coding assistant Continue — its"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Qodo just shipped cross-repo review. Here’s why it matters for AI-flooded teams.",
+      "link": "https://thenewstack.io/qodo-cross-repo-code-review/",
+      "date": "2026-06-22T19:42:18.000Z",
+      "excerpt": "Late-night debugging sessions aren’t a rare edge case anymore. They are what happens when reviews can’t keep up with volume."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Boost BigQuery with Python: Managed Python UDFs now generally available",
+      "link": "https://cloud.google.com/blog/products/data-analytics/python-udf-in-bigquery-now-generally-available/",
+      "date": "2026-06-22T17:00:00.000Z",
+      "excerpt": "SQL is the industry standard for high-performance structured data analysis. However, expressing complex procedural logic, scientific computations, advanced string manipulations, or machine learning workflows in pure SQL can be highly challenging, if not impossible."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Amazon EKS now supports control plane egress through your VPC",
+      "link": "https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/",
+      "date": "2026-06-22T16:20:28.000Z",
+      "excerpt": "Today, we’re announcing customer-routed control plane egress, a new capability that you can use to route Kubernetes control plane traffic through your own Amazon Virtual Private Cloud (Amazon VPC). This includes admission webhook callbacks, OpenID Connect (OIDC) provider lookups, and aggregate API server requests."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters",
+      "link": "https://huggingface.co/blog/PaddlePaddle/pp-ocrv6",
+      "date": "2026-06-22T13:18:56.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Telemetry that matters: Designing sustainable, high-impact observability pipelines",
+      "link": "https://www.cncf.io/blog/2026/06/22/telemetry-that-matters-designing-sustainable-high-impact-observability-pipelines/",
+      "date": "2026-06-22T11:00:00.000Z",
+      "excerpt": "As system architectures grow increasingly complex, the cloud-native community faces a subtle but pressing challenge: we are drowning in our own telemetry data. It is easier than ever to instrument an application and collect signals, but."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Daybreak: Tools for securing every organization in the world",
+      "link": "https://openai.com/index/daybreak-securing-the-world",
+      "date": "2026-06-22T10:00:00.000Z",
+      "excerpt": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
+      "link": "https://openai.com/index/patch-the-planet",
+      "date": "2026-06-22T10:00:00.000Z",
+      "excerpt": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The Starter Tier for Google AI Studio explained",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/the-starter-tier-for-google-ai-studio-explained/",
+      "date": "2026-06-22T07:00:00.000Z",
+      "excerpt": "You've got a working prototype in Google AI Studio. A React frontend, a Node."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Codex-maxxing for long-running work",
+      "link": "https://openai.com/index/codex-maxxing-long-running-work",
+      "date": "2026-06-22T00:00:00.000Z",
+      "excerpt": "Learn how Jason Liu uses Codex to preserve context, manage complex projects, and help work continue beyond a single prompt."
+    }
+  ]
+}
