@@ -1,0 +1,127 @@
+{
+  "date": "2026-06-25",
+  "generatedAt": "2026-06-24T22:50:30.933Z",
+  "count": 15,
+  "articles": [
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "HCP Vault Dedicated introduces cluster disaster recovery (public preview)",
+      "link": "https://www.hashicorp.com/blog/hcp-vault-dedicated-introduces-cluster-disaster-recovery-public-preview",
+      "date": "2026-06-25T04:13:00.000Z",
+      "excerpt": "HCP Vault Dedicated is a fully managed secrets management solution that organizations rely on for authentication, dynamic secrets, and encryption workflows. As a core piece of security infrastructure, the cost of downtime is too high to leave recovery to chance."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI wants to claim more of the AI stack with Jalapeño, its first custom chip",
+      "link": "https://thenewstack.io/openai-jalapeno-custom-chip/",
+      "date": "2026-06-24T20:55:13.000Z",
+      "excerpt": "OpenAI on Wednesday announced Jalapeño, its first custom inference accelerator, co-developed with Broadcom and supported by Canadian electronics manufacturer Celestica,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Azul wants to find your unpatched JVMs before AI does",
+      "link": "https://thenewstack.io/azul-java-security-jvm-mythos/",
+      "date": "2026-06-24T20:53:07.000Z",
+      "excerpt": "Azul Systems is offering a free Java Virtual Machine (JVM) vulnerability risk assessment designed to reveal Java runtime exposure before"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Will it Mythos? One coder’s verdict on Anthropic’s blend of debugging",
+      "link": "https://thenewstack.io/will-it-mythos-benchmark/",
+      "date": "2026-06-24T20:51:49.000Z",
+      "excerpt": "Anthropic’s rollercoaster ride with Claude Fable 5 and Mythos 5 has left various deposits of fallout this year, but the"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Chainguard targets Java’s unpatched vulnerability backlog with drop-in remediated libraries",
+      "link": "https://thenewstack.io/chainguard-java-libraries-spring-boot-cves/",
+      "date": "2026-06-24T20:48:37.000Z",
+      "excerpt": "Legacy Java shops are sitting on a growing pile of unpatched vulnerabilities. Chainguard says it has a fix for that."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Spotlight on WG Device Management",
+      "link": "https://kubernetes.io/blog/2026/06/24/wg-device-management-spotlight-2026/",
+      "date": "2026-06-24T18:00:00.000Z",
+      "excerpt": "The rising popularity of AI, Edge, and Telecommunications workloads on Kubernetes has led to new requirements for hardware management. We now need hardware specification beyond CPU time and memory allocations."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Enhanced data resilience with cross-region backups in Backup and DR Service",
+      "link": "https://cloud.google.com/blog/products/storage-data-transfer/backup-and-dr-service-adds-cross-region-backups/",
+      "date": "2026-06-24T17:00:00.000Z",
+      "excerpt": "To maintain business continuity, you need a robust data-backup strategy. While multi-region backups offer the highest availability, many organizations want a more cost-effective way to protect their data against a regional outage, but still adhere to data residency requirements."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Agentic infrastructure operations begin with accurate, reliable infrastructure data",
+      "link": "https://thenewstack.io/netbox-infrastructure-ai-agents/",
+      "date": "2026-06-24T16:37:38.000Z",
+      "excerpt": "Organizations are racing to apply AI across the enterprise, and infrastructure is one of the most compelling targets: automated provisioning,"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel",
+      "link": "https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
+      "date": "2026-06-24T16:00:13.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Sakana Fugu is more than a router. But it’s not the blueprint for AI sovereignty, either.",
+      "link": "https://thenewstack.io/sakana-fugu-ai-sovereignty/",
+      "date": "2026-06-24T12:30:00.000Z",
+      "excerpt": "This week, Sakana AI released Fugu, a multi-agent orchestration system designed to deliver frontier-model performance all while reducing the risks"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "From Awareness to Engineered Accessibility in Open Source",
+      "link": "https://www.cncf.io/blog/2026/06/24/from-awareness-to-engineered-accessibility-in-open-source/",
+      "date": "2026-06-24T11:32:00.000Z",
+      "excerpt": "The open-source ecosystem thrives on a deceptively simple premise: anyone, anywhere, can show up and contribute. But that promise quietly breaks down at the edges."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Zero-Day Exploitation of Vulnerability (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-exploitation-cisco-catalyst-sd-wan-manager/",
+      "date": "2026-06-24T11:00:00.000Z",
+      "excerpt": "Written by: Chester Sng, Pete Boonyakarn, Logeswaran Nadarajan Introduction In early 2026, Mandiant identified a threat actor targeting SD-WAN infrastructure at a service provider."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+      "link": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "date": "2026-06-24T06:00:00.000Z",
+      "excerpt": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Advancing AI agent security in Vault",
+      "link": "https://www.hashicorp.com/blog/advancing-ai-agent-security-in-vault",
+      "date": "2026-06-24T04:12:00.000Z",
+      "excerpt": "A few weeks ago, we announced native support for AI agents in HashiCorp Vault through an early access program. We’re now making these capabilities available to all Vault Enterprise customers in public preview."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World",
+      "link": "https://huggingface.co/blog/ffasr-leaderboard",
+      "date": "2026-06-24T00:00:00.000Z",
+      "excerpt": ""
+    }
+  ]
+}
