@@ -1,0 +1,119 @@
+{
+  "date": "2026-06-26",
+  "generatedAt": "2026-06-25T23:02:00.189Z",
+  "count": 14,
+  "articles": [
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Run a vLLM Server on HF Jobs in One Command",
+      "link": "https://huggingface.co/blog/vllm-jobs",
+      "date": "2026-06-26T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Deploy Boundary on Kubernetes with official Helm charts",
+      "link": "https://www.hashicorp.com/blog/deploy-boundary-on-kubernetes-with-official-helm-charts",
+      "date": "2026-06-25T22:00:00.000Z",
+      "excerpt": "Deploying HashiCorp Boundary on Kubernetes has, until now, required teams to build and maintain their own orchestration from scratch. That means hand-crafting deployments, services, config maps, and lifecycle automation for every environment, then keeping it all consistent over time."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Code should be regenerated, not maintained”: Codeplain makes the case for spec-driven development",
+      "link": "https://thenewstack.io/codeplain-spec-driven-regenerative-code/",
+      "date": "2026-06-25T17:47:19.000Z",
+      "excerpt": "AI is generating code faster than teams can review it. The answer, a small but growing number of developers argue,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Trust in Rust: Foundation debuts official training to tackle steep learning curve",
+      "link": "https://thenewstack.io/rust-foundation-training-certification/",
+      "date": "2026-06-25T16:30:00.000Z",
+      "excerpt": "The Rust Foundation on Thursday announced the launch of the Rust Foundation Trusted Training (RFTT) program, a new formal accreditation"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Which tokens does a hybrid model predict better?",
+      "link": "https://huggingface.co/blog/allenai/hybrid-token-prediction",
+      "date": "2026-06-25T16:11:42.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Template-based data extraction is dead. Here’s what comes next.",
+      "link": "https://thenewstack.io/amazon-bedrock-data-automation/",
+      "date": "2026-06-25T16:00:00.000Z",
+      "excerpt": "Modern businesses are in a constant, uphill battle against what to do with unstructured data: PDFs, contracts, scanned images, customer"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "How we cut AI costs by 80%",
+      "link": "https://thenewstack.io/how-cut-ai-costs/",
+      "date": "2026-06-25T15:00:00.000Z",
+      "excerpt": "AI costs are rising, and not for the reason most people assume. It’s true that the models are getting more"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "STOCKSTAY Another Day: The Latest Addition to Turla’s Intelligence Gathering Apparatus",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/stockstay-turla-intelligence-gathering/",
+      "date": "2026-06-25T14:00:00.000Z",
+      "excerpt": "Written by: Jordan Jones Introduction Google Threat Intelligence Group (GTIG) has conducted an in-depth analysis of a ."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Agent Toolkit for AWS includes 20+ agent skills, but your agent might not load them without this one file",
+      "link": "https://thenewstack.io/aws-agent-toolkit-rules-file/",
+      "date": "2026-06-25T14:00:00.000Z",
+      "excerpt": "If you’re like me, sometimes you get so excited to try something new that you don’t read the docs all"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Building a Cluster-Aware AI Agent with Kubernetes, Argo CD, and GitOps",
+      "link": "https://www.cncf.io/blog/2026/06/25/building-a-cluster-aware-ai-agent-with-kubernetes-argo-cd-and-gitops/",
+      "date": "2026-06-25T11:25:00.000Z",
+      "excerpt": "A practical walkthrough of running a self-hosted, read-only AI agent inside a Kubernetes cluster, with the full CI/CD chain handled by GitHub Actions and Argo CD Image Updater. No data leaves the cluster, no cloud AI."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Boundary 1.0 releases RDP session recording and improved management",
+      "link": "https://www.hashicorp.com/blog/boundary-1-releases-with-rdp-session-recording-and-improved-management",
+      "date": "2026-06-25T07:09:00.000Z",
+      "excerpt": "Today, we are thrilled to announce the release of Boundary 1.0, a milestone that marks the evolution from an initial concept to a fully robust and scalable solution for modern privilege access management (PAM), now proven across many production environments."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Scaling without friction: Aliases at project scope in Boundary",
+      "link": "https://www.hashicorp.com/blog/scaling-without-friction-aliases-at-project-scope-in-boundary",
+      "date": "2026-06-25T07:00:00.000Z",
+      "excerpt": "In Boundary, a target alias is a simple, powerful tool. It lets you connect to infrastructure using a memorable name instead of a random, generated ID."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "HCP Vault Dedicated introduces cluster disaster recovery (public preview)",
+      "link": "https://www.hashicorp.com/blog/hcp-vault-dedicated-introduces-cluster-disaster-recovery-public-preview",
+      "date": "2026-06-25T04:13:00.000Z",
+      "excerpt": "HCP Vault Dedicated is a fully managed secrets management solution that organizations rely on for authentication, dynamic secrets, and encryption workflows. As a core piece of security infrastructure, the cost of downtime is too high to leave recovery to chance."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How agents are transforming work",
+      "link": "https://openai.com/index/how-agents-are-transforming-work",
+      "date": "2026-06-25T02:00:00.000Z",
+      "excerpt": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles."
+    }
+  ]
+}
