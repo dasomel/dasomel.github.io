@@ -31,21 +31,66 @@ export const CATEGORIES = [
 
 /**
  * Feed list. `category` is derived purely from the source — no AI needed.
- *  - Kubernetes / CNCF / AWS Containers → container & cloud-native
- *  - OpenAI / Hugging Face             → AI & ML
- *  - Google Cloud                      → cloud provider updates
- *  - HashiCorp / The New Stack / Grafana → DevOps & infra/observability
+ * Sources are intentionally spread across many publishers (cloud providers,
+ * CNCF projects, security, observability, big-tech & Korean engineering blogs)
+ * so no single outlet dominates a day's digest. A per-source cap in
+ * `collect-feeds.mjs` (PER_SOURCE_CAP) enforces that at collection time.
+ *
+ *  - k8s    : Kubernetes / CNCF / container & cloud-native projects + container security
+ *  - ai     : AI labs & ML platforms
+ *  - cloud  : cloud-provider product / architecture updates
+ *  - devops : infra, CI/CD, observability, vendor + big-tech + Korean eng blogs
+ *
+ * All URLs were validated (reachable + valid RSS, dated items) on 2026-06-27.
+ * When adding a feed: confirm it parses with rss-parser, publishes reasonably
+ * often, and pick the closest category — `categoryForSource` falls back to
+ * 'devops' for anything unmapped.
  */
 export const FEEDS = [
+  // --- Kubernetes & cloud-native (+ container security) ---
   { name: 'Kubernetes', url: 'https://kubernetes.io/feed.xml', category: 'k8s' },
   { name: 'CNCF', url: 'https://www.cncf.io/blog/feed/', category: 'k8s' },
   { name: 'AWS Containers', url: 'https://aws.amazon.com/blogs/containers/feed/', category: 'k8s' },
+  { name: 'Docker', url: 'https://www.docker.com/blog/feed/', category: 'k8s' },
+  { name: 'Istio', url: 'https://istio.io/latest/blog/feed.xml', category: 'k8s' },
+  { name: 'Cilium', url: 'https://cilium.io/blog/rss.xml', category: 'k8s' },
+  { name: 'Sysdig', url: 'https://sysdig.com/feed/', category: 'k8s' },
+
+  // --- AI & ML ---
   { name: 'OpenAI', url: 'https://openai.com/news/rss.xml', category: 'ai' },
   { name: 'Hugging Face', url: 'https://huggingface.co/blog/feed.xml', category: 'ai' },
+  { name: 'Google Research', url: 'https://research.google/blog/rss/', category: 'ai' },
+  { name: 'Google AI', url: 'https://blog.google/technology/ai/rss/', category: 'ai' },
+
+  // --- Cloud providers ---
   { name: 'Google Cloud', url: 'https://cloudblog.withgoogle.com/rss/', category: 'cloud' },
+  { name: 'AWS Architecture', url: 'https://aws.amazon.com/blogs/architecture/feed/', category: 'cloud' },
+  { name: 'Azure', url: 'https://azure.microsoft.com/en-us/blog/feed/', category: 'cloud' },
+  { name: 'Cloudflare', url: 'https://blog.cloudflare.com/rss/', category: 'cloud' },
+  { name: 'Red Hat', url: 'https://www.redhat.com/en/rss/blog', category: 'cloud' },
+
+  // --- DevOps / infra / observability (vendor) ---
   { name: 'HashiCorp', url: 'https://www.hashicorp.com/blog/feed.xml', category: 'devops' },
   { name: 'The New Stack', url: 'https://thenewstack.io/feed/', category: 'devops' },
   { name: 'Grafana', url: 'https://grafana.com/blog/index.xml', category: 'devops' },
+  { name: 'AWS DevOps', url: 'https://aws.amazon.com/blogs/devops/feed/', category: 'devops' },
+  { name: 'Datadog', url: 'https://www.datadoghq.com/blog/index.xml', category: 'devops' },
+  { name: 'Honeycomb', url: 'https://www.honeycomb.io/feed', category: 'devops' },
+  { name: 'GitLab', url: 'https://about.gitlab.com/atom.xml', category: 'devops' },
+  { name: 'Snyk', url: 'https://snyk.io/blog/feed/', category: 'devops' },
+
+  // --- Big-tech engineering blogs ---
+  { name: 'Netflix', url: 'https://netflixtechblog.com/feed', category: 'devops' },
+  { name: 'Meta Engineering', url: 'https://engineering.fb.com/feed/', category: 'devops' },
+  { name: 'GitHub', url: 'https://github.blog/feed/', category: 'devops' },
+  { name: 'Stripe', url: 'https://stripe.com/blog/feed.rss', category: 'devops' },
+  { name: 'Dropbox', url: 'https://dropbox.tech/feed', category: 'devops' },
+
+  // --- Korean engineering blogs ---
+  { name: '우아한형제들', url: 'https://techblog.woowahan.com/feed/', category: 'devops' },
+  { name: '카카오', url: 'https://tech.kakao.com/feed/', category: 'devops' },
+  { name: '토스', url: 'https://toss.tech/rss.xml', category: 'devops' },
+  { name: 'LINE', url: 'https://techblog.lycorp.co.jp/ko/feed/index.xml', category: 'devops' },
 ];
 
 const SOURCE_TO_CATEGORY = Object.fromEntries(FEEDS.map((f) => [f.name, f.category]));
