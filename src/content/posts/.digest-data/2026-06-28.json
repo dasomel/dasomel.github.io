@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-28",
+  "generatedAt": "2026-06-27T22:41:33.367Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Greptile, Cursor, and Devin agree that agents should run their code. What they run it against matters.",
+      "link": "https://thenewstack.io/runtime-verification-coding-agents/",
+      "date": "2026-06-27T15:00:00.000Z",
+      "excerpt": "The industry has recognized that shipping agent code at scale requires runtime verification, and it is moving that way fast."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Vibe slop is the symptom. Context debt is the disease.",
+      "link": "https://thenewstack.io/vibe-coding-context-debt/",
+      "date": "2026-06-27T10:30:00.000Z",
+      "excerpt": "Some of the engineers who made vibe coding possible have decided it’s a problem. Last month, The Wall Street Journal’s"
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "What Does EU AI Act Compliance Require?",
+      "link": "https://www.docker.com/blog/eu-ai-act-compliance/",
+      "date": "2026-06-27T03:11:14.000Z",
+      "excerpt": "Learn what EU AI Act compliance requires at each risk tier, key deadlines through 2027, and how engineering teams can operationalize AI governance."
+    }
+  ]
+}
