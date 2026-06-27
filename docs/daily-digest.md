@@ -83,9 +83,19 @@ npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
 
 ## 카테고리 매핑 (소스 기반, AI 불필요)
 
+피드는 한 매체가 다이제스트를 도배하지 않도록 여러 발행처로 넓게 분산돼 있다.
+전체 목록·URL은 `scripts/lib/digest-feeds.mjs`의 `FEEDS`가 단일 출처(33개 피드,
+2026-06-27 기준 전부 RSS 유효성 검증 완료).
+
 | 카테고리 | 피드 |
 |---|---|
-| Kubernetes & Cloud Native (`k8s`) | Kubernetes, CNCF, AWS Containers |
-| AI & ML (`ai`) | OpenAI, Hugging Face |
-| 클라우드 업데이트 (`cloud`) | Google Cloud |
-| DevOps & 인프라 (`devops`) | HashiCorp, The New Stack, Grafana |
+| Kubernetes & Cloud Native (`k8s`) | Kubernetes, CNCF, AWS Containers, Docker, Istio, Cilium, Sysdig |
+| AI & ML (`ai`) | OpenAI, Hugging Face, Google Research, Google AI |
+| 클라우드 업데이트 (`cloud`) | Google Cloud, AWS Architecture, Azure, Cloudflare, Red Hat |
+| DevOps & 인프라 (`devops`) | HashiCorp, The New Stack, Grafana, AWS DevOps, Datadog, Honeycomb, GitLab, Snyk, Netflix, Meta Engineering, GitHub, Stripe, Dropbox, 우아한형제들, 카카오, 토스, LINE |
+
+### 소스 쏠림 방지 — `PER_SOURCE_CAP`
+
+`collect-feeds.mjs`는 24시간 윈도우로 수집한 뒤, **소스당 최신 3건**(`PER_SOURCE_CAP = 3`)
+까지만 남기고 전역 상한(`MAX_ARTICLES = 60`)을 적용한다. 다작 매체(예: The New Stack)가
+하루치를 독점하던 문제를 막고, 매일 더 다양한 출처가 노출되도록 한다. 값만 바꾸면 조정 가능.

@@ -2,9 +2,10 @@
 /**
  * RSS feed collector (no AI, no external API cost).
  *
- * Fetches a curated set of Cloud / Kubernetes / AI / DevOps RSS feeds,
+ * Fetches a broad, curated set of Cloud / Kubernetes / AI / DevOps RSS feeds,
  * keeps articles published within the last 24 hours, categorizes them by
- * source, and writes the raw data to:
+ * source, caps each source to PER_SOURCE_CAP so no single outlet dominates,
+ * and writes the raw data to:
  *
  *   src/content/posts/.digest-data/YYYY-MM-DD.json
  *
@@ -33,6 +34,7 @@ import {
 
 const WINDOW_MS = 24 * 60 * 60 * 1000;
 const MAX_ARTICLES = 60; // generous cap; markdown step trims for display
+const PER_SOURCE_CAP = 3; // keep at most N most-recent items per source so one busy outlet can't dominate the day
 const FETCH_TIMEOUT_MS = 20000;
 const RETRIES = 2; // total attempts per feed = RETRIES + 1
 const FAIL_RATIO_ABORT = 0.5; // if > this fraction of feeds fail, treat the whole run as failed
@@ -99,9 +101,19 @@ async function collectArticles() {
     log(`${feed.name}: ${count} recent article(s)`);
   }
 
-  // Newest first, then cap.
+  // Newest first, then cap each source to PER_SOURCE_CAP (keeping its most
+  // recent items) so a high-volume outlet can't flood the day, then apply the
+  // global cap. This is what keeps the digest varied across many publishers.
   articles.sort((a, b) => new Date(b.date) - new Date(a.date));
-  return { articles: articles.slice(0, MAX_ARTICLES), ok, failed: failures.length, failures };
+  const perSourceCount = new Map();
+  const capped = [];
+  for (const a of articles) {
+    const n = perSourceCount.get(a.source) || 0;
+    if (n >= PER_SOURCE_CAP) continue;
+    perSourceCount.set(a.source, n + 1);
+    capped.push(a);
+  }
+  return { articles: capped.slice(0, MAX_ARTICLES), ok, failed: failures.length, failures };
 }
 
 async function main() {
