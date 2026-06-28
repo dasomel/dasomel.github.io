@@ -1,0 +1,23 @@
+{
+  "date": "2026-06-29",
+  "generatedAt": "2026-06-28T22:41:34.227Z",
+  "count": 2,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Bring it to our shop”: Workday’s pitch for keeping AI agents close to your most valuable data",
+      "link": "https://thenewstack.io/workday-ai-inference-guardrails/",
+      "date": "2026-06-28T15:00:00.000Z",
+      "excerpt": "Workday, the payroll and HR data platform, has been pursuing AI and agents for a while, but while other businesses"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Okta is the first to bring AI agent governance inside FedRAMP boundaries",
+      "link": "https://thenewstack.io/okta-ai-agents-fedramp/",
+      "date": "2026-06-28T13:49:00.000Z",
+      "excerpt": "Okta has made its AI agent governance platform generally available for FedRAMP- and HIPAA-regulated environments, becoming what it claims is the first independent"
+    }
+  ]
+}
