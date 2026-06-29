@@ -1,0 +1,191 @@
+{
+  "date": "2026-06-30",
+  "generatedAt": "2026-06-29T22:40:24.518Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Base44 bets a narrow model beats frontier AI for vibe coding",
+      "link": "https://thenewstack.io/base44-base-one-model/",
+      "date": "2026-06-29T18:03:44.000Z",
+      "excerpt": "Base44, an AI-powered app-building platform, has launched its first proprietary AI model, dubbed Base One. It is a fine-tuned open-source"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "DiScoFormer: One transformer for density and score, across distributions",
+      "link": "https://huggingface.co/blog/allenai/discoformer",
+      "date": "2026-06-29T18:02:48.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "JetBrains kills Kotlin Notebook months after Microsoft’s Polyglot exit. But Jupyter is doing just fine.",
+      "link": "https://thenewstack.io/kotlin-notebook-jupyter-python-retreat/",
+      "date": "2026-06-29T17:59:29.000Z",
+      "excerpt": "JetBrains, the Czech developer tools company behind the IntelliJ IDEA IDE, announced Monday that it’s sunsetting Kotlin Notebook, the interactive"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Palantir and Nvidia want to change who owns government AI",
+      "link": "https://thenewstack.io/palantir-nvidia-sovereign-ai/",
+      "date": "2026-06-29T17:55:42.000Z",
+      "excerpt": "Building with AI has, until recently, meant calling up someone else’s model. But wiring an app to an API from"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Highlights from Git 2.55",
+      "link": "https://github.blog/open-source/git/highlights-from-git-2-55/",
+      "date": "2026-06-29T17:25:25.000Z",
+      "excerpt": "The open source Git project just released Git 2.55."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Lessons learned from scaling to 1 million Lambda functions",
+      "link": "https://aws.amazon.com/blogs/architecture/lessons-learned-from-scaling-to-1-million-lambda-functions/",
+      "date": "2026-06-29T17:21:05.000Z",
+      "excerpt": "In this post, we share our journey and the lessons learned from building and running a fully serverless, multi-account software as a service (SaaS) platform at scale."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Preventing data exfiltration in machine learning environments with Amazon SageMaker AI",
+      "link": "https://aws.amazon.com/blogs/architecture/preventing-data-exfiltration-in-machine-learning-environments-with-amazon-sagemaker-ai/",
+      "date": "2026-06-29T17:16:48.000Z",
+      "excerpt": "In this post, we demonstrate how iBusiness implemented a three-layered security architecture using Amazon SageMaker AI, virtual private cloud (VPC) endpoints, and Amazon WorkSpaces Secure Browser to prevent data exfiltration while maintaining data scientist productivity."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Dual-token authentication for Nakama game servers with Amazon Cognito on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/dual-token-authentication-for-nakama-game-servers-with-amazon-cognito-on-aws/",
+      "date": "2026-06-29T17:09:54.000Z",
+      "excerpt": "In this post, you learn how to configure an Amazon Cognito User Pool for SRP-based game client authentication with no client secret. You will implement a Go runtime hook that validates Cognito JWTs and bridges player identity to Nakama sessions."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Inside the Advisory Database and what happens when vulnerability volume breaks records",
+      "link": "https://github.blog/security/supply-chain-security/inside-the-advisory-database-and-what-happens-when-vulnerability-volume-breaks-records/",
+      "date": "2026-06-29T16:10:20.000Z",
+      "excerpt": "The GitHub Advisory Database is processing more vulnerability reports than ever before. Here's what's driving the surge, how we're responding, and how the community can help."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Ask an AI expert: What exactly is the full stack?",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/",
+      "date": "2026-06-29T16:00:00.000Z",
+      "excerpt": "A Google expert explains what it means to take a full-stack approach to AI and why it’s been the foundation of our AI work for so long."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Scaling Network Analysis for Fraud Prevention with BigQuery Graph",
+      "link": "https://cloud.google.com/blog/products/data-analytics/fraud-prevention-with-bigquery-graph/",
+      "date": "2026-06-29T16:00:00.000Z",
+      "excerpt": "Based in the UK, Curve are building a financial super-app, a smart wallet that consolidates all your debit and credit cards into a single app and card, simplifying how millions of users spend, send and save money."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Synthesize the big picture and analyze trends with BigQuery's AI.AGG function",
+      "link": "https://cloud.google.com/blog/products/data-analytics/deep-dive-into-bigquery-ai-agg-function/",
+      "date": "2026-06-29T16:00:00.000Z",
+      "excerpt": "We recently announced the preview of the BigQuery AI.AGG() function."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cloud CISO Perspectives: How Google Cloud Security uses AI internally",
+      "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-how-google-cloud-security-uses-ai-internally/",
+      "date": "2026-06-29T16:00:00.000Z",
+      "excerpt": "Welcome to the second Cloud CISO Perspectives for June 2026. Today, we’re discussing how we use AI to chart a path to autonomous software development lifecycle security."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "GenPage: Towards End-to-End Generative Homepage Construction at Netflix",
+      "link": "https://netflixtechblog.com/genpage-towards-end-to-end-generative-homepage-construction-at-netflix-77146fba8a08?source=rss----2615bd06b42e---4",
+      "date": "2026-06-29T13:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Instrumenting AI Agents for the Agent Timeline: A Practical OpenTelemetry Guide",
+      "link": "https://www.honeycomb.io/blog/instrumenting-ai-agents-agent-timeline-opentelemetry-guide",
+      "date": "2026-06-29T13:00:00.000Z",
+      "excerpt": "The LLM is rarely the root cause of agent failures. This technical guide shows how to instrument AI agents using OpenTelemetry's GenAI semantic conventions so they appear in Honeycomb's Agent Timeline—including tool calls, multi-agent handoffs, and framework-specific SDKs—so you can debug what actually went wrong."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "OTel and mesh-derived metrics: A 2026 reference",
+      "link": "https://www.cncf.io/blog/2026/06/29/otel-and-mesh-derived-metrics-a-2026-reference/",
+      "date": "2026-06-29T11:00:00.000Z",
+      "excerpt": "If you already run an OpenTelemetry pipeline, you have good visibility into what your applications are doing. This blog post is about what you don’t see yet: the east-west traffic between your services, measured at the."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "etcd-operator joins Cozystack with a new v1alpha2 API",
+      "link": "https://www.cncf.io/blog/2026/06/29/etcd-operator-joins-cozystack-with-a-new-v1alpha2-api/",
+      "date": "2026-06-29T10:46:12.000Z",
+      "excerpt": "The etcd-operator project, which develops an operator for deploying and maintaining etcd clusters on Kubernetes, has been donated to the Cozystack project. Alongside the donation, a from-scratch implementation of the operator has been published under a."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Mapping Europe’s AI Workforce Opportunity",
+      "link": "https://openai.com/index/mapping-ai-jobs-transition-eu",
+      "date": "2026-06-29T07:00:00.000Z",
+      "excerpt": "A new OpenAI report maps how AI could reshape jobs across the EU, highlighting which occupations may face automation, growth, or workflow changes."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Supercharge RHEL troubleshooting with agentic AI: Introducing goose",
+      "link": "https://www.redhat.com/en/blog/supercharge-rhel-troubleshooting-agentic-ai-introducing-goose",
+      "date": "2026-06-29T00:00:00.000Z",
+      "excerpt": "AI is rapidly transforming how system administrators and developers interact with their environments."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Distributed AI inference: What telecom service provider leaders should know",
+      "link": "https://www.redhat.com/en/blog/distributed-ai-inference-what-telecom-service-provider-leaders-should-know",
+      "date": "2026-06-29T00:00:00.000Z",
+      "excerpt": "Every telecommunications service provider is operationalizing AI right now. Use cases include customer care-bots, network operation co-pilots, and managed AI-as-a-service (AIaaS) for external enterprise customers and others."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Can't patch fast enough? Zero trust as a last line of defense",
+      "link": "https://www.redhat.com/en/blog/cant-patch-fast-enough-zero-trust-last-line-defense",
+      "date": "2026-06-29T00:00:00.000Z",
+      "excerpt": "The velocity at which new features are added and applications evolve directly drives up architectural complexity. This relentless pace isn't just driven by the desire for new features; it is increasingly forced by the constant discovery of new vulnerabilities."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "What's new in Git 2.55.0?",
+      "link": "https://about.gitlab.com/blog/whats-new-in-git-2-55-0/",
+      "date": "2026-06-29T00:00:00.000Z",
+      "excerpt": "The Git project recently released Git 2.55."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice?",
+      "link": "https://snyk.io/blog/snyk-vulnbench-js-1-0-llm-security-review-repeatability/",
+      "date": "2026-06-29T00:00:00.000Z",
+      "excerpt": "Snyk VulnBench JS 1.0: 300 repeated scans show LLM security findings vary by run, while SAST and models catch different vulnerability gaps."
+    }
+  ]
+}
