@@ -34,6 +34,11 @@ jobs:
           SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
         run: node scripts/fetch-seoul-events.mjs
 
+      - name: Fetch nationwide festivals
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+        run: node scripts/fetch-festivals.mjs
+
       - name: Check for changes
         id: changes
         run: |
