@@ -4,7 +4,7 @@
     "speaking": "Speaking",
     "docs": "K-PaaS Lite",
     "blog": "Blog",
-    "events": "서울 행사",
+    "events": "행사",
     "about": "About",
     "lang": "EN"
   },
@@ -58,13 +58,20 @@
     "video": "영상"
   },
   "events": {
-    "title": "서울 행사",
-    "subtitle": "서울시 문화·축제 행사 정보 (서울 열린데이터광장 제공)",
+    "title": "행사 · 축제",
+    "subtitle": "서울시 문화행사 + 전국 축제 정보 (서울 열린데이터광장 · 한국관광공사 제공)",
     "updated_at": "{date} 기준",
     "upcoming": "진행 중 · 예정",
     "past": "종료된 행사",
     "free": "무료",
     "paid": "유료",
+    "tab_all": "전체",
+    "tab_seoul": "서울 행사",
+    "tab_festival": "전국 축제",
+    "search_placeholder": "행사명·장소 검색",
+    "category_all": "전체 분류",
+    "show_more": "더 보기 (+{n})",
+    "no_result": "조건에 맞는 행사가 없습니다",
     "no_events": "현재 등록된 행사가 없습니다",
     "no_events_desc": "매일 자동으로 업데이트됩니다"
   },
