@@ -66,8 +66,8 @@ async function fetchPage(start, end) {
 }
 
 function normalizeEvent(raw) {
-  const ticket = String(raw.TICKET || '').trim().toLowerCase();
-  const isFree = ticket === '무료' || ticket === 'free' || ticket === '';
+  // 유무료 플래그는 IS_FREE 필드("무료"/"유료")가 정답. (TICKET은 예매처 구분값이라 무관)
+  const isFree = String(raw.IS_FREE || '').trim() === '무료';
   return {
     id: String(raw.CULTCODE || raw.TITLE || Math.random()),
     title: String(raw.TITLE || '').trim(),

@@ -98,6 +98,49 @@ function normalizeItems(raw) {
   return [raw];
 }
 
+/** detailIntro2로 관람료(usetimefestival) 조회 → '무료' 포함 시 true. 실패 시 null(판정 불가). */
+async function fetchFee(contentId) {
+  const params = new URLSearchParams({
+    serviceKey: API_KEY,
+    MobileOS: 'ETC',
+    MobileApp: 'dasomel',
+    _type: 'json',
+    contentId: String(contentId),
+    contentTypeId: '15',
+  });
+  const url = `https://apis.data.go.kr/B551011/KorService2/detailIntro2?${params.toString()}`;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data?.response?.header?.resultCode !== '0000') return null;
+    const item = normalizeItems(data.response.body?.items?.item)[0];
+    const fee = String(item?.usetimefestival || '').replace(/<[^>]*>/g, '').trim();
+    if (!fee) return null;
+    return fee.includes('무료') && !fee.includes('유료');
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/** 동시성 제한 풀로 작업 실행 */
+async function runPool(items, limit, worker) {
+  const results = new Array(items.length);
+  let idx = 0;
+  async function next() {
+    while (idx < items.length) {
+      const cur = idx++;
+      results[cur] = await worker(items[cur], cur);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, next));
+  return results;
+}
+
 function normalizeEvent(item) {
   const startDate = parseDate(item.eventstartdate);
   const endDate = parseDate(item.eventenddate);
@@ -197,6 +240,15 @@ async function main() {
     log(`Page ${page}: ${items.length} items (total so far: ${festivalEvents.length})`);
     if (festivalEvents.length >= totalCount) break;
   }
+
+  // 관람료 상세 조회로 무료/유료 판정 (목록 API엔 요금이 없음)
+  log(`Fetching fee detail for ${festivalEvents.length} festivals...`);
+  const fees = await runPool(festivalEvents, 6, (e) => fetchFee(e.id.replace(/^tour-/, '')));
+  let freeCount = 0;
+  festivalEvents.forEach((e, i) => {
+    if (fees[i] === true) { e.isFree = true; freeCount++; }
+  });
+  log(`Fee detail done — 무료 ${freeCount} / 유료·미상 ${festivalEvents.length - freeCount}`);
 
   // 기존 data.json 읽기
   let existingData = { updatedAt: '', events: [] };
