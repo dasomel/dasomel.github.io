@@ -101,6 +101,7 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
   const [tab, setTab] = useState<Tab>('all');
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
+  const [freeOnly, setFreeOnly] = useState(false);
   const [visible, setVisible] = useState(PAGE);
 
   const counts = useMemo(() => {
@@ -126,16 +127,17 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return byTab.filter(e => {
+      if (freeOnly && !e.isFree) return false;
       if (category !== 'all' && (e.category || '기타') !== category) return false;
       if (q && !`${e.title} ${e.place} ${e.guName}`.toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [byTab, category, query]);
+  }, [byTab, category, query, freeOnly]);
 
   // 탭이 바뀌면 분류 필터 초기화 (이전 탭의 분류가 빈 결과를 만들지 않도록)
   useEffect(() => { setCategory('all'); }, [tab]);
   // 필터가 바뀌면 노출 개수 초기화
-  useEffect(() => { setVisible(PAGE); }, [tab, query, category]);
+  useEffect(() => { setVisible(PAGE); }, [tab, query, category, freeOnly]);
 
   const shown = filtered.slice(0, visible);
   const freeLabel = t('free');
@@ -148,6 +150,19 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
         <TabButton active={tab === 'all'} onClick={() => setTab('all')} label={t('tab_all')} count={counts.all} />
         <TabButton active={tab === 'seoul'} onClick={() => setTab('seoul')} label={t('tab_seoul')} count={counts.seoul} />
         <TabButton active={tab === 'festival'} onClick={() => setTab('festival')} label={t('tab_festival')} count={counts.festival} />
+        <button
+          type="button"
+          onClick={() => setFreeOnly(v => !v)}
+          aria-pressed={freeOnly}
+          className="px-3 py-1.5 text-sm rounded-lg font-medium transition-colors ml-auto"
+          style={{
+            backgroundColor: freeOnly ? 'rgb(22,163,74)' : 'var(--surface)',
+            color: freeOnly ? '#fff' : 'var(--text-muted)',
+            border: `1px solid ${freeOnly ? 'rgb(22,163,74)' : 'var(--border)'}`,
+          }}
+        >
+          {freeOnly ? '✓ ' : ''}{t('free_only')}
+        </button>
       </div>
 
       {/* 검색 */}
