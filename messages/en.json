@@ -71,7 +71,7 @@
     "search_placeholder": "Search by name or place",
     "category_all": "All categories",
     "free_only": "Free only",
-    "show_more": "Show more (+{n})",
+    "loading_more": "Loading {n} more…",
     "no_result": "No events match your filters",
     "no_events": "No events available",
     "no_events_desc": "Updated automatically every day"

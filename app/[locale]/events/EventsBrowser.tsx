@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import type { SeoulEvent } from '@/lib/types';
 
@@ -139,6 +139,20 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
   // 필터가 바뀌면 노출 개수 초기화
   useEffect(() => { setVisible(PAGE); }, [tab, query, category, freeOnly]);
 
+  // 무한 스크롤 — 센티넬이 보이면 다음 묶음 로드
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (visible >= filtered.length) return;
+    const el = sentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => { if (entries[0].isIntersecting) setVisible(v => v + STEP); },
+      { rootMargin: '600px' },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [visible, filtered.length]);
+
   const shown = filtered.slice(0, visible);
   const freeLabel = t('free');
   const paidLabel = t('paid');
@@ -227,15 +241,8 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
             ))}
           </div>
           {filtered.length > visible && (
-            <div className="flex justify-center mt-8">
-              <button
-                type="button"
-                onClick={() => setVisible(v => v + STEP)}
-                className="px-5 py-2.5 text-sm rounded-lg font-medium transition-colors"
-                style={{ backgroundColor: 'var(--surface)', color: 'var(--text)', border: '1px solid var(--border)' }}
-              >
-                {t('show_more', { n: Math.min(STEP, filtered.length - visible) })}
-              </button>
+            <div ref={sentinelRef} className="h-10 flex justify-center items-center mt-6 text-xs" style={{ color: 'var(--text-muted)' }}>
+              {t('loading_more', { n: filtered.length - visible })}
             </div>
           )}
         </>
