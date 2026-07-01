@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T16:03:32.286Z",
+  "updatedAt": "2026-07-01T01:39:27.780Z",
   "events": [
     {
       "id": "tour-3481597",
@@ -2390,7 +2390,7 @@
       "id": "tour-3499540",
       "title": "양평수박축제",
       "category": "축제",
-      "place": "경기도 양평군 청운면 용두로 170",
+      "place": "경기도 양평군 청운면 용두민속장터길 2",
       "guName": "",
       "startDate": "2026-07-04",
       "endDate": "2026-07-05",
@@ -2912,6 +2912,21 @@
       "thema": ""
     },
     {
+      "id": "tour-4080156",
+      "title": "2026 부산브랜드페스타",
+      "category": "축제",
+      "place": "부산광역시 해운대구 APEC로 55 (우동)",
+      "guName": "",
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-12",
+      "dateRange": "2026.07.10 ~ 2026.07.12",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/87/4080287_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
       "id": "tour-1824778",
       "title": "제18회 통영연극예술축제",
       "category": "축제",
@@ -3402,7 +3417,7 @@
       "dateRange": "2026.07.16 ~ 2026.07.19",
       "isFree": true,
       "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/36/4067236_image2_1.jpg",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/35/4080135_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -3902,6 +3917,21 @@
       "thema": ""
     },
     {
+      "id": "tour-590921",
+      "title": "2026 평창대관령음악제",
+      "category": "축제",
+      "place": "강원특별자치도 평창군 대관령면 솔봉로 325",
+      "guName": "",
+      "startDate": "2026-07-23",
+      "endDate": "2026-08-02",
+      "dateRange": "2026.07.23 ~ 2026.08.02",
+      "isFree": false,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/08/4080008_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
       "id": "tour-3318880",
       "title": "제8회 농촌융복합산업 제주국제박람회",
       "category": "축제",
@@ -4183,6 +4213,21 @@
       "isFree": false,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/77/4071277_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "tour-2993769",
+      "title": "안동 수(水)페스타",
+      "category": "축제",
+      "place": "경상북도 안동시 강남로 246 (정하동)",
+      "guName": "",
+      "startDate": "2026-07-25",
+      "endDate": "2026-08-02",
+      "dateRange": "2026.07.25 ~ 2026.08.02",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/94/4080294_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -4993,6 +5038,21 @@
       "isFree": false,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/4025906_image2_1.JPG",
+      "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "tour-4080078",
+      "title": "2026 대한민국 도시·지역혁신 산업박람회",
+      "category": "축제",
+      "place": "충청북도 청주시 흥덕구 오송읍 오송생명로 250",
+      "guName": "",
+      "startDate": "2026-09-29",
+      "endDate": "2026-10-02",
+      "dateRange": "2026.09.29 ~ 2026.10.02",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/28/4080328_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
