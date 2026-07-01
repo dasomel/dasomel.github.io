@@ -1,0 +1,183 @@
+{
+  "date": "2026-07-02",
+  "generatedAt": "2026-07-01T22:51:04.792Z",
+  "count": 22,
+  "articles": [
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Announcing zone-aware routing in Amazon ECS Service Connect",
+      "link": "https://aws.amazon.com/blogs/containers/announcing-zone-aware-routing-in-amazon-ecs-service-connect/",
+      "date": "2026-07-01T21:59:59.000Z",
+      "excerpt": "In this post, we explain how zone-aware routing works and walk you through setting up a multi-AZ ECS cluster to see it in action."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenClaw’s new app doesn’t run AI on your phone. That’s the whole point.",
+      "link": "https://thenewstack.io/openclaw-persistent-agent-architecture/",
+      "date": "2026-07-01T21:00:00.000Z",
+      "excerpt": "OpenClaw finally dropped its iOS and Android apps this week, meaning you can now ditch the Telegram and WhatsApp methods"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cordyceps flaw pattern is more proof CI/CD is part of the attack surface",
+      "link": "https://thenewstack.io/cordyceps-cicd/",
+      "date": "2026-07-01T20:29:58.000Z",
+      "excerpt": "On June 24, research from Novee Security was released, reporting a CI/CD weakness that could enable anyone with an unauthenticated"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cloudflare wants to build the economic layer of the AI web",
+      "link": "https://thenewstack.io/cloudflare-ai-web-economics/",
+      "date": "2026-07-01T20:10:00.000Z",
+      "excerpt": "AI has changed the web right before our eyes. With Google’s AI Overviews doing the heavy lifting, publications that once"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "SOCRadar powers rapid threat detection with AlloyDB and Gemini Enterprise",
+      "link": "https://cloud.google.com/blog/products/databases/socradar-powers-rapid-threat-detection-with-alloydb-and-gemini-enterprise/",
+      "date": "2026-07-01T19:00:00.000Z",
+      "excerpt": "Editor’s note: SOCRadar is a leading cybersecurity company that provides threat intelligence to businesses worldwide. As the volume of cyber threats continued to grow, SOCRadar needed to modernize its data infrastructure to deliver faster insights to its customers."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The latest AI news we announced in June 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+      "date": "2026-07-01T18:15:00.000Z",
+      "excerpt": "Here are Google’s latest AI updates from June 2026."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "AlloyDB AI Functions - now with revolutionary performance boosts and cost savings",
+      "link": "https://cloud.google.com/blog/products/databases/boost-performance-and-lower-costs-with-alloydb-ai-functions/",
+      "date": "2026-07-01T18:00:00.000Z",
+      "excerpt": "AlloyDB is an AI-native database—it isn’t just a passive data store, it intelligently understands and processes your data."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Announcing Amazon EKS Rollback for safe and reliable management of cluster upgrades",
+      "link": "https://aws.amazon.com/blogs/containers/announcing-amazon-eks-rollback-for-safe-and-reliable-management-of-cluster-upgrades/",
+      "date": "2026-07-01T17:32:29.000Z",
+      "excerpt": "Today, we’re announcing Amazon EKS Version Rollback, a new capability that allows cluster administrators to safely roll back Kubernetes version upgrades on Amazon Elastic Kubernetes Service (Amazon EKS) clusters."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Meta’s AI Storage Blueprint at Scale",
+      "link": "https://engineering.fb.com/2026/07/01/data-infrastructure/metas-ai-storage-blueprint-at-scale/",
+      "date": "2026-07-01T16:00:36.000Z",
+      "excerpt": "Over the past several years, model capabilities and training dataset sizes have experienced exponential growth. During the past year or so, the time between new-frontier-model releases has gone down from months to weeks."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "New York City educators and industry leaders gathered at Google’s offices to shape the future of AI in classrooms.",
+      "link": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
+      "date": "2026-07-01T16:00:00.000Z",
+      "excerpt": "Google, the New York Jobs CEO Council and Urban Assembly hosted an AI summit for 150 education and industry leaders."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "New IDC study: The business value of Mandiant Consulting",
+      "link": "https://cloud.google.com/blog/products/identity-security/new-idc-study-how-mandiant-transforms-security-into-a-competitive-advantage/",
+      "date": "2026-07-01T16:00:00.000Z",
+      "excerpt": "Security leaders are now expected to protect business growth and clearly articulate security value to their board of directors, in addition to managing risk. While translating technical defense into measurable financial returns can be challenging, Mandiant Consulting can help you bridge the gap."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "6 security settings every GitHub maintainer should enable this week",
+      "link": "https://github.blog/security/6-security-settings-every-github-maintainer-should-enable-this-week/",
+      "date": "2026-07-01T15:59:29.000Z",
+      "excerpt": "These six free settings will not make your project unhackable. Nothing will."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Why AI Agents Need Isolation",
+      "link": "https://www.docker.com/blog/why-ai-agents-need-isolation/",
+      "date": "2026-07-01T13:00:00.000Z",
+      "excerpt": "Learn why AI agent isolation matters, how Docker SBX enables safer AI workflows, and how Sandbox Kits help. Written by Docker Captain Karan Verma."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Announcing the Monetization Gateway: charge for any resource behind Cloudflare via x402",
+      "link": "https://blog.cloudflare.com/monetization-gateway/",
+      "date": "2026-07-01T13:00:00.000Z",
+      "excerpt": "We're opening the waitlist for our Monetization Gateway, which will allow you to charge for any web page, dataset, API, or MCP tool behind Cloudflare. The charges will settle in stablecoins over the x402 open protocol, with no payments stack of your own to build."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Content Independence Day, one year on: building the business model for the agentic Internet",
+      "link": "https://blog.cloudflare.com/agentic-internet-bot-report/",
+      "date": "2026-07-01T13:00:00.000Z",
+      "excerpt": "One year after declaring Content Independence Day, a dynamic market for monetized content has officially emerged. In this report, we examine how the rise of autonomous AI agents is upending traditional search referrals and detail the new infrastructure required to support a sustainable web economy."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Making AI search smarter",
+      "link": "https://blog.cloudflare.com/making-ai-search-smarter/",
+      "date": "2026-07-01T13:00:00.000Z",
+      "excerpt": "Search is how we find nearly everything on the web — creators, merchants, answers. AI is rewriting the rules, leaving creators caught between staying discoverable in an agentic era and getting paid for their work."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Understanding dynamic resource allocation in Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/07/01/understanding-dynamic-resource-allocation-in-kubernetes/",
+      "date": "2026-07-01T11:00:00.000Z",
+      "excerpt": "Dynamic Resource Allocation (DRA) recently reached GA in Kubernetes v1.35, and I believe many of us are eager to give it a try."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "JADEPUFFER: Agentic ransomware for automated database extortion",
+      "link": "https://webflow.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion",
+      "date": "2026-07-01T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Hugging Face and Cerebras bring Gemma 4 to real-time voice AI",
+      "link": "https://huggingface.co/blog/cerebras-gemma4-voice-ai",
+      "date": "2026-07-01T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The evolution of infrastructure automation in the age of AI: 4 key takeaways from Red Hat Summit 2026",
+      "link": "https://www.redhat.com/en/blog/evolution-infrastructure-automation-age-ai-4-key-takeaways-red-hat-summit-2026",
+      "date": "2026-07-01T00:00:00.000Z",
+      "excerpt": "At Red Hat Summit 2026, the conversation centered on a critical reality: AI agents are arriving in enterprise IT faster than most environments can govern them. Across the keynotes and more than 50 technical sessions, Red Hat made its position clear—organizations don't need to start over for the AI era."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Agentic AI on Red Hat OpenShift: What enterprises are doing right now",
+      "link": "https://www.redhat.com/en/blog/agentic-ai-red-hat-openshift-what-enterprises-are-doing-right-now",
+      "date": "2026-07-01T00:00:00.000Z",
+      "excerpt": "Insights from a customer roundtable at Red Hat Summit 2026Platform engineering and operations leaders from across industries—including airlines, utilities, financial services, higher education, and government—gathered for a candid conversation about agentic AI at Red Hat Summit 2026."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Patch Release: 18.8.11",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-18-8-11-released/",
+      "date": "2026-07-01T00:00:00.000Z",
+      "excerpt": ""
+    }
+  ]
+}
