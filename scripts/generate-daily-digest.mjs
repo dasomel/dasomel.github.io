@@ -74,6 +74,22 @@ function frontmatter({ title, description, date, tags }) {
   ].join('\n');
 }
 
+// MDX parses a bare `{...}` as a JSX expression, so JSON/object-literal text
+// like {"mode": "EXPRESS"} in a summary breaks the build. Wrap any brace pair
+// in inline code, skipping spans that are already backtick-delimited so we
+// never double-wrap.
+function escapeMdxBraces(text) {
+  if (!text) return text;
+  const s = String(text);
+  if (!s.includes('{') && !s.includes('}')) return s;
+  // Split into alternating [plain, code, plain, ...]; code spans land at odd
+  // indices thanks to the capturing group and are left untouched.
+  return s
+    .split(/(`[^`]*`)/)
+    .map((part, i) => (i % 2 === 1 ? part : part.replace(/\{[^{}]*\}/g, (m) => `\`${m}\``)))
+    .join('');
+}
+
 function buildMarkdown(lang, { date, articles }, enrich = false) {
   const isEn = lang === 'en';
   const L = {
@@ -94,15 +110,15 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
   const summaryOf = (a) => {
     if (enrich) {
       const s = isEn ? a.summaryEn : a.summaryKo;
-      if (s && String(s).trim()) return String(s).trim();
+      if (s && String(s).trim()) return escapeMdxBraces(String(s).trim());
     }
-    return a.excerpt ? String(a.excerpt).trim() : '';
+    return a.excerpt ? escapeMdxBraces(String(a.excerpt).trim()) : '';
   };
   // Insight only appears in enrich mode and only when the field is present.
   const insightOf = (a) => {
     if (!enrich) return '';
     const s = isEn ? a.insightEn : a.insightKo;
-    return s && String(s).trim() ? String(s).trim() : '';
+    return s && String(s).trim() ? escapeMdxBraces(String(s).trim()) : '';
   };
 
   const top = articles[0];
