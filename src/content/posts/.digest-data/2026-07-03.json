@@ -1,0 +1,103 @@
+{
+  "date": "2026-07-03",
+  "generatedAt": "2026-07-02T22:44:20.587Z",
+  "count": 12,
+  "articles": [
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "How CloudFormation Express mode accelerates your development cycle",
+      "link": "https://aws.amazon.com/blogs/devops/how-cloudformation-express-mode-accelerates-your-development-cycle/",
+      "date": "2026-07-02T21:06:52.000Z",
+      "excerpt": "AWS CloudFormation helps you model and provision cloud infrastructure as code using JSON or YAML templates, or through tools like the AWS Cloud Development Kit (CDK)."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The $1.3 million theft that exposed AI’s blind spot",
+      "link": "https://thenewstack.io/ai-infrastructure-cargo-theft/",
+      "date": "2026-07-02T21:05:30.000Z",
+      "excerpt": "Cyberattacks used to be the biggest security issue surrounding AI infrastructure, but that could be changing. A recent cargo theft"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft just admitted its biggest AI mistake — and spent $2.5 billion fixing it",
+      "link": "https://thenewstack.io/enterprise-ai-model-routing/",
+      "date": "2026-07-02T21:03:36.000Z",
+      "excerpt": "Microsoft’s latest AI services announcement suggests the era of standardizing on a single model may be ending. This week, the"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“AI contributions are demoralizing”: Godot bans coding agents to save its mentoring model",
+      "link": "https://thenewstack.io/godot-bans-ai-coding-agents/",
+      "date": "2026-07-02T20:31:26.000Z",
+      "excerpt": "Godot Engine, the open-source alternative to game engines such as Unity, is rewriting its contribution policy to bar most AI-generated"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Diagnose Kubernetes Control Plane Performance Issues with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/containers/diagnose-kubernetes-control-plane-performance-issues-with-aws-devops-agent/",
+      "date": "2026-07-02T17:03:59.000Z",
+      "excerpt": "This post demonstrates how AWS DevOps Agent diagnoses Amazon Elastic Kubernetes Service (Amazon EKS) API server performance degradation, specifically 429 throttling and API Priority and Fairness (APF) seat exhaustion."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Meet Brain: The AI system behind Azure reliability",
+      "link": "https://azure.microsoft.com/en-us/blog/meet-brain-the-ai-system-behind-azure-reliability/",
+      "date": "2026-07-02T16:00:00.000Z",
+      "excerpt": "Learn how Microsoft is building a digital twin of Azure Service Health and why it changes how hyperscale operates."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How GitHub used secret scanning to reach inbox zero",
+      "link": "https://github.blog/security/application-security/how-github-used-secret-scanning-to-reach-inbox-zero/",
+      "date": "2026-07-02T16:00:00.000Z",
+      "excerpt": "GitHub had 20,000+ secret scanning alerts across 15,000 repositories. Here's how we separated signal from noise, built remediation workflows, and reached inbox zero in nine months."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "(re)introducing kpt: Your toolchain for infrastructure automation",
+      "link": "https://www.cncf.io/blog/2026/07/02/reintroducing-kpt-your-toolchain-for-infrastructure-automation/",
+      "date": "2026-07-02T15:01:38.000Z",
+      "excerpt": "What is kpt? The opening tagline of the kpt documentation describes it as “… a package-centric toolchain that enables a WYSIWYG configuration authoring, automation, and delivery experience, which simplifies managing Kubernetes platforms and KRM-driven infrastructure at."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Google’s Continued Disruption of Malicious Residential Proxy Networks",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/google-continued-disruption-residential-proxy-networks/",
+      "date": "2026-07-02T14:00:00.000Z",
+      "excerpt": "Background Today, in coordination with the FBI, Lumen, and others, Google took action against the NetNut residential proxy network, also known as Popa."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Could vs. Should: The First Year Managing an SRE Team",
+      "link": "https://www.honeycomb.io/blog/could-should-first-year-managing-sre-team",
+      "date": "2026-07-02T13:00:00.000Z",
+      "excerpt": "A first-time engineering manager reflects on the first year leading Honeycomb's SRE team, from a chaotic first week through a year of lessons. Their advice for new managers: invest in relationships, seek feedback relentlessly, and never stop asking questions."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "AI로 웹 엔지니어 없이 LINE 앱 안에서 그룹 영상 통화 서비스 만들기",
+      "link": "https://techblog.lycorp.co.jp/ko/building-group-video-calls-inside-line-app-with-ai-and-line-planet",
+      "date": "2026-07-02T08:45:00.000Z",
+      "excerpt": "들어가며LINE Developers를 통해 이용할 수 있는 LIFF(LINE Front-end Framework)를 활용하면, LINE 앱 사용자를 대상으로 나만의 서비스 공간을 ."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Introducing Red Hat OpenShift Service Mesh 3.4",
+      "link": "https://www.redhat.com/en/blog/introducing-red-hat-openshift-service-mesh-34",
+      "date": "2026-07-02T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift Service Mesh 3.4 is generally available with Red Hat OpenShift and Red Hat OpenShift Platform Plus."
+    }
+  ]
+}
