@@ -10,7 +10,7 @@ draft: false
 
 ### How CloudFormation Express mode accelerates your development cycle
 
-AWS가 CloudFormation에 리소스 안정화(stabilization) 대기를 생략하는 'Express mode'를 도입했다. 기존에는 리소스가 실제 트래픽을 처리할 수 있을 때까지 기다린 뒤 CREATE_COMPLETE를 보고했지만, Express mode는 구성이 적용되는 즉시 스택 작업을 완료 처리한다. 리소스 의존성 준수와 생성·수정·삭제 방식은 기존과 동일하게 유지된다. CloudFront 배포처럼 5~10분 걸리던 작업이 1분 미만으로 단축되는 사례를 제시하며, CLI의 --deployment-config `'{"mode": "EXPRESS"}'`, CDK의 cdk deploy --express, SAM의 sam deploy --express로 활성화한다. 기본적으로 롤백이 비활성화되어 실패 시 스택을 그대로 두고 즉시 수정·재시도할 수 있다. AWS는 개발 반복(dev iteration)과 AI 에이전트의 배포→관찰→조정 루프에 권장하고, 프로덕션 배포에는 기본 모드가 여전히 적합하다고 안내한다.
+AWS가 CloudFormation에 리소스 안정화(stabilization) 대기를 생략하는 'Express mode'를 도입했다. 기존에는 리소스가 실제 트래픽을 처리할 수 있을 때까지 기다린 뒤 CREATE_COMPLETE를 보고했지만, Express mode는 구성이 적용되는 즉시 스택 작업을 완료 처리한다. 리소스 의존성 준수와 생성·수정·삭제 방식은 기존과 동일하게 유지된다. CloudFront 배포처럼 5~10분 걸리던 작업이 1분 미만으로 단축되는 사례를 제시하며, CLI의 `--deployment-config '{"mode": "EXPRESS"}'`, CDK의 cdk deploy --express, SAM의 sam deploy --express로 활성화한다. 기본적으로 롤백이 비활성화되어 실패 시 스택을 그대로 두고 즉시 수정·재시도할 수 있다. AWS는 개발 반복(dev iteration)과 AI 에이전트의 배포→관찰→조정 루프에 권장하고, 프로덕션 배포에는 기본 모드가 여전히 적합하다고 안내한다.
 
 > 💡 **왜 중요한가**: dev 환경 IaC 피드백 루프를 분 단위에서 초 단위로 줄여주므로 CDK/SAM 반복 배포가 잦은 팀이라면 개발 스택에 선별 적용할 가치가 있다 — 단, 롤백이 기본으로 꺼진다는 점은 파이프라인 정책에 명시해야 한다.
 
