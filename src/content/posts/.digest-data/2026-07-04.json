@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-04",
+  "generatedAt": "2026-07-03T22:40:03.734Z",
+  "count": 5,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Apple just turned Safari into something AI agents can control",
+      "link": "https://thenewstack.io/safari-mcp-platform-infrastructure/",
+      "date": "2026-07-03T17:19:46.000Z",
+      "excerpt": "Earlier this week, Apple’s WebKit team shipped Safari Technology Preview 247 with a built-in Model Context Protocol server — 16"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "How data sovereignty is changing cloud native infrastructure design",
+      "link": "https://www.cncf.io/blog/2026/07/03/how-data-sovereignty-is-changing-cloud-native-infrastructure-design/",
+      "date": "2026-07-03T11:00:00.000Z",
+      "excerpt": "The core issue isn’t where your server sits. It’s who can be compelled to hand over what’s on it."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Scaling NetOps-as-Code: Improving security, eliminating random scripting, and more",
+      "link": "https://www.redhat.com/en/blog/scaling-netops-code-improving-security-eliminating-random-scripting-and-more",
+      "date": "2026-07-03T00:00:00.000Z",
+      "excerpt": "The drive toward NetOps-as-Code continues to reshape how enterprises manage their infrastructure."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — July 3, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-july-3-2026",
+      "date": "2026-07-03T00:00:00.000Z",
+      "excerpt": "IBM, Red Hat, and Deloitte Announce Lightwell Collaboration to Help Strengthen Open Source Software Supply Chain TrustDeloitte is teaming up with IBM and Red Hat to support Lightwell and strengthen the enterprise open source software supply chain."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Beyond the baseline: Introducing the Digital Sovereignty Readiness Appraisal",
+      "link": "https://www.redhat.com/en/blog/beyond-baseline-introducing-digital-sovereignty-readiness-appraisal",
+      "date": "2026-07-03T00:00:00.000Z",
+      "excerpt": "Since February, over 1,500 organizations have used Red Hat's complimentary Digital Sovereignty Readiness Assessment to establish a sovereignty baseline in 15 minutes."
+    }
+  ]
+}
