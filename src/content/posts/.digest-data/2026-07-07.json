@@ -1,0 +1,103 @@
+{
+  "date": "2026-07-07",
+  "generatedAt": "2026-07-06T22:47:32.811Z",
+  "count": 12,
+  "articles": [
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "LeRobot v0.6.0: Imagine, Evaluate, Improve",
+      "link": "https://huggingface.co/blog/lerobot-release-v060",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "A new study just debunked the biggest fear about AI and open source",
+      "link": "https://thenewstack.io/ai-open-source-newcomers-study/",
+      "date": "2026-07-06T21:26:47.000Z",
+      "excerpt": "There’s a common fear about what AI could do to open source. Coding agents take over the beginner-friendly issues that"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft, Google and Cloudflare just made 2029 the new quantum deadline",
+      "link": "https://thenewstack.io/post-quantum-cryptography-deadline-2029/",
+      "date": "2026-07-06T20:20:17.000Z",
+      "excerpt": "The inevitable path to access to quantum computing brings an equal and opposite responsibility to address post-quantum cryptography. Government directives from"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Getting Claude Code to grunt in Caveman-speak might not save as many tokens as you think",
+      "link": "https://thenewstack.io/caveman-mode-token-savings/",
+      "date": "2026-07-06T18:28:42.000Z",
+      "excerpt": "Developers are paying closer attention to how much their AI coding tools cost them to run, and for good reason."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Shift into high gear with agents: Securing the software-defined vehicle",
+      "link": "https://cloud.google.com/blog/products/identity-security/shift-into-high-gear-with-agents-securing-the-software-defined-vehicle/",
+      "date": "2026-07-06T16:00:00.000Z",
+      "excerpt": "The automotive industry is at a pivotal crossroads as it hits the gas on adopting new technology. The era of the traditional connected vehicle has shifted into the age of the software-defined vehicle (SDV), notable for rapid innovation with many new capabilities delivered over the air."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "PRX Part 4: Our Data Strategy",
+      "link": "https://huggingface.co/blog/Photoroom/prx-part4-data",
+      "date": "2026-07-06T15:30:55.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Your Worker can now have its own cache in front of it",
+      "link": "https://blog.cloudflare.com/workers-cache/",
+      "date": "2026-07-06T13:00:00.000Z",
+      "excerpt": "We are launching Workers Cache, a regionally tiered cache that sits directly in front of your Worker entrypoints. Infinitely composable, configured via standard HTTP headers"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The 4-body problem of SRE: Why autonomous operations depend on context",
+      "link": "https://www.cncf.io/blog/2026/07/06/the-4-body-problem-of-sre-why-autonomous-operations-depend-on-context/",
+      "date": "2026-07-06T11:00:00.000Z",
+      "excerpt": "What a room full of senior SREs confirmed about the trust gap, and where the actual work begins I spent a day last week at an event in Bengaluru asking a room full of senior SREs,."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Evolving platform engineering for AI-native workloads",
+      "link": "https://www.cncf.io/blog/2026/07/06/evolving-platform-engineering-for-ai-native-workloads/",
+      "date": "2026-07-06T11:00:00.000Z",
+      "excerpt": "Platform Engineering 1.0 delivered real value."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "🤗 Kernels: Major Updates",
+      "link": "https://huggingface.co/blog/revamped-kernels",
+      "date": "2026-07-06T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Provide access to Red Hat documentation in environments with limited connectivity",
+      "link": "https://www.redhat.com/en/blog/provide-access-red-hat-documentation-environments-limited-connectivity",
+      "date": "2026-07-06T00:00:00.000Z",
+      "excerpt": "In this blog post, I explain how you can use Red Hat Offline Knowledge Portal to provide access to Red Hat documentation in environments with limited or no connectivity to the internet.The Red Hat Offline Knowledge Portal is a secure offline version of Red Hat's proprietary knowledge content for our products."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Keep your GitLab seats in check with restricted access",
+      "link": "https://about.gitlab.com/blog/gitlab-restricted-access-improvements/",
+      "date": "2026-07-06T00:00:00.000Z",
+      "excerpt": "GitLab restricted access for instance admins, group owners, and billing managers enables predictable seat costs with less manual gatekeeping. The feature has been significantly improved and is now more complete for the workflows that commonly affect seat usage."
+    }
+  ]
+}
