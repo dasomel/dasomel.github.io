@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-06",
+  "generatedAt": "2026-07-05T22:37:38.912Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft, AWS and Anthropic are spending billions — and not on better models",
+      "link": "https://thenewstack.io/microsoft-frontier-forward-deployed/",
+      "date": "2026-07-05T15:00:00.000Z",
+      "excerpt": "On July 2, Judson Althoff, CEO of Microsoft’s commercial business, announced the formation of the Microsoft Frontier Company. The new"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "10 moments that defined AI’s turbulent first half of 2026",
+      "link": "https://thenewstack.io/biggest-ai-moments-2026/",
+      "date": "2026-07-05T14:00:00.000Z",
+      "excerpt": "Halfway through 2026, artificial intelligence has been at the center of every major story inside the world of software development"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The AI revolution will not be televised — it’ll be quantized",
+      "link": "https://thenewstack.io/chinese-frontier-models-quantization/",
+      "date": "2026-07-05T13:00:00.000Z",
+      "excerpt": "With apologies to Gil Scott-Heron and his timeless 1971 protest song, if anyone thought the AI revolution would not be"
+    }
+  ]
+}
