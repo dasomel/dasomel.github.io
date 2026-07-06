@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-05",
+  "generatedAt": "2026-07-04T22:36:46.961Z",
+  "count": 1,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why cheaper models alone won’t save your AI budget",
+      "link": "https://thenewstack.io/agentic-ai-token-costs/",
+      "date": "2026-07-04T12:02:30.000Z",
+      "excerpt": "Finding the most capable model at the lowest cost has always been the goal. But as agentic AI evolves, a"
+    }
+  ]
+}
