@@ -1,0 +1,191 @@
+{
+  "date": "2026-07-08",
+  "generatedAt": "2026-07-07T22:42:41.525Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "From Hugging Face to Amazon SageMaker Studio in one click",
+      "link": "https://huggingface.co/blog/amazon/one-click-to-sagemaker-studio",
+      "date": "2026-07-07T21:15:33.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Coinbase runs 1,200 agents and just slashed its AI bill in half",
+      "link": "https://thenewstack.io/multi-model-ai-infrastructure/",
+      "date": "2026-07-07T20:55:05.000Z",
+      "excerpt": "Vercel CEO Guillermo Rauch and Coinbase CEO Brian Armstrong run very different companies, but they’re making the same architectural bet."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Watch AWS engineers troubleshoot agentic AI with OpenTelemetry and OpenSearch",
+      "link": "https://thenewstack.io/opentelemetry-opensearch-agent-observability/",
+      "date": "2026-07-07T20:29:14.000Z",
+      "excerpt": "Your organization constantly needs more information about system performance, usage, and data while in production — or better yet, before"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Vercel acquires Better Auth to give AI agents their own identity",
+      "link": "https://thenewstack.io/vercel-acquires-better-auth/",
+      "date": "2026-07-07T20:13:37.000Z",
+      "excerpt": "AI agents increasingly act on people’s behalf, opening pull requests, reviewing code, creating deployments, querying internal systems, or updating business"
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "How to scale access control in Grafana Cloud",
+      "link": "https://grafana.com/blog/how-to-scale-access-control-in-grafana-cloud/",
+      "date": "2026-07-07T17:02:52.000Z",
+      "excerpt": "One of the primary reasons organizations adopt Grafana Cloud is to create a single pane of glass across the data they collect from self-hosted systems, cloud providers, and third-party platforms."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "The power of collaboration: How we can reduce traffic congestion",
+      "link": "https://research.google/blog/the-power-of-collaboration-how-we-can-reduce-traffic-congestion/",
+      "date": "2026-07-07T16:42:08.000Z",
+      "excerpt": "Algorithms & Theory"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Full request and response compliance logging on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/containers/full-request-and-response-compliance-logging-on-amazon-eks/",
+      "date": "2026-07-07T16:35:30.000Z",
+      "excerpt": "In this post, we demonstrate how to use Envoy’s External Processing filter (ext_proc) to solve this challenge on Amazon EKS. This solution captures complete request and response data without modifying application code, providing the compliance-grade audit trails that regulators require."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "S&P Global’s innovative disaster recovery strategy using Amazon FSx for NetApp ONTAP snapshots",
+      "link": "https://aws.amazon.com/blogs/architecture/sp-globals-innovative-disaster-recovery-strategy-using-amazon-fsx-for-netapp-ontap-snapshots/",
+      "date": "2026-07-07T16:32:21.000Z",
+      "excerpt": "In this post, we explain how S&P Global Market Intelligence implemented an innovative disaster recovery solution for their Capital IQ platform using Amazon FSx for NetApp ONTAP."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "20 questions for the Agentic Enterprise (and how Agent Platform can help)",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/20-questions-for-the-agentic-enterprise/",
+      "date": "2026-07-07T16:00:00.000Z",
+      "excerpt": "If you’re an IT leader, you might be getting a lot of questions about how to build and deploy agents. The pressure to move fast is intense, but the engineering reality is incredibly complex."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "A developer's guide to publishing agents in Gemini Enterprise and Google Cloud Marketplace",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/publish-agents-in-gemini-enterprise-and-google-cloud-marketplace/",
+      "date": "2026-07-07T16:00:00.000Z",
+      "excerpt": "Software-as-a-service (SaaS) is evolving into Agents-as-a-service (AaaS)."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "BGP route policies: Top 3 use cases by customer demand",
+      "link": "https://cloud.google.com/blog/products/networking/bgp-route-policies-top-3-use-cases-by-customer-demand/",
+      "date": "2026-07-07T16:00:00.000Z",
+      "excerpt": "When we first made BGP route policies for Cloud Router generally available over a year ago, our goal was to give network administrators deep, programmable control over how network paths are evaluated and propagated. Since then, we’ve been watching closely how our customers have adopted this feature."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Q1 2026 Innovation Graph update: Open source collaboration is accelerating worldwide",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/q1-2026-innovation-graph-update-open-source-collaboration-is-accelerating-worldwide/",
+      "date": "2026-07-07T16:00:00.000Z",
+      "excerpt": "New Innovation Graph data shows global developer communities growing faster than ever, with collaboration reaching new highs across many economies."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Two months of Open Community Groups",
+      "link": "https://www.cncf.io/blog/2026/07/07/two-months-of-open-community-groups/",
+      "date": "2026-07-07T15:44:58.000Z",
+      "excerpt": "Two months ago, the CNCF launched Open Community Groups (OCG, ocgroups.dev), an online meetup platform that’s open source."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Hugging Face Models on Foundry Managed Compute",
+      "link": "https://huggingface.co/blog/microsoft/foundry-managed-compute",
+      "date": "2026-07-07T15:20:06.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare proudly joins the UK government's Cyber Resilience Pledge",
+      "link": "https://blog.cloudflare.com/cloudflare-joins-uk-cyber-resilience-pledge/",
+      "date": "2026-07-07T13:00:00.000Z",
+      "excerpt": "The pledge is a voluntary framework inviting organizations to commit to foundational cyber security governance, board-level accountability, and supply chain rigor. For over a decade, Cloudflare has pioneered the core pillars of this framework: democratizing security, leadership accountability, and radical transparency."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Why sandboxing your agent is not enough",
+      "link": "https://www.cncf.io/blog/2026/07/07/why-sandboxing-your-agent-is-not-enough/",
+      "date": "2026-07-07T11:30:00.000Z",
+      "excerpt": "The agentic AI space is moving incredibly fast. Not long ago, I learned about a cool project called agent-sandbox, which provides a sandboxed environment for AI agents by leveraging many of the building blocks we have."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Expanding Managed Agents in Gemini API: background tasks, remote MCP and more",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "date": "2026-07-07T08:54:00.000Z",
+      "excerpt": "We’re announcing new capabilities in Managed Agents in Gemini API so developers can build reliable, production-ready agents."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Security briefing: June 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-june-2026",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
+      "link": "https://openai.com/index/australian-payments-plus",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot",
+      "link": "https://huggingface.co/blog/skypilot-hf-storage",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "EMEA blog | ODC-Noord: Building Blocks for a Government Cloud That Is Already Up and Running (NL)",
+      "link": "https://www.redhat.com/en/blog/ocd-noord-building-blocks-for-a-government-cloud-that-is-already-up-and-running",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": "Jaap Jansma, manager Overheidsdatacenter Noord (ODC-Noord), en Marcel Timmer, Country Director Netherlands bij Red Hat, vertellen hoe een klein team in Groningen uitgroeide tot leverancier van een aantal cruciale bouwstenen voor het fundament onder de digitale overheid."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Satellite 6.19 delivers Red Hat Lightspeed on premise security monitoring",
+      "link": "https://www.redhat.com/en/blog/satellite-619-delivers-red-hat-lightspeed-premise-security-monitoring",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": "Red Hat Satellite 6.19 moves Red Hat Enterprise Linux (RHEL) management forward and continues to deliver the value of Red Hat Lightspeed to disconnected, air-gapped, and data-sovereign environments."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Enterprise Linux Long-Life Add-On: Your path to RHEL with no pre-determined end date",
+      "link": "https://www.redhat.com/en/blog/red-hat-enterprise-linux-long-life-add-your-path-rhel-forever",
+      "date": "2026-07-07T00:00:00.000Z",
+      "excerpt": "Change is the only constant. But for organizations operating in highly regulated sectors such as global finance, telecommunications, healthcare, and government, constant change can be the enemy of stability."
+    }
+  ]
+}
