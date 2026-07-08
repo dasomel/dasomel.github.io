@@ -1,0 +1,207 @@
+{
+  "date": "2026-07-09",
+  "generatedAt": "2026-07-08T22:40:32.166Z",
+  "count": 25,
+  "articles": [
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
+      "link": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
+      "date": "2026-07-08T21:11:56.000Z",
+      "excerpt": "Explore how the Aspire team turns merged product changes into SME-reviewed docs pull requests, closing the gap between release and documentation."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "C4N, now GA: Delivering cloud’s highest per vCPU network and block storage I/O for x86 workloads",
+      "link": "https://cloud.google.com/blog/products/compute/c4n-network-and-storage-optimized-vms/",
+      "date": "2026-07-08T20:00:00.000Z",
+      "excerpt": "As organizations scale modern workloads — from high-throughput databases and network/security appliances to real-time analytics and AI/ML inference — network and block storage performance can quickly become a bottleneck."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub availability report: June 2026",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-june-2026/",
+      "date": "2026-07-08T19:35:51.000Z",
+      "excerpt": "In June, we experienced six incidents that resulted in degraded performance across GitHub services."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Opus-class, but faster”: What Elon Musk says about beating Anthropic",
+      "link": "https://thenewstack.io/grok-45-opus-killer-launch/",
+      "date": "2026-07-08T18:59:49.000Z",
+      "excerpt": "SpaceXAI CEO Elon Musk announced on Wednesday that Grok 4.5 will be released publicly on Thursday, posting on X, “Based"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "JetBrains’ next move isn’t a better IDE — it’s a governance layer over Claude Code, Codex, and Gemini CLI",
+      "link": "https://thenewstack.io/jetbrains-ai-team-governance/",
+      "date": "2026-07-08T17:44:04.000Z",
+      "excerpt": "Engineering teams have spent the past few years picking their own AI tools — an IDE here, a terminal-based coding"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The CNCF Data Storage in Cloud Native AI White Paper",
+      "link": "https://www.cncf.io/report-whitepaper/2026/07/08/the-cncf-data-storage-in-cloud-native-ai-white-paper/",
+      "date": "2026-07-08T17:35:54.000Z",
+      "excerpt": "Deploying Artificial Intelligence (AI) and Machine Learning (ML) workloads at scale has become a primary objective for modern enterprises. However, moving these data-heavy, stateful workloads into cloud native infrastructure introduces massive data bottlenecks."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Meta says it caught OpenAI. One thing is missing.",
+      "link": "https://thenewstack.io/meta-watermelon-benchmark-claim/",
+      "date": "2026-07-08T17:34:17.000Z",
+      "excerpt": "The same week Mark Zuckerberg told Meta staff that the company’s AI bets “haven’t come to fruition yet,” his superintelligence"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Data for Agents",
+      "link": "https://huggingface.co/blog/nvidia/open-data-for-agents",
+      "date": "2026-07-08T17:16:05.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Google Cloud named Leader in the 2026 Gartner® Magic Quadrant™ for AI Infrastructure",
+      "link": "https://cloud.google.com/blog/topics/ai-infrastructure/google-is-a-leader-in-gartner-magic-quadrant-for-ai-infra/",
+      "date": "2026-07-08T16:00:00.000Z",
+      "excerpt": "In the agentic era, AI is evolving from answering questions to reasoning and taking action."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "New ways to keep Google Cloud certifications current and boost your career",
+      "link": "https://cloud.google.com/blog/topics/training-certifications/new-ways-keep-google-cloud-certifications-current/",
+      "date": "2026-07-08T16:00:00.000Z",
+      "excerpt": "If you’re reading this, you’ve likely already done the hard work to prove your qualifications with a Google Cloud certification. And good for you — research shows that’ll help you get ahead."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How GitHub Copilot enables zero DNS configuration for GitHub Pages",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-enables-zero-dns-configuration-for-github-pages/",
+      "date": "2026-07-08T16:00:00.000Z",
+      "excerpt": "Go from an empty repository to a live custom domain with HTTPS in about 14 minutes, without manually editing a single DNS record."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Our approach to government and national security partnerships",
+      "link": "https://openai.com/index/government-national-security-partnerships",
+      "date": "2026-07-08T13:30:00.000Z",
+      "excerpt": "Learn how OpenAI approaches government and national security partnerships, with principles for responsible AI use, democratic accountability, and public safety."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Your Laptop Is the New Production Environment",
+      "link": "https://www.docker.com/blog/your-laptop-is-the-new-production-environment/",
+      "date": "2026-07-08T13:00:00.000Z",
+      "excerpt": "AI agents are changing software development. Learn why your laptop is becoming the new production environment and why runtime governance matters."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Separating signal from noise in coding evaluations",
+      "link": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+      "date": "2026-07-08T13:00:00.000Z",
+      "excerpt": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Meerkat: an experiment in global consensus",
+      "link": "https://blog.cloudflare.com/meerkat-introduction/",
+      "date": "2026-07-08T13:00:00.000Z",
+      "excerpt": "Cloudflare Research is building a global consensus service called Meerkat that uses a new consensus algorithm called QuePaxa. We plan to use Meerkat to build a strongly consistent, fault-tolerant key-value store, and other applications."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Multi-Agent Collaboration on a Shared Canvas",
+      "link": "https://www.honeycomb.io/blog/multi-agent-collaboration-on-shared-canvas",
+      "date": "2026-07-08T13:00:00.000Z",
+      "excerpt": "This is part 2 of a series on taking agentic applications from prototype to production with AWS AgentCore. Part 1 covers foundational design questions, like cardinality, session lifecycle, state management, and operational constraints."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Announcing etcd v3.7.0",
+      "link": "https://kubernetes.io/blog/2026/07/08/announcing-etcd-3.7/",
+      "date": "2026-07-08T12:00:00.000Z",
+      "excerpt": "This article is a mirror of the original announcement Today, SIG etcd is releasing etcd v3.7."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Network boundary for AI agents using NGINX and OpenTelemetry",
+      "link": "https://www.cncf.io/blog/2026/07/08/network-boundary-for-ai-agents-using-nginx-and-opentelemetry/",
+      "date": "2026-07-08T11:00:00.000Z",
+      "excerpt": "I recently had an interesting conversation at a KCD about OpenClaw with one of the attendees, and they remarked that they wouldn’t put an agent in their network, because “we don’t know what that thing really."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Helping K–12 educators build practical AI skills",
+      "link": "https://openai.com/index/k-12-educators-practical-skills",
+      "date": "2026-07-08T10:00:00.000Z",
+      "excerpt": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Native-speed vLLM transformers modeling backend",
+      "link": "https://huggingface.co/blog/native-speed-vllm-transformers-backend",
+      "date": "2026-07-08T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Unleashing open innovation: How Diebold Nixdorf reimagined global banking on Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/unleashing-open-innovation-how-diebold-nixdorf-reimagined-global-banking-red-hat-openshift",
+      "date": "2026-07-08T00:00:00.000Z",
+      "excerpt": "At the OpenShift Commons Amsterdam gathering, the premier \"Day zero\" event for KubeCon + CloudNativeCon Europe 2026, the energy was electric, with a session that perfectly captures the spirit of cloud-native transformation."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The new currency of enterprise velocity",
+      "link": "https://www.redhat.com/en/blog/new-currency-enterprise-velocity",
+      "date": "2026-07-08T00:00:00.000Z",
+      "excerpt": "For more than 20 years in this industry, the conversation around enterprise software procurement followed a highly predictable script. An organisation would buy a subscription for an open source solution, lock down a certified version, and effectively try never to touch it again unless something broke."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Strengthening the open source supply chain with Red Hat partners",
+      "link": "https://www.redhat.com/en/blog/strengthening-open-source-supply-chain-red-hat-partners",
+      "date": "2026-07-08T00:00:00.000Z",
+      "excerpt": "Earlier today, Red Hat and IBM unveiled two commercial offerings of Lightwell to deliver automated vulnerability remediation at scale. However, true security requires a movement—a connected network of industry leaders and experts working in lockstep."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Patch Release: 19.1.2, 19.0.4, 18.11.7",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/",
+      "date": "2026-07-08T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How we used AI agents to migrate GitLab rate limiting",
+      "link": "https://about.gitlab.com/blog/ai-agents-for-migrating-rate-limiting-system/",
+      "date": "2026-07-08T00:00:00.000Z",
+      "excerpt": "A small team at GitLab spent the past few weeks running an experiment: Could we use AI agents to migrate part of our legacy rate-limiting system without dropping the safety bar? Short answer: yes."
+    }
+  ]
+}
