@@ -1,0 +1,119 @@
+{
+  "date": "2026-07-11",
+  "generatedAt": "2026-07-10T22:38:17.628Z",
+  "count": 14,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Meta’s Iris push signals the next phase of AI infrastructure",
+      "link": "https://thenewstack.io/meta-iris-ai-chip/",
+      "date": "2026-07-10T17:02:09.000Z",
+      "excerpt": "Meta is preparing to manufacture its own AI chip for the first time. According to an internal memo, the company"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Contributing to U.K. financial sector resilience as a critical third party",
+      "link": "https://cloud.google.com/blog/products/identity-security/contributing-to-uk-financial-sector-resilience-as-a-critical-third-party/",
+      "date": "2026-07-10T17:00:00.000Z",
+      "excerpt": "At Google Cloud, we take our role in the financial ecosystem very seriously. We firmly believe that operational resilience is essential to driving and sustaining responsible innovation."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Frontier and Center: Who evaluates the evaluations?",
+      "link": "https://cloud.google.com/blog/products/data-analytics/evaluate-agent-performance/",
+      "date": "2026-07-10T16:00:00.000Z",
+      "excerpt": "Editor’s note: Some of the most interesting questions in AI are being asked by information theoreticians, around how to provide context to an emerging class of AI agents."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-07-10T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why retrieval quality is becoming the defining challenge in AI agent architecture",
+      "link": "https://thenewstack.io/retrieval-ai-agent-architecture/",
+      "date": "2026-07-10T16:00:00.000Z",
+      "excerpt": "Agentic systems usually have two jobs: Build context, then use that context to produce an answer or action. Many failures"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
+      "link": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
+      "date": "2026-07-10T15:57:47.000Z",
+      "excerpt": "How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "What running Kubernetes across millions of clusters taught AWS about zonal failures",
+      "link": "https://thenewstack.io/eks-zonal-shift-resilience/",
+      "date": "2026-07-10T15:00:00.000Z",
+      "excerpt": "Handling the obvious failures is the easy part: a server goes down, you spin up another. The failures that actually"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Improving Smart Tiered Cache for Public Cloud Regions",
+      "link": "https://blog.cloudflare.com/smart-tiered-cache-for-public-clouds/",
+      "date": "2026-07-10T13:00:00.000Z",
+      "excerpt": "Smart Tiered Cache allows for precise upper tier selection for origins hosted on AWS, GCP, Azure, and Oracle Cloud with customer-provided cloud region hints."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How Deutsche Telekom is rewiring telecommunications with AI",
+      "link": "https://openai.com/index/deutsche-telekom",
+      "date": "2026-07-10T07:00:00.000Z",
+      "excerpt": "How Deutsche Telekom is becoming an AI-native telco with OpenAI-transforming customer service, employee workflows, network operations, and the future of voice."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "초당 100만 건, LINE 앱에 Apache Kafka 종단 간 암호화 적용기",
+      "link": "https://techblog.lycorp.co.jp/ko/applying-e2ee-to-apache-kafka-in-line-app",
+      "date": "2026-07-10T02:00:00.000Z",
+      "excerpt": "들어가며: 왜 Kafka 종단 간 암호화인가?LINE 메신저에서는 매일 수십억 건의 메시지가 오갑니다."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Profiling in PyTorch (Part 3): Attention is all you profile",
+      "link": "https://huggingface.co/blog/torch-attention-profile",
+      "date": "2026-07-10T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Pluggable by design: An agent mesh for software modernization that adopts the next model release",
+      "link": "https://www.redhat.com/en/blog/pluggable-design-agent-mesh-software-modernization-adopts-next-model-release",
+      "date": "2026-07-10T00:00:00.000Z",
+      "excerpt": "In our previous post, we walked through the agent mesh for software modernization architecture we built on Red Hat AI for modernizing legacy systems at the scale that mission environments actually require."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "New observability features in Red Hat OpenShift 4.22",
+      "link": "https://www.redhat.com/en/blog/new-observability-features-red-hat-openshift-422",
+      "date": "2026-07-10T00:00:00.000Z",
+      "excerpt": "The most recent Red Hat OpenShift release introduces powerful new capabilities for native monitoring, logging, tracing, and dashboarding. Red Hat OpenShift observability has matured into a more seamless ecosystem by merging metrics, logs, traces, and network telemetry into a unified workflow."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — July 10, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-july-10-2026-red-hat",
+      "date": "2026-07-10T00:00:00.000Z",
+      "excerpt": "IBM and Red Hat Expand Lightwell with New Offerings to Build the Trust Infrastructure for AI-Era Open SourceDeveloped with leading global financial institutions and backed by a growing partner ecosystem, the new Lightwell offerings help enterprises reduce open source risk without disruptive upgrades."
+    }
+  ]
+}
