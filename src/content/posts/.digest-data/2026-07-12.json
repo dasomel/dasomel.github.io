@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-12",
+  "generatedAt": "2026-07-11T22:29:25.778Z",
+  "count": 4,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "85% say code review is the new bottleneck. Here’s what the AI coding narrative leaves out.",
+      "link": "https://thenewstack.io/merge-gate-coding-agents/",
+      "date": "2026-07-11T17:00:00.000Z",
+      "excerpt": "A merge is a contract. The moment a change lands on main, every other team in the organization starts building"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The impressive AI demo is dead. Here’s what actually reaches production",
+      "link": "https://thenewstack.io/ai-production-data-problem/",
+      "date": "2026-07-11T16:00:00.000Z",
+      "excerpt": "Most engineering teams I talk to can ship an AI demo. The prototype works, stakeholders are impressed, and everyone agrees"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft joins Google in backing Go for AI agents — OpenAI and Anthropic lag",
+      "link": "https://thenewstack.io/microsoft-agent-framework-go/",
+      "date": "2026-07-11T14:00:00.000Z",
+      "excerpt": "Go has emerged as the lingua franca for cloud infrastructure, used for everything from container orchestration and CI/CD pipelines to"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Where should AI workloads run? A sovereign and sensible approach",
+      "link": "https://www.cncf.io/blog/2026/07/10/where-should-ai-workloads-run-a-sovereign-and-sensible-approach/",
+      "date": "2026-07-10T23:00:00.000Z",
+      "excerpt": "Opinions on AI range from transformative optimism to deep skepticism, but one thing is clear: AI is becoming an increasingly important part of enterprise technology strategies. Feel free to pick whichever you like."
+    }
+  ]
+}
