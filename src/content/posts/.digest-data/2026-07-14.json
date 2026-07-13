@@ -1,0 +1,143 @@
+{
+  "date": "2026-07-14",
+  "generatedAt": "2026-07-13T22:33:50.045Z",
+  "count": 17,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Prefect just bought Dagster, another big Airflow rival — and it’s not a data pipeline story",
+      "link": "https://thenewstack.io/prefect-acquires-dagster-orchestrator/",
+      "date": "2026-07-13T22:08:55.000Z",
+      "excerpt": "Prefect, best known for the eponymous open-source data pipeline and workflow orchestrator, has announced that it’s acquiring Dagster, one of"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft CEO Satya Nadella says you’re paying for AI twice — the second price is worse",
+      "link": "https://thenewstack.io/nadella-reverse-information-paradox/",
+      "date": "2026-07-13T22:06:26.000Z",
+      "excerpt": "Microsoft Chairman and CEO Satya Nadella took to the internet to share his thoughts about the hidden cost of enterprise"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic extends Fable 5 again — and won’t talk about what developers found inside Cursor",
+      "link": "https://thenewstack.io/fable-5-honeycomb-opus/",
+      "date": "2026-07-13T17:10:27.000Z",
+      "excerpt": "Anthropic has extended its enhanced access to Claude Fable 5 for all paid subscribers through July 19, marking the third"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Accessing private Git repositories from Amazon EKS capability for Argo CD",
+      "link": "https://aws.amazon.com/blogs/containers/accessing-private-git-repositories-from-amazon-eks-capability-for-argo-cd/",
+      "date": "2026-07-13T16:46:33.000Z",
+      "excerpt": "In this post, we walk you through three main steps: First, you create an AWS CodeConnections host in your VPC with connectivity to your private Git server. Second, you establish a connection that Argo CD can use."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Modernizing the Meta Ads Service With an Open-Source Kernel Scheduler",
+      "link": "https://engineering.fb.com/2026/07/13/ml-applications/modernizing-the-meta-ads-service-with-an-open-source-kernel-scheduler/",
+      "date": "2026-07-13T16:00:50.000Z",
+      "excerpt": "TL; DR At Meta’s scale, a few milliseconds of latency degradation can have a significant negative impact on ads performance."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Key findings from the 2026 Public Sector M-Trends report and beyond",
+      "link": "https://cloud.google.com/blog/topics/public-sector/key-findings-from-the-2026-public-sector-m-trends-report-and-beyond/",
+      "date": "2026-07-13T16:00:00.000Z",
+      "excerpt": "In 2026, the public sector is no longer defending a traditional perimeter. Instead, they are defending a complex web of interconnected trust relationships against adversaries that now operate at machine speed."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs",
+      "link": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/",
+      "date": "2026-07-13T16:00:00.000Z",
+      "excerpt": "How should your security team manage shadow AI?"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Building the AI-defined vehicle with Android, Google Cloud, and Nexus SDV",
+      "link": "https://cloud.google.com/blog/products/databases/nexus-sdv-uses-bigtable-android-automotive-for-agentic-vehicles/",
+      "date": "2026-07-13T16:00:00.000Z",
+      "excerpt": "The automotive industry is moving from building hardware-centric platforms toward building their own sophisticated Software-Defined Vehicle (SDV) architectures. For OEMs, a vehicle is no longer just a way to go from point A to point B, but an intelligent, connected node within an AI-native ecosystem!"
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Building an end-to-end reliability testing strategy with Grafana Cloud",
+      "link": "https://grafana.com/blog/building-an-end-to-end-reliability-testing-strategy-with-grafana-cloud/",
+      "date": "2026-07-13T15:53:09.000Z",
+      "excerpt": "Modern applications can fail in many different ways, from performance regressions and frontend errors to systems that break under heavy load."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Precursor: detecting agentic behavior with continuous client-side signals",
+      "link": "https://blog.cloudflare.com/introducing-precursor/",
+      "date": "2026-07-13T13:00:00.000Z",
+      "excerpt": "Precursor, our new continuous behavioral validation engine for bot management, offers visibility into how humans and bots actually interact across the full user journey."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Lattice Watch: Smarter Guardrails for Design System Observability",
+      "link": "https://www.honeycomb.io/blog/lattice-watch-smarter-guardrails-design-system-observability",
+      "date": "2026-07-13T13:00:00.000Z",
+      "excerpt": "In the past, I was part of a group of engineers responsible for doing random code reviews with an eye for design system adherence."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Operating OpenTelemetry at scale with OpAMP",
+      "link": "https://www.cncf.io/blog/2026/07/13/operating-opentelemetry-at-scale-with-opamp/",
+      "date": "2026-07-13T11:30:00.000Z",
+      "excerpt": "As more organizations move to use OpenTelemetry in production at scale, with multiple Collectors across heterogeneous environments, a new challenge arises: how to remotely manage, configure, and update this agent fleet in a consistent and secure."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Unlocking the future of video data: March Networks cloud storage on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/unlocking-the-future-of-video-data-march-networks-cloud-storage-on-aws/",
+      "date": "2026-07-13T10:06:18.000Z",
+      "excerpt": "Enterprise video surveillance is operating at an unprecedented scale as organizations across retail, banking, quick-service restaurants (QSR), convenience stores, and transportation networks generate petabytes of video data across thousands of distributed locations."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Preparing for the post-quantum era: Discover and prioritize now",
+      "link": "https://www.hashicorp.com/blog/preparing-for-the-post-quantum-era-discover-and-prioritize-now",
+      "date": "2026-07-13T07:00:00.000Z",
+      "excerpt": "When forming a post-quantum strategy, organizations should take a holistic approach and consider discovery, prioritization, and crypto agility first."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why good AI agents fail in production: The missing infrastructure layer",
+      "link": "https://www.redhat.com/en/blog/why-good-ai-agents-fail-production-missing-infrastructure-layer",
+      "date": "2026-07-13T00:00:00.000Z",
+      "excerpt": "It was 6 AM when the first alert fired. Then the second."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Results for Red Hat’s Kubernetes fleet management survey",
+      "link": "https://www.redhat.com/en/blog/results-red-hats-kubernetes-fleet-management-survey",
+      "date": "2026-07-13T00:00:00.000Z",
+      "excerpt": "Kubernetes won. It is officially the backbone of modern enterprise infrastructure."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Advanced Cluster Management 2.17: Less operational toil and more Kubernetes fleet control",
+      "link": "https://www.redhat.com/en/blog/red-hat-advanced-cluster-management-217-less-operational-toil-and-more-kubernetes-fleet-control",
+      "date": "2026-07-13T00:00:00.000Z",
+      "excerpt": "Running a Kubernetes fleet means your infrastructure is constantly evolving. But as you scale to hundreds of clusters across public clouds, datacenters, and the edge, new friction points naturally emerge."
+    }
+  ]
+}
