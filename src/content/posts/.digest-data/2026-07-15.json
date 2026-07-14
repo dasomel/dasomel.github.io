@@ -1,0 +1,175 @@
+{
+  "date": "2026-07-15",
+  "generatedAt": "2026-07-14T22:36:51.431Z",
+  "count": 21,
+  "articles": [
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Mapfre USA modernized fraud claims with Amazon EMR Serverless",
+      "link": "https://aws.amazon.com/blogs/architecture/how-mapfre-usa-modernized-fraud-claims-with-amazon-emr-serverless/",
+      "date": "2026-07-14T21:47:35.000Z",
+      "excerpt": "Insurance fraud remains a significant challenge for the insurance industry because fraudulent claims can increase loss costs, reduce trust, and consume investigation capacity that could otherwise be focused on serving customers."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "KeycloakCon Japan 2026: Navigating cloud native identity and the AI frontier",
+      "link": "https://www.cncf.io/blog/2026/07/14/keycloakcon-japan-2026-navigating-cloud-native-identity-and-the-ai-frontier/",
+      "date": "2026-07-14T21:34:55.000Z",
+      "excerpt": "The countdown is officially on. In just a few weeks, the cloud-native ecosystem meets in Yokohama for KubeCon + CloudNativeCon Japan 2026."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“We did not adapt and move quickly enough”: What IBM’s earnings miss says about enterprise AI spending",
+      "link": "https://thenewstack.io/ibm-earnings-ai-infrastructure/",
+      "date": "2026-07-14T20:38:17.000Z",
+      "excerpt": "IBM’s value has plunged after the company issued a preliminary second-quarter earnings update that fell short of Wall Street’s expectations."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI hits 8 million Codex users — what developers need to know",
+      "link": "https://thenewstack.io/gpt-5-6-codex-user-surge/",
+      "date": "2026-07-14T19:16:31.000Z",
+      "excerpt": "OpenAI launched GPT-5.6 last week and folded Codex into a unified ChatGPT desktop app."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AWS will now watch Microsoft’s cloud for you",
+      "link": "https://thenewstack.io/aws-security-hub-azure/",
+      "date": "2026-07-14T19:00:00.000Z",
+      "excerpt": "On Tuesday, AWS announced an expansion to Security Hub, its security operations service, to also monitor Microsoft Azure resources, in addition"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Google named a Leader in the 2026 IDC MarketScape for Worldwide Foundation Model Software",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/google-named-a-leader-in-idc-marketscape/",
+      "date": "2026-07-14T18:00:00.000Z",
+      "excerpt": "For years, we’ve built with a clear priority: putting the practical needs of the enterprise first. Long before generative AI dominated the headlines, we were focused on building the global infrastructure, security frameworks, and data platforms that power the world's largest organizations."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Celebrating 25 years of visual search innovation",
+      "link": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
+      "date": "2026-07-14T16:00:00.000Z",
+      "excerpt": "Google Images is turning 25. Here’s a look back at some major milestones — and new ways to explore and create visual content."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Claude at scale on Google Cloud: Frontier AI, built for enterprise production",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/claude-at-scale-on-google-cloud-frontier-ai-built-for-enterprise-production/",
+      "date": "2026-07-14T16:00:00.000Z",
+      "excerpt": "Running frontier AI in production is demanding — accelerators to manage, latency to hold steady across continents, regulated data to keep in-region, and long-context requests to serve reliably. Claude on Google Cloud is built for exactly this."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Shipping Is Your Company's Heartbeat: A Letter from a CTO",
+      "link": "https://www.honeycomb.io/blog/shipping-is-your-companys-heartbeat-letter-from-cto",
+      "date": "2026-07-14T15:00:00.000Z",
+      "excerpt": "In an open letter to engineering leaders everywhere, Fin CTO Darragh Curran explains that AI isn't a magic wand but rather an amplifier—of the good and the bad—of your engineering practices. And engineering rigor is more important than ever."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Automated Incident Remediation with AWS DevOps Agent and Kiro CLI",
+      "link": "https://aws.amazon.com/blogs/devops/automated-incident-remediation-with-aws-devops-agent-and-kiro-cli/",
+      "date": "2026-07-14T13:17:42.000Z",
+      "excerpt": "Introduction Automated incident remediation – turning investigation findings into deployed fixes without manual toil – is the next frontier for operations teams running distributed workloads on AWS."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "AI Engineer World’s Fair 2026: The Runtime Is Where Agent Trust Is Won",
+      "link": "https://www.docker.com/blog/ai-engineer-worlds-fair-2026-the-runtime-is-where-agent-trust-is-won/",
+      "date": "2026-07-14T13:00:00.000Z",
+      "excerpt": "We spent the week at AI Engineer World's Fair in San Francisco, on stage and on the floor. Here's what we heard, and where we think it lands for anyone building with agents."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
+      "link": "https://blog.cloudflare.com/dnssec-nta-ede-33/",
+      "date": "2026-07-14T13:00:00.000Z",
+      "excerpt": "When a failed DNSSEC key rollover took down the .AL TLD, we deployed a Negative Trust Anchor to restore resolution."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Is a Pod the right deployment unit for an AI agent?",
+      "link": "https://www.cncf.io/blog/2026/07/14/is-a-pod-the-right-deployment-unit-for-an-ai-agent/",
+      "date": "2026-07-14T11:20:00.000Z",
+      "excerpt": "When we first started building kagent, we didn’t run every agent in its own Kubernetes Pod, Service, and ServiceAccount. Instead, agents were simply executed inside the kagent runtime."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How to manage AI investments in the agentic era",
+      "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+      "date": "2026-07-14T10:00:00.000Z",
+      "excerpt": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "No single pane of glass: Anatomy of an Azure permission takeover",
+      "link": "https://webflow.sysdig.com/blog/no-single-pane-of-glass-anatomy-of-an-azure-permission-takeover",
+      "date": "2026-07-14T00:00:00.000Z",
+      "excerpt": "The Sysdig Threat Research Team recently observed an attacker walk one credential through five Azure permission systems. In this blog, we’ll explore how."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How data science teams use ChatGPT Work",
+      "link": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "date": "2026-07-14T00:00:00.000Z",
+      "excerpt": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How sales teams use ChatGPT Work",
+      "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+      "date": "2026-07-14T00:00:00.000Z",
+      "excerpt": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Zero trust workload identity manager version 1.1 generally available on Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/zero-trust-workload-identity-manager-11-generally-available-red-hat-openshift",
+      "date": "2026-07-14T00:00:00.000Z",
+      "excerpt": "As modern applications expand across multiple clusters, clouds, and hybrid regions, traditional security mechanisms, such as long lived secrets, static certificates, or cloud provider specific identity and access management, struggle to keep up with the scale, velocity, and ephemeral nature of microservices."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why the future of telco depends on open, ecosystem-led architectures",
+      "link": "https://www.redhat.com/en/blog/why-future-telco-depends-open-ecosystem-led-architectures",
+      "date": "2026-07-14T00:00:00.000Z",
+      "excerpt": "Navigating the complexities of 5G and AI requires telecommunications service providers to move beyond the restrictive, vendor-locked vertical architectures of the past. Legacy, single-vendor vertical stacks, once the industry standard, have become the primary bottleneck to growth."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Storage processing accelerates VM migrations in the migration toolkit for virtualization 2.12",
+      "link": "https://www.redhat.com/en/blog/storage-processing-accelerates-vm-migrations-migration-toolkit-virtualization-212",
+      "date": "2026-07-14T00:00:00.000Z",
+      "excerpt": "We continue to see many organizations accelerate their infrastructure modernization plans and choose Red Hat OpenShift Virtualization as their future-ready foundation for traditional virtual machine (VM) workloads."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Building Service Topology at Scale: Architecture, Challenges, and Lessons Learned",
+      "link": "https://netflixtechblog.com/building-service-topology-at-scale-architecture-challenges-and-lessons-learned-f4b792f3f0d8?source=rss----2615bd06b42e---4",
+      "date": "2026-07-13T22:44:11.000Z",
+      "excerpt": ""
+    }
+  ]
+}
