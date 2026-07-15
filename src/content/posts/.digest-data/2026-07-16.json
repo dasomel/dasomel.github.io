@@ -1,0 +1,191 @@
+{
+  "date": "2026-07-16",
+  "generatedAt": "2026-07-15T22:37:54.126Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Kubernetes won the container decade. Google’s Agent Substrate wants the next one.",
+      "link": "https://thenewstack.io/kubernetes-ai-agent-runtime/",
+      "date": "2026-07-15T18:17:02.000Z",
+      "excerpt": "Google made GKE Agent Sandbox generally available in May 2026 and, in the same post, introduced a second project called"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Towards demystifying the creativity of diffusion models",
+      "link": "https://research.google/blog/towards-demystifying-the-creativity-of-diffusion-models/",
+      "date": "2026-07-15T18:06:27.000Z",
+      "excerpt": "Algorithms & Theory"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Trust, transactions and tokenomics: AI agent infrastructure begins to standardize",
+      "link": "https://thenewstack.io/x402-foundation-ai-agents-standards/",
+      "date": "2026-07-15T18:03:22.000Z",
+      "excerpt": "As AI agents gain greater autonomy across the internet, a system of governance is emerging around three questions: how much"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Elon Musk: “We will make the entire codebase of X open source, with no exceptions.”",
+      "link": "https://thenewstack.io/x-open-source-codebase/",
+      "date": "2026-07-15T17:59:43.000Z",
+      "excerpt": "Elon Musk, the billionaire owner of X, wants to make the social network one of the most transparent major technology"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "What building Shippy taught us about building agents",
+      "link": "https://huggingface.co/blog/allenai/shippy-tech-blog",
+      "date": "2026-07-15T17:29:41.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub for Beginners: Your roadmap to mastering the GitHub essentials",
+      "link": "https://github.blog/developer-skills/github/github-for-beginners-your-roadmap-to-mastering-the-github-essentials/",
+      "date": "2026-07-15T17:29:31.000Z",
+      "excerpt": "New to GitHub? This beginner's guide explains version control, repositories, and pull requests—plus everything else you need to start working confidently on GitHub."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Model Routing Is Simple. Until It Isn’t.",
+      "link": "https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt",
+      "date": "2026-07-15T17:27:01.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Exploring Hierarchical Interest Representation For Meta Ads Deep Funnel Optimization",
+      "link": "https://engineering.fb.com/2026/07/15/ai-research/exploring-hierarchical-interest-representation-for-meta-ads-deep-funnel-optimization/",
+      "date": "2026-07-15T17:00:52.000Z",
+      "excerpt": "Hierarchical Interest Representation is a research area for Meta Ads."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Grafana Labs named a Leader again in the 2026 Gartner® Magic Quadrant™ for Observability Platforms",
+      "link": "https://grafana.com/blog/grafana-labs-named-a-leader-again-in-the-2026-gartner-magic-quadrant-for-observability-platforms/",
+      "date": "2026-07-15T16:49:49.000Z",
+      "excerpt": "We’re delighted to share that Grafana Labs has been named a Leader in the Gartner® Magic Quadrant™ for Observability Platforms for the third consecutive year. Notably, we’re also positioned furthest in “Completeness of Vision” for the second year in a row."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "HAMi becomes a CNCF incubating project",
+      "link": "https://www.cncf.io/blog/2026/07/15/hami-becomes-a-cncf-incubating-project/",
+      "date": "2026-07-15T16:00:00.000Z",
+      "excerpt": "The CNCF Technical Oversight Committee (TOC) has voted to accept HAMi as a CNCF incubating project. About HAMi Modern AI infrastructure teams run into the same problem over and over: expensive GPUs often sit fragmented and."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "IDC: Why the right networking approach is foundational to agentic AI",
+      "link": "https://cloud.google.com/blog/products/networking/idc-on-the-right-networking-approach-for-agentic-ai/",
+      "date": "2026-07-15T16:00:00.000Z",
+      "excerpt": "Editor’s note: Today we hear from IDC on the results of its 2026 AI in Networking Special Report Survey exploring the enterprises' concerns about networking infrastructure to support the rise of agentic AI in their organizations. The survey was sponsored by Google Cloud."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How to Analyze and Govern Gemini Enterprise App Usage at Scale with BigQuery",
+      "link": "https://cloud.google.com/blog/products/data-analytics/analyze-and-govern-gemini-enterprise-at-scale-with-bigquery/",
+      "date": "2026-07-15T16:00:00.000Z",
+      "excerpt": "Deploying the Gemini Enterprise app across an organization marks a transformative leap forward in workforce productivity, providing employees with an amazing, high-performance suite of agentic AI tools, search-grounded assistants, and specialized solutions like NotebookLM."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How to solve PostgreSQL multilingual full-text search limitations with AlloyDB AI",
+      "link": "https://cloud.google.com/blog/products/databases/how-alloydb-overcomes-indexing-limitations-with-ai-functions/",
+      "date": "2026-07-15T16:00:00.000Z",
+      "excerpt": "AlloyDB powers enterprise-grade search for some of the largest organizations, providing robust hybrid search capabilities that combine text, vector, and keyword searches into a simple ranked SQL query."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How bitdrift scaled to 121 million concurrent gRPC connections on Amazon CloudFront for live telemetry sporting events",
+      "link": "https://aws.amazon.com/blogs/architecture/how-bitdrift-scaled-to-121-million-concurrent-grpc-connections-on-amazon-cloudfront-for-live-telemetry-sporting-events/",
+      "date": "2026-07-15T15:27:47.000Z",
+      "excerpt": "When 121 million mobile devices establish persistent gRPC connections to your origin infrastructure within seconds of a live broadcast, the routing policy behind your DNS records matters far more than it does at normal traffic levels."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Transforming How We Run Kafka at Honeycomb",
+      "link": "https://www.honeycomb.io/blog/transforming-how-we-run-kafka-honeycomb",
+      "date": "2026-07-15T13:00:00.000Z",
+      "excerpt": "We just completed a large-scale, multi-month Kafka migration project. We couldn't have done it without learning from past mistakes, prioritizing rollback safety, and building shared knowledge across the team through repeated migration practice."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The US is advancing AI safety through state and federal action",
+      "link": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
+      "date": "2026-07-15T12:00:00.000Z",
+      "excerpt": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "On-prem DBaaS in 2026: Platforms, standards, and gaps",
+      "link": "https://www.cncf.io/blog/2026/07/15/on-prem-dbaas-in-2026-platforms-standards-and-gaps/",
+      "date": "2026-07-15T11:00:00.000Z",
+      "excerpt": "For application teams, databases should feel like a solved problem. A team needs PostgreSQL, MariaDB, Redis, or another data service, submits a request, receives credentials, and starts building."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+      "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+      "date": "2026-07-15T10:00:00.000Z",
+      "excerpt": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Welcome Inkling by Thinking Machines",
+      "link": "https://huggingface.co/blog/thinkingmachines-inkling",
+      "date": "2026-07-15T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Moving from PoC to production: Delivering real business value with Red Hat AI 3.4",
+      "link": "https://www.redhat.com/en/blog/moving-poc-production-delivering-real-business-value-red-hat-ai-34",
+      "date": "2026-07-15T00:00:00.000Z",
+      "excerpt": "Red Hat AI 3.4 is officially available."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Two-node OpenShift with fencing improves reliability at the edge",
+      "link": "https://www.redhat.com/en/blog/two-node-openshift-fencing-improves-reliability-edge",
+      "date": "2026-07-15T00:00:00.000Z",
+      "excerpt": "Edge computing environments present distinct hurdles as companies move processing capabilities nearer to where data is generated. Customers across industries, especially in retail, industrial, and telecommunications sectors, are increasingly demanding high availability for their edge deployments."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Physical AI: Physical operations are broken, a new kind of intelligence is needed",
+      "link": "https://www.redhat.com/en/blog/physical-ai-physical-operations-are-broken-new-kind-intelligence-needed",
+      "date": "2026-07-15T00:00:00.000Z",
+      "excerpt": "Every company that depends on physical operations is dealing with the same set of problems today. The infrastructure that was built years ago demands changes faster than operations teams can adapt."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor Apigee X API traffic and security with Datadog",
+      "link": "https://www.datadoghq.com/blog/monitor-apigee-x-api-traffic-and-security-with-datadog/",
+      "date": "2026-07-15T00:00:00.000Z",
+      "excerpt": "Learn how to monitor Apigee X with Datadog so you can track API traffic, latency, anomalies, and security posture and catch issues before clients do."
+    }
+  ]
+}
