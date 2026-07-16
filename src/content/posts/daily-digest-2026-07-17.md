@@ -1,0 +1,193 @@
+---
+title: "📰 데일리 테크 다이제스트 - 2026-07-17"
+description: "2026-07-17 Cloud, Kubernetes, AI, DevOps 소식 29건 — 자동 큐레이션 다이제스트."
+pubDate: 2026-07-17
+tags: ["데일리 다이제스트", "Kubernetes", "Cloud Native", "AI", "DevOps"]
+featured: false
+draft: false
+---
+## 🔥 오늘의 주요 소식
+
+### Google is a Leader and positioned furthest in Vision and highest in Execution in the 2026 Gartner® Magic Quadrant™ for Conversational AI Platforms
+
+For the second consecutive year, Google has been named a Leader in the Gartner® Magic Quadrant™ for Conversational AI Platforms. Google received the furthest and highest in positioning on the "Vision" and "Execution" axes and is now ranked #1 in three out of four Critical Capabilities Use Cases.
+
+🔗 [원문 보기](https://cloud.google.com/blog/products/ai-machine-learning/google-is-a-leader-in-the-gartner-magic-quadrant-for-conversational-ai/) · _Google Cloud_
+
+---
+
+## Kubernetes & Cloud Native
+
+### [From the Captain’s Chair: Mohammad-Ali A’râbi](https://www.docker.com/blog/from-the-captains-chair-mohammad-ali-arabi/)
+
+_Docker_
+
+In this edition of From the Captain’s Chair, we’re interviewing Mohammad-Ali A'râbi, author, public speaker, and software engineer.
+
+### [AI Agents Explained: How to Build with Them Safely](https://www.docker.com/blog/what-are-ai-agents/)
+
+_Docker_
+
+Learn what AI agents are, how they work, and what it takes to build and run them safely in production.
+
+### [The Developer Has Changed. So Should Developer Conferences](https://www.docker.com/blog/docker-wearedevelopers-world-congress-north-america-2026/)
+
+_Docker_
+
+Discover why Docker is co-hosting WeAreDevelopers World Congress North America and how AI agents are transforming software development and developer communities.
+
+### [Running a self-hosted LLM in Kubernetes with vLLM](https://www.cncf.io/blog/2026/07/16/running-a-self-hosted-llm-in-kubernetes-with-vllm/)
+
+_CNCF_
+
+Running large language model (LLM) workloads in-house is one of several patterns teams adopt alongside managed API services. Managed API services are convenient and well suited to many workloads.
+
+### [The CISO's guide to headless cloud security](https://webflow.sysdig.com/blog/the-cisos-guide-to-headless-cloud-security)
+
+_Sysdig_
+
+Attackers went agentic. Your security architecture should too.
+
+---
+
+## AI & ML
+
+### [Why teens deserve access to safe AI](https://openai.com/index/why-teens-deserve-access-safe-ai)
+
+_OpenAI_
+
+Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships.
+
+### [Connect more of your apps to Search](https://blog.google/products-and-platforms/products/search/connected-apps/)
+
+_Google AI_
+
+You’ll be able to securely link and interact with your go-to services directly in AI Mode.
+
+### [Create, edit and star in videos with two Google Vids updates](https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/)
+
+_Google AI_
+
+Gemini Omni and personal avatars in Google Vids make video creation easier than ever.
+
+### [How Cars24 scales conversations and builds faster with OpenAI](https://openai.com/index/cars24)
+
+_OpenAI_
+
+Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.
+
+---
+
+## 클라우드 업데이트
+
+### [Cloud CISO Perspectives: How AI leverages deep context as the defender’s advantage](https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-how-ai-leverages-deep-context-defenders-advantage/)
+
+_Google Cloud_
+
+Welcome to the first Cloud CISO Perspectives for July 2026. Today, Francis deSouza, COO, Google Cloud and President, Security Products, explains the crucial role that deep context plays in creating an AI advantage for defenders.
+
+### [Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic](https://cloud.google.com/blog/products/data-analytics/bridge-sql-and-python-with-bigquery/)
+
+_Google Cloud_
+
+Data scientists and data engineers often find themselves caught between two worlds: SQL and Python. Some find SQL more intuitive, especially when combined with a powerful engine like BigQuery to process data at scale.
+
+### [Prioritize your AWS Health alerts using AWS User Notifications](https://aws.amazon.com/blogs/architecture/prioritize-your-aws-health-alerts-using-aws-user-notifications/)
+
+_AWS Architecture_
+
+If you run critical workloads on AWS, such as a contact center on Amazon Connect Customer, database workloads on Amazon Relational Database Service (Amazon RDS), or hybrid connectivity through AWS Direct Connect, service health events demand your attention. But not all events are equal.
+
+### [Why Operational Resilience and Digital Sovereignty Top the CIO Agenda - by Martin Lentle](https://www.redhat.com/en/blog/why-operational-resilience-and-digital-sovereignty-top-cio-agenda)
+
+_Red Hat_
+
+For CIOs across the Middle East Africa, keeping systems online is the foundation of customer trust. As public sector institutions and private enterprises accelerate their digital transformation, maintaining this operational uptime is the top priority.
+
+### [Interactive labs: Enterprise lab environments, ready in minutes at no cost](https://www.redhat.com/en/blog/interactive-labs-enterprise-lab-environments-ready-minutes-no-cost)
+
+_Red Hat_
+
+Before anything reaches production, you have to test it, validate it, and sometimes learn about it from scratch. All 3 of these steps are necessary to have a properly running environment but your window to complete them is almost always shorter than expected.
+
+### [How Red Hat solves the toughest challenges in agentless infrastructure scanning](https://www.redhat.com/en/blog/how-red-hat-solves-toughest-challenges-agentless-infrastructure-scanning)
+
+_Red Hat_
+
+Enterprises want absolute clarity on their IT footprint: they want to know exactly what software is running, where it’s running, and how those deployments align with subscription entitlements. For many organizations, Red Hat Hybrid Cloud Console and subscription watch provide that visibility.
+
+---
+
+## DevOps & 인프라
+
+### [AI hasn’t shifted the bottleneck from coding to code review](https://thenewstack.io/ai-code-bottleneck-myth/)
+
+_The New Stack_
+
+Why we’ve stopped noticing the real improvement opportunity Since AI arrived, many people have mentioned that the bottleneck has shifted
+
+### [GoDaddy opened its registrar to AI agents. Then it had to build guardrails.](https://thenewstack.io/godaddy-developer-platform-domains/)
+
+_The New Stack_
+
+On Wednesday, GoDaddy launched its new developer platform, giving developers a way to manage domains without leaving their development environment.
+
+### [ObservabilityCON 2026: Register today and preview this year's agenda](https://grafana.com/blog/observabilitycon-2026-register-today-and-preview-this-year-s-agenda/)
+
+_Grafana_
+
+This fall, prepare to leave your heart in San Francisco. Registration is officially open for ObservabilityCON 2026, our flagship observability event that’s taking place from October 19-21 at Pier 27 in San Francisco.
+
+### [You don’t have a deployment problem. You have a validation problem.](https://thenewstack.io/solving-the-validation-problem/)
+
+_The New Stack_
+
+Ask a platform team about their deployment capabilities, and you will usually hear a genuinely impressive story. Progressive rollouts that
+
+### [AI Amplifies Your Existing Practices: Lessons from Our Shift to an AI-First Strategy](https://www.honeycomb.io/blog/ai-amplifies-existing-practices-lessons-ai-first-strategy)
+
+_Honeycomb_
+
+As the Honeycomb engineering team worked to double our productivity, we learned a lot. The most important takeaway?
+
+### [30 to 70 PRs a Day: How We Managed to Not Wreck Our Systems](https://www.honeycomb.io/blog/30-70-prs-day-how-we-managed-not-wreck-systems)
+
+_Honeycomb_
+
+The Honeycomb engineering team set out to double our productivity in a year. This is how we did it, what we did to keep things stable, what it cost us, and what we’re still figuring out.
+
+### [오픈챗 이름 및 설명 글로 유해성 판단하는 모델 개발하기](https://techblog.lycorp.co.jp/ko/developing-harmfulness-detection-model-for-open-chat-metadata)
+
+_LINE_
+
+들어가며안녕하세요. AI Services Lab 팀의 ML 엔지니어 이여운입니다.
+
+### [Turn multi-step software delivery into agentic flows you can trust](https://about.gitlab.com/blog/multi-step-software-delivery-with-agentic-flows/)
+
+_GitLab_
+
+Knowing what to do next in software development is rarely the hard part. Doing it again in the exact same steps — implement an issue, fix a pipeline, review a merge request — is.
+
+### [GitLab Duo Security Review spots logic flaws scanners miss](https://about.gitlab.com/blog/gitlab-duo-security-review-flow/)
+
+_GitLab_
+
+Static scanners excel at catching vulnerabilities that fit a known pattern, like unsanitized query inputs, hardcoded secrets, and unsafe deserialization. They struggle against flaws in your application’s logic, where there is no pattern to match — only valid code doing the wrong thing for your domain.
+
+### [Bring GitLab Duo Agent Platform to your terminal](https://about.gitlab.com/blog/gitlab-duo-cli-generally-available/)
+
+_GitLab_
+
+Most of the work for software delivery doesn’t happen only in the editor. Pipelines fail.
+
+---
+
+## ⚡ 빠른 소식
+
+- [NVIDIA Nemotron 3 Embed Ranks #1 Overall on RTEB, Advancing Agentic Retrieval](https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb) — _Hugging Face_
+- [Newer Models, Same Advantage](https://huggingface.co/blog/Dharma-AI/newer-models-same-advantages) — _Hugging Face_
+- [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026) — _Hugging Face_
+
+---
+
+_이 다이제스트는 RSS 피드에서 자동 수집되었습니다. 발췌문은 각 피드 원문에서 그대로 가져온 것으로, 자세한 내용은 원문 링크를 확인하세요._
