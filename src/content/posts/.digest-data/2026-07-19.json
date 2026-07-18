@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-19",
+  "generatedAt": "2026-07-18T22:30:01.534Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI didn’t replace our security team — it multiplied it.",
+      "link": "https://thenewstack.io/scaling-security-with-ai/",
+      "date": "2026-07-18T16:00:00.000Z",
+      "excerpt": "For years, the assumption in security has been straightforward: mature detection and response programs require a Security Operations Center (SOC)."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The bottleneck for AI agents isn’t the model anymore. It’s the context layer.",
+      "link": "https://thenewstack.io/ai-agent-infrastructure-bottleneck/",
+      "date": "2026-07-18T15:00:00.000Z",
+      "excerpt": "There’s a pattern I’ve watched repeat for two years. A team builds an agent, hits reliability problems, upgrades the model,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Platform engineering’s new job: serving environments at agent speed",
+      "link": "https://thenewstack.io/serving-environments-agent-speed/",
+      "date": "2026-07-18T14:00:00.000Z",
+      "excerpt": "Platform engineering has won the argument. Some 90% of organizations have adopted at least one internal platform; golden paths are"
+    }
+  ]
+}
