@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-20",
+  "generatedAt": "2026-07-19T22:31:35.106Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Spark 4.2 has a feature that could retire your vector database",
+      "link": "https://thenewstack.io/spark-4-2-ai-workloads/",
+      "date": "2026-07-19T16:00:00.000Z",
+      "excerpt": "Apache Spark 4.2 launched last week, and it signals an expansion of Spark’s decade-plus role at the center of enterprise"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Move code review before the code",
+      "link": "https://thenewstack.io/move-code-review-upstream/",
+      "date": "2026-07-19T14:00:00.000Z",
+      "excerpt": "The pull request as we know it is roughly 20 years old, younger than the careers of many people now"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Self-healing GPU nodes in Kubernetes: What we learned building the EKS node monitoring agent",
+      "link": "https://thenewstack.io/self-healing-gpu-nodes/",
+      "date": "2026-07-19T13:00:00.000Z",
+      "excerpt": "When you run Kubernetes at the scale we do on Amazon EKS, nodes break constantly. GPUs fall off the PCIe"
+    }
+  ]
+}
