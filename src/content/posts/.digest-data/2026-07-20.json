@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-20",
+  "generatedAt": "2026-07-19T22:31:35.106Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Spark 4.2 has a feature that could retire your vector database",
+      "link": "https://thenewstack.io/spark-4-2-ai-workloads/",
+      "date": "2026-07-19T16:00:00.000Z",
+      "excerpt": "Apache Spark 4.2 launched last week, and it signals an expansion of Spark’s decade-plus role at the center of enterprise",
+      "summaryKo": "Apache Spark 4.2가 지난주 출시되며 엔터프라이즈 데이터 워크로드 중심으로서 10년 넘게 이어온 Spark의 역할을 한층 확장했다. 이번 버전의 핵심은 네이티브 벡터 검색(vector search) 기능 추가로, 별도의 전용 벡터 데이터베이스 없이도 Spark 안에서 임베딩 검색을 수행할 수 있게 됐다. 거버넌스 관점에서는 '관리형 지표(governed metrics)' 기능이 새로 들어가 조직 전반에서 지표 정의를 일관되게 관리할 수 있도록 지원한다. 스트리밍 처리 파이프라인도 개선되어 실시간 데이터 처리 시나리오에서의 성능과 안정성이 강화됐다. Python 지원이 더 깊어지면서 PySpark 기반 AI/ML 워크플로 개발이 한층 수월해졌다. 저자 Amanda Caswell은 이런 변화들이 Spark를 단순 배치 처리 엔진에서 AI 서빙 레이어로 포지셔닝하는 흐름이라고 짚는다. 결과적으로 기업들은 벡터 검색을 위해 별도 인프라를 도입하는 대신 기존 Spark 클러스터를 확장하는 선택지를 검토할 수 있게 됐다.",
+      "summaryEn": "Apache Spark 4.2 launched last week, extending Spark's decade-plus role at the center of enterprise data workloads. The headline addition is native vector search, letting teams run embedding-based similarity search inside Spark instead of standing up a dedicated vector database. The release also introduces \"governed metrics,\" aimed at giving organizations a consistent, centrally managed way to define business metrics. Streaming upgrades improve performance and reliability for real-time processing pipelines. Deeper Python support makes PySpark a more capable foundation for building AI and ML workflows. Author Amanda Caswell frames these additions as part of a broader shift positioning Spark as an AI serving layer, not just a batch-processing engine. The practical upshot is that teams may be able to extend an existing Spark cluster for vector search rather than adopting a separate specialized system.",
+      "insightKo": "벡터 검색을 이미 쓰는 Spark 클러스터 안으로 흡수하면 별도 벡터 DB 도입·운영 비용과 데이터 이중화를 줄일 수 있지만, 기존 벡터 DB 대비 지연시간·인덱싱 성능은 검증이 필요하다.",
+      "insightEn": "Folding vector search into an existing Spark cluster could cut the cost and data duplication of running a separate vector database, but teams should validate latency and indexing performance against purpose-built alternatives before migrating."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Move code review before the code",
+      "link": "https://thenewstack.io/move-code-review-upstream/",
+      "date": "2026-07-19T14:00:00.000Z",
+      "excerpt": "The pull request as we know it is roughly 20 years old, younger than the careers of many people now",
+      "summaryKo": "저자 Ankit Jain과 Vanitha Kumar는 우리가 알고 있는 '풀 리퀘스트(PR)' 방식의 코드 리뷰가 약 20년 전에 정립된 프로세스라고 짚는다. AI 코딩 도구가 코드 생성 속도를 크게 높이면서, 완성된 코드 diff를 사후에 검토하는 전통적 PR 리뷰 방식이 병목이 되고 있다고 주장한다. 이들은 리뷰 시점을 코드가 다 작성된 이후가 아니라 개발자의 의도(intent)를 정의하는 더 이른 단계로 옮길 것을 제안한다. 즉 요구사항이나 설계 의도를 먼저 명확히 검토·합의한 뒤 AI가 그 의도에 따라 코드를 생성하도록 하는 흐름이다. 이렇게 하면 리뷰어가 방대한 diff를 한 줄씩 훑는 대신 방향성과 설계 결정에 집중할 수 있어 리뷰 병목이 줄어든다는 설명이다. 글은 이런 '상류(upstream) 리뷰' 전환이 엔지니어링 조직의 확장성과 시간 절약에 도움이 된다고 강조한다. 결국 AI 시대의 코드 리뷰는 '무엇이 만들어졌는가'가 아니라 '왜, 어떻게 만들 것인가'를 검토하는 방향으로 재설계돼야 한다는 것이 핵심 주장이다.",
+      "summaryEn": "Authors Ankit Jain and Vanitha Kumar note that the pull-request-based code review process we use today is roughly 20 years old. They argue that AI coding tools now generate code so fast that traditional after-the-fact review of finished diffs has become a bottleneck. Their proposed fix is to move review earlier — to the point where developer intent is defined, rather than after code is already written. In this model, requirements or design intent are reviewed and agreed upon first, and AI then generates code aligned to that agreed intent. This lets reviewers focus on direction and design decisions instead of combing through large diffs line by line, reducing review bottlenecks. The piece frames this shift to \"upstream\" review as key to scaling engineering organizations and saving reviewer time. The core claim is that code review in the AI era needs to be redesigned around scrutinizing \"why and how\" something will be built, not just \"what\" was built.",
+      "insightKo": "PR 이후 검토에서 의도 단계 검토로 옮기면 AI가 대량 생성한 코드에 리뷰어가 압도되는 상황을 막을 수 있지만, 팀 프로세스와 도구 체인을 함께 바꿔야 하는 조직적 비용이 따른다.",
+      "insightEn": "Shifting review to the intent stage can keep reviewers from being overwhelmed by AI-generated code volume, but it requires reworking team process and tooling, not just review habits."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Self-healing GPU nodes in Kubernetes: What we learned building the EKS node monitoring agent",
+      "link": "https://thenewstack.io/self-healing-gpu-nodes/",
+      "date": "2026-07-19T13:00:00.000Z",
+      "excerpt": "When you run Kubernetes at the scale we do on Amazon EKS, nodes break constantly. GPUs fall off the PCIe",
+      "summaryKo": "저자 Sajjan Gundapuneedi는 Amazon EKS 규모로 Kubernetes를 운영하면 노드 장애가 끊임없이 발생한다고 말한다. 특히 GPU가 PCIe 버스에서 떨어져 나가는 등 GPU 관련 하드웨어 이상이 잦은 장애 유형으로 꼽힌다. 이런 문제에 대응하기 위해 팀은 'EKS 노드 모니터링 에이전트'를 직접 구축해 GPU 노드의 이상을 자동으로 감지하고 복구(self-healing)하는 체계를 만들었다. 글은 이 에이전트를 만들면서 얻은 6가지 핵심 아키텍처 교훈을 다룬다. 대규모 GPU 클러스터에서는 사람이 수작업으로 장애 노드를 찾아 격리·교체하는 방식이 확장성 한계에 부딪힌다는 문제의식이 바탕에 깔려 있다. 따라서 노드 상태를 지속적으로 감시하고, 이상이 감지되면 자동으로 격리·재부팅·교체까지 이어지는 파이프라인 설계가 핵심 주제다. GPU 인프라를 대규모로 운영하는 조직이라면 이 아키텍처 교훈을 참고해 자체 노드 자동 복구 체계를 설계하는 데 활용할 수 있다.",
+      "summaryEn": "Author Sajjan Gundapuneedi describes how, at the scale the team runs Kubernetes on Amazon EKS, node failures happen constantly. GPU-related hardware issues — including GPUs falling off the PCIe bus — are called out as a recurring failure mode. To address this, the team built an EKS Node Monitoring Agent that automatically detects GPU node problems and drives self-healing. The article walks through six critical architecture lessons learned while building that agent. The underlying problem is that manually finding, isolating, and replacing failed GPU nodes doesn't scale for large GPU fleets. The core design theme is continuous node health monitoring paired with an automated pipeline for isolating, rebooting, or replacing unhealthy nodes. Organizations running GPU infrastructure at scale can use these architecture lessons as a reference for designing their own automated node-healing systems.",
+      "insightKo": "GPU 노드 장애를 사람이 수동으로 대응하는 대신 자동 감지·격리·복구 파이프라인으로 전환하면 대규모 GPU 클러스터의 가동률과 온콜 부담을 동시에 개선할 수 있다.",
+      "insightEn": "Automating detection, isolation, and recovery for failing GPU nodes — rather than handling it manually — can raise cluster uptime and reduce on-call burden at GPU fleet scale."
+    }
+  ]
+}
