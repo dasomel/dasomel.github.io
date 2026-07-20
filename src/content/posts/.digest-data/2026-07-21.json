@@ -1,0 +1,183 @@
+{
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-20T22:35:02.503Z",
+  "count": 22,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google just bet its inference future on a chip built for one model",
+      "link": "https://thenewstack.io/google-frozen-gemini-chip/",
+      "date": "2026-07-20T22:14:41.000Z",
+      "excerpt": "The race to make AI inference cheaper is pushing chip design beyond general-purpose accelerators. We’re now moving toward silicon that"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare Internal DNS is now generally available",
+      "link": "https://blog.cloudflare.com/internal-dns/",
+      "date": "2026-07-20T20:59:31.000Z",
+      "excerpt": "Cloudflare Internal DNS brings authoritative and recursive DNS for private networks to the same global network and control plane that runs Cloudflare's Zero Trust, networking, and public DNS."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Claude Fable 5 vs. Kimi K3: Same results, one-third the cost, 4x slower",
+      "link": "https://thenewstack.io/kimi-k3-fable-coding-benchmark/",
+      "date": "2026-07-20T18:07:20.000Z",
+      "excerpt": "Moonshot AI released Kimi K3 in mid-July, selling it as a serious professional coding tool that competes head-on with Claude"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Amazon, Microsoft, and Google are converging on the same enterprise agent architecture",
+      "link": "https://thenewstack.io/agent-platform-portability-contract/",
+      "date": "2026-07-20T17:43:11.000Z",
+      "excerpt": "Over the past nine months, Amazon, Microsoft, and Google have each introduced or renamed an enterprise agent platform. And all"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "JVM memory, CPU, and classpath best practices for Java containers on AWS",
+      "link": "https://aws.amazon.com/blogs/containers/jvm-memory-cpu-and-classpath-best-practices-for-java-containers-on-aws/",
+      "date": "2026-07-20T16:54:24.000Z",
+      "excerpt": "In this post, we explain how the JVM interacts with the container runtime and the host kernel, and walk through configuration best practices that help you prevent these issues."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Beyond performance monitoring: Understand the user experience with Grafana Cloud Frontend Observability",
+      "link": "https://grafana.com/blog/beyond-performance-monitoring-understand-the-user-experience-with-grafana-cloud-frontend-observability/",
+      "date": "2026-07-20T16:00:44.000Z",
+      "excerpt": "You've optimized your Largest Contentful Paint. Your Time to First Byte is under 200ms."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Accelerating automotive innovation with C4A-metal and Panasonic Automotive vSkipGen",
+      "link": "https://cloud.google.com/blog/topics/partners/panasonic-automotive-vskipgen-runs-on-axion-based-c4a-metal/",
+      "date": "2026-07-20T16:00:00.000Z",
+      "excerpt": "As the automotive landscape accelerates toward software-defined vehicles, Cockpit Domain Controllers (CDCs) are becoming the core of next-generation in-cabin experiences."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Making highly available, multi-region Cloud Run services just got easier",
+      "link": "https://cloud.google.com/blog/products/serverless/cloud-run-multi-region-services-enhanced-for-high-availability/",
+      "date": "2026-07-20T16:00:00.000Z",
+      "excerpt": "Application downtime for mission-critical services can directly impact your reputation and bottom line. To avoid that, you need to be able to deploy regionally resilient workloads that detect and automatically recover from failures."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "$100 million for open source: A milestone built by the community",
+      "link": "https://github.blog/open-source/maintainers/100-million-for-open-source-a-milestone-built-by-the-community/",
+      "date": "2026-07-20T16:00:00.000Z",
+      "excerpt": "Celebrating $100 million contributed by the community to the people who build and sustain open source every day."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Introducing Cosmos 3 Edge",
+      "link": "https://huggingface.co/blog/nvidia/cosmos3edge",
+      "date": "2026-07-20T15:58:51.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "What Comes After Observability?",
+      "link": "https://www.honeycomb.io/blog/what-comes-after-observability",
+      "date": "2026-07-20T15:00:00.000Z",
+      "excerpt": "A year ago, I predicted ways in which AI was about to fundamentally change observability as we knew it. Here's what we've seen happen since—both at Honeycomb and with our customers—and what we're building for the future."
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "How our universal content processing platform Riviera evolved for AI and beyond",
+      "link": "https://dropbox.tech/infrastructure/how-our-universal-content-processing-platform-riviera-evolved-for-ai-and-beyond",
+      "date": "2026-07-20T15:00:00.000Z",
+      "excerpt": "Riviera is the Dropbox content processing platform that’s been iteratively improving content transformation in our products for roughly a decade."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Coding Agent Horror Stories: The Agent That Deleted Production",
+      "link": "https://www.docker.com/blog/coding-agent-horror-stories-the-agent-that-deleted-production/",
+      "date": "2026-07-20T13:00:00.000Z",
+      "excerpt": "Learn how an AI coding agent caused a 13-hour outage and how Docker Sandboxes help reduce risk with scoped identities and isolated execution."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "ArgoCon Japan 2026: Meeting the Maintainers, enterprise insights, and the road to Argo CD 3.5",
+      "link": "https://www.cncf.io/blog/2026/07/20/argocon-japan-2026-meeting-the-maintainers-enterprise-insights-and-the-road-to-argo-cd-3-5/",
+      "date": "2026-07-20T12:34:00.000Z",
+      "excerpt": "A special half-day ArgoCon Japan (1:30pm – 6:30pm) will be held July 28, 2026 in Yokohama, Japan as a colocated event with KubeCon + CloudNativeCon. This is a chance to hear from and meet both end."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Why goodput matters more than throughput for LLM serving",
+      "link": "https://www.cncf.io/blog/2026/07/20/why-goodput-matters-more-than-throughput-for-llm-serving/",
+      "date": "2026-07-20T11:00:00.000Z",
+      "excerpt": "When we benchmark an LLM serving setup, the number almost everyone reaches for first is throughput: how many requests per second the system can push through. It is easy to measure, easy to compare, and it."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Safety and alignment in an era of long-horizon models",
+      "link": "https://openai.com/index/safety-alignment-long-horizon-models",
+      "date": "2026-07-20T10:00:00.000Z",
+      "excerpt": "OpenAI shares lessons from deploying long-running AI models, highlighting new safety risks, observed failures, and improved safeguards through iterative deployment."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "JADEPUFFER evolves: The agentic threat actor deploys ransomware built to destroy AI models",
+      "link": "https://webflow.sysdig.com/blog/jadepuffer-evolves-the-agentic-threat-actor-deploys-ransomware-built-to-destroy-ai-models",
+      "date": "2026-07-20T00:00:00.000Z",
+      "excerpt": "JADEPUFFER, the agentic threat actor documented by the Sysdig Threat Research Team, is now using ransomware to destroy trained AI models."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The value of unconventional experience: From sweeping hair to shaping careers",
+      "link": "https://www.redhat.com/en/blog/value-unconventional-experience-sweeping-hair-shaping-careers",
+      "date": "2026-07-20T00:00:00.000Z",
+      "excerpt": "Long before LinkedIn, my professional network consisted of the Yellow Pages and a landline. At the age of 15, I had the brainwave (and the audacity) to cold call every business I could find until I landed my 1st job."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Open Telco AI: Training a model for an industry",
+      "link": "https://www.redhat.com/en/blog/open-telco-ai-training-model-industry",
+      "date": "2026-07-20T00:00:00.000Z",
+      "excerpt": "The telecommunications industry is witnessing a shift in domain-specific artificial intelligence (AI). Following the success of the first iteration of the GSMA Open Telco AI initiative, the industry is entering its next phase with the announcement of Open Telco AI 2."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Debunking IT automation myths: A strategic blueprint for healthcare payers",
+      "link": "https://www.redhat.com/en/blog/debunking-it-automation-myths-strategic-blueprint-healthcare-payers",
+      "date": "2026-07-20T00:00:00.000Z",
+      "excerpt": "Healthcare payer organizations are navigating a complex intersection of rising member expectations, strict regulatory mandates, and aging technology infrastructures. Modernizing these environments to accelerate claims adjudication and improve the member experience is a key priority for many executives."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Automate work item assignment with a \"Work item created\" trigger",
+      "link": "https://about.gitlab.com/blog/how-to-use-a-work-item-created-trigger/",
+      "date": "2026-07-20T00:00:00.000Z",
+      "excerpt": "A new, event-driven trigger in GitLab Duo Agent Platform lets flows fire the moment a work item is created, turning triage and assignment from a manual, all-day chore into automation that runs in seconds."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Transcend Hackathon: What developers built on GitLab Orbit",
+      "link": "https://about.gitlab.com/blog/gitlab-transcend-hackathon-orbit/",
+      "date": "2026-07-20T00:00:00.000Z",
+      "excerpt": "We gave a few thousand developers GitLab Orbit. Then we got out of the way."
+    }
+  ]
+}
