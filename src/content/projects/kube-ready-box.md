@@ -99,6 +99,10 @@ net.bridge.bridge-nf-call-iptables = 1
 | **네트워크 진단** | ipvsadm, ipset, conntrack, ethtool, tcpdump, nmap |
 | **성능 분석** | linux-tools, bpfcc-tools, bpftrace |
 
+### 보안 하드닝 (v1.1.0)
+
+v1.1.0에서는 `needrestart` 제거(CVE 5건 완화), `auditd` 설치 후 비활성화(CIS 벤치마크 대응), `apparmor-utils` 추가, Longhorn CSI 및 Cilium bpffs 영구 마운트를 지원합니다. 상세 내용은 [박스 아키텍처 & 빌드](/ko/docs/kube-ready-box-architecture) 문서에서 확인할 수 있습니다.
+
 ### 포함되지 않은 것
 
 의도적으로 포함하지 않은 컴포넌트 (사용자 선택 설치):
@@ -219,6 +223,16 @@ cd packer
 - **AGENT.md**: 기술 가이드 (Packer, K8s 튜닝, 최적화)
 - **SECURITY.md**: 보안 가이드라인
 - **skills/**: AI 에이전트 스킬 (자동 리뷰)
+
+## 기술 문서
+
+각 영역을 원본 소스 기준으로 상세히 정리한 문서입니다.
+
+| 문서 | 내용 |
+|------|------|
+| [박스 아키텍처 & 빌드](/ko/docs/kube-ready-box-architecture) | Packer 빌드 파이프라인, XFS prjquota 설계, 멀티 프로바이더 |
+| [사용법](/ko/docs/kube-ready-box-usage) | Vagrantfile 연동, 프로바이더 선택, Kubernetes 사후 설치 |
+| [릴리스 & 배포](/ko/docs/kube-ready-box-release) | Vagrant Cloud / HCP 게시, 자격증명, 배포 체크리스트 |
 
 ## 참고 링크
 
