@@ -29,6 +29,7 @@ solution: "vagrant up 한 명령으로 HA 컨트롤 플레인, GitOps, SSO, Obse
 | **Service Mesh** | Istio ambient mode (mTLS, ztunnel, 사이드카 없음) |
 | **보안** | cert-manager, OpenBao (Secrets), Kyverno (Policy) |
 | **백업** | Velero + CNPG barman |
+| **테스트** | Chaos Mesh (카오스 실험), k6 (부하 테스트) |
 
 ## 아키텍처
 
@@ -38,7 +39,7 @@ solution: "vagrant up 한 명령으로 HA 컨트롤 플레인, GitOps, SSO, Obse
 ├──────────────────┬─────────────┬─────────────────┤
 │  master-1        │ master-2/3  │ worker-1/2/3    │
 │  192.168.56.10   │ .11 / .12   │ .21 / .22 / .23 │
-│  2 CPU, 4GB      │ 2 CPU, 4GB  │ 2 CPU, 6GB      │
+│  2 CPU, 6GB      │ 2 CPU, 6GB  │ 2 CPU, 6GB      │
 │  NFS, dnsmasq    │ dnsmasq     │                 │
 └──────────────────┴─────────────┴─────────────────┘
                    VIP: 192.168.56.100 (kube-vip)
@@ -69,8 +70,24 @@ vagrant ssh master-1 -c "kubectl get nodes"
 vagrant destroy -f
 ```
 
+## 기술 문서
+
+각 영역을 원본 소스 기준으로 상세히 정리한 문서입니다.
+
+| 문서 | 내용 |
+|------|------|
+| [아키텍처](/ko/docs/narwhal-architecture) | 클러스터 토폴로지, HA 컨트롤 플레인, 노드 구성 |
+| [네트워킹](/ko/docs/narwhal-networking) | Cilium, MetalLB, kube-vip, APISIX, DNS |
+| [GitOps](/ko/docs/narwhal-gitops) | ArgoCD + Gitea App-of-Apps 패턴 |
+| [보안 & SSO](/ko/docs/narwhal-security) | Keycloak OIDC, OpenBao, Kyverno, cert-manager |
+| [관측성](/ko/docs/narwhal-observability) | Prometheus, Grafana, Loki, Tempo, Hubble |
+| [스토리지 & 데이터베이스](/ko/docs/narwhal-storage) | NFS, SeaweedFS, nfs-quota-agent, CNPG |
+| [운영 & 재해복구](/ko/docs/narwhal-operations) | Day-2 운영, Velero 백업/복구, 장애 대응 |
+| [테스트 & 카오스 엔지니어링](/ko/docs/narwhal-testing) | Chaos Mesh 실험 스위트, k6 부하 테스트, 기준선 |
+
 ## 참고 링크
 
 - **GitHub**: [dasomel/narwhal](https://github.com/dasomel/narwhal)
+- **관리 포털**: [Narwhal Portal](/ko/projects/narwhal-portal)
 - **Base Box**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
 - **nfs-quota-agent**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)

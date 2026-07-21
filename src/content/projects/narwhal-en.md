@@ -29,6 +29,7 @@ Like the narwhal — the "unicorn of the sea" — it delivers a powerful full pl
 | **Service Mesh** | Istio ambient mode (mTLS, ztunnel, zero sidecars) |
 | **Security** | cert-manager, OpenBao (Secrets), Kyverno (Policy) |
 | **Backup** | Velero + CNPG barman |
+| **Testing** | Chaos Mesh (chaos experiments), k6 (load testing) |
 
 ## Architecture
 
@@ -38,7 +39,7 @@ Like the narwhal — the "unicorn of the sea" — it delivers a powerful full pl
 ├──────────────────┬─────────────┬─────────────────┤
 │  master-1        │ master-2/3  │ worker-1/2/3    │
 │  192.168.56.10   │ .11 / .12   │ .21 / .22 / .23 │
-│  2 CPU, 4GB      │ 2 CPU, 4GB  │ 2 CPU, 6GB      │
+│  2 CPU, 6GB      │ 2 CPU, 6GB  │ 2 CPU, 6GB      │
 │  NFS, dnsmasq    │ dnsmasq     │                 │
 └──────────────────┴─────────────┴─────────────────┘
                    VIP: 192.168.56.100 (kube-vip)
@@ -69,8 +70,24 @@ vagrant ssh master-1 -c "kubectl get nodes"
 vagrant destroy -f
 ```
 
+## Technical Documentation
+
+Detailed write-ups of each area, sourced directly from the cluster repository.
+
+| Document | Contents |
+|----------|----------|
+| [Architecture](/en/docs/narwhal-architecture) | Cluster topology, HA control plane, node layout |
+| [Networking](/en/docs/narwhal-networking) | Cilium, MetalLB, kube-vip, APISIX, DNS |
+| [GitOps](/en/docs/narwhal-gitops) | ArgoCD + Gitea App-of-Apps pattern |
+| [Security & SSO](/en/docs/narwhal-security) | Keycloak OIDC, OpenBao, Kyverno, cert-manager |
+| [Observability](/en/docs/narwhal-observability) | Prometheus, Grafana, Loki, Tempo, Hubble |
+| [Storage & Database](/en/docs/narwhal-storage) | NFS, SeaweedFS, nfs-quota-agent, CNPG |
+| [Operations & Disaster Recovery](/en/docs/narwhal-operations) | Day-2 ops, Velero backup/restore, incident response |
+| [Testing & Chaos Engineering](/en/docs/narwhal-testing) | Chaos Mesh experiment suite, k6 load tests, baselines |
+
 ## References
 
 - **GitHub**: [dasomel/narwhal](https://github.com/dasomel/narwhal)
+- **Management portal**: [Narwhal Portal](/en/projects/narwhal-portal)
 - **Base Box**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
 - **nfs-quota-agent**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
