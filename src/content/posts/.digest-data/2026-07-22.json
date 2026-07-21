@@ -1,0 +1,183 @@
+{
+  "date": "2026-07-22",
+  "generatedAt": "2026-07-21T22:33:15.005Z",
+  "count": 22,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Moonshot launched Kimi K3. Then demand shut down subscriptions in 48 hours.",
+      "link": "https://thenewstack.io/kimi-k3-inference-bottleneck/",
+      "date": "2026-07-21T20:48:32.000Z",
+      "excerpt": "Moonshot AI became the latest AI company to discover that launching a popular model is only half the battle. Less"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "The State of Simulation for Physical AI: An Overview",
+      "link": "https://huggingface.co/blog/nvidia/state-of-simulation-for-physical-ai",
+      "date": "2026-07-21T20:00:27.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Single-pass AI code isn’t dead, but “high-reasoning” is the next frontier",
+      "link": "https://thenewstack.io/high-reasoning-ai-coding/",
+      "date": "2026-07-21T17:13:17.000Z",
+      "excerpt": "Ask an AI model what comes next after “bacon-double”, and the return is fairly unanimously “cheeseburger.” It’s a pattern-matched, single-pass"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft is building an AI stack it doesn’t fully own — on purpose",
+      "link": "https://thenewstack.io/microsoft-mistral-sovereign-ai/",
+      "date": "2026-07-21T17:05:16.000Z",
+      "excerpt": "Microsoft and Mistral are deepening their partnership with a multibillion-dollar agreement focused on enterprise AI infrastructure. The goal is to"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing the ChatGPT for small business program",
+      "link": "https://openai.com/index/introducing-chatgpt-small-business-program",
+      "date": "2026-07-21T17:00:00.000Z",
+      "excerpt": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Supercharging pgvector: 4x faster HNSW vector search with AlloyDB",
+      "link": "https://cloud.google.com/blog/products/databases/supercharge-pgvector-4x-faster-hnsw-with-alloydb/",
+      "date": "2026-07-21T16:00:00.000Z",
+      "excerpt": "AlloyDB is a fully managed, PostgreSQL-compatible database service built for your most demanding enterprise workloads. It combines the best of open source PostgreSQL with Google’s advanced technology, offering massive scalability, high availability, and native AI capabilities."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Autonomous infrastructure: Managing complexity in agentic workflows",
+      "link": "https://www.hashicorp.com/blog/autonomous-infrastructure-managing-complexity-in-agentic-workflows",
+      "date": "2026-07-21T16:00:00.000Z",
+      "excerpt": "As AI becomes embedded across the enterprise, infrastructure operations are entering a new era. Organizations are no longer simply automating repetitive tasks or accelerating existing workflows."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How to build interactive experiences with canvases",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-build-interactive-experiences-with-canvases/",
+      "date": "2026-07-21T16:00:00.000Z",
+      "excerpt": "Canvases turn AI into interactive workspaces where you can visualize information, explore workflows, and take action across complex tasks."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Now in preview: Find and fix software vulnerabilities with CodeMender",
+      "link": "https://cloud.google.com/blog/products/identity-security/find-and-fix-software-vulnerabilities-with-codemender/",
+      "date": "2026-07-21T15:00:00.000Z",
+      "excerpt": "As adversarial AI threats accelerate attacks on code, security teams must counter them with machine-speed defenses that can automate code remediation and fight AI with AI."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How the 2026 World Cup affected Internet traffic",
+      "link": "https://blog.cloudflare.com/2026-world-cup-internet-traffic/",
+      "date": "2026-07-21T12:59:40.000Z",
+      "excerpt": "We analyzed global HTTP traffic to explore how kickoff times, streaming habits, and hydration breaks reshaped online activity worldwide. From late-night traffic surges to halftime browsing spikes, here is how the world connected during the global tournament."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Generosity Under Conditions: Hardening Google Cloud Access Management",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/generosity-under-conditions-hardening-google-cloud-access-management/",
+      "date": "2026-07-21T11:19:00.000Z",
+      "excerpt": "In Google Cloud, Identity and Access Management (IAM) helps you maintain access control over your cloud resources and operations. While it includes other features, this is its primary purpose."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Why your agent needs access to your documentation",
+      "link": "https://www.cncf.io/blog/2026/07/21/why-your-agent-needs-access-to-your-documentation/",
+      "date": "2026-07-21T11:00:00.000Z",
+      "excerpt": "What 1,192 agent conversations taught us about knowledge base search A few months ago we shipped an agent inside our own product. It lives in our web app and lets users ask questions about their deployment,."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Platform engineering for the agentic enterprise: Managing applications, resources, and AI agents",
+      "link": "https://www.cncf.io/blog/2026/07/21/platform-engineering-for-the-agentic-enterprise-managing-applications-resources-and-ai-agents/",
+      "date": "2026-07-21T11:00:00.000Z",
+      "excerpt": "Platform engineering is evolving Platform engineering has become one of the defining disciplines of the cloud native era. As organizations embraced Kubernetes, microservices, GitOps, and distributed architectures, the complexity of building and operating software grew beyond."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "AI speeds software development. Is your secret security keeping up?",
+      "link": "https://www.hashicorp.com/blog/ai-speeds-software-development-is-your-secret-security-keeping-up",
+      "date": "2026-07-21T07:09:00.000Z",
+      "excerpt": "Developers are no longer manually writing every line of code. They are prompting AI assistants, generating applications from natural language, creating infrastructure through templates, and assembling prototypes in hours instead of weeks."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
+      "link": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+      "date": "2026-07-21T07:00:00.000Z",
+      "excerpt": "OpenAI and Hugging Face share early findings from a security incident during AI model evaluation, highlighting advanced cyber capabilities and lessons for defenders."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Four ways AI has fundamentally changed the threat landscape in 2026",
+      "link": "https://webflow.sysdig.com/blog/four-ways-ai-has-fundamentally-changed-the-threat-landscape-in-2026",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": "Sysdig TRT documents four ways agentic AI is reshaping the threat landscape — from autonomous attackers to AI infrastructure as prime target."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+      "link": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Grabette: an open system to record robot-manipulation data",
+      "link": "https://huggingface.co/blog/grabette",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why prompt-level guardrails aren't enough: The platform security layers production agents need",
+      "link": "https://www.redhat.com/en/blog/why-prompt-level-guardrails-arent-enough-platform-security-layers-production-agents-need",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": "An agent charged $4,000 to the wrong customer billing account. Nobody noticed until Monday."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Preparing for Q-day: Four steps to prepare your hybrid cloud today",
+      "link": "https://www.redhat.com/en/blog/preparing-q-day-four-steps-prepare-your-hybrid-cloud-today",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": "The arrival of a cryptographically relevant quantum computer, often referred to as Q-day, is moving from a distant theoretical mathematical challenge to an urgent timeline that security teams must plan for today. Bad actors are already engaging in harvest now, decrypt later activities."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Physical AI: When machines start to think and act in the real world",
+      "link": "https://www.redhat.com/en/blog/physical-ai-when-machines-start-think-and-act-real-world",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": "If you read the first part of this article, you already know that physical AI isn't just another wave of automation. You saw how intelligent systems are solving real problems in operations, security, and maintenance in ways that traditional robotics simply can't."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Analyzing the evidence that helps businesses win “product not received” disputes",
+      "link": "https://stripe.com/blog/analyzing-the-evidence-that-helps-businesses-win-product-not-received-disputes",
+      "date": "2026-07-21T00:00:00.000Z",
+      "excerpt": "To understand what can influence win rates, we analyzed evidence packets from one million disputes over a 16-week period. Here’s what the data shows and what it means for how you mitigate disputes."
+    }
+  ]
+}
