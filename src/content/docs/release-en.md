@@ -1,6 +1,7 @@
 ---
 title: "Release Note"
 description: "K-PaaS Lite Release Notes"
+project: "K-PaaS Lite"
 order: 99
 lastModified: 2026-02-02
 ---

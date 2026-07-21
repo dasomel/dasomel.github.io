@@ -1,6 +1,7 @@
 ---
 title: "Account"
 description: "K-PaaS 계정 정보"
+project: "K-PaaS Lite"
 order: 8
 lastModified: 2026-02-02
 ---

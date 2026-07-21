@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting"
 description: "K-PaaS Troubleshooting Guide"
+project: "K-PaaS Lite"
 order: 10
 date: 2024-07-03
 lastModified: 2026-02-02

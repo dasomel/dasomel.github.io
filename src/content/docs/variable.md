@@ -1,6 +1,7 @@
 ---
 title: "Global Variable"
 description: "K-PaaS Local 환경 변수 설정"
+project: "K-PaaS Lite"
 order: 7
 lastModified: 2026-02-02
 ---

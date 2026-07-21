@@ -1,6 +1,7 @@
 ---
 title: "Components"
 description: "K-PaaS Lite Components"
+project: "K-PaaS Lite"
 order: 4
 lastModified: 2026-02-02
 ---

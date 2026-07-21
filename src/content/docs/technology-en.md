@@ -1,6 +1,7 @@
 ---
 title: "Technology Stack"
 description: "Technology Stack Used in K-PaaS Lite Installation"
+project: "K-PaaS Lite"
 order: 3
 date: 2024-06-17
 lastModified: 2026-02-02

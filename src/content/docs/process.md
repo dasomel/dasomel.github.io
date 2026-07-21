@@ -1,6 +1,7 @@
 ---
 title: "설치과정"
 description: "K-PaaS Local 설치 프로세스"
+project: "K-PaaS Lite"
 order: 5
 lastModified: 2026-02-02
 ---

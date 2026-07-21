@@ -1,6 +1,7 @@
 ---
 title: "Container Platform Architecture"
 description: "How K-PaaS Container Platform Works"
+project: "K-PaaS Lite"
 order: 2
 date: 2024-06-17
 lastModified: 2026-02-02
