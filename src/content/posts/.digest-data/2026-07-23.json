@@ -1,0 +1,223 @@
+{
+  "date": "2026-07-23",
+  "generatedAt": "2026-07-22T22:39:17.780Z",
+  "count": 27,
+  "articles": [
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "SymptomAI: Towards a conversational AI agent for everyday symptom assessment",
+      "link": "https://research.google/blog/symptomai-towards-a-conversational-ai-agent-for-everyday-symptom-assessment/",
+      "date": "2026-07-22T21:32:00.000Z",
+      "excerpt": "General Science"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Copilot vs. raw API access: What are you actually paying for?",
+      "link": "https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for/",
+      "date": "2026-07-22T19:00:00.000Z",
+      "excerpt": "Copilot now bills usage at listed API rates. Compare direct model access with the coding workflow, policy, and harness work around it."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Towards a quantum computer that learns from its errors",
+      "link": "https://research.google/blog/towards-a-quantum-computer-that-learns-from-its-errors/",
+      "date": "2026-07-22T18:40:21.000Z",
+      "excerpt": "Machine Intelligence"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Kimi K3: White House alleges Fable 5 siphoning",
+      "link": "https://thenewstack.io/moonshot-fable5-distillation-accusations/",
+      "date": "2026-07-22T18:28:31.000Z",
+      "excerpt": "Top White House technology official Michael Kratsios on Wednesday accused Chinese artificial intelligence startup Moonshot of using deceptive practices to"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Agents keep changing their answers. Harness just built delivery pipelines that don’t care.",
+      "link": "https://thenewstack.io/harness-ai-agent-dlc/",
+      "date": "2026-07-22T17:51:12.000Z",
+      "excerpt": "Software delivery lifecycle company (SDLC) Harness wants to put agents through the same pipelines and controls that all application code"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI built support agents for its own customer service line, now it hopes big enterprises will trust them too",
+      "link": "https://thenewstack.io/openai-presence-enterprise-agents/",
+      "date": "2026-07-22T17:23:20.000Z",
+      "excerpt": "The general consensus emerging across the AI and industrial spheres is that the models themselves are no longer the bottleneck"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Building a serverless AI assistant at Pelago: concept to care in two weeks",
+      "link": "https://aws.amazon.com/blogs/architecture/building-a-serverless-ai-assistant-at-pelago-concept-to-care-in-two-weeks/",
+      "date": "2026-07-22T17:12:27.000Z",
+      "excerpt": "Healthcare organizations face a critical scaling challenge – how to maintain deeply personalized patient interactions as member bases grow, without overwhelming care teams or compromising quality."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Confidential Containers becomes a CNCF incubating project",
+      "link": "https://www.cncf.io/blog/2026/07/22/confidential-containers-becomes-a-cncf-incubating-project/",
+      "date": "2026-07-22T16:00:00.000Z",
+      "excerpt": "The CNCF Technical Oversight Committee (TOC) has voted to accept Confidential Containers as a CNCF incubating project. About Confidential Containers Confidential Containers addresses the need to protect data in use within cloud native environments."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Next chapter: Restructuring GitHub’s bug bounty program",
+      "link": "https://github.blog/security/next-chapter-restructuring-githubs-bug-bounty-program/",
+      "date": "2026-07-22T16:00:00.000Z",
+      "excerpt": "GitHub is making some significant changes to its bug bounty program, shifting its focus to give researchers a better experience working with the GitHub team."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Cost attribution in Grafana Cloud: Manage spend across observability and testing workflows",
+      "link": "https://grafana.com/blog/cost-attribution-in-grafana-cloud-manage-spend-across-observability-and-testing-workflows/",
+      "date": "2026-07-22T15:27:07.000Z",
+      "excerpt": "Knowing what you're spending on observability is useful. Knowing which team, service, or project is driving that spend is what actually lets you act on that information."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Embracing the Code Review Bottleneck",
+      "link": "https://www.honeycomb.io/blog/embracing-code-review-bottleneck",
+      "date": "2026-07-22T15:00:00.000Z",
+      "excerpt": "Faced with an endless stream of AI-generated code reviews, our team made the counterintuitive choice to lean into the bottleneck rather than reduce it. Surprisingly, velocity held up, knowledge sharing improved, and we developed a collective system ownership that stuck."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Building multi-Region resiliency for AWS CloudFormation custom resource deployment",
+      "link": "https://aws.amazon.com/blogs/architecture/building-multi-region-resiliency-for-aws-cloudformation-custom-resource-deployment/",
+      "date": "2026-07-22T14:25:09.000Z",
+      "excerpt": "AWS CloudFormation is the foundational tool of infrastructure-as-code for thousands of organizations running workloads on AWS. But as teams push the boundaries of what CloudFormation can do natively, custom resources have emerged as a powerful extension mechanism that unlocks a broad range of possibilities."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "From maintenance to innovation: Checking in on Checkout.com’s Cloud Composer 3 migration",
+      "link": "https://cloud.google.com/blog/products/data-analytics/how-checkout-com-tallies-data-with-cloud-composer-3/",
+      "date": "2026-07-22T14:00:00.000Z",
+      "excerpt": "Data engineering teams often face a “Day 2” operational reality after building a data platform: the ongoing work of maintaining the orchestrator itself. For the Data Platform team at Checkout."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Architecting offline-first generative AI applications for edge deployments using AWS services",
+      "link": "https://aws.amazon.com/blogs/architecture/architecting-offline-first-generative-ai-applications-for-edge-deployments-using-aws-services/",
+      "date": "2026-07-22T13:32:57.000Z",
+      "excerpt": "According to Siemens’ 2024 report The True Cost of Downtime, Fortune 500 companies lose an estimated $1.4 trillion annually because of unplanned downtime."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Accelerating the frontiers of scientific discovery: Google’s $40M commitment to the Genesis Mission",
+      "link": "https://cloud.google.com/blog/topics/public-sector/accelerating-frontiers-of-scientific-discovery-40-million-dollar-commitment-genesis-mission/",
+      "date": "2026-07-22T13:30:00.000Z",
+      "excerpt": "Scientists today face challenges of extraordinary scale and complexity. From shaping and simulating the intricate dynamics of fusion plasma, to exploring the vast search space of new materials, to making sense of the exabytes of data pouring out of the world's most advanced experimental facilities."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Runtime Enforcement, Not Runtime Advice",
+      "link": "https://www.docker.com/blog/runtime-enforcement-not-runtime-advice/",
+      "date": "2026-07-22T13:00:00.000Z",
+      "excerpt": "Explore governance at the runtime layer and learn why isolation, policy enforcement, and controlled tool access are becoming foundational for agentic systems."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Agentic AI Needs Guardrails, Not Guesswork",
+      "link": "https://www.docker.com/blog/agentic-ai-security-ciso-panel/",
+      "date": "2026-07-22T13:00:00.000Z",
+      "excerpt": "Docker brought together enterprise security leaders to tackle agentic AI's biggest challenge: how to govern AI agents without slowing developers down. Here's what they said."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Building AI infrastructure with the Effingham County community",
+      "link": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
+      "date": "2026-07-22T13:00:00.000Z",
+      "excerpt": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How news organizations are using AI to advance their vital missions",
+      "link": "https://openai.com/index/how-news-organizations-are-using-ai",
+      "date": "2026-07-22T13:00:00.000Z",
+      "excerpt": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "3 Google updates from Galaxy Unpacked 2026",
+      "link": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/",
+      "date": "2026-07-22T13:00:00.000Z",
+      "excerpt": "We shared how Samsung users can boost productivity and get time back on new foldables, watches, and glasses coming soon."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Advancing the next era of national science",
+      "link": "https://openai.com/index/advancing-the-next-era-of-national-science",
+      "date": "2026-07-22T12:00:00.000Z",
+      "excerpt": "OpenAI outlines its commitment to advancing American science working with the U.S."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Multi-Cluster databases on Kubernetes: Architecture and deployment",
+      "link": "https://www.cncf.io/blog/2026/07/22/multi-cluster-databases-on-kubernetes-architecture-and-deployment/",
+      "date": "2026-07-22T11:42:00.000Z",
+      "excerpt": "Introduction Running a database on Kubernetes is well understood. Running one that survives a complete regional failure, a corrupted control plane, or a severed network requires a fault-resistant architecture."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "I made a policy engine think it was in production",
+      "link": "https://www.cncf.io/blog/2026/07/22/i-made-a-policy-engine-think-it-was-in-production/",
+      "date": "2026-07-22T11:00:00.000Z",
+      "excerpt": "Kyverno is a Kubernetes-native policy engine that validates, mutates, and generates resources before workloads reach your cluster, enforcing security and compliance rules as code, without requiring a separate policy language. Enterprise teams running Kyverno policies in."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "One service, many doors: Multi-port services in Consul",
+      "link": "https://www.hashicorp.com/blog/one-service-many-doors-multi-port-services-in-consul",
+      "date": "2026-07-22T07:09:00.000Z",
+      "excerpt": "Modern applications rarely expose just one port. A single service might serve user-facing API traffic on one port, publish metrics on another, and keep an admin or gRPC endpoint on a third."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Avoid operational drift with Red Hat Lightspeed content templates for RHEL extended environments",
+      "link": "https://www.redhat.com/en/blog/avoid-operational-drift-red-hat-lightspeed-content-templates-rhel-extended-environments",
+      "date": "2026-07-22T00:00:00.000Z",
+      "excerpt": "For system administrators and IT leaders, keeping infrastructure secure while strictly aligning with corporate compliance standards is a continuous, high-stakes balancing act. This challenge escalates dramatically when environments span legacy workloads or platforms locked into extended operational lifecycles."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Modernize Java with Cursor and GitLab",
+      "link": "https://about.gitlab.com/blog/modernize-java-with-cursor-and-gitlab/",
+      "date": "2026-07-22T00:00:00.000Z",
+      "excerpt": "\"Modernize Java 8 to Java 21\" sounds like one task. It is not."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Why AI apps fail in production (And how Google solved it)",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/why-ai-apps-fail-in-production/",
+      "date": "2026-07-21T23:00:00.000Z",
+      "excerpt": "We are living in the golden age of the weekend AI side project. Thanks to agentic engineering and LLMs, the time to go from a blank IDE to a functional local application has dropped from quarters to hours."
+    }
+  ]
+}
