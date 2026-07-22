@@ -99,6 +99,10 @@ net.bridge.bridge-nf-call-iptables = 1
 | **Network Diag** | ipvsadm, ipset, conntrack, ethtool, tcpdump, nmap |
 | **Performance** | linux-tools, bpfcc-tools, bpftrace |
 
+### Security Hardening (v1.1.0)
+
+v1.1.0 includes the removal of `needrestart` (mitigating 5 CVEs), installation of `auditd` disabled by default (CIS benchmark readiness), `apparmor-utils`, and persistent mounts for Longhorn CSI and Cilium bpffs. For detailed information, see the [Box Architecture & Build](/en/docs/kube-ready-box-architecture) document.
+
 ### What's NOT Included
 
 Intentionally excluded components (user choice):
@@ -219,6 +223,16 @@ This repository includes an `.agent/` directory for AI coding assistants:
 - **AGENT.md**: Technical guide (Packer, K8s tuning, optimizations)
 - **SECURITY.md**: Security guidelines
 - **skills/**: AI agent skills (automated reviews)
+
+## Technical Documentation
+
+Detailed write-ups of each area, sourced directly from the repository.
+
+| Document | Contents |
+|----------|----------|
+| [Box Architecture & Build](/en/docs/kube-ready-box-architecture) | Packer build pipeline, XFS prjquota design, multi-provider support |
+| [Usage](/en/docs/kube-ready-box-usage) | Vagrantfile integration, provider selection, Kubernetes post-install |
+| [Release & Distribution](/en/docs/kube-ready-box-release) | Vagrant Cloud / HCP publishing, credentials, deploy checklist |
 
 ## References
 

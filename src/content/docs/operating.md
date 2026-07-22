@@ -1,6 +1,7 @@
 ---
 title: "컨테이너 플랫폼 동작원리"
 description: "K-PaaS 컨테이너 플랫폼의 동작 방식"
+project: "K-PaaS Lite"
 order: 2
 date: 2024-06-17
 lastModified: 2026-02-02

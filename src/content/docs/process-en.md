@@ -1,6 +1,7 @@
 ---
 title: "Installation Process"
 description: "K-PaaS Local Installation Process"
+project: "K-PaaS Lite"
 order: 5
 lastModified: 2026-02-02
 ---

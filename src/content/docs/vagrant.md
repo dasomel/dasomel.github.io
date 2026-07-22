@@ -1,6 +1,7 @@
 ---
 title: "Vagrant"
 description: "Vagrant 설정 및 팁"
+project: "K-PaaS Lite"
 order: 6
 date: 2024-06-17
 lastModified: 2026-02-02

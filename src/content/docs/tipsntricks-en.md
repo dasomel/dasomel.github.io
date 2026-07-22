@@ -1,6 +1,7 @@
 ---
 title: "Tips & Tricks"
 description: "Useful Tips for K-PaaS Local"
+project: "K-PaaS Lite"
 order: 9
 date: 2024-07-03
 lastModified: 2026-02-02

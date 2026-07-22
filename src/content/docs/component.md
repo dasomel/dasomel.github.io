@@ -1,6 +1,7 @@
 ---
 title: "구성요소"
 description: "K-PaaS Lite 구성요소"
+project: "K-PaaS Lite"
 order: 4
 lastModified: 2026-02-02
 ---

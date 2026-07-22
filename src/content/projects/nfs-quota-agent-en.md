@@ -213,8 +213,19 @@ Automate quota management and web UI monitoring for on-premises NFS environments
 ### Operations Audit & Capacity Planning
 Track all quota changes via audit logs and predict capacity expansion needs through usage trends
 
+## Technical Documentation
+
+Detailed write-ups of each area, sourced directly from the repository.
+
+| Document | Contents |
+|----------|----------|
+| [Agent Architecture](/en/docs/nfs-quota-agent-architecture) | Go module layout, XFS prjquota enforcement, Helm deployment |
+| [Feature Guide](/en/docs/nfs-quota-agent-features) | Quota policy, audit, history, cleanup, metrics |
+| [Web UI](/en/docs/nfs-quota-agent-web-ui) | Built-in web UI and its endpoints |
+
 ## References
 
 - **GitHub**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
 - **Helm Chart**: [nfs-quota-agent Charts](https://dasomel.github.io/nfs-quota-agent)
+- **Used by**: [Narwhal IDP](/en/projects/narwhal) — [storage docs](/en/docs/narwhal-storage)
 - **Feature Guide**: [Feature Guide (docs)](https://github.com/dasomel/nfs-quota-agent/tree/main/docs)

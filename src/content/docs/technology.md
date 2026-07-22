@@ -1,6 +1,7 @@
 ---
 title: "적용기술"
 description: "K-PaaS Lite 설치에 사용되는 기술 스택"
+project: "K-PaaS Lite"
 order: 3
 date: 2024-06-17
 lastModified: 2026-02-02

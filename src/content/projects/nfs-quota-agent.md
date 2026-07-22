@@ -213,8 +213,19 @@ nfs_quota_exceeded_count 1
 ### 운영 감사 및 용량 계획
 감사 로그로 모든 쿼터 변경 이력을 추적하고, 사용량 추이로 용량 확장 시점을 예측
 
+## 기술 문서
+
+각 영역을 원본 소스 기준으로 상세히 정리한 문서입니다.
+
+| 문서 | 내용 |
+|------|------|
+| [에이전트 아키텍처](/ko/docs/nfs-quota-agent-architecture) | Go 모듈 구조, XFS prjquota 강제 메커니즘, Helm 배포 |
+| [기능 가이드](/ko/docs/nfs-quota-agent-features) | 쿼터 정책, 감사, 이력, 정리, 메트릭 |
+| [웹 UI](/ko/docs/nfs-quota-agent-web-ui) | 내장 웹 UI 구성과 엔드포인트 |
+
 ## 참고 링크
 
 - **GitHub**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
 - **Helm Chart**: [nfs-quota-agent Charts](https://dasomel.github.io/nfs-quota-agent)
+- **사용 클러스터**: [Narwhal IDP](/ko/projects/narwhal) — [스토리지 문서](/ko/docs/narwhal-storage)
 - **기능 가이드**: [Feature Guide (docs)](https://github.com/dasomel/nfs-quota-agent/tree/main/docs)

@@ -1,6 +1,7 @@
 ---
 title: "TroubleShutting"
 description: "K-PaaS 문제 해결 가이드"
+project: "K-PaaS Lite"
 order: 10
 date: 2024-07-03
 lastModified: 2026-02-02

@@ -1,6 +1,7 @@
 ---
 title: "K-PaaS Lite 소개"
 description: "쉽게 사용하는 K-PaaS 경량화 버전"
+project: "K-PaaS Lite"
 order: 1
 date: 2026-01-22
 lastModified: 2026-01-22
