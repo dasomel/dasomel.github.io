@@ -8,7 +8,8 @@ Next.js 15 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커�
 > 새 경고가 붙으면 그건 새로 생긴 것이니 확인할 것.
 > **CI는 lint를 돌리지 않는다** — `deploy.yml`의 게이트는 `npm run build` 뿐이다.
 
-세션 오케스트레이터(Opus 5 / Fable 5)를 독자로 가정한다. 절차 설명이 아니라 **불변식과 함정**만 적는다.
+**독자는 둘이다.** 세션 오케스트레이터(Opus 5 / Fable 5)와, `agyp`가 이 파일 전문을 주입해 받는 agy 워커다.
+그래서 절차 설명이 아니라 **불변식과 함정**만 적고, 워커가 그대로 따를 수 있게 명령형으로 쓴다.
 글로벌 `~/.claude/CLAUDE.md`의 라우팅 독트린·팀 기본값이 그대로 적용되며, 아래는 이 저장소에만 해당하는 차이다.
 
 ## 위임 기준 (이 저장소 한정)
@@ -16,9 +17,15 @@ Next.js 15 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커�
 | 작업 | 경로 |
 |---|---|
 | 워크플로 YAML, `package.json`/lock, `CLAUDE.md` | 직접 (컨텍스트가 곧 판단 근거) |
-| 콘텐츠 md 다건 생성/번역, 컴포넌트 작성 | agy 레인 (Flash High) |
+| 콘텐츠 md 다건 생성/번역, 컴포넌트 작성 | **`agyp`** 레인 (Flash High) |
 | `gh run`/`gh api` 로그 파헤치기, 대량 grep | 서브에이전트 — 요약 200단어 이하 |
 | 배포 파이프라인 변경 | 직접 + 실제 런으로 실증 (아래 참조) |
+
+**이 저장소에 agy를 던질 때는 반드시 `agyp`.** raw `agy -p`는 프로젝트 컨텍스트를 전혀 못 읽어서
+아래 lock 규칙과 배포 트리거 불변식이 워커에게 도달하지 않는다. 모르는 워커는 lock을 재생성하고 CI를 깬다.
+
+**워커 하드 제약** — 아래는 오케스트레이터가 판단할 일이니 워커 레인에서 직접 하지 말 것:
+`npm install`/lock 갱신(보강이 필요하면 보고), `git push`·PR 머지·`gh workflow run`, dev 서버 실행 중 `npm run build`.
 
 **빌드/배포 주장은 항상 실측으로 증명한다.** 타입체크 통과나 워크플로 `success`는 발행 성공의 증거가 아니다 —
 Pages 배포 SHA(`gh api repos/dasomel/dasomel.github.io/deployments`)와 라이브 URL 응답 코드까지 확인한다.
