@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # 09:00 UTC (= 18:00 KST) 백스톱.
+    # 봇 커밋은 `on: push` 를 트리거하지 못하므로 다이제스트/행사 워크플로가
+    # 배포 dispatch 에 실패해도 하루 한 번은 main 최신 상태가 발행되게 한다.
+    - cron: '0 9 * * *'
 
 permissions:
   contents: read
