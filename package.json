@@ -8,7 +8,7 @@
     "events:fetch": "node scripts/fetch-seoul-events.mjs",
     "festivals:fetch": "node scripts/fetch-festivals.mjs",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "digest:collect": "node scripts/collect-feeds.mjs",
     "digest": "node scripts/generate-daily-digest.mjs"
   },
@@ -33,13 +33,14 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^15.5.18",
+    "eslint-config-next": "^15.5.21",
     "postcss": "^8.5.18",
     "rss-parser": "^3.13.0",
     "tailwindcss": "^3.4.17",

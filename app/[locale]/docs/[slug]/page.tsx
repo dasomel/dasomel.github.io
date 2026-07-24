@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import { getDocBySlug, getDocs } from '@/lib/content';
 import { MDXContent } from '@/components/MDXContent';
 import { routing } from '@/i18n/routing';
