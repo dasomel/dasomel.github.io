@@ -1,11 +1,12 @@
 # 프로젝트 지침 (dasomel.github.io)
 
 Next.js 15 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커스텀 도메인 **cne.io.kr**.
-빌드 `npm run build` · 라우트 `app/[locale]/{posts,projects,docs,seminars,events}/[slug]`.
+빌드 `npm run build` · 린트 `npm run lint`(=`eslint .`) · 라우트 `app/[locale]/{posts,projects,docs,seminars,events}/[slug]`.
 
-> `npm run lint`(=`next lint`)는 **동작하지 않는다.** ESLint 설정이 저장소에 없어 클린 체크아웃에서
-> 설정 마법사가 뜨고 멈춘다. CI(`deploy.yml`)도 lint를 돌리지 않는다 — 검증 게이트는 `npm run build` 뿐이다.
-> 린트를 살리려면 `eslint.config.mjs`를 커밋하고 스크립트를 `eslint .`로 바꿔야 한다(미결).
+> 린트는 0 errors / **3 warnings** 상태가 정상이다. 남은 경고는 의도적이거나 오탐이라 룰을 끄지 않고 남겼다 —
+> `no-img-element` ×2(`output: export`라 `next/image` 최적화 불가), `no-page-custom-font`(App Router 오탐).
+> 새 경고가 붙으면 그건 새로 생긴 것이니 확인할 것.
+> **CI는 lint를 돌리지 않는다** — `deploy.yml`의 게이트는 `npm run build` 뿐이다.
 
 세션 오케스트레이터(Opus 5 / Fable 5)를 독자로 가정한다. 절차 설명이 아니라 **불변식과 함정**만 적는다.
 글로벌 `~/.claude/CLAUDE.md`의 라우팅 독트린·팀 기본값이 그대로 적용되며, 아래는 이 저장소에만 해당하는 차이다.
@@ -55,9 +56,13 @@ update-events (23:30 UTC)                    →  봇 커밋 + deploy dispatch
 deploy (push | dispatch | 09:00 UTC 백스톱)  →  Pages
 ```
 
-- **알려진 취약점(미수정):** `digest-fallback`은 PR 제목의 KST 날짜로 대상을 찾는다. digest 런 지연이 KST 자정을 넘기면
-  날짜가 어긋나 PR을 못 찾는다. 현재 마진 ~85분. 지연이 커지면 제목 매칭 대신 브랜치명(`daily-digest/*`) 기준으로 바꿀 것.
+- `digest-fallback`은 대상을 **브랜치명(`daily-digest/*`)** 으로 찾는다. 제목의 KST 날짜로 찾던 시절에는
+  digest 런 지연(cron 21:40 UTC → 실제 ~22:30Z)이 자정을 넘기면 발행이 조용히 멈출 수 있었다. 날짜 매칭으로 되돌리지 말 것.
+  밀린 날짜가 여러 건이면 오름차순으로 함께 회수한다.
 - 다이제스트 PR은 `draft: true`로 생성된다. 발행이 사람에게 의존하는 구조라 fallback이 실질적 발행 경로다.
+
+**조용한 no-op을 만들지 말 것.** `gh ... || true` 로 실패를 삼키면 "머지할 것 없음"과 구분되지 않아
+발행이 멈춰도 워크플로는 초록으로 뜬다. 이번 사고의 본질이 그것이다 — 실패는 `::error::` + 비정상 종료로 드러낸다.
 
 ## ⚠️ package-lock.json 규칙 (CI 빌드 깨짐 방지)
 
