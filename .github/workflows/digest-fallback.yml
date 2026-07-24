@@ -1,8 +1,8 @@
 name: Digest Fallback Merge
 
 # 매일 08:00 UTC (= 17:00 KST) 실행.
-# Cowork 보강 태스크가 돌지 않아 draft PR이 남아 있으면 그대로 머지해 발행한다.
-# 이미 머지됐거나 draft PR이 없으면 아무 작업도 하지 않는다.
+# Cowork 보강 태스크가 돌지 않아 draft PR 이 남아 있으면 그대로 머지해 발행한다.
+# 머지할 draft PR 이 없으면 아무 작업도 하지 않는다.
 
 on:
   schedule:
@@ -15,41 +15,65 @@ permissions:
   # deploy.yml 을 workflow_dispatch 로 깨우기 위해 필요.
   actions: write
 
+concurrency:
+  group: digest-fallback
+  cancel-in-progress: false
+
 jobs:
   fallback-merge:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Merge stale draft digest PR (if any)
+      - name: Merge pending draft digest PR (if any)
         id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
-          TODAY=$(TZ=Asia/Seoul date +%F)
-          echo "Looking for draft Daily Digest PR for ${TODAY}..."
-
-          PR=$(gh pr list \
-            --repo "${{ github.repository }}" \
+          # 대상은 제목의 날짜가 아니라 브랜치명(daily-digest/*)으로 찾는다.
+          # 제목 기준으로 오늘 날짜를 매칭하면, digest 런이 KST 자정을 넘겨
+          # 지연될 때 날짜가 어긋나 PR 을 영영 못 찾고 발행이 조용히 멈춘다.
+          # (cron 21:40 UTC 대비 실제 시작이 ~50분씩 밀리는 것이 관측됐다.)
+          # 브랜치 기준이면 밀린 날짜의 미발행 다이제스트도 함께 회수된다.
+          # gh 실패를 "머지할 것 없음"으로 오해하면 발행이 조용히 멈춘다. 명시적으로 구분한다.
+          if ! gh pr list \
+            --repo "$REPO" \
             --state open \
             --draft \
-            --json number,title \
-            --jq ".[] | select(.title | test(\"${TODAY}\")) | .number" 2>/dev/null || true)
+            --json number,headRefName \
+            --jq '[.[] | select(.headRefName | startswith("daily-digest/"))]
+                  | sort_by(.headRefName)[] | "\(.number)\t\(.headRefName)"' > /tmp/digest-prs.txt; then
+            echo "::error::gh pr list 실패 — 목록을 가져오지 못했다."
+            exit 1
+          fi
+          echo "대상:"
+          cat /tmp/digest-prs.txt
 
-          if [ -z "$PR" ]; then
-            echo "No draft digest PR found for ${TODAY}. Already merged or nothing collected."
+          # 오래된 것부터(브랜치명=날짜 오름차순) 머지해 발행 순서를 보존한다.
+          # mapfile 은 bash 4+ 전용이라 while-read 로 둔다 — 로컬(bash 3.2) 검증도 가능해진다.
+          COUNT=0
+          while IFS=$'\t' read -r NUM BRANCH; do
+            [ -z "$NUM" ] && continue
+            DATE="${BRANCH#daily-digest/}"
+
+            echo "PR #${NUM} (${BRANCH}) — ready 전환 후 머지..."
+            gh pr ready "$NUM" --repo "$REPO"
+            gh pr merge "$NUM" \
+              --repo "$REPO" \
+              --squash \
+              --delete-branch \
+              --subject "📰 데일리 테크 다이제스트 ${DATE} (fallback — AI 보강 없이 발행)"
+            COUNT=$((COUNT + 1))
+          done < /tmp/digest-prs.txt
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "머지할 draft 다이제스트 PR 이 없다. 이미 발행됐거나 수집 결과가 없다."
             echo "merged=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          echo "Found draft PR #${PR} — converting to ready and merging..."
-          gh pr ready "$PR" --repo "${{ github.repository }}"
-          gh pr merge "$PR" \
-            --repo "${{ github.repository }}" \
-            --squash \
-            --delete-branch \
-            --subject "📰 데일리 테크 다이제스트 ${TODAY} (fallback — AI 보강 없이 발행)"
           echo "merged=true" >> "$GITHUB_OUTPUT"
-          echo "Done: PR #${PR} merged."
+          echo "완료: ${COUNT}건 머지."
 
       # GITHUB_TOKEN 이 만든 push 는 다른 워크플로를 트리거하지 않는다(재귀 실행 방지).
       # 따라서 위 머지만으로는 deploy.yml 이 돌지 않아 사이트가 갱신되지 않는다.
