@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  # deploy.yml 을 workflow_dispatch 로 깨우기 위해 필요.
+  actions: write
 
 concurrency:
   group: update-events
@@ -58,3 +60,11 @@ jobs:
           git add src/content/events/data.json
           git commit -m "chore(events): 서울 행사 데이터 업데이트 — ${{ steps.changes.outputs.count }}건 ($(TZ=Asia/Seoul date +%F))"
           git push
+
+      # GITHUB_TOKEN 으로 push 하면 deploy.yml 의 `on: push` 가 발동하지 않는다(재귀 실행 방지).
+      # workflow_dispatch 는 예외이므로 배포를 명시적으로 깨워 준다.
+      - name: Trigger Pages deploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main

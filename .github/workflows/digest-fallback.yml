@@ -12,6 +12,8 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # deploy.yml 을 workflow_dispatch 로 깨우기 위해 필요.
+  actions: write
 
 jobs:
   fallback-merge:
@@ -19,6 +21,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Merge stale draft digest PR (if any)
+        id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -34,6 +37,7 @@ jobs:
 
           if [ -z "$PR" ]; then
             echo "No draft digest PR found for ${TODAY}. Already merged or nothing collected."
+            echo "merged=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -44,4 +48,14 @@ jobs:
             --squash \
             --delete-branch \
             --subject "📰 데일리 테크 다이제스트 ${TODAY} (fallback — AI 보강 없이 발행)"
+          echo "merged=true" >> "$GITHUB_OUTPUT"
           echo "Done: PR #${PR} merged."
+
+      # GITHUB_TOKEN 이 만든 push 는 다른 워크플로를 트리거하지 않는다(재귀 실행 방지).
+      # 따라서 위 머지만으로는 deploy.yml 이 돌지 않아 사이트가 갱신되지 않는다.
+      # workflow_dispatch 는 이 제약의 예외이므로 명시적으로 깨워 준다.
+      - name: Trigger Pages deploy
+        if: steps.merge.outputs.merged == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
