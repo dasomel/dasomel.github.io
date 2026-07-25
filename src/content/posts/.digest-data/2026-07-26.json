@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-26",
+  "generatedAt": "2026-07-25T22:34:03.128Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Stop correcting AI code. Build the system agents need.",
+      "link": "https://thenewstack.io/stop-correcting-ai-code-build-the-system-agents-need/",
+      "date": "2026-07-25T17:00:00.000Z",
+      "excerpt": "If software engineers are no longer writing code, what are they doing? That’s the question on millions of minds."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "5 steps to build great service architecture and operational resilience",
+      "link": "https://thenewstack.io/build-resilient-service-architecture/",
+      "date": "2026-07-25T16:00:00.000Z",
+      "excerpt": "When operations teams get an alert, three questions need to be answered before any action can take place: Without a"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "How routing keys isolate Kafka consumer tests on a shared broker",
+      "link": "https://thenewstack.io/isolate-kafka-consumer-tests/",
+      "date": "2026-07-25T13:00:00.000Z",
+      "excerpt": "A change to a service that consumes from Kafka is not validated until it has run against the real system:"
+    }
+  ]
+}
