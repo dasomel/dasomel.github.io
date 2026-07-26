@@ -43,18 +43,23 @@ permissions:
 
 - 2026-07-24 사고: fallback 자동 머지 도입 직후 발행이 멈췄다. 그전까지는 사람이 매일 draft PR을 수동 머지했고
   **그 사람 push가 배포를 대신 트리거해** 결함이 가려져 있었다. 행사 데이터 봇 커밋은 그 이전부터 한 번도 자체 배포된 적이 없다.
-- `deploy.yml`에 09:00 UTC 스케줄 백스톱이 있다. dispatch가 빠져도 하루 한 번은 복구되지만, **백스톱에 의존하지 말 것** —
+- `deploy.yml`에 02:40 UTC 스케줄 백스톱이 있다. dispatch가 빠져도 하루 한 번은 복구되지만, **백스톱에 의존하지 말 것** —
   main에 커밋하는 새 워크플로를 추가하면 dispatch 단계도 같이 추가한다.
 
-## 발행 파이프라인
+## 발행 파이프라인 — 목표 발행 시각은 **오전(08:25~09:30 KST)**
 
 ```
-daily-digest (21:40 UTC, 실제 시작 ~22:30Z)  →  draft PR 생성
-   └─ [선택] 사람/Cowork: ✨ AI 요약 보강 커밋 후 머지
-   └─ digest-fallback (08:00 UTC)            →  draft 그대로 머지 + deploy dispatch
-update-events (23:30 UTC)                    →  봇 커밋 + deploy dispatch
-deploy (push | dispatch | 09:00 UTC 백스톱)  →  Pages
+daily-digest    (21:40 UTC, 실제 ~22:30Z)  →  draft PR 생성        ≈ 07:30 KST
+   └─ [선택] 보강 태스크: ✨ AI 요약 보강 커밋                      ← 창 45~90분
+   └─ digest-fallback (23:25 UTC)          →  머지 + deploy dispatch ≈ 08:25 KST
+update-events   (23:30 UTC)                →  봇 커밋 + dispatch
+deploy (push | dispatch | 02:40 UTC 백스톱) →  Pages
 ```
+
+**스케줄 지연을 상수로 보지 말 것.** GitHub 예약 실행은 항상 늦게 뜨고, 편차는 슬롯 혼잡도를 탄다.
+관측치: `daily-digest`(21:40, 정시 회피) 지연 48~59분으로 매우 일정. `digest-fallback`이 정시(`0 8`)였을 때 87분·127분.
+**정시(top-of-hour)를 피하는 것만으로 지연이 줄어든다** — 새 cron을 넣을 때 `0 *`를 쓰지 말 것.
+시각을 앞당길 때는 앞 단계의 최대 지연 + 작업시간을 빼고 계산한다. `23:25`는 draft 생성 최악(22:41Z) 대비 44분 여유다.
 
 - `digest-fallback`은 대상을 **브랜치명(`daily-digest/*`)** 으로 찾는다. 제목의 KST 날짜로 찾던 시절에는
   digest 런 지연(cron 21:40 UTC → 실제 ~22:30Z)이 자정을 넘기면 발행이 조용히 멈출 수 있었다. 날짜 매칭으로 되돌리지 말 것.
