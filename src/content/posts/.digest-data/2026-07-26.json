@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-26",
+  "generatedAt": "2026-07-25T22:34:03.128Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Stop correcting AI code. Build the system agents need.",
+      "link": "https://thenewstack.io/stop-correcting-ai-code-build-the-system-agents-need/",
+      "date": "2026-07-25T17:00:00.000Z",
+      "excerpt": "If software engineers are no longer writing code, what are they doing? That’s the question on millions of minds.",
+      "summaryKo": "이 글은 AI 코딩 에이전트가 코드 작성의 상당 부분을 떠맡게 된 지금, 엔지니어가 정말 해야 할 일이 무엇인지를 묻는다. 제목 그대로 논지는 에이전트가 만든 코드를 사람이 매번 사후에 고쳐 쓰는 지금의 관행 대신, 에이전트가 제대로 일할 수 있는 시스템을 먼저 만들어야 한다는 것이다. 저자 Jennifer Riggins는 요즘 업계가 '루프(loop)'라는 말을 유행처럼 쓰지만 AI 주도 개발 맥락에서 그것이 정확히 무엇을 뜻하는지는 불분명하다는 문제의식에서 글을 시작한다. '소프트웨어 엔지니어가 더 이상 코드를 직접 작성하지 않는다면 이제 무엇을 하는 사람인가'라는 질문이 글 전체를 관통한다. 에이전트 산출물을 건건이 교정하는 방식은 규모가 커질수록 지속 가능하지 않다는 전제 아래, 검증·피드백 루프 같은 사전 설계된 시스템 구축을 대안으로 제시한다. 결국 엔지니어링 조직의 일이 '코드 교정'에서 '에이전트를 위한 시스템 설계'로 재정의돼야 한다는 것이 핵심 메시지다.",
+      "summaryEn": "This piece asks what engineers are actually for once AI coding agents take over much of the code-writing itself. Its argument, true to the title, is that teams should stop endlessly correcting agent-written code after the fact and instead build the systems agents need to do the work reliably in the first place. Author Jennifer Riggins opens with the observation that the industry has gotten \"loopy for loops,\" yet what a loop actually means in AI-driven development remains fuzzy. The piece is organized around one question: if engineers aren't writing code anymore, what exactly are they doing? Its premise is that manually fixing whatever an agent produces doesn't scale, so verification and feedback loops need to be designed into the system up front rather than bolted on afterward. The upshot is a redefinition of engineering work — from correcting code to architecting the systems agents operate inside.",
+      "insightKo": "AI 에이전트 도입이 늘수록 엔지니어링 조직의 병목은 '코드 작성'이 아니라 '에이전트 산출물을 검증·신뢰할 시스템의 부재'로 옮겨간다는 점을 시사한다.",
+      "insightEn": "As agent-written code scales, the bottleneck shifts from writing code to having no system in place to verify and trust what agents produce."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "5 steps to build great service architecture and operational resilience",
+      "link": "https://thenewstack.io/build-resilient-service-architecture/",
+      "date": "2026-07-25T16:00:00.000Z",
+      "excerpt": "When operations teams get an alert, three questions need to be answered before any action can take place: Without a",
+      "summaryKo": "이 글은 장애 대응 역량을 높이기 위한 '서비스 아키텍처' 구축 방법을 5단계로 제시한다. 문제의식은 알림이 울렸을 때 대응팀이 즉시 답해야 하는 세 가지 질문 — 무엇이 고장났는지, 누가 책임지는지, 영향 범위가 어디까지인지 — 를 서비스 지도 없이는 답하기 어렵다는 데서 출발한다. 1단계는 조직에서 가장 중요한 비즈니스 서비스 하나를 골라 그 밑을 받치는 기술적 서비스들을 매핑하는 것이다. 2단계는 각 서비스의 소유자를 정하고 에스컬레이션 정책을 세운 뒤 모니터링 도구를 연결하는 것이다. 이후 단계들은 이렇게 만든 서비스 아키텍처를 조직 전체로 확장해 관측성과 사고 대응 프로세스에 녹여 넣는 데 초점을 맞춘다. 서비스 아키텍처가 갖춰지면 인시던트의 영향 범위와 동원해야 할 팀을 즉시 파악할 수 있어 대응 속도가 빨라지고 이후 발생하는 모든 장애의 비용이 줄어든다고 글은 설명한다. 나아가 이렇게 구조화된 서비스 데이터는 향후 AI 기반 트리아지 자동화의 토대로도 쓰일 수 있다고 언급한다.",
+      "summaryEn": "This article lays out a five-step method for building a \"service architecture\" that strengthens incident response. It starts from the problem that when an alert fires, responders need to answer three questions immediately — what broke, who owns it, and how far the damage reaches — and none of that is answerable without a service map. Step one is picking one of the organization's most critical business services and mapping the technical services underneath it. Step two is assigning ownership for each service, setting escalation policies, and wiring up monitoring tools. The remaining steps focus on extending that architecture organization-wide and folding it into observability and incident-response processes. Once the service architecture is in place, teams can immediately see an incident's blast radius and who needs to be mobilized, which speeds response and lowers the cost of every incident that follows. The piece also notes that this same structured service data becomes the foundation for AI-driven incident triage down the road.",
+      "insightKo": "서비스 지도 없이는 알림이 울려도 무엇이, 누구 책임으로, 얼마나 번지는지 답할 수 없다는 것이 이 글의 핵심이며, 이는 온콜 대응 속도와 장애 비용에 직결된다.",
+      "insightEn": "Without a service map, an alert alone can't answer what broke, who owns it, or how far it spreads — and that gap directly drives on-call response time and incident cost."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "How routing keys isolate Kafka consumer tests on a shared broker",
+      "link": "https://thenewstack.io/isolate-kafka-consumer-tests/",
+      "date": "2026-07-25T13:00:00.000Z",
+      "excerpt": "A change to a service that consumes from Kafka is not validated until it has run against the real system:",
+      "summaryKo": "이 글은 공유 Kafka 브로커에서 여러 개발자가 동시에 테스트를 돌려도 서로 간섭하지 않도록 '라우팅 키'로 격리하는 방법을 다룬다. 문제의식은 Kafka를 소비하는 서비스의 변경 사항은 실제 시스템에 붙여서 돌려보기 전까지는 검증됐다고 보기 어렵다는 데서 출발한다. 토픽을 통째로 복제하거나 클러스터를 여러 개 두는 기존 방식은 비용과 운영 복잡도가 크다는 것이 저자 Arjun Iyer의 지적이다. 대안으로 제시하는 방법은 프로듀서가 메시지 헤더에 라우팅 키를 담고 컨슈머 그룹 단위로 격리하는 것이다. 개발자가 자신의 서비스 버전을 테스트 환경에 배포하면 my-service-group-sandbox123처럼 고유한 컨슈머 그룹에 합류하고, 샌드박스 전용 라우팅 키 덕분에 그 컨슈머 그룹으로만 관련 메시지가 전달된다. 이 방식으로 전체 메시징 인프라를 복제하지 않고도 여러 개발자가 동시에, 서로 겹치지 않게 격리된 테스트를 돌릴 수 있다. 결과적으로 공유 브로커 한 대만으로도 멀티 클러스터 수준의 테스트 격리를 훨씬 저렴하게 구현할 수 있다는 것이 이 글의 결론이다.",
+      "summaryEn": "This piece explains how to use \"routing keys\" to isolate Kafka consumer tests on a single shared broker so multiple developers' test runs don't interfere with each other. It starts from the premise that a change to a Kafka-consuming service isn't really validated until it's been run against the real system. Author Arjun Iyer points out that the usual fixes — duplicating topics or standing up separate clusters — are expensive and operationally heavy. The alternative: producers tag messages with a routing key in the header, and isolation happens at the consumer-group level. When a developer deploys their service version to test, it joins a unique consumer group (something like my-service-group-sandbox123), and a sandbox-specific routing key makes sure only that group's messages reach it. That lets several developers run isolated tests at the same time without duplicating the whole messaging stack. The upshot is multi-cluster-level test isolation on a single shared broker, at a fraction of the cost.",
+      "insightKo": "클러스터·토픽을 늘리지 않고 라우팅 키와 컨슈머 그룹만으로 테스트를 격리할 수 있다는 것은, Kafka 기반 서비스의 병합 전 검증 비용을 크게 낮출 수 있다는 의미다.",
+      "insightEn": "Isolating tests with routing keys and consumer groups instead of more clusters or topics means teams can validate Kafka-consuming changes pre-merge without inflating infrastructure cost."
+    }
+  ]
+}
