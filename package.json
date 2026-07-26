@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "eslint .",
     "digest:collect": "node scripts/collect-feeds.mjs",
-    "digest": "node scripts/generate-daily-digest.mjs"
+    "digest": "node scripts/generate-daily-digest.mjs",
+    "digest:enrich-publish": "node scripts/publish-enrichment.mjs"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.0",
