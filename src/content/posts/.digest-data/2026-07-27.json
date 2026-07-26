@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-27",
+  "generatedAt": "2026-07-26T22:38:14.499Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "MCP’s biggest update removes the machinery many servers were built around",
+      "link": "https://thenewstack.io/mcp-release-candidate-rewrite/",
+      "date": "2026-07-26T16:00:00.000Z",
+      "excerpt": "The biggest update to the Model Context Protocol (MCP) since its launch is almost here. Lead maintainers froze the release"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft and Google DeepMind agree on AI control — but not on who holds it",
+      "link": "https://thenewstack.io/nadella-hassabis-ai-frameworks/",
+      "date": "2026-07-26T15:30:00.000Z",
+      "excerpt": "Over two days this month, two of the most credible people in the industry published framework manifestos on X. Microsoft"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "5 ways SRE AI agents are set to augment human capabilities",
+      "link": "https://thenewstack.io/sre-ai-agents-capabilities/",
+      "date": "2026-07-26T14:00:00.000Z",
+      "excerpt": "In digital operations management, AI agents give organizations a competitive edge by reducing incident volume and accelerating recovery. The potential"
+    }
+  ]
+}
