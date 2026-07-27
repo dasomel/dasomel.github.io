@@ -1,0 +1,159 @@
+{
+  "date": "2026-07-28",
+  "generatedAt": "2026-07-27T22:39:31.190Z",
+  "count": 19,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The 24-hour experiment that helped Anthropic find its identity",
+      "link": "https://thenewstack.io/anthropic-evals-replace-prds/",
+      "date": "2026-07-27T19:14:57.000Z",
+      "excerpt": "If you’re building traditional software, you write the product requirements document. If you’re building frontier AI, you run an evaluation."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Moonshot opens Kimi K3 weights — but few can run it",
+      "link": "https://thenewstack.io/kimi-k3-open-weights/",
+      "date": "2026-07-27T19:10:17.000Z",
+      "excerpt": "Moonshot AI has released the open weights for Kimi K3 on Hugging Face, giving developers access to one of the"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "The harness is all you need (mostly)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
+      "date": "2026-07-27T18:00:00.000Z",
+      "excerpt": "A practical GitHub Copilot workflow for prototyping, planning, implementing, and reviewing software without chasing every new AI tool."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Announcing general availability of SAP Business Data Cloud Connect for BigQuery",
+      "link": "https://cloud.google.com/blog/products/sap-google-cloud/sap-and-google-cloud-launch-bdc-connect-for-bigquery/",
+      "date": "2026-07-27T16:30:00.000Z",
+      "excerpt": "Traditional data replication techniques often struggle to deliver the data freshness that modern workflows require. To help organizations overcome this challenge, SAP and Google Cloud are announcing that SAP Business Data Cloud Connect for BigQuery is now generally available."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft is racing to make OpenAI optional",
+      "link": "https://thenewstack.io/microsoft-homegrown-ai-models/",
+      "date": "2026-07-27T16:24:08.000Z",
+      "excerpt": "AI is changing the technology game so quickly that Microsoft CEO Satya Nadella can’t stop long-posting on Twitter. Microsoft has"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cyber Snapshot Report: Go beyond the toolchain and build enterprise resilience",
+      "link": "https://cloud.google.com/blog/products/identity-security/cyber-snapshot-report-enterprise-resilience-key-to-toolchain-success/",
+      "date": "2026-07-27T16:00:00.000Z",
+      "excerpt": "Even as machine-speed attacks dominate the headlines, Mandiant’s view from the frontline reveals that the vast majority of successful intrusions still stem from fundamental human and systemic failures. This operational break-down shows up pointedly in research from the M-Trends 2026 report."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: Getting started",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/",
+      "date": "2026-07-27T16:00:00.000Z",
+      "excerpt": "New to the GitHub Copilot app? Learn how to start projects, work with AI agents, explore canvases, and streamline your development workflow."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Smarter onboarding and planning with Grafana Assistant: How to ensure observability is baked in from the start",
+      "link": "https://grafana.com/blog/smarter-onboarding-and-planning-with-grafana-assistant-how-to-ensure-observability-is-baked-in-from-the-start/",
+      "date": "2026-07-27T15:47:34.000Z",
+      "excerpt": "It's Monday afternoon and that feature you've been working on is mostly done. There's just one item still sitting untouched at the bottom of the ticket: \"Add monitoring."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Modernizing the skies: NOAA and Google Cloud collaborate to advance weather forecasting",
+      "link": "https://cloud.google.com/blog/topics/public-sector/modernizing-the-skies-noaa-google-cloud-collaborate-advance-weather-forecasting/",
+      "date": "2026-07-27T14:00:00.000Z",
+      "excerpt": "The National Oceanic and Atmospheric Administration (NOAA) is embarking on a transformative journey to redefine how we understand and predict patterns in the Earth’s atmosphere that affect the weather we face every day."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "We’re open-sourcing our privacy proxy CLI",
+      "link": "https://blog.cloudflare.com/open-sourcing-our-privacy-proxy-cli/",
+      "date": "2026-07-27T13:00:00.000Z",
+      "excerpt": "pvcli is a curl-like tool designed to simplify the testing of complex privacy protocols like OHTTP."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Explore what's next in agentic operations: Introducing AI Week",
+      "link": "https://grafana.com/blog/explore-what-s-next-in-agentic-operations-introducing-ai-week/",
+      "date": "2026-07-27T12:16:22.000Z",
+      "excerpt": "Observability has traditionally been tacked on after your code hits production, but with agentic operations on the rise, that's no longer sustainable."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Federating clusters for zero-downtime Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/07/27/federating-clusters-for-zero-downtime-kubernetes/",
+      "date": "2026-07-27T11:00:00.000Z",
+      "excerpt": "Every multi-region setup eventually meets the same awkward moment: a whole cluster goes away, and the identical copy of your service running two regions over might as well not exist, because nothing is wired to treat."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "NVIDIA Cosmos-H-Dreams: Bringing Real-Time Generative Simulation to Surgical Robotics",
+      "link": "https://huggingface.co/blog/nvidia/cosmos-h-dreams",
+      "date": "2026-07-27T09:32:20.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How AI is expanding what people do at work",
+      "link": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+      "date": "2026-07-27T03:30:00.000Z",
+      "excerpt": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Strengthening the open source defense layer: Red Hat joins NVIDIA in the Open Secure AI Alliance",
+      "link": "https://www.redhat.com/en/blog/strengthening-open-source-defense-layer-red-hat-joins-nvidias-open-secure-ai-alliance",
+      "date": "2026-07-27T00:00:00.000Z",
+      "excerpt": "As AI capabilities advance, they transform the security landscape in real time. To address these challenges at scale, no single company can act in isolation."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How leading companies are turning AI vision into business value",
+      "link": "https://www.redhat.com/en/blog/how-leading-companies-are-turning-ai-vision-business-value",
+      "date": "2026-07-27T00:00:00.000Z",
+      "excerpt": "I’m fortunate that I get to speak with hundreds of customers every year. These enterprises span the technology adoption curve—some who thrive on the leading edge, and others who prefer being as risk-averse as possible."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Building the future: Core concepts of Red Hat’s agentic software development life cycle",
+      "link": "https://www.redhat.com/en/blog/building-future-core-concepts-red-hats-agentic-software-development-life-cycle",
+      "date": "2026-07-27T00:00:00.000Z",
+      "excerpt": "When integrating AI into your software development processes, the methodology you use to build software is as important as the models themselves. At Red Hat, we believe the true value of AI emerges when it is integrated into transparent, scalable, and reliable enterprise workflows."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Claude Opus 5 on GitLab: Reasoning built for the hard tasks",
+      "link": "https://about.gitlab.com/blog/claude-opus-5-on-gitlab-duo-agent-platform/",
+      "date": "2026-07-27T00:00:00.000Z",
+      "excerpt": "A mistake on a routine task can cost you a minute. A mistake on a large refactor or a debugging trail spanning months of commit history can cost far more, as it compounds silently over hundreds of exchanges."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "What Is AI Pentesting and How Does It Works?",
+      "link": "https://snyk.io/blog/what-is-ai-pentesting/",
+      "date": "2026-07-27T00:00:00.000Z",
+      "excerpt": "AI pentesting uses reasoning-capable models to continuously find and validate the flaws scanners miss, especially broken authorization and business-logic abuse."
+    }
+  ]
+}
