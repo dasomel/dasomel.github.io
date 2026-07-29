@@ -1,0 +1,191 @@
+{
+  "date": "2026-07-30",
+  "generatedAt": "2026-07-29T22:36:18.559Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI fixed GPT-5.6 Sol’s most frustrating flaw: Burning limits while it waits",
+      "link": "https://thenewstack.io/sol-usage-limits-reset/",
+      "date": "2026-07-29T18:44:41.000Z",
+      "excerpt": "OpenAI introduced GPT-5.6 Sol earlier this month as a model built for more demanding coding tasks."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic backs urgent call for the most powerful AI labs to hit the brakes",
+      "link": "https://thenewstack.io/ai-pause-framework-letter/",
+      "date": "2026-07-29T18:41:26.000Z",
+      "excerpt": "Less than a week after OpenAI disclosed that two experimental AI models escaped their testing environment during a cybersecurity exercise"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“The beast needs a cage”: Why PortSwigger’s agentic pentesting is kept safe behind bars",
+      "link": "https://thenewstack.io/burp-agentic-pentesting-control-layer/",
+      "date": "2026-07-29T18:34:54.000Z",
+      "excerpt": "As agentic services diversify across the entire enterprise technology stack, the rise of agentic coding tools is being challenged by"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Automate your agent development lifecycle using any coding agent",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/automate-agent-development-lifecycles-with-gemini-enterprise/",
+      "date": "2026-07-29T16:00:00.000Z",
+      "excerpt": "Welcome to our latest Gemini Enterprise Agent Platform deep dive, a practical walkthrough where we’ll teach you how to build real-world, production-ready agents starting from step 1."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The borderless Lakehouse: Bring AWS, Databricks and Snowflake data to your AI agents",
+      "link": "https://cloud.google.com/blog/products/data-analytics/introducing-the-borderless-lakehouse/",
+      "date": "2026-07-29T16:00:00.000Z",
+      "excerpt": "Today’s data lakehouse is no longer mere data repository, but increasingly a system of action, actively executing tasks via always-on, autonomous AI agents."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Automate data monitoring and root-cause analysis with Looker Agentic Workflows",
+      "link": "https://cloud.google.com/blog/products/business-intelligence/looker-adds-agentic-workflows-for-data-monitoring-and-insights/",
+      "date": "2026-07-29T16:00:00.000Z",
+      "excerpt": "Traditional business intelligence alerts can only tell you that a metric changed, leaving data analysts to manually hunt through dashboards to figure out why."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Tame Dependabot: Group your updates, slow the cadence, keep security fast",
+      "link": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+      "date": "2026-07-29T16:00:00.000Z",
+      "excerpt": "Dependabot keeps your dependencies current, but its defaults can flood your repository with pull requests. Here's how grouping updates, slowing the cadence, and keeping security fixes fast cut the noise on a Microsoft open source project."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Automate all the things: How to use Grafana Cloud's AI to relieve the operational burden",
+      "link": "https://grafana.com/blog/automate-all-the-things-how-to-use-grafana-cloud-s-ai-to-relieve-the-operational-burden/",
+      "date": "2026-07-29T14:47:56.000Z",
+      "excerpt": "Continuous integration and continuous delivery (CI/CD) have dramatically changed how we ship software. But once code reaches production, the operational work is still surprisingly manual."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Post-quantum authentication to origins is now supported",
+      "link": "https://blog.cloudflare.com/post-quantum-authentication-to-origins/",
+      "date": "2026-07-29T13:00:00.000Z",
+      "excerpt": "Cloudflare now supports post-quantum (PQ) authentication when connecting to customer origin servers via Authenticated Origin Pulls and Custom Origin Trust Store. This is the first step towards providing PQ authentication for all Cloudflare products."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Honeycomb Named a Visionary in the 2026 Gartner® Magic Quadrant™ for Observability Platforms",
+      "link": "https://www.honeycomb.io/blog/honeycomb-named-visionary-2026-gartner-magic-quadrant-observability-platforms",
+      "date": "2026-07-29T13:00:00.000Z",
+      "excerpt": "For the third consecutive year, Honeycomb has been named a Visionary in the Gartner® Magic Quadrant™ for Observability Platforms."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "How Company 3 Streamlines Studio Image Management with EC2 Image Builder and AWS CDK",
+      "link": "https://aws.amazon.com/blogs/devops/how-company-3-streamlines-studio-image-management-with-ec2-image-builder-and-aws-cdk/",
+      "date": "2026-07-29T12:34:47.000Z",
+      "excerpt": "Guest post in collaboration with Company 3 Director of New Technology, Phil Wortas, and Senior New Technology Engineer, Matthew Galloway Introduction Company 3 provides specialized services for the entertainment industry, including post-production services, visual effects, and color grading for feature films, commercia…"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Add security context to operational investigations with AWS DevOps Agent and Wiz",
+      "link": "https://aws.amazon.com/blogs/devops/add-security-context-to-operational-investigations-with-aws-devops-agent-and-wiz/",
+      "date": "2026-07-29T12:33:53.000Z",
+      "excerpt": "This post was co-authored by Ayelet Harcz (Product Manager), Hen Perez (CTO Architect), and Shani Gafni (Product Manager) at Wiz."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Your Kubernetes health checks are accidentally waking your services. Here’s the fix.",
+      "link": "https://www.cncf.io/blog/2026/07/29/your-kubernetes-health-checks-are-accidentally-waking-your-services-heres-the-fix/",
+      "date": "2026-07-29T11:00:00.000Z",
+      "excerpt": "Scale-to-zero breaks when health checks scale you back up. Learn how KubeElasti’s ProbeResponse lets Kubernetes services stay genuinely idle — while keeping load balancers and uptime monitors happy."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
+      "link": "https://openai.com/index/chatgpt-for-academic-researchers",
+      "date": "2026-07-29T10:00:00.000Z",
+      "excerpt": "OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Stadium Summer: The Snyk Connect Fan Zone Tour",
+      "link": "https://snyk.io/blog/stadium-summer-snyk-connect-fan-zone-tour/",
+      "date": "2026-07-29T04:00:00.000Z",
+      "excerpt": "Snyk’s Fan Zone tour brought AI security workshops, networking, and friendly competition to 8 cities and 3 virtual sessions. Attendees built skills, shared ideas, and leveled up together."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Lima v2.2: Windows guests and TPM 2.0 emulation",
+      "link": "https://www.cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation/",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "Following macOS and FreeBSD guests in v2.1, Lima v2."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Welcome CoHDI to the CNCF: Evolving Kubernetes into composable disaggregated infrastructures",
+      "link": "https://www.cncf.io/blog/2026/07/28/welcome-cohdi-to-the-cncf-evolving-kubernetes-into-composable-disaggregated-infrastructures/",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "We are thrilled to announce that CoHDI has officially been accepted as a Cloud Native Computing Foundation (CNCF) Sandbox project! This acceptance into the CNCF Sandbox marks an important milestone in CoHDI’s journey."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+      "link": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "GPT-5.6 improves AI efficiency across models, inference, and agentic workflows, helping deliver more useful intelligence per dollar."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Sovereign by design: Lessons from Red Hat Summit",
+      "link": "https://www.redhat.com/en/blog/sovereign-design-lessons-red-hat-summit",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "Digital sovereignty used to sit somewhere between a compliance checkbox and a future roadmap item. That’s changing fast."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "No time to lose: Why post-quantum security for financial services must start now",
+      "link": "https://www.redhat.com/en/blog/no-time-lose-why-post-quantum-security-financial-services-must-start-now",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "Post-quantum cryptography: The emerging threatThe transition to post-quantum cryptography (PQC) is becoming an urgent priority for the global financial sector due to the rapid evolution of quantum computing. Cryptographically relevant quantum computers exist only as research prototypes."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Lights on! Real-time threat response with Red Hat Advanced Cluster Security",
+      "link": "https://www.redhat.com/en/blog/lights-real-time-threat-response-red-hat-advanced-cluster-security",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "Part 2 of a series on implementing zero trust in Red Hat OpenShift with the layered zero trust validated pattern (ZTVP)In our previous article, we explored why network policies, specifically a default-deny posture combined with strict ingress and egress rules, are your critical last line of defense when you can’t patch…"
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Why GitLab signed the Open Weights and American AI Leadership letter",
+      "link": "https://about.gitlab.com/blog/open-weight-model-letter/",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": "This week GitLab signed the Open Weights and American AI Leadership letter, joining a long list of other technology companies that support a strong, open AI ecosystem. The letter argues that open weights spur innovation, give customers greater control, and provide an important path to AI safety and security."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Patch Release: 19.2.1, 19.1.3, 19.0.5",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+      "date": "2026-07-29T00:00:00.000Z",
+      "excerpt": ""
+    }
+  ]
+}
