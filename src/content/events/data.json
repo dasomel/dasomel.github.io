@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T00:58:47.602Z",
+  "updatedAt": "2026-07-29T00:57:10.159Z",
   "events": [
     {
       "id": "tour-3481597",
@@ -177,7 +177,7 @@
       "dateRange": "2026.03.14 ~ 2026.12.26",
       "isFree": true,
       "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/72/4090072_image2_1.jpg",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/15/4093315_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -527,51 +527,6 @@
       "thema": ""
     },
     {
-      "id": "2026 생애주기별 문화예술교육 지원사업 '꿈다락 문화예술학교' [사람책 프로젝트X노년 : 인생 레시피]",
-      "title": "2026 생애주기별 문화예술교육 지원사업 '꿈다락 문화예술학교' [사람책 프로젝트X노년 : 인생 레시피]",
-      "category": "교육/체험",
-      "place": "성신여대입구역 부근 연습실 (추후 공지)",
-      "guName": "성북구",
-      "startDate": "2026-06-29",
-      "endDate": "2026-10-19",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.dramanewworld.com/",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=db84a18e36484d018ee8ace1a7643c85&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
-      "id": "[연세대학교 미래교육원] 2026학년도 여름학기 교육과정 안내",
-      "title": "[연세대학교 미래교육원] 2026학년도 여름학기 교육과정 안내",
-      "category": "교육/체험",
-      "place": "연세대학교 이윤재관",
-      "guName": "서대문구",
-      "startDate": "2026-06-29",
-      "endDate": "2026-08-21",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://go.yonsei.ac.kr/fro_end/html/dep_04/4100.php?infinite_idx=notice&bbsid=notice&ref_code=&bbs_idx=16743&pagekind=c&gopage=/fro_end/html/dep_04/4100.php?infinite_idx=notice|*ref_code=",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=904c46dc65f744adb7856a32e8b1c875&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
-      "id": "[종로문화재단] 2026 종로 문화예술 지원사업 [디그업 종로] 선정 프로젝트 킴콜린 개인전 《THE UNSTILL LIFE TOUR》",
-      "title": "[종로문화재단] 2026 종로 문화예술 지원사업 [디그업 종로] 선정 프로젝트 킴콜린 개인전 《THE UNSTILL LIFE TOUR》",
-      "category": "전시/미술",
-      "place": "키미아트 (서울시 종로구 평창30길 47)",
-      "guName": "종로구",
-      "startDate": "2026-06-29",
-      "endDate": "2026-08-02",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.jfac.or.kr/site/main/program/perf_all_list_view?pgIdx=2758",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1ae9a0ec628b4a57b49778fe1593344b&thumb=Y",
-      "organizer": "종로문화재단",
-      "thema": ""
-    },
-    {
       "id": "tour-1829696",
       "title": "아시아프 (ASYAAF 100)",
       "category": "축제",
@@ -707,21 +662,6 @@
       "thema": ""
     },
     {
-      "id": "[마포구립서강도서관] 7월/행사 [7월 문화프로그램 안내]",
-      "title": "[마포구립서강도서관] 7월/행사 [7월 문화프로그램 안내]",
-      "category": "교육/체험",
-      "place": "마포구립서강도서관",
-      "guName": "마포구",
-      "startDate": "2026-07-01",
-      "endDate": "2026-07-31",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://mplib.mapo.go.kr/sglib/MENU1199/PGM3028/eventDetail.do?currentPageNo=1&eventSn=12748",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1c3033182acb49bc83fad1ec2e66fcd5&thumb=Y",
-      "organizer": "마포구청",
-      "thema": ""
-    },
-    {
       "id": "[마포구립서강도서관] 7월/팟캐스트 서강도서관 피셜 69회 [레볼루셔너리 로드]",
       "title": "[마포구립서강도서관] 7월/팟캐스트 서강도서관 피셜 69회 [레볼루셔너리 로드]",
       "category": "기타",
@@ -749,6 +689,21 @@
       "link": "https://ddp.or.kr/index.html?menuno=239&siteno=2&bbsno=28&boardno=147&bbstopno=28&act=view&subno=",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ccdd666f40a430ba8cf1ee656af26a8&thumb=Y",
       "organizer": "동대문디자인플라자(DDP)",
+      "thema": ""
+    },
+    {
+      "id": "[마포구립서강도서관] 7월/행사 [7월 문화프로그램 안내]",
+      "title": "[마포구립서강도서관] 7월/행사 [7월 문화프로그램 안내]",
+      "category": "교육/체험",
+      "place": "마포구립서강도서관",
+      "guName": "마포구",
+      "startDate": "2026-07-01",
+      "endDate": "2026-07-31",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://mplib.mapo.go.kr/sglib/MENU1199/PGM3028/eventDetail.do?currentPageNo=1&eventSn=12748",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1c3033182acb49bc83fad1ec2e66fcd5&thumb=Y",
+      "organizer": "마포구청",
       "thema": ""
     },
     {
@@ -1112,21 +1067,6 @@
       "thema": ""
     },
     {
-      "id": "[서울문화예술교육센터 은평] 춤추는 라운지 [시민예술가와 함께하는' 나를 위한 춤' - B반]",
-      "title": "[서울문화예술교육센터 은평] 춤추는 라운지 [시민예술가와 함께하는' 나를 위한 춤' - B반]",
-      "category": "교육/체험",
-      "place": "서울문화예술교육센터 은평 댄스스튜디오1, 서울무용창작센터",
-      "guName": "은평구",
-      "startDate": "2026-07-11",
-      "endDate": "2026-08-14",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.sfac.or.kr/asa/edu/view.do?eduMstSeq=37247",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=de32c966c278465396209ca208b3345d&thumb=Y",
-      "organizer": "서울문화재단",
-      "thema": ""
-    },
-    {
       "id": "[서울문화예술교육센터 은평] 춤추는 라운지 [시민예술가와 함께하는' 나를 위한 춤' - A반]",
       "title": "[서울문화예술교육센터 은평] 춤추는 라운지 [시민예술가와 함께하는' 나를 위한 춤' - A반]",
       "category": "교육/체험",
@@ -1138,6 +1078,21 @@
       "isFree": true,
       "link": "https://www.sfac.or.kr/asa/edu/view.do?eduMstSeq=37212",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=763a1c6a84794e41ba6bc9afe86a2e12&thumb=Y",
+      "organizer": "서울문화재단",
+      "thema": ""
+    },
+    {
+      "id": "[서울문화예술교육센터 은평] 춤추는 라운지 [시민예술가와 함께하는' 나를 위한 춤' - B반]",
+      "title": "[서울문화예술교육센터 은평] 춤추는 라운지 [시민예술가와 함께하는' 나를 위한 춤' - B반]",
+      "category": "교육/체험",
+      "place": "서울문화예술교육센터 은평 댄스스튜디오1, 서울무용창작센터",
+      "guName": "은평구",
+      "startDate": "2026-07-11",
+      "endDate": "2026-08-14",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.sfac.or.kr/asa/edu/view.do?eduMstSeq=37247",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=de32c966c278465396209ca208b3345d&thumb=Y",
       "organizer": "서울문화재단",
       "thema": ""
     },
@@ -1274,21 +1229,6 @@
       "link": "https://baekjemuseum.seoul.go.kr/module/index.jsp?boardid=a&code=ED&mmode=content&mpid=SBM0402000000&pid=23380&strsearch=&d_s_que=&cpage=1",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=db71cc531fd04979888f64a1ae379ed4&thumb=Y",
       "organizer": "한성백제박물관",
-      "thema": ""
-    },
-    {
-      "id": "강미미 [잃어버린 것을 찾으려면 아래로 내려가야 한다]",
-      "title": "강미미 [잃어버린 것을 찾으려면 아래로 내려가야 한다]",
-      "category": "전시/미술",
-      "place": "주석모음집",
-      "guName": "종로구",
-      "startDate": "2026-07-14",
-      "endDate": "2026-07-28",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://archivist.kr/exi?m=gov&i=1783588908",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=52447d4348ce4369b82585b45cfe1778&thumb=Y",
-      "organizer": "기타",
       "thema": ""
     },
     {
@@ -1742,21 +1682,6 @@
       "thema": ""
     },
     {
-      "id": "김규리(1996)화가 [SECTION 01. BUTTERFLY] 전시",
-      "title": "김규리(1996)화가 [SECTION 01. BUTTERFLY] 전시",
-      "category": "전시/미술",
-      "place": "인사아트프라자갤러리 2F 4관",
-      "guName": "종로구",
-      "startDate": "2026-07-22",
-      "endDate": "2026-07-28",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://artworkbykyu.artspoon.io/ko",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=01549865d4ea404b81f275d0c7f27082&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
       "id": "tour-590921",
       "title": "2026 평창대관령음악제",
       "category": "축제",
@@ -2012,6 +1937,36 @@
       "thema": ""
     },
     {
+      "id": "루나킴 개인전 [티파사의 폐허]",
+      "title": "루나킴 개인전 [티파사의 폐허]",
+      "category": "전시/미술",
+      "place": "온에어갤러리",
+      "guName": "서대문구",
+      "startDate": "2026-07-25",
+      "endDate": "2026-08-08",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://archivist.kr/exi?m=gov&i=1784864526",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5b70d09481b54c7eaf7239a1e38f9e04&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
+      "id": "정혜성·김정호 [In-Between]",
+      "title": "정혜성·김정호 [In-Between]",
+      "category": "전시/미술",
+      "place": "온에어갤러리",
+      "guName": "서대문구",
+      "startDate": "2026-07-25",
+      "endDate": "2026-08-08",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://archivist.kr/exi?m=gov&i=1784864461",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2a2cb017f59f4a1caadc10a72c60de95&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
       "id": "[서울시립과학관] 대학탐방 [독성시대X과학관: 서울시립대 화학물질 빅데이터 AI연구센터와 함께하는 독성학 탐험대]",
       "title": "[서울시립과학관] 대학탐방 [독성시대X과학관: 서울시립대 화학물질 빅데이터 AI연구센터와 함께하는 독성학 탐험대]",
       "category": "교육/체험",
@@ -2069,21 +2024,6 @@
       "link": "https://www.artbookbogo.kr/seoul/menu/10024/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=25450&cultureTypeCdArr=EDUC&searchCultureTypeCd=&searchOperStatusCd=VALID",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f2839656f20c4d97bcc24b9d259ad58c&thumb=Y",
       "organizer": "서울아트책보고",
-      "thema": ""
-    },
-    {
-      "id": "Flutist Evelyn Chayeun Kim [Dreams & Fantasies] 김채은 플루트 리사이틀",
-      "title": "Flutist Evelyn Chayeun Kim [Dreams & Fantasies] 김채은 플루트 리사이틀",
-      "category": "클래식",
-      "place": "아트센터 림 아트홀",
-      "guName": "종로구",
-      "startDate": "2026-07-25",
-      "endDate": "2026-07-28",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://artcenterlim.co.kr/programs/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=172231445&t=board",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=af325ebc39dc4a6b9c7d9082e1cdedfe&thumb=Y",
-      "organizer": "기타",
       "thema": ""
     },
     {
@@ -2204,36 +2144,6 @@
       "link": "https://www.unhyeongung.or.kr/sub/prpgram/exhibition_list.php?sno=0&group=basic&code=B35&category=19&&abmode=view&no=1942&bsort=&bfsort=",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3861e6f7c53e471eb33a070c2c997dd7&thumb=Y",
       "organizer": "운현궁",
-      "thema": ""
-    },
-    {
-      "id": "김연경 바이올린 독주회",
-      "title": "김연경 바이올린 독주회",
-      "category": "독주/독창회",
-      "place": "세종체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-07-28",
-      "endDate": "2026-07-28",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37402&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c7e62370f1314ed984dfa77fb336d8e6&thumb=Y",
-      "organizer": "세종문화회관",
-      "thema": ""
-    },
-    {
-      "id": "[폴란드 재즈듀오 내한공연] PIAZZOLLA DUO",
-      "title": "[폴란드 재즈듀오 내한공연] PIAZZOLLA DUO",
-      "category": "콘서트",
-      "place": "재즈클럽 그루브",
-      "guName": "서초구",
-      "startDate": "2026-07-28",
-      "endDate": "2026-07-28",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.groove.kr/piazzolla",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4fff40c62d7e444a980cfee6bf528707&thumb=Y",
-      "organizer": "기타",
       "thema": ""
     },
     {
@@ -2387,21 +2297,6 @@
       "thema": ""
     },
     {
-      "id": "[은평문화재단] 7월 숲속라이브 탭댄스 [탭 꾼]",
-      "title": "[은평문화재단] 7월 숲속라이브 탭댄스 [탭 꾼]",
-      "category": "무용",
-      "place": "은평문화예술회관 숲속극장",
-      "guName": "은평구",
-      "startDate": "2026-07-29",
-      "endDate": "2026-07-29",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.efac.or.kr//sub01/sub01.php?type=view&uid=5148",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=778a879f74be42069a21d7d2763170bd&thumb=Y",
-      "organizer": "은평문화재단",
-      "thema": ""
-    },
-    {
       "id": "[역삼푸른솔도서관] 퇴근길 인문학 시즌2 #4. [불안의 시대, 생각의 전환으로 삶의 기준 만들기]",
       "title": "[역삼푸른솔도서관] 퇴근길 인문학 시즌2 #4. [불안의 시대, 생각의 전환으로 삶의 기준 만들기]",
       "category": "교육/체험",
@@ -2414,6 +2309,36 @@
       "link": "https://library.gangnam.go.kr/ysplib/menu/10618/program/30013/lectureDetail.do?currentPageNo=1&searchCategory=&manageCd=MG&searchStatusCd=&lectureIdx=33240",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5b6d4d7188f54e7c9df1599656e7ae68&thumb=Y",
       "organizer": "강남구청",
+      "thema": ""
+    },
+    {
+      "id": "[광진문화재단] 나루 영 아티스트와 함께하는 '문화가 있는 날' [살롱음악회] (7월)",
+      "title": "[광진문화재단] 나루 영 아티스트와 함께하는 '문화가 있는 날' [살롱음악회] (7월)",
+      "category": "클래식",
+      "place": "나루아트센터 스페이스76",
+      "guName": "광진구",
+      "startDate": "2026-07-29",
+      "endDate": "2026-07-29",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.naruart.or.kr/exhibition/program_view.php?page=1&sch_tab=date&sch_year=2026&sch_month=07&sch_notice=N&idx=10400",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=58265f891e3a4114a1953feba7e76956&thumb=Y",
+      "organizer": "광진문화재단",
+      "thema": ""
+    },
+    {
+      "id": "[은평문화재단] 7월 숲속라이브 탭댄스 [탭 꾼]",
+      "title": "[은평문화재단] 7월 숲속라이브 탭댄스 [탭 꾼]",
+      "category": "무용",
+      "place": "은평문화예술회관 숲속극장",
+      "guName": "은평구",
+      "startDate": "2026-07-29",
+      "endDate": "2026-07-29",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.efac.or.kr//sub01/sub01.php?type=view&uid=5148",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=778a879f74be42069a21d7d2763170bd&thumb=Y",
+      "organizer": "은평문화재단",
       "thema": ""
     },
     {
@@ -2432,18 +2357,18 @@
       "thema": ""
     },
     {
-      "id": "[광진문화재단] 나루 영 아티스트와 함께하는 '문화가 있는 날' [살롱음악회] (7월)",
-      "title": "[광진문화재단] 나루 영 아티스트와 함께하는 '문화가 있는 날' [살롱음악회] (7월)",
-      "category": "클래식",
-      "place": "나루아트센터 스페이스76",
-      "guName": "광진구",
-      "startDate": "2026-07-29",
-      "endDate": "2026-07-29",
-      "dateRange": "",
+      "id": "tour-2019366",
+      "title": "해양레저축제, 키마위크(KIMA WEEK)",
+      "category": "축제",
+      "place": "부산광역시 사하구 다대동",
+      "guName": "",
+      "startDate": "2026-07-30",
+      "endDate": "2026-08-02",
+      "dateRange": "2026.07.30 ~ 2026.08.02",
       "isFree": false,
-      "link": "https://www.naruart.or.kr/exhibition/program_view.php?page=1&sch_tab=date&sch_year=2026&sch_month=07&sch_notice=N&idx=10400",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=58265f891e3a4114a1953feba7e76956&thumb=Y",
-      "organizer": "광진문화재단",
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/65/4093665_image2_1.JPG",
+      "organizer": "",
       "thema": ""
     },
     {
@@ -2522,21 +2447,6 @@
       "thema": ""
     },
     {
-      "id": "제25회 송파구립 청소년 교향악단 정기연주회 : 세헤라자데",
-      "title": "제25회 송파구립 청소년 교향악단 정기연주회 : 세헤라자데",
-      "category": "클래식",
-      "place": "송파문화예술회관 아트홀",
-      "guName": "송파구",
-      "startDate": "2026-07-30",
-      "endDate": "2026-07-30",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://booking.naver.com/booking/5/bizes/1651805/items/7842500?startDateTime=2026-07-30T00%3A00%3A00%2B09%3A00&tab=book",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e756993753654d088ca6d6d83affec94&thumb=Y",
-      "organizer": "송파구청",
-      "thema": ""
-    },
-    {
       "id": "[서울책보고] 작가들토크 with 한국과학소설작가연대 [SF작가의 사생활 - 어쩌다 보니 SF작가가 되어버렸어]",
       "title": "[서울책보고] 작가들토크 with 한국과학소설작가연대 [SF작가의 사생활 - 어쩌다 보니 SF작가가 되어버렸어]",
       "category": "교육/체험",
@@ -2567,6 +2477,21 @@
       "thema": ""
     },
     {
+      "id": "제25회 송파구립 청소년 교향악단 정기연주회 : 세헤라자데",
+      "title": "제25회 송파구립 청소년 교향악단 정기연주회 : 세헤라자데",
+      "category": "클래식",
+      "place": "송파문화예술회관 아트홀",
+      "guName": "송파구",
+      "startDate": "2026-07-30",
+      "endDate": "2026-07-30",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://booking.naver.com/booking/5/bizes/1651805/items/7842500?startDateTime=2026-07-30T00%3A00%3A00%2B09%3A00&tab=book",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e756993753654d088ca6d6d83affec94&thumb=Y",
+      "organizer": "송파구청",
+      "thema": ""
+    },
+    {
       "id": "tour-2991796",
       "title": "DDP 바캉스: 뮤직페스티벌",
       "category": "축제",
@@ -2578,21 +2503,6 @@
       "isFree": false,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/23/4087823_image2_1.JPG",
-      "organizer": "",
-      "thema": ""
-    },
-    {
-      "id": "tour-3007934",
-      "title": "정읍 물빛축제",
-      "category": "축제",
-      "place": "전북특별자치도 정읍시 벚꽃로 369 (시기동)",
-      "guName": "",
-      "startDate": "2026-07-31",
-      "endDate": "2026-08-02",
-      "dateRange": "2026.07.31 ~ 2026.08.02",
-      "isFree": true,
-      "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/44/4089744_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -2687,18 +2597,18 @@
       "thema": ""
     },
     {
-      "id": "피아니스트 고예린 & 김경진 듀오 리사이틀",
-      "title": "피아니스트 고예린 & 김경진 듀오 리사이틀",
-      "category": "클래식",
-      "place": "세종체임버홀",
-      "guName": "종로구",
+      "id": "[서울책보고] 7월 모여보고",
+      "title": "[서울책보고] 7월 모여보고",
+      "category": "교육/체험",
+      "place": "서울책보고 라운지",
+      "guName": "송파구",
       "startDate": "2026-07-31",
       "endDate": "2026-07-31",
       "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37398&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b3b0181cdd47408093b744f80d1aa05d&thumb=Y",
-      "organizer": "세종문화회관",
+      "isFree": true,
+      "link": "https://www.seoulbookbogo.kr/front/index.php?g_page=program&m_page=program01&act=lecture_view&lgCode=2&leCode=42&cate=&siteCode=TOL&allLec=&bstart=&dateType=&slDateS=&slDateE=&sValue=&allGrp=Y",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=caace50e51f243e08b4769e22404d5d7&thumb=Y",
+      "organizer": "서울책보고",
       "thema": ""
     },
     {
@@ -2717,18 +2627,18 @@
       "thema": ""
     },
     {
-      "id": "[서울책보고] 7월 모여보고",
-      "title": "[서울책보고] 7월 모여보고",
-      "category": "교육/체험",
-      "place": "서울책보고 라운지",
-      "guName": "송파구",
+      "id": "피아니스트 고예린 & 김경진 듀오 리사이틀",
+      "title": "피아니스트 고예린 & 김경진 듀오 리사이틀",
+      "category": "클래식",
+      "place": "세종체임버홀",
+      "guName": "종로구",
       "startDate": "2026-07-31",
       "endDate": "2026-07-31",
       "dateRange": "",
-      "isFree": true,
-      "link": "https://www.seoulbookbogo.kr/front/index.php?g_page=program&m_page=program01&act=lecture_view&lgCode=2&leCode=42&cate=&siteCode=TOL&allLec=&bstart=&dateType=&slDateS=&slDateE=&sValue=&allGrp=Y",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=caace50e51f243e08b4769e22404d5d7&thumb=Y",
-      "organizer": "서울책보고",
+      "isFree": false,
+      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37398&menuNo=200320",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b3b0181cdd47408093b744f80d1aa05d&thumb=Y",
+      "organizer": "세종문화회관",
       "thema": ""
     },
     {
@@ -2807,6 +2717,21 @@
       "thema": ""
     },
     {
+      "id": "tour-1825508",
+      "title": "삼길포 우럭축제",
+      "category": "축제",
+      "place": "충청남도 서산시 대산읍 삼길포1로 72-2",
+      "guName": "",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-02",
+      "dateRange": "2026.08.01 ~ 2026.08.02",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/24/4093724_image2_1.JPG",
+      "organizer": "",
+      "thema": ""
+    },
+    {
       "id": "[서울무형유산교육전시장] 2026년 2차 일반교육 모집안내(18주)",
       "title": "[서울무형유산교육전시장] 2026년 2차 일반교육 모집안내(18주)",
       "category": "교육/체험",
@@ -2852,21 +2777,6 @@
       "thema": ""
     },
     {
-      "id": "[마포구립서강도서관] 8월 문화프로그램 안내",
-      "title": "[마포구립서강도서관] 8월 문화프로그램 안내",
-      "category": "교육/체험",
-      "place": "마포구립서강도서관",
-      "guName": "마포구",
-      "startDate": "2026-08-01",
-      "endDate": "2026-08-31",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://mplib.mapo.go.kr/sglib/MENU1199/PGM3028/eventDetail.do?currentPageNo=1&searchCondition=eventNm&searchKeyword=%EB%AC%B8%ED%99%94%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8&eventSn=13028",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=056c162805284b66aebc7e900da8f795&thumb=Y",
-      "organizer": "마포구청",
-      "thema": ""
-    },
-    {
       "id": "[송파 청년아티스트센터] 예술가와 함께하는 풍납 탐구 생활 8월 프로그램",
       "title": "[송파 청년아티스트센터] 예술가와 함께하는 풍납 탐구 생활 8월 프로그램",
       "category": "교육/체험",
@@ -2879,6 +2789,21 @@
       "link": "https://litt.ly/artistcenter_songpa",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=30a7b504663f4c049ad731355eb8adb0&thumb=Y",
       "organizer": "송파구청",
+      "thema": ""
+    },
+    {
+      "id": "[마포구립서강도서관] 8월 문화프로그램 안내",
+      "title": "[마포구립서강도서관] 8월 문화프로그램 안내",
+      "category": "교육/체험",
+      "place": "마포구립서강도서관",
+      "guName": "마포구",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-31",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://mplib.mapo.go.kr/sglib/MENU1199/PGM3028/eventDetail.do?currentPageNo=1&searchCondition=eventNm&searchKeyword=%EB%AC%B8%ED%99%94%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8&eventSn=13028",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=056c162805284b66aebc7e900da8f795&thumb=Y",
+      "organizer": "마포구청",
       "thema": ""
     },
     {
@@ -2909,6 +2834,21 @@
       "link": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=13031",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=121043c1549f4c39b76ba6a70753ee26&thumb=Y",
       "organizer": "마포구청",
+      "thema": ""
+    },
+    {
+      "id": "2026 문화역서울284 8월 내부 공간투어",
+      "title": "2026 문화역서울284 8월 내부 공간투어",
+      "category": "전시/미술",
+      "place": "문화역서울284",
+      "guName": "중구",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-16",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.seoul284.org/program/view/category/322/state/5/menu/340?thisPage=1&idx=375&searchField=all&searchText=",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b6ebc1fea3e24bcaa1a6df65674a909a&thumb=Y",
+      "organizer": "기타",
       "thema": ""
     },
     {
@@ -2957,18 +2897,18 @@
       "thema": ""
     },
     {
-      "id": "[서울아트책보고] 천하제일덕질비평대회 [덕질비평 백일장] 다 울었니? 이제 덕력을 쓰자",
-      "title": "[서울아트책보고] 천하제일덕질비평대회 [덕질비평 백일장] 다 울었니? 이제 덕력을 쓰자",
-      "category": "교육/체험",
-      "place": "서울아트책보고 북카페",
-      "guName": "구로구",
+      "id": "2026 카오스 콘서트 : 인긴-인간-인갼",
+      "title": "2026 카오스 콘서트 : 인긴-인간-인갼",
+      "category": "콘서트",
+      "place": "연세대 백주년기념관 콘서트홀",
+      "guName": "서대문구",
       "startDate": "2026-08-01",
       "endDate": "2026-08-01",
       "dateRange": "",
-      "isFree": true,
-      "link": "https://www.artbookbogo.kr/seoul/menu/10024/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=25335&cultureTypeCdArr=EDUC&searchCultureTypeCd=&searchOperStatusCd=VALID",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=55564a9f8a624107a2a41f1f3950da26&thumb=Y",
-      "organizer": "서울아트책보고",
+      "isFree": false,
+      "link": "https://www.ticketlink.co.kr/product/63942",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=dcff30136e6b4139b2651ac76f9bad10&thumb=Y",
+      "organizer": "기타",
       "thema": ""
     },
     {
@@ -2987,21 +2927,6 @@
       "thema": ""
     },
     {
-      "id": "[서울갤러리] 런치 스테이지 [싱어송라이터 사운드힐즈]",
-      "title": "[서울갤러리] 런치 스테이지 [싱어송라이터 사운드힐즈]",
-      "category": "콘서트",
-      "place": "서울갤러리 지하 1층 공연장",
-      "guName": "중구",
-      "startDate": "2026-08-01",
-      "endDate": "2026-08-01",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.seoul.go.kr/seoulgallery/www/program/view.do?key=2509020016&prgmSn=109",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b42cfe5cd32d46558a52cbcb06f1c46b&thumb=Y",
-      "organizer": "서울시청",
-      "thema": ""
-    },
-    {
       "id": "[라율 영재&영아티스트] 최아인 첼로 독주회",
       "title": "[라율 영재&영아티스트] 최아인 첼로 독주회",
       "category": "독주/독창회",
@@ -3013,6 +2938,36 @@
       "isFree": false,
       "link": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=172153586&t=board",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=8efb1adcb2604ab8b46b688da121599d&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
+      "id": "[서울아트책보고] 천하제일덕질비평대회 [덕질비평 백일장] 다 울었니? 이제 덕력을 쓰자",
+      "title": "[서울아트책보고] 천하제일덕질비평대회 [덕질비평 백일장] 다 울었니? 이제 덕력을 쓰자",
+      "category": "교육/체험",
+      "place": "서울아트책보고 북카페",
+      "guName": "구로구",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-01",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.artbookbogo.kr/seoul/menu/10024/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=25335&cultureTypeCdArr=EDUC&searchCultureTypeCd=&searchOperStatusCd=VALID",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=55564a9f8a624107a2a41f1f3950da26&thumb=Y",
+      "organizer": "서울아트책보고",
+      "thema": ""
+    },
+    {
+      "id": "루시어콘서트 : 마드리드 공방의 초대",
+      "title": "루시어콘서트 : 마드리드 공방의 초대",
+      "category": "콘서트",
+      "place": "파르티타홀",
+      "guName": "서초구",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-01",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.partita.co.kr/11303/?idx=1088",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=77ac6f379dcd4b14a9aa517932b6f2a3&thumb=Y",
       "organizer": "기타",
       "thema": ""
     },
@@ -3032,6 +2987,21 @@
       "thema": ""
     },
     {
+      "id": "[서울갤러리] 런치 스테이지 [싱어송라이터 사운드힐즈]",
+      "title": "[서울갤러리] 런치 스테이지 [싱어송라이터 사운드힐즈]",
+      "category": "콘서트",
+      "place": "서울갤러리 지하 1층 공연장",
+      "guName": "중구",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-01",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.seoul.go.kr/seoulgallery/www/program/view.do?key=2509020016&prgmSn=109",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b42cfe5cd32d46558a52cbcb06f1c46b&thumb=Y",
+      "organizer": "서울시청",
+      "thema": ""
+    },
+    {
       "id": "[서울역사박물관] 2026년 제4회 박물관 토요음악회 [서울역사박물관 문화스테이지-삼현(三絃)]",
       "title": "[서울역사박물관] 2026년 제4회 박물관 토요음악회 [서울역사박물관 문화스테이지-삼현(三絃)]",
       "category": "콘서트",
@@ -3044,36 +3014,6 @@
       "link": "https://museum.seoul.go.kr/www/board/NR_boardView.do?bbsCd=1018&seq=20260709172201593&sso=ok",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=687f769869a849b9ac2cab6c847f1ad7&thumb=Y",
       "organizer": "서울역사박물관",
-      "thema": ""
-    },
-    {
-      "id": "2026 카오스 콘서트 : 인긴-인간-인갼",
-      "title": "2026 카오스 콘서트 : 인긴-인간-인갼",
-      "category": "콘서트",
-      "place": "연세대 백주년기념관 콘서트홀",
-      "guName": "서대문구",
-      "startDate": "2026-08-01",
-      "endDate": "2026-08-01",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.ticketlink.co.kr/product/63942",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=dcff30136e6b4139b2651ac76f9bad10&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
-      "id": "루시어콘서트 : 마드리드 공방의 초대",
-      "title": "루시어콘서트 : 마드리드 공방의 초대",
-      "category": "콘서트",
-      "place": "파르티타홀",
-      "guName": "서초구",
-      "startDate": "2026-08-01",
-      "endDate": "2026-08-01",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.partita.co.kr/11303/?idx=1088",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=77ac6f379dcd4b14a9aa517932b6f2a3&thumb=Y",
-      "organizer": "기타",
       "thema": ""
     },
     {
@@ -3107,21 +3047,6 @@
       "thema": ""
     },
     {
-      "id": "[중랑문화재단] 2026 중랑아트센터 [나대기 예술아카데미] 8월 프로그램",
-      "title": "[중랑문화재단] 2026 중랑아트센터 [나대기 예술아카데미] 8월 프로그램",
-      "category": "교육/체험",
-      "place": "중랑아트센터 프로그램실/시청각실",
-      "guName": "중랑구",
-      "startDate": "2026-08-04",
-      "endDate": "2026-08-28",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.jnfac.or.kr/art/edu/view/759",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4fef32d9a74743f5be4eb06080b2cad9&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
       "id": "[서울시립 북서울미술관] 2026 대학(원)생 예비 에듀케이터 프로그램",
       "title": "[서울시립 북서울미술관] 2026 대학(원)생 예비 에듀케이터 프로그램",
       "category": "교육/체험",
@@ -3134,6 +3059,21 @@
       "link": "https://sema.seoul.go.kr/kr/whatson/education/detail?acadmyEeNo=1548926",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=21382883e5534a23a97300f3b837b386&thumb=Y",
       "organizer": "서울시립미술관",
+      "thema": ""
+    },
+    {
+      "id": "[중랑문화재단] 2026 중랑아트센터 [나대기 예술아카데미] 8월 프로그램",
+      "title": "[중랑문화재단] 2026 중랑아트센터 [나대기 예술아카데미] 8월 프로그램",
+      "category": "교육/체험",
+      "place": "중랑아트센터 프로그램실/시청각실",
+      "guName": "중랑구",
+      "startDate": "2026-08-04",
+      "endDate": "2026-08-28",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.jnfac.or.kr/art/edu/view/759",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4fef32d9a74743f5be4eb06080b2cad9&thumb=Y",
+      "organizer": "기타",
       "thema": ""
     },
     {
@@ -3164,6 +3104,21 @@
       "link": "https://www.ydpcf.or.kr/artexhibit/view.do?id=549",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=161fadd1c39e4dbaa214f9c62f8f5024&thumb=Y",
       "organizer": "영등포문화재단",
+      "thema": ""
+    },
+    {
+      "id": "차슬아 개인전 [동굴로]",
+      "title": "차슬아 개인전 [동굴로]",
+      "category": "전시/미술",
+      "place": "크리스프 웨지",
+      "guName": "마포구",
+      "startDate": "2026-08-04",
+      "endDate": "2026-08-17",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.crispwedge.com/",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1de149be80ba4b8b8e2f98b02fd1d513&thumb=Y",
+      "organizer": "기타",
       "thema": ""
     },
     {
@@ -3212,6 +3167,36 @@
       "thema": ""
     },
     {
+      "id": "천예나 피아노 독주회 - Chopin, 그 시적인 순간들",
+      "title": "천예나 피아노 독주회 - Chopin, 그 시적인 순간들",
+      "category": "독주/독창회",
+      "place": "세종체임버홀",
+      "guName": "종로구",
+      "startDate": "2026-08-04",
+      "endDate": "2026-08-04",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37409&menuNo=200320",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d36af8a3debc45b299bbbb27386f54c5&thumb=Y",
+      "organizer": "세종문화회관",
+      "thema": ""
+    },
+    {
+      "id": "[강북문화재단] 2026 코르딕 커넥션 프로젝트 [베이비 오페라 전문 워크숍]",
+      "title": "[강북문화재단] 2026 코르딕 커넥션 프로젝트 [베이비 오페라 전문 워크숍]",
+      "category": "교육/체험",
+      "place": "강북문화예술회관 강북진달래홀",
+      "guName": "강북구",
+      "startDate": "2026-08-04",
+      "endDate": "2026-08-04",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://forms.gle/rFctoTNeEmm6AEZa9",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=08e02389a0ec476295b0ad9ea1fdb05f&thumb=Y",
+      "organizer": "강북문화재단",
+      "thema": ""
+    },
+    {
       "id": "[서울시립교향악단] 우리동네 실내악-영등포 아트홀",
       "title": "[서울시립교향악단] 우리동네 실내악-영등포 아트홀",
       "category": "클래식",
@@ -3239,36 +3224,6 @@
       "link": "https://www.sac.or.kr/site/main/show/show_view?SN=78791",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=195d00fd945e47ba88ccb843112062e9&thumb=Y",
       "organizer": "기타",
-      "thema": ""
-    },
-    {
-      "id": "[강북문화재단] 2026 코르딕 커넥션 프로젝트 [베이비 오페라 전문 워크숍]",
-      "title": "[강북문화재단] 2026 코르딕 커넥션 프로젝트 [베이비 오페라 전문 워크숍]",
-      "category": "교육/체험",
-      "place": "강북문화예술회관 강북진달래홀",
-      "guName": "강북구",
-      "startDate": "2026-08-04",
-      "endDate": "2026-08-04",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://forms.gle/rFctoTNeEmm6AEZa9",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=08e02389a0ec476295b0ad9ea1fdb05f&thumb=Y",
-      "organizer": "강북문화재단",
-      "thema": ""
-    },
-    {
-      "id": "천예나 피아노 독주회 - Chopin, 그 시적인 순간들",
-      "title": "천예나 피아노 독주회 - Chopin, 그 시적인 순간들",
-      "category": "독주/독창회",
-      "place": "세종체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-08-04",
-      "endDate": "2026-08-04",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37409&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d36af8a3debc45b299bbbb27386f54c5&thumb=Y",
-      "organizer": "세종문화회관",
       "thema": ""
     },
     {
@@ -3332,21 +3287,6 @@
       "thema": ""
     },
     {
-      "id": "[마포구립서강도서관] 8월/다문화지원사업 [그 너머의 문화, 스페인]",
-      "title": "[마포구립서강도서관] 8월/다문화지원사업 [그 너머의 문화, 스페인]",
-      "category": "교육/체험",
-      "place": "서강도서관 3층 세미나실",
-      "guName": "마포구",
-      "startDate": "2026-08-05",
-      "endDate": "2026-08-18",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=13027",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1d6e180e794f4c3ebd26e56ae3056045&thumb=Y",
-      "organizer": "마포구청",
-      "thema": ""
-    },
-    {
       "id": "2026 K컬쳐·공연 글로벌 마케팅 전문인력양성 아카데미 2기 참여자 모집",
       "title": "2026 K컬쳐·공연 글로벌 마케팅 전문인력양성 아카데미 2기 참여자 모집",
       "category": "교육/체험",
@@ -3377,6 +3317,21 @@
       "thema": ""
     },
     {
+      "id": "[서울시립교향악단] 작은 음악회_ 늘푸른나무복지관",
+      "title": "[서울시립교향악단] 작은 음악회_ 늘푸른나무복지관",
+      "category": "클래식",
+      "place": "늘푸른나무복지관 3층 대회의실",
+      "guName": "강서구",
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-05",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.seoulphil.or.kr/perf/view?perfNo=7577",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=069772635eb74e73b444cc0b30521a28&thumb=Y",
+      "organizer": "서울시립교향악단",
+      "thema": ""
+    },
+    {
       "id": "[서울갤러리] 런치 스테이지 [첼리스트 빅바플]",
       "title": "[서울갤러리] 런치 스테이지 [첼리스트 빅바플]",
       "category": "콘서트",
@@ -3389,6 +3344,21 @@
       "link": "https://www.seoul.go.kr/seoulgallery/www/program/view.do?key=2509020016&prgmSn=110",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f814060b748e4152a0364d956ccb8213&thumb=Y",
       "organizer": "서울시청",
+      "thema": ""
+    },
+    {
+      "id": "[서울도서관] 과연 눈으로 본 것이 사실일까? : 미디어 리터러시 강의 (김진 앵커)",
+      "title": "[서울도서관] 과연 눈으로 본 것이 사실일까? : 미디어 리터러시 강의 (김진 앵커)",
+      "category": "교육/체험",
+      "place": "서울도서관 1층 생각마루",
+      "guName": "중구",
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-05",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://lib.seoul.go.kr/lecture/applyDetail/7243",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=91c0793272e941178a6cfe1d3222994d&thumb=Y",
+      "organizer": "서울도서관",
       "thema": ""
     },
     {
@@ -3497,21 +3467,6 @@
       "thema": ""
     },
     {
-      "id": "피아포네 앙상블 정기연주회",
-      "title": "피아포네 앙상블 정기연주회",
-      "category": "클래식",
-      "place": "세종체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-08-06",
-      "endDate": "2026-08-06",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37436&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7c6ab89a530c4352bd36537cce77ec9f&thumb=Y",
-      "organizer": "세종문화회관",
-      "thema": ""
-    },
-    {
       "id": "[성동구립도서관] 기억을 팝니다 [김용일 작가와의 만남]",
       "title": "[성동구립도서관] 기억을 팝니다 [김용일 작가와의 만남]",
       "category": "교육/체험",
@@ -3572,6 +3527,36 @@
       "thema": ""
     },
     {
+      "id": "피아포네 앙상블 정기연주회",
+      "title": "피아포네 앙상블 정기연주회",
+      "category": "클래식",
+      "place": "세종체임버홀",
+      "guName": "종로구",
+      "startDate": "2026-08-06",
+      "endDate": "2026-08-06",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37436&menuNo=200320",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7c6ab89a530c4352bd36537cce77ec9f&thumb=Y",
+      "organizer": "세종문화회관",
+      "thema": ""
+    },
+    {
+      "id": "[서울시립교향악단] 작은 음악회_금천누리종합사회복지관",
+      "title": "[서울시립교향악단] 작은 음악회_금천누리종합사회복지관",
+      "category": "클래식",
+      "place": "금천누리종합사회복지관 5층 강당",
+      "guName": "금천구",
+      "startDate": "2026-08-06",
+      "endDate": "2026-08-06",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.seoulphil.or.kr/perf/view?perfNo=7575",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fe49936d6423435aac704f9cdb505b75&thumb=Y",
+      "organizer": "서울시립교향악단",
+      "thema": ""
+    },
+    {
       "id": "tour-142080",
       "title": "부산바다축제",
       "category": "축제",
@@ -3599,6 +3584,21 @@
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/67/4070867_image2_1.JPG",
       "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "[우리역사문화도서관] 생활의 지혜, 기초 한문 강독 [사자소학 四字小學]",
+      "title": "[우리역사문화도서관] 생활의 지혜, 기초 한문 강독 [사자소학 四字小學]",
+      "category": "교육/체험",
+      "place": "우리역사문화도서관 강의실",
+      "guName": "강동구",
+      "startDate": "2026-08-07",
+      "endDate": "2026-12-18",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://blog.naver.com/woori-library/224359597417",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c61897dfbf884f82a2ca4f68325d12f5&thumb=Y",
+      "organizer": "기타",
       "thema": ""
     },
     {
@@ -3692,6 +3692,66 @@
       "thema": ""
     },
     {
+      "id": "[서울도서관] 시네마루 영화 [귀를 기울이면] 상영회",
+      "title": "[서울도서관] 시네마루 영화 [귀를 기울이면] 상영회",
+      "category": "영화",
+      "place": "서울도서관 1층 생각마루",
+      "guName": "중구",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-07",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://lib.seoul.go.kr/lecture/applyDetail/7242",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=60fd6007bfcc4ae7a1df6570a49dd84b&thumb=Y",
+      "organizer": "서울도서관",
+      "thema": ""
+    },
+    {
+      "id": "[라율 영재&영아티스트] 장도연 첼로 독주회",
+      "title": "[라율 영재&영아티스트] 장도연 첼로 독주회",
+      "category": "독주/독창회",
+      "place": "라율아트홀",
+      "guName": "서초구",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-07",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=172260343&t=board",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4f8659295374479c96be9601ade79afe&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
+      "id": "김로희 하프 리사이틀",
+      "title": "김로희 하프 리사이틀",
+      "category": "독주/독창회",
+      "place": "세종체임버홀",
+      "guName": "종로구",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-07",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37359&menuNo=200320",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cfcfbfdfe30b4e5293d5e74b35c52d8e&thumb=Y",
+      "organizer": "세종문화회관",
+      "thema": ""
+    },
+    {
+      "id": "[서울시립교향악단] 2026 작은음악회",
+      "title": "[서울시립교향악단] 2026 작은음악회",
+      "category": "클래식",
+      "place": "동대문구 아르코 카멜리아홀",
+      "guName": "동대문구",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-07",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.seoulphil.or.kr/perf/view?perfNo=7559",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=588e744240954f1fb6f91b6abca75260&thumb=Y",
+      "organizer": "서울시립교향악단",
+      "thema": ""
+    },
+    {
       "id": "[힙독클럽 X 서울아트책보고] 정용준 소설가 『겨울통』 북토크 : 얼어버린 사랑 녹이기",
       "title": "[힙독클럽 X 서울아트책보고] 정용준 소설가 『겨울통』 북토크 : 얼어버린 사랑 녹이기",
       "category": "교육/체험",
@@ -3722,51 +3782,6 @@
       "thema": ""
     },
     {
-      "id": "김로희 하프 리사이틀",
-      "title": "김로희 하프 리사이틀",
-      "category": "독주/독창회",
-      "place": "세종체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-08-07",
-      "endDate": "2026-08-07",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37359&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cfcfbfdfe30b4e5293d5e74b35c52d8e&thumb=Y",
-      "organizer": "세종문화회관",
-      "thema": ""
-    },
-    {
-      "id": "[라율 영재&영아티스트] 장도연 첼로 독주회",
-      "title": "[라율 영재&영아티스트] 장도연 첼로 독주회",
-      "category": "독주/독창회",
-      "place": "라율아트홀",
-      "guName": "서초구",
-      "startDate": "2026-08-07",
-      "endDate": "2026-08-07",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=172260343&t=board",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4f8659295374479c96be9601ade79afe&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
-      "id": "[서울시립교향악단] 2026 작은음악회",
-      "title": "[서울시립교향악단] 2026 작은음악회",
-      "category": "클래식",
-      "place": "동대문구 아르코 카멜리아홀",
-      "guName": "동대문구",
-      "startDate": "2026-08-07",
-      "endDate": "2026-08-07",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.seoulphil.or.kr/perf/view?perfNo=7559",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=588e744240954f1fb6f91b6abca75260&thumb=Y",
-      "organizer": "서울시립교향악단",
-      "thema": ""
-    },
-    {
       "id": "tour-2989846",
       "title": "송도해변축제",
       "category": "축제",
@@ -3779,21 +3794,6 @@
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/70/4089470_image2_1.JPG",
       "organizer": "",
-      "thema": ""
-    },
-    {
-      "id": "마에스트로 핑고와 떠나는 클래식 지구 한 바퀴",
-      "title": "마에스트로 핑고와 떠나는 클래식 지구 한 바퀴",
-      "category": "클래식",
-      "place": "서울체임버홀",
-      "guName": "서초구",
-      "startDate": "2026-08-08",
-      "endDate": "2026-08-09",
-      "dateRange": "",
-      "isFree": false,
-      "link": "http://gaonclassic.com/bbs/bbs/view.php?bbs_no=11&data_no=336&page_no=1&sub_id=",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=40b1800588514d9fb7bb1c936f0d1728&thumb=Y",
-      "organizer": "기타",
       "thema": ""
     },
     {
@@ -3812,6 +3812,21 @@
       "thema": ""
     },
     {
+      "id": "마에스트로 핑고와 떠나는 클래식 지구 한 바퀴",
+      "title": "마에스트로 핑고와 떠나는 클래식 지구 한 바퀴",
+      "category": "클래식",
+      "place": "서울체임버홀",
+      "guName": "서초구",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-09",
+      "dateRange": "",
+      "isFree": false,
+      "link": "http://gaonclassic.com/bbs/bbs/view.php?bbs_no=11&data_no=336&page_no=1&sub_id=",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=40b1800588514d9fb7bb1c936f0d1728&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
       "id": "[서울갤러리] 런치 스테이지 [컨템포러리 재즈밴드 김루꾸 재즈밴드]",
       "title": "[서울갤러리] 런치 스테이지 [컨템포러리 재즈밴드 김루꾸 재즈밴드]",
       "category": "콘서트",
@@ -3827,18 +3842,48 @@
       "thema": ""
     },
     {
-      "id": "[성동구립도서관] 2026년 서울가족학교  [패밀리셰프]",
-      "title": "[성동구립도서관] 2026년 서울가족학교  [패밀리셰프]",
+      "id": "[서울문화예술교육센터 서초] 음악의 집 [8월, 음악가의 사적인 플레이리스트] 류이치 사카모토의 피아노 여정",
+      "title": "[서울문화예술교육센터 서초] 음악의 집 [8월, 음악가의 사적인 플레이리스트] 류이치 사카모토의 피아노 여정",
       "category": "교육/체험",
-      "place": "성동구립도서관",
-      "guName": "성동구",
+      "place": "서울문화예술교육센터 서초 1층 더라운지",
+      "guName": "서초구",
       "startDate": "2026-08-08",
       "endDate": "2026-08-08",
       "dateRange": "",
       "isFree": true,
-      "link": "https://www.sdlib.or.kr/SD/edusat/view.do?edu_idx=2435&prepage=%2FSD%2Fedusat%2Flist.do",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=56033148b8f04e9e8610d17c2e6ebb83&thumb=Y",
-      "organizer": "성동문화재단",
+      "link": "https://www.sfac.or.kr/asa/edu/view.do?eduMstSeq=37189",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=26a5216bf51a4fb3b38dffc41c79b9e7&thumb=Y",
+      "organizer": "서울문화재단",
+      "thema": ""
+    },
+    {
+      "id": "[힙독클럽 X 서울아트책보고] 『이런 건 왜 또 기막히게 생각나서』 북토크 : 음악 덕후 아저씨 배순탁 음악 평론가의 음감회",
+      "title": "[힙독클럽 X 서울아트책보고] 『이런 건 왜 또 기막히게 생각나서』 북토크 : 음악 덕후 아저씨 배순탁 음악 평론가의 음감회",
+      "category": "교육/체험",
+      "place": "서울아트책보고",
+      "guName": "구로구",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-08",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.artbookbogo.kr/seoul/menu/10047/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=25945&cultureTypeCdArr=EDUC2&searchCultureTypeCd=&searchOperStatusCd=VALID",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=052fd174096f4794b72787237b0c1d39&thumb=Y",
+      "organizer": "서울아트책보고",
+      "thema": ""
+    },
+    {
+      "id": "2026 청소년을 위한 클래식 페스티벌",
+      "title": "2026 청소년을 위한 클래식 페스티벌",
+      "category": "클래식",
+      "place": "세종체임버홀",
+      "guName": "종로구",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-08",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37353&menuNo=200320",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=51a8c970fb0e44cd9486217380c48211&thumb=Y",
+      "organizer": "세종문화회관",
       "thema": ""
     },
     {
@@ -3857,17 +3902,17 @@
       "thema": ""
     },
     {
-      "id": "[서울문화예술교육센터 서초] 음악의 집 [8월, 음악가의 사적인 플레이리스트] 류이치 사카모토의 피아노 여정",
-      "title": "[서울문화예술교육센터 서초] 음악의 집 [8월, 음악가의 사적인 플레이리스트] 류이치 사카모토의 피아노 여정",
-      "category": "교육/체험",
-      "place": "서울문화예술교육센터 서초 1층 더라운지",
-      "guName": "서초구",
+      "id": "[서울문화재단] 동북권 시민예술 이음 큰잔치",
+      "title": "[서울문화재단] 동북권 시민예술 이음 큰잔치",
+      "category": "축제-시민화합",
+      "place": "서울문화예술교육센터 강북",
+      "guName": "강북구",
       "startDate": "2026-08-08",
       "endDate": "2026-08-08",
       "dateRange": "",
       "isFree": true,
-      "link": "https://www.sfac.or.kr/asa/edu/view.do?eduMstSeq=37189",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=26a5216bf51a4fb3b38dffc41c79b9e7&thumb=Y",
+      "link": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138444",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=40e14f7f4b494d999683fa7db0365db0&thumb=Y",
       "organizer": "서울문화재단",
       "thema": ""
     },
@@ -3887,33 +3932,18 @@
       "thema": ""
     },
     {
-      "id": "2026 청소년을 위한 클래식 페스티벌",
-      "title": "2026 청소년을 위한 클래식 페스티벌",
-      "category": "클래식",
-      "place": "세종체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-08-08",
-      "endDate": "2026-08-08",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37353&menuNo=200320",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=51a8c970fb0e44cd9486217380c48211&thumb=Y",
-      "organizer": "세종문화회관",
-      "thema": ""
-    },
-    {
-      "id": "[힙독클럽 X 서울아트책보고] 『이런 건 왜 또 기막히게 생각나서』 북토크 : 음악 덕후 아저씨 배순탁 음악 평론가의 음감회",
-      "title": "[힙독클럽 X 서울아트책보고] 『이런 건 왜 또 기막히게 생각나서』 북토크 : 음악 덕후 아저씨 배순탁 음악 평론가의 음감회",
+      "id": "[성동구립도서관] 2026년 서울가족학교  [패밀리셰프]",
+      "title": "[성동구립도서관] 2026년 서울가족학교  [패밀리셰프]",
       "category": "교육/체험",
-      "place": "서울아트책보고",
-      "guName": "구로구",
+      "place": "성동구립도서관",
+      "guName": "성동구",
       "startDate": "2026-08-08",
       "endDate": "2026-08-08",
       "dateRange": "",
       "isFree": true,
-      "link": "https://www.artbookbogo.kr/seoul/menu/10047/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=25945&cultureTypeCdArr=EDUC2&searchCultureTypeCd=&searchOperStatusCd=VALID",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=052fd174096f4794b72787237b0c1d39&thumb=Y",
-      "organizer": "서울아트책보고",
+      "link": "https://www.sdlib.or.kr/SD/edusat/view.do?edu_idx=2435&prepage=%2FSD%2Fedusat%2Flist.do",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=56033148b8f04e9e8610d17c2e6ebb83&thumb=Y",
+      "organizer": "성동문화재단",
       "thema": ""
     },
     {
@@ -3929,21 +3959,6 @@
       "link": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=172315247&t=board",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=788885bfe234486ca3ddb78b8a543901&thumb=Y",
       "organizer": "기타",
-      "thema": ""
-    },
-    {
-      "id": "[서울문화재단] 동북권 시민예술 이음 큰잔치",
-      "title": "[서울문화재단] 동북권 시민예술 이음 큰잔치",
-      "category": "축제-시민화합",
-      "place": "서울문화예술교육센터 강북",
-      "guName": "강북구",
-      "startDate": "2026-08-08",
-      "endDate": "2026-08-08",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138444",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=40e14f7f4b494d999683fa7db0365db0&thumb=Y",
-      "organizer": "서울문화재단",
       "thema": ""
     },
     {
@@ -4127,6 +4142,21 @@
       "thema": ""
     },
     {
+      "id": "[서울갤러리] 런치 스테이지 [기타리스트 HOOON]",
+      "title": "[서울갤러리] 런치 스테이지 [기타리스트 HOOON]",
+      "category": "콘서트",
+      "place": "서울갤러리 지하 1층 공연장",
+      "guName": "중구",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.seoul.go.kr/seoulgallery/www/program/view.do?key=2509020016&prgmSn=112",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f49e13cb6c93481e9b9b85a93d1e5401&thumb=Y",
+      "organizer": "서울시청",
+      "thema": ""
+    },
+    {
       "id": "2026 까망돌어울마당 아트홀 정기 기획공연 [까망돌 칸타빌레] 8회차 창작집단 현인의 [더 클라운]",
       "title": "2026 까망돌어울마당 아트홀 정기 기획공연 [까망돌 칸타빌레] 8회차 창작집단 현인의 [더 클라운]",
       "category": "연극",
@@ -4154,21 +4184,6 @@
       "link": "https://www.seoulphil.or.kr/perf/view?perfNo=7255",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fea8de4874764cb99f7c8d443b62111a&thumb=Y",
       "organizer": "서울시립교향악단",
-      "thema": ""
-    },
-    {
-      "id": "[서울갤러리] 런치 스테이지 [기타리스트 HOOON]",
-      "title": "[서울갤러리] 런치 스테이지 [기타리스트 HOOON]",
-      "category": "콘서트",
-      "place": "서울갤러리 지하 1층 공연장",
-      "guName": "중구",
-      "startDate": "2026-08-12",
-      "endDate": "2026-08-12",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.seoul.go.kr/seoulgallery/www/program/view.do?key=2509020016&prgmSn=112",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f49e13cb6c93481e9b9b85a93d1e5401&thumb=Y",
-      "organizer": "서울시청",
       "thema": ""
     },
     {
@@ -4232,6 +4247,21 @@
       "thema": ""
     },
     {
+      "id": "보훈가족과 서울시민이 함께하는 보훈음악회",
+      "title": "보훈가족과 서울시민이 함께하는 보훈음악회",
+      "category": "축제-문화/예술",
+      "place": "세종문화회관 체임버홀",
+      "guName": "종로구",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://kdvo.or.kr/bbs/board.php?bo_table=brd_notice_03&wr_id=10037&sca=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%B6%80",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=83be2ad2c48747e6b4498e4aa0003637&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
       "id": "[라율 영재&영아티스트] 이소영 바이올린 독주회",
       "title": "[라율 영재&영아티스트] 이소영 바이올린 독주회",
       "category": "클래식",
@@ -4262,21 +4292,6 @@
       "thema": ""
     },
     {
-      "id": "보훈가족과 서울시민이 함께하는 보훈음악회",
-      "title": "보훈가족과 서울시민이 함께하는 보훈음악회",
-      "category": "축제-문화/예술",
-      "place": "세종문화회관 체임버홀",
-      "guName": "종로구",
-      "startDate": "2026-08-13",
-      "endDate": "2026-08-13",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://kdvo.or.kr/bbs/board.php?bo_table=brd_notice_03&wr_id=10037&sca=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%B6%80",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=83be2ad2c48747e6b4498e4aa0003637&thumb=Y",
-      "organizer": "기타",
-      "thema": ""
-    },
-    {
       "id": "tour-1539730",
       "title": "2026 이럴때이런음악 해설이 있는 청소년음악회",
       "category": "축제",
@@ -4288,6 +4303,21 @@
       "isFree": false,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/87/4090187_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "tour-4093783",
+      "title": "홍성 국가유산 야행",
+      "category": "축제",
+      "place": "충청남도 홍성군 홍성읍 아문길 27",
+      "guName": "",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-15",
+      "dateRange": "2026.08.14 ~ 2026.08.15",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/02/4093802_image2_1.JPG",
       "organizer": "",
       "thema": ""
     },
@@ -4457,6 +4487,21 @@
       "thema": ""
     },
     {
+      "id": "[서울 문화의 밤] 8월 작가힙톡(Hip-Talk) - (허민숙) 거절살인 : 규율에 실패해 온 이유",
+      "title": "[서울 문화의 밤] 8월 작가힙톡(Hip-Talk) - (허민숙) 거절살인 : 규율에 실패해 온 이유",
+      "category": "교육/체험",
+      "place": "서울도서관 1층 생각마루",
+      "guName": "중구",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://lib.seoul.go.kr/lecture/applyDetail/7244",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=51eff0243106442dad84e950b7b71aa1&thumb=Y",
+      "organizer": "서울도서관",
+      "thema": ""
+    },
+    {
       "id": "[라율 영재&영아티스트] 신지우 비올라 독주회",
       "title": "[라율 영재&영아티스트] 신지우 비올라 독주회",
       "category": "클래식",
@@ -4577,17 +4622,17 @@
       "thema": ""
     },
     {
-      "id": "[라율 영재&영아티스트] 박희영 첼로 독주회",
-      "title": "[라율 영재&영아티스트] 박희영 첼로 독주회",
-      "category": "클래식",
-      "place": "라율아트홀",
-      "guName": "서초구",
-      "startDate": "2026-08-17",
-      "endDate": "2026-08-17",
+      "id": "[독립문영천시장] 815-816 연계 독립만찬 영천축제",
+      "title": "[독립문영천시장] 815-816 연계 독립만찬 영천축제",
+      "category": "축제-기타",
+      "place": "독립문문화공원 및 영천시장 일대",
+      "guName": "서대문구",
+      "startDate": "2026-08-16",
+      "endDate": "2026-08-16",
       "dateRange": "",
-      "isFree": false,
-      "link": "https://www.rayularthall.com/concerts/?bmode=view&idx=172473413&back_url=Lw%3D%3D&t=board&page=",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0f5d56925d794c99bc8dd350d8585397&thumb=Y",
+      "isFree": true,
+      "link": "https://blog.naver.com/yc_mk/224358859475",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0f2e99d6de1b46ffb0da929ac31af81e&thumb=Y",
       "organizer": "기타",
       "thema": ""
     },
@@ -4607,6 +4652,21 @@
       "thema": ""
     },
     {
+      "id": "[라율 영재&영아티스트] 박희영 첼로 독주회",
+      "title": "[라율 영재&영아티스트] 박희영 첼로 독주회",
+      "category": "클래식",
+      "place": "라율아트홀",
+      "guName": "서초구",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-17",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.rayularthall.com/concerts/?bmode=view&idx=172473413&back_url=Lw%3D%3D&t=board&page=",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0f5d56925d794c99bc8dd350d8585397&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
       "id": "[세종문화회관] 2026 누구나 클래식 with 수원시립교향악단",
       "title": "[세종문화회관] 2026 누구나 클래식 with 수원시립교향악단",
       "category": "클래식",
@@ -4619,6 +4679,21 @@
       "link": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36848&menuNo=200320#none",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=64c040c1070a43b3ad5f94bd2c15bdec&thumb=Y",
       "organizer": "세종문화회관",
+      "thema": ""
+    },
+    {
+      "id": "[마포구립서강도서관] 8월/다문화지원사업 [그 너머의 문화, 스페인]",
+      "title": "[마포구립서강도서관] 8월/다문화지원사업 [그 너머의 문화, 스페인]",
+      "category": "교육/체험",
+      "place": "마포구립서강도서관 3층 세미나실",
+      "guName": "마포구",
+      "startDate": "2026-08-19",
+      "endDate": "2026-09-09",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=13027",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e9efd850ae024f64bd32c3467ca2d789&thumb=Y",
+      "organizer": "마포구청",
       "thema": ""
     },
     {
@@ -4712,6 +4787,21 @@
       "thema": ""
     },
     {
+      "id": "[서울도서관] 2026년 생성형 AI 시민교육",
+      "title": "[서울도서관] 2026년 생성형 AI 시민교육",
+      "category": "교육/체험",
+      "place": "서울시 중구 일자리센터",
+      "guName": "중구",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-20",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://lib.seoul.go.kr/lecture/applyDetail/7121",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=abeae55f929449f793b2bb15cbfac7c9&thumb=Y",
+      "organizer": "서울도서관",
+      "thema": ""
+    },
+    {
       "id": "[성동문화재단] 2026년 골목 바이브 5회차",
       "title": "[성동문화재단] 2026년 골목 바이브 5회차",
       "category": "콘서트",
@@ -4742,21 +4832,6 @@
       "thema": ""
     },
     {
-      "id": "[서울도서관] 2026년 생성형 AI 시민교육",
-      "title": "[서울도서관] 2026년 생성형 AI 시민교육",
-      "category": "교육/체험",
-      "place": "서울시 중구 일자리센터",
-      "guName": "중구",
-      "startDate": "2026-08-20",
-      "endDate": "2026-08-20",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://lib.seoul.go.kr/lecture/applyDetail/7121",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=abeae55f929449f793b2bb15cbfac7c9&thumb=Y",
-      "organizer": "서울도서관",
-      "thema": ""
-    },
-    {
       "id": "tour-1840830",
       "title": "제14회 부산국제코미디페스티벌",
       "category": "축제",
@@ -4767,7 +4842,7 @@
       "dateRange": "2026.08.21 ~ 2026.08.30",
       "isFree": false,
       "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/07/4092507_image2_1.jpg",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/24/4093324_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -4847,6 +4922,21 @@
       "thema": ""
     },
     {
+      "id": "[서울 문화의 밤] 8월 작가힙톡(Hip-Talk) - (원도) 우리가 기억해야 할 얼굴",
+      "title": "[서울 문화의 밤] 8월 작가힙톡(Hip-Talk) - (원도) 우리가 기억해야 할 얼굴",
+      "category": "교육/체험",
+      "place": "서울도서관 1층 생각마루",
+      "guName": "중구",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-21",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://lib.seoul.go.kr/lecture/applyDetail/7245",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f17605479c0c4bafb61fe5389b353514&thumb=Y",
+      "organizer": "서울도서관",
+      "thema": ""
+    },
+    {
       "id": "tour-1939183",
       "title": "오감만족 문경새재맨발페스티벌",
       "category": "축제",
@@ -4892,21 +4982,6 @@
       "thema": ""
     },
     {
-      "id": "[서울남산국악당] 2026 젊은국악 단장 - 김성 [자람의 기술 RE:GROW]",
-      "title": "[서울남산국악당] 2026 젊은국악 단장 - 김성 [자람의 기술 RE:GROW]",
-      "category": "국악",
-      "place": "서울남산국악당 크라운해태홀",
-      "guName": "중구",
-      "startDate": "2026-08-22",
-      "endDate": "2026-08-22",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sgtt.kr/program/detail/7314",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=667fead19660405e9feb5bfdb8be3a75&thumb=Y",
-      "organizer": "서울남산국악당",
-      "thema": ""
-    },
-    {
       "id": "[영등포문화재단] 영등포아트홀 상주단체 '서울발레시어터' [해설이 있는 고전발레]",
       "title": "[영등포문화재단] 영등포아트홀 상주단체 '서울발레시어터' [해설이 있는 고전발레]",
       "category": "무용",
@@ -4934,21 +5009,6 @@
       "link": "https://www.idfac.or.kr/bbs/board.php?bo_table=gallery_info&wr_id=292",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=89f6c0613bf24289a43eabec1ea78521&thumb=Y",
       "organizer": "동작문화재단",
-      "thema": ""
-    },
-    {
-      "id": "[서울시평생교육진흥원] 서울시민대학 모두의학교 캠퍼스 8월 모두공연장 페이퍼아트 뮤지컬 [종이아빠]",
-      "title": "[서울시평생교육진흥원] 서울시민대학 모두의학교 캠퍼스 8월 모두공연장 페이퍼아트 뮤지컬 [종이아빠]",
-      "category": "뮤지컬/오페라",
-      "place": "모두의학교 캠퍼스 1층 시민홀",
-      "guName": "금천구",
-      "startDate": "2026-08-22",
-      "endDate": "2026-08-22",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://buly.kr/D3gcSFG",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=9527ef162d0a4136a0360058822f67f7&thumb=Y",
-      "organizer": "서울시청",
       "thema": ""
     },
     {
@@ -4997,6 +5057,36 @@
       "thema": ""
     },
     {
+      "id": "[서울남산국악당] 2026 젊은국악 단장 - 김성 [자람의 기술 RE:GROW]",
+      "title": "[서울남산국악당] 2026 젊은국악 단장 - 김성 [자람의 기술 RE:GROW]",
+      "category": "국악",
+      "place": "서울남산국악당 크라운해태홀",
+      "guName": "중구",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-22",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sgtt.kr/program/detail/7314",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=667fead19660405e9feb5bfdb8be3a75&thumb=Y",
+      "organizer": "서울남산국악당",
+      "thema": ""
+    },
+    {
+      "id": "[서울시평생교육진흥원] 서울시민대학 모두의학교 캠퍼스 8월 모두공연장 페이퍼아트 뮤지컬 [종이아빠]",
+      "title": "[서울시평생교육진흥원] 서울시민대학 모두의학교 캠퍼스 8월 모두공연장 페이퍼아트 뮤지컬 [종이아빠]",
+      "category": "뮤지컬/오페라",
+      "place": "모두의학교 캠퍼스 1층 시민홀",
+      "guName": "금천구",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-22",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://buly.kr/D3gcSFG",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=9527ef162d0a4136a0360058822f67f7&thumb=Y",
+      "organizer": "서울시청",
+      "thema": ""
+    },
+    {
       "id": "뮤지컬 [안녕, 나의 웬수 - 서울]",
       "title": "뮤지컬 [안녕, 나의 웬수 - 서울]",
       "category": "뮤지컬/오페라",
@@ -5027,21 +5117,6 @@
       "thema": ""
     },
     {
-      "id": "작곡동인 원시인 [오늘의 음악 Ⅳ - 5인의 산조]",
-      "title": "작곡동인 원시인 [오늘의 음악 Ⅳ - 5인의 산조]",
-      "category": "국악",
-      "place": "서울돈화문국악당",
-      "guName": "종로구",
-      "startDate": "2026-08-23",
-      "endDate": "2026-08-23",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://sgtt.kr/program/detail/7221",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3a687d3deefc4787a32ef3d7916491e0&thumb=Y",
-      "organizer": "서울돈화문국악당",
-      "thema": ""
-    },
-    {
       "id": "[라율 영재&영아티스트] 안선율 플루트 독주회",
       "title": "[라율 영재&영아티스트] 안선율 플루트 독주회",
       "category": "클래식",
@@ -5054,6 +5129,21 @@
       "link": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=172625777&t=board",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=93bb2e4384e941d1ac9c052ca9be3149&thumb=Y",
       "organizer": "기타",
+      "thema": ""
+    },
+    {
+      "id": "작곡동인 원시인 [오늘의 음악 Ⅳ - 5인의 산조]",
+      "title": "작곡동인 원시인 [오늘의 음악 Ⅳ - 5인의 산조]",
+      "category": "국악",
+      "place": "서울돈화문국악당",
+      "guName": "종로구",
+      "startDate": "2026-08-23",
+      "endDate": "2026-08-23",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://sgtt.kr/program/detail/7221",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3a687d3deefc4787a32ef3d7916491e0&thumb=Y",
+      "organizer": "서울돈화문국악당",
       "thema": ""
     },
     {
@@ -5087,6 +5177,36 @@
       "thema": ""
     },
     {
+      "id": "[동작문화재단] 상도어울마당 아트홀 '아트 박스 콘서트' 8회차 [먼 곳에서 온 가까운 우리]",
+      "title": "[동작문화재단] 상도어울마당 아트홀 '아트 박스 콘서트' 8회차 [먼 곳에서 온 가까운 우리]",
+      "category": "콘서트",
+      "place": "상도어울마당 아트홀",
+      "guName": "동작구",
+      "startDate": "2026-08-26",
+      "endDate": "2026-08-26",
+      "dateRange": "",
+      "isFree": true,
+      "link": "https://www.dongjak.go.kr/yeyak/progrm/master/yeyak/view.do?prgSn=10280&tmplatSeCd=94&menuNo=1600010",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7169f4c99cba43b68dfe76c0a5489d77&thumb=Y",
+      "organizer": "동작문화재단",
+      "thema": ""
+    },
+    {
+      "id": "[서울돈화문국악당] 2026 국악플러그인(Gugak Plug-in) vol.3",
+      "title": "[서울돈화문국악당] 2026 국악플러그인(Gugak Plug-in) vol.3",
+      "category": "국악",
+      "place": "서울돈화문국악당",
+      "guName": "종로구",
+      "startDate": "2026-08-26",
+      "endDate": "2026-08-26",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sgtt.kr/program/detail/7303",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=56756a8884d2415ebdab7277653905a8&thumb=Y",
+      "organizer": "서울돈화문국악당",
+      "thema": ""
+    },
+    {
       "id": "[서울갤러리] 런치 스테이지 [하모니시스트 이한결]",
       "title": "[서울갤러리] 런치 스테이지 [하모니시스트 이한결]",
       "category": "콘서트",
@@ -5117,36 +5237,6 @@
       "thema": ""
     },
     {
-      "id": "[서울돈화문국악당] 2026 국악플러그인(Gugak Plug-in) vol.3",
-      "title": "[서울돈화문국악당] 2026 국악플러그인(Gugak Plug-in) vol.3",
-      "category": "국악",
-      "place": "서울돈화문국악당",
-      "guName": "종로구",
-      "startDate": "2026-08-26",
-      "endDate": "2026-08-26",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sgtt.kr/program/detail/7303",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=56756a8884d2415ebdab7277653905a8&thumb=Y",
-      "organizer": "서울돈화문국악당",
-      "thema": ""
-    },
-    {
-      "id": "[동작문화재단] 상도어울마당 아트홀 '아트 박스 콘서트' 8회차 [먼 곳에서 온 가까운 우리]",
-      "title": "[동작문화재단] 상도어울마당 아트홀 '아트 박스 콘서트' 8회차 [먼 곳에서 온 가까운 우리]",
-      "category": "콘서트",
-      "place": "상도어울마당 아트홀",
-      "guName": "동작구",
-      "startDate": "2026-08-26",
-      "endDate": "2026-08-26",
-      "dateRange": "",
-      "isFree": true,
-      "link": "https://www.dongjak.go.kr/yeyak/progrm/master/yeyak/view.do?prgSn=10280&tmplatSeCd=94&menuNo=1600010",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7169f4c99cba43b68dfe76c0a5489d77&thumb=Y",
-      "organizer": "동작문화재단",
-      "thema": ""
-    },
-    {
       "id": "tour-1073801",
       "title": "영양고추 H.O.T 페스티벌",
       "category": "축제",
@@ -5157,7 +5247,7 @@
       "dateRange": "2026.08.27 ~ 2026.08.29",
       "isFree": true,
       "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/11/4091811_image2_1.jpg",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/15/4091815_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -5192,21 +5282,6 @@
       "thema": ""
     },
     {
-      "id": "[서초문화재단] 모차르트 피아노 협주곡 전곡 시리즈 IX",
-      "title": "[서초문화재단] 모차르트 피아노 협주곡 전곡 시리즈 IX",
-      "category": "클래식",
-      "place": "심산기념문화센터 2층 반포심산아트홀",
-      "guName": "서초구",
-      "startDate": "2026-08-27",
-      "endDate": "2026-08-27",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=951",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=8de0d33cb8714ee5bd17df3c3e807f77&thumb=Y",
-      "organizer": "서초문화재단",
-      "thema": ""
-    },
-    {
       "id": "[서울역사박물관] 제5회 서울역사박물관 배리어프리영화관 8월 상영 [미나리]",
       "title": "[서울역사박물관] 제5회 서울역사박물관 배리어프리영화관 8월 상영 [미나리]",
       "category": "영화",
@@ -5219,6 +5294,21 @@
       "link": "https://museum.seoul.go.kr/www/board/NR_boardView.do?actionMethod=&sortName=&searchVal=&actionUri=&bbsCd=1018&endDt=&searchKey=TITLE___1002&sso=ok&regPwd=N&pageType=&sortOrder=&startDt=&rssYn=&currentPage=&seq=20260723181442908&ctgCd=&showSummaryYn=N",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2c3faec3fc2845619d14914cace7ed93&thumb=Y",
       "organizer": "서울역사박물관",
+      "thema": ""
+    },
+    {
+      "id": "[서초문화재단] 모차르트 피아노 협주곡 전곡 시리즈 IX",
+      "title": "[서초문화재단] 모차르트 피아노 협주곡 전곡 시리즈 IX",
+      "category": "클래식",
+      "place": "심산기념문화센터 2층 반포심산아트홀",
+      "guName": "서초구",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-27",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=951",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=8de0d33cb8714ee5bd17df3c3e807f77&thumb=Y",
+      "organizer": "서초문화재단",
       "thema": ""
     },
     {
@@ -5372,6 +5462,21 @@
       "thema": ""
     },
     {
+      "id": "[강북문화재단] 명품 어린이 연극 [강아지똥]",
+      "title": "[강북문화재단] 명품 어린이 연극 [강아지똥]",
+      "category": "연극",
+      "place": "강북문화예술회관 강북소나무홀",
+      "guName": "강북구",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-29",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.gbcf.or.kr/load.asp?subPage=110.view&cate=A&idx=437",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ff09f9bd3e8a4625991cf82d3417c04d&thumb=Y",
+      "organizer": "강북문화재단",
+      "thema": ""
+    },
+    {
       "id": "[서울갤러리] 런치 스테이지 [싱어송라이터 헤디]",
       "title": "[서울갤러리] 런치 스테이지 [싱어송라이터 헤디]",
       "category": "콘서트",
@@ -5399,21 +5504,6 @@
       "link": "https://www.sgtt.kr/program/detail/7315",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b1d31a236c834cae87ab5234d5c33f00&thumb=Y",
       "organizer": "서울남산국악당",
-      "thema": ""
-    },
-    {
-      "id": "[강북문화재단] 명품 어린이 연극 [강아지똥]",
-      "title": "[강북문화재단] 명품 어린이 연극 [강아지똥]",
-      "category": "연극",
-      "place": "강북문화예술회관 강북소나무홀",
-      "guName": "강북구",
-      "startDate": "2026-08-29",
-      "endDate": "2026-08-29",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.gbcf.or.kr/load.asp?subPage=110.view&cate=A&idx=437",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ff09f9bd3e8a4625991cf82d3417c04d&thumb=Y",
-      "organizer": "강북문화재단",
       "thema": ""
     },
     {
@@ -5492,6 +5582,21 @@
       "thema": ""
     },
     {
+      "id": "국립극장 기획 [옹옹옹]",
+      "title": "국립극장 기획 [옹옹옹]",
+      "category": "연극",
+      "place": "국립극장 달오름극장",
+      "guName": "중구",
+      "startDate": "2026-09-03",
+      "endDate": "2026-09-06",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.ntok.go.kr/ntok/pm/prfmng/performanceDetail.do?mi=21008&perfId=267172",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=9190db742c0f46ed93a633f65eb0b313&thumb=Y",
+      "organizer": "국립극장",
+      "thema": ""
+    },
+    {
       "id": "수림뉴웨이브 2026 - 이준 [Golden Hour]",
       "title": "수림뉴웨이브 2026 - 이준 [Golden Hour]",
       "category": "국악",
@@ -5547,7 +5652,7 @@
       "dateRange": "2026.09.04 ~ 2026.09.06",
       "isFree": true,
       "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/88/4092588_image2_1.JPG",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/90/4092590_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -5638,6 +5743,21 @@
       "isFree": true,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/88/4075188_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "tour-4093222",
+      "title": "2026 구미 로컬푸드 페스타",
+      "category": "축제",
+      "place": "서울특별시 중구 을지로 지하12 (을지로1가)",
+      "guName": "",
+      "startDate": "2026-09-09",
+      "endDate": "2026-09-10",
+      "dateRange": "2026.09.09 ~ 2026.09.10",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/30/4093830_image2_1.png",
       "organizer": "",
       "thema": ""
     },
@@ -5912,6 +6032,21 @@
       "thema": ""
     },
     {
+      "id": "[문학주간2026] 곁눈질",
+      "title": "[문학주간2026] 곁눈질",
+      "category": "축제-문화/예술",
+      "place": "대학로 마로니에 공원 일대",
+      "guName": "종로구",
+      "startDate": "2026-09-16",
+      "endDate": "2026-09-20",
+      "dateRange": "",
+      "isFree": true,
+      "link": "http://munhakweek.or.kr",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cb8e4af0d28448b1b6ec5891a8a5daad&thumb=Y",
+      "organizer": "기타",
+      "thema": ""
+    },
+    {
       "id": "[마포문화재단] 2026 M 아티스트 선율 피아노 리사이틀 Ⅱ",
       "title": "[마포문화재단] 2026 M 아티스트 선율 피아노 리사이틀 Ⅱ",
       "category": "클래식",
@@ -5924,6 +6059,21 @@
       "link": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2625&page=1",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=85fc1df81a114f9b90e3793fc465f23c&thumb=Y",
       "organizer": "마포문화재단",
+      "thema": ""
+    },
+    {
+      "id": "tour-2867141",
+      "title": "2026 경북 K-스토리 페스티벌",
+      "category": "축제",
+      "place": "경상북도 안동시 축제장길 66 (안흥동)",
+      "guName": "",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-18",
+      "dateRange": "2026.09.17 ~ 2026.09.18",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/35/4093235_image2_1.jpg",
+      "organizer": "",
       "thema": ""
     },
     {
@@ -6028,6 +6178,21 @@
       "isFree": true,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/32/4041232_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "tour-1390147",
+      "title": "안양춤축제",
+      "category": "축제",
+      "place": "경기도 안양시 동안구 관평로 149 중앙공원관리부속",
+      "guName": "",
+      "startDate": "2026-09-18",
+      "endDate": "2026-09-20",
+      "dateRange": "2026.09.18 ~ 2026.09.20",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/88/4093188_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -6193,21 +6358,6 @@
       "isFree": true,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/4076246_image2_1.jpg",
-      "organizer": "",
-      "thema": ""
-    },
-    {
-      "id": "tour-141105",
-      "title": "경남고성공룡세계엑스포",
-      "category": "축제",
-      "place": "경상남도 고성군 당항만로 1116",
-      "guName": "",
-      "startDate": "2026-09-22",
-      "endDate": "2026-11-01",
-      "dateRange": "2026.09.22 ~ 2026.11.01",
-      "isFree": false,
-      "link": "",
-      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/32/4084832_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
@@ -7127,21 +7277,6 @@
       "thema": ""
     },
     {
-      "id": "[꿈의숲아트센터] 꿈의숲 마티네 콘서트 [벨에포크 아트&뮤직] 시리즈3",
-      "title": "[꿈의숲아트센터] 꿈의숲 마티네 콘서트 [벨에포크 아트&뮤직] 시리즈3",
-      "category": "콘서트",
-      "place": "북서울꿈의숲 상상톡톡미술관",
-      "guName": "강북구",
-      "startDate": "2026-10-28",
-      "endDate": "2026-10-28",
-      "dateRange": "",
-      "isFree": false,
-      "link": "https://www.sejongpac.or.kr/dfac/dfacPerformance/dfacPerformance/performTicket.do?performIdx=37104&menuNo=1200007",
-      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=75a26c72552b4b38acca7be54e15cf8b&thumb=Y",
-      "organizer": "세종문화회관",
-      "thema": ""
-    },
-    {
       "id": "[마포문화재단] 제11회 M 클래식 축제 [뮤라벨 콘서트]",
       "title": "[마포문화재단] 제11회 M 클래식 축제 [뮤라벨 콘서트]",
       "category": "클래식",
@@ -7154,6 +7289,21 @@
       "link": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2675&page=1",
       "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d0069ec8a15440cf83bea9a06775367a&thumb=Y",
       "organizer": "마포문화재단",
+      "thema": ""
+    },
+    {
+      "id": "[꿈의숲아트센터] 꿈의숲 마티네 콘서트 [벨에포크 아트&뮤직] 시리즈3",
+      "title": "[꿈의숲아트센터] 꿈의숲 마티네 콘서트 [벨에포크 아트&뮤직] 시리즈3",
+      "category": "콘서트",
+      "place": "북서울꿈의숲 상상톡톡미술관",
+      "guName": "강북구",
+      "startDate": "2026-10-28",
+      "endDate": "2026-10-28",
+      "dateRange": "",
+      "isFree": false,
+      "link": "https://www.sejongpac.or.kr/dfac/dfacPerformance/dfacPerformance/performTicket.do?performIdx=37104&menuNo=1200007",
+      "imageUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=75a26c72552b4b38acca7be54e15cf8b&thumb=Y",
+      "organizer": "세종문화회관",
       "thema": ""
     },
     {
@@ -7198,6 +7348,21 @@
       "isFree": false,
       "link": "",
       "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/98/3533798_image2_1.jpg",
+      "organizer": "",
+      "thema": ""
+    },
+    {
+      "id": "tour-3492576",
+      "title": "부산일러스트레이션페어V.7",
+      "category": "축제",
+      "place": "부산광역시 해운대구 APEC로 55 (우동)",
+      "guName": "",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-08",
+      "dateRange": "2026.11.06 ~ 2026.11.08",
+      "isFree": true,
+      "link": "",
+      "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/80/4093280_image2_1.jpg",
       "organizer": "",
       "thema": ""
     },
