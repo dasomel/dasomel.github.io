@@ -18,7 +18,8 @@ Actions, AI 요약(선택)은 Claude 구독(Cowork) 스케줄 태스크로 처�
 ```bash
 npm run digest:collect          # RSS 수집 → JSON
 npm run digest                  # JSON → 마크다운 (원문 발췌)
-npm run digest -- --enrich      # JSON → 마크다운 (AI 필드 우선, 없으면 발췌 폴백)
+npm run digest -- --enrich      # JSON → 마크다운 (AI 요약 우선, 없으면 번역/발췌 폴백)
+npm run digest:enrich-publish   # 검증 → 재생성 → 커밋 → push (멱등, 보강·번역 공용)
 npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
 ```
 
@@ -32,10 +33,28 @@ npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
 
 [Cowork 스케줄 태스크 / 선택 · Phase 2]
   1. .digest-data/YYYY-MM-DD.json 읽기
-  2. Claude가 각 기사에 summaryKo/summaryEn/insightKo/insightEn 추가
+  2. Claude가 각 기사에 필드 추가 — 아래 둘 중 하나
+       보강: summaryKo/summaryEn/insightKo/insightEn  (요약 + 인사이트)
+       번역: titleKo/excerptKo                        (제목·발췌문만 옮김)
   3. JSON 덮어쓰기
-  4. npm run digest -- --enrich → 보강된 마크다운 재생성
+  4. npm run digest:enrich-publish → 재생성 + 커밋 + push (멱등)
 ```
+
+### 두 계층 — 보강과 번역
+
+수집 소스가 전부 영어라, **아무것도 안 하면 한국어 포스트도 제목·본문이 영어**로
+나간다. fallback 으로 발행된 날의 글이 그 상태다.
+
+| | 채우는 필드 | 출력량 | 성격 |
+|---|---|---|---|
+| **보강** | `summaryKo` `summaryEn` `insightKo` `insightEn` | 기사당 5-7문장 ×2 + 1문장 ×2 | 요약 + "왜 중요한가" |
+| **번역** | `titleKo` `excerptKo` | 기사당 제목 1 + 발췌 1-2문장 | 원문을 옮기기만 |
+
+번역은 출력량이 보강의 대략 1/10 이라 **보강 창(약 47분)** 안에 훨씬 안정적으로
+끝나고, 요약과 달리 원문에 없는 사실이 끼어들 여지가 거의 없다. 여력이 있으면
+보강을 우선하고, 번역은 **원문 그대로 나가는 것을 막는 하한선**으로 쓴다.
+
+둘은 배타적이지 않다 — 같이 채우면 본문은 요약이 이기고 제목은 번역본을 쓴다.
 
 ## JSON 스키마 — `.digest-data/YYYY-MM-DD.json`
 
@@ -54,7 +73,11 @@ npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
       "date": "2026-06-14T15:00:00.000Z",
       "excerpt": "RSS 발췌 1-2문장 (없으면 \"\")",
 
-      // Cowork/Claude가 나중에 추가 (선택) — --enrich 시 우선 사용
+      // Cowork/Claude가 나중에 추가 (선택) — 번역 계층. 플래그 불필요.
+      "titleKo": "한국어로 옮긴 제목",
+      "excerptKo": "한국어로 옮긴 발췌문 (원문이 잘려 있으면 잘린 채로)",
+
+      // Cowork/Claude가 나중에 추가 (선택) — 보강 계층. --enrich 시 우선 사용
       "summaryKo": "한국어 요약 2-3문장",
       "summaryEn": "English summary, 2-3 sentences",
       "insightKo": "왜 중요한가 (Cloud/DevOps 관점) 1문장",
@@ -64,11 +87,25 @@ npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
 }
 ```
 
-### 폴백 규칙 (`--enrich`)
+### 폴백 규칙
 
-- `summaryKo`/`summaryEn`가 있으면 본문으로 사용, 없으면 `excerpt`로 폴백.
+필드별로 독립 폴백한다. 일부 기사만 채워도 안전하다.
+
+| 대상 | 우선순위 |
+|---|---|
+| 한국어 본문 | `summaryKo`(`--enrich` 시) → `excerptKo` → `excerpt` |
+| 영어 본문 | `summaryEn`(`--enrich` 시) → `excerpt` |
+| 한국어 제목 | `titleKo` → `title` |
+| 영어 제목 | `title` |
+
+- `titleKo`/`excerptKo`는 **플래그 없이 항상** 사용된다. 없으면 원문으로 폴백하므로
+  쓰는 쪽이 언제나 낫고, 별도 모드를 두면 틀릴 여지만 는다.
 - `insightKo`/`insightEn`가 있으면 `> 💡 왜 중요한가` 블록으로 표시, 없으면 생략.
+  (`--enrich` 시에만)
 - 한 기사가 summary/excerpt 모두 없으면 "⚡ 빠른 소식" 불릿으로만 노출.
+- **푸터는 실제로 렌더된 계층만 주장한다.** 요약이 하나도 안 들어갔는데 "AI가
+  요약했습니다"라고 쓰지 않는다 — 번역만 됐으면 번역했다고, 아무것도 없으면
+  발췌를 그대로 가져왔다고 쓴다.
 
 ## Cowork 스케줄 태스크 작성 예시 (Phase 2)
 
@@ -78,8 +115,12 @@ npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
 > 실행하고 변경된 포스트를 커밋·PR로 올린다. (요약은 Cloud/DevOps
 > 엔지니어 관점, 한국어/영어 각각.)
 
-**바로 사용할 수 있는 전체 프롬프트 템플릿: [`scripts/digest-enrich-prompt.md`](../scripts/digest-enrich-prompt.md)**
-— Cowork 스케줄 태스크에 이 파일 내용을 그대로 붙여 넣으면 된다.
+**바로 사용할 수 있는 전체 프롬프트 템플릿** — Cowork 스케줄 태스크에 내용을 그대로 붙여 넣는다.
+
+| 계층 | 프롬프트 |
+|---|---|
+| 보강 (요약 + 인사이트) | [`scripts/digest-enrich-prompt.md`](../scripts/digest-enrich-prompt.md) |
+| 번역 (제목·발췌문만) | [`scripts/digest-translate-prompt.md`](../scripts/digest-translate-prompt.md) |
 
 ## 카테고리 매핑 (소스 기반, AI 불필요)
 

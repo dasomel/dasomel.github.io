@@ -20,9 +20,20 @@
  * summaries and "why it matters" insights — all on the Claude subscription,
  * no extra API cost.
  *
- * Optional per-article enrichment fields (see collect-feeds.mjs for the full
- * schema): summaryKo, summaryEn, insightKo, insightEn — all strings, all
- * optional. Missing fields gracefully fall back to the RSS excerpt.
+ * There is a cheaper middle tier: translation. Every source feed is English, so
+ * without it the *Korean* post shows English headings and English excerpts —
+ * which is what a fallback-published digest looked like. titleKo/excerptKo hold
+ * a plain translation of the original title and RSS excerpt (no summarizing, no
+ * invention), and the Korean document prefers them. They need no flag: the
+ * per-field fallback below makes using them strictly better than not.
+ *
+ * Precedence, Korean document:  summaryKo (--enrich only) -> excerptKo -> excerpt
+ * Precedence, English document: summaryEn (--enrich only) -> excerpt
+ * Heading, Korean document:     titleKo -> title
+ *
+ * Optional per-article fields (see collect-feeds.mjs for the full schema):
+ * titleKo, excerptKo, summaryKo, summaryEn, insightKo, insightEn — all strings,
+ * all optional. Missing fields gracefully fall back to the original English.
  *
  * Usage:
  *   node scripts/generate-daily-digest.mjs                 # today (KST), excerpts
@@ -92,34 +103,60 @@ function escapeMdxBraces(text) {
 
 function buildMarkdown(lang, { date, articles }, enrich = false) {
   const isEn = lang === 'en';
+
+  const clean = (v) => (v && String(v).trim() ? escapeMdxBraces(String(v).trim()) : '');
+
+  // Body text. Korean walks summary -> translated excerpt -> original excerpt;
+  // English has no translation tier because every source is already English.
+  const summaryOf = (a) => {
+    if (enrich) {
+      const s = clean(isEn ? a.summaryEn : a.summaryKo);
+      if (s) return s;
+    }
+    if (!isEn) {
+      const t = clean(a.excerptKo);
+      if (t) return t;
+    }
+    return clean(a.excerpt);
+  };
+
+  // Headings. Titles were previously interpolated raw; a title containing a
+  // brace pair would break the MDX build, so they go through the same escape.
+  const titleOf = (a) => (isEn ? '' : clean(a.titleKo)) || clean(a.title);
+
+  // Which tier actually produced this document decides what the footer may claim.
+  // Checked against rendered output, not the raw JSON: a partial run must not
+  // let the footer promise more than the page delivers.
+  const usedSummary =
+    enrich && articles.some((a) => clean(isEn ? a.summaryEn : a.summaryKo));
+  const usedTranslation =
+    !isEn && articles.some((a) => clean(a.titleKo) || clean(a.excerptKo));
+
+  const footer = (() => {
+    if (usedSummary) {
+      return isEn
+        ? '_This digest was collected from RSS feeds and summarized by AI (Claude). See the original links for full details._'
+        : '_이 다이제스트는 RSS 피드에서 수집한 뒤 AI(Claude)가 요약·정리했습니다. 자세한 내용은 원문 링크를 확인하세요._';
+    }
+    if (usedTranslation) {
+      // Say plainly that this is a translated excerpt, not a summary — the text
+      // is as short as the source excerpt and stops where the excerpt stops.
+      return '_이 다이제스트는 RSS 피드에서 자동 수집한 뒤 제목과 발췌문을 AI(Claude)가 번역했습니다. 요약이 아니라 원문 발췌를 옮긴 것이므로, 자세한 내용은 원문 링크를 확인하세요._';
+    }
+    return isEn
+      ? '_This digest was automatically collected from RSS feeds. Excerpts are taken verbatim from each source — see the original links for full details._'
+      : '_이 다이제스트는 RSS 피드에서 자동 수집되었습니다. 발췌문은 각 피드 원문에서 그대로 가져온 것으로, 자세한 내용은 원문 링크를 확인하세요._';
+  })();
+
   const L = {
     headline: isEn ? '🔥 Top Story' : '🔥 오늘의 주요 소식',
     quick: isEn ? '⚡ Quick News' : '⚡ 빠른 소식',
     readMore: isEn ? 'Read more' : '원문 보기',
     why: isEn ? 'Why it matters' : '왜 중요한가',
-    footer: enrich
-      ? isEn
-        ? '_This digest was collected from RSS feeds and summarized by AI (Claude). See the original links for full details._'
-        : '_이 다이제스트는 RSS 피드에서 수집한 뒤 AI(Claude)가 요약·정리했습니다. 자세한 내용은 원문 링크를 확인하세요._'
-      : isEn
-        ? '_This digest was automatically collected from RSS feeds. Excerpts are taken verbatim from each source — see the original links for full details._'
-        : '_이 다이제스트는 RSS 피드에서 자동 수집되었습니다. 발췌문은 각 피드 원문에서 그대로 가져온 것으로, 자세한 내용은 원문 링크를 확인하세요._',
-  };
-
-  // Body text: prefer the AI summary when enriching, else fall back to excerpt.
-  const summaryOf = (a) => {
-    if (enrich) {
-      const s = isEn ? a.summaryEn : a.summaryKo;
-      if (s && String(s).trim()) return escapeMdxBraces(String(s).trim());
-    }
-    return a.excerpt ? escapeMdxBraces(String(a.excerpt).trim()) : '';
+    footer,
   };
   // Insight only appears in enrich mode and only when the field is present.
-  const insightOf = (a) => {
-    if (!enrich) return '';
-    const s = isEn ? a.insightEn : a.insightKo;
-    return s && String(s).trim() ? escapeMdxBraces(String(s).trim()) : '';
-  };
+  const insightOf = (a) => (enrich ? clean(isEn ? a.insightEn : a.insightKo) : '');
 
   const top = articles[0];
   const rest = articles.slice(1);
@@ -128,7 +165,7 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
 
   // Headline / top story
   lines.push(`## ${L.headline}`, '');
-  lines.push(`### ${top.title}`, '');
+  lines.push(`### ${titleOf(top)}`, '');
   const topBody = summaryOf(top);
   if (topBody) lines.push(topBody, '');
   const topInsight = insightOf(top);
@@ -142,7 +179,7 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
     if (inCat.length === 0) continue;
     lines.push('---', '', `## ${categoryLabel(cat.key, lang)}`, '');
     for (const a of inCat) {
-      lines.push(`### [${a.title}](${a.link})`, '', `_${a.source}_`, '');
+      lines.push(`### [${titleOf(a)}](${a.link})`, '', `_${a.source}_`, '');
       lines.push(summaryOf(a), '');
       const ins = insightOf(a);
       if (ins) lines.push(`> 💡 ${ins}`, '');
@@ -154,7 +191,7 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
   if (briefs.length) {
     lines.push('---', '', `## ${L.quick}`, '');
     for (const a of briefs) {
-      lines.push(`- [${a.title}](${a.link}) — _${a.source}_`);
+      lines.push(`- [${titleOf(a)}](${a.link}) — _${a.source}_`);
     }
     lines.push('');
   }
@@ -198,18 +235,20 @@ function main() {
   fs.writeFileSync(koPath, buildMarkdown('ko', { date, articles }, enrich), 'utf-8');
   fs.writeFileSync(enPath, buildMarkdown('en', { date, articles }, enrich), 'utf-8');
 
-  // In enrich mode, report how many articles actually carried AI fields.
+  // Report both tiers separately. A run that translated everything but summarized
+  // nothing is a good outcome, not a failed enrichment — the counts must be able
+  // to say so, or a healthy translation-only day reads as "0 fields, broken".
+  const translated = articles.filter((a) => a.titleKo || a.excerptKo).length;
   const enrichedCount = enrich
     ? articles.filter((a) => a.summaryKo || a.summaryEn || a.insightKo || a.insightEn).length
     : 0;
 
   log(`wrote ${path.relative(process.cwd(), koPath)}`);
   log(`wrote ${path.relative(process.cwd(), enPath)}`);
-  log(
-    enrich
-      ? `done: ${articles.length} article(s), ${enrichedCount} with AI fields`
-      : `done: ${articles.length} article(s)`,
-  );
+  const parts = [`${articles.length} article(s)`];
+  if (translated) parts.push(`${translated} translated`);
+  if (enrich) parts.push(`${enrichedCount} with AI fields`);
+  log(`done: ${parts.join(', ')}`);
 }
 
 main();

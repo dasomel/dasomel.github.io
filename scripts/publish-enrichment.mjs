@@ -28,7 +28,6 @@
  */
 
 import fs from 'node:fs';
-import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const argv = process.argv.slice(2);
@@ -73,21 +72,36 @@ if (!fs.existsSync(DATA)) {
 }
 const data = JSON.parse(fs.readFileSync(DATA, 'utf-8'));
 const articles = data.articles ?? [];
+// Two tiers are publishable. Summary is the full enrichment; translation alone
+// is the cheap tier that at least makes the Korean post Korean. Either is worth
+// committing — gating on summary only would throw away a good translation run.
 const enriched = articles.filter((a) => a.summaryKo || a.summaryEn);
+const translated = articles.filter((a) => a.titleKo || a.excerptKo);
 
 if (articles.length === 0) die(`${DATA} 에 기사가 없다.`);
-if (enriched.length === 0) {
+if (enriched.length === 0 && translated.length === 0) {
   die(
-    `보강 필드(summaryKo/summaryEn)가 하나도 없다 — 보강을 먼저 끝내라.\n` +
-      `  보강 없는 발행은 digest-fallback 이 알아서 한다. 이 스크립트가 할 일이 아니다.`
+    `보강 필드(summaryKo/summaryEn)도 번역 필드(titleKo/excerptKo)도 하나도 없다 — 먼저 끝내라.\n` +
+      `  아무것도 없는 발행은 digest-fallback 이 알아서 한다. 이 스크립트가 할 일이 아니다.`
   );
 }
-if (enriched.length < articles.length) {
-  // Partial enrichment is publishable — generate-daily-digest falls back to the
-  // raw excerpt per field — but it is nearly always a truncated run, so say so.
-  log(`⚠ 부분 보강: ${enriched.length}/${articles.length} 건만 보강됨 (나머지는 발췌문으로 나간다)`);
-} else {
-  log(`보강 확인: ${enriched.length}/${articles.length} 건`);
+
+// The commit message must name the tier that actually ran — a translation-only
+// day labelled "AI 요약 보강" makes the git log lie about what is in the post.
+const COMMIT_MSG =
+  enriched.length > 0 ? `✨ AI 요약 보강 - ${DATE}` : `🌐 제목·발췌문 번역 - ${DATE}`;
+for (const [label, done] of [
+  ['번역', translated.length],
+  ['보강', enriched.length],
+]) {
+  if (done === 0) continue;
+  // Partial coverage is publishable — generate-daily-digest falls back per field —
+  // but it is nearly always a truncated run, so say so.
+  if (done < articles.length) {
+    log(`⚠ 부분 ${label}: ${done}/${articles.length} 건 (나머지는 원문 그대로 나간다)`);
+  } else {
+    log(`${label} 확인: ${done}/${articles.length} 건`);
+  }
 }
 
 // --- 3. Regenerate markdown from the (possibly updated) JSON ---------------
@@ -107,7 +121,7 @@ if (missing.length) die(`생성물이 없다: ${missing.join(', ')}\n  마크다
 
 if (DRY) {
   log(`\n[dry run] 커밋 대상: ${paths.join(', ')}`);
-  log(`[dry run] 커밋 메시지: "✨ AI 요약 보강 - ${DATE}"`);
+  log(`[dry run] 커밋 메시지: "${COMMIT_MSG}"`);
   log(`[dry run] push: origin ${BRANCH}`);
   process.exit(0);
 }
@@ -117,7 +131,7 @@ const staged = git('diff', '--cached', '--name-only');
 
 if (staged) {
   log(`커밋: ${staged.split('\n').join(', ')}`);
-  execFileSync('git', ['commit', '-m', `✨ AI 요약 보강 - ${DATE}`], { stdio: 'inherit' });
+  execFileSync('git', ['commit', '-m', COMMIT_MSG], { stdio: 'inherit' });
 } else {
   log('커밋할 변경 없음 — 이전 실행에서 이미 커밋됨.');
 }
