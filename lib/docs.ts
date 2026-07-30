@@ -4,7 +4,8 @@ import type { Doc } from './types';
  * Groups docs by their `project` field, preserving the order they arrive in.
  * Callers pass the already order-sorted output of getDocs(), so both the group
  * sequence and each group's contents follow the frontmatter `order` bands
- * (K-PaaS Lite 1-99, Narwhal 101-107, Narwhal Portal 201-204).
+ * (K-PaaS Lite 1-99, Narwhal 101-108, Narwhal Portal 201-203,
+ * Kube-Ready-Box 301-303, NFS Quota Agent 401-403, KubeMetal 501-503).
  */
 export function groupDocsByProject(docs: Doc[]): [string, Doc[]][] {
   const groups = new Map<string, Doc[]>();
