@@ -1,0 +1,191 @@
+{
+  "date": "2026-07-31",
+  "generatedAt": "2026-07-30T22:44:28.464Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Science One Framework: A verifiable autonomous research framework via Chain-of-Evidence",
+      "link": "https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/",
+      "date": "2026-07-30T20:36:36.000Z",
+      "excerpt": "General Science"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why your company should (try to) build its own AI SRE",
+      "link": "https://thenewstack.io/ai-sre-root-cause-analysis/",
+      "date": "2026-07-30T20:30:56.000Z",
+      "excerpt": "Companies ship more code today than ever, thanks to agentic coding tools. For product teams, this accelerated pace of development"
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "GenRec: Towards LLM-Native Recommendation at Netflix",
+      "link": "https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3?source=rss----2615bd06b42e---4",
+      "date": "2026-07-30T20:10:15.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Future of Agentic AI Depends on Openness and Trust. That’s Why Docker Is Joining Nvidia’s Open Secure AI Alliance.",
+      "link": "https://www.docker.com/blog/docker-joins-nvidia-open-secure-ai-alliance/",
+      "date": "2026-07-30T19:31:47.000Z",
+      "excerpt": "Docker joins NVIDIA's Open Secure AI Alliance to help build the security, governance, and trust frameworks that agentic AI systems demand."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Chinese AI competitors may have forced OpenAI’s hand on pricing",
+      "link": "https://thenewstack.io/gpt-5-6-api-price-cuts/",
+      "date": "2026-07-30T19:28:02.000Z",
+      "excerpt": "OpenAI has lowered API prices for two GPT-5.6 models only three weeks after their launch."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI-generated software is forcing yet another platform rethink",
+      "link": "https://thenewstack.io/ai-code-security-platforms/",
+      "date": "2026-07-30T19:09:47.000Z",
+      "excerpt": "“Raise your hand if your team is actively using AI to write and review code. Now keep it up if"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Stacked sessions and pull requests in the GitHub Copilot app",
+      "link": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/",
+      "date": "2026-07-30T17:30:24.000Z",
+      "excerpt": "Learn how I modernized an old codebase of mine using stacked sessions and pull requests in the GitHub Copilot app."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Do more with less: How GKE can reduce your cost per agent by 75%",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/reduce-your-agents-costs-with-gke-agent-sandbox/",
+      "date": "2026-07-30T16:00:00.000Z",
+      "excerpt": "In today’s agentic era, modern cloud applications are evolving from a set of passive tools to fleets of autonomous digital workers that reason, plan, and take action across a wide range of tasks."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "AlloyDB adds group authentication to secure enterprise scale and AI agents",
+      "link": "https://cloud.google.com/blog/products/databases/alloydb-adds-group-authentication-to-secure-enterprise-scale-and-ai-agents/",
+      "date": "2026-07-30T16:00:00.000Z",
+      "excerpt": "Database security traditionally relies on a fragile balance between the granular control developers need and the administrative overhead of managing thousands of individual database passwords."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "GPU Management: Why Idle GPUs Are the New Grounded Aircraft",
+      "link": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+      "date": "2026-07-30T15:09:09.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "How to build a trust platform for your agent with Grafana Agent Observability",
+      "link": "https://grafana.com/blog/how-to-build-a-trust-platform-for-your-agent-with-grafana-agent-observability/",
+      "date": "2026-07-30T15:06:46.000Z",
+      "excerpt": "Observing fast-growing agentic workloads is no small feat, especially if you try to build your own monitoring stack or rely solely on tools built for a time before LLMs. At Grafana Labs, we know this all too well."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Batten Down Your Packages: Mitigation Guidance for Supply Chain Compromise",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/mitigation-guidance-for-supply-chain-compromise/",
+      "date": "2026-07-30T14:00:00.000Z",
+      "excerpt": "Written by: Kelli Vanderlee, Stuart Carrera For years, the cybersecurity industry's understanding of software supply chain compromise has been anchored by a few watershed events, including Russian cyber espionage actor ICE RELIC’s (formerly known as APT29) 2020 compromise of SolarWinds and North Korean cyber espionage…"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Dogfooding at scale: migrating cdnjs to Cloudflare’s Developer Platform",
+      "link": "https://blog.cloudflare.com/cdnjs-dev-platform-migration/",
+      "date": "2026-07-30T13:00:00.000Z",
+      "excerpt": "We moved cdnjs, serving 9 billion requests a day, entirely onto Cloudflare's Developer Platform. That means we’re running one of the Internet's busiest open-source CDNs on our own building blocks, and we pushed Workflows and Workers limits higher for everyone."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Runtime Supply Chain Verification using the Node Resource Interface (NRI)",
+      "link": "https://www.cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri/",
+      "date": "2026-07-30T11:09:11.000Z",
+      "excerpt": "The widely used container supply chain verification tools today operate at the Kubernetes API layer as admission webhooks (such as Kyverno, OPA Gatekeeper, and Sigstore Policy Controller). They intercept pod creation, check signatures and attestations, and."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Advancing the price-performance frontier with GPT-5.6",
+      "link": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "date": "2026-07-30T10:00:00.000Z",
+      "excerpt": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "LLM은 똑똑한데, 왜 우리 회사 일은 모를까",
+      "link": "https://toss.tech/article/llm_context_topic",
+      "date": "2026-07-30T05:24:00.000Z",
+      "excerpt": "문서 · 코드 · 사내 메신저에 흩어진 정보를, 믿고 쓸 수 있는 컨텍스트로 만드는 여정"
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "토스의 디바이스 팜 만들기",
+      "link": "https://toss.tech/article/device-farm-nebula",
+      "date": "2026-07-30T02:24:00.000Z",
+      "excerpt": "팀마다 맥북에 폰을 꽂던 시절을 끝내고, 실기기를 API 호출 한 번으로 여는 플랫폼을 만들며"
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "AI 에이전트를 위한 Android CLI: 대규모 모바일 개발 환경에 적용하기",
+      "link": "https://techblog.lycorp.co.jp/ko/android-cli-for-ai-agents-at-scale",
+      "date": "2026-07-30T02:00:00.000Z",
+      "excerpt": "LINE Android 앱은 수백 명의 개발자가 하나의 Git 저장소에서 함께 만들어 가는, 수백 개의 Gradle 모듈로 구성된 대규모 Android 앱입니다. LINE Andr."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Introducing the SysQL Skill: Ask your security graph anything.",
+      "link": "https://webflow.sysdig.com/blog/introducing-the-sysql-skill-ask-your-security-graph-anything",
+      "date": "2026-07-30T00:00:00.000Z",
+      "excerpt": "The SysQL Skill brings Sysdig's security graph into Claude Code, so you can ask any question in plain language and get back a validated query, real blast-radius data, and a prioritized fix decision. No query language, no console, no waiting on a report."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Firefox and Thunderbird as RHEL Flatpaks: What it means for you",
+      "link": "https://www.redhat.com/en/blog/firefox-and-thunderbird-rhel-flatpaks-what-it-means-you",
+      "date": "2026-07-30T00:00:00.000Z",
+      "excerpt": "Starting with Red Hat Enterprise Linux (RHEL) 10.2, Firefox and Thunderbird are delivered as Flatpaks by default."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why self-hosted inference is essential: Building a reliable, sovereign inference layer",
+      "link": "https://www.redhat.com/en/blog/why-self-hosted-inference-essential-building-reliable-sovereign-inference-layer",
+      "date": "2026-07-30T00:00:00.000Z",
+      "excerpt": "Your agent can reach its tools. Identity is scoped."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Make every GPU-hour count: Progress tracking in Red Hat OpenShift AI",
+      "link": "https://www.redhat.com/en/blog/make-every-gpu-hour-count-progress-tracking-red-hat-openshift-ai",
+      "date": "2026-07-30T00:00:00.000Z",
+      "excerpt": "It's Friday evening. Priya, a machine language (ML) engineer at a financial services firm, queues up a fraud-detection fine-tuning job on an GPU cluster costing $55 an hour."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Secure at Inception: Announcing the Snyk Studio Integration for Snowflake Cortex Code",
+      "link": "https://snyk.io/blog/announcing-snyk-studio-integration-snowflake-cortex-code/",
+      "date": "2026-07-30T00:00:00.000Z",
+      "excerpt": "Snyk Studio integrates with Snowflake Cortex Code to scan AI-generated code, dependencies, and containers for vulnerabilities during development."
+    }
+  ]
+}
