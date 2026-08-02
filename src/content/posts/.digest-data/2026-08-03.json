@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-03",
+  "generatedAt": "2026-08-02T22:35:06.698Z",
+  "count": 1,
+  "articles": [
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Welcome to Agents Week",
+      "link": "https://blog.cloudflare.com/agents-week-welcome/",
+      "date": "2026-08-02T16:00:00.000Z",
+      "excerpt": "Agents Week explores how cloud infrastructure must evolve to serve autonomous agents rather than human browsers. Join us as we unpack the storage, execution, and security primitives needed for an agent-native web."
+    }
+  ]
+}
