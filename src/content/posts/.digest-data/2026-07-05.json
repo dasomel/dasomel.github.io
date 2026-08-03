@@ -9,7 +9,11 @@
       "title": "Why cheaper models alone won’t save your AI budget",
       "link": "https://thenewstack.io/agentic-ai-token-costs/",
       "date": "2026-07-04T12:02:30.000Z",
-      "excerpt": "Finding the most capable model at the lowest cost has always been the goal. But as agentic AI evolves, a"
+      "excerpt": "Finding the most capable model at the lowest cost has always been the goal. But as agentic AI evolves, a",
+      "summaryKo": "The New Stack이 에이전틱 AI의 토큰 비용 문제를 다뤘다. 가장 저렴한 값에 가장 유능한 모델을 찾는 것이 늘 목표였지만, 에이전틱 AI로 넘어오면서 그 계산이 달라진다는 것이 논지다. 제목이 요약하듯 \"더 싼 모델만으로는 AI 예산을 지킬 수 없다\" — 모델 단가 인하가 곧 총비용 절감으로 이어지지 않는다는 지적이다.",
+      "summaryEn": "The New Stack examines token costs in agentic AI. Finding the most capable model at the lowest price has always been the goal, but the piece argues that the calculation changes as agentic AI evolves. As the headline puts it, cheaper models alone will not save your AI budget — a lower per-token price does not automatically translate into lower total spend.",
+      "insightKo": "에이전트 도입을 모델 단가 기준으로만 비교하고 있다면, 호출 횟수와 컨텍스트 재전송량까지 포함한 실측 토큰 소비를 먼저 측정해볼 필요가 있다.",
+      "insightEn": "If you are comparing agent rollouts on per-token price alone, measure actual token consumption first — including call volume and repeated context — before drawing budget conclusions."
     }
   ]
 }
