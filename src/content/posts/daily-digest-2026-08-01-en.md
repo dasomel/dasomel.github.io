@@ -10,7 +10,9 @@ draft: false
 
 ### Forget humans “in” the loop. Harness engineering puts humans “on” the loop.
 
-AI has us quickly forgetting humans as the software delivery loop. Now, forget humans in the loop.
+The New Stack covers harness engineering, opening from the observation that AI has us quickly forgetting humans as the software delivery loop. As the headline frames it, forget humans in the loop — harness engineering puts humans on the loop instead.
+
+> 💡 **Why it matters**: When per-action approval breaks down at scale, moving humans to a supervisory position and verifying after the fact through audit trails is the alternative.
 
 🔗 [Read more](https://thenewstack.io/ai-agents-harness-engineering/) · _The New Stack_
 
@@ -22,25 +24,33 @@ AI has us quickly forgetting humans as the software delivery loop. Now, forget h
 
 _Docker_
 
-Eliminate Stored Credentials in Your CI/CD Pipelines TL;DR: Docker now supports OpenID Connect (OIDC) for GitHub Actions. Your workflows can authenticate with short-lived, per-run tokens instead of stored PATs or OATs.
+Docker made OIDC connections for GitHub Actions available to Docker organizations, eliminating stored credentials in CI/CD pipelines by replacing long-lived PATs and OATs with short-lived, per-run tokens that expire in minutes and cannot be reused. Configuration takes three steps: create a connection with rulesets in Docker Home, update the workflow YAML with a `DOCKERHUB_OIDC_CONNECTIONID` environment variable and `id-token: write` permission, then verify and remove old credentials. Rulesets pin access by repository and branch using OIDC subject claims such as `repo:my-org/my-repo:ref:refs/heads/main`, with up to five rulesets per connection. It is available to Docker Team, Docker Business and Docker Hardened Images subscriptions, plus Docker Sponsored Open Source Program organizations. Workflows fill in the connection ID and org name using docker/login-action@v4.5.0 or later, and existing PATs and OATs keep working during migration. Scope is GitHub Actions only — local development and non-GitHub CI still use PATs and OATs.
+
+> 💡 Registry credentials are among the CI secrets with the widest blast radius when leaked — for teams on GitHub Actions this is a high-priority migration.
 
 ### [Kubernetes v1.37 Sneak Peek](https://kubernetes.io/blog/2026/07/31/kubernetes-v1-37-sneak-peek/)
 
 _Kubernetes_
 
-As we get closer to the release date for Kubernetes v1.37, the project develops and matures, features may be deprecated, removed, or replaced with better ones for the project's overall health.
+Kubernetes published a v1.37 sneak peek on July 31, 2026, framed around features being deprecated, removed or replaced as the project matures ahead of the release. Deprecations include the `--filename`/`-f` flag on `kubectl run` (kubernetes/kubernetes#138671) and the ipvs mode in kube-proxy (KEP-5495), which will be disabled by default in v1.40 and removed in v1.43. On removals, static pods can no longer reference Secrets or ConfigMaps, and the `PreventStaticPodAPIReferences` feature gate is removed (kubernetes/kubernetes#140226). An ongoing change is the phase-out of cgroup v1 support: since v1.35 the kubelet fails on cgroup v1 unless the `failCgroupV1: false` override is applied. Referenced KEPs are KEP-3866 for the ipvs mode rationale and KEP-5495 for deprecating ipvs mode in kube-proxy.
+
+> 💡 With kube-proxy ipvs mode scheduled for removal in v1.43, clusters still on ipvs should start planning the move to iptables or an eBPF-based alternative now.
 
 ### [Scaling Kubernetes pods with KEDA based on Amazon SQS queue depth](https://www.cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth/)
 
 _CNCF_
 
-In event-driven Kubernetes architectures, CPU and memory utilization often fail to reflect real system pressure. A worker pod may sit idle from a CPU perspective while thousands of messages pile up in an Amazon SQS queue.
+A CNCF blog post shows how to scale Kubernetes pods with KEDA based on Amazon SQS queue depth, opening from the point that in event-driven Kubernetes architectures CPU and memory utilization often fail to reflect real system pressure. The setup is an Amazon EKS cluster with KEDA installed via Helm into a dedicated namespace, requiring AWS authentication through IRSA or Pod Identity plus an existing SQS queue and worker deployment. The KEDA components are a TriggerAuthentication for AWS pod identity, a ScaledObject linking the deployment to queue metrics, and the KEDA operator managing HPA updates. The SQS metric is the sum of `ApproximateNumberOfMessages` and `ApproximateNumberOfMessagesNotVisible`, determining outstanding work. Configuration values are queueLength 10 (messages per pod), activationQueueLength 1 as the scale-to-zero threshold, pollingInterval 10 seconds, cooldownPeriod 120 seconds, minReplicaCount 0 and maxReplicaCount 30. Desired replicas are the ceiling of outstanding messages divided by queueLength — 25 messages at queueLength 10 yields 3 pods.
+
+> 💡 Summing in not-visible messages is the key detail — counting only visible ones omits in-flight work and triggers scale-down too early.
 
 ### [Introducing the Runtime Remediation Skill for headless cloud security](https://webflow.sysdig.com/blog/introducing-the-runtime-remediation-skill-for-headless-cloud-security)
 
 _Sysdig_
 
-The Runtime Remediation Skill turns a runtime alert into a safe, auditable response: real blast radius, ordered actions, confirmation on every destructive step, and a respawn watch, all with the analyst in control.
+Sysdig introduced the Runtime Remediation Skill for headless cloud security. It turns a runtime alert into a safe, auditable response by mapping real blast radius, proposing ordered containment actions and watching for threat respawn, all within the analyst terminal. Safety controls require explicit analyst confirmation for every destructive action, showing exactly what the action does, what it breaks and whether it can be undone, with no approval-all option. The action set covers forensic collection such as binary and syscall capture, network isolation, process termination and IAM session revocation for credential theft, sequenced correctly. Integration runs through the Sysdig MCP server registered via OAuth, giving AI agents structured access to runtime detections and workload context. For audit, it automatically generates incident ticket logging with UTC timestamps, decisions and watcher confirmation states of cleared, still_active or inconclusive. It is available in public beta through Claude Code and Agent Skills-compatible environments, complementing the prior Runtime Investigation Skill.
+
+> 💡 Refusing an approval-all option and showing reversibility per action is the load-bearing design — a reasonable minimum bar to demand when adopting automated response tooling.
 
 ---
 
@@ -50,19 +60,25 @@ The Runtime Remediation Skill turns a runtime alert into a safe, auditable respo
 
 _OpenAI_
 
-OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.
+OpenAI shared how its safety, security, transparency and provenance practices support responsible AI governance in Europe, stating the work will continue.
+
+> 💡 With provenance treated as a governance requirement in the European regulatory context, services targeting the EU should align their content-labelling policy with what vendors actually provide.
 
 ### [Building abundant intelligence](https://openai.com/index/building-abundant-intelligence)
 
 _OpenAI_
 
-A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.
+OpenAI described building abundant intelligence as a full-stack approach to making advanced AI more capable, more affordable and more widely useful.
+
+> 💡 A vendor naming cost reduction as a strategic axis raises the risk of locking long-term contracts to today's unit price.
 
 ### [Univé builds an AI-ready workforce](https://openai.com/index/unive)
 
 _OpenAI_
 
-See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.
+OpenAI published a customer story on Univé, describing how it built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance and employee-led innovation.
+
+> 💡 Cases repeatedly attribute adoption outcomes to governance plus employee-led diffusion rather than the tool — a reason to weight enablement and policy equally in a rollout plan.
 
 ---
 
@@ -72,43 +88,57 @@ See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining 
 
 _Google Cloud_
 
-At Google, AI is a soup-to-nuts endeavor. Obviously, we make leading AI models like Gemini and Nano Banana.
+Google Cloud rounds up this month's AI infrastructure and orchestration news, opening from the framing that AI at Google is a soup-to-nuts endeavor including leading models such as Gemini and Nano Banana. Google Cloud Managed Lustre reached general availability with four performance tiers from 125 to 1000 MB/s per TiB, scaling to 8 PB and powered by DDN's EXAScaler. C4N VMs reached general availability with 400 Gbps bandwidth, 95 million packets per second and 25 GiB/s block storage throughput via Titanium hardware. GKE Dataplane V2 reached general availability supporting clusters up to 15,000 nodes with active Network Policy enforcement. Co-operative time-slicing in llm-d interleaves independent RL jobs on shared hardware, raising accelerator duty cycles from around 40% to 70%. k8s-aibom was open-sourced as a Kubernetes controller for automated AI supply chain security, detecting AI runtimes and generating ML Bills of Materials. A day-zero deployment guide covers Moonshot AI's 2.8-trillion-parameter Kimi K3 via Model Garden, custom orchestration, or GKE with llm-d recipes.
+
+> 💡 An open-sourced controller that auto-generates ML Bills of Materials is the practically useful item — supply chain visibility for AI workloads without maintaining a manual inventory.
 
 ### [What’s new with Google Cloud](https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/)
 
 _Google Cloud_
 
-Want to know the latest from Google Cloud? Find it here in one handy location.
+The "What's new with Google Cloud" page appeared in the digest. It is a continuously updated hub gathering the latest Google Cloud news, announcements, resources, events and learning opportunities in one place. Because it updates continuously, the items present at collection time differ from its later contents.
+
+> 💡 The pattern of evergreen hub pages recurring across daily digests is now clear enough to warrant a collection rule for how such URLs should be handled.
 
 ### [Cloud CISO Perspectives: Why AI Threat Defense is the new boardroom baseline](https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-why-ai-threat-defense-is-the-new-boardroom-baseline/)
 
 _Google Cloud_
 
-Welcome to the second Cloud CISO Perspectives for July 2026.
+The second Cloud CISO Perspectives of July 2026, written by Google Cloud CISO Chris Betz and Office of the CISO Senior Director Alicja Cade. The main argument is that AI Threat Defense should become a boardroom baseline for security governance, enabling business agility by automating threat detection and response at machine speed rather than through manual, reactive approaches. Named products are AI Threat Defense (AITD), CodeMender, Agent Platform, Cloud KMS, AlloyDB and Google Cloud Run. On numbers, Morgan Stanley is cited as collapsing mean time to detect threats by 99.9%, from a 45-minute window to 90 seconds or less, using a unified AI Threat Defense framework. Five strategic focus areas are business enablement, remediation cycle optimization, system consolidation, contextual prioritization using deep business context, and AI safety and policy governance. It was published August 1, 2026.
+
+> 💡 The 45-minutes-to-90-seconds figure appears in an earlier Cloud CISO post too, marking it as the vendor's showcase case — whether it reproduces in your environment needs separate verification.
 
 ### [An API for MoQ: provision your own isolated relays](https://blog.cloudflare.com/moq-relays/)
 
 _Cloudflare_
 
-Last year we made every Cloudflare server a Media over QUIC (MoQ) relay. Now the new provisioning API lets you create your own isolated relay and control who can publish and who can only watch.
+Cloudflare introduced a provisioning API for Media over QUIC (MoQ), letting developers create their own isolated relays. MoQ is a publish/subscribe system where publishers send out named streams of data and subscribers request those streams by name, relayed through CDN servers. The protocol runs over QUIC transport under HTTP/3, enabling low-latency delivery of video, messaging and other data without specialized infrastructure. Cloudflare made every one of its servers a MoQ relay last year; the new provisioning API is a control plane that lets developers create isolated relays and issue separate credentials controlling whether clients can publish, subscribe or both. Provisioned relays create isolated scopes across the existing global network rather than launching dedicated servers, and are available within seconds. Tokens are scoped to specific operations, assignable per client, and support expiration and revocation independently without disrupting other users. It currently supports the IETF draft-14 and draft-16 MoQ Transport specifications and is free at any scale during the beta period.
+
+> 💡 Separating publish and subscribe rights at the token level matters for real-time streaming design — it pushes access control for multi-party scenarios out of the application.
 
 ### [Red Hat Ansible All-Stars: Driving the future of network and infrastructure automation](https://www.redhat.com/en/blog/red-hat-ansible-all-stars-driving-future-network-and-infrastructure-automation)
 
 _Red Hat_
 
-As enterprise infrastructures scale across hybrid cloud environments and distributed networks, operations teams face an unsustainable calculation.
+Red Hat introduces the Ansible All-Stars program driving the future of network and infrastructure automation, framed around operations teams facing an unsustainable calculation as enterprise infrastructures scale across hybrid cloud and distributed networks. The program annually recognizes outstanding IT professionals leading structural and cultural modernization in enterprise infrastructure automation. The 2026 recipients are Drew McKee of Blue Cross Blue Shield of Kansas and Jade Wu of TD Bank Group. McKee implemented Red Hat Ansible Automation Platform for patching workflows, certificate management and ticket management across more than 400 servers. Wu used the platform to compress a 1,300-branch IP migration from years to four months, eliminating manual site preparation work. Ansible Automation Platform serves as the core technology, offering agentless cross-vendor network device support without requiring software deployments. Both recipients are exploring AI-driven capabilities including self-healing infrastructure and AIOps.
+
+> 💡 As in compressing a 1,300-branch IP migration from years to four months, automation pays off most where repetition is high and manual preparation is in the loop.
 
 ### [Announcing Red Hat OpenShift Platform Plus for Red Hat OpenShift Service on AWS on AWS Marketplace](https://www.redhat.com/en/blog/red-hat-openshift-platform-plus-rosa-aws-marketplace)
 
 _Red Hat_
 
-Organizations using Red Hat OpenShift Service on AWS (ROSA) are increasingly seeking ways to extend their platform’s capabilities with enterprise-grade security and data services. Red Hat OpenShift Platform Plus, is now available for ROSA on the AWS Marketplace.
+Red Hat announced Red Hat OpenShift Platform Plus for ROSA on AWS Marketplace, prompted by organizations using Red Hat OpenShift Service on AWS increasingly seeking ways to extend their platform with enterprise-grade capabilities. The bundle includes Advanced Cluster Management, Advanced Cluster Security, the Quay registry and OpenShift Data Foundation. Pricing is a pay-as-you-go consumption model with a 33% discount available on annual commitment, integrating with AWS Cost Explorer. Billing arrives as a single AWS Marketplace bill and supports AWS committed spend allocation. Prerequisites are an active ROSA subscription and an ACM hub purchased through AWS Marketplace. Premium tier Red Hat Support is included, with standard business hours access plus 24/7 coverage for critical issues.
+
+> 💡 Counting toward AWS committed spend is the procurement-side advantage — for organizations that must burn down an AWS commitment, the purchase channel itself becomes a cost decision.
 
 ### [Same goals, different clocks: What Red Hat’s 2025 Risk Report reveals about global compliance gaps](https://www.redhat.com/en/blog/red-hat-2025-risk-report)
 
 _Red Hat_
 
-In April 2026, Red Hat’s Product Security team published its annual Risk Report . I encourage everyone involved in building, shipping, securing, or regulating software to read it–not just for the vulnerability counts, but for what the data collectively says about the modern security environment we’re all operating in.
+Red Hat summarizes its Product Security team's annual Risk Report, published in April 2026 covering 2025. It issued 3,781 security advisories in 2025, an almost linear upward trend year over year. Supply chain attacks increased 54% compared with 2024. 88% of incidents had unknown attribution, with the vast majority of supply chain attacks leaving no definitive fingerprints. Five of six Linux kernel vulnerabilities in CISA's Known Exploited Vulnerabilities catalog were originally disclosed in prior years, and CVE-2021-22555 waited four years before confirmation. Average fix time was 12 days for Critical vulnerabilities and 24 days for Important ones. On compliance gaps, the EU CRA's 24-hour reporting trigger conflicts with traditional 72-hour frameworks and differs across NIS2 and DORA standards globally. On open source impact, 66% of companies remain unfamiliar with the CRA and only 41% expect full compliance by December 2027. On cost burden, organizations spend an average of $258,000 per release cycle maintaining private software versions instead of contributing upstream.
+
+> 💡 Five of six exploited kernel vulnerabilities originating in prior years means clearing unapplied patches reduces real risk more than chasing the newest CVEs.
 
 ---
 
@@ -118,44 +148,58 @@ In April 2026, Red Hat’s Product Security team published its annual Risk Repor
 
 _The New Stack_
 
-Cloud platform company Nscale announced this week a definitive agreement to acquire AI workload scaling specialist Anyscale, in a move
+The New Stack covers Nscale acquiring Anyscale. Cloud platform company Nscale announced this week a definitive agreement to acquire the AI workload scaling specialist Anyscale. As the headline frames it, the focus is what this means for multi-cloud neutrality, examined alongside the question of neocloud lock-in.
+
+> 💡 When the workload scaling layer is absorbed by a specific cloud provider, the neutrality premise weakens — if you depend on that stack, verify your portability path.
+
+### [Modeling Device Capabilities for Analytics](https://netflixtechblog.com/modeling-device-capabilities-for-analytics-e7607acebde8?source=rss----2615bd06b42e---4)
+
+_Netflix_
+
+The Netflix technology blog covers modeling device capabilities for analytics.
+
+> 💡 For organizations serving heterogeneous devices, how capability models are normalized determines analytics quality — making device attribute schema an early data-team decision.
 
 ### [Don’t stop early: Case-folding source code at memory speed](https://github.blog/engineering/architecture-optimization/dont-stop-early-case-folding-source-code-at-memory-speed/)
 
 _GitHub_
 
-How a branch-free loop and byte-space arithmetic let GitHub case-fold every byte of code search at >45 GiB/s on a single core.
+GitHub published an optimization for case-folding source code at memory speed. The context is that GitHub's Blackbird code search indexes over 480 TB of source code, and every byte requires case folding before ngram extraction. The technique is a branch-free ASCII loop with byte-space arithmetic for Unicode folding, processing entire buffers without early exits to enable vectorization. Throughput exceeds 45 GiB/s on a single core along the ASCII path. The rationale for going branch-free is that a data-dependent loop exit is enough on its own to keep the loop scalar; removing early-exit breaks lets LLVM vectorize with NEON instructions. The core optimization replaces conditional stores with unconditional writes via branchless masks, trading per-byte cost for a single 16-byte vector operation. Unicode is handled through a 1,776-byte paged bitmap plus a run-length table that avoids UTF-8 decode and encode cycles entirely using little-endian byte addition. For comparison, simd_normalizer runs around 1.2 GiB/s on ASCII. The implementation is open-sourced as the Rust crate "casefold."
+
+> 💡 The observation that a single data-dependent early exit blocks vectorization of the whole loop generalizes well — it is the first thing to check when optimizing a text-processing hot path.
 
 ### [Gemini Robotics 2 brings us one step closer to physical AGI](https://thenewstack.io/gemini-robotics-2/)
 
 _The New Stack_
 
-This week, Google DeepMind revealed Gemini Robotics 2, an intelligence layer comprising three new models to power more adaptable physical
+The New Stack covers Gemini Robotics 2. This week Google DeepMind revealed Gemini Robotics 2, an intelligence layer comprising three new models to power more adaptable physical systems. As the headline frames it, the article views this as one step closer to physical AGI.
+
+> 💡 Robotics models shipping as a distinct layer shows physical system control settling into its own stack rather than remaining a side capability of general models.
 
 ### [Reflections on AI Week, and the future of solving problems with observability and AI](https://grafana.com/blog/ai-week-recap/)
 
 _Grafana_
 
-Thank you for spending AI Week with us. We’re thrilled by the reaction and we all enjoyed replying to your questions.
+Grafana wrapped up AI Week with reflections on the future of solving problems with observability and AI. Generally available features include Workspace as an agent-native home for the Assistant, gcx and the Cloud MCP server providing structured Grafana access for AI agents, Assistant Investigations for automated alert and incident investigation, Automations for scheduled work automation, Agent Observability for monitoring and evaluating agent behavior, and an open source AI SDK for building custom AI agents on Grafana. Preview features include Assistant Watchers, Assistant Search, Assistant on mobile and desktop, Assistant in Microsoft Teams, Assistant with OpenAI models, and Agentic Testing for website testing automation.
+
+> 💡 An observability vendor shipping Agent Observability — treating agents as a monitored subject — signals that the instrumentation gap in agent operations is being recognized as a real problem.
 
 ### [Grafana에서 자연어로 장애 원인을 분석하기: LLM 에이전트 기반 SRELens 개발기](https://techblog.lycorp.co.jp/ko/analyzing-incident-root-causes-in-grafana-using-natural-language-with-llm-agent)
 
 _LINE_
 
-들어가며: 관측성 데이터는 많아졌지만, 분석은 여전히 어렵습니다안녕하세요. LY Corporation에서 Home 서비스의 안정성을 책임지고 있는 Home SRE(Site Reli.
+LY Corporation's Home SRE team describes SRELens, an LLM agent-based tool for analyzing incident root causes in Grafana using natural language, opening from the point that observability data has grown but analysis remains hard. SRELens is a natural language observability data analysis tool operating as a Grafana application plugin, analyzing incident causes by querying metrics, logs, traces and profiles through LLM agent orchestration. The architecture pairs a TypeScript/React frontend providing a chat UI with a Go backend handling LLM agent orchestration, prompt synthesis and rate limiting, an MCP gateway accessing observability backends (Mimir, Loki, Tempo, Pyroscope), and Redis storing conversation history and usage quotas. The agent design uses GPT models with tool-calling, applies a three-layer system prompt of base policy, datasource fragments with environment metadata and user context, and enforces a maximum of 10 tool-calling rounds with duplicate-call blocking and result-size limits. Centralized backend control prevents prompt injection, while datasource fragments encode SRE operational knowledge such as label mappings and query conventions. Across three scenarios it narrowed an error spike to specific API request patterns, identified poison-pill retry storms by correctly selecting datasource-specific log fields, and honestly reported missing log data rather than speculating.
+
+> 💡 The operational lesson that control mechanisms matter more than prompt sophistication is the core — and designing the agent to say "unknown" when data is missing is what makes an observability agent trustworthy.
 
 ### [How to govern agentic AI, MCPs, and AI code assistants](https://about.gitlab.com/blog/govern-agentic-ai-mcps-code-assistants/)
 
 _GitLab_
 
-AI code completion built human review into the process by design. A developer types, a suggestion appears, and a human decides whether to accept it.
+GitLab lays out how to govern agentic AI, MCPs and AI code assistants, starting from the observation that AI code completion built human review into the process by design: a developer types, a suggestion appears and a human decides whether to accept it. With agentic AI that checkpoint disappears, requiring post-action audit trails instead. The governance controls named are a central AI Catalog publishing approved agents and flows rather than decentralized team configs; composite identity linking every agent action to the requesting human user so activity is never attributable to the agent alone; tool approval guardrails setting individual tools to run autonomously, pause for review or stay blocked; and prompt guardrails detecting attempts to hijack agent behavior mid-workflow. GitLab features cited include merge request approval policies, scanner enforcement, audit event streaming and self-hosted deployment options. The key argument is that governance for agentic AI is not an add-on but a different approach built around identity, permissions and auditability. Metrics for adoption, acceptance and quality, risk, remediation and ROI are tracked together to catch issues early.
+
+> 💡 The key point is that human review was structurally enforced in code completion and simply disappears with agents — worth checking whether swapping tools also removed your review checkpoint.
 
 ---
 
-## ⚡ Quick News
-
-- [Modeling Device Capabilities for Analytics](https://netflixtechblog.com/modeling-device-capabilities-for-analytics-e7607acebde8?source=rss----2615bd06b42e---4) — _Netflix_
-
----
-
-_This digest was automatically collected from RSS feeds. Excerpts are taken verbatim from each source — see the original links for full details._
+_This digest was collected from RSS feeds and summarized by AI (Claude). See the original links for full details._
