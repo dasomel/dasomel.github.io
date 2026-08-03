@@ -10,6 +10,10 @@ draft: false
 
 ### From Hugging Face to Amazon SageMaker Studio in one click
 
+Hugging Face와 Amazon SageMaker AI의 통합이 2026년 7월 7일 발표됐다. Hugging Face 모델 페이지에 "Customize on SageMaker AI"와 "Deploy on SageMaker AI" 버튼이 붙어, 모델이 미리 적재된 상태로 SageMaker Studio 워크플로로 바로 연결된다. 새 도메인은 권한이 미리 구성된 채 수 초 만에 프로비저닝된다. 커스터마이즈 경로는 파인튜닝을, 배포 경로는 엔드포인트 배포를 담당하며 둘 다 수동 환경 구성을 건너뛴다. 새 관리형 정책 `AmazonSageMakerModelCustomizationCoreAccess`가 지도 파인튜닝, DPO, RLVR, RLAIF에 필요한 권한을 수동 IAM 설정 없이 제공한다. 인스턴스 선택 UI는 G5·G6 계열의 가용 GPU 쿼터를 직접 표시하고 Service Quotas로 증설 요청을 연결한다. 배포 후에는 Studio의 엔드포인트 테스트 인터페이스에서 곧바로 추론을 확인할 수 있다.
+
+> 💡 **왜 중요한가**: 모델 선택에서 파인튜닝 환경 구성까지의 마찰이 줄면 실험 회전율이 올라가므로, IAM 정책 작성 때문에 미뤄둔 파인튜닝 검토를 다시 꺼낼 만한 시점이다.
+
 🔗 [원문 보기](https://huggingface.co/blog/amazon/one-click-to-sagemaker-studio) · _Hugging Face_
 
 ---
@@ -20,19 +24,33 @@ draft: false
 
 _AWS Containers_
 
-In this post, we demonstrate how to use Envoy’s External Processing filter (ext_proc) to solve this challenge on Amazon EKS. This solution captures complete request and response data without modifying application code, providing the compliance-grade audit trails that regulators require.
+AWS가 Amazon EKS에서 요청·응답 전문을 규정 준수 수준으로 로깅하는 방법을 제시했다. 핵심은 Envoy의 External Processing 필터(ext_proc)로, 애플리케이션 코드를 고치지 않고 완전한 요청·응답 데이터를 확보한다. 구성은 Network Load Balancer가 Istio Ingress Gateway로 라우팅하고, Istio가 주입한 Envoy 사이드카가 gRPC로 외부 처리 서비스에 트래픽을 흘리는 형태다. 스트림은 요청 헤더, 요청 본문, 응답 헤더, 응답 본문의 네 단계로 나뉜다. 각 로그 항목은 이 네 가지를 `x-request-id`로 상관시켜 하나의 레코드로 합친다. 요청 처리 지연을 최소화하기 위해 비동기 패턴을 쓰지만, Envoy는 각 단계마다 ext_proc 서버 응답을 기다리며 블로킹한다는 점이 운영상 제약이다.
+
+> 💡 Envoy가 단계마다 ext_proc 응답을 기다린다는 점이 이 구조의 진짜 비용이므로, 규정 준수 로깅을 붙이기 전에 처리 서비스의 p99 지연을 먼저 잡아둬야 한다.
 
 ### [Two months of Open Community Groups](https://www.cncf.io/blog/2026/07/07/two-months-of-open-community-groups/)
 
 _CNCF_
 
-Two months ago, the CNCF launched Open Community Groups (OCG, ocgroups.dev), an online meetup platform that’s open source.
+CNCF가 오픈소스 온라인 밋업 플랫폼 Open Community Groups(OCG, ocgroups.dev) 출시 두 달을 정리했다. 거의 2년에 걸쳐 개발했고, 기존 상용 솔루션이 커뮤니티의 실제 작업 흐름을 충분히 지원하지 못한다는 판단이 자체 구축의 근거였다. 게시 시점 기준 289개 커뮤니티 그룹, 89,202명 회원, 6,024건 행사, 146,182명 참석자를 기록했다. 커뮤니티 그룹은 5월 2일 주말에 이전 플랫폼에서 이관됐고 community.cncf.io의 리디렉션 서비스가 트래픽을 넘겨주고 있다. 개발 활동은 68건 이상의 이슈 종료와 408건의 풀 리퀘스트 병합으로 집계된다. 향후 계획으로는 Kubernetes Community Days 같은 행사를 위한 결제 기능과 Slack·메일링 리스트 등 CNCF 생태계 통합이 있다. 통계는 ocgroups.dev/stats에서 실시간으로 공개된다.
+
+> 💡 커뮤니티 운영 도구를 상용 SaaS에 의존하고 있다면, CNCF가 자체 구축을 택한 근거(실제 워크플로 불일치)는 같은 판단을 내릴 때 참고할 만한 선례다.
 
 ### [Why sandboxing your agent is not enough](https://www.cncf.io/blog/2026/07/07/why-sandboxing-your-agent-is-not-enough/)
 
 _CNCF_
 
-The agentic AI space is moving incredibly fast. Not long ago, I learned about a cool project called agent-sandbox, which provides a sandboxed environment for AI agents by leveraging many of the building blocks we have.
+CNCF 블로그가 에이전트를 샌드박싱하는 것만으로는 충분하지 않다고 주장한다. 필자는 쿠버네티스의 기존 구성요소를 활용해 AI 에이전트에 샌드박스 환경을 제공하는 agent-sandbox 프로젝트를 접한 경험에서 출발한다. agent-sandbox(Kubernetes SIG Apps)는 커스텀 리소스 정의를 통해 아이덴티티 관리, 영속 스토리지, 수명주기 관리, 보안 격리를 제공한다. 문제는 자원이 제약된 상태에서 다수의 에이전트가 계속 유휴로 떠 있을 때 발생한다. 에이전트를 항상 켜두면 낭비가 되고, 계속 띄웠다 내렸다 하면 오버헤드와 지연이 생기는 트레이드오프가 남는다는 것이다. 대안으로 제시되는 agent-substrate는 서버리스에 가까운 워크로드로 자원 효율, 낮은 지연, 동적 수명주기 관리, 대규모 실행에 초점을 둔다. 워커 풀을 써서 여러 에이전트가 전용 파드 없이 인프라를 공유하고, 동시성 요구가 늘면 워커 풀을 수평 확장하는 방식이다. 함께 언급되는 프로젝트로 kagent와 agentgateway가 있다.
+
+> 💡 에이전트마다 전용 파드를 띄우는 구조라면 유휴 비용이 곧 스케일 한계가 되므로, 워커 풀 공유 모델로 옮길지 판단하는 기준은 동시 실행 수가 아니라 유휴 비율이다.
+
+### [Security briefing: June 2026](https://webflow.sysdig.com/blog/security-briefing-june-2026)
+
+_Sysdig_
+
+Sysdig의 2026년 6월 보안 브리핑이다. 프랑스 정부 메신저 앱 Tchap이 뚫려 "misere"라는 공격자가 사회공학 기법으로 7만 3천여 계정에서 13.5GB를 탈취했다. Novo Nordisk에서는 FulcrumSec이 1.3TB를 유출했으며 초기 침투 경로는 자격 증명이 노출된 서브도메인이었다. 자동화된 공격이 marimo 취약점(CVE-2026-39987)을 악용해 컨테이너를 탈출하고 쿠버네티스 클러스터에 접근한 사례도 보고됐다. 공격자들이 CTF 형식으로 포장해 언어 모델에서 CVE 익스플로잇을 생성해낸 사례와, 탈취한 Ollama 서버 접근 권한으로 자율 공격 도구를 개발한 LLMjacking 진화형도 다룬다. Langflow에서는 CVSS 9.9 IDOR(CVE-2026-55255)과 CVSS 9.3 RCE(CVE-2026-33017)가 같은 세션에서 함께 악용됐다. 이 밖에 `pull_request_target` 워크플로 악용이 가능한 GitHub 저장소 300곳 이상을 찾아낸 Cordyceps 패턴과, 손상된 파일 기반 메모리로 로컬 권한 상승이 가능하고 실제 익스플로잇이 공개된 DirtyClone 취약점(CVE-2026-43503)이 포함된다.
+
+> 💡 `pull_request_target` 악용 가능 저장소가 300곳 넘게 발견됐다는 항목은 즉시 확인할 값어치가 있으며, 자사 워크플로에서 이 트리거를 쓰는 곳이 있는지 오늘 grep해볼 만하다.
 
 ---
 
@@ -42,19 +60,41 @@ The agentic AI space is moving incredibly fast. Not long ago, I learned about a 
 
 _Google Research_
 
-Algorithms & Theory
+구글 리서치가 교통 혼잡을 줄이는 대규모 실험 결과를 공개했다. 교통 혼잡은 운전자의 시간을 뺏고 CO2 배출을 늘리지만, 차량 경로의 시스템 전체 최적화는 대규모 실증이 부족했다는 문제 인식에서 출발한다. 미국 주요 10개 도시에서 6개월간 수정된 구글 지도 알고리즘으로, 미리 선정한 혼잡 구간 약 100곳에서 이동 시간이 비슷한 대체 경로로 일부 통행을 우회시켰다. 도시 단위 스위치백 설계로 처리일과 대조일을 번갈아 배치해 효과를 측정했다. 결과는 대상 구간에서 중앙값 기준 속도 2% 증가, 연료 소비 0.5~1.0% 감소, 영향을 받은 전체 구간에서 중앙값 속도 0.35% 개선이었다. 도시당 연간 수천 톤의 CO2 환산 배출 감축이 추정된다. 핵심 결론은 전체 통행 중 일부만 조정해 교통을 분산시켜도 도시 전체의 주행 속도와 배출을 측정 가능한 수준으로 개선할 수 있다는 것이다.
+
+> 💡 전체의 일부만 조정해도 시스템 전역 지표가 움직인다는 결과는, 부하 분산이나 요청 라우팅처럼 경합이 있는 시스템 설계에도 같은 논리가 적용된다는 점에서 참고할 만하다.
+
+### [Hugging Face Models on Foundry Managed Compute](https://huggingface.co/blog/microsoft/foundry-managed-compute)
+
+_Hugging Face_
+
+Hugging Face의 선별된 오픈 웨이트 모델을 Microsoft Foundry Managed Compute에 배포하는 통합이 공개됐다. 컬렉션은 매주 갱신되며 텍스트·비전·오디오·멀티모달 등 모든 모달리티에 걸쳐 수천 개 모델을 포함한다. 지원 런타임은 vLLM, SGLang, TensorRT-LLM, NIM, TEI(Text Embeddings Inference), llama.cpp이고 가속기는 NVIDIA A100·H100과 AMD MI300X를 글로벌 및 데이터 존 배포 옵션으로 제공한다. 보안 측면에서는 모델을 규정 준수 관점에서 검증하고 SafeTensors 형식만 허용하며, 엄격한 검토를 거치지 않은 `trust_remote_code` 실행 경로는 두지 않는다. 배포는 카탈로그 탐색 → 템플릿 선택 → 인스턴스 구성 → 포털·CLI·SDK로 배포 → OpenAI SDK로 호출의 다섯 단계다. 모델 가중치는 Azure에, 런타임 이미지는 마이크로소프트 레지스트리에 미리 적재돼 운영 배포 시 Hugging Face Hub로 나가는 아웃바운드 접근이 필요 없다.
+
+> 💡 아웃바운드 없이 배포된다는 점이 폐쇄망·규제 환경에서는 결정적이라, 모델 반입 절차 때문에 오픈 웨이트 도입을 미뤄온 조직에는 실질적 해제 조건이 된다.
 
 ### [Expanding Managed Agents in Gemini API: background tasks, remote MCP and more](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)
 
 _Google AI_
 
-We’re announcing new capabilities in Managed Agents in Gemini API so developers can build reliable, production-ready agents.
+구글이 2026년 7월 7일 Gemini API의 Managed Agents에 새 기능을 추가했다. 첫째, `background: true`로 장시간 작업을 서버 측에서 비동기 실행하고 ID를 받아 폴링할 수 있어 HTTP 연결을 열어둘 필요가 없다. 둘째, 관리형 에이전트를 원격 MCP 서버에 직접 연결해 사설 데이터베이스와 내부 API에 접근할 수 있다. 셋째, 내장 샌드박스 도구와 나란히 커스텀 도구를 추가해 로컬에서 실행할 수 있다. 넷째, 기존 `environment_id`에 새 네트워크 구성을 넘겨 자격 증명을 갱신·교체하면서 샌드박스 상태는 유지할 수 있다. 내장 샌드박스 도구로는 코드 실행, 패키지 설치, 파일 관리, 웹 검색이 격리된 클라우드 환경에서 제공된다. API는 내장 도구를 서버 실행으로 보내고 커스텀 함수는 `requires_action` 상태로 전환해 클라이언트가 처리하도록 자동 분기한다. 환경을 재사용하면 파일시스템 상태, 설치한 패키지, 클론한 저장소가 상호작용 간에 유지된다.
+
+> 💡 HTTP 연결을 붙들지 않고 장시간 작업을 돌릴 수 있게 된 것이 실무적으로 가장 크며, 타임아웃 때문에 에이전트 작업을 잘게 쪼개던 구조를 정리할 수 있다.
 
 ### [Australian Payments Plus moves faster with ChatGPT and Codex](https://openai.com/index/australian-payments-plus)
 
 _OpenAI_
 
-See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.
+OpenAI가 Australian Payments Plus(AP+)의 도입 사례를 공개했다. AP+가 ChatGPT Enterprise와 Codex를 써서 결제 영역의 복잡성을 더 빠르게 헤쳐 나가고 있다는 내용이다. 시간을 절약하고 품질을 높이면서도 사람의 판단을 중심에 유지한다는 점을 강조한다.
+
+> 💡 규제 산업에서 "사람의 판단을 중심에 유지한다"는 표현이 반복되는 것은, 도입 성패가 모델 성능보다 검토 절차 설계에 달려 있다는 실무적 신호다.
+
+### [Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot](https://huggingface.co/blog/skypilot-hf-storage)
+
+_Hugging Face_
+
+Hugging Face가 SkyPilot과 함께 어느 클라우드에서든 AI 워크로드를 돌리면서 저장은 Hugging Face에 두는 제로 이그레스 구성을 소개했다. Hugging Face Storage는 이그레스 요금을 받지 않아 어느 클라우드에서 읽어도 전송 비용이 들지 않으며, AWS S3 대비 GB당 약 $0.09를 아낀다. 구성 요소는 컴퓨트 오케스트레이션을 맡는 SkyPilot, Hugging Face Storage Buckets, 중복 제거 백엔드 Xet, FUSE 드라이버 hf-mount다. `hf://` URL로 Hugging Face 저장소나 버킷을 SkyPilot 작업에 FUSE로 마운트하며 지연 스트리밍 읽기를 쓴다. 인증은 `HF_TOKEN` 하나로 20개 이상 클라우드와 쿠버네티스, 온프레미스에서 통용돼 클라우드별 키가 필요 없다. 성능은 모델 로딩 약 500MB/s, 체크포인트 쓰기 112~168MB/s 수준이다. Xet의 콘텐츠 기반 청킹(약 64KB 단위)은 변경된 부분만 저장해, 동일한 8.43GB 블롭 재업로드가 최초 24초에서 8초로 줄었다. 버킷은 읽기·쓰기, 모델·데이터셋 저장소는 읽기 전용으로 MOUNT 또는 COPY 모드를 지원한다.
+
+> 💡 멀티클라우드로 학습을 돌리는 팀에게는 이그레스 요금이 숨은 고정비인 경우가 많아, 체크포인트와 데이터셋 저장 위치만 옮겨도 비용 구조가 달라질 수 있다.
 
 ---
 
@@ -64,49 +104,65 @@ See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faste
 
 _AWS Architecture_
 
-In this post, we explain how S&P Global Market Intelligence implemented an innovative disaster recovery solution for their Capital IQ platform using Amazon FSx for NetApp ONTAP.
+AWS가 S&P Global Market Intelligence의 Capital IQ 플랫폼 재해복구 구조를 소개했다. 기본 리전은 US-East-1(북버지니아), DR 리전은 US-West-2(오리건)이며 Amazon FSx for NetApp ONTAP 파일 시스템을 쓴다. 목표는 핵심 데이터에 15분 이내 접근이고, SnapMirror 복제는 15분 주기로 예약된다. 컴퓨트는 두 리전에 걸친 4노드 Windows Server Failover Cluster로, EC2 인스턴스 위에서 SQL Server를 돌린다. 복구는 스냅샷에서 만든 FlexClone 볼륨을 쓰는데, 읽기 전용 페일오버용 FlexClone 생성이 2분 이내에 끝나고 SnapMirror 관계를 끊으면 읽기·쓰기로 전환된다. 데이터 보호는 SnapMirror 전송 구간 AES-256-GCM 암호화와 AWS KMS 기반 저장 시 암호화다. 온프레미스 DR을 클라우드 네이티브 방식으로 대체하면서 금융 서비스 규제 준수를 유지하는 것이 목적이다.
+
+> 💡 복제 주기가 15분이면 RPO 하한도 15분이라는 뜻이므로, DR 설계에서 스냅샷 주기를 정할 때 허용 가능한 데이터 손실 창을 먼저 합의해야 한다.
 
 ### [20 questions for the Agentic Enterprise (and how Agent Platform can help)](https://cloud.google.com/blog/products/ai-machine-learning/20-questions-for-the-agentic-enterprise/)
 
 _Google Cloud_
 
-If you’re an IT leader, you might be getting a lot of questions about how to build and deploy agents. The pressure to move fast is intense, but the engineering reality is incredibly complex.
+구글 클라우드가 에이전트를 도입하려는 IT 리더를 위한 20개 질문과 Gemini Enterprise Agent Platform을 정리했다. 빠르게 움직이라는 압박은 강한데 엔지니어링 현실은 대단히 복잡하다는 것이 출발점이다. 플랫폼은 고객 대면·내부 에이전트를 만들고 확장하고 통제하고 최적화하는 단일 기반으로 제시된다. 구성 요소로는 로우코드 시각 작업공간 Agent Studio, Agent-as-a-Service인 Managed Agents API, 개발자 작업공간 Antigravity 2.0, 코드 우선 프레임워크 ADK 2.0, 서버리스 실행 환경 Agent Runtime, 장기 저장 계층 Agent Memory Bank, 정책 집행·감사를 맡는 Agent Gateway, 프롬프트·응답 보호를 하는 Model Armor, 중앙 명령 도구 Agents CLI가 있다. 20개 질문은 구축(0~4번), 확장(5~9번), 최적화(10~13번), 거버넌스(14~20번) 네 단계로 나뉜다. 거버넌스 단계는 데이터 접근 정합성, 섀도 AI 관리, 정책 정의와 집행, 데이터 유출 방지, 위협 탐지, 수명주기 관리를 다룬다.
+
+> 💡 거버넌스 항목이 20개 중 7개를 차지한다는 배치 자체가, 에이전트 도입의 실제 난도가 구축이 아니라 통제 쪽에 있다는 신호로 읽힌다.
 
 ### [A developer's guide to publishing agents in Gemini Enterprise and Google Cloud Marketplace](https://cloud.google.com/blog/topics/developers-practitioners/publish-agents-in-gemini-enterprise-and-google-cloud-marketplace/)
 
 _Google Cloud_
 
-Software-as-a-service (SaaS) is evolving into Agents-as-a-service (AaaS).
+구글 클라우드가 Gemini Enterprise와 Google Cloud Marketplace에 에이전트를 게시하는 절차를 정리했다. SaaS가 AaaS(Agents-as-a-Service)로 진화하고 있다는 것이 전제다. 절차는 다섯 단계다. 먼저 Marketplace·파트너 프로젝트와 통합되도록 에이전트 아키텍처를 설계하고, 다음으로 Google Cloud Partner Network 가입과 Marketplace Vendor Agreement 수락 같은 조직 요건을 확인한다. 기술 요건으로는 A2A 프로토콜 준수, JSON 형식의 A2A Agent Card, OAuth 2.0 Authorization Code Grant Flow 또는 공개 접근, Marketplace Procurement API 연동이 필요하다. 이어 Producer Portal에서 "AI Agent as a Service" 유형으로 리스팅을 게시하고 Agent Card JSON을 올린 뒤 가용성·가격과 백엔드 조달을 설정해 검증을 통과한다. 마지막으로 Pub/Sub 기반 비동기 조달, DCR(RFC 7591) 동기 핸드셰이크 등록, OAuth 최종 사용자 활성화 세 흐름을 운영한다. IAM 역할은 Billing Administrator, Discovery Engine Administrator, Discovery Engine User 셋으로 나뉜다.
+
+> 💡 에이전트를 상품으로 팔 계획이 있다면 A2A Agent Card와 DCR 핸드셰이크가 사실상 진입 규격이므로, 내부 에이전트를 설계할 때부터 이 인터페이스에 맞춰두는 편이 나중 비용을 줄인다.
 
 ### [BGP route policies: Top 3 use cases by customer demand](https://cloud.google.com/blog/products/networking/bgp-route-policies-top-3-use-cases-by-customer-demand/)
 
 _Google Cloud_
 
-When we first made BGP route policies for Cloud Router generally available over a year ago, our goal was to give network administrators deep, programmable control over how network paths are evaluated and propagated. Since then, we’ve been watching closely how our customers have adopted this feature.
+구글 클라우드가 Cloud Router의 BGP 경로 정책이 정식 출시된 지 1년여가 지난 시점에서 고객 수요가 많았던 세 가지 용례를 정리했다. 원래 목표는 네트워크 관리자에게 경로가 평가·전파되는 방식에 대한 깊고 프로그래밍 가능한 제어권을 주는 것이었다. 첫째는 경로 필터링과 네트워크 보호로, 원하지 않는 경로를 걸러내고 전부 차단하는 정책으로 "fail closed" 보안 모델을 구현하는 용도다. 둘째는 액티브/스탠바이 트래픽 경로 최적화로, BGP MED 속성을 동적으로 바꾸고 AS-PATH 프리펜딩을 써서 온프레미스 하드웨어를 건드리지 않고 선호 경로를 조정한다. 셋째는 BGP 커뮤니티를 이용한 비대칭 라우팅 해소로, 커뮤니티 태그를 매칭해 응답 트래픽이 출발한 것과 같은 상태 저장 방화벽·어플라이언스를 지나가도록 보장한다. 2026년 3월 24일 출시된 정책 명명 집합과 세밀한 규칙 정의를 위한 CEL(Common Expression Language)도 언급된다.
+
+> 💡 상태 저장 방화벽을 거치는 하이브리드 연결에서 간헐적 세션 끊김을 겪고 있다면, 비대칭 라우팅이 원인일 가능성이 높고 BGP 커뮤니티 매칭이 그 표준 해법이다.
 
 ### [Cloudflare proudly joins the UK government's Cyber Resilience Pledge](https://blog.cloudflare.com/cloudflare-joins-uk-cyber-resilience-pledge/)
 
 _Cloudflare_
 
-The pledge is a voluntary framework inviting organizations to commit to foundational cyber security governance, board-level accountability, and supply chain rigor. For over a decade, Cloudflare has pioneered the core pillars of this framework: democratizing security, leadership accountability, and radical transparency.
+Cloudflare가 영국 정부의 Cyber Resilience Pledge에 창립 서명사로 참여했다고 밝혔다. 이 서약은 조직이 기초적인 사이버 보안 거버넌스, 이사회 수준의 책임, 공급망 엄격성을 약속하도록 초대하는 자발적 프레임워크로, 영국 과학혁신기술부(DSIT)와 국립사이버보안센터가 운영한다. Cloudflare는 10년 넘게 보안의 민주화, 리더십 책임, 급진적 투명성이라는 이 프레임워크의 핵심 기둥을 실천해왔다고 설명한다. 구체적으로 이사회가 최고보안책임자로부터 분기별 위협 위험 브리핑을 받고, 핵심 공급업체에는 Cyber Essentials 요건을 넘어 ISO 27001과 SOC 2 Type II 인증을 요구한다. 2026년 1분기 기준 Cloudflare 네트워크는 하루 평균 2,340억 건의 사이버 위협을 차단했다. 영국은 2025년 말 기준 DDoS 공격 대상 세계 6위였고 설문 응답 영국 기업의 43%가 사이버 사고를 겪었다고 답했다. Cloudflare는 공격 규모나 지속 시간과 무관하게 무료 요금제에도 무제한 DDoS 방어를 제공한다.
+
+> 💡 공급업체에 ISO 27001·SOC 2 Type II를 요구하는 것이 서약 이행의 구체적 형태로 제시됐다는 점에서, 공급망 보안 요건을 문서가 아니라 계약 조건으로 옮기는 참고 사례가 된다.
 
 ### [EMEA blog | ODC-Noord: Building Blocks for a Government Cloud That Is Already Up and Running (NL)](https://www.redhat.com/en/blog/ocd-noord-building-blocks-for-a-government-cloud-that-is-already-up-and-running)
 
 _Red Hat_
 
-Jaap Jansma, manager Overheidsdatacenter Noord (ODC-Noord), en Marcel Timmer, Country Director Netherlands bij Red Hat, vertellen hoe een klein team in Groningen uitgroeide tot leverancier van een aantal cruciale bouwstenen voor het fundament onder de digitale overheid.
+Red Hat EMEA 블로그가 네덜란드 정부 데이터센터 ODC-Noord 사례를 다뤘다(네덜란드어 원문). ODC-Noord는 정부 데이터센터를 65곳에서 4곳으로 줄이려는 Compacte Rijksdienst 프로그램의 일환으로 2012년 출범했다. 2016년 커뮤니티 클라우드 IaaS 플랫폼을 시작했고 2018년에는 Red Hat OpenShift 기반 컨테이너 플랫폼을 추가했다. 현재 11개 부처에 걸친 48개 정부 기관에 서비스하며, 네덜란드 내에 호스팅된 오픈소스 인프라를 쓴다. 배포된 Red Hat 제품은 OpenShift와 Red Hat Enterprise Linux다. 현재는 네덜란드 규제 틀 안에서 GPU·LLM 인프라 수요를 다루는 정부용 AI 플랫폼을 개발 중이다. ODC-Noord 매니저 Jaap Jansma와 Red Hat 네덜란드 컨트리 디렉터 Marcel Timmer가 인터뷰에 등장한다. Timmer는 플랫폼 위에서 돌아가는 것의 지적 재산은 항상 정부에 남으며, 주권은 공급자의 국적만이 아니라 기술적 통제권의 문제라고 강조한다.
+
+> 💡 주권을 공급자 국적이 아니라 기술적 통제권으로 정의한 이 사례는, 국내 공공 클라우드 요건을 검토할 때 계약 조항보다 운영 권한 소재를 먼저 따져야 한다는 관점을 준다.
 
 ### [Satellite 6.19 delivers Red Hat Lightspeed on premise security monitoring](https://www.redhat.com/en/blog/satellite-619-delivers-red-hat-lightspeed-premise-security-monitoring)
 
 _Red Hat_
 
-Red Hat Satellite 6.19 moves Red Hat Enterprise Linux (RHEL) management forward and continues to deliver the value of Red Hat Lightspeed to disconnected, air-gapped, and data-sovereign environments.
+Red Hat Satellite 6.19가 출시돼 Red Hat Lightspeed의 취약점 서비스를 연결이 끊긴 RHEL 환경에서 정식 지원한다. 호스트 단위로 취약점 분석을 켜고 끌 수 있는 세밀한 통제가 추가됐고, 관리자는 외부 연결 없이 로컬에서 비즈니스 위험을 정의하고 CVE를 일괄 분류할 수 있다. 시스템이나 CVE를 나열하는 모든 화면에서 JSON과 CSV 형식으로 보고서를 내려받는 기능도 들어갔다. Advisor 서비스는 감사 추적을 유지하면서 조직 수준에서 특정 권고를 억제할 수 있게 됐다. `insights-client`는 파이썬 egg 배포에서 표준 RHEL 저장소를 통한 RPM 패키지 형식으로 전환된다. 에어갭, 연결 차단, 데이터 주권 환경처럼 엄격한 데이터 경계를 요구하는 곳을 지원 대상으로 삼는다. 표준 18개월 수명주기에 12개월을 더해 총 30개월 유지보수 창을 제공하는 Extended Update Support 애드온도 선택할 수 있다.
+
+> 💡 폐쇄망에서 CVE 분류를 수작업 스프레드시트로 하던 팀이라면 로컬 일괄 분류와 CSV 내보내기만으로도 절차가 크게 줄어든다.
 
 ### [Red Hat Enterprise Linux Long-Life Add-On: Your path to RHEL with no pre-determined end date](https://www.redhat.com/en/blog/red-hat-enterprise-linux-long-life-add-your-path-rhel-forever)
 
 _Red Hat_
 
-Change is the only constant. But for organizations operating in highly regulated sectors such as global finance, telecommunications, healthcare, and government, constant change can be the enemy of stability.
+Red Hat이 Enterprise Linux Long-Life 애드온을 소개했다. 변화가 유일한 상수이지만 글로벌 금융, 통신, 의료, 정부처럼 고도로 규제된 분야에서는 끊임없는 변화가 안정성의 적이 될 수 있다는 것이 출발점이다. 이 애드온은 사전에 정해진 종료일 없이 RHEL을 쓸 수 있게 하는 것이 핵심으로, 수십 년의 안정성이 필요한 미션 크리티컬 워크로드를 겨냥한다. 제공 범위는 중대 보안 패치, 긴급 버그 수정, 그리고 Extended Life Cycle Premium 구독과 함께하는 24x7 기술 지원이다. 연 단위 갱신 방식이며 표준 14년 수명주기 기준을 넘어 지원을 연장한다. 자격은 Red Hat Enterprise Linux Extended Life Cycle Premium 구독이 활성화된 고객으로 한정된다. 최대 14년 총 지원을 제공하는 Extended Life Cycle Premium의 혜택이 끝난 뒤 이어지는 마지막 단계로, 연간 다리 역할을 한다는 위치 설정이다.
+
+> 💡 연 단위 갱신이라는 구조가 핵심이라, 무기한 지원이 아니라 매년 재계약으로 연장하는 비용을 장기 TCO에 반영해 마이그레이션 비용과 비교해야 한다.
 
 ---
 
@@ -116,40 +172,42 @@ Change is the only constant. But for organizations operating in highly regulated
 
 _The New Stack_
 
-Vercel CEO Guillermo Rauch and Coinbase CEO Brian Armstrong run very different companies, but they’re making the same architectural bet.
+The New Stack이 멀티모델 AI 인프라를 다뤘다. Vercel CEO Guillermo Rauch와 Coinbase CEO Brian Armstrong이 서로 매우 다른 회사를 운영하지만 같은 아키텍처적 베팅을 하고 있다는 것이 기사의 출발점이다. 제목은 Coinbase가 1,200개 에이전트를 운영하면서 AI 비용을 절반으로 줄였다고 전한다.
+
+> 💡 단일 모델에 에이전트 워크로드를 전부 태우고 있다면, 작업 성격별로 모델을 갈라 태우는 것이 비용 구조를 바꾸는 지렛대일 수 있다.
 
 ### [Watch AWS engineers troubleshoot agentic AI with OpenTelemetry and OpenSearch](https://thenewstack.io/opentelemetry-opensearch-agent-observability/)
 
 _The New Stack_
 
-Your organization constantly needs more information about system performance, usage, and data while in production — or better yet, before
+The New Stack이 AWS 엔지니어들이 OpenTelemetry와 OpenSearch로 에이전틱 AI를 트러블슈팅하는 과정을 다뤘다. 조직은 운영 중인 시스템의 성능·사용량·데이터에 대한 정보를 끊임없이 필요로 하며, 더 좋기로는 운영에 들어가기 전에 필요하다는 문제 인식에서 출발한다.
+
+> 💡 에이전트를 운영에 올렸는데 기존 APM으로 실패 지점을 못 짚고 있다면, 트레이스 스팬을 에이전트 단계 단위로 끊어보는 것이 첫 수순이다.
 
 ### [Vercel acquires Better Auth to give AI agents their own identity](https://thenewstack.io/vercel-acquires-better-auth/)
 
 _The New Stack_
 
-AI agents increasingly act on people’s behalf, opening pull requests, reviewing code, creating deployments, querying internal systems, or updating business
+The New Stack이 Vercel의 Better Auth 인수를 다뤘다. AI 에이전트가 사람을 대신해 풀 리퀘스트를 열고, 코드를 리뷰하고, 배포를 만들고, 내부 시스템을 조회하고, 업무 데이터를 갱신하는 일이 늘고 있다는 것이 배경이다. 제목이 밝히듯 이 인수의 목적은 AI 에이전트에게 자체 아이덴티티를 부여하는 것이다.
+
+> 💡 에이전트가 사람 계정의 토큰을 빌려 쓰고 있다면 감사 로그에서 행위 주체를 분리할 수 없으므로, 에이전트 전용 아이덴티티 도입은 보안이 아니라 추적성 문제로 먼저 다가온다.
 
 ### [How to scale access control in Grafana Cloud](https://grafana.com/blog/how-to-scale-access-control-in-grafana-cloud/)
 
 _Grafana_
 
-One of the primary reasons organizations adopt Grafana Cloud is to create a single pane of glass across the data they collect from self-hosted systems, cloud providers, and third-party platforms.
+Grafana가 Grafana Cloud에서 접근 제어를 확장하는 방법을 정리했다. 조직이 Grafana Cloud를 도입하는 주된 이유가 자체 호스팅 시스템·클라우드 제공자·서드파티 플랫폼에서 모은 데이터를 하나의 창으로 보는 것이라는 전제에서 출발한다. SSO와 SCIM 연동으로 사용자 프로비저닝을 자동화해 아이덴티티 공급자의 변경이 Grafana Cloud에 자동 반영되게 한다. RBAC은 기본 역할(Admin, Editor, 역할 없음)과 팀, 폴더 권한을 겹쳐 쓰는 방식이며, 팀은 아이덴티티 공급자의 그룹에서 직접 매핑돼 기본 역할 위에 권한을 더한다. 폴더 권한으로 대시보드 가시성을 제한해 외부 계약자에게는 해당 테넌트 대시보드만 보이게 할 수 있다. 여기에 라벨 기반 접근 제어(LBAC)를 얹으면 대시보드 접근과 무관하게 쿼리 결과가 사용자에게 할당된 테넌트 데이터로 한정된다. 권한은 가산적이어서 사용자의 실효 접근 권한은 할당된 모든 역할과 팀 소속의 합집합이 된다.
+
+> 💡 권한이 가산적이라는 점이 핵심이라, 폴더로 대시보드를 가려도 LBAC 없이는 쿼리로 남의 테넌트 데이터가 새어나갈 수 있다는 뜻이다.
 
 ### [Q1 2026 Innovation Graph update: Open source collaboration is accelerating worldwide](https://github.blog/news-insights/policy-news-and-insights/q1-2026-innovation-graph-update-open-source-collaboration-is-accelerating-worldwide/)
 
 _GitHub_
 
-New Innovation Graph data shows global developer communities growing faster than ever, with collaboration reaching new highs across many economies.
+GitHub이 2026년 1분기 Innovation Graph 데이터를 공개했다. 경제권 간 아웃바운드 협업이 2025년 4분기 대비 16% 증가해 2020년 이후 두 번째로 높은 증가율을 기록했다. 최고치는 2020년 2분기의 21%였고, ChatGPT 출시 직후인 2023년 1분기가 9%로 3위였다. 아웃바운드 협업은 경제권 사이에서 공개 저장소로 보낸 git 푸시와 풀 리퀘스트의 합으로 정의된다. 경제권별로는 유럽연합이 아웃바운드 협업 1위, 인도가 저장소 증가 1위였다. 제재 완화 이후 6개월간 8,000명 넘는 시리아 학생이 GitHub Student Developer Pack을 받았다는 내용도 포함된다. 제품 쪽으로는 메인테이너를 위한 풀 리퀘스트 제한, 저장소 단위 통제, 고정 코멘트, 임시 상호작용 제한이 도입됐고, 대형 풀 리퀘스트의 diff 응답성이 67% 빨라졌다. 기반 데이터는 CSV로 공개된다.
+
+> 💡 공개 데이터셋이 CSV로 제공된다는 점이 실무적으로 유용해서, 사내 오픈소스 기여 지표를 외부 기준선과 비교할 근거로 쓸 수 있다.
 
 ---
 
-## ⚡ 빠른 소식
-
-- [Hugging Face Models on Foundry Managed Compute](https://huggingface.co/blog/microsoft/foundry-managed-compute) — _Hugging Face_
-- [Security briefing: June 2026](https://webflow.sysdig.com/blog/security-briefing-june-2026) — _Sysdig_
-- [Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot](https://huggingface.co/blog/skypilot-hf-storage) — _Hugging Face_
-
----
-
-_이 다이제스트는 RSS 피드에서 자동 수집되었습니다. 발췌문은 각 피드 원문에서 그대로 가져온 것으로, 자세한 내용은 원문 링크를 확인하세요._
+_이 다이제스트는 RSS 피드에서 수집한 뒤 AI(Claude)가 요약·정리했습니다. 자세한 내용은 원문 링크를 확인하세요._
