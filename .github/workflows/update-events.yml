@@ -36,10 +36,45 @@ jobs:
           SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
         run: node scripts/fetch-seoul-events.mjs
 
+      # 외부 관광 API 는 간헐적으로 죽는다(2026-08-03 `Page 1 fetch failed`).
+      # 여기서 job 을 끊으면 앞 단계에서 이미 수집한 서울 행사분까지 버려지므로 계속 진행하되,
+      # 실패 사실은 마지막 단계에서 반드시 빨간불로 드러낸다.
       - name: Fetch nationwide festivals
+        id: festivals
+        continue-on-error: true
         env:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
         run: node scripts/fetch-festivals.mjs
+
+      # fetch-seoul-events 는 data.json 을 통째로 덮어쓰고, fetch-festivals 가 그 결과를 읽어
+      # 축제를 병합한다. 따라서 축제 수집이 실패하면 파일에는 서울 행사만 남고, 그대로 커밋하면
+      # 기존 축제가 전부 삭제된다. 직전 커밋의 tour-* 항목을 되살려 서울 행사분과 합친다.
+      - name: Preserve previous festivals when fetch failed
+        if: steps.festivals.outcome == 'failure'
+        run: |
+          git show HEAD:src/content/events/data.json > "${RUNNER_TEMP}/prev-events.json"
+          PREV="${RUNNER_TEMP}/prev-events.json" node -e '
+            const fs = require("fs");
+            const today = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+            const OUT = "src/content/events/data.json";
+            const prev = JSON.parse(fs.readFileSync(process.env.PREV, "utf-8"));
+            const cur = JSON.parse(fs.readFileSync(OUT, "utf-8"));
+            const isTour = (e) => String(e.id || "").startsWith("tour-");
+            const festivals = (prev.events || []).filter(isTour);
+            const seoul = (cur.events || []).filter((e) => !isTour(e));
+            const merged = new Map();
+            for (const e of [...seoul, ...festivals]) merged.set(e.id, e);
+            const upcoming = [...merged.values()]
+              .filter((e) => !e.endDate || e.endDate >= today)
+              .sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
+            fs.writeFileSync(
+              OUT,
+              JSON.stringify({ updatedAt: new Date().toISOString(), events: upcoming }, null, 2) + "\n"
+            );
+            console.log(
+              `축제 수집 실패 — 직전 축제 ${festivals.length}건 복원, 서울 ${seoul.length}건과 병합해 총 ${upcoming.length}건`
+            );
+          '
 
       - name: Check for changes
         id: changes
@@ -54,11 +89,18 @@ jobs:
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
+        env:
+          COUNT: ${{ steps.changes.outputs.count }}
+          FESTIVALS_OUTCOME: ${{ steps.festivals.outcome }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/content/events/data.json
-          git commit -m "chore(events): 서울 행사 데이터 업데이트 — ${{ steps.changes.outputs.count }}건 ($(TZ=Asia/Seoul date +%F))"
+          SUFFIX=""
+          if [ "$FESTIVALS_OUTCOME" = "failure" ]; then
+            SUFFIX=" [축제 수집 실패 — 직전 축제 데이터 유지]"
+          fi
+          git commit -m "chore(events): 서울 행사 데이터 업데이트 — ${COUNT}건 ($(TZ=Asia/Seoul date +%F))${SUFFIX}"
           git push
 
       # GITHUB_TOKEN 으로 push 하면 deploy.yml 의 `on: push` 가 발동하지 않는다(재귀 실행 방지).
@@ -68,3 +110,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
+
+      # 조용한 no-op 금지. 서울 행사분을 살려서 발행했더라도 축제 수집이 실패했다면
+      # 축제 목록은 갱신되지 않은 상태이므로, 런은 반드시 실패로 남긴다.
+      - name: Surface festivals fetch failure
+        if: steps.festivals.outcome == 'failure'
+        run: |
+          echo "::error::전국 축제 데이터 수집 실패 — 서울 행사분과 직전 축제 데이터는 반영했지만 축제 목록은 갱신되지 않았다. 위 'Fetch nationwide festivals' 로그를 확인하라."
+          exit 1
