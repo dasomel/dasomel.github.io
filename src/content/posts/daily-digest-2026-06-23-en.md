@@ -10,9 +10,9 @@ draft: false
 
 ### Cursor quietly acquires Continue, an open-source alternative to GitHub Copilot
 
-The New Stack covers continuing consolidation in AI developer tooling: the AI code editor Cursor has acquired Continue, an open-source coding assistant. Continue had been known as an open-source alternative to GitHub Copilot. The piece frames the deal as a quiet acquisition and places it in the context of AI developer tool consolidation proceeding apace.
+Cursor acquired the open-source coding assistant Continue, its latest deal in a busy 18 months of AI developer tool consolidation. The transaction appears to have closed around the same time SpaceX confirmed it was paying $60 billion for Cursor, meaning Musk's rocket company now owns Continue as well. Terms were not disclosed and there was barely an announcement: around June 16, Continue posted a brief note on its homepage saying it had been bought by Cursor, with an FAQ stating existing users had until July 15 to export their data before deletion and that recurring billing was disabled. Confirmation also came from developers who received account emails and via LinkedIn. Continue was co-founded by Ty Dunn and Nate Sesti, and Matthaus Krzykowski — an angel investor through Angel Invest and a long-time collaborator via dltHub — posted a tribute to the founding team. Krzykowski recalls that in 2023 most investors thought GitHub Copilot had already won, when in fact the developer experience was still badly broken.
 
-> 💡 **Why it matters**: If an open-source coding assistant is standard inside your org, post-acquisition licensing and governance shifts are the real risk — worth identifying a fallback path early.
+> 💡 **Why it matters**: Users got under a month to export their data — a reminder that if an open-source assistant is standard in your org, an acquisition announcement can double as a migration deadline.
 
 🔗 [Read more](https://thenewstack.io/cursor-acquires-continue-coding/) · _The New Stack_
 
@@ -52,25 +52,25 @@ The PaddlePaddle team released PP-OCRv6 on Hugging Face in three sizes: Tiny at 
 
 _OpenAI_
 
-OpenAI introduced Daybreak, a set of security tools aimed at helping organizations find, validate and patch vulnerabilities at scale. The announcement names Codex Security and GPT-5.5-Cyber as part of the release.
+On June 22, 2026, OpenAI expanded Daybreak, its security toolset, to help more organizations fix vulnerable software at machine speed. OpenAI says it has already used its models to find and generate patches for serious vulnerabilities in major browsers, network infrastructure and operating systems including the FreeBSD and Linux kernels. The Codex Security plugin was updated with lessons from running the models internally and in customer environments, helping teams find and fix vulnerabilities in existing systems faster while automatically blocking new ones before they reach production. GPT-5.5-Cyber, following an early preview focused on reducing unnecessary refusals on legitimate security work, is now generally available through an ongoing limited-release program for trusted defenders. The model scores 85.6% on CyberGym, ahead of GPT-5.5 at 81.8%. The announcement also covers Patch the Planet for supporting open source maintainers and plans for protecting critical infrastructure and sensitive systems.
 
-> 💡 With a model vendor bundling vulnerability discovery, validation and patching into one product line, it is worth mapping where that overlaps an existing SAST/DAST toolchain.
+> 💡 Models already finding and patching browser- and kernel-level vulnerabilities means discovery speed has begun outrunning organizations' capacity to apply patches.
 
 ### [Patch the Planet: a Daybreak initiative to support open source maintainers](https://openai.com/index/patch-the-planet)
 
 _OpenAI_
 
-OpenAI introduced Patch the Planet, a Daybreak initiative that helps open-source maintainers find, validate and fix vulnerabilities using AI together with expert review.
+OpenAI introduced Patch the Planet, a Daybreak initiative built with Trail of Bits to help maintainers strengthen the critical open-source software the world relies on. It pairs AI-assisted security research using OpenAI's most cyber-capable models with expert human review, not only to identify vulnerabilities but to help patch them. The premise is that AI is accelerating vulnerability discovery, but discovery alone does not protect users — many maintainers are already being asked to sort through more reports, more quickly, with the same limited time and resources. The program is built to reduce that burden rather than add to it: security engineers review findings before they reach maintainers, work with projects to develop patches and tests, and build reusable workflows so teams can keep improving security after the first fixes land. Trail of Bits has committed its entire security research organization to the initial surge, working directly with maintainers to investigate and validate vulnerabilities, develop and test patches, and coordinate disclosure. OpenAI is also partnering with HackerOne and Calif on triage, coordinated disclosure and additional focused discovery. Each engagement begins in consultation with the maintainer to determine where the effort would be most useful.
 
-> 💡 If upstream projects in your dependency tree get this kind of support, patch turnaround changes — a reason to check which parts of your SBOM rest on thin maintainer capacity.
+> 💡 Filtering findings through security engineers before they reach maintainers is the load-bearing design — if you plan to point an AI vulnerability scanner at upstream projects, ask whether you have the same buffer.
 
 ### [Codex-maxxing for long-running work](https://openai.com/index/codex-maxxing-long-running-work)
 
 _OpenAI_
 
-OpenAI published a piece on using Codex for long-running work, describing how Jason Liu preserves context, manages complex projects and keeps work going beyond a single prompt.
+OpenAI published a whitepaper on using Codex for long-running work, framed around organizations increasingly using AI to support work that extends beyond a single prompt. In it, Jason Liu shares practical strategies for using Codex as a persistent workspace that preserves context, manages complex workflows and helps sustain progress across long-running projects. It covers how to break ambitious goals into verifiable steps, maintain continuity across workstreams, and determine when to delegate execution to Codex versus when human oversight is most valuable.
 
-> 💡 For teams using agents only as one-shot prompts, how context is preserved is what determines whether work can continue — deciding where state lives between sessions is the practical starting point.
+> 💡 Deciding in advance what to delegate and where to supervise is the crux of long-running work — teams using agents only for one-shots should start by defining verifiable steps.
 
 ---
 
@@ -100,9 +100,9 @@ Google Cloud explains the Starter Tier, a fully managed project provisioned auto
 
 _The New Stack_
 
-The New Stack covers Qodo shipping cross-repo code review. The piece opens from the premise that late-night debugging is no longer a rare edge case but what happens when review cannot keep up with volume. Its argument is why review that crosses repository boundaries matters for teams flooded with AI-generated code.
+Qodo shipped cross-repository code review. Co-founder and CEO Itamar Friedman tells The New Stack that monolithic stacks have given way to a multi-repository backbone, and that the fallout from repository interconnects lands hardest on people rather than the pipeline. A one-line change in one repo can silently violate an architectural invariant another team relied on, with nobody catching it because the reviewer was skimming a 500-line diff against their own deadline. As AI floods teams with larger and more numerous pull requests, Friedman argues the blast radius only grows. He cites the Google DORA 2025 State of AI-assisted Software Development report: pull requests from teams with high AI adoption are already 154% larger, take 91% longer to review and ship 9% more bugs. Qodo announced three capabilities on Monday — Cross-Repo Code Review, Custom Rules Miner and Skill Review Standards.
 
-> 💡 For teams where AI-generated code has created a review bottleneck, it is worth checking whether repo-scoped review tooling is where real defects slip through.
+> 💡 The DORA figures — 154% larger PRs, 91% longer reviews, 9% more bugs on high-AI-adoption teams — are reason to measure your own PR size trend before changing review tooling.
 
 ---
 

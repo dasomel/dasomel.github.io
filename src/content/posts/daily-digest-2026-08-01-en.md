@@ -10,9 +10,9 @@ draft: false
 
 ### Forget humans “in” the loop. Harness engineering puts humans “on” the loop.
 
-The New Stack covers harness engineering, opening from the observation that AI has us quickly forgetting humans as the software delivery loop. As the headline frames it, forget humans in the loop — harness engineering puts humans on the loop instead.
+The New Stack covers harness engineering and the case for putting humans "on" the loop rather than "in" it. Thoughtworks distinguished engineer Kief Morris argues we need to pay more attention to the human on the loop to keep defining what good code and good systems are. Speaking to The New Stack at PlatformCon in London last month, he said that if you are using AI to build software you need to make sure you are building production-ready software, and that the default approaches people take right now do not include those engineering best practices. Even without giving agents free rein, he argues, you have to build that into your process and think about how to use agents safely — and that cannot wait, it is something to do now. At the speed of AI, organizations have to focus far less on speed to deploy and far more on the guardrails that ensure what they deploy is safe, secure and of high quality. The solution goes back to software delivery best practices accepted for more than a decade, but only if the CI/CD pipeline is production-ready. Morris worries that we have delegated so much code building to AI agents that we have become distant from the details of what they are building, losing track of whether the AI is building things well. That means, he says, getting better at defining good — something he does not think the industry has been good at.
 
-> 💡 **Why it matters**: When per-action approval breaks down at scale, moving humans to a supervisory position and verifying after the fact through audit trails is the alternative.
+> 💡 **Why it matters**: Building guardrails on the premise that "good" differs per team is the practical advice — before adopting agents, check whether your acceptance criteria are written down explicitly.
 
 🔗 [Read more](https://thenewstack.io/ai-agents-harness-engineering/) · _The New Stack_
 
@@ -60,25 +60,25 @@ Sysdig introduced the Runtime Remediation Skill for headless cloud security. It 
 
 _OpenAI_
 
-OpenAI shared how its safety, security, transparency and provenance practices support responsible AI governance in Europe, stating the work will continue.
+OpenAI shared how it is advancing responsible AI across Europe. It opens from the premise that millions of people across Europe use OpenAI's tools every day to learn, create, work and manage everyday tasks, and that those tools also support businesses of all sizes and governments across the region. The company believes responsible AI can help drive Europe's competitiveness and prosperity, and as the EU AI Act enters its next phase it is sharing how it has strengthened its approach to safety, security, transparency and provenance in line with the EU framework, and how it will keep evolving those practices as AI advances. Its mission of ensuring artificial general intelligence benefits all of humanity carries an ongoing responsibility to maximize benefits, broaden access and manage risks, which is why it has for years developed governance approaches and supported workable rules. Holding that regulation should be pragmatic, proportionate and risk-based so as to advance governance while supporting innovation, OpenAI contributed to and endorsed two Codes of Practice: the EU's General-Purpose AI (GPAI) Code of Practice and the Code of Practice on Transparency of AI-Generated Content, both developed through extensive multi-stakeholder processes. The GPAI Code creates a shared framework for transparency, safety and security for general-purpose AI models, and OpenAI says it supports that framework through extensive pre-release model testing and published system cards with major releases.
 
-> 💡 With provenance treated as a governance requirement in the European regulatory context, services targeting the EU should align their content-labelling policy with what vendors actually provide.
+> 💡 Transparency of AI-generated content being covered by its own Code of Practice matters practically — services targeting the EU should treat content labelling and provenance records as a regulatory requirement.
 
 ### [Building abundant intelligence](https://openai.com/index/building-abundant-intelligence)
 
 _OpenAI_
 
-OpenAI described building abundant intelligence as a full-stack approach to making advanced AI more capable, more affordable and more widely useful.
+OpenAI described its full-stack approach to building abundant intelligence. The starting point is that AI infrastructure is valuable not because it is large but because of what it makes possible: more capable intelligence, available to more people, at lower cost. That abundance is embedded both in the mission of ensuring AGI benefits all of humanity and in the economic engine driving the business. When the cost of useful intelligence falls, more work becomes worth doing; when models become more capable, that work creates more value; and as adoption grows, the company gains the revenue, real-world feedback and visibility into demand to keep investing in the next generation of research and infrastructure. A recent pricing announcement shows how quickly that cycle reaches customers: the day before, OpenAI reduced the price of GPT-5.6 Luna by 80 percent and GPT-5.6 Terra by 20 percent, putting Luna at $0.20 per million input tokens and $1.20 per million output tokens, and Terra at $2 and $12 respectively. For GPT-5.6 Sol, Fast mode delivers up to 2.5 times the speed of standard processing at twice the price with no change in intelligence. OpenAI frames these as more than price list changes — they expand the range of work that becomes practical and give customers flexibility to balance intelligence, speed, reliability and cost. The right question, it argues, is not which model belongs to which task but how much intelligence the outcome demands, how quickly it is needed and what it should cost, a balance that may change several times within the same workflow.
 
-> 💡 A vendor naming cost reduction as a strategic axis raises the risk of locking long-term contracts to today's unit price.
+> 💡 The view that required intelligence shifts several times within one workflow is the basis for routing design — assign models per step rather than per workflow.
 
 ### [Univé builds an AI-ready workforce](https://openai.com/index/unive)
 
 _OpenAI_
 
-OpenAI published a customer story on Univé, describing how it built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance and employee-led innovation.
+OpenAI published a customer story on Univé, one of the Netherlands' largest cooperative insurers, serving millions of members across insurance, mortgages, financial services and risk prevention. Its mission has always been to help people prevent problems before they happen, and as AI began reshaping knowledge work the organization saw an opportunity to rethink how employees could better deliver on it. Rather than approaching AI as another technology deployment, Univé viewed it as a major organizational transformation: the objective was not simply to introduce new tools but to build AI capability across the workforce so every employee could use AI safely, responsibly and effectively. ChatGPT Enterprise became a key part of that strategy, providing a secure platform employees could adopt quickly within Univé's governance framework. The transformation began with leadership — instead of treating AI as an IT initiative, the company brought its entire management community together for dedicated AI leadership sessions that challenged leaders to rethink how work itself would change and what role they would play in enabling it, moving managers beyond approving AI initiatives. Reported results include 97% of ChatGPT Enterprise licenses activated, 85% weekly active users, and roughly 1,500 custom GPTs created by employees, with pet insurance claims prepared for decision in minutes instead of hours.
 
-> 💡 Cases repeatedly attribute adoption outcomes to governance plus employee-led diffusion rather than the tool — a reason to weight enablement and policy equally in a rollout plan.
+> 💡 97% license activation alongside 85% weekly active users is an unusual pairing — evidence that starting adoption with manager enablement rather than as an IT project actually worked.
 
 ---
 
@@ -148,9 +148,9 @@ Red Hat summarizes its Product Security team's annual Risk Report, published in 
 
 _The New Stack_
 
-The New Stack covers Nscale acquiring Anyscale. Cloud platform company Nscale announced this week a definitive agreement to acquire the AI workload scaling specialist Anyscale. As the headline frames it, the focus is what this means for multi-cloud neutrality, examined alongside the question of neocloud lock-in.
+Cloud platform company Nscale announced this week a definitive agreement to acquire AI workload scaling specialist Anyscale, in a move that tests whether cloud-neutral AI software can stay neutral once paired with a GPU neocloud. The purchase combines Nscale's infrastructure capabilities — spanning control systems overseeing GPUs, data centers and power consumption through to the application layer where AI services execute — with Anyscale's software layer for scaling AI workloads across data processing, training, inference and reinforcement learning. Nscale describes it as two highly complementary companies coming together, but the article argues it could be a fundamental change in the resulting business model. Nscale is a GPU neocloud, a specialized provider running bare-metal GPUs and infrastructure optimized for AI and machine learning, operating its own GPU-rich data centers and software stack. Anyscale, meanwhile, is an independent cloud-neutral multi-cloud orchestration control plane that works with any hyperscaler — now owned by a single neocloud. Nscale chief product officer Dan Bathurst says the Anyscale platform continues as its own brand and product, including bring-your-own-cloud deployments on AWS, GCP, Azure and others. He says the company wants to win on performance, not on vendor lock-in or forcing anyone to choose Nscale as their infrastructure provider, and that what changes is customers also gaining a first-party option to run Anyscale on the Nscale fleet as a fully optimized full-stack solution.
 
-> 💡 When the workload scaling layer is absorbed by a specific cloud provider, the neutrality premise weakens — if you depend on that stack, verify your portability path.
+> 💡 When a neutral orchestration layer comes under an infrastructure provider, roadmap priorities can shift — if you depend on that stack, watch whether the BYOC path stays a first-class citizen.
 
 ### [Modeling Device Capabilities for Analytics](https://netflixtechblog.com/modeling-device-capabilities-for-analytics-e7607acebde8?source=rss----2615bd06b42e---4)
 
@@ -172,9 +172,9 @@ GitHub published an optimization for case-folding source code at memory speed. T
 
 _The New Stack_
 
-The New Stack covers Gemini Robotics 2. This week Google DeepMind revealed Gemini Robotics 2, an intelligence layer comprising three new models to power more adaptable physical systems. As the headline frames it, the article views this as one step closer to physical AGI.
+Google DeepMind revealed Gemini Robotics 2 on Thursday, an intelligence layer comprising three new models to power more adaptable physical AI. Google says the models give robots more dexterous, full-body control to work together and complete a wide range of multi-step tasks. The vision-language-action model, Gemini Robotics 2, converts vision and language inputs into motor control so robots can flex from feet to fingertips, with enough dexterity in hands and grippers for delicate tasks like closing a Ziploc bag. The lightweight Gemini Robotics On-Device 2 runs locally so robotic applications keep working without internet connectivity. The embodied reasoning model, Gemini Robotics ER 2, lets robots understand their surroundings and communicate with humans to devise plans for multi-step tasks such as emptying a dishwasher and putting items away. Chris Matthieu, VP of the developer ecosystem at RealSense, tells The New Stack this is what it will take for robots to graduate from simple, isolated actions to real-world physical assistance: the hard part is not making the first decision but recovering from the hundredth once the world has changed — doors close, objects get moved, people walk into the scene, batteries drain and sensors become partially occluded. Where the previous Gemini Robotics 1.5 could only control a robot's upper body for tabletop tasks, Gemini Robotics 2 brings intelligence to the entire humanoid body, enabling it to walk, crouch, stretch and handle various objects.
 
-> 💡 Robotics models shipping as a distinct layer shows physical system control settling into its own stack rather than remaining a side capability of general models.
+> 💡 The point that the hard part is the hundredth decision after the world has changed generalizes past robotics — long-running agents should be evaluated on recovery, not initial accuracy.
 
 ### [Reflections on AI Week, and the future of solving problems with observability and AI](https://grafana.com/blog/ai-week-recap/)
 

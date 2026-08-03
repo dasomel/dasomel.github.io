@@ -10,9 +10,9 @@ draft: false
 
 ### Apple just turned Safari into something AI agents can control
 
-The New Stack이 애플 WebKit 팀의 Safari Technology Preview 247 릴리스를 다뤘다. 이 프리뷰 빌드에는 Model Context Protocol(MCP) 서버가 브라우저에 내장돼 있다. MCP는 AI 에이전트가 외부 도구·데이터에 접근하는 표준 인터페이스로, 이를 브라우저가 직접 노출한다는 것은 에이전트가 Safari를 제어 가능한 대상으로 다룰 수 있게 된다는 뜻이다. 기사 제목은 이 변화를 "애플이 Safari를 AI 에이전트가 조작할 수 있는 무언가로 바꿨다"고 요약한다.
+애플 WebKit 팀이 Safari Technology Preview 247을 내놓으며 Model Context Protocol 서버를 브라우저에 내장했다. MCP 호환 AI 에이전트가 실행 중인 Safari 창에 직접 접근할 수 있는 16개 도구를 제공한다. 에이전트는 개발자가 터미널을 벗어나지 않고도 스크린샷을 찍고, DOM을 검사하고, 자바스크립트를 실행하고, 콘솔 출력을 읽고, 네트워크 요청을 모니터링하고, 뷰포트 크기를 조절하고, CSS 미디어 모드를 흉내 내고, 접근성 검사를 돌릴 수 있다. 이는 애플이 한 달도 안 되는 사이에 내놓은 두 번째 공식 MCP 서버다. 6월 초 WWDC에서 애플은 Xcode 27에 MCPBridge를 소개했는데, MCP를 XPC 위로 번역해 Xcode의 실행 프로세스에 연결하고 에이전트가 프로젝트를 빌드하고 테스트를 돌리고 SwiftUI 프리뷰를 렌더링하고 문서를 검색하고 진단을 읽게 하는 20개 도구를 노출한다. 앤스로픽·OpenAI·구글의 에이전트가 모두 같은 프로토콜로 연결된다. 서버는 전적으로 로컬 머신에서 돌며 Safari의 개인정보에는 접근하지 않아 AutoFill 데이터, 방문 기록, 그 밖의 브라우저 활동을 읽지 않고, 수집한 페이지 내용과 스크린샷·콘솔 로그는 애플이 아니라 개발자가 돌리는 AI 에이전트로 직접 간다.
 
-> 💡 **왜 중요한가**: 브라우저가 MCP 서버를 기본 탑재하기 시작하면 사내 웹 자동화의 전제가 바뀌므로, 에이전트가 접근 가능한 브라우저 표면을 권한 경계 관점에서 미리 점검해둘 필요가 있다.
+> 💡 **왜 중요한가**: 플랫폼 벤더가 MCP 서버를 제품 표준 기능으로 내놓기 시작했다는 것은 커뮤니티 구현에 기대던 단계가 끝났다는 뜻이며, 사내 도구도 MCP 인터페이스를 갖출지 판단할 시점이 된다.
 
 🔗 [원문 보기](https://thenewstack.io/safari-mcp-platform-infrastructure/) · _The New Stack_
 

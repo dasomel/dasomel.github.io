@@ -84,9 +84,9 @@ _Google AI_
 
 _OpenAI_
 
-OpenAI가 Australian Payments Plus(AP+)의 도입 사례를 공개했다. AP+가 ChatGPT Enterprise와 Codex를 써서 결제 영역의 복잡성을 더 빠르게 헤쳐 나가고 있다는 내용이다. 시간을 절약하고 품질을 높이면서도 사람의 판단을 중심에 유지한다는 점을 강조한다.
+OpenAI가 Australian Payments Plus(AP+) 사례를 공개했다. AP+는 호주 전역의 결제·아이덴티티 인프라를 운영하며 결제 생태계 한가운데에서 매일 수백만 명이 쓰는 제품과 서비스를 뒷받침한다. 팀들은 스킴 규칙, 기술 명세, 회원 의무, 운영 절차, 사이버보안과 회복탄력성, 규제 기대치를 넘나들며 일하는데 속도도 중요하지만 정확성과 책임성이 더 중요한 영역이다. ChatGPT Enterprise와 Codex를 도입한 결과로 설문에 응한 직원의 77%가 매주 시간을 절약했다고 답했고, 상당수가 창의성이나 업무 품질이 개선됐다고 보고했다. Codex로는 이전에 며칠에서 몇 주가 걸리던 작동하는 시뮬레이션 구축을 크게 앞당겼고, 복잡한 조정(reconciliation) 문제의 조사 시간도 기존 4시간에서 줄였다. AP+는 시간을 아끼고 업무 품질을 높이면서도 사람의 판단을 중심에 유지한다는 점을 강조한다.
 
-> 💡 규제 산업에서 "사람의 판단을 중심에 유지한다"는 표현이 반복되는 것은, 도입 성패가 모델 성능보다 검토 절차 설계에 달려 있다는 실무적 신호다.
+> 💡 규제 산업에서 정확성이 속도보다 우선한다는 전제를 유지한 채 도입한 사례라, 유사한 환경에서는 절감 시간보다 검토 절차를 어떻게 설계했는지가 참고 지점이 된다.
 
 ### [Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot](https://huggingface.co/blog/skypilot-hf-storage)
 
@@ -172,25 +172,25 @@ Red Hat이 Enterprise Linux Long-Life 애드온을 소개했다. 변화가 유�
 
 _The New Stack_
 
-The New Stack이 멀티모델 AI 인프라를 다뤘다. Vercel CEO Guillermo Rauch와 Coinbase CEO Brian Armstrong이 서로 매우 다른 회사를 운영하지만 같은 아키텍처적 베팅을 하고 있다는 것이 기사의 출발점이다. 제목은 Coinbase가 1,200개 에이전트를 운영하면서 AI 비용을 절반으로 줄였다고 전한다.
+Vercel CEO Guillermo Rauch와 Coinbase CEO Brian Armstrong이 서로 매우 다른 회사를 운영하면서도 같은 아키텍처적 베팅을 하고 있다. 단일 AI 제공자를 중심으로 구축하는 대신, 여러 모델에 작업을 라우팅할 수 있는 운영 시스템을 설계하는 것이다. 배경에는 일상적 엔지니어링 작업에서 프런티어 모델 간 역량 격차가 크게 좁혀졌고 오픈 웨이트 대안이 극적으로 개선됐으며 가격 차이는 계속 벌어지고 있다는 사정이 있다. Rauch는 TechCrunch 인터뷰에서 Vercel이 이제 하루에 1조 개가 넘는 토큰을 수백만 배포에 걸쳐 라우팅하고 있으며 단일 연구소 파트너십에서 적극적으로 벗어나고 있다고 말했다. 그는 단일 연구소 파트너십이 한물갔다고 표현한다. Armstrong의 베팅은 재무 결과로 뒷받침되는데, Coinbase는 엔지니어에게 사용량 상한을 두지 않고도 전체 토큰 사용량이 늘어나는 가운데 내부 AI 지출을 거의 절반으로 줄였다. 핵심은 내부 LLM 게이트웨이로, 엔지니어의 기본값을 저비용 오픈 웨이트 모델인 Z.ai의 GLM 5.2와 Moonshot AI의 Kimi 2.7로 잡아둔다. GLM 5.2는 100만 입력 토큰당 약 1.40달러, 출력 4.40달러인 반면 앤스로픽 Opus 4.8은 입력 5달러, 출력 25달러 선이다.
 
-> 💡 단일 모델에 에이전트 워크로드를 전부 태우고 있다면, 작업 성격별로 모델을 갈라 태우는 것이 비용 구조를 바꾸는 지렛대일 수 있다.
+> 💡 사용량 상한 없이 지출을 절반으로 줄였다는 점이 핵심이라, 비용 통제를 쿼터가 아니라 기본 모델 선택으로 푸는 접근이 개발자 마찰 없이 작동한 실측 사례가 된다.
 
 ### [Watch AWS engineers troubleshoot agentic AI with OpenTelemetry and OpenSearch](https://thenewstack.io/opentelemetry-opensearch-agent-observability/)
 
 _The New Stack_
 
-The New Stack이 AWS 엔지니어들이 OpenTelemetry와 OpenSearch로 에이전틱 AI를 트러블슈팅하는 과정을 다뤘다. 조직은 운영 중인 시스템의 성능·사용량·데이터에 대한 정보를 끊임없이 필요로 하며, 더 좋기로는 운영에 들어가기 전에 필요하다는 문제 인식에서 출발한다.
+The New Stack이 AWS 엔지니어들의 에이전틱 AI 트러블슈팅 웨비나를 예고했다. AI 에이전트가 여러 환경에 걸쳐 있어 전통적인 로그·메트릭·트레이스 모델로는 에이전틱 AI 시대의 데이터 양을 감당하기 어렵다는 문제 인식에서 출발한다. 그렇다고 모든 것을 독점 도구라는 잠긴 상자에 밀어 넣으면 계층마다 정보가 고립돼 데이터가 파편화되고 실제 AI 투자수익에서 더 멀어진다는 지적이다. 비결정적인 에이전트 앞에서는 "테스트 환경에서는 됐다"는 말이 무의미해지고, 스택이 복잡해지고 에이전트가 늘어날수록 텔레메트리의 난이도도 올라간다. 해법으로 제시되는 것은 OpenTelemetry 프레임워크와 분산 검색·분석 엔진 OpenSearch의 오픈소스 조합으로, 규모와 무관하게 파편화된 워크플로 전반에 통합된 맥락을 제공한다. OTel은 신규 클라우드 네이티브 계측 프로젝트에서 95% 채택률을 넘겨 그린필드 프로젝트의 기본 선택지가 됐다. 리눅스 재단 산하 최상위 오픈소스 프로젝트이자 AWS 등이 후원하는 OpenSearch는 올해 로드맵에서 AI 에이전트의 주 검색 인터페이스이자 RAG·에이전틱 스택의 필수 구성요소가 되는 데 초점을 맞추고 있다. 7월 22일 OpenSearch 앰배서더 Dotan Horovits와 AWS OpenSearch 수석 기술 PM Rekha Thottan이 라이브 트러블슈팅을 진행한다.
 
-> 💡 에이전트를 운영에 올렸는데 기존 APM으로 실패 지점을 못 짚고 있다면, 트레이스 스팬을 에이전트 단계 단위로 끊어보는 것이 첫 수순이다.
+> 💡 비결정적 에이전트 앞에서 "테스트 환경에서는 됐다"가 무의미해진다는 지적이 핵심이라, 에이전트를 운영에 올릴 때 검증 전략을 사전 테스트에서 운영 관측으로 옮겨야 한다.
 
 ### [Vercel acquires Better Auth to give AI agents their own identity](https://thenewstack.io/vercel-acquires-better-auth/)
 
 _The New Stack_
 
-The New Stack이 Vercel의 Better Auth 인수를 다뤘다. AI 에이전트가 사람을 대신해 풀 리퀘스트를 열고, 코드를 리뷰하고, 배포를 만들고, 내부 시스템을 조회하고, 업무 데이터를 갱신하는 일이 늘고 있다는 것이 배경이다. 제목이 밝히듯 이 인수의 목적은 AI 에이전트에게 자체 아이덴티티를 부여하는 것이다.
+Vercel이 오픈소스 타입스크립트 인증 프레임워크 Better Auth를 인수한다. AI 에이전트가 사람을 대신해 풀 리퀘스트를 열고, 코드를 리뷰하고, 배포를 만들고, 내부 시스템을 조회하고, 업무 애플리케이션을 갱신하지만, 대개 배포한 사람과 같은 신분증을 달고 그 일을 한다는 문제에서 출발한다. 에이전트가 건드리는 모든 서비스는 에이전트가 아니라 사람을 보게 되고, 특정 에이전트만 권한을 제한하거나 나머지를 끊지 않고 하나만 정지시킬 깔끔한 방법이 없다. Better Auth는 주간 npm 다운로드가 약 470만 건인 프레임워크이며, 창시자 Bereket Engida와 핵심 팀이 Vercel에 합류해 프레임워크와 에이전트 아이덴티티 작업을 이어간다. Better Auth는 이미 사람 인증을 넘어서는 방향을 보고 있었고, 배포한 사람과 분리된 범위 제한·위임·철회 가능한 권한을 에이전트에게 부여하는 개방형 프로토콜 Agent Auth를 개발하기 시작한 상태였다. 이 흐름은 Better Auth만의 것이 아니어서, 앤스로픽도 Claude가 태그한 사람의 신분으로 행동하는 대신 자체 연결 계정으로 슬랙에 존재하게 하는 Claude Tag를 최근 선보였다.
 
-> 💡 에이전트가 사람 계정의 토큰을 빌려 쓰고 있다면 감사 로그에서 행위 주체를 분리할 수 없으므로, 에이전트 전용 아이덴티티 도입은 보안이 아니라 추적성 문제로 먼저 다가온다.
+> 💡 에이전트 하나만 정지시킬 방법이 없다는 것이 실질적 운영 위험이라, 사고 대응 관점에서 에이전트별 권한 철회가 가능한지부터 점검해야 한다.
 
 ### [How to scale access control in Grafana Cloud](https://grafana.com/blog/how-to-scale-access-control-in-grafana-cloud/)
 

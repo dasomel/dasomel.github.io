@@ -10,9 +10,9 @@ draft: false
 
 ### Opus 5 costs a third of the price — and that’s actually the problem
 
-The New Stack examines Anthropic's Opus 5 launch through a cost lens. Released on Friday, the latest iteration of its heavyweight model arrived just two months after Opus 4. As the headline puts it, the argument is that costing a third of the price is actually the problem, examined in terms of agentic coding cost structure.
+Anthropic launched Opus 5 on Friday, arriving two months after Opus 4.8 and following the June releases of Mythos 5, Fable 5 and Sonnet 5 to round out the new generation, leaving only the lightweight Haiku awaiting an upgrade. Smaller than the flagship Fable 5, Opus 5 is significantly cheaper and noticeably less restrictive, designed to work on programming tasks for much longer without constant human input. Priced at $5 per million input tokens and $25 per million output tokens, it upends the cost-to-performance ratio for agentic tasks. On coding and knowledge work evaluations such as Frontier-Bench and GDPval-AA it establishes a new state of the art, and on the OSWorld 2.0 computer use benchmark it outperforms every other model at any given cost, surpassing Fable 5's best result at just over a third of the price. On ARC-AGI 3, which requires solving novel problems, its score is three times the next best model's. Because it is less expensive to run, teams can afford to let it work through larger coding tasks — which, the article notes, means thinking differently about security. Anthropic says the model is much stronger at verifying its work and iterating carefully until it succeeds: during benchmark testing it was given an incomplete prompt and intentionally prevented from viewing a drawing of a machine part, and rather than giving up it wrote its own computer vision pipeline to reconstruct the part from the image data.
 
-> 💡 **Why it matters**: Lower unit price commonly drives higher call volume and a higher total bill — do not translate a price cut directly into budget savings.
+> 💡 **Why it matters**: Lower prices lead to handing agents larger tasks, which widens their execution radius — the right order is preparing isolation before banking the cost savings.
 
 🔗 [Read more](https://thenewstack.io/opus-5-agentic-coding-cost/) · _The New Stack_
 
@@ -120,17 +120,17 @@ Red Hat addresses threats frontier AI models pose to the application development
 
 _The New Stack_
 
-The New Stack covers NVIDIA CEO Jensen Huang's first post on X, which he used to share a public letter backing frontier open-weight models. As the headline frames it, the post served to lobby Washington about open-weight AI.
+NVIDIA CEO Jensen Huang used his first post on X to share a public letter backing frontier open-weight models. Signed by Microsoft, Meta, Hugging Face and 22 other organizations, the letter argues that open models improve security, encourage faster innovation, and give countries and enterprises more control over their AI infrastructure. The Friday timing is notable as more organizations choose to run open-weight models inside their own environments rather than relying entirely on hosted services. The letter compares open-weight AI to open-source software, arguing that broad access drove decades of software innovation and the same principle applies to AI: instead of sending every request to a hosted model, organizations can download an open-weight model, run it on their own infrastructure, customize it for a specific workload and keep sensitive data behind their own firewall. NVIDIA has been moving in this direction, with its leaders describing a future where local and frontier models split work by cost, speed and control. As the coalition puts it, open weights let every organization match the right model to the right job at the right cost, reserving frontier-scale capability for genuine frontier problems and running efficient, specialized models everywhere else.
 
-> 💡 Open-weight models becoming a policy question means that for organizations planning self-hosting, availability itself is now a regulatory variable.
+> 💡 Reserving frontier-scale capability for genuine frontier problems is a usable allocation rule — if every request currently goes to the top model, start by classifying work by difficulty.
 
 ### [Anthropic’s Opus 5 is almost Fable 5](https://thenewstack.io/anthropics-opus-5-almost-fable-5/)
 
 _The New Stack_
 
-The New Stack compares Anthropic's Opus 5 with Fable 5. Anthropic launched Opus 5 on Friday, the latest version of what used to be the company's flagship model. As the headline puts it, the article's view is that Opus 5 is almost Fable 5.
+Anthropic launched Opus 5 on Friday, the latest version of what used to be the company's flagship model before Fable 5. Anthropic says Opus 5 comes close to Fable 5's performance in many domains at half the price, with token costs unchanged from Opus 4.8 at $5 and $25 per million input and output tokens. Unlike Fable 5, users do not have to opt into a 30-day data retention policy to use it, and it is now the default model for Claude Max subscribers and the best model Claude Pro subscribers can access. Anthropic stresses it is the most capable Opus yet and can autonomously perform work for much longer than before, checking its own work and recovering from errors. Fable 5 remains the model for the most ambitious work and projects needing days-long autonomy, while Opus 5 is described as designed to be used every day. On virtually every benchmark Anthropic has shared, Opus 5 actually outperforms Fable 5 — suggesting the distinguishing factor is the ability to stay on one project for a very long time. It scores 1861 on the GDPval-AA v2 knowledge work benchmark, ahead of Fable 5 (1747), GPT-5.6 Sol (1736) and Opus 4.8 (1593). It is also the top model on Zapier's AutomationBench, which measures agents on end-to-end business workflows, where Anthropic says its pass rate is double the next-best model's at the same cost per task.
 
-> 💡 When the gap between a vendor's own model tiers narrows, the selection criterion shifts from capability to cost and latency — a cue to revisit routing policy.
+> 💡 A lower-tier model outscoring the flagship while the tiering persists is the signal — select models by sustainable autonomous working time rather than by benchmark score.
 
 ---
 

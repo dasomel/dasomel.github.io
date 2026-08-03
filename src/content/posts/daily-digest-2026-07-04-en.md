@@ -10,9 +10,9 @@ draft: false
 
 ### Apple just turned Safari into something AI agents can control
 
-The New Stack covered Apple's WebKit team shipping Safari Technology Preview 247. The preview build embeds a Model Context Protocol (MCP) server directly in the browser. MCP is the standard interface through which AI agents reach external tools and data, so exposing it from the browser itself means agents can treat Safari as a controllable surface. The piece frames the change as Apple turning Safari into something AI agents can drive.
+Apple's WebKit team shipped Safari Technology Preview 247 with a built-in Model Context Protocol server — 16 tools giving any MCP-compatible AI agent direct access to a live Safari window. An agent can capture screenshots, inspect the DOM, execute JavaScript, read console output, monitor network requests, resize the viewport, emulate CSS media modes and run accessibility checks, all without the developer leaving the terminal. This is the second official MCP server Apple has shipped in under a month. At WWDC in early June, Apple introduced MCPBridge in Xcode 27, a binary translating MCP over XPC into Xcode's live process and exposing 20 built-in tools that let agents build projects, run tests, render SwiftUI previews, search documentation and read diagnostics — with agents from Anthropic, OpenAI and Google all connecting through the same protocol. The server runs entirely on the local machine with no access to personal information in Safari: no AutoFill data, no browsing history, no other browser activity. Captured page content, screenshots and console logs go directly to the AI agent the developer is running, not to Apple.
 
-> 💡 **Why it matters**: If browsers start shipping MCP servers by default, the assumptions behind internal web automation change — worth auditing which browser surfaces an agent can reach, from a permission-boundary standpoint.
+> 💡 **Why it matters**: Platform vendors shipping MCP servers as standard product features marks the end of relying on community implementations — a cue to decide whether internal tools need an MCP interface too.
 
 🔗 [Read more](https://thenewstack.io/safari-mcp-platform-infrastructure/) · _The New Stack_
 

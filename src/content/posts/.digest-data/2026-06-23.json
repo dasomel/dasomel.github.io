@@ -10,10 +10,10 @@
       "link": "https://thenewstack.io/cursor-acquires-continue-coding/",
       "date": "2026-06-22T19:48:42.000Z",
       "excerpt": "The AI developer tools consolidation continues apace, with news that Cursor has snapped up open-source coding assistant Continue — its",
-      "summaryKo": "The New Stack이 AI 개발자 도구 업계의 통합 흐름을 다뤘다. AI 코드 에디터 Cursor가 오픈소스 코딩 어시스턴트 Continue를 인수했다는 소식이다. Continue는 GitHub Copilot의 오픈소스 대안으로 알려져 있던 프로젝트다. 기사는 이 인수를 조용히 이뤄진 거래로 표현하며, AI 개발자 도구 분야의 통합이 빠른 속도로 계속되고 있다는 맥락에서 다룬다.",
-      "summaryEn": "The New Stack covers continuing consolidation in AI developer tooling: the AI code editor Cursor has acquired Continue, an open-source coding assistant. Continue had been known as an open-source alternative to GitHub Copilot. The piece frames the deal as a quiet acquisition and places it in the context of AI developer tool consolidation proceeding apace.",
-      "insightKo": "오픈소스 코딩 어시스턴트를 사내 표준으로 채택했다면 인수 이후의 라이선스·거버넌스 변화가 실질 리스크이므로, 대체 경로를 미리 확인해두는 편이 안전하다.",
-      "insightEn": "If an open-source coding assistant is standard inside your org, post-acquisition licensing and governance shifts are the real risk — worth identifying a fallback path early."
+      "summaryKo": "AI 개발자 도구 통합이 이어지는 가운데 Cursor가 오픈소스 코딩 어시스턴트 Continue를 인수했다. 이 거래는 SpaceX가 Cursor에 600억 달러를 투입한다고 확인한 시점과 비슷하게 마무리돼, 결과적으로 머스크의 로켓 기업이 Continue의 소유주가 됐다. 거래 조건은 공개되지 않았고 이렇다 할 발표조차 없었다. 6월 16일경 Continue가 홈페이지에 Cursor에 인수됐다는 짧은 문구와 FAQ를 올렸는데, 기존 사용자는 7월 15일까지 데이터를 내보내야 하며 그 이후 삭제되고 정기 결제는 중단됐다는 내용이었다. 확인은 계정 관련 이메일을 받은 개발자들의 보고와 링크드인을 통해서도 이뤄졌다. Continue의 창업자는 Ty Dunn과 Nate Sesti이며, Angel Invest를 통한 엔젤 투자자이자 dltHub로 협업해온 Matthaus Krzykowski가 창업팀에 대한 헌사를 올렸다. Krzykowski는 2023년 당시 대부분의 투자자가 GitHub Copilot이 이미 시장을 장악했다고 봤지만 실제로는 개발자 경험이 크게 망가진 상태였다고 회고한다.",
+      "summaryEn": "Cursor acquired the open-source coding assistant Continue, its latest deal in a busy 18 months of AI developer tool consolidation. The transaction appears to have closed around the same time SpaceX confirmed it was paying $60 billion for Cursor, meaning Musk's rocket company now owns Continue as well. Terms were not disclosed and there was barely an announcement: around June 16, Continue posted a brief note on its homepage saying it had been bought by Cursor, with an FAQ stating existing users had until July 15 to export their data before deletion and that recurring billing was disabled. Confirmation also came from developers who received account emails and via LinkedIn. Continue was co-founded by Ty Dunn and Nate Sesti, and Matthaus Krzykowski — an angel investor through Angel Invest and a long-time collaborator via dltHub — posted a tribute to the founding team. Krzykowski recalls that in 2023 most investors thought GitHub Copilot had already won, when in fact the developer experience was still badly broken.",
+      "insightKo": "기존 사용자에게 데이터 내보내기 기한이 한 달도 안 되게 주어졌다는 점이 실무적 교훈으로, 오픈소스 어시스턴트를 사내 표준으로 쓰고 있다면 인수 발표가 곧 마이그레이션 마감이 될 수 있다.",
+      "insightEn": "Users got under a month to export their data — a reminder that if an open-source assistant is standard in your org, an acquisition announcement can double as a migration deadline."
     },
     {
       "source": "The New Stack",
@@ -22,10 +22,10 @@
       "link": "https://thenewstack.io/qodo-cross-repo-code-review/",
       "date": "2026-06-22T19:42:18.000Z",
       "excerpt": "Late-night debugging sessions aren’t a rare edge case anymore. They are what happens when reviews can’t keep up with volume.",
-      "summaryKo": "The New Stack이 코드 리뷰 도구 Qodo의 교차 저장소(cross-repo) 리뷰 출시를 다뤘다. 기사는 심야 디버깅이 더 이상 드문 예외가 아니라, 리뷰가 코드 물량을 따라가지 못할 때 필연적으로 벌어지는 일이라는 문제 인식에서 출발한다. AI로 생성된 코드가 쏟아지는 팀에서 왜 저장소 경계를 넘는 리뷰가 중요해지는지가 글의 논지다.",
-      "summaryEn": "The New Stack covers Qodo shipping cross-repo code review. The piece opens from the premise that late-night debugging is no longer a rare edge case but what happens when review cannot keep up with volume. Its argument is why review that crosses repository boundaries matters for teams flooded with AI-generated code.",
-      "insightKo": "AI 생성 코드 비중이 늘어 리뷰 병목이 생긴 팀이라면, 저장소 단위로 갇힌 리뷰 도구가 실제 결함을 놓치는 지점인지 점검해볼 만하다.",
-      "insightEn": "For teams where AI-generated code has created a review bottleneck, it is worth checking whether repo-scoped review tooling is where real defects slip through."
+      "summaryKo": "Qodo가 저장소 경계를 넘는 코드 리뷰를 출시했다. Qodo 공동창업자 겸 CEO인 Itamar Friedman은 모놀리식 스택이 다중 저장소 구조로 바뀌었고, 저장소 간 연결에서 비롯된 취약성의 부담이 파이프라인이 아니라 사람에게 떨어진다고 말한다. 한 저장소의 한 줄 변경이 다른 팀이 의존하던 아키텍처 불변식을 조용히 깨뜨려도, 리뷰어가 자기 마감에 쫓기며 500줄짜리 diff를 훑는 탓에 아무도 잡아내지 못한다는 것이다. AI가 더 크고 많은 풀 리퀘스트를 쏟아내면서 그 파급 범위는 계속 커진다고 본다. 근거로 \"Google DORA 2025 State of AI-assisted Software Development\" 보고서를 드는데, AI 도입률이 높은 팀의 풀 리퀘스트는 이미 154% 더 크고 리뷰에 91% 더 오래 걸리며 버그를 9% 더 많이 낸다. Qodo는 월요일에 Cross-Repo Code Review, Custom Rules Miner, Skill Review Standards 세 가지 기능을 발표했다.",
+      "summaryEn": "Qodo shipped cross-repository code review. Co-founder and CEO Itamar Friedman tells The New Stack that monolithic stacks have given way to a multi-repository backbone, and that the fallout from repository interconnects lands hardest on people rather than the pipeline. A one-line change in one repo can silently violate an architectural invariant another team relied on, with nobody catching it because the reviewer was skimming a 500-line diff against their own deadline. As AI floods teams with larger and more numerous pull requests, Friedman argues the blast radius only grows. He cites the Google DORA 2025 State of AI-assisted Software Development report: pull requests from teams with high AI adoption are already 154% larger, take 91% longer to review and ship 9% more bugs. Qodo announced three capabilities on Monday — Cross-Repo Code Review, Custom Rules Miner and Skill Review Standards.",
+      "insightKo": "AI 도입 팀의 PR이 154% 커지고 리뷰가 91% 길어지며 버그가 9% 늘었다는 DORA 수치는, 리뷰 도구를 바꾸기 전에 자사 PR 크기 추이부터 측정할 근거가 된다.",
+      "insightEn": "The DORA figures — 154% larger PRs, 91% longer reviews, 9% more bugs on high-AI-adoption teams — are reason to measure your own PR size trend before changing review tooling."
     },
     {
       "source": "Google Cloud",
@@ -82,10 +82,10 @@
       "link": "https://openai.com/index/daybreak-securing-the-world",
       "date": "2026-06-22T10:00:00.000Z",
       "excerpt": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-      "summaryKo": "OpenAI가 보안 도구 묶음 Daybreak을 공개했다. 조직이 취약점을 대규모로 찾아내고 검증하고 패치하도록 돕는 것이 목적이며, 발표에는 Codex Security와 GPT-5.5-Cyber가 포함된다고 밝혔다.",
-      "summaryEn": "OpenAI introduced Daybreak, a set of security tools aimed at helping organizations find, validate and patch vulnerabilities at scale. The announcement names Codex Security and GPT-5.5-Cyber as part of the release.",
-      "insightKo": "모델 벤더가 취약점 탐지·검증·패치를 하나의 제품군으로 묶기 시작했다는 점에서, 기존 SAST/DAST 도구 체인과 역할이 겹치는 지점을 미리 정리해둘 필요가 있다.",
-      "insightEn": "With a model vendor bundling vulnerability discovery, validation and patching into one product line, it is worth mapping where that overlaps an existing SAST/DAST toolchain."
+      "summaryKo": "OpenAI가 2026년 6월 22일 보안 도구 묶음 Daybreak을 확장했다. 더 많은 조직이 머신 수준의 속도로 취약한 소프트웨어를 수정하도록 돕는 것이 목적이며, OpenAI는 이미 주요 브라우저와 네트워크 인프라, FreeBSD·Linux 커널 같은 운영체제의 심각한 취약점을 찾아내고 패치를 생성하는 데 모델을 활용해왔다고 밝혔다. Codex Security 플러그인은 OpenAI 내부와 고객 환경에서 모델을 운영하며 얻은 경험을 반영해 업데이트됐고, 기존 시스템의 취약점을 더 빠르게 찾아 고치는 것은 물론 새 취약점이 운영 환경에 배포되기 전에 자동으로 차단하도록 지원한다. GPT-5.5-Cyber는 정당한 보안 작업에 대한 불필요한 거부를 줄이는 데 초점을 맞춘 초기 프리뷰를 거쳐, 신뢰할 수 있는 방어자를 대상으로 한 제한 공개 프로그램을 통해 정식 버전으로 제공된다. 이 모델은 CyberGym에서 85.6%를 기록해 GPT-5.5의 81.8%를 넘어섰다. 발표에는 오픈소스 메인테이너를 지원하는 Patch the Planet과 핵심 인프라·민감 시스템 보호 계획도 함께 담겼다.",
+      "summaryEn": "On June 22, 2026, OpenAI expanded Daybreak, its security toolset, to help more organizations fix vulnerable software at machine speed. OpenAI says it has already used its models to find and generate patches for serious vulnerabilities in major browsers, network infrastructure and operating systems including the FreeBSD and Linux kernels. The Codex Security plugin was updated with lessons from running the models internally and in customer environments, helping teams find and fix vulnerabilities in existing systems faster while automatically blocking new ones before they reach production. GPT-5.5-Cyber, following an early preview focused on reducing unnecessary refusals on legitimate security work, is now generally available through an ongoing limited-release program for trusted defenders. The model scores 85.6% on CyberGym, ahead of GPT-5.5 at 81.8%. The announcement also covers Patch the Planet for supporting open source maintainers and plans for protecting critical infrastructure and sensitive systems.",
+      "insightKo": "모델이 브라우저와 리눅스 커널 수준의 취약점을 실제로 찾아 패치까지 만들고 있다는 것은, 취약점 발견 속도가 조직의 패치 처리 능력을 앞지르는 국면이 이미 시작됐다는 뜻이다.",
+      "insightEn": "Models already finding and patching browser- and kernel-level vulnerabilities means discovery speed has begun outrunning organizations' capacity to apply patches."
     },
     {
       "source": "OpenAI",
@@ -94,10 +94,10 @@
       "link": "https://openai.com/index/patch-the-planet",
       "date": "2026-06-22T10:00:00.000Z",
       "excerpt": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
-      "summaryKo": "OpenAI가 Daybreak의 일환으로 Patch the Planet을 공개했다. 오픈소스 메인테이너가 취약점을 찾고 검증하고 고치는 일을 AI와 전문가 검토로 지원하는 이니셔티브라고 설명한다.",
-      "summaryEn": "OpenAI introduced Patch the Planet, a Daybreak initiative that helps open-source maintainers find, validate and fix vulnerabilities using AI together with expert review.",
-      "insightKo": "의존성 트리의 상류 프로젝트가 이런 지원을 받으면 패치 도달 속도가 달라질 수 있으므로, 자사 SBOM에서 유지보수 인력이 얇은 구간을 확인해둘 만하다.",
-      "insightEn": "If upstream projects in your dependency tree get this kind of support, patch turnaround changes — a reason to check which parts of your SBOM rest on thin maintainer capacity."
+      "summaryKo": "OpenAI가 Trail of Bits와 함께 만든 Daybreak 이니셔티브 Patch the Planet을 공개했다. 세계가 의존하는 핵심 오픈소스 소프트웨어를 메인테이너가 강화하도록 돕는 것이 목적으로, 가장 사이버 역량이 높은 모델을 활용한 AI 보조 보안 연구에 전문가의 인간 검토를 결합해 취약점을 찾아내는 데서 그치지 않고 패치까지 돕는다. AI가 취약점 발견을 가속하고 있지만 발견만으로는 사용자를 보호하지 못하며, 많은 메인테이너가 같은 시간과 자원으로 더 많은 보고를 더 빨리 처리하라는 요구를 받고 있다는 문제 인식에서 출발한다. 그래서 이 프로그램은 부담을 더하지 않고 줄이도록 설계됐다. 보안 엔지니어가 메인테이너에게 전달되기 전에 결과를 검토하고, 프로젝트와 함께 패치와 테스트를 개발하며, 첫 수정 이후에도 보안을 계속 개선할 수 있는 재사용 가능한 워크플로를 만든다. Trail of Bits는 초기 집중 투입에 자사 보안 연구 조직 전체를 투입하기로 했으며, HackerOne 및 Calif와도 협력해 취약점 분류와 조율된 공개, 추가 취약점 발견을 진행한다. 각 협업은 메인테이너와의 상담으로 시작해 프로젝트가 필요로 하는 지점을 정한 뒤 진행된다.",
+      "summaryEn": "OpenAI introduced Patch the Planet, a Daybreak initiative built with Trail of Bits to help maintainers strengthen the critical open-source software the world relies on. It pairs AI-assisted security research using OpenAI's most cyber-capable models with expert human review, not only to identify vulnerabilities but to help patch them. The premise is that AI is accelerating vulnerability discovery, but discovery alone does not protect users — many maintainers are already being asked to sort through more reports, more quickly, with the same limited time and resources. The program is built to reduce that burden rather than add to it: security engineers review findings before they reach maintainers, work with projects to develop patches and tests, and build reusable workflows so teams can keep improving security after the first fixes land. Trail of Bits has committed its entire security research organization to the initial surge, working directly with maintainers to investigate and validate vulnerabilities, develop and test patches, and coordinate disclosure. OpenAI is also partnering with HackerOne and Calif on triage, coordinated disclosure and additional focused discovery. Each engagement begins in consultation with the maintainer to determine where the effort would be most useful.",
+      "insightKo": "보고서를 메인테이너에게 던지기 전에 보안 엔지니어가 먼저 걸러낸다는 설계가 핵심이며, AI 취약점 스캐너를 업스트림에 돌릴 계획이 있다면 같은 완충 장치를 갖췄는지 먼저 물어야 한다.",
+      "insightEn": "Filtering findings through security engineers before they reach maintainers is the load-bearing design — if you plan to point an AI vulnerability scanner at upstream projects, ask whether you have the same buffer."
     },
     {
       "source": "Google Cloud",
@@ -118,10 +118,10 @@
       "link": "https://openai.com/index/codex-maxxing-long-running-work",
       "date": "2026-06-22T00:00:00.000Z",
       "excerpt": "Learn how Jason Liu uses Codex to preserve context, manage complex projects, and help work continue beyond a single prompt.",
-      "summaryKo": "OpenAI가 Codex를 장시간 작업에 쓰는 방법을 다룬 글을 공개했다. Jason Liu가 Codex로 컨텍스트를 보존하고 복잡한 프로젝트를 관리하며, 작업이 단일 프롬프트를 넘어 이어지도록 하는 방식을 소개한다고 밝혔다.",
-      "summaryEn": "OpenAI published a piece on using Codex for long-running work, describing how Jason Liu preserves context, manages complex projects and keeps work going beyond a single prompt.",
-      "insightKo": "에이전트를 단발 프롬프트로만 써온 팀이라면 컨텍스트 보존 방식이 곧 작업 지속성을 좌우하므로, 세션 간 상태를 어디에 남길지부터 정하는 것이 실무 출발점이다.",
-      "insightEn": "For teams using agents only as one-shot prompts, how context is preserved is what determines whether work can continue — deciding where state lives between sessions is the practical starting point."
+      "summaryKo": "OpenAI가 장시간 이어지는 작업에 Codex를 활용하는 백서를 공개했다. 조직들이 단일 프롬프트를 넘어서는 작업을 지원하는 데 AI를 점점 더 많이 쓰고 있다는 배경에서 나왔다. 백서에서 Jason Liu는 Codex를 컨텍스트를 보존하고 복잡한 워크플로를 관리하며 장기 프로젝트 전반에서 진척을 이어가게 하는 지속적 작업공간으로 쓰는 실용적 전략을 공유한다. 야심 찬 목표를 검증 가능한 단계로 쪼개는 방법, 여러 작업 흐름에 걸쳐 연속성을 유지하는 방법, 그리고 언제 실행을 Codex에 위임하고 언제 사람의 감독이 가장 가치 있는지를 판단하는 기준을 다룬다.",
+      "summaryEn": "OpenAI published a whitepaper on using Codex for long-running work, framed around organizations increasingly using AI to support work that extends beyond a single prompt. In it, Jason Liu shares practical strategies for using Codex as a persistent workspace that preserves context, manages complex workflows and helps sustain progress across long-running projects. It covers how to break ambitious goals into verifiable steps, maintain continuity across workstreams, and determine when to delegate execution to Codex versus when human oversight is most valuable.",
+      "insightKo": "위임 대상과 감독 지점을 미리 나눠두는 것이 장기 작업의 핵심이므로, 에이전트를 단발성으로만 써온 팀은 검증 가능한 단계 정의부터 시작하는 편이 낫다.",
+      "insightEn": "Deciding in advance what to delegate and where to supervise is the crux of long-running work — teams using agents only for one-shots should start by defining verifiable steps."
     }
   ]
 }

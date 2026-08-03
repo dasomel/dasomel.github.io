@@ -84,9 +84,9 @@ On July 7, 2026, Google announced new capabilities for Managed Agents in the Gem
 
 _OpenAI_
 
-OpenAI published a customer story on Australian Payments Plus (AP+), describing how it uses ChatGPT Enterprise and Codex to move faster through payments complexity. The stated outcome is saved time and improved quality while keeping human judgment central.
+OpenAI published a customer story on Australian Payments Plus (AP+), which operates payments and identity infrastructure across Australia and sits at the center of the payments ecosystem, supporting products used by millions of people every day. Its teams work across scheme rules, technical specifications, member obligations, operational processes, cybersecurity and resilience, and regulatory expectations — an area where speed matters but accuracy and accountability matter more. After adopting ChatGPT Enterprise and Codex, 77% of surveyed employees reported saving hours each week, and a majority reported improved creativity or work quality. With Codex, building working simulations now takes far less than the days to weeks it previously required, and investigation time for complex reconciliation issues came down from four hours. AP+ emphasizes saving time and improving quality while keeping human judgment central.
 
-> 💡 The recurring framing of keeping human judgment central in regulated industries signals that adoption hinges on review-process design more than model capability.
+> 💡 This is adoption in a regulated setting where accuracy outranks speed — in similar environments the reference point is how the review process was designed, not the hours saved.
 
 ### [Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot](https://huggingface.co/blog/skypilot-hf-storage)
 
@@ -172,25 +172,25 @@ Red Hat introduced the Enterprise Linux Long-Life Add-On, framed around the idea
 
 _The New Stack_
 
-The New Stack looks at multi-model AI infrastructure. Its starting point is that Vercel CEO Guillermo Rauch and Coinbase CEO Brian Armstrong run very different companies but are making the same architectural bet. The headline reports that Coinbase runs 1,200 agents and cut its AI bill in half.
+Vercel CEO Guillermo Rauch and Coinbase CEO Brian Armstrong run very different companies but are making the same architectural bet: instead of building around a single AI provider, both design production systems that route work across multiple models. The context is that frontier models have converged in capability for everyday engineering work, open-weight alternatives have improved dramatically, and the price gap keeps widening. In a TechCrunch interview, Rauch said Vercel now routes more than a trillion tokens a day across millions of deployments and is actively moving away from one-lab partnerships — he calls single-lab partnerships obsolete. Armstrong's bet is backed by financial results: Coinbase cut its internal AI spend by nearly half while overall token usage kept growing, without imposing usage caps on engineers. The central lever is an internal LLM gateway that defaults engineers to lower-cost open-weight models, specifically Z.ai's GLM 5.2 and Moonshot AI's Kimi 2.7. GLM 5.2 costs roughly $1.40 per million input tokens and $4.40 per million output tokens, against Anthropic's Opus 4.8 at around $5 and $25.
 
-> 💡 If all agent workloads run against a single model, routing by task type is the lever that changes the cost structure.
+> 💡 Halving spend without imposing usage caps is the takeaway — a measured case that solving cost control through default model selection rather than quotas works without developer friction.
 
 ### [Watch AWS engineers troubleshoot agentic AI with OpenTelemetry and OpenSearch](https://thenewstack.io/opentelemetry-opensearch-agent-observability/)
 
 _The New Stack_
 
-The New Stack covers AWS engineers troubleshooting agentic AI with OpenTelemetry and OpenSearch. It opens from the premise that organizations constantly need more information about system performance, usage and data in production — or better yet, before it.
+The New Stack previews a webinar in which AWS engineers troubleshoot agentic AI. The premise is that AI agents span multiple environments, leaving traditional log-metric-trace models insufficient for the volume of the agentic AI era. Pushing everything into the locked box of proprietary tooling creates another problem: information silos within each layer, fragmenting data and moving teams further from real AI ROI. In the face of non-deterministic agents, "it works in the testing environment" becomes moot, and the telemetry challenge grows with stack complexity and agentic sprawl. The proposed pairing is the OpenTelemetry framework with the OpenSearch distributed search and analytics engine, giving organizations of all sizes unified context across fragmented workflows. OTel has crossed the 95% adoption threshold for new cloud-native instrumentation projects and is now the default for greenfield work. OpenSearch, a top-level Linux Foundation project backed by AWS and others, is focusing its roadmap this year on becoming the primary retrieval interface for AI agents and an essential piece of any RAG and agentic AI stack. On July 22, OpenSearch Ambassador Dotan Horovits and AWS OpenSearch senior technical PM Rekha Thottan run a live troubleshooting session.
 
-> 💡 If agents are in production but existing APM cannot localize failures, breaking trace spans along agent steps is the first move.
+> 💡 The point that "it works in test" becomes moot with non-deterministic agents is the crux — putting agents in production means shifting the verification strategy from pre-release testing to production observation.
 
 ### [Vercel acquires Better Auth to give AI agents their own identity](https://thenewstack.io/vercel-acquires-better-auth/)
 
 _The New Stack_
 
-The New Stack covers Vercel acquiring Better Auth. The context is that AI agents increasingly act on people's behalf — opening pull requests, reviewing code, creating deployments, querying internal systems and updating business data. As the headline states, the acquisition is about giving AI agents their own identity.
+Vercel is acquiring Better Auth, the open source TypeScript authentication framework. The problem it addresses: AI agents increasingly act on people's behalf — opening pull requests, reviewing code, creating deployments, querying internal systems, updating business applications — but typically do so wearing the same ID badge as the person who deployed them. Every service an agent touches sees the person, not the agent, and there is no clean way to limit what one agent can do or shut it down without cutting off everyone else. Better Auth sees roughly 4.7 million weekly npm downloads, and creator Bereket Engida and the core team are joining Vercel to continue work on the framework and on agent identity more broadly. The startup had already begun looking beyond authenticating people, developing Agent Auth, an open protocol giving AI agents identities of their own with scoped, delegated and revocable permissions separate from the deploying person's. The trend is broader than Better Auth: Anthropic recently introduced Claude Tag, giving Claude its own presence in Slack under its own connected accounts rather than acting through the identity of whoever tagged it.
 
-> 💡 If agents borrow human account tokens, audit logs cannot separate who acted — which makes dedicated agent identity a traceability problem before it is a security one.
+> 💡 Having no way to shut down a single agent is the operational risk that bites — from an incident response standpoint, check first whether per-agent revocation is even possible.
 
 ### [How to scale access control in Grafana Cloud](https://grafana.com/blog/how-to-scale-access-control-in-grafana-cloud/)
 

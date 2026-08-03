@@ -44,9 +44,9 @@ NVIDIA describes fine-tuning video and image models at scale with NeMo Automodel
 
 _OpenAI_
 
-Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard for measuring ROI through useful work, cost per successful task, dependability and return on compute.
+OpenAI CFO Sarah Friar lays out a scorecard for the AI age, opening from the question she hears from CFOs everywhere: how do we get more value from our AI spend? For years the market measured software success through adoption — seats purchased, users active, licenses renewed — but understanding the value of AI demands a more powerful measure: work accomplished. The basic economic question is whether the value of the work AI completes grows faster than the cost of producing it. Answering that requires looking deeper than a metric such as cost per token: a lower-cost model may have cheaper tokens but require more attempts, more time or more human review to get good results, while a more capable model may have more expensive tokens but complete the same task in one pass. What matters is the full cost of producing a successful outcome measured against the value that outcome creates. The scorecard consists of four questions: how much useful work gets done, what a successful task costs, whether people can depend on the result, and whether each AI dollar produces more value as usage grows. The recommended starting point is picking one workflow, defining what "done" means, and measuring that outcome in the system where the work actually happens.
 
-> 💡 Cost per successful task, unlike per-token price, folds failed attempts into the denominator — which makes it the closer proxy for what agent adoption actually costs.
+> 💡 The observation that cheaper models can require more retries and human review is the practical core — rebuild model comparisons around total cost per successful task rather than per-token price.
 
 ---
 
@@ -148,25 +148,25 @@ GitHub's engineering blog argues that the cost of saying yes has changed: the co
 
 _The New Stack_
 
-The New Stack reports that Kimi K3 topped Arena's coding leaderboard. The context is that developers building with AI have largely relied on proprietary models such as Anthropic's Fable and OpenAI's GPT-5.6 Sol. As the headline stresses, the notable part is that Kimi K3 is open-weight.
+Moonshot AI unveiled Kimi K3 this week, and within hours of its Thursday debut the open-weight model climbed to the top of Arena's frontend coding leaderboard, outperforming leading closed-source systems in blind evaluations. Developers building with AI have largely relied on proprietary models such as Anthropic's Fable and OpenAI's GPT-5.6 Sol for their most demanding coding tasks, and this release suggests open-weight models may be catching up faster than expected. In Arena's blind evaluations K3 ranked ahead of Anthropic's Opus 4.8 and OpenAI's GPT-5.6 Sol on frontend coding tasks, and on the general text leaderboard it finished above Opus 4.8 and roughly even with Sol. It is an impressive debut but still just one benchmark, and the real test will come when developers start throwing production problems at it. Most AI coding tools can already connect to multiple models, but the toughest jobs still tend to end up on OpenAI or Anthropic models — if Kimi K3 matches that level, engineering teams gain another option to run in their own environment instead of sending every request to a third-party API.
 
-> 💡 An open-weight model topping a coding leaderboard creates the option of self-hosting a coding agent — a material change for organizations constrained on data egress.
+> 💡 An open-weight model beating top closed systems in blind evaluation means self-hosting may no longer be a performance compromise — a genuine added option for organizations constrained on data egress.
 
 ### [1Password’s new browser integration for Claude changes how AI uses your credentials](https://thenewstack.io/1password-agent-authentication-framework/)
 
 _The New Stack_
 
-The New Stack covers 1Password's new browser integration for Claude. The context is that as AI agents take on more tasks such as managing online accounts, authentication has become a practical engineering problem. As the headline frames it, the focus is that this changes how AI uses your credentials.
+1Password shipped a browser integration for Claude. The context is that as AI agents take on more tasks such as managing online accounts, authentication has become a practical engineering problem, with companies like Coinbase already running over a thousand agents in production. The feature lets a fleet of agents sign in without ever exposing passwords to the LLM — what the company calls a zero-exposure security framework. Credentials are decrypted only when needed and passed directly to the browser, so Claude completes an action without ever seeing the underlying password or one-time code. 1Password CTO Nancy Wang says decryption and filling happen locally on the user's Mac using 1Password's standard autofill engine: when an agent needs to authenticate, 1Password decrypts the credential on-device and injects it directly into the target website through a secure channel, and 1Password does not return the plaintext credential to Claude or place it in the model's context. When 1Password recognizes a compatible AI agent controlling the browser, the extension enters a restricted state called Agentic Mode to enforce least privilege, preventing the agent from browsing or searching the vault and limiting access to credentials explicitly granted for the current task. Claude access is granted per task, with users approving or denying each session through a single biometric prompt via Touch ID or a password.
 
-> 💡 Having a credential manager broker access rather than handing an agent plaintext passwords is likely to become the default shape for secret handling in agent automation.
+> 💡 The design guarantee that plaintext credentials never enter the model context is the key property — a reasonable minimum bar to demand when granting agents sign-in capability.
 
 ### [“They’re dead if they don’t offer this”: DoorDash’s CLI for agents may be out of necessity](https://thenewstack.io/doordash-cli-agents-order/)
 
 _The New Stack_
 
-The New Stack covers DoorDash's CLI for agents. The context is that as AI agents evolve beyond writing code toward handling everyday tasks for people, infrastructure is needed to keep them on track. As the quoted line in the headline — "they're dead if they don't offer this" — suggests, the article's view is that the move may be out of necessity rather than choice.
+DoorDash is rolling out a terminal tool that lets agents place real orders on its platform. The context is that as AI agents evolve beyond writing code toward handling everyday tasks for people, the infrastructure to keep them on track must keep pace. Co-founder and CTO Andy Fang announced the command-line interface, dubbed "dd-cli," on X this week, available to macOS developers in the US and Canada via a waitlist. The CLI gives developers a direct way to wire DoorDash ordering into whatever agent they are building — a personal assistant could use dd-cli to search nearby restaurants, compare prices, add items to a cart and pay, all with a single command. DoorDash already lets AI help people shop through a Claude connector, a ChatGPT integration and its own in-app "Ask DoorDash" assistant, but in each case a person stays in the loop, reviewing an order before it goes through. The CLI removes that step, setting DoorDash up to serve not just human customers navigating an app but autonomous software acting entirely on someone else's behalf. While developers welcome agents that can act without per-purchase approval, the move sparked debate about whether it is actually good for DoorDash's bottom line, with Gergely Orosz commenting on X that he was surprised by the direction given the economics of food delivery.
 
-> 💡 Consumer services shipping agent-facing interfaces is the signal to review your own API surface for the point at which agents become a category of client.
+> 💡 Deliberately removing the human order-review step is the crux — when designing agent automation that touches payment, where you leave an approval point is the risk design.
 
 ### [How we brought agentic workflows to Cloud SIEM with the Datadog MCP Server](https://www.datadoghq.com/blog/creating-mcp-tools-for-cloud-siem/)
 

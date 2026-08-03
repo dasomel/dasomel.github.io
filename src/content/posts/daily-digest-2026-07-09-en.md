@@ -68,25 +68,25 @@ NVIDIA released a set of open Nemotron datasets on Hugging Face for agent develo
 
 _OpenAI_
 
-OpenAI published its approach to government and national security partnerships, laying out principles for responsible AI use, democratic accountability and public safety.
+OpenAI published its approach to government and national security partnerships along with its National Security Principles. The context is that governments are beginning to use frontier AI systems for increasingly important work, including national security, particularly in cyber defense and biological security where AI can meaningfully advantage defenders. The principles hold that increasingly capable systems must be deployed in ways that reinforce democratic accountability, meaningful human judgment and the rule of law, strengthening democratic institutions rather than concentrating power. They reflect a cross-company effort: OpenAI engaged leading national security expert David Kris to facilitate the process and provide independent judgment, held listening sessions, and involved employees from research and safety through policy and government partnerships. In the past month, as part of its Daybreak cyber defense program, OpenAI established Trusted Access for Cyber partnerships with Australia, Canada, Japan, the Republic of Korea, France, Germany, Poland, the Netherlands and EU institutions such as ENISA, alongside a growing partnership with the UK government around cyber, testing and evaluation. It is taking a similar approach in biosecurity, having announced expanded trusted access to its GPT-Rosalind model for select U.S. government and allied partners supporting public health and biodefense missions.
 
-> 💡 If public-sector adoption is on the table, check where a vendor's stated use principles collide with procurement requirements before contracting.
+> 💡 Trusted Access partnerships already signed across multiple countries including Korea means public-sector AI discussions should assume access tiers and conditions will differ by country.
 
 ### [Separating signal from noise in coding evaluations](https://openai.com/index/separating-signal-from-noise-coding-evaluations)
 
 _OpenAI_
 
-OpenAI published an analysis on separating signal from noise in coding evaluations, reporting issues found in SWE-Bench Pro, a popular coding benchmark, and raising concerns about the reliability and accuracy of how AI models are evaluated.
+OpenAI published an audit separating signal from noise in coding evaluations, finding widespread task issues in SWE-Bench Pro and estimating that roughly 30% of tasks are broken. Accurately measuring model capabilities matters for sound deployment and safety decisions, including those under OpenAI's Preparedness Framework; when evaluations have flaws that affect results, they give a false understanding of capabilities, misrepresenting safety cases and skewing research priorities. OpenAI had previously investigated how SWE-bench Verified, one of the most widely used coding benchmarks, had fundamental design and contamination issues that left it without meaningful signal on software development capability, and encouraged the community to switch to SWE-Bench Pro. SWE-Bench Pro was designed to improve on it by testing models over longer horizons on more realistic tasks to better track agentic coding capability, and on the 731-task public split frontier models improved from a 23.3% pass rate to 80.3% in eight months. The new audit used a datapoint analysis pipeline reviewing model attempts, task metadata and failure traces to flag likely evaluation flaws, with each flagged task then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, escalating disagreements for further investigation.
 
-> 💡 If model selection rests on public coding benchmark scores, the possibility of flaws in the benchmark itself argues for keeping a small evaluation set built from your own repositories.
+> 💡 Two widely used coding benchmarks being found flawed in succession is the takeaway — maintaining a small evaluation set drawn from your own repositories beats selecting models on public scores.
 
 ### [Helping K–12 educators build practical AI skills](https://openai.com/index/k-12-educators-practical-skills)
 
 _OpenAI_
 
-OpenAI Academy and the Walton Family Foundation are running hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom.
+OpenAI Academy, in partnership with the Walton Family Foundation, will host a flagship AI Skills Jam for K–12 Educators this summer. The context is that K–12 teachers, administrators, district leaders and school communities help students learn and grow every day while being asked to navigate rapid technological change amid limited time, growing responsibilities and uneven access to practical support. The Jam aims to offer a hands-on, high-trust environment where teachers and administrators can move from curiosity to practical use. Building on the success of the Nonprofit AI Jam and Small Business AI Jam, it will bring together more than 1,600 K–12 teachers, administrators and district leaders for in-person, hands-on workshops across U.S. cities.
 
-> 💡 For training programs, what separates outcomes is how verification habits are taught rather than tool mechanics — the same standard applies when designing internal enablement.
+> 💡 The repeated choice of in-person hands-on format is the signal — when designing internal AI enablement, it argues that working sessions convert to actual use better than distributing documentation.
 
 ### [Native-speed vLLM transformers modeling backend](https://huggingface.co/blog/native-speed-vllm-transformers-backend)
 
@@ -172,25 +172,25 @@ GitHub published its June 2026 availability report covering six incidents that d
 
 _The New Stack_
 
-The New Stack covers the Grok 4.5 release. It reports that SpaceXAI CEO Elon Musk announced on Wednesday, in a post on X, that Grok 4.5 would be released publicly on Thursday. The headline quotes his framing about beating Anthropic — "Opus-class, but faster."
+SpaceXAI CEO Elon Musk announced on Wednesday via X that Grok 4.5 would be released publicly on Thursday, citing strong positive feedback from beta program customers and calling it "an Opus-class model, but faster, more token-efficient and lower cost." The public launch came after just under two weeks of internal testing at SpaceX and Tesla. Grok 4.5 runs on xAI's latest 1.5-trillion-parameter V9 foundation model. The model reportedly received specialized supplemental training data from Cursor, the AI coding platform SpaceX is acquiring in a $60 billion deal, which could give it an advantage on software engineering tasks through exposure to high-quality coding workflows and developer interactions. Musk also teased an even larger 2-trillion-parameter V-series model due in August. The "Opus-class" framing references the success of Anthropic's Claude Opus, currently at version 4.8, and the timing is notable: it follows a standoff in which the federal administration imposed strict export controls on Fable 5 over jailbreak-related national security concerns, prompting Anthropic to briefly pull the model before redeploying it with stricter safety classifiers.
 
-> 💡 Vendor claims of same-class-but-faster often do not reproduce on your own workload — measure latency and quality against your own prompts before considering a switch.
+> 💡 Claiming a competitor's tier as a marketing baseline is becoming standard — treat labels like "Opus-class" as unusable for comparison until you measure latency and token efficiency on your own workload.
 
 ### [JetBrains’ next move isn’t a better IDE — it’s a governance layer over Claude Code, Codex, and Gemini CLI](https://thenewstack.io/jetbrains-ai-team-governance/)
 
 _The New Stack_
 
-The New Stack reports that JetBrains' next move is not a better IDE but a governance layer over Claude Code, Codex and Gemini CLI. The context is that engineering teams have spent the past few years picking their own AI tools — an IDE here, a terminal-based coding tool there. The argument is that this fragmentation is what the new layer targets.
+JetBrains announced JetBrains AI for Teams and Organizations on Tuesday. The context is that engineering teams have spent years picking their own AI tools — an IDE here, a terminal-based coding agent there, a browser extension for code review elsewhere — leaving engineering leaders with little visibility into what developers actually use or what it costs. The product sits above whatever AI tools a team already relies on, adding shared context, reusable agentic processes, organization-wide governance and cost controls, rolling out to business customers gradually through July and August. Oleg Koverznev, head of agent systems at JetBrains, wrote that developers reaching for whichever tool suits the task is a freedom worth preserving, and that teams should not have to standardize on a single vendor to benefit from AI. It extends a trajectory that began with a 2023 coding assistant bringing AI into the IDE, followed a year later by Junie, an agent capable of planning and executing its own tasks; in March JetBrains took Junie outside the IDE with a standalone CLI alongside JetBrains Air, an environment for running multiple agents side by side, and Junie left beta in June. Among the four pieces, Automations can trigger cloud agents from repository events or a schedule, running long tasks in managed environments.
 
-> 💡 When teams each use a different coding agent, standardizing the policy and audit layer is often more realistic than standardizing the tool itself.
+> 💡 Layering governance above tools instead of standardizing vendors gives organizations with mixed coding agents a path to cost and audit visibility without relitigating standardization.
 
 ### [Meta says it caught OpenAI. One thing is missing.](https://thenewstack.io/meta-watermelon-benchmark-claim/)
 
 _The New Stack_
 
-The New Stack scrutinizes Meta's claim to have caught OpenAI. The framing is that in the same week Mark Zuckerberg told Meta staff the company's AI bets "haven't come to fruition yet," a benchmark claim emerged from his superintelligence organization. As the headline puts it, one thing is missing from that claim.
+In the same week Mark Zuckerberg told Meta staff the company's AI bets "haven't come to fruition yet," superintelligence chief Alexandr Wang gave a very different message: Watermelon, a model Meta still has in training, had caught up with OpenAI's GPT-5.5 on closely watched benchmarks. Business Insider reported Wang's claim from two people in the room; Reuters heard a recording of Zuckerberg's admission. The article's point is that Wang named a rival, a model and a verdict, but skipped the one thing that would let anyone verify it — the benchmark itself. The claim is single-sourced and internal; Meta declined to comment and OpenAI did not respond, and the two people who described the town hall could not say which benchmarks Wang meant. All that exists is the codename Watermelon, successor to Avocado, the internal name for the Muse Spark model Meta shipped in April. There is no model card, no evaluation harness, no ship date and no table. Muse Spark scored well on standard tests but still trailed OpenAI and Anthropic overall. When a vendor publicly declares parity, a benchmark table typically accompanies the claim — OpenAI ran one with GPT-5.5 and Anthropic runs one with every Opus release.
 
-> 💡 Vendor-published benchmark claims often omit reproduction conditions — check whether the evaluation setup was disclosed before using it in a model adoption decision.
+> 💡 The point that a parity claim without a benchmark table is closer to an internal morale number is a practical filter — make disclosed reproduction conditions the first gate in any model adoption decision.
 
 ### [How GitHub Copilot enables zero DNS configuration for GitHub Pages](https://github.blog/ai-and-ml/github-copilot/how-github-copilot-enables-zero-dns-configuration-for-github-pages/)
 

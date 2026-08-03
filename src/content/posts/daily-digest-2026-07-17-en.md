@@ -76,9 +76,9 @@ NVIDIA announced that Nemotron 3 Embed ranks #1 overall on RTEB, the Retrieval T
 
 _OpenAI_
 
-OpenAI describes how it is making ChatGPT safer for teens through age-appropriate protections, learning tools, parental controls and expert partnerships.
+OpenAI shared the safeguards, policies and experts guiding its approach to teen use of AI. The premise is that teens are the first generation growing up with AI and the technology will heavily shape their future — nearly 9 in 10 teens on ChatGPT use it for learning, information, skill-building or productivity in a single week. OpenAI argues that keeping teens from using AI until adulthood would be like asking a previous generation to avoid the internet or search engines until 18, leaving them less prepared for one of the defining technologies of their time, but adds that access must be paired with protections designed specifically for teens. Over the past year that has meant strengthening default protections for teens, rolling out age prediction, expanding parental controls, creating family resources to help parents support healthy and responsible use, and introducing learning features that support deeper understanding rather than just providing answers. Four key commitments are named: putting teen safety first even when it conflicts with other goals, encouraging real-world support in times of need, and being transparent by setting clear expectations.
 
-> 💡 If you plan to embed an LLM in education or youth-facing services, separate the vendor-provided age protections from your own liability boundary at contract time.
+> 💡 Making age prediction a pillar of default protection is the notable choice — for services building their own age assurance, the design crux is which way the default falls when prediction is uncertain.
 
 ### [Connect more of your apps to Search](https://blog.google/products-and-platforms/products/search/connected-apps/)
 
@@ -108,9 +108,9 @@ Dharma AI published a comparison of its DharmaOCR against newer models on Brazil
 
 _OpenAI_
 
-OpenAI published a customer story on Cars24, which uses OpenAI-powered voice and chat agents to handle over 1 million monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.
+OpenAI published a customer story on Cars24, which operates one of the world's largest AI-native automotive ecosystems for buying and selling cars in India, with additional operations in the UAE and Australia. It supports the full car ownership journey from discovery and financing to resale and post-purchase services, helping extend vehicle lifecycles through a more efficient and accessible pre-owned ecosystem in a market where most transactions remain manual, regulated and fragmented. Reported results include more than 1 million monthly conversation minutes handled by AI agents, an increase in customer support resolution rates, reduced turnaround time across key service workflows, and 12% of previously lost seller leads recovered through AI-powered re-engagement. Buying or selling a car in India rarely happens in a single session; much of the process happens outside the app across calls, document checks and follow-ups that can take days or weeks. As Cars24 scaled, the core challenge became delivering consistent, high-quality experiences across millions of interactions without continuously expanding operational teams. The company built voice and chat agents for buying, selling, financing, follow-up and support, and rolled out ChatGPT Enterprise and Codex across its central organization so employees in engineering, finance, legal, marketing and operations could build their own AI-powered workflows.
 
-> 💡 Cases that state a revenue-linked metric like recovering 12% of lost leads are rare — useful as a reference when deciding which metric should measure agent adoption.
+> 💡 Diagnosing the bottleneck as conversations stretching across days outside the app is the key — agents pay off most in long-running follow-up, not one-shot inquiry handling.
 
 ### [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026)
 
@@ -180,17 +180,17 @@ Red Hat explains how Discovery addresses the hard problems in agentless infrastr
 
 _The New Stack_
 
-The New Stack challenges the common claim that AI shifted the bottleneck from coding to code review. The context is that since AI arrived, many people have said the bottleneck moved. As the subheading puts it, the argument is that this narrative has made us stop noticing the real improvement opportunity.
+The New Stack challenges the belief that AI shifted the bottleneck from coding to code review, arguing coding was never the bottleneck and code review is not it now. The author offers a simple test: for the application or service you work on, how many changes have passed code review but have not yet been deployed and enabled for users? If the answer is none or one, you are the exception — but it is usually more, and that tells you the bottleneck is elsewhere. Ongoing original research finds half of all teams have between 2 and 10 changes sitting in a batch and a quarter have 11 to 50, with more than 90% of teams shipping in batches rather than one change at a time. That number reveals an industry-wide visibility gap. People believe Claude Code, Cursor and GitHub Copilot moved the bottleneck from coding to review, but that ignores everything happening after review — not a personal failing but an industry-wide misperception. Teams have grown so used to working in batches that the practice looks like it belongs, and when searching for ways to speed up software delivery it does not register as a problem because it looks just as things have always been.
 
-> 💡 If you are adding reviewers on the assumption the bottleneck moved, measure where wait time actually accumulates first.
+> 💡 Counting changes that passed review but have not shipped is a diagnostic you can run today — if that number exceeds one, adding reviewers will not move delivery speed.
 
 ### [GoDaddy opened its registrar to AI agents. Then it had to build guardrails.](https://thenewstack.io/godaddy-developer-platform-domains/)
 
 _The New Stack_
 
-The New Stack covers GoDaddy launching its new developer platform on Wednesday, giving developers a way to manage domains without leaving their development environment. As the headline frames it, GoDaddy opened its registrar to AI agents and then had to build guardrails.
+GoDaddy launched its developer platform on Wednesday, giving developers a way to manage domains without leaving their development environment. Domain management has become a core part of deployment, shifting into CI/CD pipelines and Infrastructure as Code, and the platform is designed to work inside existing development workflows. GoDaddy built its business serving consumers and small businesses, but this platform targets a different audience: engineering teams that want to manage domains through code and skip the web dashboard. Travis Muhlestein, chief technology officer of product AI at GoDaddy, says AI is fundamentally changing how software is created and the infrastructure behind the internet has to evolve with it. He describes the platform as connecting GoDaddy domain services directly into developer tools, letting customers with one domain or thousands complete the entire domain lifecycle and go from idea to a live online presence in minutes. Many engineering teams already manage domains through APIs rather than registrar dashboards, with AWS Route 53, Cloudflare and Vercel all supporting that approach. Route 53 and Cloudflare offer mature DNS APIs but function primarily as infrastructure and CDN providers, used to manage records and routing for domains registered elsewhere, while Vercel handles domain configuration as part of its deployment abstraction so developers rarely touch DNS directly.
 
-> 💡 For hard-to-reverse operations like domain registration and transfer, this illustrates that designing guardrails — not exposing the API — is the actual hard part of opening access to agents.
+> 💡 A registrar opening its own API and CLI path makes domain registration itself manageable as IaC, opening room to fold a step that stayed manual into the pipeline.
 
 ### [ObservabilityCON 2026: Register today and preview this year's agenda](https://grafana.com/blog/observabilitycon-2026-register-today-and-preview-this-year-s-agenda/)
 
@@ -204,9 +204,9 @@ Grafana opened registration for ObservabilityCON 2026 and previewed the agenda. 
 
 _The New Stack_
 
-The New Stack argues that you do not have a deployment problem but a validation problem. It opens by noting that asking a platform team about deployment capabilities usually yields a genuinely impressive story, including progressive rollouts. The headline's point is that the actual problem lies elsewhere.
+The New Stack argues you do not have a deployment problem but a validation problem. Ask a platform team about deployment capabilities and you usually hear an impressive story: progressive rollouts shifting traffic one percent at a time, feature flags that can dark-launch anything, rollbacks taking one command and thirty seconds — a decade of investment in delivery tooling. Then ask a different question: when did a single service last ship a single change to production alone on the same day it merged? The answers are less impressive. At most organizations changes do not ship alone; they accumulate on a shared branch, wait for a release train and roll out as a batch, with a release manager overseeing and everyone hoping nothing in the batch interacts badly. Coding agents are now increasing the volume of changes, making batches larger and more opaque to debug. These teams have every tool needed to deploy any change at any time yet choose not to use them that way, making the conclusion hard to avoid: what blocked independent releases was never deployment, it was validation. Independent deployability, the founding promise of microservices, quietly contains two capabilities. The first is mechanical — can you move one service's change into production on its own — and is largely solved and productized. The second is confidence: can you establish, before it ships, that this specific change behaves correctly against the live versions of everything it talks to.
 
-> 💡 If progressive rollouts are in place but incidents have not dropped, the real gap is usually what evidence gates each rollout step.
+> 💡 If a team has every deployment tool and still ships in batches, that choice is itself evidence of missing validation — build the basis for trusting a single change before dismantling the release train.
 
 ### [AI Amplifies Your Existing Practices: Lessons from Our Shift to an AI-First Strategy](https://www.honeycomb.io/blog/ai-amplifies-existing-practices-lessons-ai-first-strategy)
 
