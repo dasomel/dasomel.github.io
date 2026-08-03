@@ -1,0 +1,183 @@
+{
+  "date": "2026-08-04",
+  "generatedAt": "2026-08-03T22:38:00.250Z",
+  "count": 22,
+  "articles": [
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Analyze and remediate technical debt autonomously with AWS Transform – continuous modernization",
+      "link": "https://aws.amazon.com/blogs/devops/analyze-and-remediate-technical-debt-autonomously-with-aws-transform-continuous-modernization/",
+      "date": "2026-08-03T21:28:32.000Z",
+      "excerpt": "Introduction In a recent post, my colleague Micah Walter introduced AWS Transform – continuous modernization in public preview. Today, this capability is generally available in regions supported for AWS Transform ."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Apple and Bynario agree GPT-5.5 found a real macOS bug. They disagree on the report cap.",
+      "link": "https://thenewstack.io/apple-ai-bug-report-caps/",
+      "date": "2026-08-03T21:19:12.000Z",
+      "excerpt": "Apple now caps how many security reports some researchers can have open at once. And once they hit that cap,"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubeflow SDK evolution- One million downloads and counting",
+      "link": "https://www.cncf.io/blog/2026/08/03/kubeflow-sdk-evolution-one-million-downloads-and-counting/",
+      "date": "2026-08-03T20:25:24.000Z",
+      "excerpt": "The unified kubeflow-sdk has officially crossed 1 million downloads on PyPI! This milestone reflects the rapid adoption of this streamlined interface."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Alibaba’s AI coded for 16 days straight and every commit is on GitHub",
+      "link": "https://thenewstack.io/qwen-autonomous-coding-audit/",
+      "date": "2026-08-03T19:23:47.000Z",
+      "excerpt": "Alibaba has launched Qwen3.8-Max, a multimodal model with 2."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model",
+      "link": "https://engineering.fb.com/2026/08/03/ml-applications/training-gem-at-llm-scale-meta-ads-recommendation-foundation-model/",
+      "date": "2026-08-03T18:00:17.000Z",
+      "excerpt": "Meta’s Generative Ads Recommendation Model (GEM), the foundation model behind ads recommendations across Instagram and Facebook, now trains at LLM scale on several thousand of the latest-generation GPUs."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Real-world mainframe modernization with AI: A safe, scalable path from mainframe to cloud",
+      "link": "https://cloud.google.com/blog/products/infrastructure-modernization/mainframe-migration-and-modernization-with-ai/",
+      "date": "2026-08-03T17:00:00.000Z",
+      "excerpt": "For too long, enterprises with legacy mainframe estates have been faced with a high-stakes dilemma: continue maintaining their mainframes, essentially kicking the modernization can down the road (they know they will need to deal with it eventually), or perform a dangerous \"big bang\" migration with many unknowns and ris…"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Run GPU batch inference on Amazon ECS Managed Instances with scale to zero",
+      "link": "https://aws.amazon.com/blogs/containers/run-gpu-batch-inference-on-amazon-ecs-managed-instances-with-scale-to-zero/",
+      "date": "2026-08-03T16:34:46.000Z",
+      "excerpt": "Deploy a single CloudFormation stack that builds a GPU batch inference pipeline on Amazon ECS Managed Instances. It uses Amazon SQS for job buffering and Application Auto Scaling to scale to zero when idle, so you pay only for active inference time."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard",
+      "link": "https://kubernetes.io/blog/2026/08/03/gateway-api-v1-6-release/",
+      "date": "2026-08-03T16:00:00.000Z",
+      "excerpt": "The Kubernetes SIG Network community is thrilled to share the release of Gateway API v1.6."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cortex Framework v7 is GA: Build agentic workflows without disrupting SAP operations",
+      "link": "https://cloud.google.com/blog/products/sap-google-cloud/cortex-framework-v7-power-ai-agents-with-sap-data-faster/",
+      "date": "2026-08-03T16:00:00.000Z",
+      "excerpt": "Businesses want to quickly and safely deploy AI agents to drive revenue, mitigate risk, and optimize capital, all without disrupting mission-critical ERP systems."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Unifying public and private data: Scale knowledge graphs with Data Commons on Spanner",
+      "link": "https://cloud.google.com/blog/products/databases/unify-public-and-private-data-with-data-commons-on-spanner-graph/",
+      "date": "2026-08-03T16:00:00.000Z",
+      "excerpt": "To make informed decisions, businesses often need to connect their internal data with public reference data, to create a knowledge graph that connects real-world things and their relationships. However, bridging data from public and private worlds has traditionally been complex."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "DeepSeek’s smaller model just outperformed its own flagship",
+      "link": "https://thenewstack.io/deepseek-v4-flash-open-weights/",
+      "date": "2026-08-03T13:32:15.000Z",
+      "excerpt": "DeepSeek has launched DeepSeek-V4-Flash-0731, delivering a significant boost in agent performance without changing the model’s core architecture. Following an announcement"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Your agent needs a computer, not a container — introducing @cloudflare/computer",
+      "link": "https://blog.cloudflare.com/cloudflare-computer/",
+      "date": "2026-08-03T13:15:24.000Z",
+      "excerpt": "Agents need more than just a container to scale. We're introducing @cloudflare/computer, an agent runtime that dynamically orchestrates between fast, efficient isolates and full Linux containers to give every agent a computer of its own."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Empty sandboxes break developer experience",
+      "link": "https://www.docker.com/blog/empty-sandboxes-break-developer-experience/",
+      "date": "2026-08-03T13:00:00.000Z",
+      "excerpt": "Learn how Docker Sandbox kits turn empty sandboxes into productive development environments with repeatable tooling, credentials, and configuration."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker AI Governance: Audit Logs, Now Where Your Security Team Already Works",
+      "link": "https://www.docker.com/blog/docker-ai-governance-audit-logs-now-where-your-security-team-already-works/",
+      "date": "2026-08-03T13:00:00.000Z",
+      "excerpt": "Now in Docker AI Governance: a single searchable record of every policy decision your agents trigger, streamed to the SIEM your security team already runs, so you can show what your agents did and what your policy stopped."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare Workers and Containers now support inbound TCP connections and gRPC",
+      "link": "https://blog.cloudflare.com/grpc-workers/",
+      "date": "2026-08-03T13:00:00.000Z",
+      "excerpt": "Cloudflare Workers now support inbound TCP connections via Spectrum, allowing direct socket forwarding to Durable Objects and Containers. Developers can run full-duplex gRPC applications or leverage automatic gRPC-to-gRPC-web translation directly within Workers."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing the Billable Usage API: programmatic cost visibility for Cloudflare",
+      "link": "https://blog.cloudflare.com/billable-usage-api/",
+      "date": "2026-08-03T13:00:00.000Z",
+      "excerpt": "Cloudflare has launched a new Billable Usage API for accounts, giving developers and FinOps teams single-endpoint programmatic visibility into cost and usage across all self-serve products. Built around the FOCUS specification, track spend seamlessly alongside the rest of your cloud stack."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Spend More Time Talking to Humans",
+      "link": "https://www.honeycomb.io/blog/spend-more-time-talking-to-humans",
+      "date": "2026-08-03T13:00:00.000Z",
+      "excerpt": "LLMs have reshaped the day-to-day work of software engineering, leaving senior engineers exhausted by context-switching and junior engineers unsure how to grow."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Cortex completes OSTIF security audit",
+      "link": "https://www.cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit/",
+      "date": "2026-08-03T11:30:00.000Z",
+      "excerpt": "The Open Source Technology Improvement Fund is proud to share the results of our security audit of Cortex. Cortex functions as a long-term, multi-tenant scalable open source storage for Prometheus and OpenTelemetry."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How we built a realtime system for responsive voice AI in six months",
+      "link": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+      "date": "2026-08-03T07:00:00.000Z",
+      "excerpt": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "DS와 MLE가 함께 일하는 법",
+      "link": "https://toss.tech/article/ds-mle-cowork",
+      "date": "2026-08-03T03:25:00.000Z",
+      "excerpt": "노트북과 서빙 사이"
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Dynamic troubleshooting with guarded command execution in the MCP server for Red Hat Enterprise Linux",
+      "link": "https://www.redhat.com/en/blog/dynamic-troubleshooting-guarded-command-execution-mcp-server-red-hat-enterprise-linux",
+      "date": "2026-08-03T00:00:00.000Z",
+      "excerpt": "Managing Red Hat Enterprise Linux (RHEL) environments can involve troubleshooting when issues occur. While generative AI offers a promising way to accelerate troubleshooting, standard large language models (LLMs) can be disconnected from your actual infrastructure."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Secure every commit to production with Claude and GitLab",
+      "link": "https://about.gitlab.com/blog/claude-security-and-gitlab/",
+      "date": "2026-08-03T00:00:00.000Z",
+      "excerpt": "Agentic coding is moving faster than many enterprise governance programs can keep up with. Coding assistants, like the Claude security guidance plugin and Claude Security, can flag and fix common vulnerabilities in code as it's written, in the same session."
+    }
+  ]
+}
