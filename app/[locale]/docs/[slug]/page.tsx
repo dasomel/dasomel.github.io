@@ -23,17 +23,17 @@ export default async function DocPage({ params }: { params: Promise<{ locale: st
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-      <div className="flex gap-8">
+      <div className="flex flex-col lg:flex-row lg:gap-8">
         <Sidebar docs={docs} locale={lang} />
         <div className="flex-1 min-w-0">
-          <header className="mb-10">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">{meta.title}</h1>
+          <header className="mb-8 lg:mb-10">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{meta.title}</h1>
             {meta.description && <p className="text-gray-500">{meta.description}</p>}
             {meta.lastModified && (
               <p className="font-mono text-xs text-gray-400 mt-2">{meta.lastModified.slice(0, 10)}</p>
             )}
           </header>
-          <article className="prose prose-lg prose-gray max-w-none prose-a:text-emerald-600 prose-headings:scroll-mt-20">
+          <article className="prose prose-gray sm:prose-lg max-w-none prose-a:text-emerald-600 prose-headings:scroll-mt-20">
             <MDXContent source={content} />
           </article>
         </div>
