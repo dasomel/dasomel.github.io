@@ -1,0 +1,239 @@
+{
+  "date": "2026-08-05",
+  "generatedAt": "2026-08-04T22:41:43.768Z",
+  "count": 29,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "CSPM adoption jumped 60%. Tickets stayed open.",
+      "link": "https://thenewstack.io/cloud-security-triage-cadence/",
+      "date": "2026-08-04T19:48:52.000Z",
+      "excerpt": "A cloud security finding becomes useful only when someone decides what matters, assigns an owner, and follows it through. For"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How the GitHub legal team used Copilot CLI to streamline their workflows",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-the-github-legal-team-used-copilot-cli-to-streamline-their-workflows/",
+      "date": "2026-08-04T19:02:34.000Z",
+      "excerpt": "Learn how to build tools to simplify how you work—without writing a single line of code."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "link": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+      "date": "2026-08-04T19:00:00.000Z",
+      "excerpt": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Today’s Codex will feel “primitive” by fall — and its own team’s roadmap backs it up",
+      "link": "https://thenewstack.io/openai-codex-cloud-evolution/",
+      "date": "2026-08-04T18:30:37.000Z",
+      "excerpt": "Thibault Sottiaux, who leads core products at OpenAI, believes that today’s version of Codex will seem outdated before the year"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI’s Astra just proved 10 long-standing math and science theorems. The tokens cost $2,000.",
+      "link": "https://thenewstack.io/openai-astra-math-cost/",
+      "date": "2026-08-04T17:57:06.000Z",
+      "excerpt": "OpenAI shared a big research update this week, announcing that an internal version of Astra, its next frontier model, created"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Turn one giant AI-generated pull request to a reviewable stack",
+      "link": "https://github.blog/engineering/turn-one-giant-ai-generated-pull-request-to-a-reviewable-stack/",
+      "date": "2026-08-04T16:47:18.000Z",
+      "excerpt": "Instead of one huge, un-reviewable pull request, teach coding agents to decompose work into a clean, ordered stack with GitHub stacked pull requests."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Multiple result sets: How Database Migration Service automates SQL server to PostgreSQL translation",
+      "link": "https://cloud.google.com/blog/products/databases/automating-postgres-translations-with-database-migration-service/",
+      "date": "2026-08-04T16:00:00.000Z",
+      "excerpt": "In the Medium blog post, \"From MARS to SETOF REFCURSOR: Migrating Multi-Result Stored Procedures to PostgreSQL,\" we explored the fundamental architectural differences between SQL Server and PostgreSQL regarding multiple result sets."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Deutsche Bank unlocked agility with an API-ready ecosystem",
+      "link": "https://cloud.google.com/blog/topics/financial-services/unlocking-agility-in-banking-with-an-api-ready-ecosystem-at-deutsche-bank/",
+      "date": "2026-08-04T16:00:00.000Z",
+      "excerpt": "When people think about digital transformation in banking, they often focus on the visible results: mobile apps and new digital services. But there's an invisible infrastructure making all these services possible: APIs."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Target is enhancing retail discovery and cutting database maintenance by 50% with Spanner Graph",
+      "link": "https://cloud.google.com/blog/topics/retail/how-target-rebuilt-retail-discovery-with-spanner-graph/",
+      "date": "2026-08-04T16:00:00.000Z",
+      "excerpt": "In today’s retail environment, shoppers expect highly personalized product discovery experiences and conversational assistance that feels genuine, natural, and genuinely helpful."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Extending Amazon ECS Express Mode to Build an Optimal Container Environment",
+      "link": "https://aws.amazon.com/blogs/containers/extending-amazon-ecs-express-mode-to-build-an-optimal-container-environment/",
+      "date": "2026-08-04T15:57:59.000Z",
+      "excerpt": "Amazon ECS Express Mode gives you load balancing, scaling, logging, and networking out of the box. Learn how to extend an Express Mode service beyond its defaults with three hands-on examples: turning on ECS Exec, adding a scheduled scaling policy, and adding a FireLens log router as a sidecar container."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "AMA Recap: More Answers From the Observability Engineering Authors",
+      "link": "https://www.honeycomb.io/blog/ama-recap-observability-engineering-authors-more-answers",
+      "date": "2026-08-04T15:29:56.000Z",
+      "excerpt": "We couldn't get through every question during our live AMA with the authors of Observability Engineering, so Charity, Liz, George, and Austin stuck around to answer more on AI, telemetry, and what still needs a human in the loop."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Software Supply Chain Is Under Siege. Devs Are Still the First Line of Defense",
+      "link": "https://www.docker.com/blog/software-supply-chain-security-omdia-2026-report/",
+      "date": "2026-08-04T15:10:16.000Z",
+      "excerpt": "77% of organizations experienced a software supply chain incident in the past year. Explore Omdia's latest research on top risks, security gaps, and why developers are your first line of defense."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Accelerate CloudFormation development with the IaC MCP Server",
+      "link": "https://aws.amazon.com/blogs/devops/accelerate-cloudformation-development-with-the-iac-mcp-server/",
+      "date": "2026-08-04T14:46:53.000Z",
+      "excerpt": "Walk through a complete CloudFormation development cycle - authoring, validation, deployment, and troubleshooting - without leaving your AI assistant, using the AWS IaC MCP Server."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+      "date": "2026-08-04T13:58:29.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The latest AI news we announced in July 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/",
+      "date": "2026-08-04T13:00:00.000Z",
+      "excerpt": "Here are Google’s latest AI updates from July 2026"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The Agent Development Lifecycle has arrived on Cloudflare",
+      "link": "https://blog.cloudflare.com/agent-development-lifecycle/",
+      "date": "2026-08-04T13:00:00.000Z",
+      "excerpt": "Agents can write code faster than teams can review, deploy, and maintain it. Today we’re introducing the Agent Development Lifecycle and the Cloudflare primitives that underpin it"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Announcing Cloudflare Wallets: the programmable wallet for the agentic Internet",
+      "link": "https://blog.cloudflare.com/wallets/",
+      "date": "2026-08-04T13:00:00.000Z",
+      "excerpt": "Cloudflare Wallets will provide AI agents with native payments and verifiable identity on the web. Using the x402 protocol, agents can autonomously purchase APIs and content within clear safety guardrails."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Run CI/CD for millions of repos — on your platform, on Cloudflare",
+      "link": "https://blog.cloudflare.com/ci-workflows/",
+      "date": "2026-08-04T13:00:00.000Z",
+      "excerpt": "Learn how to build customizable, sandboxed CI/CD pipelines natively on Cloudflare using Workflows, Artifacts, and the CI SDK. We walk through replacing complex YAML configurations with TypeScript workflow steps and self-healing AI agents."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "You can’t debug what you can’t see — Observability for AI Agents",
+      "link": "https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/",
+      "date": "2026-08-04T11:00:00.000Z",
+      "excerpt": "Traditional APM can’t tell you why your agent spent far more than usual asking the same question three times. We’ve been running AI agents in production for months."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Evo Continuous Offensive Security Is Here Pentesting Grade Coverage For The 350 Days A Year You Aren't Testing",
+      "link": "https://snyk.io/blog/evo-continuous-offensive-security/",
+      "date": "2026-08-04T04:00:00.000Z",
+      "excerpt": "Snyk Evo Continuous Offensive Security brings autonomous, AI-powered pentesting to the 350 days between traditional tests, uncovering exploitable flaws attackers can find first."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "A First Look at Evo Agentic AppSec: Agentic Remediation and Malicious Code Defense",
+      "link": "https://snyk.io/blog/remediation-agent-malicious-code-defense/",
+      "date": "2026-08-04T04:00:00.000Z",
+      "excerpt": "Explore Snyk’s first Agentic AppSec capabilities: an autonomous Remediation Agent that fixes vulnerabilities and Malicious Code Defense that blocks risky packages before they ship."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Inside the keyv npm Compromise: preinstall Malware, Trusted Provenance, and IDE Hooks",
+      "link": "https://snyk.io/blog/inside-keyv-npm-compromise-preinstall-malware-trusted-provenance-ide-hooks/",
+      "date": "2026-08-04T04:00:00.000Z",
+      "excerpt": "keyv 6.0."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Security briefing: July 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-july-2026",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Agentic vulnerability management, end to end: 2,731 findings, one approved fix",
+      "link": "https://webflow.sysdig.com/blog/agentic-vulnerability-management-end-to-end-2-731-findings-one-approved-fix",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": "AI agents took a 119,443-finding backlog, traced 2,731 SLA breaches to one base-image fix, and opened a real Jira ticket. A human clicked Approve."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Introducing Sysdig Secure AI: Your expert AI security team",
+      "link": "https://webflow.sysdig.com/blog/introducing-sysdig-secure-ai",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": "Sysdig Secure AI puts expert AI agents to work investigating, prioritizing, and acting on cloud security risk in real time, grounded in Sysdig's runtime intelligence."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "New ways to learn and teach with ChatGPT Work and Codex",
+      "link": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "What's new in Red Hat OpenShift confidential computing and sandboxing",
+      "link": "https://www.redhat.com/en/blog/whats-new-red-hat-openshift-confidential-computing-and-sandboxing",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": "Red Hat is announcing Red Hat OpenShift sandboxed containers 1.13 and Red Hat build of Trustee 1."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Beyond the hype: What financial leaders need to know about enterprise AI",
+      "link": "https://www.redhat.com/en/blog/beyond-hype-what-financial-leaders-need-know-about-enterprise-ai",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": "Artificial intelligence has moved past the initial honeymoon phase of flashy chatbots and viral demos. In the financial services sector, AI is now a core catalyst for revenue growth, operational efficiency, and risk mitigation."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The Oracle estate you can control",
+      "link": "https://www.redhat.com/en/blog/oracle-estate-you-can-control",
+      "date": "2026-08-04T00:00:00.000Z",
+      "excerpt": "Your Oracle estate is running on 3 “clocks\" you don’t control: The hypervisor renewal arrived with a higher cost nobody budgeted for. The database support window has a date on it."
+    }
+  ]
+}
