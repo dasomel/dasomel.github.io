@@ -2,11 +2,19 @@ name: Daily Tech Digest
 
 on:
   schedule:
-    # 21:40 UTC = 06:40 KST (next day).
+    # 20:20 UTC = 05:20 KST (next day). Publication targets 07:00 KST, and the
+    # merge step (digest-fallback) needs the draft PR to already exist when it
+    # fires, so collection has to finish well before it.
+    #
+    # Observed delay for this workflow is tight and stable: 53/58/63 min
+    # (min/p50/max over 14 scheduled runs), so the PR exists by ~21:25 UTC at
+    # worst. digest-fallback fires no earlier than ~22:04 UTC, leaving ~39 min
+    # of margin — the same cushion the previous 21:40/23:25 pairing had.
+    #
     # Deliberately OFF the top-of-hour (and off 00:00 UTC, the single most
-    # congested cron slot) to reduce GitHub's scheduled-run delay, and early
-    # enough that the data is ready well before the KST-afternoon enrich step.
-    - cron: '40 21 * * *'
+    # congested cron slot) to reduce GitHub's scheduled-run delay.
+    # The 24h rolling collection window moves with it, so coverage is unchanged.
+    - cron: '20 20 * * *'
   workflow_dispatch:
 
 permissions:

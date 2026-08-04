@@ -78,6 +78,10 @@ export const FEEDS = [
   { name: 'Honeycomb', url: 'https://www.honeycomb.io/feed', category: 'devops' },
   { name: 'GitLab', url: 'https://about.gitlab.com/atom.xml', category: 'devops' },
   { name: 'Snyk', url: 'https://snyk.io/blog/feed/', category: 'devops' },
+  // 2026-08-05 확인: 유효한 RSS 이지만 <item> 이 0건이다(사이트 sitemap 에는 글 459건,
+  // 최신 당일자 — 발행은 계속되는데 피드만 비어 있는 Ghost 쪽 상태). 수집은 0건으로
+  // 조용히 지나가고, 피드가 정상화되면 별도 조치 없이 들어온다.
+  { name: 'DevOpsCube', url: 'https://devopscube.com/rss/', category: 'devops' },
 
   // --- Big-tech engineering blogs ---
   { name: 'Netflix', url: 'https://netflixtechblog.com/feed', category: 'devops' },
