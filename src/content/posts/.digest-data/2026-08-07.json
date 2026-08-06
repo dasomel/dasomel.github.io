@@ -1,0 +1,191 @@
+{
+  "date": "2026-08-07",
+  "generatedAt": "2026-08-06T22:59:21.333Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Scaling Autonomous Operations with AWS DevOps Agent and ServiceNow",
+      "link": "https://aws.amazon.com/blogs/devops/scaling-autonomous-operations-with-aws-devops-agent-and-servicenow/",
+      "date": "2026-08-06T19:55:26.000Z",
+      "excerpt": "This post is co-written with Govind Menon, Head of MCP Product at ServiceNow. Introduction Enterprise teams managing applications on AWS often rely on ServiceNow as their IT service management (ITSM) system for incident tracking, change management, and configuration management."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "A guide to slash commands in the GitHub Copilot app",
+      "link": "https://github.blog/ai-and-ml/github-copilot/a-guide-to-slash-commands-in-the-github-copilot-app/",
+      "date": "2026-08-06T19:49:34.000Z",
+      "excerpt": "Go beyond chat in the GitHub Copilot app with these slash commands. They'll help you plan, collaborate, automate, and customize your dev workflow."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "GPT-5.6 Sol just got better in one place and stayed the same everywhere else",
+      "link": "https://thenewstack.io/gpt-sol-chatgpt-split/",
+      "date": "2026-08-06T19:33:02.000Z",
+      "excerpt": "Teams testing prompts in ChatGPT before moving them to Codex or Work may notice the difference on longer tasks. OpenAI"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why AI tools know nothing about your company — until now",
+      "link": "https://thenewstack.io/cloudflare-os-agentic-workspace-security/",
+      "date": "2026-08-06T19:30:08.000Z",
+      "excerpt": "Cloudflare launched its CloudflareOS open-source AI workspace platform this week, promising every employee a secure workspace equipped with AI tools"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI agent’s next tool call may be valid but wrong. AWS’s Dogwood promises to fix that.",
+      "link": "https://thenewstack.io/aws-dogwood-agent-policies/",
+      "date": "2026-08-06T19:11:55.000Z",
+      "excerpt": "AWS on Thursday launched Dogwood, an open-source policy language and reference interpreter that lets developers govern sequences of AI agent"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How we took malware advisories beyond npm",
+      "link": "https://github.blog/security/supply-chain-security/how-we-took-malware-advisories-beyond-npm/",
+      "date": "2026-08-06T16:51:12.000Z",
+      "excerpt": "GitHub malware advisories no longer stop at npm. Here's how we wired OpenSSF's malicious-packages data into the Advisory Database, and why we built the pipeline paranoid."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Centralize cross-account Amazon ECS telemetry with an ADOT gateway",
+      "link": "https://aws.amazon.com/blogs/containers/centralize-cross-account-amazon-ecs-telemetry-with-an-adot-gateway/",
+      "date": "2026-08-06T16:13:46.000Z",
+      "excerpt": "Running an OpenTelemetry collector as a sidecar in every Amazon ECS task does not scale across a multi-account estate, and it cannot run at all on Windows."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Advancing brain tumor research with privacy-first AI",
+      "link": "https://cloud.google.com/blog/products/identity-security/privacy-first-medical-ai-with-medperf-and-google-cloud/",
+      "date": "2026-08-06T16:00:00.000Z",
+      "excerpt": "The intersection of medicine and AI has led to remarkable innovations. However, developers now face the thorny challenge of building robust medical AI tools that have been tested and evaluated on diverse, real-world patient data while also protecting patient privacy."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Your agentic summer: No-cost lessons from Google experts to build and scale agents",
+      "link": "https://cloud.google.com/blog/topics/training-certifications/free-gemini-enterrprise-training/",
+      "date": "2026-08-06T16:00:00.000Z",
+      "excerpt": "I’ve talked to developers, IT leaders, and builders who all ask the same question: How do we actually get agents into production? The answer isn't theoretical — it's hands-on."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Digital sovereignty in the age of AI: You don’t have to choose between control and innovation",
+      "link": "https://cloud.google.com/blog/topics/hybrid-cloud/state-of-ai-infrastructure-report-on-hybrid-cloud-and-gdc/",
+      "date": "2026-08-06T16:00:00.000Z",
+      "excerpt": "For enterprises and governments with strict compliance and sovereignty requirements, keeping sensitive data on-premises often means missing out on the latest AI."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare AI Search: give your agents a search engine for your data",
+      "link": "https://blog.cloudflare.com/ai-search-easier/",
+      "date": "2026-08-06T13:00:00.000Z",
+      "excerpt": "AI Search makes search easier than ever, with no Cloudflare primitives to stitch together. Point it at your data to create a search for your own files and websites."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The next generation of MCP",
+      "link": "https://blog.cloudflare.com/mcp-v2/",
+      "date": "2026-08-06T13:00:00.000Z",
+      "excerpt": "The next version of MCP has a rewritten, stateless core that just works on Workers. We cover upgrades to the protocol, the new feature lifecycle and SDK migration path, and hear from early adopters already running it in production."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "From ranking to recommended: get your site ready to thrive in the age of AI agents",
+      "link": "https://blog.cloudflare.com/aeo/",
+      "date": "2026-08-06T13:00:00.000Z",
+      "excerpt": "More than half of requests now come from machines, not people. Agent Readiness shows how well agents can discover and read your site, while Answer Engine Optimization tracks how often AI assistants recommend you."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "LitmusChaos Q1-Q2 2026 update: community, contributions, and project progress",
+      "link": "https://www.cncf.io/blog/2026/08/06/litmuschaos-q1-q2-2026-update-community-contributions-and-project-progress/",
+      "date": "2026-08-06T11:30:00.000Z",
+      "excerpt": "About LitmusChaos LitmusChaos is an open source chaos engineering platform that helps teams identify weaknesses and potential outages in their infrastructure by running controlled chaos experiments. Built on cloud native principles, LitmusChaos enables teams to validate."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "link": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+      "date": "2026-08-06T10:00:00.000Z",
+      "excerpt": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Working with the American Psychological Association on youth mental health and AI",
+      "link": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
+      "date": "2026-08-06T06:00:00.000Z",
+      "excerpt": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "From asking to doing: How the world is putting ChatGPT to work",
+      "link": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": "New OpenAI Signals data shows how people use ChatGPT worldwide, with country-level insights on adoption, usage trends, and evolving behavior."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Baseten on Hugging Face Inference Providers 🔥",
+      "link": "https://huggingface.co/blog/baseten",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Inside Operation Jailbreak: Red Hat’s participation in the US Army’s open integration sprint",
+      "link": "https://www.redhat.com/en/blog/inside-operation-jailbreak-red-hats-participation-us-armys-open-integration-sprint",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": "In May 2026 an important, unprecedented event took place in Fort Carson, Colorado: US Army Operation Jailbreak."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why IT security’s future is more than just AI models",
+      "link": "https://www.redhat.com/en/blog/why-it-securitys-future-more-just-ai-models",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": "Much of the public discussion around AI and its impact on cybersecurity focuses almost exclusively on models, with some arguments calling for a central authority to manage the latest models behind closed doors."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The migration catalyst: turning virtualization disruption into application innovation",
+      "link": "https://www.redhat.com/en/blog/migration-catalyst-turning-virtualization-disruption-application-innovation",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": "Starting nearly three decades ago, the cost efficiencies of server virtualization drove the first waves of IT transformation, wringing new efficiency out of the x86 servers that had already shaped the data center."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Secrets Manager adds ESO, Terraform, API support",
+      "link": "https://about.gitlab.com/blog/gitlab-secrets-manager-add-eso-terraform-api-support/",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": "Today, you might maintain separate secret stores for CI/CD, Kubernetes, and Terraform. However, that leaves multiple tools to manage, access models to keep in sync, and audit trails to correlate when something goes wrong."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Confidential AI for GitLab Self-Hosted",
+      "link": "https://about.gitlab.com/blog/confidential-ai-for-gitlab-self-hosted/",
+      "date": "2026-08-06T00:00:00.000Z",
+      "excerpt": "Your developers want AI coding agents. Your source code is regulated IP that can't be sent to a third-party AI service, and your compliance team has said so in writing."
+    }
+  ]
+}
