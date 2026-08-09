@@ -115,7 +115,9 @@ function loadPublishedLinks(todayStr) {
     if (!/^\d{4}-\d{2}-\d{2}\.json$/.test(file)) continue;
 
     const fileDateStr = file.replace('.json', '');
-    // EXPLICIT REQUIREMENT: Today's file must NEVER be included.
+    // The age check below already excludes today (ageMs === 0), but say it
+    // outright: if today's file ever leaks in, a same-day re-run dedups
+    // against its own previous output and silently collects nothing.
     if (fileDateStr === todayStr) continue;
 
     const fileTime = new Date(`${fileDateStr}T00:00:00Z`).getTime();
@@ -160,9 +162,14 @@ async function collectArticles(todayStr) {
     headers: { 'User-Agent': USER_AGENT },
   });
   const cutoff = Date.now() - WINDOW_MS;
-  const rawArticles = [];
+  // Loaded before any network work: it doesn't depend on the feeds, and a
+  // warning about an unreadable prior digest should surface before we spend
+  // a minute fetching rather than after.
+  const { publishedLinks, loadedFilesCount } = loadPublishedLinks(todayStr);
+  const articles = [];
   const failures = [];
   let ok = 0;
+  let skippedDedup = 0;
 
   for (const feed of FEEDS) {
     // Retry transient errors (5xx / timeouts) with linear backoff.
@@ -191,7 +198,17 @@ async function collectArticles(todayStr) {
       const link = (item.link || '').trim();
       const title = cleanText(item.title);
       if (!link || !title) continue;
-      rawArticles.push({
+      // Counted before the dedup check so the per-feed number keeps meaning
+      // "items this feed published inside the window".
+      count++;
+      // Drop anything an earlier digest already carried. This is what makes
+      // the 72h window safe: on a busy weekday yesterday's items are all
+      // filtered out here, so the result matches the old 24h behaviour.
+      if (publishedLinks.has(normalizeUrl(link))) {
+        skippedDedup++;
+        continue;
+      }
+      articles.push({
         source: feed.name,
         category: feed.category, // stable category key from source
         title,
@@ -199,26 +216,10 @@ async function collectArticles(todayStr) {
         date: date.toISOString(),
         excerpt: excerptFrom(item.contentSnippet || item.content || item.summary),
       });
-      count++;
     }
     log(`${feed.name}: ${count} recent article(s)`);
   }
-
-  // Drop anything a previous digest already carried. This is what makes the
-  // 72h window safe: on a busy weekday yesterday's items are all filtered out
-  // here, so the result is identical to the old 24h behaviour.
-  const { publishedLinks, loadedFilesCount } = loadPublishedLinks(todayStr);
-  const articles = [];
-  let skippedDedupCount = 0;
-  for (const a of rawArticles) {
-    const norm = normalizeUrl(a.link);
-    if (publishedLinks.has(norm)) {
-      skippedDedupCount++;
-      continue;
-    }
-    articles.push(a);
-  }
-  log(`dedup: skipped ${skippedDedupCount} already-published article(s) from ${loadedFilesCount} prior digest(s)`);
+  log(`dedup: skipped ${skippedDedup} already-published article(s) from ${loadedFilesCount} prior digest(s)`);
 
   // Newest first, then cap each source to PER_SOURCE_CAP (keeping its most
   // recent items) so a high-volume outlet can't flood the day, then apply the

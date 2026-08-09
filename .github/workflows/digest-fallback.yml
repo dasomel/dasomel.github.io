@@ -47,6 +47,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      # 머지 직전에 "이 날짜가 이미 발행됐는지"를 보려면 main 의 파일이 필요하다.
+      - name: Checkout
+        uses: actions/checkout@v6
+
       - name: Merge pending draft digest PR (if any)
         id: merge
         env:
@@ -78,6 +82,17 @@ jobs:
           while IFS=$'\t' read -r NUM BRANCH; do
             [ -z "$NUM" ] && continue
             DATE="${BRANCH#daily-digest/}"
+
+            # 이중 발행을 막는 마지막 방어선. daily-digest 의 관문은 PR 이 *생기는* 것을
+            # 막지만, 되돌릴 수 없는 행위는 여기서 일어난다 — 2026-08-07 에 이미 발행된
+            # 다이제스트를 통째로 갈아치운 것도 이 머지였다.
+            #
+            # 닫지 않고 남겨 두는 것이 중요하다: force 로 다시 만든 교체본이 바로 이
+            # 모양이고, 그건 사람이 확인하고 직접 머지해야 하는 물건이다.
+            if [ -f "src/content/posts/daily-digest-${DATE}.md" ]; then
+              echo "::warning::PR #${NUM} (${BRANCH}) — ${DATE} 는 이미 main 에 발행돼 있다. 자동 머지하지 않고 남긴다. 교체가 목적이면 사람이 직접 머지할 것."
+              continue
+            fi
 
             echo "PR #${NUM} (${BRANCH}) — ready 전환 후 머지..."
             gh pr ready "$NUM" --repo "$REPO"
