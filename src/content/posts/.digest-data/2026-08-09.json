@@ -1,7 +1,7 @@
 {
   "date": "2026-08-09",
-  "generatedAt": "2026-08-08T20:53:58.154Z",
-  "count": 3,
+  "generatedAt": "2026-08-09T01:41:48.536Z",
+  "count": 11,
   "articles": [
     {
       "source": "The New Stack",
@@ -26,6 +26,70 @@
       "link": "https://thenewstack.io/agent-plugins-open-standard/",
       "date": "2026-08-08T13:50:59.000Z",
       "excerpt": "OpenAI, AWS, Cursor, GitHub and Microsoft have backed Agent Plugins 1.0."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Unifying Structured and Unstructured Data Insights with BQ Search Innovations",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-search-innovations-unify-structured-unstructured-data/",
+      "date": "2026-08-07T16:00:00.000Z",
+      "excerpt": "Modern enterprises possess a vast amount of unstructured data, yet they frequently encounter significant challenges in managing and extracting value from it."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "GOL! How TelevisaUnivision streamed the FIFA World Cup to millions with Google Cloud",
+      "link": "https://cloud.google.com/blog/products/networking/streaming-the-fifa-world-cup-with-televisaunivision/",
+      "date": "2026-08-07T16:00:00.000Z",
+      "excerpt": "Live sports broadcasting represents the ultimate stress test for digital media infrastructure, where operational success or failure is measured in milliseconds and observed live by millions of viewers simultaneously."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Unifying Workers AI and AI Gateway into a single AI control plane",
+      "link": "https://blog.cloudflare.com/workers-ai-gateway-unification/",
+      "date": "2026-08-07T13:00:00.000Z",
+      "excerpt": "Cloudflare is unifying AI Gateway and Workers AI into a single control plane, giving developers observability, billing, and dynamic routing across both managed GPUs and external providers. Learn how unified bindings and model-first routing simplify building resilient AI applications."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Deploying Red Hat AI with the NVIDIA DSX™ Platform for scalable AI clouds",
+      "link": "https://www.redhat.com/en/blog/deploying-red-hat-ai-nvidia-dsxtm-platform-scalable-ai-clouds",
+      "date": "2026-08-07T00:00:00.000Z",
+      "excerpt": "AI clouds have advanced beyond initial pilot testing, and the challenge now isn’t simply configuring the physical hardware."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Agentic Future Ready With BigQuery: Continually Improving Price-Performance, Zero Effort",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-performance-optimizations/",
+      "date": "2026-08-06T16:00:00.000Z",
+      "excerpt": "In the modern data landscape, query performance tuning and managing system price-performance is challenging, especially as the number of agentic workloads increase."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "개인화된 Airflow 테스트 환경 구축 및 운영 경험",
+      "link": "https://tech.kakao.com/posts/829",
+      "date": "2026-08-06T15:00:00.000Z",
+      "excerpt": "안녕하세요! 데이터서비스 조직의 비오, 소나, 테라입니다."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Building an open Agentic Internet: readable, discoverable, callable, and payable",
+      "link": "https://blog.cloudflare.com/the-agentic-internet/",
+      "date": "2026-08-06T13:00:00.000Z",
+      "excerpt": "Agents are a new kind of visitor. They don't render CSS or click ads, but they have a paying human on the other end."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers",
+      "link": "https://blog.cloudflare.com/kitesurf/",
+      "date": "2026-08-06T13:00:00.000Z",
+      "excerpt": "We should be giving all agents tools that excel at what’s important for an AI model. Kitesurf is Cloudflare’s new stateless, highly scalable, and cost-effective web browser that runs entirely on top of Workers and was designed specifically for the Agentic Cloud."
     }
   ]
 }
