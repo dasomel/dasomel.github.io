@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-10",
+  "generatedAt": "2026-08-09T20:57:27.733Z",
+  "count": 7,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Platform Engineering ROI: What it costs to build your own platform",
+      "link": "https://thenewstack.io/real-cost-diy-platform/",
+      "date": "2026-08-09T16:00:00.000Z",
+      "excerpt": "What it actually costs to build your own internal developer platform over five years, and why most “we’ll just build"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Coding agents can be evaluated. We just have to evaluate the work.",
+      "link": "https://thenewstack.io/evaluating-coding-agents-framework/",
+      "date": "2026-08-09T15:00:00.000Z",
+      "excerpt": "I recently argued with a software factory provider, whose position was that coding agents cannot be evaluated. Their reasoning was"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI coding got faster. Why didn’t engineering?",
+      "link": "https://thenewstack.io/ai-productivity-measurement-gap/",
+      "date": "2026-08-09T14:00:00.000Z",
+      "excerpt": "AI is great at making individuals faster, but the surrounding systems are then slowing everything right back down. This result"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Unifying Structured and Unstructured Data Insights with BQ Search Innovations",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-search-innovations-unify-structured-unstructured-data/",
+      "date": "2026-08-07T16:00:00.000Z",
+      "excerpt": "Modern enterprises possess a vast amount of unstructured data, yet they frequently encounter significant challenges in managing and extracting value from it."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "GOL! How TelevisaUnivision streamed the FIFA World Cup to millions with Google Cloud",
+      "link": "https://cloud.google.com/blog/products/networking/streaming-the-fifa-world-cup-with-televisaunivision/",
+      "date": "2026-08-07T16:00:00.000Z",
+      "excerpt": "Live sports broadcasting represents the ultimate stress test for digital media infrastructure, where operational success or failure is measured in milliseconds and observed live by millions of viewers simultaneously."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Unifying Workers AI and AI Gateway into a single AI control plane",
+      "link": "https://blog.cloudflare.com/workers-ai-gateway-unification/",
+      "date": "2026-08-07T13:00:00.000Z",
+      "excerpt": "Cloudflare is unifying AI Gateway and Workers AI into a single control plane, giving developers observability, billing, and dynamic routing across both managed GPUs and external providers. Learn how unified bindings and model-first routing simplify building resilient AI applications."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Deploying Red Hat AI with the NVIDIA DSX™ Platform for scalable AI clouds",
+      "link": "https://www.redhat.com/en/blog/deploying-red-hat-ai-nvidia-dsxtm-platform-scalable-ai-clouds",
+      "date": "2026-08-07T00:00:00.000Z",
+      "excerpt": "AI clouds have advanced beyond initial pilot testing, and the challenge now isn’t simply configuring the physical hardware."
+    }
+  ]
+}
