@@ -79,6 +79,7 @@ jobs:
           # 오래된 것부터(브랜치명=날짜 오름차순) 머지해 발행 순서를 보존한다.
           # mapfile 은 bash 4+ 전용이라 while-read 로 둔다 — 로컬(bash 3.2) 검증도 가능해진다.
           COUNT=0
+          SKIPPED=0
           while IFS=$'\t' read -r NUM BRANCH; do
             [ -z "$NUM" ] && continue
             DATE="${BRANCH#daily-digest/}"
@@ -91,6 +92,7 @@ jobs:
             # 모양이고, 그건 사람이 확인하고 직접 머지해야 하는 물건이다.
             if [ -f "src/content/posts/daily-digest-${DATE}.md" ]; then
               echo "::warning::PR #${NUM} (${BRANCH}) — ${DATE} 는 이미 main 에 발행돼 있다. 자동 머지하지 않고 남긴다. 교체가 목적이면 사람이 직접 머지할 것."
+              SKIPPED=$((SKIPPED + 1))
               continue
             fi
 
@@ -105,7 +107,13 @@ jobs:
           done < /tmp/digest-prs.txt
 
           if [ "$COUNT" -eq 0 ]; then
-            echo "머지할 draft 다이제스트 PR 이 없다. 이미 발행됐거나 수집 결과가 없다."
+            # "대상이 없었다"와 "대상은 있었지만 전부 남겨 뒀다"를 구분한다.
+            # 뭉뚱그리면 발행이 멈춘 날과 정상인 날이 같은 로그로 보인다.
+            if [ "$SKIPPED" -gt 0 ]; then
+              echo "이미 발행된 날짜 ${SKIPPED}건을 남겨 뒀다. 머지한 것은 없다."
+            else
+              echo "머지할 draft 다이제스트 PR 이 없다. 이미 발행됐거나 수집 결과가 없다."
+            fi
             echo "merged=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
