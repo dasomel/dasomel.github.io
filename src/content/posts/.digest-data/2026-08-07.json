@@ -9,7 +9,11 @@
       "title": "Friday Five — August 7, 2026",
       "link": "https://www.redhat.com/en/blog/friday-five-august-7-2026-red-hat",
       "date": "2026-08-07T00:00:00.000Z",
-      "excerpt": "Red Hat Recognized as a Leader for Third Consecutive Year in 2026 Gartner® Magic Quadrant™ for Cloud-Native Application PlatformsRed Hat OpenShift is recognized as a Leader in the 2026 Magic Quadrant for Cloud-Native Application Platforms."
+      "excerpt": "Red Hat Recognized as a Leader for Third Consecutive Year in 2026 Gartner® Magic Quadrant™ for Cloud-Native Application PlatformsRed Hat OpenShift is recognized as a Leader in the 2026 Magic Quadrant for Cloud-Native Application Platforms.",
+      "summaryKo": "Red Hat이 2026 Gartner Magic Quadrant 클라우드 네이티브 애플리케이션 플랫폼 부문에서 3년 연속 리더로 선정되었습니다. 이번 평가에서 Red Hat OpenShift는 온프레미스, 퍼블릭 클라우드, 에지 환경 전반에 걸쳐 컨테이너, 가상 머신(VM), AI 워크로드를 일관되게 관리하는 능력을 인정받았습니다. 451 Research의 조사 보고서에 따르면 프라이빗 클라우드 사용자 중 절반 이상이 VMware의 대안을 적극 검토하며 IT 인프라 전환을 추진하고 있습니다. Red Hat은 정책 수립부터 프로덕션 단계까지 AI 안전과 준수 가이드라인을 자동화하는 오픈소스 커뮤니티 프로젝트 'asago'를 공개했습니다. 이와 함께 IBM과 Red Hat은 글로벌 오픈소스 연구 보안 강화를 위해 185개 이상의 연구 대학과 100개 비영리단체에 Lightwell을 무상 제공하기로 결정했습니다. 이러한 일련의 소식은 하이브리드 클라우드 운용 표준화와 AI 워크로드 수용성을 높이려는 엔터프라이즈의 수요를 적극 반영하고 있습니다.",
+      "summaryEn": "Red Hat OpenShift was recognized as a Leader in the 2026 Gartner Magic Quadrant for Cloud-Native Application Platforms for the third consecutive year. The report highlights OpenShift's operational rigor in orchestrating containers, virtual machines, and AI workloads seamlessly across multi-cloud, enterprise datacenters, and edge deployments. According to a sponsored 451 Research report, over half of private cloud organizations are currently evaluating alternatives to traditional VMware infrastructure. Red Hat also announced asago, a new open-source community project designed to automate AI safety governance and align developer workflows with compliance rules. Additionally, IBM and Red Hat are providing the Lightwell security solution at no cost to more than 185 research universities and 100 non-governmental organizations. Together, these updates underscore a strategic focus on hybrid cloud virtualization migration and production-ready enterprise AI platforms.",
+      "insightKo": "OpenShift 중심의 하이브리드 클라우드 통합과 VM·AI 워크로드 수용 정책은 벤더 종속성을 낮추고 멀티 클라우드 클러스터의 운용 효율성을 크게 높입니다.",
+      "insightEn": "Consolidating VMs and AI workloads onto OpenShift mitigates vendor lock-in risks while streamlining security compliance across hybrid cloud infrastructure."
     },
     {
       "source": "AWS DevOps",
@@ -17,7 +21,11 @@
       "title": "Scaling Autonomous Operations with AWS DevOps Agent and ServiceNow",
       "link": "https://aws.amazon.com/blogs/devops/scaling-autonomous-operations-with-aws-devops-agent-and-servicenow/",
       "date": "2026-08-06T19:55:26.000Z",
-      "excerpt": "This post is co-written with Govind Menon, Head of MCP Product at ServiceNow. Introduction Enterprise teams managing applications on AWS often rely on ServiceNow as their IT service management (ITSM) system for incident tracking, change management, and configuration management."
+      "excerpt": "This post is co-written with Govind Menon, Head of MCP Product at ServiceNow. Introduction Enterprise teams managing applications on AWS often rely on ServiceNow as their IT service management (ITSM) system for incident tracking, change management, and configuration management.",
+      "summaryKo": "AWS와 ServiceNow가 공동 작성을 통해 AWS DevOps Agent와 ServiceNow ITSM 시스템 간의 연동을 발표했습니다. 엔터프라이즈 팀은 그동안 인시던트 추적과 변경 관리를 위해 AWS 콘솔과 ServiceNow, 외부 모니터링 툴 사이에서 수동 작업과 맥락 전환을 반복해야 했습니다. AWS DevOps Agent는 ServiceNow API와 결합하여 자율적 운영 환경을 구축하고 인시던트 감지 시 자동으로 변경 내역과 원인을 분석합니다. 이 시스템은 장애 발생 시 관련 아티팩트와 지표를 실시간 수집하여 ServiceNow 티켓에 통합 기록하는 자동화 워크플로우를 제공합니다. 이를 통해 운영팀의 수작업 부담을 덜고 변경 영향도를 사전에 평가하여 안정성을 높입니다. 결과적으로 엔지니어링 조직은 인시던트 복구 시간(MTTR)을 대폭 단축하고 24시간 가동되는 자율 운영 체계를 구현할 수 있습니다.",
+      "summaryEn": "AWS partnered with ServiceNow to demonstrate how the AWS DevOps Agent integrates with ServiceNow ITSM for autonomous operational management. Enterprise operations teams often lose significant time context-switching between AWS, observability platforms, and ServiceNow ticketing systems during critical incidents. The AWS DevOps Agent automates telemetry collection, root cause analysis, and ticket logging directly inside the ServiceNow environment. By automatically linking CloudWatch logs and infrastructure changes to ITSM change requests, the integration ensures operational compliance without manual effort. Operational teams can evaluate change impact risks faster and leverage agentic workflows to handle routine incident triage automatically. This seamless integration enables organizations to lower mean time to resolution (MTTR) and scale reliable operations across multi-account AWS environments.",
+      "insightKo": "AWS DevOps Agent와 ServiceNow의 정밀 연동은 인시던트 대응 자동화 수준을 끌어올려 SRE 조직의 MTTR 단축과 운영 오버헤드 절감에 크게 기여합니다.",
+      "insightEn": "Automating ITSM workflows with AWS DevOps Agent reduces context switching during outages and significantly lowers mean time to resolution for enterprise cloud environments."
     },
     {
       "source": "GitHub",
@@ -25,7 +33,11 @@
       "title": "A guide to slash commands in the GitHub Copilot app",
       "link": "https://github.blog/ai-and-ml/github-copilot/a-guide-to-slash-commands-in-the-github-copilot-app/",
       "date": "2026-08-06T19:49:34.000Z",
-      "excerpt": "Go beyond chat in the GitHub Copilot app with these slash commands. They'll help you plan, collaborate, automate, and customize your dev workflow."
+      "excerpt": "Go beyond chat in the GitHub Copilot app with these slash commands. They'll help you plan, collaborate, automate, and customize your dev workflow.",
+      "summaryKo": "GitHub이 GitHub Copilot 애플리케이션 내에서 활용할 수 있는 슬래시(/) 명령어 활용 가이드를 공개했습니다. 이번에 소개된 슬래시 명령어는 단순한 대화형 인터페이스를 넘어 개발 워크플로우 전반의 체계적인 제어를 가능하게 합니다. 개발자는 슬래시 명령어를 사용해 프로젝트 구조 설계, 코드 검토, 문서 생성, 자동화 작업을 직관적으로 호출할 수 있습니다. 이를 통해 프롬프트 입력 단계를 간소화하고 코드 베이스 내 특정 컨텍스트나 모듈을 빠르게 지정할 수 있습니다. 또한 협업 중인 팀원과의 커뮤니케이션 및 워크플로우 맞춤 설정 기능을 제공하여 생산성을 극대화합니다. GitHub은 이러한 슬래시 명령어가 개발자의 맥락 전환을 방지하고 개발 주기를 단축하는 핵심 도구가 될 것이라고 설명합니다.",
+      "summaryEn": "GitHub released a comprehensive guide detailing the use of slash commands within the standalone GitHub Copilot application. Slash commands extend traditional conversational AI features by introducing structured workflows for software engineering tasks. Developers can execute commands for automated code review, context-aware documentation generation, and architectural task planning. The feature simplifies complex prompt engineering by pre-packaging common developer intents into single-character command triggers. Teams can standardize repetitive tasks and maintain consistency across development pipelines using customized execution shortcuts. This structured approach reduces cognitive fatigue and keeps engineers focused within their core workspace during daily tasks.",
+      "insightKo": "Copilot 슬래시 명령어 도입은 개발자의 반복 작업을 표준화하고 AI 기반 코딩 및 이슈 작성의 컨텍스트 유지 효율을 증대시킵니다.",
+      "insightEn": "Adopting structured slash commands in GitHub Copilot standardizes developer workflows and minimizes context switching during coding and automation tasks."
     },
     {
       "source": "The New Stack",
@@ -33,7 +45,11 @@
       "title": "GPT-5.6 Sol just got better in one place and stayed the same everywhere else",
       "link": "https://thenewstack.io/gpt-sol-chatgpt-split/",
       "date": "2026-08-06T19:33:02.000Z",
-      "excerpt": "Teams testing prompts in ChatGPT before moving them to Codex or Work may notice the difference on longer tasks. OpenAI"
+      "excerpt": "Teams testing prompts in ChatGPT before moving them to Codex or Work may notice the difference on longer tasks. OpenAI",
+      "summaryKo": "OpenAI가 ChatGPT 웹 인터페이스 내에서 GPT-5.6 Sol 모델의 성능 향상 업데이트를 적용했습니다. 이번 업데이트는 웹 UI 환경에만 국한되어 적용되었으며, 개발자용 API나 Codex, Work 플랫폼 등에서는 기존 동작 방식이 유지됩니다. 이로 인해 ChatGPT 웹상에서 프롬프트를 검증한 후 API나 백엔드 시스템으로 가져올 때 결과물 간 불일치가 발생할 수 있습니다. 특히 긴 문맥 해석이나 복잡한 추론 작업이 포함된 코딩 파이프라인에서 두 환경 간 응답 품질 차이가 두드러집니다. 개발자들과 엔지니어링 팀은 스테이징 검증 시 플랫폼별 모델 버전 차이를 명확히 인지하고 테스트해야 합니다. 이번 이원화 조치는 프로덕션 API 환경의 급격한 변경 없이 소비자용 웹 제품을 우선 개선하려는 OpenAI의 출시 전략을 보여줍니다.",
+      "summaryEn": "OpenAI introduced specific accuracy and performance enhancements to GPT-5.6 Sol exclusively within the ChatGPT web platform. The underlying API endpoints and developer environments such as Codex and Work remain unchanged on the previous baseline. Development teams prototyping prompts in ChatGPT may experience discrepancy when deploying those same prompts to API pipelines. Long-context tasks and complex reasoning workloads display noticeable performance variance between the web UI and developer APIs. Engineering organizations are advised to test autonomous workflows directly against target APIs rather than relying on ChatGPT tests. This targeted release highlights OpenAI's strategy of iterating on consumer web experiences while preserving API stability for enterprise clients.",
+      "insightKo": "웹 UI와 API 간의 모델 버전 불일치는 프롬프트 테스트 결과의 변동성을 일으키므로, DevOps 팀은 프로덕션 API 기반으로 검증 환경을 일원화해야 합니다.",
+      "insightEn": "Engineers must validate prompt automation pipelines directly against developer APIs rather than ChatGPT UI to avoid unexpected behavioral discrepancies."
     },
     {
       "source": "The New Stack",
@@ -41,7 +57,11 @@
       "title": "Why AI tools know nothing about your company — until now",
       "link": "https://thenewstack.io/cloudflare-os-agentic-workspace-security/",
       "date": "2026-08-06T19:30:08.000Z",
-      "excerpt": "Cloudflare launched its CloudflareOS open-source AI workspace platform this week, promising every employee a secure workspace equipped with AI tools"
+      "excerpt": "Cloudflare launched its CloudflareOS open-source AI workspace platform this week, promising every employee a secure workspace equipped with AI tools",
+      "summaryKo": "Cloudflare가 기업 내부 데이터와 맥락을 안전하게 연결하는 오픈소스 AI 워크스페이스 플랫폼 'CloudflareOS'를 출시했습니다. 기존 범용 AI 도구들은 기업의 보안 정책, 데이터 권한, 고유한 비즈니스 맥락에 접근할 수 없어 활용에 한계가 있었습니다. CloudflareOS는 임직원마다 제로 트러스트 보안이 적용된 격리된 에이전트 환경을 제공하여 안전한 자산 접근을 보장합니다. 이 플랫폼은 산재된 내부 문서를 통합하고 사내 지식 기반을 AI 에이전트의 작업 맥락으로 즉시 주입합니다. 보안 엔지니어는 데이터 유출 위험 없이 각 부서에 유연한 AI 자동화 도구를 할당하고 액세스 권한을 통제할 수 있습니다. Cloudflare는 오픈소스 기반 아키텍처를 통해 기업들이 사내 AI 플랫폼의 가시성과 주권을 유지하도록 지원합니다.",
+      "summaryEn": "Cloudflare released CloudflareOS, an open-source AI workspace platform designed to bridge enterprise data context with AI tools safely. Public AI tools often struggle to deliver tailored business value because they lack visibility into internal architecture and security roles. CloudflareOS provides every employee with a sandboxed, zero-trust workspace configured with strict access control primitives. The platform aggregates enterprise documentation and internal systems into context streams accessible by agentic tools. Security operators gain granular control over telemetry, data boundary compliance, and user permissions for all active agent instances. By open-sourcing the framework, Cloudflare offers organizations full self-hosted control over enterprise AI execution environments.",
+      "insightKo": "제로 트러스트 기반의 오픈소스 AI 워크스페이스 구축은 사내 데이터 보안 주권을 유지하면서 에이전트 자동화의 생산성을 극대화합니다.",
+      "insightEn": "Deploying a zero-trust AI workspace like CloudflareOS enables enterprise data grounding while preserving strict data sovereignty and identity security."
     },
     {
       "source": "The New Stack",
@@ -49,7 +69,11 @@
       "title": "Your AI agent’s next tool call may be valid but wrong. AWS’s Dogwood promises to fix that.",
       "link": "https://thenewstack.io/aws-dogwood-agent-policies/",
       "date": "2026-08-06T19:11:55.000Z",
-      "excerpt": "AWS on Thursday launched Dogwood, an open-source policy language and reference interpreter that lets developers govern sequences of AI agent"
+      "excerpt": "AWS on Thursday launched Dogwood, an open-source policy language and reference interpreter that lets developers govern sequences of AI agent",
+      "summaryKo": "AWS가 AI 에이전트의 툴 호출 시퀀스를 검증하고 통제하는 오픈소스 정책 언어 'Dogwood' 및 참조 인터프리터를 발표했습니다. 에이전트가 수행하는 각각의 API 개별 호출은 개별적으로 유효하더라도 전체 작업 시퀀스 관점에서는 심각한 오류를 유발할 수 있습니다. Dogwood는 에이전트가 실행하려는 연쇄적인 툴 호출 경로를 사전에 평가하여 의도치 않은 상태 변경이나 보안 사고를 방지합니다. 개발자는 샌드박스 실행 전에 백업 없이 삭제를 시도하는 등의 위험 패턴을 거르는 정책 규칙을 선언적으로 작성할 수 있습니다. 이 인터프리터는 멀티 스텝 에이전트 루프 중간에서 작업 정당성을 검증하여 시스템 안정성을 보장합니다. AWS는 Dogwood를 통해 자율 에이전트의 오작동 리스크를 거두어내고 정밀한 제어 레이어를 제공하고자 합니다.",
+      "summaryEn": "AWS introduced Dogwood, an open-source policy domain language and reference interpreter for regulating AI agent tool call sequences. While individual tool calls executed by autonomous agents may pass API schema validation, sequential execution can still yield logical errors. Dogwood allows system engineers to write deterministic policies governing multi-step tool invocations before execution occurs. Developers can block hazardous operations, such as mutating production databases prior to creating verified backups, using policy rules. The interpreter enforces order verification and action boundaries directly inside agent orchestration framework runtime loops. This policy language provides necessary safety rails for organizations deploying autonomous agents to handle cloud infrastructure tasks.",
+      "insightKo": "Dogwood와 같은 시퀀스 정책 언어 도입은 인프라 자율 에이전트의 오작동 리스크를 사전에 차단하는 필수적인 거버넌스 레이어가 됩니다.",
+      "insightEn": "Enforcing sequential tool policies with Dogwood prevents logical runtime hazards and secures multi-step autonomous agent operations in production."
     },
     {
       "source": "GitHub",
@@ -57,7 +81,11 @@
       "title": "How we took malware advisories beyond npm",
       "link": "https://github.blog/security/supply-chain-security/how-we-took-malware-advisories-beyond-npm/",
       "date": "2026-08-06T16:51:12.000Z",
-      "excerpt": "GitHub malware advisories no longer stop at npm. Here's how we wired OpenSSF's malicious-packages data into the Advisory Database, and why we built the pipeline paranoid."
+      "excerpt": "GitHub malware advisories no longer stop at npm. Here's how we wired OpenSSF's malicious-packages data into the Advisory Database, and why we built the pipeline paranoid.",
+      "summaryKo": "GitHub이 패키지 공급망 보안을 위해 보안 권고(Advisory Database) 대상을 npm을 넘어 타 생태계로 대폭 확장했습니다. GitHub은 OpenSSF의 악성 패키지(malicious-packages) 리포지토리 데이터를 실시간으로 파이프라인에 동기화하도록 연동했습니다. 이에 따라 PyPI, Go, Cargo 등 주요 언어 생태계 전반의 악성코드 유포 및 위협 요소를 신속하게 감지합니다. 오탐으로 인한 정상 패키지 차단을 방지하기 위해 정밀한 검증 단계를 포함하는 보수적인 데이터 처리 파이프라인을 구축했습니다. 데이터 수집 시 위협 인텔리전스 신호를 교차 검증하여 악성 패키지가 코드베이스에 포함되는 것을 사전에 예방합니다. GitHub은 이 시스템을 통해 개발자들이 멀티 언어 환경에서도 공급망 공격 위험을 효과적으로 완화할 수 있다고 강조했습니다.",
+      "summaryEn": "GitHub expanded its malware security advisories beyond the npm ecosystem to include multiple software registry environments. The updated pipeline integrates OpenSSF malicious-packages telemetry directly into the central GitHub Advisory Database. This integration improves malware coverage across major package managers, including PyPI, RubyGems, Cargo, and Go modules. GitHub engineered a highly defensive verification pipeline to validate threat signals and prevent false-positive classifications. Incoming advisories undergo multi-stage automated checks before being surfaced to downstream dependency security scanners. The expansion helps organizations secure polyglot software supply chains against malicious package typosquatting and account takeovers.",
+      "insightKo": "OpenSSF 데이터 연동 기반의 다중 생태계 악성 패키지 탐지는 복잡해진 소프트웨어 공급망(Supply Chain) 공격 위협을 통합적으로 예방합니다.",
+      "insightEn": "Expanding malware advisories across polyglot ecosystems via OpenSSF integration enhances automated supply-chain risk mitigation for enterprise codebases."
     },
     {
       "source": "AWS Containers",
@@ -65,7 +93,11 @@
       "title": "Centralize cross-account Amazon ECS telemetry with an ADOT gateway",
       "link": "https://aws.amazon.com/blogs/containers/centralize-cross-account-amazon-ecs-telemetry-with-an-adot-gateway/",
       "date": "2026-08-06T16:13:46.000Z",
-      "excerpt": "Running an OpenTelemetry collector as a sidecar in every Amazon ECS task does not scale across a multi-account estate, and it cannot run at all on Windows."
+      "excerpt": "Running an OpenTelemetry collector as a sidecar in every Amazon ECS task does not scale across a multi-account estate, and it cannot run at all on Windows.",
+      "summaryKo": "AWS가 다중 계정 환경의 Amazon ECS 클러스터 텔레메트리를 효율적으로 수집하기 위한 ADOT Gateway 아키텍처 가이드를 게시했습니다. 기존에는 개별 ECS 태스크마다 ADOT(AWS Distro for OpenTelemetry) 컬렉터를 사이드카로 실행하여 리소스 낭비가 심했습니다. 특히 사이드카 패턴은 Windows 컨테이너 환경에서는 아예 실행할 수 없어 텔레메트리 수집의 공백이 존재했습니다. 중앙집중식 ADOT Gateway 방식은 사이드카 없이 다중 계정 및 다중 VPC의 메트릭, 트레이스를 하나의 게이트웨이로 통합 전달합니다. 각 태스크의 메모리/CPU 사용량을 대폭 절감함과 동시에 Windows 워크로드에 대한 모니터링을 완벽히 지원합니다. 이를 통해 엔터프라이즈 환경에서 관측성(Observability) 파이프라인의 운영 비용을 줄이고 관리 복잡도를 개선할 수 있습니다.",
+      "summaryEn": "AWS published architectural guidance for centralizing Amazon ECS cluster telemetry across multi-account environments using an ADOT Gateway. Deploying AWS Distro for OpenTelemetry (ADOT) collectors as sidecars in every ECS task causes significant memory and CPU resource overhead. Furthermore, the sidecar pattern cannot run within Windows container tasks, creating observability blind spots in hybrid container fleets. The ADOT Gateway architecture centralizes cross-account metrics, logs, and traces into dedicated collector clusters over secure private endpoints. Removing sidecars reduces per-task resource overhead and enables comprehensive telemetry ingestion for Windows and Linux containers alike. This centralized telemetry model optimizes operational costs and simplifies OpenTelemetry collector management across large-scale AWS estates.",
+      "insightKo": "ADOT 게이트웨이를 통한 중앙집중식 ECS 텔레메트리 수집은 사이드카 리소스 비용을 감축하고 Windows 컨테이너 관측성 한계를 극복해 줍니다.",
+      "insightEn": "Centralizing ECS telemetry with an ADOT Gateway reduces sidecar compute overhead and solves observability constraints for Windows container workloads."
     },
     {
       "source": "Google Cloud",
@@ -73,7 +105,11 @@
       "title": "Advancing brain tumor research with privacy-first AI",
       "link": "https://cloud.google.com/blog/products/identity-security/privacy-first-medical-ai-with-medperf-and-google-cloud/",
       "date": "2026-08-06T16:00:00.000Z",
-      "excerpt": "The intersection of medicine and AI has led to remarkable innovations. However, developers now face the thorny challenge of building robust medical AI tools that have been tested and evaluated on diverse, real-world patient data while also protecting patient privacy."
+      "excerpt": "The intersection of medicine and AI has led to remarkable innovations. However, developers now face the thorny challenge of building robust medical AI tools that have been tested and evaluated on diverse, real-world patient data while also protecting patient privacy.",
+      "summaryKo": "Google Cloud가 뇌종양 연구 및 의료 AI 개발을 위해 개인정보 보호를 최우선으로 하는 AI 검증 플랫폼 사례를 발표했습니다. 의료 AI 모델을 고도화하려면 다양한 기관의 환자 데이터로 검증해야 하지만 데이터 프라이버시 규제로 인해 통합이 어려웠습니다. Google Cloud는 오픈소스 벤치마킹 프레임워크인 MedPerf와 기밀 컴퓨팅(Confidential Computing) 기술을 결합했습니다. 이를 통해 민감한 환자 데이터를 외부로 이관하지 않고도 분산된 기관의 실제 데이터로 모델 성능을 안전하게 평가할 수 있습니다. 엄격한 보안 컴플라이언스와 접근 권한 제어를 유지하면서 연합 평가(Federated Evaluation) 환경을 조성합니다. 이 아키텍처는 데이터 보안과 법적 규제를 준수하는 동시에 고급 의료 AI 연구의 실용성을 보장하는 모범 사례를 제시합니다.",
+      "summaryEn": "Google Cloud showcased a privacy-preserving medical AI infrastructure leveraging MedPerf and Google Cloud security primitives for brain tumor research. Developing robust clinical AI models requires evaluation on diverse patient datasets, yet strict privacy regulations limit data centralization. Google Cloud combined the open-source MedPerf benchmarking framework with Confidential Computing enclaves to solve data sharing barriers. This architecture enables researchers to benchmark AI models across federated clinical sites without transferring sensitive patient files. Advanced cryptographic privacy controls and identity governance ensure strict compliance with international medical data laws. The solution demonstrates how enterprise cloud platforms can accelerate clinical AI validation while maintaining non-negotiable data privacy.",
+      "insightKo": "기밀 컴퓨팅 기반의 연합 AI 검증 아키텍처는 헬스케어 및 규제 산업에서 데이터 유출 없이 고성능 AI 모델을 검증할 수 있는 표준을 제공합니다.",
+      "insightEn": "Combining Confidential Computing with federated benchmarking allows regulated enterprise sectors to evaluate AI models securely without exposing sensitive data."
     },
     {
       "source": "Google Cloud",
@@ -81,7 +117,11 @@
       "title": "Your agentic summer: No-cost lessons from Google experts to build and scale agents",
       "link": "https://cloud.google.com/blog/topics/training-certifications/free-gemini-enterrprise-training/",
       "date": "2026-08-06T16:00:00.000Z",
-      "excerpt": "I’ve talked to developers, IT leaders, and builders who all ask the same question: How do we actually get agents into production? The answer isn't theoretical — it's hands-on."
+      "excerpt": "I’ve talked to developers, IT leaders, and builders who all ask the same question: How do we actually get agents into production? The answer isn't theoretical — it's hands-on.",
+      "summaryKo": "Google Cloud가 프로덕션 환경에서 AI 에이전트를 구축하고 확장하려는 엔지니어를 위해 무료 실습 교육 과정을 공개했습니다. 많은 IT 리더와 개발자가 AI 에이전트 도입 필요성을 느끼지만 실무 프로덕션 배포 단계에서 구체적인 아키텍처 구성에 어려움을 겪습니다. 이번 과정은 단순 이론 교육이 아니라 Gemini Enterprise와 Vertex AI 기반의 실제 구현 및 스케일링 패턴을 다룹니다. 에이전트의 툴 호출, 팩트 기반 그라운딩, 보안 권한 관리 등 생산 환경에 필수적인 기술 요소들이 수강 커리큘럼에 포함됩니다. 수강생들은 Google Cloud 전문가들이 검증한 실습 랩을 통해 에이전트 오케스트레이션 방식을 직접 체득할 수 있습니다. Google은 이 무료 트레이닝을 통해 엔터프라이즈 환경에서의 AI 에이전트 대중화와 기술적 진입 장벽 낮추기에 나섰습니다.",
+      "summaryEn": "Google Cloud launched a series of free, hands-on training modules designed to guide developers through building production AI agents. Engineering teams often face challenges transitioning agentic AI prototypes from experimental sandboxes into scalable enterprise environments. The curriculum provides practical instruction on configuring Gemini Enterprise and Vertex AI for enterprise agent workflows. Key topics include deterministic tool calling, enterprise data grounding, safety filtering, and low-latency agent orchestration. Participants gain access to lab environments guided by Google Cloud engineers to master production deployment patterns directly. This initiative aims to reduce technical friction and establish standard operational frameworks for enterprise agent deployment.",
+      "insightKo": "무료 프로덕션 에이전트 교육 과정은 Vertex AI 기반 자율 에이전트 아키텍처의 내재화와 클라우드 운영자의 AI 역량 강화를 촉진합니다.",
+      "insightEn": "Accessing structured agent architecture training enables cloud engineering teams to bridge the gap between AI prototyping and production deployment."
     },
     {
       "source": "Google Cloud",
@@ -89,7 +129,11 @@
       "title": "Digital sovereignty in the age of AI: You don’t have to choose between control and innovation",
       "link": "https://cloud.google.com/blog/topics/hybrid-cloud/state-of-ai-infrastructure-report-on-hybrid-cloud-and-gdc/",
       "date": "2026-08-06T16:00:00.000Z",
-      "excerpt": "For enterprises and governments with strict compliance and sovereignty requirements, keeping sensitive data on-premises often means missing out on the latest AI."
+      "excerpt": "For enterprises and governments with strict compliance and sovereignty requirements, keeping sensitive data on-premises often means missing out on the latest AI.",
+      "summaryKo": "Google Cloud가 하이브리드 클라우드 및 Google Distributed Cloud(GDC) 기반의 AI 인프라 보고서를 발표했습니다. 엄격한 데이터 주권 및 보안 규제를 받는 정부 기관과 금융 기업은 민감 데이터를 온프레미스에 보관해야 하므로 AI 도입에 제약이 많았습니다. GDC는 폐쇄망(Air-gapped) 환경이나 온프레미스 데이터센터 내에서도 최신 Gemini AI 모델과 최첨단 인프라를 실행할 수 있게 지원합니다. 이를 통해 조직은 데이터 제어권 및 법적 컴플라이언스를 완벽히 유지하면서 클라우드 혁신을 수용할 수 있습니다. 보고서는 하이브리드 클라우드 형태의 소버린 AI(Sovereign AI) 인프라 구축이 전 세계 엔터프라이즈의 필수 과제로 떠올랐음을 보여줍니다. Google Cloud는 제어권과 혁신 사이에서 고민하는 기술 리더들에게 명확한 인프라 청사진을 제시하고 있습니다.",
+      "summaryEn": "Google Cloud published its State of AI Infrastructure Report, focusing on digital sovereignty, hybrid cloud, and Google Distributed Cloud (GDC). Government entities and regulated enterprises often defer AI adoption due to strict residency laws prohibiting cloud data egress. Google Distributed Cloud allows organizations to deploy cutting-edge Gemini AI models inside air-gapped or on-premises data centers. The platform ensures full compliance with local digital sovereignty mandates while maintaining cloud-native operational consistency. The report details how hybrid infrastructure removes the friction between strict data privacy controls and generative AI innovation. Enterprise architecture leaders can leverage GDC to maintain absolute data control without sacrificing access to advanced AI acceleration.",
+      "insightKo": "Google Distributed Cloud 기반의 소버린 AI 아키텍처는 폐쇄망 환경에서도 컴플라이언스 준수와 최신 AI 인프라 활용을 동시에 가능하게 합니다.",
+      "insightEn": "Deploying Google Distributed Cloud resolves data residency conflicts, enabling regulated enterprise workloads to access advanced AI models on-premises."
     },
     {
       "source": "Azure",
@@ -97,7 +141,11 @@
       "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI-Augmented Code Modernization Tools",
       "link": "https://azure.microsoft.com/en-us/blog/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-ai-augmented-code-modernization-tools/",
       "date": "2026-08-06T15:00:00.000Z",
-      "excerpt": "GitHub Copilot and Azure are helping organizations modernize legacy applications, reduce technical debt, and prepare for AI innovation."
+      "excerpt": "GitHub Copilot and Azure are helping organizations modernize legacy applications, reduce technical debt, and prepare for AI innovation.",
+      "summaryKo": "마이크로소프트가 2026 Gartner Magic Quadrant AI 증강 코드 현대화 도구 부문에서 리더로 선정되었습니다. Microsoft는 GitHub Copilot과 Azure 클라우드 생태계를 통합하여 레거시 애플리케이션의 전환을 촉진하고 있습니다. 이 도구들은 오래된 프레임워크 기반의 정적 코드를 최신 클라우드 네이티브 마이크로서비스 구조로 리팩터링하도록 돕습니다. 기술 부채 축소, 자동화된 단위 테스트 작성, 언어 마이그레이션 등 엔터프라이즈의 앱 현대화 주기를 크게 단축시킵니다. Azure의 클라우드 인프라와 결합하여 소스 코드 분석부터 마이그레이션 실행까지의 엔드투엔드 파이프라인을 구축합니다. 이번 Gartner의 평가는 AI 기반 자동화가 단순 코딩 보조를 넘어 시스템 현대화의 중심축으로 자리 잡았음을 보여줍니다.",
+      "summaryEn": "Microsoft was positioned as a Leader in the 2026 Gartner Magic Quadrant for AI-Augmented Code Modernization Tools. The recognition highlights the combined capabilities of GitHub Copilot and Azure in accelerating enterprise legacy code refactoring. The integrated suite assists engineering teams in analyzing monolithic codebases, migrating legacy frameworks, and reducing technical debt. Automated code translation and test suite generation streamline long-term application migration pipelines to Azure cloud services. By automating complex refactoring tasks, enterprise organizations can minimize human error and lower modernization costs. Gartner's evaluation reinforces the critical role AI tools play in transforming legacy enterprise applications into cloud-native architectures.",
+      "insightKo": "Copilot과 Azure 연동 기반의 코드 현대화 도구는 레거시 모놀리스 시스템의 클라우드 네이티브 리팩토링 비용과 기간을 획기적으로 줄여줍니다.",
+      "insightEn": "Leveraging AI-augmented modernization tools reduces migration risks and technical debt when refactoring legacy enterprise applications for Azure cloud natively."
     },
     {
       "source": "Cloudflare",
@@ -105,7 +153,11 @@
       "title": "Cloudflare AI Search: give your agents a search engine for your data",
       "link": "https://blog.cloudflare.com/ai-search-easier/",
       "date": "2026-08-06T13:00:00.000Z",
-      "excerpt": "AI Search makes search easier than ever, with no Cloudflare primitives to stitch together. Point it at your data to create a search for your own files and websites."
+      "excerpt": "AI Search makes search easier than ever, with no Cloudflare primitives to stitch together. Point it at your data to create a search for your own files and websites.",
+      "summaryKo": "Cloudflare가 AI 에이전트 전용 검색 엔진 서비스인 'Cloudflare AI Search'를 새롭게 출시했습니다. 기존에는 에이전트용 RAG 시스템을 구축하기 위해 벡터 DB, 임베딩 모델, 스토리지 등 여러 인프라 요소를 직접 조립해야 했습니다. Cloudflare AI Search는 데이터 원천(파일, 웹사이트)만 지정하면 즉시 에이전트가 탐색 가능한 검색 파이프라인을 자동 생성합니다. 개발자는 인프라 구성의 복잡도 없이 단일 API 호출만으로 고성능 정보 검색 기능을 에이전트에 부여할 수 있습니다. Cloudflare의 글로벌 엣지 네트워크를 활용하여 낮은 지연 시간으로 최신 데이터 검색 응답을 제공합니다. 이를 통해 기업은 사내 지식 기반 검색 시스템을 빠르게 구축하고 AI 에이전트의 응답 정확도를 극대화할 수 있습니다.",
+      "summaryEn": "Cloudflare announced Cloudflare AI Search, a managed search service designed specifically to supply AI agents with structured data context. Previously, building agentic search required developers to manually integrate vector databases, embedding pipelines, and storage buckets. Cloudflare AI Search eliminates infrastructure complexity by allowing teams to point the engine directly at websites and file repositories. The platform automatically indexes content and provides a unified query API optimized for low-latency agent retrieval workflows. Operating on Cloudflare's global edge network ensures fast retrieval times for real-time Retrieval-Augmented Generation (RAG) tasks. This managed solution significantly accelerates the deployment of contextual knowledge bases for autonomous corporate agents.",
+      "insightKo": "Cloudflare AI Search는 엣지 기반의 Managed RAG 파이프라인을 제공하여 에이전트 검색 시스템의 구축 시간과 운용 비용을 크게 줄여줍니다.",
+      "insightEn": "Using Cloudflare AI Search abstracts complex RAG infrastructure, allowing developers to equip AI agents with edge-rendered data retrieval rapidly."
     },
     {
       "source": "Cloudflare",
@@ -113,7 +165,11 @@
       "title": "The next generation of MCP",
       "link": "https://blog.cloudflare.com/mcp-v2/",
       "date": "2026-08-06T13:00:00.000Z",
-      "excerpt": "The next version of MCP has a rewritten, stateless core that just works on Workers. We cover upgrades to the protocol, the new feature lifecycle and SDK migration path, and hear from early adopters already running it in production."
+      "excerpt": "The next version of MCP has a rewritten, stateless core that just works on Workers. We cover upgrades to the protocol, the new feature lifecycle and SDK migration path, and hear from early adopters already running it in production.",
+      "summaryKo": "Cloudflare가 에이전트 연동 표준 모델인 Model Context Protocol(MCP)의 차세대 버전인 MCP v2를 발표했습니다. MCP v2는 서버리스 환경인 Cloudflare Workers에서 원활히 작동하도록 코어를 무상태(Stateless) 아키텍처로 전면 재작성했습니다. 이번 개정을 통해 프로토콜 수준의 기능 생명주기 관리와 강화된 SDK 마이그레이션 경로가 새롭게 제공됩니다. 기존 상태 유지형 방식의 한계를 극복하여 엣지 컴퓨팅 노드에서 대규모 분산 에이전트 호출을 효율적으로 처리합니다. 이미 초기 도입 기업들이 프로덕션 환경에 MCP v2를 적용하여 낮은 지연 시간의 에이전트 툴 연동을 검증했습니다. Cloudflare는 MCP v2가 에이전틱 AI 생태계의 멀티 클라우드 인터페이스 표준으로 자리잡을 것임을 강조했습니다.",
+      "summaryEn": "Cloudflare released MCP v2, the next-generation iteration of the Model Context Protocol engineered for edge execution. The core protocol engine was completely rewritten to be stateless, enabling native deployment on the Cloudflare Workers platform. MCP v2 introduces improved feature lifecycle management, streamlined protocol handshakes, and clearer SDK migration paths. The stateless design removes persistent connection bottlenecks, allowing agentic tool servers to scale horizontally across global edge locations. Early adopters have already deployed MCP v2 into production to power real-time agent communications with enterprise APIs. This update establishes a resilient, serverless foundation for standardizing tool integration across autonomous AI ecosystems.",
+      "insightKo": "Workers에 최적화된 무상태 MCP v2 코어는 엣지 컴퓨팅 기반의 에이전트-툴 간 인터페이스를 대규모 수평 확장 가능한 구조로 혁신합니다.",
+      "insightEn": "The stateless MCP v2 architecture on Workers enables serverless, low-latency agent tool integration scalable across global edge networks."
     },
     {
       "source": "Cloudflare",
@@ -121,7 +177,11 @@
       "title": "From ranking to recommended: get your site ready to thrive in the age of AI agents",
       "link": "https://blog.cloudflare.com/aeo/",
       "date": "2026-08-06T13:00:00.000Z",
-      "excerpt": "More than half of requests now come from machines, not people. Agent Readiness shows how well agents can discover and read your site, while Answer Engine Optimization tracks how often AI assistants recommend you."
+      "excerpt": "More than half of requests now come from machines, not people. Agent Readiness shows how well agents can discover and read your site, while Answer Engine Optimization tracks how often AI assistants recommend you.",
+      "summaryKo": "Cloudflare가 웹 트래픽 변화에 맞춰 'Agent Readiness'와 'Answer Engine Optimization(AEO)' 분석 도구를 출시했습니다. 조사에 따르면 현재 인터넷 트래픽의 절반 이상이 사람의 브라우저 방문이 아닌 AI 에이전트 및 자동화 봇에 의해 발생합니다. Agent Readiness 지표는 AI 에이전트 크롤러가 웹사이트 콘텐츠를 얼마나 손쉽게 탐색하고 읽을 수 있는지 평가합니다. AEO 도구는 주요 AI 보조 도구들이 생성형 답변에서 해당 사이트의 정보를 얼마나 자주 인용하고 추천하는지 추적합니다. 기존 검색 엔진 최적화(SEO) 방식에서 AI 엔진 최적화 중심으로 웹 게시 및 라우팅 전략의 전환이 요구됩니다. Cloudflare는 웹 운영자들이 에이전트 친화적인 인프라 환경을 구축하여 신규 AI 검색 트래픽을 선점하도록 돕습니다.",
+      "summaryEn": "Cloudflare unveiled Agent Readiness and Answer Engine Optimization (AEO) monitoring capabilities for modern web infrastructure. Automated machine requests and AI agents now represent over fifty percent of total internet web traffic. Agent Readiness evaluates how easily AI agent crawlers can discover, parse, and ingest structured website content. Answer Engine Optimization tracks the frequency with which conversational AI engines cite and recommend a site's information. The shift highlights a transition from traditional search engine optimization toward machine-oriented indexing and discovery strategies. These tools provide web operators with actionable metrics to optimize content delivery for autonomous AI scrapers and search engines.",
+      "insightKo": "머신 트래픽이 과반을 점유하는 환경에서 AEO 및 에이전트 접근성 최적화는 웹 서비스의 AI 인덱싱 및 노출 경쟁력을 결정짓는 필수 요인입니다.",
+      "insightEn": "Optimizing infrastructure for Agent Readiness and AEO ensures enterprise content remains machine-readable and prioritized by AI answer engines."
     },
     {
       "source": "CNCF",
@@ -129,7 +189,11 @@
       "title": "LitmusChaos Q1-Q2 2026 update: community, contributions, and project progress",
       "link": "https://www.cncf.io/blog/2026/08/06/litmuschaos-q1-q2-2026-update-community-contributions-and-project-progress/",
       "date": "2026-08-06T11:30:00.000Z",
-      "excerpt": "About LitmusChaos LitmusChaos is an open source chaos engineering platform that helps teams identify weaknesses and potential outages in their infrastructure by running controlled chaos experiments. Built on cloud native principles, LitmusChaos enables teams to validate."
+      "excerpt": "About LitmusChaos LitmusChaos is an open source chaos engineering platform that helps teams identify weaknesses and potential outages in their infrastructure by running controlled chaos experiments. Built on cloud native principles, LitmusChaos enables teams to validate.",
+      "summaryKo": "CNCF가 오픈소스 카오스 엔지니어링 플랫폼인 LitmusChaos의 2026년 상반기(Q1-Q2) 프로젝트 성과 보고서를 공개했습니다. LitmusChaos는 쿠버네티스 환경에서 제어된 장애 실험을 실행하여 인프라의 약점과 잠재적 장애 요소를 찾아냅니다. 이번 보고서에는 신규 카오스 실험 시나리오 확장, 커뮤니티 기여도 증가, 플랫폼 안정성 개선 내역이 상세히 포함되었습니다. DevOps 및 SRE 팀은 파드 정지, 네트워크 지연, 리소스 과부하 실험을 자동화된 CI/CD 파이프라인에 통합할 수 있습니다. 클라우드 네이티브 아키텍처에 맞춤 설계되어 서비스 메시 및 멀티 클러스터 복원력 검증을 강화했습니다. CNCF는 지속적인 커뮤니티 성장을 통해 LitmusChaos가 클라우드 네이티브 안정성 검증의 필수 도구로 발전하고 있다고 전했습니다.",
+      "summaryEn": "The Cloud Native Computing Foundation released the Q1-Q2 2026 community and progress update for the LitmusChaos project. LitmusChaos is a cloud-native chaos engineering platform enabling teams to identify infrastructure weaknesses via controlled experiment runs. The update details major enhancements in experimental scenario templates, community contributor growth, and platform stability metrics. SRE teams leverage LitmusChaos to automate fault injection tests, including network latency, node failures, and memory exhaustion. Integrating chaos experiments into continuous deployment pipelines ensures microservice resiliency prior to production incidents. The project's continued progression highlights the growing adoption of automated chaos engineering standards across Kubernetes fleets.",
+      "insightKo": "쿠버네티스 파이프라인에 LitmusChaos를 내재화하면 제어된 장애 실험을 통해 클러스터 복원력(Resiliency)을 프로덕션 장애 발생 전에 미리 검증할 수 있습니다.",
+      "insightEn": "Integrating LitmusChaos into Kubernetes deployment pipelines provides automated resilience validation to prevent unexpected production outages."
     },
     {
       "source": "OpenAI",
@@ -137,7 +201,11 @@
       "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
       "link": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
       "date": "2026-08-06T10:00:00.000Z",
-      "excerpt": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5."
+      "excerpt": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.",
+      "summaryKo": "OpenAI가 ChatGPT 서비스 내 GPT-5.6 Sol 모델의 정확도 개선 및 무료 사용자 대상 GPT-5.6 Luna 제공 확대를 발표했습니다. 업데이트된 GPT-5.6 Sol은 답변의 일관성과 팩트 정확성을 높여 사용자의 복잡한 요구사항을 정확히 처리합니다. 이와 함께 무료 플랜 이용자들에게도 한 단계 발전된 GPT-5.6 Luna 모델의 접근 권한을 대폭 넓혔습니다. 일상적인 대화 및 일상 업무 질문에 대해 제한 없는 GPT-5 기반 채팅 환경을 이용할 수 있도록 지원합니다. 이번 조치는 고성능 AI 모델의 응답 성능 향상과 대중적인 무료 접근성 제공을 동시에 목표로 합니다. OpenAI는 사용자 피드백을 지속 반영하여 AI 서비스의 정확성과 서비스 가용성을 지속 확장할 예정입니다.",
+      "summaryEn": "OpenAI announced performance improvements to GPT-5.6 Sol alongside expanded free user access to GPT-5.6 Luna in ChatGPT. The updated GPT-5.6 Sol delivers higher factual accuracy and output consistency across complex user queries. Free tier accounts now receive expanded access limits for the GPT-5.6 Luna model within the primary application interface. The platform also unlocked broader availability for everyday interactions powered by the core GPT-5 model series. These updates focus on improving conversational precision while lowering the barrier for entry across general user segments. OpenAI continues to iterate on model performance to maintain user trust and competitive scalability in natural language tasks.",
+      "insightKo": "무료 계정에 대한 고성능 AI 모델 접근성 확대는 개발자 및 사용자 층의 저변을 넓히고 대규모 인공지능 상호작용 생태계를 가속화합니다.",
+      "insightEn": "Expanding model access to free users broadens AI adoption while establishing higher performance baselines across general conversational interfaces."
     },
     {
       "source": "OpenAI",
@@ -145,7 +213,11 @@
       "title": "Working with the American Psychological Association on youth mental health and AI",
       "link": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
       "date": "2026-08-06T06:00:00.000Z",
-      "excerpt": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health."
+      "excerpt": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health.",
+      "summaryKo": "OpenAI가 미국심리학회(APA)와의 파트너십을 통해 청소년 정신 건강과 책임감 있는 AI 사용 가이드라인을 수립합니다. 양 기관은 근거 기반의 가이던스와 교육 자원을 개발하여 청소년 사용자의 안전한 AI 상호작용을 지원할 계획입니다. AI 대화 시스템이 청소년에게 미칠 수 있는 심리적 영향과 부작용을 사전에 식별하고 예방하는 안전장치를 정립합니다. 전문 심리학자들의 실증 연구 결과를 바탕으로 에이전트의 응답 톤 및 보호 규칙 모델을 고도화합니다. 이 프로젝트는 기술적 가드레일과 정신 건강 전문가의 조언을 결합하여 책임 있는 인공지능 생태계를 목표로 합니다. OpenAI는 향후 AI 모델 학습 및 서비스 운영 파이프라인 전반에 이번 연구 결과를 적극 반영할 예정입니다.",
+      "summaryEn": "OpenAI partnered with the American Psychological Association (APA) to develop evidence-based safeguards for youth mental health. The joint initiative aims to establish responsible AI guidelines and educational resources for younger user demographics. Experts will evaluate the psychological impacts of conversational AI systems and formulate protective safety guardrails. Scientific guidance from mental health professionals will directly inform model alignment and response moderation policies. The partnership addresses growing concerns regarding AI interaction safety, emotional dependence, and age-appropriate content filtering. OpenAI plans to integrate these psychological safety standards into future model training and deployment governance frameworks.",
+      "insightKo": "전문 학술 기관과의 제휴를 통한 AI 심리적 가드레일 구축은 규제 기관 및 사회적 합의에 부합하는 안전성 표준의 기준을 제시합니다.",
+      "insightEn": "Partnering with psychological associations creates evidence-based safety guardrails required for deploying responsible AI systems to broader audiences."
     }
   ]
 }
