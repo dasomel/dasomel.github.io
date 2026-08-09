@@ -28,7 +28,6 @@
  */
 
 import fs from 'node:fs';
-import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const argv = process.argv.slice(2);
