@@ -1,0 +1,191 @@
+{
+  "date": "2026-08-11",
+  "generatedAt": "2026-08-10T21:06:54.012Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Using the GitHub Copilot SDK for Java",
+      "link": "https://github.blog/engineering/using-the-github-copilot-sdk-for-java/",
+      "date": "2026-08-10T19:30:00.000Z",
+      "excerpt": "Enterprise Java developers have a new superpower—drive GitHub Copilot from idiomatic Java code with annotations, virtual threads, and more."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Everything we launched during Agents Week",
+      "link": "https://blog.cloudflare.com/agents-week-review-august-2026/",
+      "date": "2026-08-10T18:34:10.000Z",
+      "excerpt": "Our latest Agents Week has come to a close. Here’s a recap of all the announcements we made, from Wallets to Radar."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Meta’s Muse Glimmer fits on a laptop",
+      "link": "https://thenewstack.io/meta-glimmer-distillation-agents/",
+      "date": "2026-08-10T17:16:20.000Z",
+      "excerpt": "Meta released Muse Glimmer on Monday, a 30-billion-parameter open-weight model designed to run agentic workflows on local hardware. It’s available"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "What building an AI-native finance function taught me",
+      "link": "https://openai.com/index/building-an-ai-native-finance-function",
+      "date": "2026-08-10T17:00:00.000Z",
+      "excerpt": "OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS",
+      "link": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "date": "2026-08-10T16:25:36.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How WPP operationalizes platform and data engineering for AI marketing",
+      "link": "https://cloud.google.com/blog/products/media-entertainment/how-wpp-operationalizes-platform-and-data-engineering-for-ai-marketing/",
+      "date": "2026-08-10T16:00:00.000Z",
+      "excerpt": "Between chaotic levels of market fragmentation and economic volatility, marketing and communications agencies can no longer rely on the human intuition they’ve traditionally used to win clients and optimize their ad spend."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Malachyte solves retail’s cold-start problem with managed real-time AI",
+      "link": "https://cloud.google.com/blog/products/data-analytics/solving-retails-cold-start-problem-malachytes-recommendation-reinvention/",
+      "date": "2026-08-10T16:00:00.000Z",
+      "excerpt": "What’s the best way to recommend products to little-known users? We’ve spent our careers trying to solve this problem for major companies like Spotify and Priceline, and it’s why Sidd founded Malachyte, an AI-powered ecommerce recommendation platform."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Google named a Leader in The Forrester Wave™: AI Platforms, Q3 2026",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/google-named-a-leader-in-the-forrester-wave-ai-platforms/",
+      "date": "2026-08-10T16:00:00.000Z",
+      "excerpt": "At Google Cloud, we help organizations of all sizes build and operationalize complex agentic workflows with total confidence. By combining world-class AI research with an open, fully integrated AI platform, we give customers the flexibility to innovate and the foundation to deliver measurable business value."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Pulling multi-gigabyte container images in seconds on Amazon EKS",
+      "link": "https://thenewstack.io/accelerating-eks-image-pulls/",
+      "date": "2026-08-10T16:00:00.000Z",
+      "excerpt": "When the image is the bottleneck: Machine learning changed what a container image looks like. A typical application ships in"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Meta Muse Code vs. Fable 5: Meta Muse is cheaper, but at what cost?",
+      "link": "https://thenewstack.io/meta-muse-claude-code/",
+      "date": "2026-08-10T15:00:00.000Z",
+      "excerpt": "Meta released Muse Code on August 5, its first AI coding agent, built on the new Muse Spark 1.2 model."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Evolve your marketing with new AI tools",
+      "link": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
+      "date": "2026-08-10T14:30:00.000Z",
+      "excerpt": "Learn how new AI and agentic experiences across Google Ads and Google Analytics can simplify your marketing workflow."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
+      "link": "https://openai.com/index/responsible-ai-infrastructure-texas",
+      "date": "2026-08-10T14:00:00.000Z",
+      "excerpt": "OpenAI sent Governor Greg Abbott a letter outlining its commitment to responsible AI infrastructure in Texas. The letter supports reliable, transparent growth that benefits Texans."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Serving the most critical missions: Cloudflare for Government achieves FedRAMP Class D (High) Certified status",
+      "link": "https://blog.cloudflare.com/fedramp-class-d-certification/",
+      "date": "2026-08-10T13:00:00.000Z",
+      "excerpt": "Cloudflare for Government achieves FedRAMP Class D (High) Certified status. We also announce our commitment to pursue DoD IL4 authorization."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "AI Model Drift: How to Keep Models Reliable",
+      "link": "https://www.honeycomb.io/blog/ai-model-drift",
+      "date": "2026-08-10T13:00:00.000Z",
+      "excerpt": "Learn what AI model drift is, why it happens, and how production teams detect changes in model quality, inputs, prompts, and behavior."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
+      "link": "https://openai.com/index/model-ml",
+      "date": "2026-08-10T12:00:00.000Z",
+      "excerpt": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Automate SageMaker HyperPod incident triage and root-cause-analysis with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/automate-sagemaker-hyperpod-incident-triage-and-root-cause-analysis-with-aws-devops-agent/",
+      "date": "2026-08-10T11:29:17.000Z",
+      "excerpt": "Introduction Large-scale machine learning workloads: training, fine-tuning, and inference run on clusters of hundreds to thousands of GPU instances for days or weeks at a stretch."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Scaling organizational knowledge in Kiro with Amazon Bedrock Knowledge Bases, LangChain, and MCP",
+      "link": "https://aws.amazon.com/blogs/devops/scaling-organizational-knowledge-in-kiro-with-amazon-bedrock-knowledge-bases-langchain-and-mcp/",
+      "date": "2026-08-10T11:24:36.000Z",
+      "excerpt": "“A pull request comes back with a single comment: “This doesn’t follow our circuit breaker pattern. Check the Architectural Decision Record ."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Making Knowledge Distillation Cheap Enough to Run at Scale",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation",
+      "date": "2026-08-10T10:05:36.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "모노리포 희망편, 절망의 리포가 희망의 리포로 부활하기까지 걸린 1년",
+      "link": "https://toss.tech/article/52209",
+      "date": "2026-08-10T02:40:00.000Z",
+      "excerpt": "토스에서 100명이 넘는 엔지니어들이 모노리포에서 장점만을 누리기 위해 카탈로그를 도입한 이야기를 소개합니다."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source",
+      "link": "https://huggingface.co/blog/muse-glimmer",
+      "date": "2026-08-10T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The hidden complexity of AI inference systems",
+      "link": "https://www.redhat.com/en/blog/hidden-complexity-ai-inference-systems",
+      "date": "2026-08-10T00:00:00.000Z",
+      "excerpt": "When people think about AI infrastructure, most attention naturally gravitates toward model training. Training large models requires massive datasets, distributed compute, and specialized hardware accelerators."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Beyond the hypervisor: How a service provider migrated thousands of workloads to a unified application platform",
+      "link": "https://www.redhat.com/en/blog/beyond-hypervisor-how-service-provider-migrated-thousands-workloads-unified-hybrid-cloud-platform",
+      "date": "2026-08-10T00:00:00.000Z",
+      "excerpt": "The managed services market is navigating an unprecedented inflection point: For many service providers, recent changes in virtualization licensing and vendor partner tiers have elevated costs from a standard operational challenge into an existential threat to business continuity."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Show, Don't Tell: What Evo Continuous Offensive Security Found in a Real Enterprise SaaS",
+      "link": "https://snyk.io/blog/what-evo-cos-found-real-enterprise-saas/",
+      "date": "2026-08-10T00:00:00.000Z",
+      "excerpt": "A real Evo Continuous Offensive Security assessment uncovered 33 confirmed vulnerabilities in a multi-tenant enterprise SaaS, including tenant-wide compromise and critical authorization flaws."
+    }
+  ]
+}
