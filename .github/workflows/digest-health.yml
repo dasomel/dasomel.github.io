@@ -1,0 +1,53 @@
+name: Digest Health
+
+# 발행된 다이제스트에 한국어 요약이 실제로 들어갔는지 확인한다.
+#
+# 이 파이프라인의 성공 신호(워크플로 초록 · 라이브 200 · 포스트 존재)는 전부 보강과
+# 무관해서, 2026-08-06~09 나흘간 한국어 다이제스트에 한국어가 없는데도 모두 초록이었다.
+# 사람이 읽고 발견할 때까지 아무도 몰랐다. 이 워크플로는 그 공백만 메운다.
+#
+# 발행을 막지는 않는다 — 보강 없는 발행은 digest-fallback 의 의도된 동작이다.
+# 여기서 하는 일은 "조용히 빠진 것"을 시끄럽게 만드는 것뿐이다.
+
+on:
+  schedule:
+    # 00:35 UTC = 09:35 KST. 보강 세션 창(08:05~08:30 KST)이 끝난 뒤에 본다.
+    # 예약 지연 30~90분을 감안해도 10~11시 KST 안에는 돈다.
+    # 정시는 혼잡하므로 피한다.
+    - cron: '35 0 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '검사할 날짜 (YYYY-MM-DD, KST). 비우면 오늘.'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      # 의존성이 필요 없는 순수 Node 스크립트다 — npm ci 를 돌리지 않는다.
+      #
+      # inputs.date 는 ${{ }} 로 run: 에 직접 넣지 않는다 — 셸 주입 경로가 된다.
+      # env 로 넘기고 셸에서 인용한다. (스크립트도 날짜 형식을 다시 검증한다.)
+      - name: Check enrichment coverage
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$INPUT_DATE" ]; then
+            node scripts/check-enrichment.mjs --date "$INPUT_DATE"
+          else
+            node scripts/check-enrichment.mjs
+          fi
