@@ -72,15 +72,23 @@ if (enriched.length === 0) {
   );
 }
 
-// The markdown is generated from the JSON, so this only diverges when the
-// generator or a manual edit broke the link between them. Cheap to check.
+// The markdown is generated from the JSON, so the two diverge only when a run
+// updated one and not the other — which is exactly the state that publishes an
+// enriched JSON alongside an unenriched post.
+//
+// Do NOT test this by looking for Hangul: the generator's footer is Korean in
+// both modes, so that check can never fail. Match an actual summary instead,
+// compared on letters/digits only so markdown escaping and rewrapping can't
+// cause a false alarm.
 if (fs.existsSync(KO)) {
-  const body = fs
-    .readFileSync(KO, 'utf-8')
-    .replace(/^---[\s\S]*?\n---\n/, '') // drop frontmatter
-    .replace(/^\s*(#{1,6}|>|-|\||🔗)\s.*$/gm, ''); // drop headings, quotes, lists, links
-  if (!/[가-힣]/.test(body)) {
-    fail(`${DATE}: JSON 에는 보강이 ${enriched.length}건 있는데 ko 마크다운 본문에 한글이 없다 — 마크다운이 JSON 과 어긋났다.`);
+  const squash = (s) => String(s).replace(/[^0-9A-Za-z가-힣]/g, '');
+  const needle = squash(enriched[0].summaryKo).slice(0, 40);
+  const haystack = squash(fs.readFileSync(KO, 'utf-8'));
+  if (needle.length >= 20 && !haystack.includes(needle)) {
+    fail(
+      `${DATE}: JSON 에는 보강이 ${enriched.length}건 있는데 ko 마크다운에 그 요약이 없다 — ` +
+        `마크다운이 JSON 보다 오래됐다. 재생성: npm run digest -- --enrich --date ${DATE}`
+    );
   }
 }
 
