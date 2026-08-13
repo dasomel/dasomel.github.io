@@ -1,0 +1,207 @@
+{
+  "date": "2026-08-14",
+  "generatedAt": "2026-08-13T21:08:50.525Z",
+  "count": 25,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The AI model that just scored 65% on DeepSWE isn’t the one Google promised.",
+      "link": "https://thenewstack.io/gemini-3-7-flash-agents/",
+      "date": "2026-08-13T19:59:34.000Z",
+      "excerpt": "Google has a new Gemini model, and no, it is not Gemini 3.5 Pro."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Total eclipse of the Internet: traffic impacts in Iceland, Spain, and Portugal",
+      "link": "https://blog.cloudflare.com/total-eclipse-internet-traffic-iceland-spain-portugal/",
+      "date": "2026-08-13T19:58:01.000Z",
+      "excerpt": "Cloudflare's data shows a clear impact on Internet traffic from Iceland to Spain and Portugal, following the path of totality of the total solar eclipse that occurred on August 12, 2026."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "ChatGPT can now remember what you did on your Mac — without screenshots",
+      "link": "https://thenewstack.io/openai-chatgpt-computer-history/",
+      "date": "2026-08-13T19:00:00.000Z",
+      "excerpt": "OpenAI is launching a new feature for ChatGPT Work and Codex on macOS that sounds quite useful but may also"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Your guide to GitHub Universe 2026 is here: The schedule just launched!",
+      "link": "https://github.blog/news-insights/company-news/your-guide-to-github-universe-2026-is-here-the-schedule-just-launched/",
+      "date": "2026-08-13T19:00:00.000Z",
+      "excerpt": "The GitHub Universe session catalog is live. Explore interactive workshops, community talks, demos, and panels."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Rubrik’s lessons from one month with Mythos Preview",
+      "link": "https://thenewstack.io/rubrik-mythos-learnings/",
+      "date": "2026-08-13T17:37:33.000Z",
+      "excerpt": "After it joined Project Glasswing and gained access to experiment with Mythos Preview, security and AI company Rubrik learned it"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets",
+      "link": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
+      "date": "2026-08-13T17:16:04.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Using BigQuery Graphs with measures for trusted agentic workloads",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-graphs-with-measures-for-trusted-agentic-workloads/",
+      "date": "2026-08-13T17:00:00.000Z",
+      "excerpt": "When enterprises transition from using simple chat assistants to autonomous, agentic workloads, they quickly run into a hard truth: Agents are prone to inaccurate insights when working with directly raw tables."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Bring your spreadsheet data to life with Sheets canvas",
+      "link": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
+      "date": "2026-08-13T16:45:00.000Z",
+      "excerpt": "Sheets canvas turns data into interactive dashboards, custom study trackers, seating charts, and more, all with a simple prompt."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Packer v1.16.0 brings verifiable provenance to machine images",
+      "link": "https://www.hashicorp.com/blog/packer-v1160-brings-verifiable-provenance-to-machine-images",
+      "date": "2026-08-13T16:00:00.000Z",
+      "excerpt": "Today we're announcing the release of Packer v1.16."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "What 50 open source projects taught us about security in the AI era",
+      "link": "https://github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era/",
+      "date": "2026-08-13T16:00:00.000Z",
+      "excerpt": "See how the open source projects in Session 4 of the GitHub Secure Open Source Fund combined AI-assisted workflows, maintainer expertise, GitHub security tools, expert guidance, and funding to improve project security."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Track generative AI costs with Amazon Bedrock inference profiles",
+      "link": "https://aws.amazon.com/blogs/architecture/track-generative-ai-costs-with-amazon-bedrock-inference-profiles/",
+      "date": "2026-08-13T15:59:39.000Z",
+      "excerpt": "Learn how to track generative AI costs by department using Amazon Bedrock application inference profiles and AWS cost allocation tags. Create tagged profiles for each team and view per-department cost breakdowns in AWS Cost Explorer."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Recovery strategies to meet data residency requirements",
+      "link": "https://aws.amazon.com/blogs/architecture/recovery-strategies-to-meet-data-residency-requirements/",
+      "date": "2026-08-13T14:05:39.000Z",
+      "excerpt": "Learn three strategies for achieving disaster recovery while meeting data residency requirements. Ranging from encryption-based controls on multi-Region replication to fully in-country architectures, these patterns help you balance recovery objectives with regulatory constraints."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Certificate Transparency Monitoring is now generally available",
+      "link": "https://blog.cloudflare.com/certificate-transparency-monitoring-ga/",
+      "date": "2026-08-13T13:00:00.000Z",
+      "excerpt": "Cloudflare's Certificate Transparency Monitoring is now generally available. The biggest change: we no longer email you about certificates Cloudflare issued for your domain, so when an alert lands in your inbox, it's worth a look."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Lightweight Dragonfly Deployment: P2P Distribution Without the Database Stack",
+      "link": "https://www.cncf.io/blog/2026/08/13/lightweight-dragonfly-deployment-p2p-distribution-without-the-database-stack/",
+      "date": "2026-08-13T11:30:00.000Z",
+      "excerpt": "Dragonfly speeds up file and container image distribution using peer-to-peer (P2P) technology, but a standard installation deploys several components and dependencies. Beyond the Scheduler, Seed Client, and Client that move data, a traditional setup requires a."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "LLMOps and platform engineering: Who should own the AI pipeline?",
+      "link": "https://www.cncf.io/blog/2026/08/13/llmops-and-platform-engineering-who-should-own-the-ai-pipeline/",
+      "date": "2026-08-13T11:00:00.000Z",
+      "excerpt": "A few years ago, getting a model into production meant a data scientist, a DevOps engineer, and a narrow set of tools: train it, test it, ship it, watch the dashboards. Large language models broke that."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The builder’s guide to GPT‑5.6",
+      "link": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "date": "2026-08-13T11:00:00.000Z",
+      "excerpt": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+      "link": "https://openai.com/index/previewing-ultrafast",
+      "date": "2026-08-13T10:00:00.000Z",
+      "excerpt": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
+      "link": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "date": "2026-08-13T09:00:00.000Z",
+      "excerpt": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "AI에게 투자정보를 말하게 하기까지",
+      "link": "https://toss.tech/article/tech_talk_talk_1",
+      "date": "2026-08-13T01:00:00.000Z",
+      "excerpt": "근거를 고르고, 절차를 통제하고, 실패를 다시 쓰는 세 개의 관문"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Reducing Text2SQL latency with parameterized query templates",
+      "link": "https://aws.amazon.com/blogs/architecture/reducing-text2sql-latency-with-parameterized-query-templates/",
+      "date": "2026-08-13T00:40:32.000Z",
+      "excerpt": "Learn how parameterized query templates reduced Text2SQL latency by 80% and cut token consumption by over 50%. This post covers the architecture behind an intelligent caching layer that uses semantic similarity to match user questions to SQL templates, bypassing expensive LLM calls."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "What We Learned by Reproducing 2,200 papers from ICML",
+      "link": "https://huggingface.co/blog/icml-2026-open-reproductions",
+      "date": "2026-08-13T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "What is metal to agents? Navigating the architecture of enterprise AI",
+      "link": "https://www.redhat.com/en/blog/what-metal-agents-navigating-architecture-enterprise-ai",
+      "date": "2026-08-13T00:00:00.000Z",
+      "excerpt": "Enterprise AI has reached a critical turning point as organizations move from isolated, chat-based experimentation to complex reasoning models and autonomous agents. While the productivity gains are real, underlying infrastructure costs are escalating rapidly, with token consumption predicted to increase 24x by 2030."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Manage bare metal like a cloud with Red Hat Bare-Metal-as-a-Service for OpenShift",
+      "link": "https://www.redhat.com/en/blog/manage-bare-metal-cloud-red-hat-bare-metal-service-openshift",
+      "date": "2026-08-13T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift 4.22 includes general availability support for Red Hat Bare-Metal-as-a-Service (BMaas) for OpenShift, enabling organizations to manage bare metal, virtual machines (VMs), and application containers using the same consistent platform."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How I built a demo generator with GitLab Duo Agent Platform",
+      "link": "https://about.gitlab.com/blog/agentic-click-through-demo/",
+      "date": "2026-08-13T00:00:00.000Z",
+      "excerpt": "A demo used to take me days to build — screenshots, narration, stitching it together in an external tool, chasing feedback — and every time the feature changed I'd have to start over. A few months ago, I handed most of that to an agent in GitLab Duo Agent Platform."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub availability report: July 2026",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-july-2026/",
+      "date": "2026-08-12T22:17:32.000Z",
+      "excerpt": "In July, we experienced eight incidents that resulted in degraded performance across GitHub services."
+    }
+  ]
+}
