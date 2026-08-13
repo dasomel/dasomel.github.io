@@ -215,4 +215,4 @@ Use Datadog agentic onboarding to instrument AWS Lambda, Google Cloud Run, and A
 
 ---
 
-_This digest was automatically collected from RSS feeds. Excerpts are taken verbatim from each source — see the original links for full details._
+_This digest was collected from RSS feeds and summarized by AI (Claude). See the original links for full details._
