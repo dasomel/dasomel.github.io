@@ -12,7 +12,8 @@
     "digest:collect": "node scripts/collect-feeds.mjs",
     "digest": "node scripts/generate-daily-digest.mjs",
     "digest:enrich-publish": "node scripts/publish-enrichment.mjs",
-    "digest:check": "node scripts/check-enrichment.mjs"
+    "digest:check": "node scripts/check-enrichment.mjs",
+    "digest:enrich-apply": "node scripts/enrich-apply.mjs"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.0",
