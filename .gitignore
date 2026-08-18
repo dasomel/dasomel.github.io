@@ -42,3 +42,6 @@ Thumbs.db
 
 # Claude Code local settings (contains API keys)
 .claude/settings.local.json
+
+# Codex CLI local config (contains API keys)
+.codex/
