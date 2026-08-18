@@ -37,6 +37,10 @@ import {
 // below fixes that without repeating content — it lets through the items that
 // PER_SOURCE_CAP threw away on the preceding busy weekdays.
 const WINDOW_MS = 72 * 60 * 60 * 1000;
+// Only used when the normal window comes back empty after dedup — see the
+// rescue pass in collectArticles(). Never widens a day that already has items.
+const RESCUE_WINDOW_DAYS = 7;
+const RESCUE_WINDOW_MS = RESCUE_WINDOW_DAYS * 24 * 60 * 60 * 1000;
 const DEDUP_LOOKBACK_DAYS = 14; // how far back to read prior digests when deduping
 const MAX_ARTICLES = 60; // generous cap; markdown step trims for display
 const PER_SOURCE_CAP = 3; // keep at most N most-recent items per source so one busy outlet can't dominate the day
@@ -166,10 +170,11 @@ async function collectArticles(todayStr) {
   // warning about an unreadable prior digest should surface before we spend
   // a minute fetching rather than after.
   const { publishedLinks, loadedFilesCount } = loadPublishedLinks(todayStr);
-  const articles = [];
+  // Every dated item each feed offers, unfiltered. Windowing happens after the
+  // fetch loop so a second, wider pass costs no extra network round trips.
+  const pool = [];
   const failures = [];
   let ok = 0;
-  let skippedDedup = 0;
 
   for (const feed of FEEDS) {
     // Retry transient errors (5xx / timeouts) with linear backoff.
@@ -194,21 +199,12 @@ async function collectArticles(todayStr) {
     let count = 0;
     for (const item of parsed.items || []) {
       const date = articleDate(item);
-      if (!date || date.getTime() < cutoff) continue;
+      if (!date) continue;
       const link = (item.link || '').trim();
       const title = cleanText(item.title);
       if (!link || !title) continue;
-      // Counted before the dedup check so the per-feed number keeps meaning
-      // "items this feed published inside the window".
-      count++;
-      // Drop anything an earlier digest already carried. This is what makes
-      // the 72h window safe: on a busy weekday yesterday's items are all
-      // filtered out here, so the result matches the old 24h behaviour.
-      if (publishedLinks.has(normalizeUrl(link))) {
-        skippedDedup++;
-        continue;
-      }
-      articles.push({
+      if (date.getTime() >= cutoff) count++;
+      pool.push({
         source: feed.name,
         category: feed.category, // stable category key from source
         title,
@@ -219,26 +215,55 @@ async function collectArticles(todayStr) {
     }
     log(`${feed.name}: ${count} recent article(s)`);
   }
-  log(`dedup: skipped ${skippedDedup} already-published article(s) from ${loadedFilesCount} prior digest(s)`);
 
-  // Newest first, then cap each source to PER_SOURCE_CAP (keeping its most
-  // recent items) so a high-volume outlet can't flood the day, then apply the
-  // global cap. This is what keeps the digest varied across many publishers.
+  // Window -> dedup -> newest first -> per-source cap -> global cap.
   //
   // The cap runs *after* dedup on purpose: an item a busy source lost to the
   // cap yesterday is still unpublished, so it can be picked up today. That is
   // the mechanism that fills weekends, when almost nothing new is posted.
-  articles.sort((a, b) => new Date(b.date) - new Date(a.date));
-  const perSourceCount = new Map();
-  const capped = [];
-  for (const a of articles) {
-    const n = perSourceCount.get(a.source) || 0;
-    if (n >= PER_SOURCE_CAP) continue;
-    perSourceCount.set(a.source, n + 1);
-    capped.push(a);
+  const select = (since) => {
+    let skipped = 0;
+    const fresh = [];
+    for (const a of pool) {
+      if (new Date(a.date).getTime() < since) continue;
+      if (publishedLinks.has(normalizeUrl(a.link))) {
+        skipped++;
+        continue;
+      }
+      fresh.push(a);
+    }
+    fresh.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const perSource = new Map();
+    const capped = [];
+    for (const a of fresh) {
+      const n = perSource.get(a.source) || 0;
+      if (n >= PER_SOURCE_CAP) continue;
+      perSource.set(a.source, n + 1);
+      capped.push(a);
+    }
+    return { articles: capped.slice(0, MAX_ARTICLES), skipped };
+  };
+
+  let { articles, skipped } = select(cutoff);
+  log(`dedup: skipped ${skipped} already-published article(s) from ${loadedFilesCount} prior digest(s)`);
+
+  // Dedup can empty the day entirely: on 2026-08-17 all 19 items inside the 72h
+  // window had already been published, so no file was written and the blog simply
+  // had no post that day. A gap is worse than a thin digest, and the items a busy
+  // weekday dropped to PER_SOURCE_CAP are still unpublished — reach further back
+  // for those rather than give up. Dedup still guarantees nothing repeats.
+  if (articles.length === 0) {
+    const rescue = select(Date.now() - RESCUE_WINDOW_MS);
+    if (rescue.articles.length) {
+      log(
+        `window empty after dedup — widening to ${RESCUE_WINDOW_DAYS}d and found ` +
+          `${rescue.articles.length} unpublished article(s) the cap had dropped earlier`
+      );
+      articles = rescue.articles;
+    }
   }
 
-  return { articles: capped.slice(0, MAX_ARTICLES), ok, failed: failures.length, failures };
+  return { articles, ok, failed: failures.length, failures };
 }
 
 async function main() {
@@ -262,7 +287,10 @@ async function main() {
   }
 
   if (articles.length === 0) {
-    log('no articles found in the last 72h — skipping today (no file written)');
+    log(
+      `no unpublished articles found in the last 72h, nor in the ${RESCUE_WINDOW_DAYS}d ` +
+        `rescue window — skipping today (no file written)`
+    );
     process.exit(0);
   }
 

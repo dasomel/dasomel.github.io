@@ -49,9 +49,12 @@ const fail = (m) => {
 
 log(`enrichment check — ${DATE}`);
 
-// A quiet collection day writes no file at all. That is normal, not a failure.
+// No file means no post went out that day. The collector does skip genuinely
+// quiet days by design, so this is not a failure — but it was silent, and that
+// silence hid a real gap: 2026-08-17 had no digest at all because dedup emptied
+// the window, and this check passed without a word. Surface it.
 if (!fs.existsSync(DATA)) {
-  log(`${DATE} 수집 데이터가 없다 — 그날은 다이제스트 자체가 없다. 검사 생략.`);
+  warn(`${DATE} 다이제스트가 없다 — 그날 발행된 글이 없다. 수집이 0건이었는지 확인하라.`);
   process.exit(0);
 }
 
