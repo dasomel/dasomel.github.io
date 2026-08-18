@@ -182,6 +182,23 @@ CI는 **Linux + Node 22(npm 10)** 에서 `npm ci`. macOS(Apple Silicon) 로컬�
 4. **overrides는 직접 의존성 범위와 일치해야 한다.** 어긋나면 `EOVERRIDE ... conflicts with direct dependency`로
    install 자체가 실패한다. 전이 의존성만 있고 버전대가 갈리면 선택자 문법을 쓴다: `"js-yaml@^3.0.0": "^3.15.0"`.
 
+## ⚠️ 이 클론은 혼자 쓰는 게 아니다 — 작업 전 브랜치를 확인하라
+
+아침 보강 세션이 **같은 클론에서** 돌면서 `git checkout -B daily-digest/<날짜>` 로 브랜치를
+바꾼다. 세션 중간에 바뀌므로, 시작할 때 main 이었다고 계속 main 인 것이 아니다.
+
+2026-08-18 실측: `git reset --hard origin/main` 과 커밋 두 개가 전부 `daily-digest/2026-08-18`
+위에서 일어났고, `git push origin main` 은 3커밋 뒤처진 로컬 main 을 밀어 거부됐다.
+`git rebase origin/main` 이 "Current branch daily-digest/2026-08-18 is up to date" 라고
+답하고 나서야 알아챘다. 락 잔해와 `_scratch_probe.txt`·`__probe*.tmp` 같은 파일도 같은 출처다.
+
+```bash
+git rev-parse --abbrev-ref HEAD    # 커밋·리셋·푸시 전에 매번
+```
+
+브랜치가 어긋난 채 커밋했다면 되돌리지 말고 **main 으로 옮겨 cherry-pick** 하라 — 다른 세션이
+그 브랜치를 쓰고 있을 수 있으므로 로컬 다이제스트 브랜치를 함부로 지우지 말 것.
+
 ## ⚠️ `.git` 락은 **치우지 말고 지운다**
 
 이 저장소의 로컬 클론에는 아침 보강 세션이 남긴 stale 락이 자주 생긴다(`index.lock`,
