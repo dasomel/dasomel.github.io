@@ -1,242 +1,117 @@
 ---
 title: "Kube-Ready-Box"
-description: "Kubernetes 최적화된 Ubuntu 24.04 / 26.04 LTS Vagrant Box"
+description: "Kubernetes 최적화 Ubuntu LTS Vagrant Box — Multi-arch, XFS/ext4, Kubernetes 사전 튜닝"
 github: "https://github.com/dasomel/kube-ready-box"
-tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch"]
+tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch", "Security"]
 order: 1
 type: "own"
 featured: true
-problem: "Kubernetes 개발/테스트 환경 구축에 반복적인 수작업 필요"
-solution: "원커맨드로 로컬 K8s 클러스터 + 필수 도구 자동 세팅"
+problem: "Kubernetes 개발·테스트 환경 구축에 반복적인 OS 튜닝과 보안 설정이 필요함"
+solution: "Packer로 Kubernetes 노드에 필요한 OS 튜닝·도구·보안 설정을 미리 적용한 Ubuntu LTS Vagrant Box 제공"
 ---
 
 ## 프로젝트 소개
 
-Kube-Ready-Box는 **Kubernetes 배포를 위해 OS 수준에서 최적화된 Ubuntu LTS Vagrant Box**입니다.
+**Kube-Ready-Box**는 Kubernetes 노드로 바로 사용할 수 있도록 Ubuntu LTS를 사전 튜닝한 **Multi-Architecture Vagrant Box** 프로젝트입니다.
 
-**24.04 LTS** (Noble Numbat, 기본값)과 **26.04 LTS** (Resolute Raccoon, 커널 Linux 7.0)를 모두 지원하며, 컨테이너 오케스트레이션 환경에 필요한 시스템 튜닝이 사전 적용되어 있습니다.
+현재 Ubuntu 24.04 LTS와 26.04 LTS를 지원하며 ext4/XFS 이미지를 각각 제공합니다. Narwhal의 기본 개발 환경은 `dasomel/ubuntu-26.04-xfs`입니다.
 
-Vagrant Cloud에서 버전과 파일시스템별로 배포됩니다:
+### 현재 릴리스
 
-- 24.04 ext4: `dasomel/ubuntu-24.04-ext4` / xfs: `dasomel/ubuntu-24.04-xfs`
-- 26.04 ext4: `dasomel/ubuntu-26.04-ext4` / xfs: `dasomel/ubuntu-26.04-xfs`
+- **v0.2.3**
+- Ubuntu 24.04 / 26.04
+- VirtualBox / VMware Fusion
+- AMD64 / ARM64
+- ext4 / XFS
 
-## 24.04 vs 26.04
-
-| | 24.04 LTS (Noble Numbat) | 26.04 LTS (Resolute Raccoon) |
-|---|---|---|
-| 커널 | 6.8 | **7.0** |
-| init / cgroup | systemd 255, cgroup v2 기본 | systemd 259, **cgroup v1 제거 (v2 전용)** |
-| 컨테이너 런타임 | containerd 1.7 | containerd 2.2 / runc 1.4 |
-| 암호화 | TLS 1.2+ | **양자내성(PQC) 기본** (OpenSSL 3.5 / OpenSSH 10.2) |
-| 핵심 유틸 | GNU coreutils, sudo | 일부 Rust 재작성 (uutils, sudo-rs) |
-| 선택 기준 | 최대 안정성 (**기본값**) | 최신 LTS, 커널 7.0 기능 |
-
-> **K8s 참고**: 26.04는 cgroup v2 전용이므로 kubelet/containerd에 `SystemdCgroup=true`가 필요합니다. 두 라인 모두 동일하게 Kubernetes 튜닝이 적용됩니다.
+v0.2.3에서는 `apt-get full-upgrade` 기반 보안 업데이트와 kernel/AppArmor/sudo/OpenSSH 계열 보안 패키지 점검을 추가했습니다.
 
 ## 주요 특징
 
-### 멀티 아키텍처 및 프로바이더 지원
+### Multi-Architecture
 
-| Provider | AMD64 | ARM64 | 비고 |
-|----------|-------|-------|------|
-| VirtualBox | ✅ | ✅ | ARM64는 VirtualBox 7.1+ 필요 |
-| VMware Fusion | ✅ | ✅ | Apple Silicon 지원 |
+| Provider | AMD64 | ARM64 |
+|---|---:|---:|
+| VirtualBox 7.1+ | ✅ | ✅ |
+| VMware Fusion | ✅ | ✅ |
 
-### 파일시스템 선택 (ext4 / xfs)
+### 파일시스템
 
-| | ext4 | xfs |
+| | ext4 | XFS |
 |---|---|---|
-| **권장 용도** | 범용 | K8s 워크로드, 대용량 파일 |
-| **K8s Quota** | 미지원 | `--local-storage-capacity-isolation` |
-| **온라인 축소** | 지원 | 미지원 |
-| **Box 크기** | ~2.2GB | ~3.4GB |
-
-### 대용량 디스크 및 자동 확장
-
-- **1TB 디스크**: Thin provisioning으로 실제 사용량만큼만 차지 (ext4 ~2.2GB, xfs ~3.4GB)
-- **자동 확장**: 부팅 시 디스크 자동 확장 (파티션 → PV → LV → 파일시스템)
+| 용도 | 범용 Kubernetes 노드 | 대용량/쿼터 워크로드 |
+| 프로젝트 쿼터 | 지원 | 지원 |
+| Narwhal 연계 | 가능 | **기본 환경** |
 
 ### Kubernetes 최적화
 
-사전 적용된 시스템 튜닝:
-
-**커널 파라미터**
-```bash
-# 네트워크 버퍼 최적화
-net.core.rmem_max = 134217728
-net.core.wmem_max = 134217728
-net.ipv4.tcp_rmem = 4096 87380 67108864
-net.ipv4.tcp_wmem = 4096 65536 67108864
-
-# IP 포워딩 활성화
-net.ipv4.ip_forward = 1
-net.bridge.bridge-nf-call-iptables = 1
-```
-
-**리소스 제한**
-```bash
-# 프로세스 및 파일 디스크립터 제한
-* soft nofile 1048576
-* hard nofile 1048576
-* soft nproc 1048576
-* hard nproc 1048576
-```
-
-**디스크 I/O 스케줄러**
-- SSD: `none` (최적 성능)
-- HDD: `mq-deadline` (처리량 최적화)
-
-**스왑 비활성화**
-- Kubernetes 요구사항에 맞게 스왑 완전 제거
+커널 파라미터, IP forwarding, 파일 디스크립터/프로세스 제한, 스왑 비활성화, I/O scheduler 등 Kubernetes 노드에 필요한 OS 설정을 이미지 빌드 단계에서 적용합니다.
 
 ### 사전 설치 도구
 
-| 분류 | 도구 |
-|------|------|
-| **K8s 생태계** | jq, yq, bash-completion, nfs-common, sshpass |
-| **모니터링** | sysstat, iotop, iftop, nload, nethogs, dool |
-| **네트워크 진단** | ipvsadm, ipset, conntrack, ethtool, tcpdump, nmap |
-| **성능 분석** | linux-tools, bpfcc-tools, bpftrace |
+`jq`, `yq`, `bash-completion`, `nfs-common`, `sshpass`, `sysstat`, `iotop`, `iftop`, `nload`, `nethogs`, `ipvsadm`, `ipset`, `conntrack`, `ethtool`, `tcpdump`, `nmap`, `linux-tools`, `bpfcc-tools`, `bpftrace` 등을 제공합니다.
 
-### 보안 하드닝 (v1.1.0)
+### 보안 하드닝
 
-v1.1.0에서는 `needrestart` 제거(CVE 5건 완화), `auditd` 설치 후 비활성화(CIS 벤치마크 대응), `apparmor-utils` 추가, Longhorn CSI 및 Cilium bpffs 영구 마운트를 지원합니다. 상세 내용은 [박스 아키텍처 & 빌드](/ko/docs/kube-ready-box-architecture) 문서에서 확인할 수 있습니다.
+- 보안 패키지 전체 업그레이드
+- kernel / AppArmor / sudo / OpenSSH 관련 패키지 점검
+- 빌드 시 CVE 관련 버전 감사를 `/var/log/kube-ready-box-security.log`에 기록
+- Kubernetes용 AppArmor와 운영 환경에 필요한 마운트 지원
 
-### 포함되지 않은 것
-
-의도적으로 포함하지 않은 컴포넌트 (사용자 선택 설치):
-- Container Runtime (containerd, CRI-O 등)
-- Kubernetes 컴포넌트 (kubelet, kubeadm, kubectl)
-- CNI 플러그인 (Calico, Cilium 등)
+의도적으로 **containerd, kubelet, kubeadm, kubectl, CNI**는 포함하지 않습니다. 운영자가 원하는 Kubernetes 버전과 런타임을 선택하도록 OS 이미지의 책임 범위를 제한합니다.
 
 ## 시작하기
 
-### 요구사항
-
-- Vagrant 2.3+
-- VirtualBox 7.1+ 또는 VMware Fusion
-
-### 기본 사용법
-
 ```bash
-# 24.04 ext4 (기본, 안정성, 범용)
 vagrant init dasomel/ubuntu-24.04-ext4
 vagrant up --provider=vmware_desktop
-
-# 24.04 xfs (K8s ephemeral storage quota, 대용량 파일에 유리)
-vagrant init dasomel/ubuntu-24.04-xfs
-vagrant up --provider=vmware_desktop
-
-# 26.04 (Resolute Raccoon, 커널 Linux 7.0)
-vagrant init dasomel/ubuntu-26.04-ext4
-vagrant up --provider=vmware_desktop
 ```
 
-### Vagrantfile 예제
-
-```ruby
-Vagrant.configure("2") do |config|
-  # 24.04: "dasomel/ubuntu-24.04-ext4" 또는 "dasomel/ubuntu-24.04-xfs"
-  # 26.04: "dasomel/ubuntu-26.04-ext4" 또는 "dasomel/ubuntu-26.04-xfs"
-  config.vm.box = "dasomel/ubuntu-24.04-ext4"
-
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = 4096
-    vb.cpus = 2
-  end
-
-  config.vm.provider "vmware_desktop" do |v|
-    v.vmx["memsize"] = "4096"
-    v.vmx["numvcpus"] = "2"
-  end
-
-  config.vm.hostname = "k8s-node"
-  config.vm.network "private_network", ip: "192.168.56.10"
-end
-```
-
-### 최적화 검증
+Narwhal 개발 환경에서는:
 
 ```bash
-# Box 정보 확인
-vagrant ssh -c "cat /etc/vagrant-box/info.json"
-
-# 튜닝 설정 검증 스크립트
-vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
+vagrant init dasomel/ubuntu-26.04-xfs
+vagrant up --provider=vmware_desktop
 ```
 
-## Kubernetes 설치 예제
+## 빌드
 
-Box 생성 후 Kubernetes 설치:
-
-```bash
-# 1. containerd 설치 및 설정
-sudo apt-get update && sudo apt-get install -y containerd
-sudo mkdir -p /etc/containerd
-containerd config default | sudo tee /etc/containerd/config.toml
-sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
-sudo systemctl restart containerd && sudo systemctl enable containerd
-
-# 2. Kubernetes 설치 (버전 선택)
-K8S_VERSION="v1.31"
-curl -fsSL "https://pkgs.k8s.io/core:/stable:/${K8S_VERSION}/deb/Release.key" | \
-  sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${K8S_VERSION}/deb/ /" | \
-  sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
-
-# 3. 클러스터 초기화 (마스터 노드)
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
-```
-
-## 빌드 정보
-
-이 Box는 [Packer](https://www.packer.io/)를 사용하여 빌드됩니다:
+Packer 기반으로 Box를 생성합니다.
 
 ```bash
 cd packer
-
-# Packer 플러그인 초기화
 ./build.sh init
-
-# 24.04 빌드 (기본)
 ./build.sh vmware-arm64
 ./build.sh vmware-arm64 --fs=xfs
-
-# 26.04 빌드
 ./build.sh vmware-arm64 --version=26.04
-./build.sh vmware-arm64 --version=26.04 --fs=xfs
-
-# 전체 Box 빌드
-./build.sh all                  # 24.04 ext4
-./build.sh all --version=26.04  # 26.04 ext4
 ```
 
-> **CI**: GitHub Actions `workflow_dispatch` 트리거의 `ubuntu_version` 입력으로 24.04 / 26.04를 선택할 수 있습니다.
+CI에서는 `workflow_dispatch` 입력으로 Ubuntu 버전을 선택할 수 있습니다.
 
-## AI 협업 디렉토리
+## Narwhal과의 관계
 
-이 저장소는 AI 코딩 어시스턴트를 위한 `.agent/` 디렉토리를 포함합니다:
+```text
+kube-ready-box
+      ↓
+Ubuntu 26.04 XFS
+      ↓
+   Narwhal
+      ↓
+Kubernetes IDP
+```
 
-- **AGENT.md**: 기술 가이드 (Packer, K8s 튜닝, 최적화)
-- **SECURITY.md**: 보안 가이드라인
-- **skills/**: AI 에이전트 스킬 (자동 리뷰)
+Kube-Ready-Box는 Narwhal의 재현 가능한 기반 OS 환경을 제공하는 별도 OSS입니다.
 
 ## 기술 문서
 
-각 영역을 원본 소스 기준으로 상세히 정리한 문서입니다.
-
 | 문서 | 내용 |
-|------|------|
-| [박스 아키텍처 & 빌드](/ko/docs/kube-ready-box-architecture) | Packer 빌드 파이프라인, XFS prjquota 설계, 멀티 프로바이더 |
-| [사용법](/ko/docs/kube-ready-box-usage) | Vagrantfile 연동, 프로바이더 선택, Kubernetes 사후 설치 |
-| [릴리스 & 배포](/ko/docs/kube-ready-box-release) | Vagrant Cloud / HCP 게시, 자격증명, 배포 체크리스트 |
+|---|---|
+| [박스 아키텍처 & 빌드](/ko/docs/kube-ready-box-architecture) | Packer 빌드, 파일시스템, 보안 하드닝 |
+| [사용법](/ko/docs/kube-ready-box-usage) | Vagrant와 Kubernetes 연동 |
+| [릴리스 & 배포](/ko/docs/kube-ready-box-release) | Vagrant Cloud/HCP 배포와 릴리스 절차 |
 
 ## 참고 링크
 
-- **Vagrant Cloud (24.04)**: [ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-ext4) / [xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-xfs)
-- **Vagrant Cloud (26.04)**: [ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-ext4) / [xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-xfs)
+- **Vagrant Cloud**: [dasomel/ubuntu-24.04-ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-ext4) · [dasomel/ubuntu-24.04-xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-xfs)
+- **Vagrant Cloud**: [dasomel/ubuntu-26.04-ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-ext4) · [dasomel/ubuntu-26.04-xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-xfs)
 - **GitHub**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
-- **Kubernetes 공식 문서**: [kubernetes.io](https://kubernetes.io/)
