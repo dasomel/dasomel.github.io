@@ -14,15 +14,16 @@
  *
  * With --enrich, the script uses AI-authored fields (summaryKo/summaryEn/
  * insightKo/insightEn) when present in the JSON, falling back to the raw
- * excerpt per-field when they are absent. This is how the Phase 2 Cowork
- * scheduled task works: Claude reads the collected JSON, fills in those
- * optional fields, then this script regenerates the markdown with richer
- * summaries and "why it matters" insights — all on the Claude subscription,
- * no extra API cost.
+ * excerpt per-field when they are absent. Existing Korean posts are also
+ * treated as a recovery source: when an older digest was manually enriched
+ * before its JSON data carried AI fields, regeneration preserves that Korean
+ * summary/insight by matching the article's canonical link. This makes the
+ * repaired post durable instead of a one-off Markdown edit.
  *
  * Optional per-article enrichment fields (see collect-feeds.mjs for the full
  * schema): summaryKo, summaryEn, insightKo, insightEn — all strings, all
- * optional. Missing fields gracefully fall back to the RSS excerpt.
+ * optional. Missing fields gracefully fall back to the existing Korean post
+ * (Korean only) or the RSS excerpt.
  *
  * Usage:
  *   node scripts/generate-daily-digest.mjs                 # today (KST), excerpts
@@ -82,15 +83,63 @@ function escapeMdxBraces(text) {
   if (!text) return text;
   const s = String(text);
   if (!s.includes('{') && !s.includes('}')) return s;
-  // Split into alternating [plain, code, plain, ...]; code spans land at odd
-  // indices thanks to the capturing group and are left untouched.
   return s
     .split(/(`[^`]*`)/)
     .map((part, i) => (i % 2 === 1 ? part : part.replace(/\{[^{}]*\}/g, (m) => `\`${m}\``)))
     .join('');
 }
 
-function buildMarkdown(lang, { date, articles }, enrich = false) {
+/**
+ * Recover previously enriched Korean article bodies from the existing post.
+ * This is intentionally a read-only recovery path: the JSON remains the
+ * primary source when enrichment fields exist. Matching is by canonical link,
+ * so article ordering changes do not matter.
+ */
+function loadExistingKoreanEnrichment(filePath) {
+  const result = new Map();
+  if (!fs.existsSync(filePath)) return result;
+
+  const lines = fs.readFileSync(filePath, 'utf-8').split('\n');
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!lines[i].startsWith('### ')) continue;
+
+    const heading = lines[i].slice(4).trim();
+    const headingMatch = heading.match(/^\[.*?\]\((https?:\/\/[^)]+)\)$/);
+    let link = headingMatch?.[1] ?? null;
+    let end = i + 1;
+    while (end < lines.length && !lines[end].startsWith('### ') && !lines[end].startsWith('## ') && lines[end] !== '---') {
+      if (!link) {
+        const linkMatch = lines[end].match(/\[원문 보기\]\((https?:\/\/[^)]+)\)/);
+        if (linkMatch) link = linkMatch[1];
+      }
+      end += 1;
+    }
+    if (!link) continue;
+
+    const body = lines.slice(i + 1, end);
+    let insight = '';
+    const insightIndex = body.findIndex((line) => line.trim().startsWith('> 💡'));
+    if (insightIndex >= 0) {
+      insight = body[insightIndex]
+        .replace(/^\s*>\s*💡\s*/, '')
+        .replace(/^\*\*왜 중요한가\*\*:\s*/, '')
+        .trim();
+    }
+
+    const summaryLines = body
+      .slice(0, insightIndex >= 0 ? insightIndex : body.length)
+      .filter((line) => line.trim() && !/^_.*_$/.test(line.trim()) && !line.includes('[원문 보기]('));
+    const summary = summaryLines.join('\n').trim();
+
+    if (summary || insight) {
+      result.set(link, { summaryKo: summary, insightKo: insight });
+    }
+  }
+
+  return result;
+}
+
+function buildMarkdown(lang, { date, articles }, enrich = false, legacyKo = new Map()) {
   const isEn = lang === 'en';
   const L = {
     headline: isEn ? '🔥 Top Story' : '🔥 오늘의 주요 소식',
@@ -106,27 +155,33 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
         : '_이 다이제스트는 RSS 피드에서 자동 수집되었습니다. 발췌문은 각 피드 원문에서 그대로 가져온 것으로, 자세한 내용은 원문 링크를 확인하세요._',
   };
 
-  // Body text: prefer the AI summary when enriching, else fall back to excerpt.
   const summaryOf = (a) => {
     if (enrich) {
       const s = isEn ? a.summaryEn : a.summaryKo;
       if (s && String(s).trim()) return escapeMdxBraces(String(s).trim());
+      if (!isEn) {
+        const recovered = legacyKo.get(a.link)?.summaryKo;
+        if (recovered) return escapeMdxBraces(recovered);
+      }
     }
     return a.excerpt ? escapeMdxBraces(String(a.excerpt).trim()) : '';
   };
-  // Insight only appears in enrich mode and only when the field is present.
+
   const insightOf = (a) => {
     if (!enrich) return '';
     const s = isEn ? a.insightEn : a.insightKo;
-    return s && String(s).trim() ? escapeMdxBraces(String(s).trim()) : '';
+    if (s && String(s).trim()) return escapeMdxBraces(String(s).trim());
+    if (!isEn) {
+      const recovered = legacyKo.get(a.link)?.insightKo;
+      if (recovered) return escapeMdxBraces(recovered);
+    }
+    return '';
   };
 
   const top = articles[0];
   const rest = articles.slice(1);
-
   const lines = [];
 
-  // Headline / top story
   lines.push(`## ${L.headline}`, '');
   lines.push(`### ${top.title}`, '');
   const topBody = summaryOf(top);
@@ -135,7 +190,6 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
   if (topInsight) lines.push(`> 💡 **${L.why}**: ${topInsight}`, '');
   lines.push(`🔗 [${L.readMore}](${top.link}) · _${top.source}_`, '');
 
-  // Categorized sections — articles (excl. top) that have body text.
   const detailed = rest.filter((a) => summaryOf(a));
   for (const cat of CATEGORIES) {
     const inCat = detailed.filter((a) => categoryForSource(a.source) === cat.key);
@@ -149,7 +203,6 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
     }
   }
 
-  // Quick news — everything else (no body text available), as compact bullets.
   const briefs = rest.filter((a) => !summaryOf(a));
   if (briefs.length) {
     lines.push('---', '', `## ${L.quick}`, '');
@@ -159,7 +212,6 @@ function buildMarkdown(lang, { date, articles }, enrich = false) {
     lines.push('');
   }
 
-  // Footer
   lines.push('---', '', L.footer, '');
 
   const count = articles.length;
@@ -178,6 +230,7 @@ function main() {
   const date = parseDateArg();
   const enrich = process.argv.includes('--enrich');
   const dataPath = path.join(DATA_DIR, `${date}.json`);
+  const koPath = path.join(POSTS_DIR, `daily-digest-${date}.md`);
   log(`generating digest markdown for ${date}${enrich ? ' (enrich mode)' : ''}`);
 
   if (!fs.existsSync(dataPath)) {
@@ -192,22 +245,23 @@ function main() {
     process.exit(0);
   }
 
+  const legacyKo = enrich ? loadExistingKoreanEnrichment(koPath) : new Map();
   fs.mkdirSync(POSTS_DIR, { recursive: true });
-  const koPath = path.join(POSTS_DIR, `daily-digest-${date}.md`);
   const enPath = path.join(POSTS_DIR, `daily-digest-${date}-en.md`);
-  fs.writeFileSync(koPath, buildMarkdown('ko', { date, articles }, enrich), 'utf-8');
-  fs.writeFileSync(enPath, buildMarkdown('en', { date, articles }, enrich), 'utf-8');
+  fs.writeFileSync(koPath, buildMarkdown('ko', { date, articles }, enrich, legacyKo), 'utf-8');
+  fs.writeFileSync(enPath, buildMarkdown('en', { date, articles }, enrich, legacyKo), 'utf-8');
 
-  // In enrich mode, report how many articles actually carried AI fields.
   const enrichedCount = enrich
-    ? articles.filter((a) => a.summaryKo || a.summaryEn || a.insightKo || a.insightEn).length
+    ? articles.filter((a) =>
+        a.summaryKo || a.summaryEn || a.insightKo || a.insightEn || legacyKo.has(a.link),
+      ).length
     : 0;
 
   log(`wrote ${path.relative(process.cwd(), koPath)}`);
   log(`wrote ${path.relative(process.cwd(), enPath)}`);
   log(
     enrich
-      ? `done: ${articles.length} article(s), ${enrichedCount} with AI fields`
+      ? `done: ${articles.length} article(s), ${enrichedCount} with AI/recovered fields`
       : `done: ${articles.length} article(s)`,
   );
 }
