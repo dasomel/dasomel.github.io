@@ -5,30 +5,11 @@ name: Digest Fallback Merge
 
 on:
   schedule:
-    # 21:15 UTC. 목표 발행 시각은 07:00 KST 다.
-    #
-    # 이 워크플로의 실측 지연은 편차가 크다 — 49/94/98분(min/p50/max, 이상치
-    # 제외 9회). 그래서 정확한 분이 아니라 07:00~08:00 KST 라는 창을 노린다:
-    #   21:15 + 49분 = 22:04 UTC → 07:04 KST
-    #   21:15 + 98분 = 22:53 UTC → 07:53 KST
-    # 정시(top-of-hour)는 혼잡해 지연이 커지므로 계속 피한다. 예전 값 '0 8'
-    # (=17:00 KST)은 정시라 87분·127분 밀려 발행이 오후로 넘어간 적이 있다.
-    #
-    # 앞의 daily-digest 는 20:20 UTC 예약에 지연 53~63분이 매우 일정해
-    # (14회 관측) draft PR 이 늦어도 21:25 UTC 에는 존재한다. 위 최소 실행
-    # 시각(22:04)까지 39분 여유가 있다 — 이 여유가 줄면 머지할 PR 이 아직
-    # 없어 발행이 조용히 건너뛰어지므로, 두 cron 은 항상 같이 움직여야 한다.
-    #
-    # 지연이 600분대로 튀는 날이 드물게 있다(9회 중 2회는 이상치로 제외했다).
-    # 그날은 deploy 의 02:40 UTC 백스톱이 회수한다.
-    - cron: '15 21 * * *'
-    # 백스톱 슬롯. 위 슬롯이 통째로 밀리거나, daily-digest 가 자기 백스톱(22:55Z)
-    # 에서야 PR 을 만든 날을 회수한다. daily-digest 백스톱의 최악 완료(23:58Z)
-    # 보다 충분히 뒤에 둬야 머지할 PR 이 존재한다 — 여기서 97분 여유다.
-    #
-    # 이 워크플로는 원래 멱등하다(머지할 draft PR 이 없으면 아무것도 하지 않는다).
-    # 그래서 평소에는 조용히 지나가고, 발행이 밀린 날에만 실제로 동작한다.
-    # 이때 발행은 10시대 KST 로 늦어지지만, 아예 건너뛰는 것보다는 낫다.
+    # 21:45 UTC = 06:45 KST. OpenAI enrichment(21:30/21:55 UTC)가 먼저 실행된 뒤
+    # draft PR 을 머지하도록 여유를 둔다. 예전 21:15 UTC는 raw digest를 먼저
+    # 머지할 수 있어 AI 보강과 경합했다.
+    - cron: '45 21 * * *'
+    # 백스톱 슬롯. 일일 수집/보강이 통째로 밀린 날을 회수한다.
     - cron: '05 1 * * *'
   workflow_dispatch:
 
@@ -47,22 +28,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      # 머지 직전에 "이 날짜가 이미 발행됐는지"를 보려면 main 의 파일이 필요하다.
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Merge pending draft digest PR (if any)
+      - name: Merge pending enriched draft digest PR (if any)
         id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          # 대상은 제목의 날짜가 아니라 브랜치명(daily-digest/*)으로 찾는다.
-          # 제목 기준으로 오늘 날짜를 매칭하면, digest 런이 KST 자정을 넘겨
-          # 지연될 때 날짜가 어긋나 PR 을 영영 못 찾고 발행이 조용히 멈춘다.
-          # (cron 21:40 UTC 대비 실제 시작이 ~50분씩 밀리는 것이 관측됐다.)
-          # 브랜치 기준이면 밀린 날짜의 미발행 다이제스트도 함께 회수된다.
-          # gh 실패를 "머지할 것 없음"으로 오해하면 발행이 조용히 멈춘다. 명시적으로 구분한다.
           if ! gh pr list \
             --repo "$REPO" \
             --state open \
@@ -76,43 +50,54 @@ jobs:
           echo "대상:"
           cat /tmp/digest-prs.txt
 
-          # 오래된 것부터(브랜치명=날짜 오름차순) 머지해 발행 순서를 보존한다.
-          # mapfile 은 bash 4+ 전용이라 while-read 로 둔다 — 로컬(bash 3.2) 검증도 가능해진다.
           COUNT=0
           SKIPPED=0
           while IFS=$'\t' read -r NUM BRANCH; do
             [ -z "$NUM" ] && continue
             DATE="${BRANCH#daily-digest/}"
+            DATA="src/content/posts/.digest-data/${DATE}.json"
 
-            # 이중 발행을 막는 마지막 방어선. daily-digest 의 관문은 PR 이 *생기는* 것을
-            # 막지만, 되돌릴 수 없는 행위는 여기서 일어난다 — 2026-08-07 에 이미 발행된
-            # 다이제스트를 통째로 갈아치운 것도 이 머지였다.
-            #
-            # 닫지 않고 남겨 두는 것이 중요하다: force 로 다시 만든 교체본이 바로 이
-            # 모양이고, 그건 사람이 확인하고 직접 머지해야 하는 물건이다.
+            # 이미 발행된 날짜는 자동 교체하지 않는다.
             if [ -f "src/content/posts/daily-digest-${DATE}.md" ]; then
-              echo "::warning::PR #${NUM} (${BRANCH}) — ${DATE} 는 이미 main 에 발행돼 있다. 자동 머지하지 않고 남긴다. 교체가 목적이면 사람이 직접 머지할 것."
+              echo "::warning::PR #${NUM} (${BRANCH}) — ${DATE} 는 이미 main 에 발행돼 있다. 자동 머지하지 않는다."
               SKIPPED=$((SKIPPED + 1))
               continue
             fi
 
-            echo "PR #${NUM} (${BRANCH}) — ready 전환 후 머지..."
+            # AI 보강을 통과한 다이제스트만 자동 발행한다. 이 관문이 없으면
+            # OpenAI enrichment가 아직 끝나지 않은 raw RSS PR을 06:45에 머지하게 된다.
+            if [ ! -f "$DATA" ]; then
+              echo "::warning::PR #${NUM} (${BRANCH}) — ${DATA} 없음. 자동 머지하지 않는다."
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+            if ! jq -e '
+              (.articles | length > 0) and
+              (.articles | all(.summaryKo and (.summaryKo | type == "string") and (.summaryKo | length > 0))) and
+              (.articles | all(.summaryEn and (.summaryEn | type == "string") and (.summaryEn | length > 0))) and
+              (.articles | all(.insightKo and (.insightKo | type == "string") and (.insightKo | length > 0))) and
+              (.articles | all(.insightEn and (.insightEn | type == "string") and (.insightEn | length > 0)))
+            ' "$DATA" >/dev/null; then
+              echo "::warning::PR #${NUM} (${BRANCH}) — AI 보강이 완료되지 않았다. 다음 fallback 슬롯에서 다시 확인한다."
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+
+            echo "PR #${NUM} (${BRANCH}) — AI 보강 검증 통과, ready 전환 후 머지..."
             gh pr ready "$NUM" --repo "$REPO"
             gh pr merge "$NUM" \
               --repo "$REPO" \
               --squash \
               --delete-branch \
-              --subject "📰 데일리 테크 다이제스트 ${DATE} (fallback — AI 보강 없이 발행)"
+              --subject "📰 데일리 테크 다이제스트 ${DATE} (OpenAI enriched)"
             COUNT=$((COUNT + 1))
           done < /tmp/digest-prs.txt
 
           if [ "$COUNT" -eq 0 ]; then
-            # "대상이 없었다"와 "대상은 있었지만 전부 남겨 뒀다"를 구분한다.
-            # 뭉뚱그리면 발행이 멈춘 날과 정상인 날이 같은 로그로 보인다.
             if [ "$SKIPPED" -gt 0 ]; then
-              echo "이미 발행된 날짜 ${SKIPPED}건을 남겨 뒀다. 머지한 것은 없다."
+              echo "자동 머지하지 않은 PR ${SKIPPED}건. AI 보강 또는 중복 발행 관문에서 대기 중이다."
             else
-              echo "머지할 draft 다이제스트 PR 이 없다. 이미 발행됐거나 수집 결과가 없다."
+              echo "머지할 draft 다이제스트 PR 이 없다."
             fi
             echo "merged=false" >> "$GITHUB_OUTPUT"
             exit 0
@@ -121,9 +106,6 @@ jobs:
           echo "merged=true" >> "$GITHUB_OUTPUT"
           echo "완료: ${COUNT}건 머지."
 
-      # GITHUB_TOKEN 이 만든 push 는 다른 워크플로를 트리거하지 않는다(재귀 실행 방지).
-      # 따라서 위 머지만으로는 deploy.yml 이 돌지 않아 사이트가 갱신되지 않는다.
-      # workflow_dispatch 는 이 제약의 예외이므로 명시적으로 깨워 준다.
       - name: Trigger Pages deploy
         if: steps.merge.outputs.merged == 'true'
         env:
