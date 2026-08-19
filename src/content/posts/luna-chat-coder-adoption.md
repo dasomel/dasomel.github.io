@@ -321,7 +321,89 @@ Luna는 그 위에서 대화형 개발의 continuity와 fallback만 담당합니
 
 ---
 
-## 10. 이번 적용에서 느낀 가장 큰 변화
+## 10. 하나의 AI만 사용하지 않는 이유
+
+최근 개발 환경에서는 하나의 AI 도구만 사용하는 것보다 작업 성격에 따라 여러 도구를 조합하는 편이 효율적이라고 생각합니다.
+
+현재 저는 **ChatGPT, Claude, Gemini, GitHub Copilot**을 함께 사용하고 있습니다.
+
+각 도구를 경쟁 관계로 보기보다는 서로 다른 장점을 가진 개발 도구로 보는 편에 가깝습니다.
+
+```text
+                    AI Development Workflow
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+     ChatGPT              Claude               Gemini
+        │                    │                    │
+        └──────────────┬─────┴────────────┬───────┘
+                       │                  │
+                 Copilot / CLI       기타 AI Tools
+                       │
+                       ▼
+              Repository / GitHub
+                       │
+                       ▼
+            Luna Chat Coder Policy
+             ├─ exact state
+             ├─ sandbox first
+             ├─ capability inventory
+             ├─ verification
+             ├─ recovery
+             └─ publication
+```
+
+물론 실제 역할은 작업과 시점에 따라 계속 바뀝니다. 중요한 것은 특정 모델에 모든 것을 맡기는 것이 아니라 **여러 AI를 사용하더라도 리포지토리의 개발 규칙과 source of truth는 하나로 유지하는 것**입니다.
+
+바로 이 지점에서 Luna Chat Coder의 역할이 생깁니다.
+
+AI 모델이 ChatGPT인지, Claude인지, Gemini인지, Copilot인지와 관계없이 실제 프로젝트에는 다음과 같은 공통 원칙이 필요합니다.
+
+```text
+정확한 repository state 확인
+        ↓
+프로젝트의 기존 규칙 확인
+        ↓
+가능하면 local/sandbox에서 작업
+        ↓
+필요한 경우에만 remote execution
+        ↓
+실제 build / test / lint 수행
+        ↓
+정확한 변경사항 확인
+        ↓
+GitHub에 durable state로 반영
+```
+
+즉 **AI 모델은 교체될 수 있지만 repository engineering policy는 쉽게 바뀌지 않아야 한다**는 생각입니다.
+
+이런 관점에서 Luna는 특정 AI의 기능을 확장하는 도구라기보다, 여러 AI를 사용하더라도 개발 결과가 일관되도록 만드는 **repository-level engineering contract**에 가깝습니다.
+
+### AI가 많아질수록 중요한 것은 모델이 아니라 workflow
+
+AI coding tool이 많아질수록 오히려 새로운 문제가 생깁니다.
+
+같은 리포지토리를 서로 다른 AI가 수정할 수 있고, 각각 다른 방식으로 dependency를 추가하거나 테스트를 생략하거나 remote execution을 사용할 수 있습니다.
+
+따라서 앞으로의 AI-assisted development에서는
+
+> **"어떤 AI가 가장 좋은가?"**
+
+보다
+
+> **"어떤 AI를 사용하더라도 프로젝트의 engineering invariant를 어떻게 유지할 것인가?"**
+
+가 더 중요한 질문이 될 수 있습니다.
+
+Luna Chat Coder는 이 문제에 대한 작은 실험입니다.
+
+모델 자체에 개발 방법을 모두 의존하지 않고, 리포지토리 안에 개발 원칙을 남겨두는 것입니다.
+
+결국 AI는 바뀌어도 Git repository는 계속 남기 때문입니다.
+
+---
+
+## 11. 이번 적용에서 느낀 가장 큰 변화
 
 처음에는 Luna를 단순한 "AI coding instruction" 정도로 생각했습니다.
 
@@ -352,7 +434,7 @@ Luna는 그 위에서 대화형 개발의 continuity와 fallback만 담당합니
 
 ---
 
-## 11. 앞으로의 방향
+## 12. 앞으로의 방향
 
 이번에는 기술 블로그 저장소에 먼저 적용했습니다.
 
@@ -388,4 +470,3 @@ Luna Chat Coder는 이 문제를 거창한 플랫폼으로 해결하기보다 **
 
 - [Luna Chat Coder](https://github.com/Osteoporosis/luna-chat-coder)
 - [dasomel.github.io](https://github.com/dasomel/dasomel.github.io)
-
