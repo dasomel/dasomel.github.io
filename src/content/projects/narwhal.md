@@ -1,93 +1,94 @@
 ---
 title: "Narwhal"
-description: "Vagrant 기반 Kubernetes Internal Developer Platform (IDP) 클러스터"
+description: "재현 가능하고 검증 가능한 Kubernetes Internal Developer Platform (IDP)"
 github: "https://github.com/dasomel/narwhal"
-tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio", "ArgoCD", "Cilium"]
+tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio", "ArgoCD", "Cilium", "Air-Gap"]
 order: 6
 type: "own"
 featured: true
-problem: "로컬 환경에서 프로덕션 수준의 Kubernetes IDP를 구성하려면 수십 개 컴포넌트를 직접 설치·통합해야 함"
-solution: "vagrant up 한 명령으로 HA 컨트롤 플레인, GitOps, SSO, Observability, Service Mesh를 포함한 전체 IDP 클러스터 자동 프로비저닝"
+problem: "Kubernetes 위에 수십 개 Cloud Native 컴포넌트를 통합하면 DNS·TLS·SSO·네트워크·버전 호환성 문제가 반복적으로 발생함"
+solution: "35개 애플리케이션을 하나의 GitOps 플랫폼으로 통합하고 설치·검증·운영까지 하나의 재현 가능한 단위로 제공"
 ---
 
 ## 프로젝트 소개
 
-**Narwhal**은 Vagrant 기반 Kubernetes **Internal Developer Platform (IDP)** 클러스터입니다.
+**Narwhal**은 Kubernetes 위에 GitOps, IAM/SSO, Service Mesh, Observability, Registry, Storage, Backup, Policy, API Gateway와 관리 포털을 통합한 오픈소스 **Internal Developer Platform (IDP)**입니다.
 
-"바다의 유니콘"이라 불리는 일각고래처럼, 단일 클러스터에서 프로덕션 수준의 플랫폼 전체를 제공합니다. [kube-ready-box](https://github.com/dasomel/kube-ready-box)의 `dasomel/ubuntu-26.04-xfs` Box를 기반으로 하며, Kubernetes v1.35 HA 클러스터 위에 GitOps, SSO, Observability, Service Mesh, Storage, Backup까지 완전 자동화로 구성합니다.
+단순히 Kubernetes를 설치하는 것이 아니라 각 프로젝트 사이의 integration seam을 제품의 핵심으로 다룹니다.
+
+> **Narwhal은 Kubernetes Installer가 아니라 Platform Integration 프로젝트입니다.**
+
+## 현재 상태
+
+- Kubernetes **v1.35** 기반
+- 3 master + 3 worker HA 클러스터
+- **35개 GitOps 관리 애플리케이션**
+- **263건의 integration incident/lesson 기록**
+- **51개 regression checks**를 CI에서 실행
+- Vagrant ARM64 / Kakao Cloud AMD64 / air-gapped 환경 지원
+- 아키텍처별 오프라인 번들 제공
+- 최신 릴리스: **v1.2.0**
 
 ## 주요 구성 요소
 
 | 영역 | 컴포넌트 |
-|------|----------|
-| **오케스트레이션** | Kubernetes v1.35 (HA: master ×3, worker ×3) |
-| **네트워킹** | Cilium CNI, MetalLB, kube-vip (VIP HA), APISIX API Gateway |
-| **GitOps** | ArgoCD + Gitea (App-of-Apps 패턴) |
-| **SSO** | Keycloak OIDC (ArgoCD, Grafana, Gitea, Harbor, Headlamp 연동) |
-| **Observability** | Prometheus, Grafana, Loki, Tempo, Hubble |
-| **Storage** | NFS (Block) + SeaweedFS (Object/S3) + nfs-quota-agent |
-| **Service Mesh** | Istio ambient mode (mTLS, ztunnel, 사이드카 없음) |
-| **보안** | cert-manager, OpenBao (Secrets), Kyverno (Policy) |
-| **백업** | Velero + CNPG barman |
-| **테스트** | Chaos Mesh (카오스 실험), k6 (부하 테스트) |
+|---|---|
+| **Orchestration** | Kubernetes v1.35, HA control plane |
+| **Networking** | Cilium, kube-vip, MetalLB, APISIX |
+| **GitOps** | ArgoCD + Gitea App-of-Apps |
+| **SSO** | Keycloak OIDC + APISIX openid-connect |
+| **Observability** | Prometheus, Grafana, Loki, Tempo, Grafana Alloy, Hubble |
+| **Storage** | NFS CSI, SeaweedFS S3, nfs-quota-agent |
+| **Service Mesh** | Istio Ambient / ztunnel / mTLS |
+| **Security** | cert-manager, OpenBao, Kyverno |
+| **Backup** | Velero, CNPG Barman |
+| **Management** | Narwhal Portal |
+| **Testing** | Chaos Mesh, k6, cluster/SSO/regression verification |
 
-## 아키텍처
+## Integration Knowledge as Tests
 
-```
-┌──────────────────────────────────────────────────┐
-│                  Vagrant VMs                     │
-├──────────────────┬─────────────┬─────────────────┤
-│  master-1        │ master-2/3  │ worker-1/2/3    │
-│  192.168.56.10   │ .11 / .12   │ .21 / .22 / .23 │
-│  2 CPU, 6GB      │ 2 CPU, 6GB  │ 2 CPU, 6GB      │
-│  NFS, dnsmasq    │ dnsmasq     │                 │
-└──────────────────┴─────────────┴─────────────────┘
-                   VIP: 192.168.56.100 (kube-vip)
-                   LB:  192.168.56.200 (MetalLB/APISIX)
-                   DNS: *.local.narwhal.internal
+Narwhal은 장애를 해결하고 버리는 대신 `lessons-log.md`에 원인과 **discriminator**를 기록하고 회귀 테스트로 연결합니다.
+
+```text
+Incident → Lesson → Discriminator → Regression Test
 ```
 
-## 요구사항
+이 구조가 Kubernetes나 통합 컴포넌트 업그레이드 후 과거 문제가 다시 나타나는 것을 막는 핵심 유지보수 방식입니다.
 
-- Vagrant 2.4+
-- VirtualBox 7.1+ 또는 VMware Fusion 26H1
-- RAM 32GB+ (권장 40GB+)
-- VM당 30GB+ Disk
+## Air-Gapped Installation
+
+인터넷이 없는 환경에서도 동일한 플랫폼을 설치할 수 있도록 컨테이너 이미지, Helm chart, 바이너리와 OS package를 아키텍처별로 묶어 제공합니다. 외부 의존성을 설치 시점에 해결하지 않고 사전에 bundle로 검증하는 것이 목표입니다.
+
+## 기반 환경
+
+Kube-Ready-Box의 `dasomel/ubuntu-26.04-xfs`를 기반으로 하며 XFS project quota와 Kubernetes 노드 튜닝을 활용합니다.
 
 ## 시작하기
 
 ```bash
 git clone https://github.com/dasomel/narwhal.git
 cd narwhal
-
-# 클러스터 생성 (모든 컴포넌트 자동 프로비저닝)
 vagrant up --provider=vmware_desktop
-
-# 노드 상태 확인
 vagrant ssh master-1 -c "kubectl get nodes"
-
-# 클러스터 삭제
 vagrant destroy -f
 ```
 
 ## 기술 문서
 
-각 영역을 원본 소스 기준으로 상세히 정리한 문서입니다.
-
 | 문서 | 내용 |
-|------|------|
-| [아키텍처](/ko/docs/narwhal-architecture) | 클러스터 토폴로지, HA 컨트롤 플레인, 노드 구성 |
-| [네트워킹](/ko/docs/narwhal-networking) | Cilium, MetalLB, kube-vip, APISIX, DNS |
-| [GitOps](/ko/docs/narwhal-gitops) | ArgoCD + Gitea App-of-Apps 패턴 |
-| [보안 & SSO](/ko/docs/narwhal-security) | Keycloak OIDC, OpenBao, Kyverno, cert-manager |
+|---|---|
+| [아키텍처](/ko/docs/narwhal-architecture) | HA, 노드 토폴로지, 네트워크와 플랫폼 구성 |
+| [네트워킹](/ko/docs/narwhal-networking) | Cilium, kube-vip, MetalLB, APISIX, DNS |
+| [GitOps](/ko/docs/narwhal-gitops) | ArgoCD + Gitea와 App-of-Apps |
+| [보안 & SSO](/ko/docs/narwhal-security) | Keycloak, OpenBao, Kyverno, cert-manager |
 | [관측성](/ko/docs/narwhal-observability) | Prometheus, Grafana, Loki, Tempo, Hubble |
 | [스토리지 & 데이터베이스](/ko/docs/narwhal-storage) | NFS, SeaweedFS, nfs-quota-agent, CNPG |
-| [운영 & 재해복구](/ko/docs/narwhal-operations) | Day-2 운영, Velero 백업/복구, 장애 대응 |
-| [테스트 & 카오스 엔지니어링](/ko/docs/narwhal-testing) | Chaos Mesh 실험 스위트, k6 부하 테스트, 기준선 |
+| [운영 & 재해복구](/ko/docs/narwhal-operations) | Day-2, Velero, 장애 대응 |
+| [테스트 & 카오스](/ko/docs/narwhal-testing) | Regression, Chaos Mesh, k6 |
 
 ## 참고 링크
 
 - **GitHub**: [dasomel/narwhal](https://github.com/dasomel/narwhal)
-- **관리 포털**: [Narwhal Portal](/ko/projects/narwhal-portal)
-- **Base Box**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
-- **nfs-quota-agent**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
+- **Management Portal**: [Narwhal Portal](/ko/projects/narwhal-portal)
+- **Base OS**: [Kube-Ready-Box](/ko/projects/kube-ready-box)
+- **Storage Agent**: [NFS Quota Agent](/ko/projects/nfs-quota-agent)
