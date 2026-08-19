@@ -1,0 +1,199 @@
+{
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-19T20:49:47.464Z",
+  "count": 24,
+  "articles": [
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Encrypt Amazon ECS traffic: VPC encryption controls and Service Connect TLS",
+      "link": "https://aws.amazon.com/blogs/containers/encrypt-amazon-ecs-traffic-vpc-encryption-controls-and-service-connect-tls/",
+      "date": "2026-08-19T20:37:56.000Z",
+      "excerpt": "Learn how to encrypt traffic between Amazon ECS workloads using two native approaches: VPC encryption controls for network-layer encryption through the AWS Nitro System, and Service Connect TLS for application-layer encryption."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI-generated Rust compiles perfectly. That’s the scary part.",
+      "link": "https://thenewstack.io/canonical-c-rust-apparmor/",
+      "date": "2026-08-19T19:30:42.000Z",
+      "excerpt": "Canonical wants to know whether automated tools can finally rewrite legacy C code in safe, maintainable Rust without altering the"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Offering Zero Data Retention for frontier models",
+      "link": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "date": "2026-08-19T19:00:00.000Z",
+      "excerpt": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "5 new ways to level up your learning with Search",
+      "link": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
+      "date": "2026-08-19T19:00:00.000Z",
+      "excerpt": "Here’s how you can use Google Search tools to study for classes and standardized tests."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AWS deprecated this EKS auth method. 81% of clusters still run it.",
+      "link": "https://thenewstack.io/kubernetes-fleet-security-management/",
+      "date": "2026-08-19T18:59:54.000Z",
+      "excerpt": "The migration to Kubernetes and cloud native infrastructure has been one of the defining IT trends of the past decade."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: Managing your work",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/",
+      "date": "2026-08-19T17:50:23.000Z",
+      "excerpt": "If you’re juggling multiple Copilot sessions, use the My work pane to track what's in flight, what's done, and what's next."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Codex can now keep coding while it waits for your answer",
+      "link": "https://thenewstack.io/codex-async-developer-messaging/",
+      "date": "2026-08-19T17:44:59.000Z",
+      "excerpt": "Long-running coding agents face an awkward choice when they need a developer’s input. They can stop and wait or make"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "A revisit of remote Spectre attacks on Cloudflare Workers",
+      "link": "https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/",
+      "date": "2026-08-19T16:00:28.000Z",
+      "excerpt": "In 2024 and 2025, we reassessed remote Spectre attacks on our Workers infrastructure. We share details about the new attack primitives like Spectre gadgets, remote timers, achieving co-location and how new defenses further harden Cloudflare Workers."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How to modernize Apache Hive using Google Cloud’s Lakehouse runtime catalog",
+      "link": "https://cloud.google.com/blog/products/data-analytics/lakehouse-runtime-catalog-helps-modernize-apache-hive/",
+      "date": "2026-08-19T16:00:00.000Z",
+      "excerpt": "For over a decade, the Apache Hive Metastore (HMS) has served as the de facto metadata authority for big data analytics. Whether it was deployed on Hadoop clusters, self-managed Compute Engine VMs backed by MySQL or PostgreSQL, HMS provided the central schema registry that let Apache Spark, Presto, and Hive query raw ."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Serverless Apache Spark on Google Cloud: Architecture Choices & AI Troubleshooting",
+      "link": "https://cloud.google.com/blog/products/data-analytics/serverless-apache-spark-on-google-cloud-architecture-ai-troubleshooting/",
+      "date": "2026-08-19T16:00:00.000Z",
+      "excerpt": "In modern enterprise data engineering, Apache Spark remains a cornerstone framework for processing massive datasets at scale."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Clario technology detects PHI/PII in DICOM images using Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/architecture/how-clario-automates-phi-pii-detection-in-dicom-images-using-amazon-bedrock/",
+      "date": "2026-08-19T14:29:31.000Z",
+      "excerpt": "Clario, part of Thermo Fisher Scientific, uses Amazon Bedrock and Amazon Textract to automatically detect protected health information (PHI) and personally identifiable information (PII) across thousands of DICOM image slices in clinical trials, covering both metadata tags and text burned into the image pixels."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
+      "link": "https://huggingface.co/blog/LiquidAI/qad",
+      "date": "2026-08-19T13:48:49.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "AI-powered clinical trial eligibility and safety using Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/architecture/ai-agents-for-clinical-trial-screening/",
+      "date": "2026-08-19T13:11:51.000Z",
+      "excerpt": "AI agents built on Amazon Bedrock AgentCore help clinical trial teams make fast, accurate enrollment decisions while keeping clinicians in control. This post shows how to architect an eligibility and safety screening agent using AWS HealthLake, AgentCore, and AgentCore Evaluations."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kyverno is a platform primitive, not a security tool",
+      "link": "https://www.cncf.io/blog/2026/08/19/kyverno-is-a-platform-primitive-not-a-security-tool/",
+      "date": "2026-08-19T11:21:00.000Z",
+      "excerpt": "Where does Kyverno live in your organization? I don’t mean which cluster!"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Replit expands access to software creation with GPT-5.6 Luna",
+      "link": "https://openai.com/index/replit",
+      "date": "2026-08-19T07:00:00.000Z",
+      "excerpt": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Scaling agentic AI: How llm-d enables infrastructure sovereignty",
+      "link": "https://www.redhat.com/en/blog/scaling-agentic-ai-how-llm-d-enables-infrastructure-sovereignty",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "AI is entering the era of large-scale, distributed, agentic systems. Applications coordinate multiple models, tools, and services, process millions of requests, and demand enormous amounts of computer capacity."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "From experiment to production: A reliable architecture for version-controlled MLOps",
+      "link": "https://www.redhat.com/en/blog/experiment-production-reliable-architecture-version-controlled-mlops-0",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "Many believe that building models is the most challenging thing in AI, but managing the data that powers those models is equally difficult."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How CISA’s BOD 26-04 changes vulnerability prioritization",
+      "link": "https://www.datadoghq.com/blog/cisa-bod-26-04-vulnerability-prioritization/",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "Learn how CISA’s BOD 26-04 mandates risk-based vulnerability prioritization and how Datadog helps teams prioritize and remediate critical findings."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "20× the CI traffic without getting slower: How we rebuilt Git serving at Datadog",
+      "link": "https://www.datadoghq.com/blog/engineering/gitretriever/",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "Learn how Datadog built gitretriever to handle 20× more CI Git traffic while maintaining low latency and reducing backend CPU usage."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "From chaos to context: Building an AI dev workflow",
+      "link": "https://about.gitlab.com/blog/building-an-ai-dev-workflow/",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "There's a particular kind of frustration that happens when prompting an AI assistant with the same correction multiple times in a single session. The marvels of modern large language models (LLMs) make it so you're working with the most enthusiastic apprentice you'll ever have."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Why global workers are driving demand for stablecoin payouts",
+      "link": "https://stripe.com/blog/why-global-workers-are-driving-demand-for-stablecoin-payouts",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "Platforms like DoorDash, Meta, and Deel already enable stablecoin payouts for global workers. We surveyed 2,300 workers in 20 countries to see what's driving stablecoin demand, where the opportunity is highest, and how other platforms can adapt."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "ChatGPT Ads expands across Europe",
+      "link": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "date": "2026-08-18T22:00:00.000Z",
+      "excerpt": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Staying Ahead of Adversarial AI Through Agentic Source Code Review",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/staying-ahead-of-adversarial-ai-through-agentic-source-code-review/",
+      "date": "2026-08-18T14:00:00.000Z",
+      "excerpt": "Written by: Alex Tselevich, Michael Maturi Introduction Adversarial misuse of AI has increased the risk of data theft and extortion events, because when proprietary source code is exposed, defenders must scramble to identify and patch vulnerabilities while attackers deploy machine-speed AI tools against them."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms",
+      "link": "https://azure.microsoft.com/en-us/blog/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-cloud-native-application-platforms/",
+      "date": "2026-08-17T15:00:00.000Z",
+      "excerpt": "Cloud-native platforms are becoming the foundation for AI transformation. Discover how Microsoft's Azure application platform helps organizations modernize, innovate, and operate AI-powered applications at scale."
+    }
+  ]
+}
