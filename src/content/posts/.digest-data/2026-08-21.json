@@ -1,0 +1,223 @@
+{
+  "date": "2026-08-21",
+  "generatedAt": "2026-08-20T20:51:46.997Z",
+  "count": 27,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google’s AI coding agent just escaped its own IDE",
+      "link": "https://thenewstack.io/google-antigravity-ide-extensions/",
+      "date": "2026-08-20T20:17:54.000Z",
+      "excerpt": "When Google launched Antigravity in November 2025, it was on the premise that developers could hand an entire coding task"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Debian just proposed banning AI code. Here’s why it matters for open source developers & maintainers.",
+      "link": "https://thenewstack.io/debian-ai-contribution-ban-debate/",
+      "date": "2026-08-20T18:49:42.000Z",
+      "excerpt": "The board behind open source operating system Debian has tabled proposals for and against the use of LLM-assisted contributions in"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "The August 17 outage, and the work ahead",
+      "link": "https://github.blog/news-insights/company-news/the-august-17-outage-and-the-work-ahead/",
+      "date": "2026-08-20T18:36:11.000Z",
+      "excerpt": "An update on the August 17 outage and the steps we're taking to improve reliability."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Slack makes it easier to install agents built with third-party tools",
+      "link": "https://thenewstack.io/add-to-slack-agents/",
+      "date": "2026-08-20T18:30:00.000Z",
+      "excerpt": "Slack on Thursday rolled out Add to Slack, which lets users more easily bring the agents they’ve built with ten"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Expanding Google Antigravity for enterprise customers",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers/",
+      "date": "2026-08-20T17:30:00.000Z",
+      "excerpt": "Since announcing Google Antigravity in Gemini Enterprise Agent Platform at I/O in May, we’ve heard helpful feedback from our customers. Your developers want easy access to coding agents across surfaces."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "From all-or-nothing to task-based OAuth consent",
+      "link": "https://blog.cloudflare.com/task-based-oauth-consent/",
+      "date": "2026-08-20T17:03:03.000Z",
+      "excerpt": "Cloudflare OAuth now supports optional scopes, giving users more control over what an app can access and helping developers build secure consent flows around the task at hand."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker Verified Publisher Applications Are Now Self-Serve",
+      "link": "https://www.docker.com/blog/docker-verified-publisher-applications-are-now-self-serve/",
+      "date": "2026-08-20T17:00:00.000Z",
+      "excerpt": "Apply to become a Docker Verified Publisher (DVP) now directly through Docker Hub. Get your verified content seen first by devs looking for trusted options."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+      "date": "2026-08-20T16:52:57.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Announcing H1 2027 KCDs",
+      "link": "https://www.cncf.io/blog/2026/08/20/announcing-h1-2027-kcds/",
+      "date": "2026-08-20T16:00:00.000Z",
+      "excerpt": "Get ready to connect, learn, and innovate right in your backyard. Kubernetes Community Days (KCDs) are officially kicking off for H1!"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How AlloyDB ScaNN scales vector search to 10 billion vectors",
+      "link": "https://cloud.google.com/blog/products/databases/alloydb-scann-index-four-level-tree-improves-vector-search/",
+      "date": "2026-08-20T16:00:00.000Z",
+      "excerpt": "To satisfy the demands of enterprise-grade agentic AI applications, underlying vector databases often struggle to scale effectively as modern use cases can scale to billions of vectors. As a fully managed PostgreSQL-compatible database service, AlloyDB is engineered to handle demanding enterprise workloads."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "10 questions every startup should answer before moving to production with their AI prototype",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/10-questions-for-your-startup-developers/",
+      "date": "2026-08-20T16:00:00.000Z",
+      "excerpt": "It’s never been easier to start an AI-powered startup on Google Cloud. You grab an API key from Google AI Studio at breakfast, paste it into Antigravity, and by lunch you’ll have a nascent prototype of your product."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "AI Norms & Values, Part 1 of 3: How We Do Business at Honeycomb",
+      "link": "https://www.honeycomb.io/blog/ai-norms-values-part-1-how-we-do-business-at-honeycomb",
+      "date": "2026-08-20T14:50:39.000Z",
+      "excerpt": "It's been a year since Honeycomb issued its AI mandate. Charity reflects on what that produced, why AI isn't special (it just amplifies what's already there), and shares the first of three new documents on Honeycomb's AI norms and values: how we do business."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "German ciphers, telegrams, and cloud native data sovereignty",
+      "link": "https://www.cncf.io/blog/2026/08/20/german-ciphers-telegrams-and-cloud-native-data-sovereignty/",
+      "date": "2026-08-20T13:00:00.000Z",
+      "excerpt": "A lesson from 1917 In January 1917, Germany sent a secret telegram. It went to Mexico."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing AI Futures",
+      "link": "https://openai.com/index/introducing-ai-futures",
+      "date": "2026-08-20T07:00:00.000Z",
+      "excerpt": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "전체 데이터를 브라우저에 두는 광고 대시보드 만들기",
+      "link": "https://toss.tech/article/ads_dashboard_fe",
+      "date": "2026-08-20T01:00:00.000Z",
+      "excerpt": "서버가 하던 필터링·정렬·검색·페이지네이션을 브라우저로 옮겼더니, 속도뿐 아니라 손대지 못하던 문제 네 개가 같이 풀렸습니다."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How AgentFlo built AI sales agents with Amazon Bedrock AgentCore – Part 1",
+      "link": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-1/",
+      "date": "2026-08-20T00:32:52.000Z",
+      "excerpt": "Learn how AgentFlo built always-on AI sales agents on Amazon Bedrock AgentCore and the Strands Agents SDK."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How ChatGPT Work helps Stampli move ideas to market",
+      "link": "https://openai.com/index/stampli",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why proprietary software isn’t a retrospective trend but a trap for failure",
+      "link": "https://www.redhat.com/en/blog/why-proprietary-software-isnt-retrospective-trend-trap-failure",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "The telecommunications industry is considering one of its most consequential security debates in decades. Amid growing network complexity, 1 narrative argues that proprietary software is inherently more secure than its open source counterparts."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why AI infrastructure must be built in the open",
+      "link": "https://www.redhat.com/en/blog/why-ai-infrastructure-must-be-built-open",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "In Part I and Part II of this series, we explored why efficient inference is becoming an economic necessity and why sovereign AI requires infrastructure independence. But who should build the infrastructure that powers AI?"
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Detect vulnerabilities in LLM applications with Datadog’s AI-native SAST",
+      "link": "https://www.datadoghq.com/blog/ai-native-sast-detect-llm-vulnerabilities/",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "Datadog Code Security’s AI-native SAST helps detect vulnerabilities specific to the OWASP Top 10 for LLM Applications before they reach production."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "From signals to systemic risk: Building Risk AI",
+      "link": "https://www.datadoghq.com/blog/systemic-risk-ai-agents-datadog/",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "Datadog’s Risk Engineering team built a Systemic Risk Detection Pipeline and Risk AI Agents to identify, contextualize, and prioritize systemic risks."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "When your backlog outgrows your team, GitLab scales remediation",
+      "link": "https://about.gitlab.com/blog/gitlab-scales-remediation/",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "Security teams have historically struggled to keep up with triage and remediation when development was happening at human speed. Today, that challenge is exacerbated by developers writing and shipping code at machine speed with AI."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Run agentic software delivery inside the boundaries you already trust",
+      "link": "https://about.gitlab.com/blog/gitlab-dedicated-ai-gateway/",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "Many enterprises choose GitLab Dedicated for a clear reason: a single-tenant instance, managed by GitLab, in a cloud region they select. That isolation already covers source code, project data, and the software development lifecycle they run on GitLab."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Build custom flows in minutes with the Flow Creator agent",
+      "link": "https://about.gitlab.com/blog/flow-creator-agent/",
+      "date": "2026-08-20T00:00:00.000Z",
+      "excerpt": "Custom Flows already let teams turn manual, multi-step work into automation that runs on GitLab events. But writing one meant learning the Flow Registry schema first."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Deep dive into Amazon EKS certificate authority rotation",
+      "link": "https://aws.amazon.com/blogs/containers/deep-dive-into-amazon-eks-certificate-authority-rotation/",
+      "date": "2026-08-19T20:55:49.000Z",
+      "excerpt": "Amazon EKS now provides a managed, non-disruptive lifecycle for rotating your cluster's certificate authority (CA), with automated safeguards and rollback. This deep dive explains how CA rotation works, what AWS handles versus what you must update, and how to walk through the rotation lifecycle on your own timeline."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Remediation Agents, Demystified: Why Fixing Beats Finding",
+      "link": "https://snyk.io/blog/remediation-agents-demystified/",
+      "date": "2026-08-19T00:00:00.000Z",
+      "excerpt": "See how Snyk’s Remediation Agent uses security intelligence, breakability analysis, and validation to turn vulnerabilities into mergeable pull requests."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+      "link": "https://openai.com/index/chatgpt-for-teens",
+      "date": "2026-08-18T11:00:00.000Z",
+      "excerpt": "ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents."
+    }
+  ]
+}
