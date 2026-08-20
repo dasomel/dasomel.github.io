@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import type { SeoulEvent } from '@/lib/types';
@@ -48,11 +49,14 @@ function EventCard({ event, freeLabel, paidLabel }: { event: SeoulEvent; freeLab
       style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
     >
       {event.imageUrl && (
-        <div className="mb-4 rounded-lg overflow-hidden" style={{ aspectRatio: '16/9', backgroundColor: 'var(--bg-subtle)' }}>
-          <img
+        <div className="relative mb-4 rounded-lg overflow-hidden" style={{ aspectRatio: '16/9', backgroundColor: 'var(--bg-subtle)' }}>
+          <Image
             src={event.imageUrl}
             alt={event.title}
-            className="w-full h-full object-cover"
+            fill
+            unoptimized
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
             loading="lazy"
           />
         </div>
@@ -134,23 +138,27 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
     });
   }, [byTab, category, query, freeOnly]);
 
-  const resetResults = () => setVisible(PAGE);
+  // Reset category whenever the source tab changes.
   const handleTabChange = (nextTab: Tab) => {
     setTab(nextTab);
     setCategory('all');
-    resetResults();
+    setVisible(PAGE);
   };
+
+  // Reset pagination whenever a filter changes.
   const handleQueryChange = (value: string) => {
     setQuery(value);
-    resetResults();
+    setVisible(PAGE);
   };
+
   const handleCategoryChange = (value: string) => {
     setCategory(value);
-    resetResults();
+    setVisible(PAGE);
   };
+
   const handleFreeOnlyChange = () => {
     setFreeOnly(value => !value);
-    resetResults();
+    setVisible(PAGE);
   };
 
   // 무한 스크롤 — 센티넬이 보이면 다음 묶음 로드
