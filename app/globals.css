@@ -2,65 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Design tokens (light mode) ────────────────────── */
 :root {
   --bg:         #ffffff;
-  --bg-subtle:  #f9fafb;
-  --surface:    #f3f4f6;
-  --surface-hi: #e9ecf0;
+  --bg-subtle:  #fafafa;
+  --surface:    #f4f5f6;
+  --surface-hi: #eceef0;
   --border:     #e5e7eb;
-  --border-hi:  #d1d5db;
+  --border-hi:  #cfd4da;
   --text:       #111827;
   --text-muted: #4b5563;
   --text-faint: #9ca3af;
-  --accent:     #059669;
-  --accent-dim: rgba(5,150,105,0.08);
-  --accent-glow:rgba(5,150,105,0.15);
+  --accent:     #047857;
+  --accent-dim: rgba(4,120,87,0.07);
+  --accent-glow:rgba(4,120,87,0.12);
 }
 
-/* ── Base ──────────────────────────────────────────── */
 @layer base {
   html { scroll-behavior: smooth; color-scheme: light; }
 
   body {
     background-color: var(--bg);
     color: var(--text);
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.7;
     @apply antialiased;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
   }
 
-  ::selection {
-    background-color: var(--accent-dim);
-    color: var(--accent);
-  }
+  ::selection { background-color: var(--accent-dim); color: var(--accent); }
 }
 
-/* ── Diagonal grid bg ──────────────────────────────── */
 .grid-bg {
   background-image:
-    repeating-linear-gradient(
-      315deg,
-      rgba(5,150,105,0.04) 0,
-      rgba(5,150,105,0.04) 1px,
-      transparent 0,
-      transparent 50%
-    );
-  background-size: 24px 24px;
+    linear-gradient(rgba(17,24,39,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,24,39,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
 }
 
-/* ── Radial glow ───────────────────────────────────── */
 .hero-glow {
-  background:
-    radial-gradient(ellipse 80% 60% at 50% -10%,
-      rgba(5,150,105,0.10) 0%,
-      transparent 70%);
+  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(4,120,87,0.08) 0%, transparent 72%);
 }
 
-/* ── Outline card ─────────────────────────────────── */
+.workbench-eyebrow {
+  color: var(--text-faint);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.workbench-card {
+  display: block;
+  padding: 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--bg);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.workbench-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(4,120,87,0.28);
+  box-shadow: 0 10px 26px -18px rgba(4,120,87,0.28);
+}
+
+.workbench-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0.2rem;
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.2s ease, color 0.2s ease;
+}
+.workbench-note:hover { padding-left: 0.55rem; }
+
+.workbench-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  background: var(--bg-subtle);
+  color: var(--text-faint);
+  padding: 0.22rem 0.45rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.68rem;
+}
+
+.workbench-quote {
+  padding: 1.3rem 1.4rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0.2rem 0.8rem 0.8rem 0.2rem;
+  background: linear-gradient(90deg, var(--accent-dim), transparent 90%);
+}
+
 .card-outline {
   background-color: var(--bg);
   border-radius: 0.875rem;
@@ -68,15 +106,11 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .card-outline:hover {
-  border-color: rgba(5,150,105,0.35);
-  box-shadow: 0 4px 16px -4px rgba(5,150,105,0.10), 0 1px 4px rgba(0,0,0,0.04);
+  border-color: rgba(4,120,87,0.28);
+  box-shadow: 0 6px 20px -8px rgba(4,120,87,0.12), 0 1px 4px rgba(0,0,0,0.04);
 }
 
-/* inner glow on hover */
-.card-glow {
-  position: relative;
-  overflow: hidden;
-}
+.card-glow { position: relative; overflow: hidden; }
 .card-glow::before {
   content: '';
   position: absolute;
@@ -89,60 +123,22 @@
 }
 .card-glow:hover::before { opacity: 1; }
 
-/* ── Slide-enter stagger (antfu-inspired) ─────────── */
-@keyframes slide-enter {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes cursor-blink {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.cursor-blink { animation: cursor-blink 1.2s step-end infinite; }
-
-.slide-enter-content > * {
-  animation: slide-enter 0.4s ease both;
-}
-.slide-enter-content > *:nth-child(1) { animation-delay: 0ms; }
-.slide-enter-content > *:nth-child(2) { animation-delay: 80ms; }
-.slide-enter-content > *:nth-child(3) { animation-delay: 160ms; }
-.slide-enter-content > *:nth-child(4) { animation-delay: 240ms; }
-.slide-enter-content > *:nth-child(5) { animation-delay: 320ms; }
-
-/* ── Full-width section divider ───────────────────── */
-.section-divider {
-  position: relative;
-}
-.section-divider::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 1px;
-  background-color: var(--border);
-}
-
-/* ── Prose (dark) ─────────────────────────────────── */
 .prose {
-  --tw-prose-body:     var(--text);
+  --tw-prose-body: var(--text);
   --tw-prose-headings: var(--text);
-  --tw-prose-links:    var(--accent);
-  --tw-prose-bold:     var(--text);
-  --tw-prose-quotes:   var(--text-muted);
-  --tw-prose-hr:       var(--border);
-  --tw-prose-pre-bg:   var(--bg-subtle);
-  --tw-prose-code:     var(--accent);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--text);
+  --tw-prose-quotes: var(--text-muted);
+  --tw-prose-hr: var(--border);
+  --tw-prose-pre-bg: var(--bg-subtle);
+  --tw-prose-code: var(--accent);
 }
-.prose code {
-  background-color: var(--surface);
-  padding: 0.15em 0.4em;
-  border-radius: 0.3rem;
-  font-size: 0.875em;
-  font-weight: 500;
-}
+.prose code { background: var(--surface); padding: 0.15em 0.4em; border-radius: 0.3rem; font-size: 0.875em; font-weight: 500; }
 .prose code::before, .prose code::after { content: none; }
 .prose pre { border: 1px solid var(--border); border-radius: 0.75rem; }
 .prose a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

@@ -1,43 +1,50 @@
 {
   "nav": {
-    "work": "Work",
-    "speaking": "Speaking",
-    "docs": "Tech Docs",
-    "blog": "Blog",
-    "events": "Events",
+    "projects": "Projects",
+    "notes": "Notes",
+    "talks": "Talks",
     "about": "About",
     "lang": "한국어"
   },
   "home": {
     "hero": {
-      "tagline": "Cloud & DevOps Engineer · Adjunct Professor",
-      "headline_1": "From Developer to ",
-      "headline_accent": "Cloud Infrastructure",
-      "headline_2": ", {years} Years of Journey",
-      "description": "K-PaaS Lite founder · CloudBro/OPA/OPDC community leader · Adjunct Professor at TUK",
-      "cta_work": "View projects",
-      "cta_speaking": "Speaking history"
+      "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT",
+      "headline_1": "Build, verify,",
+      "headline_accent": " rethink.",
+      "headline_2": "",
+      "description": "I build Cloud Native platforms and OSS in public. I document failures and experiments, then share how the work changed my mind.",
+      "cta_projects": "OSS projects",
+      "cta_notes": "Development notes"
     },
     "sections": {
-      "featured_work": "Featured Work",
-      "speaking": "Speaking Highlights",
-      "latest_posts": "Latest Posts",
-      "view_all": "View all"
+      "now_kicker": "NOW",
+      "now": "What I am building",
+      "now_desc": "The homepage starts with active problems and experiments, not a finished portfolio.",
+      "view_projects": "All projects",
+      "notes_kicker": "NOTES",
+      "notes": "Learning in public",
+      "notes_desc": "I start with a claim, investigate it, test it against code and real systems, and keep the result here.",
+      "view_notes": "All notes",
+      "philosophy_kicker": "HOW I WORK",
+      "philosophy": "I write to understand, not after I already understand.",
+      "philosophy_desc": "In OSS work, problem definition and verification often outlive the code itself. AI makes exploration and implementation faster, but deciding what to build and proving that it works are still my responsibility.",
+      "current_question": "OPEN QUESTION",
+      "question": "Is Kubernetes-ready still enough in the age of AI agents?"
     },
     "stats": {
-      "talks": "Conference Talks",
-      "experience": "IT Experience",
-      "projects": "OSS Projects"
+      "experience": "Years in IT",
+      "projects": "Projects",
+      "talks": "Talks"
     }
   },
   "work": {
-    "title": "Work",
-    "subtitle": "Open source projects and infrastructure tools",
+    "title": "Projects",
+    "subtitle": "OSS projects I build, operate, and continuously rethink",
     "problem": "Problem",
     "solution": "Solution"
   },
   "speaking": {
-    "title": "Speaking",
+    "title": "Talks",
     "subtitle_prefix": " years,",
     "subtitle_suffix": " conference talks",
     "highlights": "Highlights",
@@ -47,10 +54,10 @@
     "years_active": "Years Active"
   },
   "blog": {
-    "title": "Blog",
-    "subtitle": "Writing about cloud-native infrastructure",
+    "title": "Notes",
+    "subtitle": "Learning while building OSS and Cloud Native systems",
     "featured": "Featured",
-    "all_posts": "All Posts",
+    "all_posts": "All Notes",
     "min_read": "min"
   },
   "seminars": {

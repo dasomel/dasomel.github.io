@@ -1,43 +1,50 @@
 {
   "nav": {
-    "work": "Work",
-    "speaking": "Speaking",
-    "docs": "기술문서",
-    "blog": "Blog",
-    "events": "행사",
+    "projects": "Projects",
+    "notes": "Notes",
+    "talks": "Talks",
     "about": "About",
     "lang": "EN"
   },
   "home": {
     "hero": {
-      "tagline": "Cloud & DevOps Engineer · Adjunct Professor",
-      "headline_1": "개발자에서 ",
-      "headline_accent": "클라우드 인프라",
-      "headline_2": "까지, {years}년의 여정",
-      "description": "K-PaaS Lite 파운더 · CloudBro/OPA/OPDC 커뮤니티 리더 · 한국공학대학교\u00a0겸임교수",
-      "cta_work": "프로젝트 보기",
-      "cta_speaking": "발표 이력"
+      "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT",
+      "headline_1": "만들고, 검증하고,",
+      "headline_accent": " 다시 생각합니다.",
+      "headline_2": "",
+      "description": "Cloud Native 플랫폼과 OSS를 직접 만들면서 배웁니다. 실패와 실험을 기록하고, 생각이 바뀌면 그 이유까지 공개합니다.",
+      "cta_projects": "OSS 프로젝트",
+      "cta_notes": "개발 노트"
     },
     "sections": {
-      "featured_work": "Featured Work",
-      "speaking": "Speaking Highlights",
-      "latest_posts": "Latest Posts",
-      "view_all": "전체 보기"
+      "now_kicker": "NOW",
+      "now": "지금 만들고 있는 것",
+      "now_desc": "완성된 포트폴리오보다 현재 진행 중인 문제와 실험을 먼저 보여줍니다.",
+      "view_projects": "프로젝트 전체",
+      "notes_kicker": "NOTES",
+      "notes": "배우면서 쓰는 기록",
+      "notes_desc": "하나의 주장으로 시작해 조사하고, 실제 코드와 실험으로 확인한 내용을 남깁니다.",
+      "view_notes": "노트 전체",
+      "philosophy_kicker": "HOW I WORK",
+      "philosophy": "잘 알게 된 뒤가 아니라, 알기 위해 씁니다.",
+      "philosophy_desc": "OSS 개발에서는 코드보다 문제 정의와 검증이 더 오래 남는다고 믿습니다. AI는 탐색과 구현을 빠르게 만들지만, 무엇을 만들지 결정하고 실제로 맞는지 확인하는 일은 여전히 제 몫입니다.",
+      "current_question": "OPEN QUESTION",
+      "question": "Kubernetes-ready라는 말은 AI Agent 시대에도 충분한가?"
     },
     "stats": {
-      "talks": "컨퍼런스 발표",
       "experience": "IT 경력",
-      "projects": "OSS 프로젝트"
+      "projects": "프로젝트",
+      "talks": "발표 기록"
     }
   },
   "work": {
-    "title": "Work",
-    "subtitle": "오픈소스 프로젝트와 인프라 도구",
+    "title": "Projects",
+    "subtitle": "직접 만들고 운영하며 계속 바뀌는 OSS 작업들",
     "problem": "문제",
     "solution": "해결"
   },
   "speaking": {
-    "title": "Speaking",
+    "title": "Talks",
     "subtitle_prefix": "년간",
     "subtitle_suffix": "컨퍼런스 발표 기록",
     "highlights": "Highlights",
@@ -47,10 +54,10 @@
     "years_active": "활동 기간"
   },
   "blog": {
-    "title": "Blog",
-    "subtitle": "클라우드 네이티브 인프라에 대한 글",
-    "featured": "추천",
-    "all_posts": "All Posts",
+    "title": "Notes",
+    "subtitle": "OSS와 Cloud Native를 만들며 배우는 기록",
+    "featured": "Featured",
+    "all_posts": "All Notes",
     "min_read": "min"
   },
   "seminars": {
