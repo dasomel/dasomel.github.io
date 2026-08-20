@@ -1,4 +1,4 @@
-import data from '@/data/project-repo-meta.json';
+import data from '../../src/data/project-repo-meta.json';
 import { Activity, GitBranch, GitCommit, Star } from 'lucide-react';
 
 type RepoMeta = {
