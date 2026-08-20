@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getProjects, getProjectBySlug } from '@/lib/content';
 import { MDXContent } from '@/components/MDXContent';
+import { ProjectVisual } from '@/components/projects/ProjectVisual';
 import { routing } from '@/i18n/routing';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -51,7 +52,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
         <ArrowLeft className="w-4 h-4" aria-hidden="true" />{tc('back')}
       </Link>
       <header className="mb-10">
-        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><img src={image} onError={(event) => { const img = event.currentTarget; if (!img.src.endsWith('/images/projects/default.svg')) img.src = '/images/projects/default.svg'; }} alt="" aria-hidden="true" className="block w-full h-auto" loading="eager" /></div>
+        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><ProjectVisual src={image} alt="" aria-hidden="true" className="block w-full h-auto" loading="eager" /></div>
         <div className="flex flex-wrap items-center gap-2 mb-3">
           {meta.type === 'fork' && <span className="inline-flex items-center gap-1 text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--surface)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}><GitFork className="w-3 h-3" aria-hidden="true" />Fork</span>}
           {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Active</span>}
