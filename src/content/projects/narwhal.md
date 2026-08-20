@@ -63,6 +63,17 @@ Incident → Lesson → Discriminator → Regression Test
 
 Kube-Ready-Box의 `dasomel/ubuntu-26.04-xfs`를 기반으로 하며 XFS project quota와 Kubernetes 노드 튜닝을 활용합니다.
 
+## 최신 소스 점검 · 2026-08-20
+
+최근 upstream 소스에서는 **Rust를 기존 Kubernetes/Helm/Kustomize 스택을 대체하기 위한 전면 재작성 수단으로 쓰지 않고**, 다음 영역에 제한적으로 적용하는 baseline을 정리했습니다.
+
+- air-gapped artifact verification
+- security policy validation
+- evidence parsing
+- Kubernetes orchestration과 Helm/Kustomize는 측정 가능한 이득이 확인되기 전까지 기존 구현 유지
+
+즉 현재 Narwhal의 Rust 전략은 **“rewrite”가 아니라 검증·보안·증거 처리에 대한 선택적 도입**입니다.
+
 ## 시작하기
 
 ```bash
