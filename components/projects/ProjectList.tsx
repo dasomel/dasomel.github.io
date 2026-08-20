@@ -18,7 +18,8 @@ interface Props {
   };
 }
 
-const visualSlugs = new Set(['narwhal', 'beluga', 'oh-my-cursor', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
+const featuredOrder = ['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'egovframe-launcher'];
+const visualSlugs = new Set(['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
 const safeImage = (slug: string) => `/images/projects/${visualSlugs.has(slug) ? slug : 'default'}.svg`;
 
 export function ProjectList({ projects, base, translations }: Props) {
@@ -33,8 +34,11 @@ export function ProjectList({ projects, base, translations }: Props) {
       return matchesTag && (!normalized || haystack.includes(normalized));
     });
   }, [projects, query, selected]);
-  const featured = filtered.filter(p => p.featured);
-  const rest = filtered.filter(p => !p.featured);
+  const featured = featuredOrder
+    .map(slug => filtered.find(project => project.slug === slug))
+    .filter((project): project is Project => Boolean(project));
+  const featuredSlugs = new Set(featuredOrder);
+  const rest = filtered.filter(project => !featuredSlugs.has(project.slug));
 
   return (
     <>
@@ -57,7 +61,7 @@ export function ProjectList({ projects, base, translations }: Props) {
                   <Link href={`${base}/projects/${project.slug}`}><h3 className="text-lg font-bold hover:text-emerald-400 transition-colors" style={{ color: 'var(--text)' }}>{project.title}</h3></Link>
                   <div className="flex items-center gap-2"><span className="text-[10px] px-2 py-0.5 rounded-full" style={{ backgroundColor: project.type === 'fork' ? 'var(--bg-subtle)' : 'var(--surface)', border: '1px solid var(--border)', color: project.type === 'fork' ? 'var(--accent)' : 'var(--text-muted)' }}>{project.type === 'fork' ? 'Fork' : 'Project'}</span>{project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1 hover:opacity-60 transition-opacity" style={{ color: 'var(--text-faint)' }} aria-label={`${project.title} GitHub`}><Github className="w-4 h-4" /></a>}</div>
                 </div>
-                {project.problem && project.solution && <div className="grid md:grid-cols-2 gap-4 mb-4 text-sm"><div className="rounded-xl p-4" style={{ backgroundColor: 'var(--surface)' }}><div className="font-semibold mb-1" style={{ color: 'var(--text-faint)' }}>{translations.problem}</div><p style={{ color: 'var(--text-muted)' }} className="leading-relaxed">{project.problem}</p></div><div className="rounded-xl p-4" style={{ backgroundColor: 'var(--accent-dim)' }}><div className="font-semibold mb-1" style={{ color: 'var(--accent)' }}>{translations.solution}</div><p style={{ color: 'var(--text-muted)' }} className="leading-relaxed">{project.solution}</p></div></div>}
+                {project.problem && project.solution ? <div className="grid md:grid-cols-2 gap-4 mb-4 text-sm"><div className="rounded-xl p-4" style={{ backgroundColor: 'var(--surface)' }}><div className="font-semibold mb-1" style={{ color: 'var(--text-faint)' }}>{translations.problem}</div><p style={{ color: 'var(--text-muted)' }} className="leading-relaxed">{project.problem}</p></div><div className="rounded-xl p-4" style={{ backgroundColor: 'var(--accent-dim)' }}><div className="font-semibold mb-1" style={{ color: 'var(--accent)' }}>{translations.solution}</div><p style={{ color: 'var(--text-muted)' }} className="leading-relaxed">{project.solution}</p></div></div> : <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>{project.description}</p>}
                 <div className="flex flex-wrap gap-1.5">{project.tags.map(tag => <span key={tag} className="px-1.5 py-0.5 text-xs font-mono rounded" style={{ backgroundColor: 'var(--bg-subtle)', border: '1px solid var(--border)', color: 'var(--text-faint)' }}>{tag}</span>)}</div>
               </div>
             </article>
