@@ -22,6 +22,17 @@ Kubernetes 환경에서는 Helm chart와 StatefulSet을 통해 배포하고, Kub
 
 > **배포 상태:** GitHub Actions 기반 GHCR 배포 workflow는 준비되어 있습니다. 다만 현재 `v0.1.0` 정식 이미지/차트가 실제 registry에 발행된 상태라고 보장하지 않으며, 릴리스 후 실제 artifact 확인이 필요합니다.
 
+## 최신 소스 점검 · 2026-08-20
+
+최근 소스에서는 단순 기능 추가보다 **멀티아키텍처 재현성과 replication 수렴 검증, supply-chain 추적성**을 강화했습니다.
+
+- exporter build toolchain pinning
+- cross-architecture build를 명시적으로 분리·검증
+- 연속 provider failure 상황에서 replication convergence SLO 테스트 추가
+- release tag를 workflow SHA에서 안전하게 해석해 supply-chain 추적성을 강화
+
+따라서 Ldapium의 현재 핵심 방향은 **“LDAP 서버를 띄우는 것”보다 여러 아키텍처와 장애 상황에서도 동일한 운영 결과를 재현하는 것**입니다.
+
 ## 주요 구성 요소
 
 | 영역 | 내용 |
@@ -56,8 +67,6 @@ Helm chart에는 `helm test` 기반 디렉터리 검증이 포함되어 있습�
 - `memberOf` 표시
 - password policy 조회
 - optional Keycloak OIDC SSO
-
-기본 LDAP 로그인에서는 로그인한 사용자의 bind identity를 사용하고, SSO 모드에서만 별도 LDAP service account를 사용합니다.
 
 ## Kubernetes 배포
 
