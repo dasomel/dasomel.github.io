@@ -1,98 +1,23 @@
 {
-  "nav": {
-    "projects": "Projects",
-    "notes": "Notes",
-    "talks": "Talks",
-    "about": "About",
-    "lang": "한국어"
-  },
+  "nav": { "projects": "Projects", "notes": "Notes", "tech_digest": "Tech Digest", "talks": "Talks", "about": "About", "lang": "한국어" },
   "home": {
-    "hero": {
-      "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT",
-      "headline_1": "Build, verify,",
-      "headline_accent": " rethink.",
-      "headline_2": "",
-      "description": "I build Cloud Native platforms and OSS in public. I document failures and experiments, then share how the work changed my mind.",
-      "cta_projects": "OSS projects",
-      "cta_notes": "Development notes"
-    },
+    "hero": { "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT", "headline_1": "Build, verify,", "headline_accent": " rethink.", "headline_2": "", "description": "I build Cloud Native platforms and OSS in public. I document failures and experiments, then share how the work changed my mind.", "cta_projects": "OSS projects", "cta_notes": "Development notes" },
     "sections": {
-      "now_kicker": "NOW",
-      "now": "What I am building",
-      "now_desc": "The homepage starts with active problems and experiments, not a finished portfolio.",
-      "view_projects": "All projects",
-      "notes_kicker": "NOTES",
-      "notes": "Learning in public",
-      "notes_desc": "I start with a claim, investigate it, test it against code and real systems, and keep the result here.",
-      "view_notes": "All notes",
-      "philosophy_kicker": "HOW I WORK",
-      "philosophy": "I write to understand, not after I already understand.",
-      "philosophy_desc": "In OSS work, problem definition and verification often outlive the code itself. AI makes exploration and implementation faster, but deciding what to build and proving that it works are still my responsibility.",
-      "current_question": "OPEN QUESTION",
-      "question": "Is Kubernetes-ready still enough in the age of AI agents?"
+      "now_kicker": "NOW", "now": "What I am building", "now_desc": "The homepage starts with active problems and experiments, not a finished portfolio.", "view_projects": "All projects",
+      "notes_kicker": "NOTES", "notes": "Learning in public", "notes_desc": "I start with a claim, investigate it, test it against code and real systems, and keep the result here.", "view_notes": "All notes",
+      "digest_kicker": "TECH DIGEST", "digest": "Tech Digest", "view_digest": "All digests",
+      "philosophy_kicker": "HOW I WORK", "philosophy": "I write to understand, not after I already understand.", "philosophy_desc": "In OSS work, problem definition and verification often outlive the code itself. AI makes exploration and implementation faster, but deciding what to build and proving that it works are still my responsibility.", "current_question": "OPEN QUESTION", "question": "Is Kubernetes-ready still enough in the age of AI agents?"
     },
-    "stats": {
-      "experience": "Years in IT",
-      "projects": "Projects",
-      "talks": "Talks"
-    }
+    "stats": { "experience": "Years in IT", "projects": "Projects", "talks": "Talks" }
   },
-  "work": {
-    "title": "Projects",
-    "subtitle": "OSS projects I build, operate, and continuously rethink",
-    "problem": "Problem",
-    "solution": "Solution",
-    "search": "Search by project, technology, or problem",
-    "no_results": "No projects match your search."
-  },
-  "speaking": {
-    "title": "Talks",
-    "subtitle_prefix": " years,",
-    "subtitle_suffix": " conference talks",
-    "highlights": "Highlights",
-    "timeline": "Timeline",
-    "total": "Total Talks",
-    "conferences": "Conferences",
-    "years_active": "Years Active"
-  },
-  "blog": {
-    "title": "Notes",
-    "subtitle": "Learning while building OSS and Cloud Native systems",
-    "featured": "Featured",
-    "all_posts": "All Notes",
-    "min_read": "min"
-  },
-  "seminars": {
-    "slides": "Slides",
-    "video": "Video"
-  },
-  "events": {
-    "title": "Events & Festivals",
-    "subtitle": "Seoul cultural events + nationwide festivals (via Seoul Open Data Plaza · Korea Tourism Org.)",
-    "updated_at": "As of {date}",
-    "upcoming": "Ongoing · Upcoming",
-    "past": "Past Events",
-    "free": "Free",
-    "paid": "Paid",
-    "tab_all": "All",
-    "tab_seoul": "Seoul",
-    "tab_festival": "Festivals",
-    "search_placeholder": "Search by name or place",
-    "category_all": "All categories",
-    "free_only": "Free only",
-    "loading_more": "Loading {n} more…",
-    "no_result": "No events match your filters",
-    "no_events": "No events available",
-    "no_events_desc": "Updated automatically every day"
-  },
-  "about": {
-    "title": "About"
-  },
-  "common": {
-    "github": "GitHub",
-    "back": "← Back"
-  },
-  "footer": {
-    "built_with": "built with next.js"
-  }
+  "work": { "title": "Projects", "subtitle": "OSS projects I build, operate, and continuously rethink", "problem": "Problem", "solution": "Solution", "search": "Search by project, technology, or problem", "no_results": "No projects match your search." },
+  "notes": { "title": "Notes", "subtitle": "Learning while building OSS and Cloud Native systems", "featured": "Featured", "all_posts": "All Notes", "min_read": "min" },
+  "tech_digest": { "title": "Tech Digest", "subtitle": "A curated stream of technology news and developments", "notice": "Tech Digest is a separate curation lane from Engineering Notes. It emphasizes sources and quick context so you can scan the technology landscape without mixing it with my original writing.", "featured": "Featured", "all_posts": "All Digests", "min_read": "min" },
+  "speaking": { "title": "Talks", "subtitle_prefix": " years,", "subtitle_suffix": " conference talks", "highlights": "Highlights", "timeline": "Timeline", "total": "Total Talks", "conferences": "Conferences", "years_active": "Years Active" },
+  "blog": { "title": "Notes", "subtitle": "Learning while building OSS and Cloud Native systems", "featured": "Featured", "all_posts": "All Notes", "min_read": "min" },
+  "seminars": { "slides": "Slides", "video": "Video" },
+  "events": { "title": "Events & Festivals", "subtitle": "Seoul cultural events + nationwide festivals (via Seoul Open Data Plaza · Korea Tourism Org.)", "updated_at": "As of {date}", "upcoming": "Ongoing · Upcoming", "past": "Past Events", "free": "Free", "paid": "Paid", "tab_all": "All", "tab_seoul": "Seoul", "tab_festival": "Festivals", "search_placeholder": "Search by name or place", "category_all": "All categories", "free_only": "Free only", "loading_more": "Loading {n} more…", "no_result": "No events match your filters", "no_events": "No events available", "no_events_desc": "Updated automatically every day" },
+  "about": { "title": "About" },
+  "common": { "github": "GitHub", "back": "← Back" },
+  "footer": { "built_with": "built with next.js" }
 }

@@ -1,0 +1,18 @@
+import { getTranslations } from 'next-intl/server';
+import { getTechDigests, getPostBySlug } from '@/lib/content';
+import { routing } from '@/i18n/routing';
+import { PostList } from '@/components/posts/PostList';
+import readingTime from 'reading-time';
+
+export function generateStaticParams() { return routing.locales.map(locale => ({ locale })); }
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; const t = await getTranslations({ locale, namespace: 'tech_digest' });
+  return { title: t('title'), description: t('subtitle') };
+}
+
+export default async function TechDigestPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; const lang = locale as 'ko' | 'en'; const t = await getTranslations({ locale, namespace: 'tech_digest' }); const posts = getTechDigests(lang); const base = lang === 'en' ? '/en' : '/ko';
+  const postsWithReadTime = posts.map(post => { const detail = getPostBySlug(post.slug, lang); const rt = detail ? readingTime(detail.content) : null; return { slug: post.slug, title: post.title, description: post.description, tags: post.tags, pubDate: post.pubDate, featured: post.featured, readTime: rt ? `${Math.ceil(rt.minutes)} ${t('min_read')}` : '' }; });
+  return <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 slide-enter-content"><div className="workbench-eyebrow mb-3">TECH DIGEST</div><h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text)' }}>{t('title')}</h1><p className="text-base mb-8" style={{ color: 'var(--text-muted)' }}>{t('subtitle')}</p><div className="rounded-2xl p-4 mb-8" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{t('notice')}</p></div><PostList posts={postsWithReadTime} base={`${base}`} translations={{ featured: t('featured'), all_posts: t('all_posts') }} /></div>;
+}
