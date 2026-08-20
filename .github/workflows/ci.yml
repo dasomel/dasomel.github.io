@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'deps/**'
+      - 'feat/**'
     paths-ignore:
       - 'package-lock.json'
   pull_request_target:
