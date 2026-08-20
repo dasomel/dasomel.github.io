@@ -5,7 +5,7 @@ import { getPostBySlug, getPosts } from '@/lib/content';
 import { Badge } from '@/components/ui/badge';
 import { MDXContent } from '@/components/MDXContent';
 import { routing } from '@/i18n/routing';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -26,18 +26,34 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   const base = lang === 'en' ? '/en' : '/ko';
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <Link href={`${base}/posts`} className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 mb-8 transition-colors">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <Link href={`${base}/posts`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}>
         <ArrowLeft className="w-4 h-4" />{t('back')}
       </Link>
+
       <header className="mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{meta.title}</h1>
-        {meta.description && <p className="text-lg text-gray-500 mb-4">{meta.description}</p>}
-        <div className="flex items-center gap-4 flex-wrap">
-          <time className="font-mono text-sm text-gray-400">{meta.pubDate.slice(0, 10)}</time>
+        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+          <img src="/images/notes-cover.svg" alt="" className="block w-full h-auto" loading="eager" />
+        </div>
+        <div className="flex items-center gap-3 flex-wrap mb-4">
+          <time className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{meta.pubDate.slice(0, 10)}</time>
+          {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Featured</span>}
           {meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}
         </div>
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4" style={{ color: 'var(--text)' }}>{meta.title}</h1>
+        {meta.description && <p className="text-base sm:text-lg max-w-3xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>}
       </header>
+
+      <div className="rounded-2xl p-4 sm:p-5 mb-10" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <div className="text-[10px] uppercase tracking-[.18em] font-mono mb-1" style={{ color: 'var(--text-faint)' }}>Engineering note</div>
+            <div className="text-sm" style={{ color: 'var(--text-muted)' }}>A public record of what was built, tested, learned, and changed.</div>
+          </div>
+          <ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--accent)' }} />
+        </div>
+      </div>
+
       <article className="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-a:text-emerald-600">
         <MDXContent source={content} />
       </article>
