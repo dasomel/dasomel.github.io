@@ -18,7 +18,7 @@ interface Props {
   };
 }
 
-const visualSlugs = new Set(['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher']);
+const visualSlugs = new Set(['narwhal', 'beluga', 'oh-my-cursor', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
 const safeImage = (slug: string) => `/images/projects/${visualSlugs.has(slug) ? slug : 'default'}.svg`;
 
 export function ProjectList({ projects, base, translations }: Props) {
