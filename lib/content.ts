@@ -5,12 +5,53 @@ import type { Post, Seminar, Project, Doc, SeoulEventsData } from './types';
 
 const contentDir = path.join(process.cwd(), 'src/content');
 
+type FrontMatter = Record<string, unknown>;
+type PostFrontMatter = FrontMatter & {
+  title: string;
+  description?: string;
+  pubDate: string | Date;
+  updatedDate?: string | Date;
+  tags?: string[];
+  image?: string;
+  draft?: boolean;
+  featured?: boolean;
+};
+type SeminarFrontMatter = FrontMatter & {
+  title: string;
+  event: string;
+  date: string | Date;
+  location?: string;
+  slides?: string;
+  video?: string;
+  tags?: string[];
+  featured?: boolean;
+};
+type ProjectFrontMatter = FrontMatter & {
+  title: string;
+  description: string;
+  github: string;
+  tags?: string[];
+  order?: number;
+  type?: 'own' | 'fork';
+  featured?: boolean;
+  problem?: string;
+  solution?: string;
+};
+type DocFrontMatter = FrontMatter & {
+  title: string;
+  description?: string;
+  project?: string;
+  order?: number;
+  date?: string | Date;
+  lastModified?: string | Date;
+};
+
 // Static export renders hundreds of pages and asks the same content collections
 // repeatedly. Keep directory listings and parsed Markdown metadata in memory for
 // the lifetime of the build process instead of hitting disk and gray-matter again.
 const fileListCache = new Map<string, string[]>();
 const rawFileCache = new Map<string, string>();
-const frontMatterCache = new Map<string, { data: Record<string, any>; content: string }>();
+const frontMatterCache = new Map<string, { data: FrontMatter; content: string }>();
 
 function getFiles(collection: string): string[] {
   const cached = fileListCache.get(collection);
@@ -24,16 +65,16 @@ function getFiles(collection: string): string[] {
   return files;
 }
 
-function readParsedFile(collection: string, filename: string) {
+function readParsedFile<T extends FrontMatter>(collection: string, filename: string): { data: T; content: string } | null {
   const cacheKey = `${collection}/${filename}`;
   const cached = frontMatterCache.get(cacheKey);
-  if (cached) return cached;
+  if (cached) return cached as { data: T; content: string };
 
   const filePath = path.join(contentDir, collection, filename);
   if (!fs.existsSync(filePath)) return null;
   const raw = readRawFile(collection, filename);
   const parsed = matter(raw);
-  const result = { data: parsed.data as Record<string, any>, content: parsed.content };
+  const result = { data: parsed.data as T, content: parsed.content };
   frontMatterCache.set(cacheKey, result);
   return result;
 }
@@ -70,8 +111,7 @@ export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
   return getFiles('posts')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const parsed = readParsedFile('posts', f)!;
-      const { data } = parsed;
+      const { data } = readParsedFile<PostFrontMatter>('posts', f)!;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -100,7 +140,7 @@ export function getTechDigests(lang: 'ko' | 'en' = 'ko'): Post[] {
 
 export function getPostBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Post; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const parsed = readParsedFile('posts', filename);
+  const parsed = readParsedFile<PostFrontMatter>('posts', filename);
   if (!parsed) return null;
   const { data, content } = parsed;
   return {
@@ -123,8 +163,7 @@ export function getSeminars(lang: 'ko' | 'en' = 'ko'): Seminar[] {
   return getFiles('seminars')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const parsed = readParsedFile('seminars', f)!;
-      const { data } = parsed;
+      const { data } = readParsedFile<SeminarFrontMatter>('seminars', f)!;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -144,7 +183,7 @@ export function getSeminars(lang: 'ko' | 'en' = 'ko'): Seminar[] {
 
 export function getSeminarBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Seminar; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const parsed = readParsedFile('seminars', filename);
+  const parsed = readParsedFile<SeminarFrontMatter>('seminars', filename);
   if (!parsed) return null;
   const { data, content } = parsed;
   return {
@@ -167,8 +206,7 @@ export function getProjects(lang: 'ko' | 'en' = 'ko'): Project[] {
   return getFiles('projects')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const parsed = readParsedFile('projects', f)!;
-      const { data } = parsed;
+      const { data } = readParsedFile<ProjectFrontMatter>('projects', f)!;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -189,7 +227,7 @@ export function getProjects(lang: 'ko' | 'en' = 'ko'): Project[] {
 
 export function getProjectBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Project; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const parsed = readParsedFile('projects', filename);
+  const parsed = readParsedFile<ProjectFrontMatter>('projects', filename);
   if (!parsed) return null;
   const { data, content } = parsed;
   return {
@@ -214,8 +252,7 @@ export function getDocs(lang: 'ko' | 'en' = 'ko'): Doc[] {
   return getFiles('docs')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const parsed = readParsedFile('docs', f)!;
-      const { data } = parsed;
+      const { data } = readParsedFile<DocFrontMatter>('docs', f)!;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -233,7 +270,7 @@ export function getDocs(lang: 'ko' | 'en' = 'ko'): Doc[] {
 
 export function getDocBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Doc; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const parsed = readParsedFile('docs', filename);
+  const parsed = readParsedFile<DocFrontMatter>('docs', filename);
   if (!parsed) return null;
   const { data, content } = parsed;
   return {
