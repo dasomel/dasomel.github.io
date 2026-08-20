@@ -1,5 +1,5 @@
 {
-  "nav": { "projects": "Projects", "notes": "Notes", "tech_digest": "Tech Digest", "talks": "Talks", "about": "About", "lang": "한국어" },
+  "nav": { "projects": "Projects", "notes": "Notes", "tech_digest": "Tech Digest", "talks": "Talks", "docs": "Docs", "about": "About", "lang": "한국어" },
   "home": {
     "hero": { "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT", "headline_1": "Build, verify,", "headline_accent": " rethink.", "headline_2": "", "description": "I build Cloud Native platforms and OSS in public. I document failures and experiments, then share how the work changed my mind.", "cta_projects": "OSS projects", "cta_notes": "Development notes" },
     "sections": {

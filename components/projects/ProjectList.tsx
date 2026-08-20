@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Github, ArrowUpRight, Search } from 'lucide-react';
 import { TagFilter } from '@/components/ui/tag-filter';
+import { ProjectVisual } from '@/components/projects/ProjectVisual';
 import type { Project } from '@/lib/types';
 
 interface Props {
@@ -19,10 +20,6 @@ interface Props {
 
 const visualSlugs = new Set(['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher']);
 const safeImage = (slug: string) => `/images/projects/${visualSlugs.has(slug) ? slug : 'default'}.svg`;
-const onImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
-  const image = event.currentTarget;
-  if (!image.src.endsWith('/images/projects/default.svg')) image.src = '/images/projects/default.svg';
-};
 
 export function ProjectList({ projects, base, translations }: Props) {
   const [selected, setSelected] = useState('all');
@@ -54,7 +51,7 @@ export function ProjectList({ projects, base, translations }: Props) {
         <>
           {featured.length > 0 && <div className="space-y-5 mb-9">{featured.map(project => (
             <article key={project.slug} className="overflow-hidden rounded-2xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}>
-              <Link href={`${base}/projects/${project.slug}`} className="block overflow-hidden" aria-label={`${project.title} project`}><img src={safeImage(project.slug)} onError={onImageError} alt="" className="block w-full h-auto transition-transform duration-500 hover:scale-[1.01]" loading="lazy" /></Link>
+              <Link href={`${base}/projects/${project.slug}`} className="block overflow-hidden" aria-label={`${project.title} project`}><ProjectVisual src={safeImage(project.slug)} alt="" className="block w-full h-auto transition-transform duration-500 hover:scale-[1.01]" loading="lazy" /></Link>
               <div className="p-5 sm:p-6">
                 <div className="flex items-center justify-between mb-4">
                   <Link href={`${base}/projects/${project.slug}`}><h3 className="text-lg font-bold hover:text-emerald-400 transition-colors" style={{ color: 'var(--text)' }}>{project.title}</h3></Link>
@@ -65,7 +62,7 @@ export function ProjectList({ projects, base, translations }: Props) {
               </div>
             </article>
           ))}</div>}
-          <div className="grid sm:grid-cols-2 gap-3">{rest.map(project => <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group overflow-hidden rounded-2xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}><img src={safeImage(project.slug)} onError={onImageError} alt="" className="block w-full h-auto" loading="lazy" /><div className="p-4 flex items-start justify-between gap-3"><div className="min-w-0"><div className="text-sm font-semibold group-hover:text-emerald-400 transition-colors mb-1" style={{ color: 'var(--text)' }}>{project.title}</div><p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{project.description}</p></div><ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--text-faint)' }} aria-hidden="true" /></div></Link>)}</div>
+          <div className="grid sm:grid-cols-2 gap-3">{rest.map(project => <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group overflow-hidden rounded-2xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}><ProjectVisual src={safeImage(project.slug)} alt="" className="block w-full h-auto" loading="lazy" /><div className="p-4 flex items-start justify-between gap-3"><div className="min-w-0"><div className="text-sm font-semibold group-hover:text-emerald-400 transition-colors mb-1" style={{ color: 'var(--text)' }}>{project.title}</div><p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{project.description}</p></div><ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--text-faint)' }} aria-hidden="true" /></div></Link>)}</div>
         </>
       )}
     </>
