@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
+import { StructuredData } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cne.io.kr'),
@@ -19,9 +20,31 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://cne.io.kr/#website',
+        url: 'https://cne.io.kr/',
+        name: 'dasomel OSS Workbench',
+        description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록.',
+        inLanguage: ['ko-KR', 'en-US'],
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://cne.io.kr/#person',
+        name: 'Kiha Lee',
+        url: 'https://cne.io.kr/ko/about',
+        sameAs: ['https://github.com/dasomel'],
+      },
+    ],
+  };
+
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
+        <StructuredData data={schema} />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
