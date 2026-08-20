@@ -1,77 +1,189 @@
 # dasomel.github.io
 
-**Cloud & DevOps Engineer | Cloud Native / Kubernetes / Platform Engineering**
+**Cloud Native / Platform Engineering / Open Source Workbench**
 
-개인 기술 블로그 [cne.io.kr](https://cne.io.kr) 소스 저장소입니다.
+[**cne.io.kr**](https://cne.io.kr)은 Kubernetes, Cloud Native, Platform Engineering, AI-assisted development, 그리고 오픈소스 프로젝트를 실제로 만들고 운영하면서 얻은 engineering knowledge를 기록하는 bilingual technical workbench입니다.
 
-Cloud Native, Kubernetes, Platform Engineering, AI-assisted development, Open Source 프로젝트와 기술 경험을 기록합니다.
+> **Build in public. Verify with evidence. Learn from failures.**
 
-## Current Projects
+## What this repository is
+
+This repository is more than a personal blog. It is the source of the public **OSS Engineering Workbench** behind `cne.io.kr`.
+
+- **Projects** — OSS projects, experiments, forks, and platform components
+- **Notes** — original engineering writing and development notes
+- **Tech Digest** — automated bilingual technology digest, kept separate from original Notes
+- **Talks** — seminars, presentations, and technical sessions
+- **Docs / Events** — project documentation and selected engineering events
+- **Knowledge Graph** — explicit relationships between Projects, Notes, and Tech Digest entries
+- **Source Snapshot** — static GitHub project metadata refreshed by automation
+
+The site is available in **Korean and English**. Localized content follows a shared slug model so `/ko/...` and `/en/...` remain aligned.
+
+## Featured OSS
 
 ### [Narwhal](https://github.com/dasomel/narwhal)
 
-오픈소스 Kubernetes Internal Developer Platform(IDP)입니다.
+Open-source Kubernetes **Internal Developer Platform (IDP)** integrating GitOps, IAM/SSO, Service Mesh, Observability, Registry, Storage, Backup, Policy, API Gateway, and a management portal.
 
-GitOps, IAM/SSO, Service Mesh, Observability, Registry, Storage, Backup, Policy, API Gateway, Management Portal을 하나의 재현 가능한 플랫폼으로 통합합니다.
-
-- Kubernetes v1.35 기반
-- 35개 GitOps 관리 애플리케이션
+- Kubernetes v1.35 based
+- 35 GitOps-managed applications
 - 51-check CI regression suite
-- 263건의 통합/장애 incident 기록과 regression test 연결
-- Vagrant ARM64, Kakao Cloud AMD64, air-gapped 환경 지원
+- 263 recorded integration / incident lessons with regression-test linkage
+- Vagrant ARM64, Kakao Cloud AMD64, and air-gapped scenarios
 
-### [Narwhal IDP Portal](https://github.com/dasomel/narwhal-portal)
+### [Narwhal Portal](https://github.com/dasomel/narwhal-portal)
 
-Narwhal 클러스터의 Day-2 운영을 위한 Next.js 기반 관리 포털입니다.
+Next.js-based Day-2 management portal for Narwhal clusters, covering Dashboard, Onboarding, Catalog, Nodes, Cost, Security, Governance, Architecture, Templates, and related platform operations.
 
-Dashboard, Onboarding, Catalog, Nodes, Cost, Security, Governance, Architecture, Templates 등의 기능을 제공합니다.
+### [Beluga](https://github.com/dasomel/beluga)
+
+A reproducible local data-platform environment connecting CDC, Kafka, Flink, Iceberg, Trino, Superset, Airflow, object storage, catalog, SSO, and policy components through Kubernetes and GitOps.
+
+### [KubeMetal](https://github.com/dasomel/kubemetal)
+
+Apple Silicon-focused local MLOps platform that separates Kubernetes control-plane responsibilities from macOS host GPU/compute workloads.
 
 ### [kube-ready-box](https://github.com/dasomel/kube-ready-box)
 
-Kubernetes 개발 및 실습 환경을 재현하기 위한 Ubuntu 기반 Vagrant Box 프로젝트입니다.
+Ubuntu-based Vagrant Box for reproducible Kubernetes development, labs, and platform bootstrap environments.
 
-### [Luna Chat Coder](https://github.com/Osteoporosis/luna-chat-coder)
+### [ldapium](https://github.com/dasomel/ldapium)
 
-ChatGPT와 repository-aware AI development를 위한 repository-local skill입니다.
+Containerized OpenLDAP distribution with build, UI, Helm, release, and supply-chain practices designed for reproducible deployment.
 
-Sandbox-first execution, exact Git state, capability inventory, bounded GitHub Actions fallback, recovery 및 evidence-based verification을 중심으로 AI-assisted development workflow를 정리합니다.
+### [nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
 
-## AI-assisted Development
+Kubernetes agent for connecting NFS filesystem project quotas with PersistentVolume lifecycle and storage limits.
 
-현재 개발 과정에서 **ChatGPT, Claude, Gemini, GitHub Copilot**을 함께 사용합니다.
+## Other projects in the workbench
 
-하나의 모델에 개발 workflow를 종속시키기보다, 여러 AI를 활용하면서도 repository의 engineering rules, architecture, tests, operational knowledge를 일관되게 유지하는 것을 목표로 합니다.
+The Projects catalog includes both owned projects and selected forks / integrations, with bilingual project pages where applicable.
 
-이 블로그와 관련 프로젝트는 이러한 AI-assisted open source development 경험을 실제 프로젝트에 적용하며 발전시키고 있습니다.
+- [OpenForge](https://github.com/dasomel/openforge)
+- [Beluga Manager](https://github.com/dasomel/beluga-manager)
+- [eGovFrame Launcher](https://github.com/dasomel/egovframe-launcher)
+- [TerraBoard](https://github.com/dasomel/terraboard)
+- [Oh My Cursor](https://github.com/dasomel/oh-my-cursor)
+- [K-PaaS](https://github.com/dasomel/k-paas)
+- K-PaaS related forks / integrations
+- [Harbor](https://github.com/goharbor/harbor) and related ecosystem work
 
-관련 글:
+The full catalog and project metadata are maintained in [`src/content/projects/`](src/content/projects/).
+
+## Notes and Tech Digest
+
+### Notes
+
+Original engineering writing covers architecture decisions, OSS development, platform engineering, AI-assisted coding, operational lessons, and project retrospectives.
+
+Recent examples include:
+
+- [How I Build Open Source with AI — Lessons from Developing Narwhal](https://cne.io.kr/en/posts/ai-assisted-open-source-development)
+- [AI-Era Open Source: Build the Bathhouse, Not the County Office](https://cne.io.kr/en/posts/ai-era-oss-bathhouse)
+- [How to Safely Develop a Repository with ChatGPT — Luna Chat Coder](https://cne.io.kr/en/posts/luna-chat-coder-adoption)
+- [Operating Six OSS Projects as One Engineering Portfolio](https://cne.io.kr/en/posts/oss-engineering-portfolio-standard)
+
+Each published Notes entry is intended to have a matching English counterpart so the bilingual content model stays consistent.
+
+### Tech Digest
+
+Daily Tech Digest is generated separately from original Notes.
+
+```text
+RSS collection
+    ↓
+Korean + English digest generation
+    ↓
+AI enrichment / validation
+    ↓
+Draft PR
+    ↓
+Fallback publication when needed
+    ↓
+GitHub Pages deployment
+```
+
+The pipeline includes duplicate-publication guards, fallback handling, enrichment validation, and explicit separation between automated digest content and original Notes.
+
+## AI-assisted development
+
+The repository is developed with multiple AI tools, including:
+
+- ChatGPT
+- Claude
+- Gemini
+- GitHub Copilot
+
+The goal is not to delegate engineering judgment to one model. The repository remains the source of truth, while AI is used for exploration, implementation, review, debugging, and documentation.
+
+This workflow is documented in [Luna Chat Coder](https://github.com/Osteoporosis/luna-chat-coder) and applied to this repository through:
+
+```text
+AGENTS.md
+    ↓
+.agents/skills/luna-chat-coder/
+    ↓
+repository-local policy
+    ↓
+sandbox-first implementation
+    ↓
+exact Git state
+    ↓
+validation / evidence
+```
+
+Related Notes:
 
 - [ChatGPT로 안전하게 리포지토리를 개발하는 방법 — Luna Chat Coder 적용기](https://cne.io.kr/ko/posts/luna-chat-coder-adoption)
 - [AI와 함께 오픈소스를 만드는 방법 — Narwhal을 개발하며](https://cne.io.kr/ko/posts/ai-assisted-open-source-development)
 
-## Tech Stack
+## Engineering principles
+
+The workbench follows a few recurring principles:
+
+1. **Repository as source of truth** — Git state, tests, manifests, and generated evidence outrank conversational assumptions.
+2. **Integration is a product feature** — the hard part of a platform is often the seam between components.
+3. **Evidence-based completion** — a change is complete only when the intended validation actually passes.
+4. **Failure becomes knowledge** — incidents and lessons should become durable repository knowledge and regression tests where practical.
+5. **Static where possible** — GitHub Pages should remain a static site; runtime metadata and GitHub API dependencies are avoided in the build path.
+6. **Bilingual parity** — Korean and English content should remain structurally aligned.
+
+## Tech stack
 
 ### Website
 
-- [Next.js 15](https://nextjs.org/)
-- [next-intl](https://next-intl-docs.vercel.app/) - 다국어 지원
+- [Next.js 16](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [next-intl](https://next-intl.dev/) — Korean / English routing
 - [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
 - Static export (`output: export`)
 - [GitHub Pages](https://pages.github.com/)
 
-### Content / Development
+### Content and rendering
 
-- Markdown / MDX 기반 콘텐츠
+- Markdown / MDX source content
+- `next-mdx-remote-client`
+- GFM, Shiki, Mermaid, `rehype-pretty-code`
+- RSS generation for Notes and Tech Digest
+
+### Automation
+
 - GitHub Actions
-- AI-assisted development workflow
+- project source metadata refresh
+- daily digest collection / enrichment / health checks
+- static build and deployment
 
-## Repository Structure
+## Repository structure
 
 ```text
 .
 ├── app/
 │   └── [locale]/
 │       ├── posts/
+│       ├── notes/
+│       ├── tech-digest/
 │       ├── projects/
 │       ├── docs/
 │       ├── seminars/
@@ -83,6 +195,14 @@ Sandbox-first execution, exact Git state, capability inventory, bounded GitHub A
 │       ├── docs/
 │       ├── seminars/
 │       └── events/
+├── scripts/
+│   ├── generate-daily-digest.mjs
+│   ├── publish-enrichment.mjs
+│   ├── check-enrichment.mjs
+│   ├── enrich-apply.mjs
+│   └── refresh-project-metadata.mjs
+├── .github/
+│   └── workflows/
 ├── .agents/
 │   └── skills/
 │       └── luna-chat-coder/
@@ -90,17 +210,15 @@ Sandbox-first execution, exact Git state, capability inventory, bounded GitHub A
 └── CLAUDE.md
 ```
 
-`AGENTS.md`는 repository-level entry point이며, `.agents/skills/luna-chat-coder/`는 AI-assisted repository development를 위한 공통 policy를 제공합니다.
+`lib/content.ts` provides the shared content model and locale-aware lookup. Notes explicitly exclude `daily-digest-*` entries from the original Notes lane, while the Tech Digest route handles them separately.
 
-프로젝트 고유의 개발 및 운영 규칙은 기존 `CLAUDE.md`와 repository tooling을 유지합니다.
-
-## Getting Started
+## Development
 
 ```bash
-# 의존성 설치
+# install dependencies
 npm install
 
-# 개발 서버
+# development server
 npm run dev
 
 # lint
@@ -110,35 +228,46 @@ npm run lint
 npm run build
 ```
 
-## Deployment
+Useful automation commands:
 
-GitHub Pages를 통해 자동 배포됩니다.
+```bash
+# refresh static OSS source metadata
+npm run projects:refresh
 
-```text
-main 브랜치
-    ↓
-GitHub Actions
-    ↓
-Next.js static export
-    ↓
-GitHub Pages
-    ↓
-cne.io.kr
+# collect digest feeds
+npm run digest:collect
+
+# generate bilingual daily digest
+npm run digest
+
+# validate enrichment coverage
+npm run digest:check
 ```
 
-배포 workflow와 기존 publication behavior는 repository 운영 규칙에 따라 관리합니다.
+## Deployment
 
-## Blog Topics
+```text
+main
+  ↓
+GitHub Actions
+  ↓
+npm run lint
+  ↓
+npm run build
+  ↓
+Next.js static export
+  ↓
+GitHub Pages
+  ↓
+https://cne.io.kr
+```
 
-- Cloud Native
-- Kubernetes
-- Platform Engineering
-- AI / AI-assisted Development
-- DevOps
-- GitOps
-- Open Source
-- Infrastructure Automation
-- Data / AI Platform
+The build is designed to remain static and reproducible. GitHub API metadata is refreshed by automation and stored as static repository data rather than queried at page-build time.
+
+## Site
+
+- Website: [https://cne.io.kr](https://cne.io.kr)
+- GitHub: [https://github.com/dasomel](https://github.com/dasomel)
 
 ## License
 
