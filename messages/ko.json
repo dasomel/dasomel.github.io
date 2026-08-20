@@ -19,6 +19,7 @@
     "stats": { "experience": "IT 경력", "projects": "프로젝트", "talks": "발표 기록" }
   },
   "work": { "title": "Projects", "subtitle": "직접 만들고 운영하며 계속 바뀌는 OSS 작업들", "problem": "문제", "solution": "해결", "search": "프로젝트명·기술·문제로 검색", "no_results": "조건에 맞는 프로젝트가 없습니다." },
+  "project": { "summary": "프로젝트 요약", "problem": "문제", "response": "대응", "context": "Workbench Context", "signals": "기술 신호", "signals_desc": "프로젝트를 정의하는 기술·영역 태그 수", "docs": "Technical Docs", "docs_desc": "이 프로젝트와 직접 연결된 기술 문서", "related_notes": "Related Notes", "notes_desc": "이 프로젝트와 연결된 Engineering Notes" },
   "notes": { "title": "Notes", "subtitle": "OSS와 Cloud Native를 직접 만들며 배우는 기록", "featured": "Featured", "all_posts": "All Notes", "min_read": "min" },
   "tech_digest": { "title": "Tech Digest", "subtitle": "관심 있는 기술 소식을 모아 읽기 쉽게 정리한 다이제스트", "notice": "Tech Digest는 직접 작성하는 Engineering Notes와 분리된 큐레이션 영역입니다. 원문과 출처를 중심으로 기술 흐름을 빠르게 살펴봅니다.", "featured": "Featured", "all_posts": "All Digests", "min_read": "min" },
   "speaking": { "title": "Talks", "subtitle_prefix": "년간", "subtitle_suffix": "컨퍼런스 발표 기록", "highlights": "Highlights", "timeline": "Timeline", "total": "총 발표", "conferences": "컨퍼런스", "years_active": "활동 기간" },
