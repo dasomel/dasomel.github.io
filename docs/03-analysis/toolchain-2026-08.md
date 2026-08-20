@@ -28,7 +28,7 @@ This branch evaluates a major toolchain refresh for the blog:
 4. Static export verification for GitHub Pages
 5. Visual regression review for Tailwind v4 Preflight and utility changes
 
-CI now refreshes `package-lock.json` automatically for same-repository pull requests before validation, so dependency metadata stays synchronized with `package.json`.
+CI now refreshes `package-lock.json` automatically for same-repository pull requests and dependency branches before validation, so dependency metadata stays synchronized with `package.json`.
 
 ## Known follow-up
 
@@ -38,4 +38,6 @@ CI now refreshes `package-lock.json` automatically for same-repository pull requ
 
 Next.js 16 and Tailwind CSS 4 form the current modern web toolchain candidate. ESLint 10 is deferred until the upstream React lint plugin supports its context API. This branch is merge-ready only after CI verifies both linting and the complete static export.
 
-_Validation note: the PR workflow intentionally runs from the base branch and checks out the PR head._
+_Validation note: the PR workflow runs from the base branch and checks out the PR head._
+
+_Trigger note: the dependency branch also runs CI directly on push._
