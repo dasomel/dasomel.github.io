@@ -10,16 +10,6 @@
     "license": "Apache-2.0",
     "pushedAt": "2026-08-20T00:39:52Z"
   },
-  "dasomel/beluga-manager": {
-    "repo": "dasomel/beluga-manager",
-    "htmlUrl": "https://github.com/dasomel/beluga-manager",
-    "description": "Unified control plane and management layer for the Beluga Data Platform.",
-    "stars": 0,
-    "forks": 0,
-    "openIssues": 0,
-    "language": "TypeScript",
-    "pushedAt": "2026-08-20T05:00:00Z"
-  },
   "dasomel/narwhal": {
     "repo": "dasomel/narwhal",
     "htmlUrl": "https://github.com/dasomel/narwhal",
@@ -30,15 +20,5 @@
     "language": "Shell",
     "license": "Apache-2.0",
     "pushedAt": "2026-08-20T04:00:52Z"
-  },
-  "dasomel/openforge": {
-    "repo": "dasomel/openforge",
-    "htmlUrl": "https://github.com/dasomel/openforge",
-    "description": "Open-source project blueprint and engineering standards.",
-    "stars": 0,
-    "forks": 0,
-    "openIssues": 0,
-    "language": "Markdown",
-    "pushedAt": "2026-08-20T05:00:00Z"
   }
 }
