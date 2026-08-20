@@ -5,10 +5,48 @@ import type { Post, Seminar, Project, Doc, SeoulEventsData } from './types';
 
 const contentDir = path.join(process.cwd(), 'src/content');
 
+// Static export renders hundreds of pages and asks the same content collections
+// repeatedly. Keep directory listings and parsed Markdown metadata in memory for
+// the lifetime of the build process instead of hitting disk and gray-matter again.
+const fileListCache = new Map<string, string[]>();
+const rawFileCache = new Map<string, string>();
+const frontMatterCache = new Map<string, { data: Record<string, any>; content: string }>();
+
 function getFiles(collection: string): string[] {
+  const cached = fileListCache.get(collection);
+  if (cached) return cached;
+
   const dir = path.join(contentDir, collection);
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir).filter(f => f.endsWith('.md') || f.endsWith('.mdx'));
+  const files = fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter(f => f.endsWith('.md') || f.endsWith('.mdx'))
+    : [];
+  fileListCache.set(collection, files);
+  return files;
+}
+
+function readParsedFile(collection: string, filename: string) {
+  const cacheKey = `${collection}/${filename}`;
+  const cached = frontMatterCache.get(cacheKey);
+  if (cached) return cached;
+
+  const filePath = path.join(contentDir, collection, filename);
+  if (!fs.existsSync(filePath)) return null;
+  const raw = readRawFile(collection, filename);
+  const parsed = matter(raw);
+  const result = { data: parsed.data as Record<string, any>, content: parsed.content };
+  frontMatterCache.set(cacheKey, result);
+  return result;
+}
+
+function readRawFile(collection: string, filename: string): string {
+  const cacheKey = `${collection}/${filename}`;
+  const cached = rawFileCache.get(cacheKey);
+  if (cached !== undefined) return cached;
+
+  const filePath = path.join(contentDir, collection, filename);
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  rawFileCache.set(cacheKey, raw);
+  return raw;
 }
 
 function isEnglish(filename: string): boolean {
@@ -32,8 +70,8 @@ export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
   return getFiles('posts')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const raw = fs.readFileSync(path.join(contentDir, 'posts', f), 'utf-8');
-      const { data } = matter(raw);
+      const parsed = readParsedFile('posts', f)!;
+      const { data } = parsed;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -62,10 +100,9 @@ export function getTechDigests(lang: 'ko' | 'en' = 'ko'): Post[] {
 
 export function getPostBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Post; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const filePath = path.join(contentDir, 'posts', filename);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(raw);
+  const parsed = readParsedFile('posts', filename);
+  if (!parsed) return null;
+  const { data, content } = parsed;
   return {
     meta: {
       slug,
@@ -86,8 +123,8 @@ export function getSeminars(lang: 'ko' | 'en' = 'ko'): Seminar[] {
   return getFiles('seminars')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const raw = fs.readFileSync(path.join(contentDir, 'seminars', f), 'utf-8');
-      const { data } = matter(raw);
+      const parsed = readParsedFile('seminars', f)!;
+      const { data } = parsed;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -107,10 +144,9 @@ export function getSeminars(lang: 'ko' | 'en' = 'ko'): Seminar[] {
 
 export function getSeminarBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Seminar; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const filePath = path.join(contentDir, 'seminars', filename);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(raw);
+  const parsed = readParsedFile('seminars', filename);
+  if (!parsed) return null;
+  const { data, content } = parsed;
   return {
     meta: {
       slug,
@@ -131,8 +167,8 @@ export function getProjects(lang: 'ko' | 'en' = 'ko'): Project[] {
   return getFiles('projects')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const raw = fs.readFileSync(path.join(contentDir, 'projects', f), 'utf-8');
-      const { data } = matter(raw);
+      const parsed = readParsedFile('projects', f)!;
+      const { data } = parsed;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -153,10 +189,9 @@ export function getProjects(lang: 'ko' | 'en' = 'ko'): Project[] {
 
 export function getProjectBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Project; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const filePath = path.join(contentDir, 'projects', filename);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(raw);
+  const parsed = readParsedFile('projects', filename);
+  if (!parsed) return null;
+  const { data, content } = parsed;
   return {
     meta: {
       slug,
@@ -179,8 +214,8 @@ export function getDocs(lang: 'ko' | 'en' = 'ko'): Doc[] {
   return getFiles('docs')
     .filter(f => getLang(f) === lang)
     .map(f => {
-      const raw = fs.readFileSync(path.join(contentDir, 'docs', f), 'utf-8');
-      const { data } = matter(raw);
+      const parsed = readParsedFile('docs', f)!;
+      const { data } = parsed;
       const slug = getSlug(f, lang);
       return {
         slug,
@@ -198,10 +233,9 @@ export function getDocs(lang: 'ko' | 'en' = 'ko'): Doc[] {
 
 export function getDocBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Doc; content: string } | null {
   const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
-  const filePath = path.join(contentDir, 'docs', filename);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(raw);
+  const parsed = readParsedFile('docs', filename);
+  if (!parsed) return null;
+  const { data, content } = parsed;
   return {
     meta: {
       slug,
