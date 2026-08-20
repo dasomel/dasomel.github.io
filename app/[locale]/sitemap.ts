@@ -7,16 +7,15 @@ export function generateStaticParams() {
   return [{ locale: 'ko' }, { locale: 'en' }];
 }
 
-const BASE_URL = 'https://dasomel.github.io';
+const BASE_URL = 'https://cne.io.kr';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['ko', 'en'] as const;
   const entries: MetadataRoute.Sitemap = [];
 
   for (const lang of locales) {
-    const base = lang === 'en' ? `${BASE_URL}/en` : BASE_URL;
+    const base = `${BASE_URL}/${lang}`;
 
-    // Static pages
     entries.push(
       { url: `${base}/`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
       { url: `${base}/posts`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
@@ -26,17 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `${base}/about`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
     );
 
-    // Posts
     for (const post of getPosts(lang)) {
       entries.push({
         url: `${base}/posts/${post.slug}`,
-        lastModified: new Date(post.pubDate),
+        lastModified: new Date(post.updatedDate ?? post.pubDate),
         changeFrequency: 'yearly',
         priority: 0.7,
       });
     }
 
-    // Projects
     for (const project of getProjects(lang)) {
       entries.push({
         url: `${base}/projects/${project.slug}`,
@@ -46,7 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Seminars
     for (const seminar of getSeminars(lang)) {
       entries.push({
         url: `${base}/seminars/${seminar.slug}`,
@@ -56,7 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Docs
     for (const doc of getDocs(lang)) {
       entries.push({
         url: `${base}/docs/${doc.slug}`,
