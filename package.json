@@ -9,6 +9,7 @@
     "festivals:fetch": "node scripts/fetch-festivals.mjs",
     "start": "next start",
     "lint": "eslint .",
+    "projects:refresh": "node scripts/refresh-project-metadata.mjs",
     "digest:collect": "node scripts/collect-feeds.mjs",
     "digest": "node scripts/generate-daily-digest.mjs",
     "digest:enrich-publish": "node scripts/publish-enrichment.mjs",
