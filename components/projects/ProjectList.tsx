@@ -21,8 +21,8 @@ interface Props {
   };
 }
 
-const visualSlugs = new Set(['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
-const coreOrder = ['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'narwhal-portal', 'k-paas'];
+const visualSlugs = new Set(['narwhal', 'beluga', 'narwhal-portal', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
+const coreOrder = ['narwhal', 'narwhal-portal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas'];
 const coreRank = new Map(coreOrder.map((slug, index) => [slug, index]));
 const safeImage = (slug: string) => `/images/projects/${visualSlugs.has(slug) ? slug : 'default'}.svg`;
 
