@@ -37,3 +37,5 @@ CI now refreshes `package-lock.json` automatically for same-repository pull requ
 ## Major versions deliberately evaluated together
 
 Next.js 16 and Tailwind CSS 4 form the current modern web toolchain candidate. ESLint 10 is deferred until the upstream React lint plugin supports its context API. This branch is merge-ready only after CI verifies both linting and the complete static export.
+
+_Validation note: the PR workflow intentionally runs from the base branch and checks out the PR head._
