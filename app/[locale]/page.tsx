@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params; const lang = locale as 'ko' | 'en'; const t = await getTranslations({ locale, namespace: 'home' }); const base = lang === 'en' ? '/en' : '/ko';
   const notes = getNotes(lang); const digests = getTechDigests(lang); const projects = getProjects(lang); const seminars = getSeminars(lang);
-  const featuredSlugs = ['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'egovframe-launcher', 'oh-my-cursor'];
+  const featuredSlugs = ['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'egovframe-launcher'];
   const currentProjects = featuredSlugs.map(slug => projects.find(p => p.slug === slug)).filter((p): p is (typeof projects)[number] => Boolean(p));
   const latestNotes = notes.slice(0, 4).map(post => { const detail = getPostBySlug(post.slug, lang); const rt = detail ? readingTime(detail.content) : null; return { ...post, readTime: rt ? `${Math.ceil(rt.minutes)} min` : '' }; });
   const latestDigest = digests[0]; const yearsActive = new Date().getFullYear() - 2011;
