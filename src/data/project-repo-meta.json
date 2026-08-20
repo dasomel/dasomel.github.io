@@ -1,1 +1,24 @@
-{}
+{
+  "dasomel/beluga": {
+    "repo": "dasomel/beluga",
+    "htmlUrl": "https://github.com/dasomel/beluga",
+    "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 98,
+    "language": "Shell",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-20T00:39:52Z"
+  },
+  "dasomel/narwhal": {
+    "repo": "dasomel/narwhal",
+    "htmlUrl": "https://github.com/dasomel/narwhal",
+    "description": "Vagrant-based Kubernetes Internal Developer Platform (IDP)",
+    "stars": 0,
+    "forks": 1,
+    "openIssues": 161,
+    "language": "Shell",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-20T04:00:52Z"
+  }
+}
