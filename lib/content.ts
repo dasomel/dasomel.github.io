@@ -1,9 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import type { Post, Seminar, Project, Doc, SeoulEventsData } from './types';
+import type { Post, Seminar, Project, ProjectRepositoryMeta, Doc, SeoulEventsData } from './types';
 
 const contentDir = path.join(process.cwd(), 'src/content');
+const projectMetaFile = path.join(process.cwd(), 'src/data/project-repo-meta.json');
+
+const projectRepoMeta = (() => {
+  try {
+    return JSON.parse(fs.readFileSync(projectMetaFile, 'utf-8')) as Record<string, ProjectRepositoryMeta>;
+  } catch {
+    return {};
+  }
+})();
 
 type FrontMatter = Record<string, unknown>;
 type PostFrontMatter = FrontMatter & {
@@ -33,6 +42,7 @@ type ProjectFrontMatter = FrontMatter & {
   tags?: string[];
   order?: number;
   type?: 'own' | 'fork';
+  status?: 'active' | 'maintained' | 'experimental' | 'archived';
   featured?: boolean;
   problem?: string;
   solution?: string;
@@ -101,6 +111,16 @@ function getLang(filename: string): 'ko' | 'en' {
 function getSlug(filename: string, lang: 'ko' | 'en'): string {
   const base = filename.replace(/\.(md|mdx)$/, '');
   return lang === 'en' ? base.replace(/-en$/, '') : base;
+}
+
+function getRepoKey(github: string): string | null {
+  const match = github.match(/^https:\/\/github\.com\/([^/]+\/[^/]+?)(?:\.git)?\/?$/);
+  return match?.[1] ?? null;
+}
+
+function getProjectRepoMeta(github: string): ProjectRepositoryMeta | undefined {
+  const key = getRepoKey(github);
+  return key ? projectRepoMeta[key] : undefined;
 }
 
 function isTechDigest(post: Post): boolean {
@@ -216,6 +236,8 @@ export function getProjects(lang: 'ko' | 'en' = 'ko'): Project[] {
         tags: data.tags ?? [],
         order: data.order,
         type: data.type,
+        status: data.status,
+        repoMeta: getProjectRepoMeta(data.github),
         featured: data.featured ?? false,
         problem: data.problem,
         solution: data.solution,
@@ -239,6 +261,8 @@ export function getProjectBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta
       tags: data.tags ?? [],
       order: data.order,
       type: data.type,
+      status: data.status,
+      repoMeta: getProjectRepoMeta(data.github),
       featured: data.featured ?? false,
       problem: data.problem,
       solution: data.solution,
