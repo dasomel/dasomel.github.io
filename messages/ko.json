@@ -41,7 +41,9 @@
     "title": "Projects",
     "subtitle": "직접 만들고 운영하며 계속 바뀌는 OSS 작업들",
     "problem": "문제",
-    "solution": "해결"
+    "solution": "해결",
+    "search": "프로젝트명·기술·문제로 검색",
+    "no_results": "조건에 맞는 프로젝트가 없습니다."
   },
   "speaking": {
     "title": "Talks",
