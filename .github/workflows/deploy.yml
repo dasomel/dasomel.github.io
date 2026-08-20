@@ -8,11 +8,6 @@ on:
     # 02:40 UTC (= 11:40 KST) 백스톱.
     # 봇 커밋은 `on: push` 를 트리거하지 못하므로 다이제스트/행사 워크플로가
     # 배포 dispatch 에 실패해도 하루 한 번은 main 최신 상태가 발행되게 한다.
-    #
-    # 예전 값 '0 9'(=18:00 KST)은 발행이 오후일 때 기준이었다. 발행이 오전으로
-    # 옮겨간 지금 그대로 두면, dispatch 가 실패했을 때 사이트가 저녁까지 묵는다.
-    # digest-fallback(23:25 UTC)이 최악의 지연(관측 127분)을 먹어도 01:32 UTC 에는
-    # 끝나므로 02:40 이면 그 뒤다. update-events(23:30 UTC)도 함께 커버한다.
     - cron: '40 2 * * *'
 
 permissions:
@@ -23,6 +18,11 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: '1'
+  NPM_CONFIG_AUDIT: 'false'
+  NPM_CONFIG_FUND: 'false'
 
 jobs:
   build:
@@ -41,7 +41,7 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit --no-fund
 
       - name: Build
         run: npm run build
