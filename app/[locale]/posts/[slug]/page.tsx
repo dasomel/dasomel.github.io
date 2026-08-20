@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -59,7 +60,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
 
       <header className="mb-10">
         <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
-          <img src={meta.image ?? (digest ? '/images/digest-cover.svg' : '/images/notes-cover.svg')} alt="" aria-hidden="true" className="block w-full h-auto" loading="eager" />
+          <Image src={meta.image ?? (digest ? '/images/digest-cover.svg' : '/images/notes-cover.svg')} alt="" aria-hidden="true" width={1600} height={900} unoptimized className="block w-full h-auto" loading="eager" />
         </div>
         <div className="flex items-center gap-3 flex-wrap mb-4">
           <span className="text-[10px] uppercase tracking-[.18em] font-mono px-2 py-1 rounded-full" style={{ backgroundColor: digest ? 'var(--surface)' : 'var(--accent-dim)', color: digest ? 'var(--text-muted)' : 'var(--accent)', border: '1px solid var(--border)' }}>
