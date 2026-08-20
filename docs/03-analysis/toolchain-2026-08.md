@@ -32,6 +32,6 @@ This branch evaluates a major toolchain refresh for the blog:
 
 `next-mdx-remote` is archived upstream and should not be treated as a long-term dependency. A future migration should evaluate a maintained MDX pipeline before removing it.
 
-## Major versions deliberately not mixed with this branch
+## Major versions deliberately evaluated together
 
-Next.js 16, Tailwind CSS 4, and ESLint 10 are intentionally evaluated together here because they form a coherent modern web toolchain. The upgrade should merge only after the full static build and visual regression checks pass.
+Next.js 16, Tailwind CSS 4, and ESLint 10 form the current modern web toolchain candidate. This branch is merge-ready only after CI verifies both linting and the complete static export.
