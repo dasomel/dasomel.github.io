@@ -1,13 +1,13 @@
 # 2026 Web Toolchain Review
 
-## Upgrade target
+## Production baseline
 
-This branch evaluates a major toolchain refresh for the blog:
+The production site now runs:
 
 - Next.js 16.x
 - React 19.2.x
 - Tailwind CSS 4.3.x
-- ESLint 9.x (ESLint 10 deferred due upstream React plugin compatibility)
+- ESLint 9.x
 - next-intl 4.13.x
 - Shiki 4.4.x
 - rehype-pretty-code 0.14.x
@@ -26,18 +26,26 @@ This branch evaluates a major toolchain refresh for the blog:
 2. `npm run lint`
 3. `npm run build`
 4. Static export verification for GitHub Pages
-5. Visual regression review for Tailwind v4 Preflight and utility changes
+5. Visual smoke checks for representative project and note pages
 
-CI now refreshes `package-lock.json` automatically for same-repository pull requests and dependency branches before validation, so dependency metadata stays synchronized with `package.json`.
+## MDX migration follow-up
 
-## Known follow-up
+`next-mdx-remote` was archived by its owner on April 9, 2026. The current implementation uses `next-mdx-remote/rsc` with `remark-gfm`, `rehype-pretty-code`, and a custom Mermaid component.
 
-`next-mdx-remote` is archived upstream and should not be treated as a long-term dependency. A future migration should evaluate a maintained MDX pipeline before removing it.
+The first candidate for replacement is the official `@next/mdx` integration. Upstream Next.js documentation and discussion indicate that `@next/mdx` can also handle MDX sourced outside the `app` directory, so the migration should not assume that local content requires another remote-MDX package.
+
+Before changing production, the replacement must preserve:
+
+- local `src/content/**/*.md` files
+- dynamic localized post/doc routes
+- `remark-gfm`
+- `rehype-pretty-code`
+- custom `<Mermaid />` rendering
+- table overflow wrapper
+- Korean/English static generation
+
+`next-mdx-remote-client` is a secondary alternative for comparison, not the default target.
 
 ## Major versions deliberately evaluated together
 
-Next.js 16 and Tailwind CSS 4 form the current modern web toolchain candidate. ESLint 10 is deferred until the upstream React lint plugin supports its context API. This branch is merge-ready only after CI verifies both linting and the complete static export.
-
-_Validation note: the PR workflow runs from the base branch and checks out the PR head._
-
-_Trigger note: the dependency branch also runs CI directly on push._
+Next.js 16 and Tailwind CSS 4 are now production-tested. ESLint 10 remains deferred because the React lint stack used by `eslint-config-next` is not yet compatible with the ESLint 10 context API.
