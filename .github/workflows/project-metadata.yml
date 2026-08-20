@@ -1,0 +1,59 @@
+name: Refresh OSS project metadata
+
+on:
+  schedule:
+    - cron: '0 18 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: project-metadata-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.19.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund --ignore-scripts
+
+      - name: Refresh repository metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/refresh-project-metadata.mjs
+
+      - name: Create review branch and PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- src/data/project-repo-meta.json; then
+            echo 'No project metadata changes.'
+            exit 0
+          fi
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="automation/project-metadata-${DATE}"
+          git switch -c "$BRANCH"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/project-repo-meta.json
+          git commit -m "chore: refresh OSS project metadata"
+          git push --set-upstream origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore: refresh OSS project metadata" \
+            --body "Automated GitHub source metadata refresh. Curated project content is intentionally untouched."
