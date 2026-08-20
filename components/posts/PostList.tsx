@@ -18,13 +18,14 @@ interface PostItem {
 interface Props {
   posts: PostItem[];
   base: string;
+  showTagFilter?: boolean;
   translations: {
     featured: string;
     all_posts: string;
   };
 }
 
-export function PostList({ posts, base, translations }: Props) {
+export function PostList({ posts, base, showTagFilter = true, translations }: Props) {
   const [selected, setSelected] = useState('all');
 
   const allTags = [...new Set(posts.flatMap(p => p.tags))];
@@ -42,7 +43,9 @@ export function PostList({ posts, base, translations }: Props) {
 
   return (
     <>
-      <TagFilter tags={allTags} selected={selected} onChange={setSelected} />
+      {showTagFilter && (
+        <TagFilter tags={allTags} selected={selected} onChange={setSelected} />
+      )}
 
       {/* Featured post */}
       {featuredPost && (
