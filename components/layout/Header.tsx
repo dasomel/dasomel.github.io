@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Github } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface HeaderProps { locale: 'ko' | 'en'; }
@@ -25,11 +25,9 @@ export default function Header({ locale }: HeaderProps) {
     : pathname.replace(/^\/ko/, '/en') || '/en/';
 
   const navItems = [
-    { href: `${base}/projects`, label: t('work') },
-    { href: `${base}/seminars`, label: t('speaking') },
-    { href: `${base}/docs/about`, label: t('docs') },
-    { href: `${base}/posts`, label: t('blog') },
-    { href: `${base}/events`, label: t('events') },
+    { href: `${base}/projects`, label: t('projects') },
+    { href: `${base}/posts`, label: t('notes') },
+    { href: `${base}/seminars`, label: t('talks') },
     { href: `${base}/about`, label: t('about') },
   ];
 
@@ -39,81 +37,61 @@ export default function Header({ locale }: HeaderProps) {
     <header
       className="sticky top-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
+        backgroundColor: scrolled ? 'rgba(255,255,255,0.88)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px) saturate(180%)' : 'none',
         borderBottom: `1px solid ${scrolled ? 'var(--border)' : 'transparent'}`,
       }}
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
-          {/* Logo */}
-          <Link
-            href={locale === 'en' ? '/en/' : '/ko/'}
-            className="font-mono text-sm font-medium transition-opacity hover:opacity-60"
-            style={{ color: 'var(--text)' }}
-          >
+          <Link href={base + '/'} className="font-mono text-sm font-semibold tracking-tight" style={{ color: 'var(--text)' }}>
             <span style={{ color: 'var(--accent)' }}>~/</span>dasomel
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-0.5">
+          <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="px-3 py-1.5 text-sm rounded-lg transition-all"
+              <Link key={item.href} href={item.href} className="px-3 py-1.5 text-sm rounded-lg transition-colors"
                 style={{
                   color: isActive(item.href) ? 'var(--text)' : 'var(--text-muted)',
-                  fontWeight: isActive(item.href) ? 500 : 400,
+                  fontWeight: isActive(item.href) ? 600 : 400,
                   backgroundColor: isActive(item.href) ? 'var(--surface)' : 'transparent',
-                }}
-              >
+                }}>
                 {item.label}
               </Link>
             ))}
-            <div className="w-px h-3.5 mx-2" style={{ backgroundColor: 'var(--border-hi)' }} />
-            <Link
-              href={langSwitch}
-              className="px-2.5 py-1 font-mono text-xs rounded-lg border transition-opacity hover:opacity-70"
-              style={{ color: 'var(--text-muted)', borderColor: 'var(--border)' }}
-            >
+            <a href="https://github.com/dasomel" target="_blank" rel="noreferrer" aria-label="GitHub"
+              className="ml-2 p-2 rounded-lg transition-opacity hover:opacity-60" style={{ color: 'var(--text-muted)' }}>
+              <Github className="w-4 h-4" />
+            </a>
+            <div className="w-px h-4 mx-1" style={{ backgroundColor: 'var(--border-hi)' }} />
+            <Link href={langSwitch} className="px-2.5 py-1 font-mono text-xs rounded-lg border" style={{ color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
               {t('lang')}
             </Link>
           </nav>
 
-          {/* Mobile */}
-          <div className="flex items-center gap-3 md:hidden">
-            <Link href={langSwitch}
-              className="font-mono text-xs px-2 py-1 border rounded-md"
-              style={{ color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
+          <div className="flex items-center gap-2 md:hidden">
+            <Link href={langSwitch} className="font-mono text-xs px-2 py-1 border rounded-md" style={{ color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
               {t('lang')}
             </Link>
-            <button onClick={() => setOpen(!open)}
-              className="p-1.5 rounded-md transition-opacity hover:opacity-70"
-              style={{ color: 'var(--text-muted)' }}
-              aria-label="메뉴">
+            <button onClick={() => setOpen(!open)} className="p-1.5 rounded-md" style={{ color: 'var(--text-muted)' }} aria-label="Menu">
               {open ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden" style={{ backgroundColor: 'var(--bg-subtle)', borderTop: '1px solid var(--border)' }}>
-          <nav className="max-w-4xl mx-auto px-4 py-3 flex flex-col gap-0.5">
+          <nav className="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-3 py-2.5 text-sm rounded-lg transition-all"
-                style={{
-                  color: isActive(item.href) ? 'var(--text)' : 'var(--text-muted)',
-                  backgroundColor: isActive(item.href) ? 'var(--surface)' : 'transparent',
-                  fontWeight: isActive(item.href) ? 500 : 400,
-                }}>
+              <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="px-3 py-2.5 text-sm rounded-lg"
+                style={{ color: isActive(item.href) ? 'var(--text)' : 'var(--text-muted)', backgroundColor: isActive(item.href) ? 'var(--surface)' : 'transparent' }}>
                 {item.label}
               </Link>
             ))}
+            <a href="https://github.com/dasomel" target="_blank" rel="noreferrer" className="px-3 py-2.5 text-sm rounded-lg" style={{ color: 'var(--text-muted)' }}>
+              GitHub
+            </a>
           </nav>
         </div>
       )}
