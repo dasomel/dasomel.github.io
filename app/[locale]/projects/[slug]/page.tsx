@@ -10,6 +10,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Github, GitFork, ArrowUpRight, FileText, BookOpen, Activity } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+const visualProjects = new Set(['narwhal', 'beluga', 'oh-my-cursor', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
+const projectImage = (slug: string) => `/images/projects/${visualProjects.has(slug) ? slug : 'default'}.svg`;
+
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   routing.locales.forEach(locale => {
@@ -25,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!result) return {};
   const { meta } = result;
   const url = `https://cne.io.kr/${lang}/projects/${slug}`;
-  const image = `/images/projects/${['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher'].includes(slug) ? slug : 'default'}.svg`;
+  const image = projectImage(slug);
   return { title: meta.title, description: meta.description, alternates: { canonical: url }, openGraph: { type: 'article', url, title: meta.title, description: meta.description, images: [{ url: image, alt: `${meta.title} project visual` }] }, twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] } };
 }
 
@@ -38,8 +41,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
   const tc = await getTranslations({ locale, namespace: 'common' });
   const tp = await getTranslations({ locale, namespace: 'project' });
   const base = lang === 'en' ? '/en' : '/ko';
-  const visualProjects = new Set(['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher']);
-  const image = `/images/projects/${visualProjects.has(slug) ? slug : 'default'}.svg`;
+  const image = projectImage(slug);
   const notes = getNotes(lang);
   const docs = getDocs(lang);
   const projectTerms = new Set([slug.toLowerCase(), meta.title.toLowerCase(), ...meta.tags.map(tag => tag.toLowerCase())]);
