@@ -3,8 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
   schedule:
     # 02:40 UTC (= 11:40 KST) 백스톱.
@@ -18,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-${{ github.event.pull_request.number || github.ref }}
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 env:
