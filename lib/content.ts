@@ -12,6 +12,7 @@ type PostFrontMatter = FrontMatter & {
   pubDate: string | Date;
   updatedDate?: string | Date;
   tags?: string[];
+  projects?: string[];
   image?: string;
   draft?: boolean;
   featured?: boolean;
@@ -46,9 +47,6 @@ type DocFrontMatter = FrontMatter & {
   lastModified?: string | Date;
 };
 
-// Static export renders hundreds of pages and asks the same content collections
-// repeatedly. Keep directory listings and parsed Markdown metadata in memory for
-// the lifetime of the build process instead of hitting disk and gray-matter again.
 const fileListCache = new Map<string, string[]>();
 const rawFileCache = new Map<string, string>();
 const frontMatterCache = new Map<string, { data: FrontMatter; content: string }>();
@@ -56,7 +54,6 @@ const frontMatterCache = new Map<string, { data: FrontMatter; content: string }>
 function getFiles(collection: string): string[] {
   const cached = fileListCache.get(collection);
   if (cached) return cached;
-
   const dir = path.join(contentDir, collection);
   const files = fs.existsSync(dir)
     ? fs.readdirSync(dir).filter(f => f.endsWith('.md') || f.endsWith('.mdx'))
@@ -69,7 +66,6 @@ function readParsedFile<T extends FrontMatter>(collection: string, filename: str
   const cacheKey = `${collection}/${filename}`;
   const cached = frontMatterCache.get(cacheKey);
   if (cached) return cached as { data: T; content: string };
-
   const filePath = path.join(contentDir, collection, filename);
   if (!fs.existsSync(filePath)) return null;
   const raw = readRawFile(collection, filename);
@@ -83,7 +79,6 @@ function readRawFile(collection: string, filename: string): string {
   const cacheKey = `${collection}/${filename}`;
   const cached = rawFileCache.get(cacheKey);
   if (cached !== undefined) return cached;
-
   const filePath = path.join(contentDir, collection, filename);
   const raw = fs.readFileSync(filePath, 'utf-8');
   rawFileCache.set(cacheKey, raw);
@@ -120,6 +115,7 @@ export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
         pubDate: data.pubDate instanceof Date ? data.pubDate.toISOString() : String(data.pubDate),
         updatedDate: data.updatedDate ? (data.updatedDate instanceof Date ? data.updatedDate.toISOString() : String(data.updatedDate)) : undefined,
         tags: data.tags ?? [],
+        projects: data.projects ?? [],
         image: data.image,
         draft: data.draft ?? false,
         featured: data.featured ?? false,
@@ -151,6 +147,7 @@ export function getPostBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: P
       pubDate: data.pubDate instanceof Date ? data.pubDate.toISOString() : String(data.pubDate),
       updatedDate: data.updatedDate ? (data.updatedDate instanceof Date ? data.updatedDate.toISOString() : String(data.updatedDate)) : undefined,
       tags: data.tags ?? [],
+      projects: data.projects ?? [],
       image: data.image,
       draft: data.draft ?? false,
       lang,
