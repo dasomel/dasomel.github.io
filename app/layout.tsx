@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://cne.io.kr'),
   title: { default: 'dasomel — OSS Workbench', template: '%s | dasomel' },
   description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록. Kubernetes, Platform Engineering, AI-assisted Development.',
+  icons: { icon: '/icon.svg', shortcut: '/icon.svg', apple: '/icon.svg' },
   openGraph: {
     type: 'website',
     siteName: 'dasomel OSS Workbench',
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" suppressHydrationWarning>
       <head>
         <StructuredData data={schema} />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
@@ -56,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#047857" />
+        <meta name="theme-color" content="#0b1220" />
       </head>
       <body className="min-h-screen flex flex-col font-sans" style={{ backgroundColor: 'var(--bg)', color: 'var(--text)', minHeight: '100svh' }}>
         {children}
