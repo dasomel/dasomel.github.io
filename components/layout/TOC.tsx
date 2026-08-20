@@ -9,6 +9,9 @@ export default function TOC() {
 
   useEffect(() => {
     const els = document.querySelectorAll('article h2, article h3');
+    // The TOC is derived from the rendered article DOM; this state update is intentionally
+    // performed after mount because the headings do not exist during server rendering.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHeadings(
       Array.from(els)
         .map((el, i) => ({
