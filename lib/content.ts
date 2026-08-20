@@ -24,6 +24,10 @@ function getSlug(filename: string, lang: 'ko' | 'en'): string {
   return lang === 'en' ? base.replace(/-en$/, '') : base;
 }
 
+function isTechDigest(post: Post): boolean {
+  return post.slug.startsWith('daily-digest-');
+}
+
 export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
   return getFiles('posts')
     .filter(f => getLang(f) === lang)
@@ -46,6 +50,14 @@ export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
     })
     .filter(p => !p.draft)
     .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+}
+
+export function getNotes(lang: 'ko' | 'en' = 'ko'): Post[] {
+  return getPosts(lang).filter(post => !isTechDigest(post));
+}
+
+export function getTechDigests(lang: 'ko' | 'en' = 'ko'): Post[] {
+  return getPosts(lang).filter(isTechDigest);
 }
 
 export function getPostBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Post; content: string } | null {
