@@ -47,10 +47,15 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   const base = lang === 'en' ? '/en' : '/ko';
   const digest = slug.startsWith('daily-digest-');
   const projects = getProjects(lang);
-  const relatedProjects = digest ? [] : projects.filter(project => {
-    const terms = [project.slug, project.title, ...project.tags].map(v => v.toLowerCase());
-    return meta.tags.some(tag => terms.includes(tag.toLowerCase())) || meta.title.toLowerCase().includes(project.title.toLowerCase());
-  }).slice(0, 3);
+  const explicitlyLinkedProjects = projects.filter(project => meta.projects?.includes(project.slug));
+  const relatedProjects = digest
+    ? explicitlyLinkedProjects
+    : explicitlyLinkedProjects.length > 0
+      ? explicitlyLinkedProjects
+      : projects.filter(project => {
+          const terms = [project.slug, project.title, ...project.tags].map(v => v.toLowerCase());
+          return meta.tags.some(tag => terms.includes(tag.toLowerCase())) || meta.title.toLowerCase().includes(project.title.toLowerCase());
+        }).slice(0, 3);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
@@ -91,7 +96,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
 
       {relatedProjects.length > 0 && (
         <section className="mt-14 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
-          <div className="text-xs font-mono uppercase tracking-wider mb-4" style={{ color: 'var(--text-faint)' }}>Related OSS</div>
+          <div className="text-xs font-mono uppercase tracking-wider mb-4" style={{ color: 'var(--text-faint)' }}>{digest ? 'Projects influenced by this digest' : 'Related OSS'}</div>
           <div className="grid sm:grid-cols-3 gap-3">
             {relatedProjects.map(project => (
               <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group rounded-xl p-4" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
