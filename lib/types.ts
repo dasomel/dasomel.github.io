@@ -5,6 +5,7 @@ export interface Post {
   pubDate: string;
   updatedDate?: string;
   tags: string[];
+  projects?: string[];
   image?: string;
   draft: boolean;
   lang: 'ko' | 'en';
