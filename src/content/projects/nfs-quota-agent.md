@@ -13,6 +13,15 @@ type: "own"
 
 NFS 환경에서는 PVC의 `requests.storage`가 실제 파일시스템 사용량 제한으로 자동 연결되지 않는 경우가 많습니다. 이 프로젝트는 NFS 서버 노드에서 실제 export 파일시스템을 제어해 그 간극을 메웁니다.
 
+## 최신 소스 점검 · 2026-08-20
+
+최근 소스에서는 **Go 1.26 환경에 맞춘 CI/toolchain 현대화**가 진행됐습니다.
+
+- golangci-lint를 Go 1.26에 맞춰 modernize
+- 최신 Go toolchain에서 lint/build가 안정적으로 동작하도록 CI 기준 정리
+
+현재 프로젝트 문서의 Go 1.26 / client-go v0.36.2 baseline과도 일치합니다.
+
 ## 현재 상태
 
 - **v0.3.0 계열**
