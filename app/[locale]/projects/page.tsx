@@ -36,6 +36,9 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           solution: t('solution'),
           search: t('search'),
           noResults: t('no_results'),
+          core: t('core'),
+          tools: t('tools'),
+          forks: t('forks'),
         }}
       />
     </div>
