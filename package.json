@@ -16,7 +16,7 @@
     "digest:enrich-apply": "node scripts/enrich-apply.mjs"
   },
   "dependencies": {
-    "@next/mdx": "^16.2.1",
+    "next-mdx-remote-client": "^2.1.12",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.1",
     "@tailwindcss/postcss": "^4.3.3",
