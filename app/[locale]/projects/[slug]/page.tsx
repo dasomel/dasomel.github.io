@@ -7,7 +7,7 @@ import { ProjectVisual } from '@/components/projects/ProjectVisual';
 import { routing } from '@/i18n/routing';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Github, GitFork, ArrowUpRight, FileText, BookOpen, Activity } from 'lucide-react';
+import { ArrowLeft, Github, GitFork, ArrowUpRight, FileText, BookOpen, Activity, GitCommit, Star, GitBranch } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 const visualProjects = new Set(['narwhal', 'beluga', 'oh-my-cursor', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
@@ -32,6 +32,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: meta.title, description: meta.description, alternates: { canonical: url }, openGraph: { type: 'article', url, title: meta.title, description: meta.description, images: [{ url: image, alt: `${meta.title} project visual` }] }, twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] } };
 }
 
+function formatDate(value: string | undefined, lang: 'ko' | 'en') {
+  if (!value) return '';
+  return new Intl.DateTimeFormat(lang === 'ko' ? 'ko-KR' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(value));
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   const lang = locale as 'ko' | 'en';
@@ -47,6 +52,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
   const projectTerms = new Set([slug.toLowerCase(), meta.title.toLowerCase(), ...meta.tags.map(tag => tag.toLowerCase())]);
   const relatedNotes = notes.filter(note => [...note.tags, note.title, note.description ?? ''].some(value => { const normalized = value.toLowerCase(); return projectTerms.has(normalized) || normalized.includes(slug.toLowerCase()) || normalized.includes(meta.title.toLowerCase()); })).slice(0, 4);
   const relatedDocs = docs.filter(doc => { const haystack = `${doc.project} ${doc.slug} ${doc.title}`.toLowerCase(); return haystack.includes(slug.toLowerCase()) || haystack.includes(meta.title.toLowerCase()); }).slice(0, 6);
+  const source = meta.repoMeta;
+  const sourceCopy = lang === 'en'
+    ? { kicker: 'SOURCE SNAPSHOT', pushed: 'Last push', release: 'Latest release', tag: 'Latest tag', language: 'Language', license: 'License', stars: 'Stars', forks: 'Forks', issues: 'Open issues' }
+    : { kicker: 'SOURCE SNAPSHOT', pushed: '최근 push', release: '최신 release', tag: '최신 tag', language: '언어', license: '라이선스', stars: 'Stars', forks: 'Forks', issues: 'Open issues' };
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
@@ -55,12 +64,29 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
         <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><ProjectVisual src={image} alt="" className="block w-full h-auto" loading="eager" /></div>
         <div className="flex flex-wrap items-center gap-2 mb-3">
           {meta.type === 'fork' && <span className="inline-flex items-center gap-1 text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--surface)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}><GitFork className="w-3 h-3" aria-hidden="true" />Fork</span>}
-          {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Active</span>}
+          {meta.status && <span className="text-xs font-mono uppercase px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>{meta.status}</span>}
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4" style={{ color: 'var(--text)' }}>{meta.title}</h1>
         <p className="text-base sm:text-lg max-w-3xl leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>
         <div className="flex items-center gap-3 flex-wrap">{meta.github && <Button asChild size="sm"><a href={meta.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><Github className="w-4 h-4" aria-hidden="true" />{tc('github')}<ArrowUpRight className="w-3 h-3" aria-hidden="true" /></a></Button>}{meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}</div>
       </header>
+
+      {source && <section className="rounded-2xl p-5 sm:p-6 mb-10" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider mb-4" style={{ color: 'var(--text-faint)' }}><GitCommit className="w-3.5 h-3.5" aria-hidden="true" />{sourceCopy.kicker}</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div><div className="text-xs mb-1" style={{ color: 'var(--text-faint)' }}>{sourceCopy.pushed}</div><div style={{ color: 'var(--text)' }}>{formatDate(source.pushedAt, lang) || '—'}</div></div>
+          <div><div className="text-xs mb-1" style={{ color: 'var(--text-faint)' }}>{sourceCopy.release}</div><div style={{ color: 'var(--text)' }}>{source.latestRelease?.tag || '—'}</div></div>
+          <div><div className="text-xs mb-1" style={{ color: 'var(--text-faint)' }}>{sourceCopy.language}</div><div style={{ color: 'var(--text)' }}>{source.language || '—'}</div></div>
+          <div><div className="text-xs mb-1" style={{ color: 'var(--text-faint)' }}>{sourceCopy.license}</div><div style={{ color: 'var(--text)' }}>{source.license || '—'}</div></div>
+        </div>
+        <div className="flex flex-wrap gap-4 mt-4 pt-4" style={{ borderTop: '1px solid var(--border)' }}>
+          <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-muted)' }}><Star className="w-3.5 h-3.5" aria-hidden="true" />{sourceCopy.stars}: {source.stars}</span>
+          <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-muted)' }}><GitBranch className="w-3.5 h-3.5" aria-hidden="true" />{sourceCopy.forks}: {source.forks}</span>
+          <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-muted)' }}><Activity className="w-3.5 h-3.5" aria-hidden="true" />{sourceCopy.issues}: {source.openIssues}</span>
+          {source.latestRelease?.url && <a href={source.latestRelease.url} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline" style={{ color: 'var(--accent)' }}>{sourceCopy.release}</a>}
+        </div>
+      </section>}
+
       {(meta.problem || meta.solution) && <section className="grid md:grid-cols-2 gap-3 mb-10" aria-label={tp('summary')}>
         {meta.problem && <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}>{tp('problem')}</div><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.problem}</p></div>}
         {meta.solution && <div className="rounded-2xl p-5" style={{ border: '1px solid var(--accent-glow)', backgroundColor: 'var(--accent-dim)' }}><div className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>{tp('response')}</div><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.solution}</p></div>}
