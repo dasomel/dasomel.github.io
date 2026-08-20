@@ -134,10 +134,24 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
     });
   }, [byTab, category, query, freeOnly]);
 
-  // 탭이 바뀌면 분류 필터 초기화 (이전 탭의 분류가 빈 결과를 만들지 않도록)
-  useEffect(() => { setCategory('all'); }, [tab]);
-  // 필터가 바뀌면 노출 개수 초기화
-  useEffect(() => { setVisible(PAGE); }, [tab, query, category, freeOnly]);
+  const resetResults = () => setVisible(PAGE);
+  const handleTabChange = (nextTab: Tab) => {
+    setTab(nextTab);
+    setCategory('all');
+    resetResults();
+  };
+  const handleQueryChange = (value: string) => {
+    setQuery(value);
+    resetResults();
+  };
+  const handleCategoryChange = (value: string) => {
+    setCategory(value);
+    resetResults();
+  };
+  const handleFreeOnlyChange = () => {
+    setFreeOnly(value => !value);
+    resetResults();
+  };
 
   // 무한 스크롤 — 센티넬이 보이면 다음 묶음 로드
   const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -161,12 +175,12 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
     <div>
       {/* 출처별 탭 */}
       <div className="flex flex-wrap gap-2 mb-4">
-        <TabButton active={tab === 'all'} onClick={() => setTab('all')} label={t('tab_all')} count={counts.all} />
-        <TabButton active={tab === 'seoul'} onClick={() => setTab('seoul')} label={t('tab_seoul')} count={counts.seoul} />
-        <TabButton active={tab === 'festival'} onClick={() => setTab('festival')} label={t('tab_festival')} count={counts.festival} />
+        <TabButton active={tab === 'all'} onClick={() => handleTabChange('all')} label={t('tab_all')} count={counts.all} />
+        <TabButton active={tab === 'seoul'} onClick={() => handleTabChange('seoul')} label={t('tab_seoul')} count={counts.seoul} />
+        <TabButton active={tab === 'festival'} onClick={() => handleTabChange('festival')} label={t('tab_festival')} count={counts.festival} />
         <button
           type="button"
-          onClick={() => setFreeOnly(v => !v)}
+          onClick={handleFreeOnlyChange}
           aria-pressed={freeOnly}
           className="px-3 py-1.5 text-sm rounded-lg font-medium transition-colors ml-auto"
           style={{
@@ -183,7 +197,7 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
       <input
         type="search"
         value={query}
-        onChange={e => setQuery(e.target.value)}
+        onChange={e => handleQueryChange(e.target.value)}
         placeholder={t('search_placeholder')}
         className="w-full px-4 py-2.5 mb-3 text-sm rounded-lg outline-none"
         style={{ backgroundColor: 'var(--surface)', color: 'var(--text)', border: '1px solid var(--border)' }}
@@ -194,7 +208,7 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
         <div className="flex flex-wrap gap-1.5 mb-5">
           <button
             type="button"
-            onClick={() => setCategory('all')}
+            onClick={() => handleCategoryChange('all')}
             className="px-2.5 py-1 text-xs rounded-full font-medium transition-colors"
             style={{
               backgroundColor: category === 'all' ? 'var(--text)' : 'var(--surface)',
@@ -208,7 +222,7 @@ export default function EventsBrowser({ events }: { events: SeoulEvent[] }) {
             <button
               key={c}
               type="button"
-              onClick={() => setCategory(c)}
+              onClick={() => handleCategoryChange(c)}
               className="px-2.5 py-1 text-xs rounded-full font-medium transition-colors"
               style={{
                 backgroundColor: category === c ? 'var(--text)' : 'var(--surface)',
