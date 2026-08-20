@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
       <Link href={`${base}/projects`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}><ArrowLeft className="w-4 h-4" aria-hidden="true" />{tc('back')}</Link>
       <header className="mb-10">
-        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><ProjectVisual src={image} alt="" aria-hidden="true" className="block w-full h-auto" loading="eager" /></div>
+        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><ProjectVisual src={image} alt="" className="block w-full h-auto" loading="eager" /></div>
         <div className="flex flex-wrap items-center gap-2 mb-3">
           {meta.type === 'fork' && <span className="inline-flex items-center gap-1 text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--surface)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}><GitFork className="w-3 h-3" aria-hidden="true" />Fork</span>}
           {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Active</span>}
