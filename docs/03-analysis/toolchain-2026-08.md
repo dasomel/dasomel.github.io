@@ -28,6 +28,8 @@ This branch evaluates a major toolchain refresh for the blog:
 4. Static export verification for GitHub Pages
 5. Visual regression review for Tailwind v4 Preflight and utility changes
 
+CI now refreshes `package-lock.json` automatically for same-repository pull requests before validation, so dependency metadata stays synchronized with `package.json`.
+
 ## Known follow-up
 
 `next-mdx-remote` is archived upstream and should not be treated as a long-term dependency. A future migration should evaluate a maintained MDX pipeline before removing it.
