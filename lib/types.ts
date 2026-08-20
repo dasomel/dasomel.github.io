@@ -32,6 +32,7 @@ export interface Project {
   tags: string[];
   order?: number;
   type?: 'own' | 'fork';
+  status?: 'active' | 'maintained' | 'experimental' | 'archived';
   lang: 'ko' | 'en';
   featured?: boolean;
   problem?: string;
