@@ -5,11 +5,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://cne.io.kr'),
   title: { default: 'dasomel — OSS Workbench', template: '%s | dasomel' },
   description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록. Kubernetes, Platform Engineering, AI-assisted Development.',
-  alternates: { canonical: 'https://cne.io.kr/ko' },
   openGraph: {
     type: 'website',
     siteName: 'dasomel OSS Workbench',
-    url: 'https://cne.io.kr/ko',
     title: 'dasomel — OSS Workbench',
     description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록.',
   },

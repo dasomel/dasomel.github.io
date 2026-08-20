@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { getPosts, getProjects, getSeminars, getPostBySlug } from '@/lib/content';
@@ -8,6 +9,22 @@ import readingTime from 'reading-time';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const lang = locale as 'ko' | 'en';
+  const url = `https://cne.io.kr/${lang}`;
+  const copy = lang === 'en'
+    ? { title: 'dasomel — OSS Workbench', description: 'An engineering workbench for building, testing, learning, and changing my mind in Cloud Native and open source.' }
+    : { title: 'dasomel — OSS Workbench', description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록.' };
+  return {
+    title: copy.title,
+    description: copy.description,
+    alternates: { canonical: url, languages: { ko: 'https://cne.io.kr/ko', en: 'https://cne.io.kr/en' } },
+    openGraph: { type: 'website', url, title: copy.title, description: copy.description, images: [{ url: '/images/workbench-hero.svg', alt: 'OSS engineering workbench' }] },
+    twitter: { card: 'summary_large_image', title: copy.title, description: copy.description, images: ['/images/workbench-hero.svg'] },
+  };
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
