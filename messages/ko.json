@@ -2,97 +2,29 @@
   "nav": {
     "projects": "Projects",
     "notes": "Notes",
+    "tech_digest": "Tech Digest",
     "talks": "Talks",
     "about": "About",
     "lang": "EN"
   },
   "home": {
-    "hero": {
-      "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT",
-      "headline_1": "만들고, 검증하고,",
-      "headline_accent": " 다시 생각합니다.",
-      "headline_2": "",
-      "description": "Cloud Native 플랫폼과 OSS를 직접 만들면서 배웁니다. 실패와 실험을 기록하고, 생각이 바뀌면 그 이유까지 공개합니다.",
-      "cta_projects": "OSS 프로젝트",
-      "cta_notes": "개발 노트"
-    },
+    "hero": { "eyebrow": "OSS WORKBENCH · CLOUD NATIVE · AI-ASSISTED DEVELOPMENT", "headline_1": "만들고, 검증하고,", "headline_accent": " 다시 생각합니다.", "headline_2": "", "description": "Cloud Native 플랫폼과 OSS를 직접 만들면서 배웁니다. 실패와 실험을 기록하고, 생각이 바뀌면 그 이유까지 공개합니다.", "cta_projects": "OSS 프로젝트", "cta_notes": "개발 노트" },
     "sections": {
-      "now_kicker": "NOW",
-      "now": "지금 만들고 있는 것",
-      "now_desc": "완성된 포트폴리오보다 현재 진행 중인 문제와 실험을 먼저 보여줍니다.",
-      "view_projects": "프로젝트 전체",
-      "notes_kicker": "NOTES",
-      "notes": "배우면서 쓰는 기록",
-      "notes_desc": "하나의 주장으로 시작해 조사하고, 실제 코드와 실험으로 확인한 내용을 남깁니다.",
-      "view_notes": "노트 전체",
-      "philosophy_kicker": "HOW I WORK",
-      "philosophy": "잘 알게 된 뒤가 아니라, 알기 위해 씁니다.",
-      "philosophy_desc": "OSS 개발에서는 코드보다 문제 정의와 검증이 더 오래 남는다고 믿습니다. AI는 탐색과 구현을 빠르게 만들지만, 무엇을 만들지 결정하고 실제로 맞는지 확인하는 일은 여전히 제 몫입니다.",
-      "current_question": "OPEN QUESTION",
-      "question": "Kubernetes-ready라는 말은 AI Agent 시대에도 충분한가?"
+      "now_kicker": "NOW", "now": "지금 만들고 있는 것", "now_desc": "완성된 포트폴리오보다 현재 진행 중인 문제와 실험을 먼저 보여줍니다.", "view_projects": "프로젝트 전체",
+      "notes_kicker": "NOTES", "notes": "배우면서 쓰는 기록", "notes_desc": "하나의 주장으로 시작해 조사하고, 실제 코드와 실험으로 확인한 내용을 남깁니다.", "view_notes": "노트 전체",
+      "digest_kicker": "TECH DIGEST", "digest": "기술 다이제스트", "view_digest": "다이제스트 전체",
+      "philosophy_kicker": "HOW I WORK", "philosophy": "잘 알게 된 뒤가 아니라, 알기 위해 씁니다.", "philosophy_desc": "OSS 개발에서는 코드보다 문제 정의와 검증이 더 오래 남는다고 믿습니다. AI는 탐색과 구현을 빠르게 만들지만, 무엇을 만들지 결정하고 실제로 맞는지 확인하는 일은 여전히 제 몫입니다.", "current_question": "OPEN QUESTION", "question": "Kubernetes-ready라는 말은 AI Agent 시대에도 충분한가?"
     },
-    "stats": {
-      "experience": "IT 경력",
-      "projects": "프로젝트",
-      "talks": "발표 기록"
-    }
+    "stats": { "experience": "IT 경력", "projects": "프로젝트", "talks": "발표 기록" }
   },
-  "work": {
-    "title": "Projects",
-    "subtitle": "직접 만들고 운영하며 계속 바뀌는 OSS 작업들",
-    "problem": "문제",
-    "solution": "해결",
-    "search": "프로젝트명·기술·문제로 검색",
-    "no_results": "조건에 맞는 프로젝트가 없습니다."
-  },
-  "speaking": {
-    "title": "Talks",
-    "subtitle_prefix": "년간",
-    "subtitle_suffix": "컨퍼런스 발표 기록",
-    "highlights": "Highlights",
-    "timeline": "Timeline",
-    "total": "총 발표",
-    "conferences": "컨퍼런스",
-    "years_active": "활동 기간"
-  },
-  "blog": {
-    "title": "Notes",
-    "subtitle": "OSS와 Cloud Native를 만들며 배우는 기록",
-    "featured": "Featured",
-    "all_posts": "All Notes",
-    "min_read": "min"
-  },
-  "seminars": {
-    "slides": "슬라이드",
-    "video": "영상"
-  },
-  "events": {
-    "title": "행사 · 축제",
-    "subtitle": "서울시 문화행사 + 전국 축제 정보 (서울 열린데이터광장 · 한국관광공사 제공)",
-    "updated_at": "{date} 기준",
-    "upcoming": "진행 중 · 예정",
-    "past": "종료된 행사",
-    "free": "무료",
-    "paid": "유료",
-    "tab_all": "전체",
-    "tab_seoul": "서울 행사",
-    "tab_festival": "전국 축제",
-    "search_placeholder": "행사명·장소 검색",
-    "category_all": "전체 분류",
-    "free_only": "무료만",
-    "loading_more": "{n}개 더 불러오는 중…",
-    "no_result": "조건에 맞는 행사가 없습니다",
-    "no_events": "현재 등록된 행사가 없습니다",
-    "no_events_desc": "매일 자동으로 업데이트됩니다"
-  },
-  "about": {
-    "title": "About"
-  },
-  "common": {
-    "github": "GitHub",
-    "back": "← 목록으로"
-  },
-  "footer": {
-    "built_with": "built with next.js"
-  }
+  "work": { "title": "Projects", "subtitle": "직접 만들고 운영하며 계속 바뀌는 OSS 작업들", "problem": "문제", "solution": "해결", "search": "프로젝트명·기술·문제로 검색", "no_results": "조건에 맞는 프로젝트가 없습니다." },
+  "notes": { "title": "Notes", "subtitle": "OSS와 Cloud Native를 직접 만들며 배우는 기록", "featured": "Featured", "all_posts": "All Notes", "min_read": "min" },
+  "tech_digest": { "title": "Tech Digest", "subtitle": "관심 있는 기술 소식을 모아 읽기 쉽게 정리한 다이제스트", "notice": "Tech Digest는 직접 작성하는 Engineering Notes와 분리된 큐레이션 영역입니다. 원문과 출처를 중심으로 기술 흐름을 빠르게 살펴봅니다.", "featured": "Featured", "all_posts": "All Digests", "min_read": "min" },
+  "speaking": { "title": "Talks", "subtitle_prefix": "년간", "subtitle_suffix": "컨퍼런스 발표 기록", "highlights": "Highlights", "timeline": "Timeline", "total": "총 발표", "conferences": "컨퍼런스", "years_active": "활동 기간" },
+  "blog": { "title": "Notes", "subtitle": "OSS와 Cloud Native를 만들며 배우는 기록", "featured": "Featured", "all_posts": "All Notes", "min_read": "min" },
+  "seminars": { "slides": "슬라이드", "video": "영상" },
+  "events": { "title": "행사 · 축제", "subtitle": "서울시 문화행사 + 전국 축제 정보 (서울 열린데이터광장 · 한국관광공사 제공)", "updated_at": "{date} 기준", "upcoming": "진행 중 · 예정", "past": "종료된 행사", "free": "무료", "paid": "유료", "tab_all": "전체", "tab_seoul": "서울 행사", "tab_festival": "전국 축제", "search_placeholder": "행사명·장소 검색", "category_all": "전체 분류", "free_only": "무료만", "loading_more": "{n}개 더 불러오는 중…", "no_result": "조건에 맞는 행사가 없습니다", "no_events": "현재 등록된 행사가 없습니다", "no_events_desc": "매일 자동으로 업데이트됩니다" },
+  "about": { "title": "About" },
+  "common": { "github": "GitHub", "back": "← 목록으로" },
+  "footer": { "built_with": "built with next.js" }
 }
