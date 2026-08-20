@@ -93,12 +93,12 @@ make local-credentials
 
 기본 LDAP `389`, UI `8080`, named volume 기반 데이터 영속성을 제공합니다.
 
-## Beulga와의 관계
+## Beluga와의 관계
 
-Ldapium은 현재 개발 중인 **Beulga 빅데이터 플랫폼에서 필요한 LDAP 구성요소**에서 출발했지만 Beulga에 종속되지 않는 독립 OSS를 목표로 합니다.
+Ldapium은 현재 개발 중인 **Beluga 데이터 플랫폼에서 필요한 LDAP 구성요소**에서 출발했지만 Beluga에 종속되지 않는 독립 OSS를 목표로 합니다.
 
 ```text
-Beulga
+Beluga
   └── Ldapium
 
 다른 Kubernetes 플랫폼
