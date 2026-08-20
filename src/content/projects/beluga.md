@@ -39,7 +39,25 @@ Airflow
 - Trino / Superset query & BI
 - Airflow orchestration
 - Helm + ArgoCD 기반 IaC
+- K3s 기반 **kube-proxy-free** 구성 검증
+- Cilium eBPF Service datapath
+
+## 최신 소스 점검 · 2026-08-20
+
+최근 소스에서는 Kubernetes Service datapath를 K3s 기본 구성에 맡기지 않고 **Cilium이 전담하는 kube-proxy-free 구조**로 정리했습니다.
+
+- K3s Flannel 비활성화
+- K3s ServiceLB 비활성화
+- kube-proxy 비활성화
+- Cilium `kubeProxyReplacement=true`
+- Service Load Balancing은 Cilium eBPF가 담당
+- MetalLB는 외부 `LoadBalancer` IP 할당 역할만 담당
+- APISIX는 HTTP Gateway 역할 담당
+- K3s **v1.36** 기반으로 검증
+
+또한 배포 후 자동 검증에서 kube-proxy와 `svclb-*` Pod가 다시 등장하면 실패하도록 regression gate를 추가했습니다.
 
 ## 관련 링크
 
 - **GitHub**: [dasomel/beluga](https://github.com/dasomel/beluga)
+- **Kube-proxy-free 검증**: [K3s/Cilium Service datapath validation](https://github.com/dasomel/beluga/blob/main/docs/validation/kube-proxy-free.md)
