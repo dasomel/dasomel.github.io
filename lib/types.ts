@@ -24,6 +24,29 @@ export interface Seminar {
   featured?: boolean;
 }
 
+export interface ProjectRepositoryMeta {
+  repo: string;
+  htmlUrl: string;
+  description?: string;
+  stars: number;
+  forks: number;
+  openIssues: number;
+  language?: string;
+  license?: string;
+  pushedAt?: string;
+  latestRelease?: {
+    tag: string;
+    name?: string;
+    publishedAt?: string;
+    url: string;
+  };
+  latestTag?: {
+    name: string;
+    commitSha?: string;
+    url?: string;
+  };
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -33,6 +56,7 @@ export interface Project {
   order?: number;
   type?: 'own' | 'fork';
   status?: 'active' | 'maintained' | 'experimental' | 'archived';
+  repoMeta?: ProjectRepositoryMeta;
   lang: 'ko' | 'en';
   featured?: boolean;
   problem?: string;
