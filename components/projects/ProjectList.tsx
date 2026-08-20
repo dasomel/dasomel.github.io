@@ -15,6 +15,8 @@ interface Props {
   };
 }
 
+const projectVisuals = new Set(['narwhal', 'beluga', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher']);
+
 export function ProjectList({ projects, base, translations }: Props) {
   const [selected, setSelected] = useState('all');
 
@@ -29,7 +31,7 @@ export function ProjectList({ projects, base, translations }: Props) {
   const featured = filtered.filter(p => p.featured);
   const rest = filtered.filter(p => !p.featured);
 
-  const imageFor = (slug: string) => `/images/projects/${slug}.svg`;
+  const imageFor = (slug: string) => `/images/projects/${projectVisuals.has(slug) ? slug : 'default'}.svg`;
 
   return (
     <>
@@ -44,7 +46,7 @@ export function ProjectList({ projects, base, translations }: Props) {
           {featured.map(project => (
             <article key={project.slug} className="overflow-hidden rounded-2xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}>
               <Link href={`${base}/projects/${project.slug}`} className="block overflow-hidden" aria-label={`${project.title} project`}>
-                <img src={imageFor(project.slug)} alt="" className="block w-full h-auto transition-transform duration-500 hover:scale-[1.01]" loading="lazy" />
+                <img src={imageFor(project.slug)} alt="" aria-hidden="true" className="block w-full h-auto transition-transform duration-500 hover:scale-[1.01]" loading="lazy" />
               </Link>
               <div className="p-5 sm:p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -59,7 +61,7 @@ export function ProjectList({ projects, base, translations }: Props) {
                     </span>
                     {project.github && (
                       <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1 hover:opacity-60 transition-opacity" style={{ color: 'var(--text-faint)' }} aria-label={`${project.title} GitHub`}>
-                        <Github className="w-4 h-4" />
+                        <Github className="w-4 h-4" aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -94,13 +96,13 @@ export function ProjectList({ projects, base, translations }: Props) {
       <div className="grid sm:grid-cols-2 gap-3">
         {rest.map(project => (
           <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group overflow-hidden rounded-2xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}>
-            <img src={imageFor(project.slug)} alt="" className="block w-full h-auto" loading="lazy" />
+            <img src={imageFor(project.slug)} alt="" aria-hidden="true" className="block w-full h-auto" loading="lazy" />
             <div className="p-4 flex items-start justify-between gap-3">
               <div className="min-w-0">
                 <div className="text-sm font-semibold group-hover:text-emerald-400 transition-colors mb-1" style={{ color: 'var(--text)' }}>{project.title}</div>
                 <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{project.description}</p>
               </div>
-              <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--text-faint)' }} />
+              <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden="true" style={{ color: 'var(--text-faint)' }} />
             </div>
           </Link>
         ))}
