@@ -63,7 +63,7 @@ export function ProjectList({ projects, base, translations }: Props) {
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return projects.filter(project => {
-      const matchesTag = selected === 'all' ? true : selected === 'fork' ? project.type === 'fork' : project.tags.includes(selected);
+      const matchesTag = selected === 'all' ? true : selected === 'Fork' ? project.type === 'fork' : project.tags.includes(selected);
       const haystack = [project.title, project.description, project.problem, project.solution, ...project.tags].filter(Boolean).join(' ').toLowerCase();
       return matchesTag && (!normalized || haystack.includes(normalized));
     });
@@ -99,7 +99,7 @@ export function ProjectList({ projects, base, translations }: Props) {
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={translations.search} aria-label={translations.search} className="w-full rounded-xl border bg-transparent pl-9 pr-3 py-2.5 text-sm outline-none focus:ring-2" style={{ borderColor: 'var(--border)', color: 'var(--text)', ['--tw-ring-color' as string]: 'var(--accent-glow)' }} />
         </label>
       </div>
-      <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={(tag) => setSelected(tag.toLowerCase())} />
+      <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={setSelected} />
       {filtered.length === 0 ? <div className="rounded-2xl border p-10 text-center" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{translations.noResults}</div> : (
         <div className="space-y-12">
           {core.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">CORE OSS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.core}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{core.length}</span></div>{renderFeatured(core.filter(p => p.featured))}{renderCompact(core.filter(p => !p.featured))}</section>}
