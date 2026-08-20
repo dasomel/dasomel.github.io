@@ -7,7 +7,7 @@ This branch evaluates a major toolchain refresh for the blog:
 - Next.js 16.x
 - React 19.2.x
 - Tailwind CSS 4.3.x
-- ESLint 10.x
+- ESLint 9.x (ESLint 10 deferred due upstream React plugin compatibility)
 - next-intl 4.13.x
 - Shiki 4.4.x
 - rehype-pretty-code 0.14.x
@@ -34,4 +34,4 @@ This branch evaluates a major toolchain refresh for the blog:
 
 ## Major versions deliberately evaluated together
 
-Next.js 16, Tailwind CSS 4, and ESLint 10 form the current modern web toolchain candidate. This branch is merge-ready only after CI verifies both linting and the complete static export.
+Next.js 16 and Tailwind CSS 4 form the current modern web toolchain candidate. ESLint 10 is deferred until the upstream React lint plugin supports its context API. This branch is merge-ready only after CI verifies both linting and the complete static export.
