@@ -9,6 +9,7 @@
     "festivals:fetch": "node scripts/fetch-festivals.mjs",
     "start": "next start",
     "lint": "eslint .",
+    "projects:refresh": "node scripts/refresh-project-metadata.mjs",
     "digest:collect": "node scripts/collect-feeds.mjs",
     "digest": "node scripts/generate-daily-digest.mjs",
     "digest:enrich-publish": "node scripts/publish-enrichment.mjs",
@@ -56,7 +57,7 @@
     "js-yaml@^3.0.0": "^3.15.1",
     "js-yaml@^4.0.0": "^4.3.1",
     "brace-expansion@^1.0.0": "^1.1.18",
-    "brace-expansion@^5.0.0": "^5.0.9",
+    "brace-expansion@^5.0.9": "^5.0.9",
     "dompurify": "^3.4.13",
     "nanoid": "^3.3.18"
   }
