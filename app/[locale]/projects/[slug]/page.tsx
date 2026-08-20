@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getProjects, getProjectBySlug, getNotes, getDocs, getTechDigests } from '@/lib/content';
 import { MDXContent } from '@/components/MDXContent';
 import { ProjectVisual } from '@/components/projects/ProjectVisual';
+import { ProjectSourceSnapshot } from '@/components/projects/ProjectSourceSnapshot';
 import { routing } from '@/i18n/routing';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -62,8 +63,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4" style={{ color: 'var(--text)' }}>{meta.title}</h1>
         <p className="text-base sm:text-lg max-w-3xl leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>
-        <div className="flex items-center gap-3 flex-wrap">{meta.github && <Button asChild size="sm"><a href={meta.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><Github className="w-4 h-4" aria-hidden="true" />{tc('github')}<ArrowUpRight className="w-3 h-3" aria-hidden="true" /></a></Button>}{meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}</div>
+        <div className="flex items-center gap-3 flex-wrap">{meta.github && <Button asChild size="sm"><a href={meta.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><Github className="w-4 h-4" aria-hidden="true" />{tc('github')}<ArrowUpRight className="w-3 h-3" /></a></Button>}{meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}</div>
       </header>
+
+      {meta.github && <ProjectSourceSnapshot github={meta.github} lang={lang} />}
+
       {(meta.problem || meta.solution) && <section className="grid md:grid-cols-2 gap-3 mb-10" aria-label={tp('summary')}>
         {meta.problem && <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}>{tp('problem')}</div><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.problem}</p></div>}
         {meta.solution && <div className="rounded-2xl p-5" style={{ border: '1px solid var(--accent-glow)', backgroundColor: 'var(--accent-dim)' }}><div className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>{tp('response')}</div><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.solution}</p></div>}
