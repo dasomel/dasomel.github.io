@@ -41,7 +41,9 @@
     "title": "Projects",
     "subtitle": "OSS projects I build, operate, and continuously rethink",
     "problem": "Problem",
-    "solution": "Solution"
+    "solution": "Solution",
+    "search": "Search by project, technology, or problem",
+    "no_results": "No projects match your search."
   },
   "speaking": {
     "title": "Talks",
