@@ -26,6 +26,17 @@ solution: "Packer로 Kubernetes 노드에 필요한 OS 튜닝·도구·보안 �
 
 v0.2.3에서는 `apt-get full-upgrade` 기반 보안 업데이트와 kernel/AppArmor/sudo/OpenSSH 계열 보안 패키지 점검을 추가했습니다.
 
+## 최신 소스 점검 · 2026-08-20
+
+최근 소스는 **ARM64 부팅 경로의 재현성**을 중심으로 안정화됐습니다.
+
+- VMware ARM64에서 EFI/GRUB → NoCloud 초기 부팅이 느린 환경을 허용하도록 부팅 타이밍 조정
+- VMware ARM64의 known-good boot path 복구
+- VirtualBox ARM64에서도 같은 known-good boot path 보존
+- 결과적으로 ARM64에서 provider별 부팅 회귀를 별도로 다루고 검증할 수 있는 상태로 정리
+
+즉 현재 Kube-Ready-Box의 중요한 문제는 단순히 “ARM64 지원”이 아니라 **VMware/VirtualBox 각각에서 재현 가능한 초기 부팅 경로를 확보하는 것**입니다.
+
 ## 주요 특징
 
 ### Multi-Architecture
