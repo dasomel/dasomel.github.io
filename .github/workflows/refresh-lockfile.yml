@@ -28,6 +28,7 @@ jobs:
 
       - name: Commit lockfile
         run: |
+          # One-shot lock refresh; package-lock-only commits are ignored by the trigger.
           if git diff --quiet -- package-lock.json; then
             echo 'package-lock.json already up to date'
             exit 0
