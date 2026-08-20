@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -16,6 +17,23 @@ export function generateStaticParams() {
   return params;
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const lang = locale as 'ko' | 'en';
+  const result = getPostBySlug(slug, lang);
+  if (!result) return {};
+  const { meta } = result;
+  const url = `https://cne.io.kr/${lang}/posts/${slug}`;
+  const image = meta.image ?? '/images/notes-cover.svg';
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: { canonical: url },
+    openGraph: { type: 'article', url, title: meta.title, description: meta.description, publishedTime: meta.pubDate, modifiedTime: meta.updatedDate, tags: meta.tags, images: [{ url: image, alt: `${meta.title} cover` }] },
+    twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] },
+  };
+}
+
 export default async function PostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   const lang = locale as 'ko' | 'en';
@@ -28,15 +46,16 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
       <Link href={`${base}/posts`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}>
-        <ArrowLeft className="w-4 h-4" />{t('back')}
+        <ArrowLeft className="w-4 h-4" aria-hidden="true" />{t('back')}
       </Link>
 
       <header className="mb-10">
         <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
-          <img src="/images/notes-cover.svg" alt="" className="block w-full h-auto" loading="eager" />
+          <img src={meta.image ?? '/images/notes-cover.svg'} alt="" aria-hidden="true" className="block w-full h-auto" loading="eager" />
         </div>
         <div className="flex items-center gap-3 flex-wrap mb-4">
-          <time className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{meta.pubDate.slice(0, 10)}</time>
+          <time className="font-mono text-xs" dateTime={meta.pubDate} style={{ color: 'var(--text-faint)' }}>{meta.pubDate.slice(0, 10)}</time>
+          {meta.updatedDate && <time className="font-mono text-xs" dateTime={meta.updatedDate} style={{ color: 'var(--text-faint)' }}>updated {meta.updatedDate.slice(0, 10)}</time>}
           {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Featured</span>}
           {meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}
         </div>
@@ -50,7 +69,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
             <div className="text-[10px] uppercase tracking-[.18em] font-mono mb-1" style={{ color: 'var(--text-faint)' }}>Engineering note</div>
             <div className="text-sm" style={{ color: 'var(--text-muted)' }}>A public record of what was built, tested, learned, and changed.</div>
           </div>
-          <ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--accent)' }} />
+          <ArrowUpRight className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: 'var(--accent)' }} />
         </div>
       </div>
 
