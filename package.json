@@ -16,6 +16,7 @@
     "digest:enrich-apply": "node scripts/enrich-apply.mjs"
   },
   "dependencies": {
+    "@next/mdx": "^16.2.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.1",
     "@tailwindcss/postcss": "^4.3.3",
@@ -27,7 +28,6 @@
     "mermaid": "^11.16.1",
     "next": "^16.2.1",
     "next-intl": "^4.13.6",
-    "next-mdx-remote": "^6.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "reading-time": "^1.5.0",
