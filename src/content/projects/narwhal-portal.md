@@ -12,7 +12,7 @@ solution: "클러스터 메트릭, ArgoCD, 보안 스캔 등을 한 곳에 모�
 
 ## 프로젝트 소개
 
-**Narwhal Portal**은 [Narwhal](/ko/projects/narwhal) Kubernetes **Internal Developer Platform (IDP)** 클러스터를 위한 관리 포탈(Next.js)입니다. 
+**Narwhal Portal**은 [Narwhal](/ko/projects/narwhal) Kubernetes **Internal Developer Platform (IDP)** 클러스터를 위한 관리 포탈(Next.js)입니다.
 
 운영자와 개발자가 클러스터를 관찰하고 운영하는 데 사용하는 웹 UI로, 클러스터의 APISIX 게이트웨이를 통해 클러스터 내부에서 `https://portal.local.narwhal.internal` 주소로 서비스됩니다. 대시보드, 카탈로그, 비용 관리, 보안 및 거버넌스 뷰 등을 단일 인터페이스에서 통합 제공합니다.
 
@@ -29,7 +29,19 @@ solution: "클러스터 메트릭, ArgoCD, 보안 스캔 등을 한 곳에 모�
 | **Architecture / Templates / Tools** | 노드·네임스페이스·서비스 그래프, 템플릿, 플랫폼 도구 그리드 |
 | **Settings** | 사용자, 라우트, 인증서, 정책 관리 |
 
-*(참고: 라우트는 `src/app/(dashboard)/` 아래에 위치하며, API 라우트는 `src/app/api/` 아래에 구현되어 있습니다.)*
+## 최신 소스 점검 · 2026-08-20
+
+최근 소스에서는 포탈 자체 기능뿐 아니라 **공급망 보안과 CI 신뢰성**을 강화했습니다.
+
+- GitHub Actions를 mutable tag 대신 **commit SHA pinning**으로 고정
+- Dependabot으로 GitHub Actions 및 npm 의존성 주간 업데이트 구성
+- 주요 dependency 변경은 Build Check에서 frozen-lockfile install, type-check, build로 검증
+- 컨테이너 이미지에 **SPDX SBOM + SLSA provenance**를 첨부
+- 아키텍처별 native runner 빌드로 multi-arch 이미지 생성
+- private vulnerability reporting과 `SECURITY.md` 추가
+- Next/React major upgrade는 routine dependency PR에서 제외하고 별도 migration으로 취급
+
+즉 Narwhal Portal의 최신 방향은 단순 dashboard 기능 확장보다 **플랫폼 UI 자체의 supply-chain 보안과 배포 신뢰성 강화**입니다.
 
 ## 기술 스택
 
@@ -45,7 +57,7 @@ solution: "클러스터 메트릭, ArgoCD, 보안 스캔 등을 한 곳에 모�
 
 ## 아키텍처 및 역할
 
-포탈은 4가지 역할(`cluster-admin`, `developer`, `viewer`, `guest`)에 기반한 RBAC 접근 제어를 적용하며, OIDC 연동은 Keycloak을 사용합니다. 다국어(i18n)도 지원하여 쿠키를 통해 한국어/영어 전환이 가능합니다. 
+포탈은 4가지 역할(`cluster-admin`, `developer`, `viewer`, `guest`)에 기반한 RBAC 접근 제어를 적용하며, OIDC 연동은 Keycloak을 사용합니다. 다국어(i18n)도 지원하여 쿠키를 통해 한국어/영어 전환이 가능합니다.
 
 자세한 시스템 설계와 컴포넌트 간 상호작용은 [아키텍처 문서](/ko/docs/narwhal-portal-architecture)를 참조하세요.
 
@@ -58,7 +70,7 @@ pnpm install
 pnpm dev
 ```
 
-Skaffold와 Kaniko를 활용하여 로컬 Docker 없이 클러스터 내부에서 핫 리로드를 지원하는 HMR 개발 루프(`pnpm run dev:skaffold`)도 제공합니다. 전체 개발 환경 구성은 [개발 문서](/ko/docs/narwhal-portal-development)를, 실제 클러스터 배포 과정은 [배포 문서](/ko/docs/narwhal-portal-deployment)를 참고하세요.
+Skaffold와 Kaniko를 활용하여 로컬 Docker 없이 클러스터 내부에서 핫 리로드를 지원하는 HMR 개발 루프(`pnpm run dev:skaffold`)도 제공합니다.
 
 ## 참고 링크
 
