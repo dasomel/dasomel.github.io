@@ -144,14 +144,10 @@
 .prose pre code { background:transparent; padding:0; color:inherit; }
 .prose a { text-decoration-thickness:1px; text-underline-offset:3px; }
 
-html[data-theme='dark'] .prose pre {
-  box-shadow: 0 18px 50px rgba(0,0,0,0.24);
-}
-
+html[data-theme='dark'] .prose pre { box-shadow: 0 18px 50px rgba(0,0,0,0.24); }
 html[data-theme='dark'] .workbench-chip,
-html[data-theme='dark'] .card-outline {
-  background-color: var(--surface);
-}
+html[data-theme='dark'] .card-outline { background-color: var(--surface); }
+html[data-theme='dark'] img[src*='workbench-hero-v2'] { filter: brightness(0.78) saturate(0.9); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior:auto; }
