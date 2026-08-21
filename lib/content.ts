@@ -42,6 +42,7 @@ type DocFrontMatter = FrontMatter & {
   title: string;
   description?: string;
   project?: string;
+  path?: string;
   order?: number;
   date?: string | Date;
   lastModified?: string | Date;
@@ -96,6 +97,16 @@ function getLang(filename: string): 'ko' | 'en' {
 function getSlug(filename: string, lang: 'ko' | 'en'): string {
   const base = filename.replace(/\.(md|mdx)$/, '');
   return lang === 'en' ? base.replace(/-en$/, '') : base;
+}
+
+function getDocSlug(filename: string, lang: 'ko' | 'en'): string {
+  const parsed = readParsedFile<DocFrontMatter>('docs', filename);
+  const configuredPath = parsed?.data.path;
+  return typeof configuredPath === 'string' && configuredPath.trim() ? configuredPath.trim().replace(/^\/+|\/+$/g, '') : getSlug(filename, lang);
+}
+
+function findDocFile(slug: string, lang: 'ko' | 'en'): string | undefined {
+  return getFiles('docs').find((filename) => getLang(filename) === lang && getDocSlug(filename, lang) === slug);
 }
 
 function isTechDigest(post: Post): boolean {
@@ -250,7 +261,7 @@ export function getDocs(lang: 'ko' | 'en' = 'ko'): Doc[] {
     .filter(f => getLang(f) === lang)
     .map(f => {
       const { data } = readParsedFile<DocFrontMatter>('docs', f)!;
-      const slug = getSlug(f, lang);
+      const slug = getDocSlug(f, lang);
       return {
         slug,
         title: data.title,
@@ -266,13 +277,15 @@ export function getDocs(lang: 'ko' | 'en' = 'ko'): Doc[] {
 }
 
 export function getDocBySlug(slug: string, lang: 'ko' | 'en' = 'ko'): { meta: Doc; content: string } | null {
-  const filename = lang === 'en' ? `${slug}-en.md` : `${slug}.md`;
+  const normalizedSlug = slug.replace(/^\/+|\/+$/g, '');
+  const filename = findDocFile(normalizedSlug, lang);
+  if (!filename) return null;
   const parsed = readParsedFile<DocFrontMatter>('docs', filename);
   if (!parsed) return null;
   const { data, content } = parsed;
   return {
     meta: {
-      slug,
+      slug: normalizedSlug,
       title: data.title,
       description: data.description,
       project: data.project ?? 'General',
