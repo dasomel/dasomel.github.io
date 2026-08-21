@@ -39,5 +39,5 @@ jobs:
       - name: Bun bundle smoke test
         run: bun run build:tools
 
-      - name: Build
-        run: bun run build
+      - name: Lint
+        run: bun run lint
