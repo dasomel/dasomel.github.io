@@ -45,14 +45,23 @@ export function Mermaid({ chart }: MermaidProps) {
       const rendered = ref.current.querySelector('svg');
       if (!rendered) return;
 
-      const labelColor = dark ? '#f8fafc' : '#111827';
-      rendered.querySelectorAll('text, tspan').forEach((node) => {
-        node.setAttribute('fill', labelColor);
+      // Mermaid flowchart nodes use intentionally light fills, so keep node
+      // labels dark in both themes. SVG chart labels (axes/titles) follow the
+      // surrounding theme instead.
+      rendered.querySelectorAll('.nodeLabel').forEach((node) => {
+        const element = node as HTMLElement;
+        element.style.setProperty('color', '#111827', 'important');
       });
 
-      rendered.querySelectorAll('.nodeLabel, .edgeLabel, .edgeLabel p').forEach((node) => {
+      const chartTextColor = dark ? '#f8fafc' : '#111827';
+      rendered.querySelectorAll('text, tspan').forEach((node) => {
+        node.setAttribute('fill', chartTextColor);
+      });
+
+      const edgeLabelColor = dark ? '#f8fafc' : '#111827';
+      rendered.querySelectorAll('.edgeLabel, .edgeLabel p').forEach((node) => {
         const element = node as HTMLElement;
-        element.style.setProperty('color', labelColor, 'important');
+        element.style.setProperty('color', edgeLabelColor, 'important');
       });
     });
   }, [chart]);
