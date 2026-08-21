@@ -15,33 +15,45 @@ CNE is an engineering workbench, not a generic SaaS landing page. The interface 
 
 ## Color tokens
 
+The system intentionally separates canvas, surfaces, borders, and text by perceptual contrast. Similar colors must not be used for adjacent semantic layers merely to keep the palette visually quiet.
+
 ### Light
 
-- `--bg`: `#f7f8f6` — page background
-- `--bg-subtle`: `#f1f4f2` — navigation / secondary background
+- `--bg`: `#f5f7f5` — page canvas
+- `--bg-subtle`: `#e9efec` — navigation / secondary shell
 - `--surface`: `#ffffff` — cards and primary surfaces
-- `--surface-hi`: `#edf1ef` — selected/secondary surface
-- `--border`: `#d5ddda` — default borders
-- `--border-soft`: low-emphasis border derived from the same family
-- `--border-hi`: `#b9c7c2` — emphasized border
-- `--text`: `#141917`
-- `--text-muted`: `#59645f`
-- `--text-faint`: `#7b8781`
-- `--accent`: `#0f766e`
+- `--surface-hi`: `#e4ebe8` — selected / secondary surface
+- `--border`: `#b9c8c2` — visible default border
+- `--border-soft`: `#d5dfda` — low-emphasis divider
+- `--border-hi`: `#879a92` — emphasized border
+- `--text`: `#111613` — primary text
+- `--text-muted`: `#34433d` — readable secondary text
+- `--text-faint`: `#63716b` — metadata / tertiary text
+- `--accent`: `#08786f`
 
 ### Dark
 
-- `--bg`: `#0b1110`
-- `--bg-subtle`: `#101715`
-- `--surface`: `#151d1a`
-- `--surface-hi`: `#1d2824`
-- `--border`: `#2c3934`
-- `--border-soft`: low-emphasis border derived from the same family
-- `--border-hi`: `#42514b`
-- `--text`: `#edf4f0`
-- `--text-muted`: `#aab7b1`
-- `--text-faint`: `#77867f`
-- `--accent`: `#4fd1c5`
+- `--bg`: `#090e0d`
+- `--bg-subtle`: `#101816`
+- `--surface`: `#18211e`
+- `--surface-hi`: `#23302b`
+- `--border`: `#3c4d46`
+- `--border-soft`: `#27352f`
+- `--border-hi`: `#5a6d64`
+- `--text`: `#f1f7f4`
+- `--text-muted`: `#c0ccc6`
+- `--text-faint`: `#91a099`
+- `--accent`: `#62e3d7`
+
+## Contrast rules
+
+- Primary body text must remain visually strong against both `bg` and `surface`.
+- Secondary text must be clearly darker than the surface in Light mode and clearly lighter than the surface in Dark mode.
+- Cards must be distinguishable from the page canvas by **both fill and border**; do not rely on a subtle shadow alone.
+- Adjacent surfaces should not differ only by a few RGB levels.
+- Accent is for emphasis, links, focus, and hero highlights; it is not a substitute for body text.
+- Validate Light and Dark separately. A palette that works in one mode may require a different value in the other mode.
+- Prefer WCAG-AA-readable text contrast for normal content.
 
 ## Surface hierarchy
 
@@ -105,7 +117,7 @@ Do not use fixed `bg-white`, `bg-gray-*`, or fixed light hex backgrounds inside 
 
 ## Hero direction
 
-The home hero may borrow the composition principles of modern editorial hero layouts, but should remain CNE-specific:
+The home hero borrows the composition principles of modern editorial documentation heroes while remaining CNE-specific. VitePress demonstrates a strong hero-name/text/tagline/action hierarchy, while its theme is controlled through explicit CSS variables. Docusaurus similarly separates theme palettes and recommends WCAG-AA contrast; CNE follows the same principle without copying their implementation.
 
 - short technical eyebrow
 - strong two-line message
@@ -113,6 +125,8 @@ The home hero may borrow the composition principles of modern editorial hero lay
 - two or fewer CTAs
 - one wide engineering visual
 - visual fade into the next section
+- accent color reserved for one focal phrase or action
+- strong background/surface separation around the visual
 
 Preferred visuals include architecture diagrams, repository/project relationships, Kubernetes flows, GitOps pipelines, OSS maps, and engineering evidence.
 
@@ -136,3 +150,4 @@ When asking an AI design or coding system to modify CNE:
 5. Do not copy a third-party component implementation; use the design idea and implement it with CNE's own tokens/components.
 6. Verify both Light and Dark themes before merging.
 7. Keep copy controls restricted to code blocks.
+8. Check visual contrast for cards, sidebars, headers, buttons, and code surfaces in both themes.
