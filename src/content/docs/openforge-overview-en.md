@@ -9,38 +9,38 @@ lastModified: 2026-08-21
 
 # OpenForge Documentation
 
-OpenForge는 Dasomel OSS 포트폴리오에서 공통으로 사용하는 재사용 가능한 Engineering Foundation입니다.
+OpenForge is a reusable engineering foundation for the Dasomel OSS portfolio.
 
-Engineering Standard, Security/Supply Chain Governance, 재사용 가능한 구현 템플릿, Deployment Baseline, Design Pattern을 하나의 기준으로 관리합니다.
+It combines engineering standards, security and supply-chain governance, reusable implementation templates, deployment baselines, and design patterns.
 
-## 문서 모델
+## Documentation model
 
 ```text
 OpenForge repository
     ↓
 Standards + Templates
     ↓
-실제 OSS Reference Implementation
+Reference implementation in OSS projects
     ↓
-cne.io.kr 문서
+cne.io.kr OSS Documentation Portal
     ↓
-Evidence / Lessons / Knowledge
+Evidence / lessons / reusable knowledge
 ```
 
-## Source of Truth
+## Source of truth
 
-실제 구현 자산은 [OpenForge repository](https://github.com/dasomel/openforge)에 있습니다. 이 문서 사이트에서는 왜 필요한지, 언제 적용하는지, trade-off와 실제 프로젝트 적용 사례를 설명합니다.
+Implementation assets live in the [OpenForge repository](https://github.com/dasomel/openforge). The `cne.io.kr/oss/` portal explains why and when to use them, the trade-offs, and how they are applied in real projects.
 
-## 먼저 보기
+## Start here
 
-- [Concepts](/ko/docs/openforge/concepts)
-- [Getting Started](/ko/docs/openforge/getting-started)
-- [Standards](/ko/docs/openforge/standards)
-- [Templates](/ko/docs/openforge/templates)
-- [Blueprints](/ko/docs/openforge/blueprints)
-- [Operations](/ko/docs/openforge/operations)
-- [Reference](/ko/docs/openforge/reference)
-- [Troubleshooting](/ko/docs/openforge/troubleshooting)
-- [ADR](/ko/docs/openforge/adr)
+- [Concepts](/oss/en/openforge/concepts)
+- [Getting Started](/oss/en/openforge/getting-started)
+- [Standards](/oss/en/openforge/standards)
+- [Templates](/oss/en/openforge/templates)
+- [Blueprints](/oss/en/openforge/blueprints)
+- [Operations](/oss/en/openforge/operations)
+- [Reference](/oss/en/openforge/reference)
+- [Troubleshooting](/oss/en/openforge/troubleshooting)
+- [ADR](/oss/en/openforge/adr)
 
-> English 문서는 동일한 구조의 `/en/docs/openforge/...` 경로를 사용합니다.
+> The Korean portal uses the same structure under `/oss/openforge/...`.
