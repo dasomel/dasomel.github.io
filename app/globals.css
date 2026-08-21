@@ -234,8 +234,20 @@
   padding:0;
   color:var(--code-fg) !important;
 }
-.cne-doc-prose pre:not([data-language]) span {
+.cne-doc-prose pre:not([data-language]) span,
+.cne-doc-prose pre[data-language='text'] span,
+.cne-doc-prose pre[data-language='plaintext'] span,
+.cne-doc-prose pre[data-language='txt'] span {
   color:var(--code-fg) !important;
+  background:transparent !important;
+  text-shadow:none !important;
+}
+.cne-doc-prose pre[data-language='text'] *,
+.cne-doc-prose pre[data-language='plaintext'] *,
+.cne-doc-prose pre[data-language='txt'] * {
+  color:var(--code-fg) !important;
+  background:transparent !important;
+  text-shadow:none !important;
 }
 
 .cne-doc-prose blockquote {
