@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="t d">
+  <title id="t">Cloud Native engineering workbench</title>
+  <desc id="d">A light architectural canvas showing build, verify, observe and document flows across cloud native engineering work.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fcfb"/>
+      <stop offset="0.55" stop-color="#f7faf8"/>
+      <stop offset="1" stop-color="#f5f1e8"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#8bb6b0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#17312e" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="720" fill="url(#bg)"/>
+  <g stroke="#e1e9e5" stroke-width="1">
+    <path d="M70 110h1460M70 230h1460M70 350h1460M70 470h1460M70 590h1460"/>
+    <path d="M170 60v600M410 60v600M650 60v600M890 60v600M1130 60v600M1370 60v600"/>
+  </g>
+  <g fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+    <path d="M360 240h250"/>
+    <path d="M990 240h250"/>
+    <path d="M510 315l-70 120"/>
+    <path d="M800 315v120"/>
+    <path d="M1090 315l70 120"/>
+    <path d="M550 520h500"/>
+  </g>
+  <g fill="#ffffff" stroke="#84b3ac" stroke-width="2" filter="url(#shadow)">
+    <rect x="120" y="160" width="240" height="120" rx="22"/>
+    <rect x="630" y="160" width="340" height="120" rx="22"/>
+    <rect x="1240" y="160" width="240" height="120" rx="22"/>
+    <rect x="330" y="435" width="300" height="120" rx="22"/>
+    <rect x="970" y="435" width="300" height="120" rx="22"/>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <text x="120" y="105" font-size="16" font-weight="700" fill="#68817d" letter-spacing="2.4">DASOMEL / ENGINEERING WORKBENCH</text>
+    <text x="150" y="198" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">BUILD</text>
+    <text x="150" y="235" font-size="27" font-weight="700" fill="#1d2826">OPEN SOURCE</text>
+    <text x="660" y="198" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">VERIFY</text>
+    <text x="660" y="235" font-size="27" font-weight="700" fill="#1d2826">CI · TEST · SBOM</text>
+    <text x="1270" y="198" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">OBSERVE</text>
+    <text x="1270" y="235" font-size="27" font-weight="700" fill="#1d2826">EVIDENCE</text>
+    <text x="360" y="474" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">DOCUMENT</text>
+    <text x="360" y="511" font-size="27" font-weight="700" fill="#1d2826">NOTES · DOCS</text>
+    <text x="1000" y="474" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">CONNECT</text>
+    <text x="1000" y="511" font-size="27" font-weight="700" fill="#1d2826">KNOWLEDGE</text>
+    <text x="120" y="645" font-size="32" font-weight="700" fill="#17312e">build · verify · learn · repeat</text>
+  </g>
+</svg>
