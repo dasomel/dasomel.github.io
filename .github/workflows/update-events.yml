@@ -28,13 +28,21 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+
+      - name: Verify Bun version
+        run: bun --version
+
       - name: Install dependencies
         run: npm ci
 
       - name: Fetch Seoul events
         env:
           SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
-        run: node scripts/fetch-seoul-events.mjs
+        run: bun scripts/fetch-seoul-events.mjs
 
       # 외부 관광 API 는 간헐적으로 죽는다(2026-08-03 `Page 1 fetch failed`).
       # 여기서 job 을 끊으면 앞 단계에서 이미 수집한 서울 행사분까지 버려지므로 계속 진행하되,
@@ -44,7 +52,7 @@ jobs:
         continue-on-error: true
         env:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
-        run: node scripts/fetch-festivals.mjs
+        run: bun scripts/fetch-festivals.mjs
 
       # fetch-seoul-events 는 data.json 을 통째로 덮어쓰고, fetch-festivals 가 그 결과를 읽어
       # 축제를 병합한다. 따라서 축제 수집이 실패하면 파일에는 서울 행사만 남고, 그대로 커밋하면

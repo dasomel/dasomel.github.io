@@ -101,6 +101,16 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Setup Bun
+        if: steps.guard.outputs.skip == 'false'
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+
+      - name: Verify Bun version
+        if: steps.guard.outputs.skip == 'false'
+        run: bun --version
+
       - name: Install dependencies
         if: steps.guard.outputs.skip == 'false'
         run: npm ci

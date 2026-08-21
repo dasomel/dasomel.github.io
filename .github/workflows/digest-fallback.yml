@@ -26,6 +26,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+
+      - name: Verify Bun version
+        run: bun --version
+
       - name: Find pending digest PRs
         id: prs
         env:
@@ -60,7 +68,7 @@ jobs:
             git fetch origin "$BRANCH" --quiet
             git checkout --detach "origin/$BRANCH"
 
-            if ! node scripts/check-enrichment.mjs --strict --date "$DATE"; then
+            if ! bun scripts/check-enrichment.mjs --strict --date "$DATE"; then
               echo "::warning::PR #${NUM} (${DATE}) — AI enrichment 미완료. 자동 머지하지 않는다."
               BLOCKED=$((BLOCKED + 1))
               continue
