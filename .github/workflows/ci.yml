@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   NEXT_TELEMETRY_DISABLED: '1'
@@ -31,13 +31,7 @@ jobs:
         run: bun --version
 
       - name: Install dependencies
-        run: |
-          if [ -f bun.lock ]; then
-            bun install --frozen-lockfile --no-progress
-          else
-            echo "bun.lock not found — bootstrapping it with Bun."
-            bun install --no-progress
-          fi
+        run: bun install --frozen-lockfile --no-progress
 
       - name: Unit tests
         run: bun test
@@ -47,32 +41,3 @@ jobs:
 
       - name: Build
         run: bun run build
-
-      - name: Persist generated Bun lockfile
-        if: ${{ !cancelled() }}
-        env:
-          PR_BRANCH: ${{ github.head_ref || github.ref_name }}
-        run: |
-          if [ ! -f bun.lock ]; then
-            echo "bun.lock was not generated."
-            exit 1
-          fi
-
-          if ! git status --porcelain -- bun.lock | grep -q .; then
-            echo "bun.lock already matches the repository."
-            exit 0
-          fi
-
-          # pull_request checks run on a synthetic merge commit. Do not push
-          # that detached merge ref. Preserve the generated lockfile, reset to
-          # the real PR branch head, then create a lockfile-only commit there.
-          cp bun.lock "${RUNNER_TEMP}/bun.lock"
-          git fetch origin "$PR_BRANCH" --quiet
-          git reset --hard "origin/$PR_BRANCH"
-          cp "${RUNNER_TEMP}/bun.lock" bun.lock
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add bun.lock
-          git commit -m "chore: generate Bun lockfile"
-          git push origin "HEAD:$PR_BRANCH"
