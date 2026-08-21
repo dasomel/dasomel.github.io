@@ -1,1 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t d"><title id="t">dasomel OSS Workbench</title><desc id="d">A systems engineering workbench showing projects, experiments and knowledge connected through a technical grid.</desc><rect width="1200" height="520" rx="28" fill="#0b1220"/><g stroke="#263244" stroke-width="1" opacity=".8"><path d="M80 90h1040M80 170h1040M80 250h1040M80 330h1040M80 410h1040"/><path d="M160 55v380M320 55v380M480 55v380M640 55v380M800 55v380M960 55v380M1120 55v380"/></g><g fill="#111827" stroke="#34d399" stroke-width="2"><rect x="120" y="135" width="220" height="100" rx="16"/><rect x="490" y="95" width="220" height="100" rx="16"/><rect x="860" y="145" width="220" height="100" rx="16"/><rect x="310" y="310" width="220" height="100" rx="16"/><rect x="690" y="315" width="220" height="100" rx="16"/></g><g fill="none" stroke="#6ee7b7" stroke-width="3" stroke-linecap="round"><path d="M340 185h150"/><path d="M710 145l150 50"/><path d="M450 235l-30 75"/><path d="M710 195l50 120"/><path d="M530 360h160"/></g><g fill="#f8fafc" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"><text x="120" y="165" font-size="15" fill="#94a3b8">01 / BUILD</text><text x="120" y="198" font-size="23" font-weight="700">OSS PROJECTS</text><text x="490" y="125" font-size="15" fill="#94a3b8">02 / VERIFY</text><text x="490" y="158" font-size="23" font-weight="700">EXPERIMENTS</text><text x="860" y="175" font-size="15" fill="#94a3b8">03 / OBSERVE</text><text x="860" y="208" font-size="23" font-weight="700">EVIDENCE</text><text x="310" y="340" font-size="15" fill="#94a3b8">04 / WRITE</text><text x="310" y="373" font-size="23" font-weight="700">NOTES</text><text x="690" y="345" font-size="15" fill="#94a3b8">05 / CONNECT</text><text x="690" y="378" font-size="23" font-weight="700">KNOWLEDGE</text><text x="80" y="65" font-size="17" fill="#94a3b8" letter-spacing="2">DASOMEL / OSS WORKBENCH</text><text x="80" y="480" font-size="30" font-weight="700">build · verify · learn · repeat</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">dasomel OSS Workbench</title>
+  <desc id="d">A light technical canvas connecting OSS projects, experiments, evidence, notes, and knowledge.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbfa"/>
+      <stop offset="1" stop-color="#f6f3eb"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#5b8c87"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="560" rx="32" fill="url(#bg)"/>
+  <g stroke="#dfe7e3" stroke-width="1">
+    <path d="M70 100h1060M70 190h1060M70 280h1060M70 370h1060M70 460h1060"/>
+    <path d="M150 60v440M330 60v440M510 60v440M690 60v440M870 60v440M1050 60v440"/>
+  </g>
+  <g fill="none" stroke="#7bb7af" stroke-width="3" stroke-linecap="round" opacity=".9">
+    <path d="M330 175h180"/>
+    <path d="M690 175h180"/>
+    <path d="M270 245l-35 85"/>
+    <path d="M600 245v95"/>
+    <path d="M930 245l35 85"/>
+    <path d="M420 390h170"/>
+    <path d="M610 390h170"/>
+  </g>
+  <g fill="#ffffff" stroke="url(#edge)" stroke-width="2">
+    <rect x="95" y="115" width="235" height="105" rx="18"/>
+    <rect x="475" y="115" width="235" height="105" rx="18"/>
+    <rect x="855" y="115" width="235" height="105" rx="18"/>
+    <rect x="260" y="325" width="235" height="105" rx="18"/>
+    <rect x="555" y="325" width="235" height="105" rx="18"/>
+  </g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <text x="95" y="66" font-size="17" font-weight="700" fill="#5f726e" letter-spacing="2">DASOMEL / OSS WORKBENCH</text>
+    <text x="115" y="147" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">01 / BUILD</text>
+    <text x="115" y="184" font-size="24" font-weight="700" fill="#1f2927">OSS PROJECTS</text>
+    <text x="495" y="147" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">02 / VERIFY</text>
+    <text x="495" y="184" font-size="24" font-weight="700" fill="#1f2927">EXPERIMENTS</text>
+    <text x="875" y="147" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">03 / OBSERVE</text>
+    <text x="875" y="184" font-size="24" font-weight="700" fill="#1f2927">EVIDENCE</text>
+    <text x="280" y="357" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">04 / WRITE</text>
+    <text x="280" y="394" font-size="24" font-weight="700" fill="#1f2927">NOTES</text>
+    <text x="575" y="357" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">05 / CONNECT</text>
+    <text x="575" y="394" font-size="24" font-weight="700" fill="#1f2927">KNOWLEDGE</text>
+    <text x="95" y="510" font-size="28" font-weight="700" fill="#17312e">build · verify · learn · repeat</text>
+  </g>
+</svg>
