@@ -2,16 +2,23 @@ import Link from 'next/link';
 
 export default function OssLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#0b1020] text-slate-100">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1020]/90 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
-          <Link href="/oss/" className="font-semibold tracking-tight">OSS Engineering</Link>
-          <div className="flex items-center gap-4 text-sm text-slate-300">
-            <Link href="/oss/" className="hover:text-white">Projects</Link>
-            <Link href="/oss/en/" className="hover:text-white">English</Link>
-            <a href="https://github.com/dasomel/openforge" className="hover:text-white" target="_blank" rel="noreferrer">GitHub</a>
-            <Link href="/" className="hover:text-white">cne.io.kr</Link>
+    <div className="min-h-screen bg-[#f7f7f5] text-[#171717]">
+      <header className="sticky top-0 z-50 border-b border-[#deded8] bg-[#f7f7f5]/95 backdrop-blur">
+        <div className="mx-auto flex h-[60px] max-w-[1440px] items-center justify-between px-5 sm:px-7">
+          <div className="flex items-center gap-7">
+            <Link href="/oss/" className="flex items-center gap-2.5 font-semibold tracking-tight text-[#171717]">
+              <span className="grid h-7 w-7 place-items-center rounded-md bg-[#171717] text-[9px] font-bold tracking-tight text-white">OSS</span>
+              <span className="hidden sm:inline">Engineering Docs</span>
+            </Link>
+            <nav className="hidden items-center gap-1 text-sm md:flex">
+              <Link href="/oss/" className="rounded-md px-3 py-2 text-[#55554f] transition hover:bg-[#ecece6] hover:text-[#171717]">Projects</Link>
+            </nav>
           </div>
+          <nav className="flex items-center gap-1 text-sm">
+            <Link href="/oss/en/" className="rounded-md border border-[#d4d4ce] bg-white px-2.5 py-1.5 font-mono text-[11px] font-semibold tracking-wide text-[#34342f] transition hover:border-[#bdbdb6] hover:bg-[#f1f1ec]">EN</Link>
+            <a href="https://github.com/dasomel/openforge" target="_blank" rel="noreferrer" className="hidden rounded-md px-3 py-2 text-[#55554f] transition hover:bg-[#ecece6] hover:text-[#171717] sm:block">GitHub ↗</a>
+            <Link href="/" className="hidden rounded-md px-3 py-2 text-[#77776f] transition hover:bg-[#ecece6] hover:text-[#171717] sm:block">cne.io.kr</Link>
+          </nav>
         </div>
       </header>
       <main>{children}</main>
