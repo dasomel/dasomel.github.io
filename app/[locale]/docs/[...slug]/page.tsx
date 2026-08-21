@@ -7,37 +7,27 @@ import TOC from '@/components/layout/TOC';
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string[] }[] = [];
-  routing.locales.forEach(locale => {
-    getDocs(locale as 'ko' | 'en').forEach(d => params.push({ locale, slug: d.slug.split('/') }));
+  routing.locales.forEach((locale) => {
+    getDocs(locale as 'ko' | 'en').filter((d) => !d.slug.includes('/')).forEach((d) => params.push({ locale, slug: d.slug.split('/') }));
   });
   return params;
 }
 
 export default async function DocPage({ params }: { params: Promise<{ locale: string; slug: string[] }> }) {
   const { locale, slug: segments } = await params;
-  const lang = locale as 'ko' | 'en';
   const slug = segments.join('/');
+  if (slug.includes('/')) notFound();
+  const lang = locale as 'ko' | 'en';
   const result = getDocBySlug(slug, lang);
   if (!result) notFound();
-  const { meta, content } = result;
-  const docs = getDocs(lang);
-
+  const docs = getDocs(lang).filter((doc) => !doc.slug.includes('/'));
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
       <div className="flex flex-col lg:flex-row lg:gap-8">
         <Sidebar docs={docs} locale={lang} />
         <div className="flex-1 min-w-0">
-          <header className="mb-8 lg:mb-10">
-            <div className="text-xs font-mono text-gray-400 mb-3">/docs/{meta.slug}</div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{meta.title}</h1>
-            {meta.description && <p className="text-gray-500">{meta.description}</p>}
-            {meta.lastModified && (
-              <p className="font-mono text-xs text-gray-400 mt-2">{meta.lastModified.slice(0, 10)}</p>
-            )}
-          </header>
-          <article className="prose prose-gray sm:prose-lg max-w-none prose-a:text-emerald-600 prose-headings:scroll-mt-20">
-            <MDXContent source={content} />
-          </article>
+          <header className="mb-8 lg:mb-10"><h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{result.meta.title}</h1>{result.meta.description && <p className="text-gray-500">{result.meta.description}</p>}</header>
+          <article className="prose prose-gray sm:prose-lg max-w-none prose-a:text-emerald-600 prose-headings:scroll-mt-20"><MDXContent source={result.content} /></article>
         </div>
         <TOC />
       </div>
