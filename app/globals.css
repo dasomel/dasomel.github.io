@@ -34,6 +34,7 @@
   --surface: #ffffff;
   --surface-hi: #edf1ef;
   --border: #d5ddda;
+  --border-soft: #e4e9e7;
   --border-hi: #b9c7c2;
   --text: #141917;
   --text-muted: #59645f;
@@ -54,6 +55,7 @@
   --surface: #151d1a;
   --surface-hi: #1d2824;
   --border: #2c3934;
+  --border-soft: #202b27;
   --border-hi: #42514b;
   --text: #edf4f0;
   --text-muted: #aab7b1;
