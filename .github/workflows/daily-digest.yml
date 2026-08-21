@@ -43,19 +43,12 @@ concurrency:
 jobs:
   digest:
     runs-on: ubuntu-latest
-    # Bound the known feed-collection hang risk so a stuck run can't burn minutes.
     timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
       # 같은 날짜를 두 번 발행하지 못하게 막는 관문. 수집보다 먼저 온다.
-      #
-      # 2026-08-07 사고: 수동 dispatch 로 발행을 끝낸 직후, 276분 지연된 예약 런이
-      # 뒤늦게 떠서 같은 날짜를 다시 수집하고(23건 → 18건) 삭제된 브랜치를 되살려
-      # PR 을 새로 만들었다. 예약 fallback 이 그것을 머지해 이미 발행된 다이제스트를
-      # 통째로 갈아치웠다. 워크플로는 전부 초록이었다 — 내용이 바뀐 걸 아무도 모른다.
-      # 백스톱 cron 을 추가하면 이 경합이 더 잦아지므로 관문이 먼저 있어야 한다.
       - name: Guard against double publication
         id: guard
         env:
@@ -66,7 +59,6 @@ jobs:
           DATE="$(TZ=Asia/Seoul date +%F)"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
-          # 잘못 만든 다이제스트를 사람이 다시 돌릴 수 있어야 한다 — 탈출구.
           if [ "$FORCE" = "true" ]; then
             echo "force=true — 관문을 건너뛰고 다시 수집한다."
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -79,7 +71,6 @@ jobs:
             exit 0
           fi
 
-          # gh 실패를 "PR 없음"으로 오해하면 그대로 이중 발행이 된다. 명시적으로 구분한다.
           if ! OPEN="$(gh pr list --repo "$REPO" --state open \
                 --head "daily-digest/${DATE}" --json number --jq '.[].number')"; then
             echo "::error::gh pr list 실패 — 이중 발행을 막을 수 없으므로 중단한다."
@@ -94,13 +85,6 @@ jobs:
           echo "${DATE} 미발행 — 수집을 진행한다."
           echo "skip=false" >> "$GITHUB_OUTPUT"
 
-      - name: Setup Node
-        if: steps.guard.outputs.skip == 'false'
-        uses: actions/setup-node@v6
-        with:
-          node-version: 22
-          cache: npm
-
       - name: Setup Bun
         if: steps.guard.outputs.skip == 'false'
         uses: oven-sh/setup-bun@v2
@@ -113,15 +97,15 @@ jobs:
 
       - name: Install dependencies
         if: steps.guard.outputs.skip == 'false'
-        run: npm ci
+        run: bun install --frozen-lockfile --no-progress
 
       - name: Collect RSS feeds
         if: steps.guard.outputs.skip == 'false'
-        run: npm run digest:collect
+        run: bun run digest:collect
 
       - name: Generate digest posts
         if: steps.guard.outputs.skip == 'false'
-        run: npm run digest
+        run: bun run digest
 
       - name: Check for new posts
         id: changes
@@ -129,8 +113,6 @@ jobs:
         run: |
           if [ -n "$(git status --porcelain src/content/posts)" ]; then
             echo "created=true" >> "$GITHUB_OUTPUT"
-            # 관문이 계산한 날짜를 그대로 쓴다. 여기서 date 를 다시 부르면 실행이
-            # KST 자정을 걸칠 때 관문이 검사한 날짜와 어긋날 수 있다.
             echo "date=${{ steps.guard.outputs.date }}" >> "$GITHUB_OUTPUT"
           else
             echo "created=false" >> "$GITHUB_OUTPUT"
@@ -148,7 +130,6 @@ jobs:
             echo "Curated from Kubernetes, CNCF, The New Stack, AWS, Google Cloud, OpenAI, Hugging Face, HashiCorp, and Grafana feeds."
             echo ""
             echo "## Headlines"
-            # Pull each '### ' headline from the Korean digest as a checklist.
             grep -h '^### ' "src/content/posts/daily-digest-${DATE}.md" \
               | sed 's/^### /- /' || true
             echo ""
