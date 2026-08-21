@@ -24,7 +24,7 @@ export default async function OssProjectHomeEn({ params }: { params: Promise<{ p
         <h2 className="text-4xl font-bold tracking-tight text-[#171717] sm:text-5xl">{project.meta.title}</h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-[#5f625d]">{project.meta.description}</p>
       </div>
-      <article className="prose prose-neutral max-w-3xl prose-headings:scroll-mt-24 prose-headings:text-[#20201d] prose-a:text-[#0f766e] prose-a:no-underline hover:prose-a:underline prose-code:text-[#33413e] prose-strong:text-[#20201d]">
+      <article id="oss-doc-content" className="prose prose-neutral max-w-3xl prose-headings:scroll-mt-24 prose-headings:text-[#20201d] prose-a:text-[#0f766e] prose-a:no-underline hover:prose-a:underline prose-code:text-[#33413e] prose-strong:text-[#20201d]">
         <MDXContent source={project.content} />
       </article>
     </OssProjectShell>
