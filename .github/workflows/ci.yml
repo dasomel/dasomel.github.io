@@ -3,13 +3,6 @@ name: CI
 on:
   pull_request:
     branches: [main]
-  push:
-    branches:
-      - 'deps/**'
-      - 'feat/**'
-      - 'chore/**'
-    paths-ignore:
-      - 'package-lock.json'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +13,9 @@ env:
   NPM_CONFIG_AUDIT: 'false'
   NPM_CONFIG_FUND: 'false'
 
+# A PR gets exactly one validation lane. Pushes to the PR branch are already
+# reflected in the pull_request event, so a separate push trigger only creates
+# duplicate runs that serialize behind each other.
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
