@@ -6,16 +6,17 @@ import Sidebar from '@/components/layout/Sidebar';
 import TOC from '@/components/layout/TOC';
 
 export function generateStaticParams() {
-  const params: { locale: string; slug: string }[] = [];
+  const params: { locale: string; slug: string[] }[] = [];
   routing.locales.forEach(locale => {
-    getDocs(locale as 'ko' | 'en').forEach(d => params.push({ locale, slug: d.slug }));
+    getDocs(locale as 'ko' | 'en').forEach(d => params.push({ locale, slug: d.slug.split('/') }));
   });
   return params;
 }
 
-export default async function DocPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-  const { locale, slug } = await params;
+export default async function DocPage({ params }: { params: Promise<{ locale: string; slug: string[] }> }) {
+  const { locale, slug: segments } = await params;
   const lang = locale as 'ko' | 'en';
+  const slug = segments.join('/');
   const result = getDocBySlug(slug, lang);
   if (!result) notFound();
   const { meta, content } = result;
@@ -27,6 +28,7 @@ export default async function DocPage({ params }: { params: Promise<{ locale: st
         <Sidebar docs={docs} locale={lang} />
         <div className="flex-1 min-w-0">
           <header className="mb-8 lg:mb-10">
+            <div className="text-xs font-mono text-gray-400 mb-3">/docs/{meta.slug}</div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{meta.title}</h1>
             {meta.description && <p className="text-gray-500">{meta.description}</p>}
             {meta.lastModified && (
