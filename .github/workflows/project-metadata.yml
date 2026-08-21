@@ -28,13 +28,21 @@ jobs:
           node-version: 24.19.0
           cache: npm
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+
+      - name: Verify Bun version
+        run: bun --version
+
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --no-fund --ignore-scripts
 
       - name: Refresh repository metadata
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/refresh-project-metadata.mjs
+        run: bun scripts/refresh-project-metadata.mjs
 
       - name: Create review branch and PR
         env:
