@@ -90,7 +90,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
         </div>
       </div>
 
-      <article className="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-a:text-emerald-600">
+      <article className="prose prose-lg cne-doc-prose max-w-none prose-headings:font-bold">
         <MDXContent source={content} />
       </article>
 
