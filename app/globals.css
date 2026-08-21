@@ -29,23 +29,24 @@
 
 :root,
 :root[data-theme='light'] {
-  --bg: #ffffff;
-  --bg-subtle: #fafaf8;
-  --surface: #f3f5f4;
-  --surface-hi: #e8ecea;
-  --border: #e3e7e5;
-  --border-hi: #cdd5d1;
+  --bg: #f7f8f6;
+  --bg-subtle: #f1f4f2;
+  --surface: #ffffff;
+  --surface-hi: #edf1ef;
+  --border: #d5ddda;
+  --border-soft: #e4e9e7;
+  --border-hi: #b9c7c2;
   --text: #141917;
   --text-muted: #59645f;
-  --text-faint: #8b9590;
+  --text-faint: #7b8781;
   --accent: #0f766e;
   --accent-dim: rgba(15,118,110,0.08);
   --accent-glow: rgba(15,118,110,0.14);
-  --header-bg: rgba(255,255,255,0.88);
-  --code-bg: #f6f8f7;
-  --code-border: #d7dfdb;
+  --header-bg: rgba(247,248,246,0.97);
+  --code-bg: #f3f6f4;
+  --code-border: #cfd8d4;
   --code-action: #59645f;
-  --code-action-bg: rgba(255,255,255,0.92);
+  --code-action-bg: rgba(255,255,255,0.98);
 }
 
 :root[data-theme='dark'] {
@@ -53,19 +54,20 @@
   --bg-subtle: #101715;
   --surface: #151d1a;
   --surface-hi: #1d2824;
-  --border: #27332f;
-  --border-hi: #3a4742;
+  --border: #2c3934;
+  --border-soft: #202b27;
+  --border-hi: #42514b;
   --text: #edf4f0;
   --text-muted: #aab7b1;
-  --text-faint: #718079;
+  --text-faint: #77867f;
   --accent: #4fd1c5;
   --accent-dim: rgba(79,209,197,0.11);
   --accent-glow: rgba(79,209,197,0.18);
-  --header-bg: rgba(11,17,16,0.88);
+  --header-bg: rgba(11,17,16,0.97);
   --code-bg: #0e1412;
-  --code-border: #2a3732;
+  --code-border: #2f3d37;
   --code-action: #c3d0ca;
-  --code-action-bg: rgba(21,29,26,0.95);
+  --code-action-bg: rgba(21,29,26,0.98);
 }
 
 @layer base {
@@ -109,7 +111,7 @@
   padding: 1.35rem;
   border: 1px solid var(--border);
   border-radius: 0.9rem;
-  background: var(--bg);
+  background: var(--surface);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .workbench-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); box-shadow: 0 10px 26px -18px var(--accent-glow); }
@@ -117,7 +119,7 @@
 .workbench-note:hover { padding-left:0.55rem; }
 .workbench-chip { display:inline-flex; align-items:center; border:1px solid var(--border); border-radius:0.45rem; background:var(--bg-subtle); color:var(--text-faint); padding:0.22rem 0.45rem; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace; font-size:0.68rem; }
 .workbench-quote { padding:1.3rem 1.4rem; border-left:3px solid var(--accent); border-radius:0.2rem 0.8rem 0.8rem 0.2rem; background:linear-gradient(90deg,var(--accent-dim),transparent 90%); }
-.card-outline { background-color:var(--bg); border-radius:0.875rem; border:1px solid var(--border); transition:border-color 0.2s ease, box-shadow 0.2s ease; }
+.card-outline { background-color:var(--surface); border-radius:0.875rem; border:1px solid var(--border); transition:border-color 0.2s ease, box-shadow 0.2s ease; }
 .card-outline:hover { border-color:color-mix(in srgb, var(--accent) 35%, var(--border)); box-shadow:0 6px 20px -8px var(--accent-glow), 0 1px 4px rgba(0,0,0,0.08); }
 .card-glow { position:relative; overflow:hidden; }
 .card-glow::before { content:''; position:absolute; inset:0; border-radius:inherit; background:radial-gradient(ellipse at top,var(--accent-dim),transparent 70%); opacity:0; transition:opacity 0.3s ease; pointer-events:none; }
@@ -138,15 +140,13 @@
   --tw-prose-invert-bold: var(--text);
   --tw-prose-invert-quotes: var(--text-muted);
 }
-.prose code { background:var(--surface); padding:0.15em 0.4em; border-radius:0.3rem; font-size:0.875em; font-weight:500; }
+.prose code { background:var(--surface-hi); padding:0.15em 0.4em; border-radius:0.3rem; font-size:0.875em; font-weight:500; }
 .prose code::before, .prose code::after { content:none; }
 .prose pre { border:1px solid var(--code-border); border-radius:0.75rem; background:var(--code-bg) !important; overflow-x:auto; }
 .prose pre code { background:transparent; padding:0; color:inherit; }
 .prose a { text-decoration-thickness:1px; text-underline-offset:3px; }
 
 html[data-theme='dark'] .prose pre { box-shadow: 0 18px 50px rgba(0,0,0,0.24); }
-html[data-theme='dark'] .workbench-chip,
-html[data-theme='dark'] .card-outline { background-color: var(--surface); }
 html[data-theme='dark'] img[src*='workbench-hero-v2'] { filter: brightness(0.78) saturate(0.9); }
 
 @media (prefers-reduced-motion: reduce) {
