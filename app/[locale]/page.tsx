@@ -13,7 +13,7 @@ export function generateStaticParams() { return routing.locales.map(locale => ({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params; const lang = locale as 'ko' | 'en'; const url = `https://cne.io.kr/${lang}`;
   const copy = lang === 'en' ? { title: 'dasomel — OSS Workbench', description: 'An engineering workbench for building, testing, learning, and changing my mind in Cloud Native and open source.' } : { title: 'dasomel — OSS Workbench', description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록.' };
-  return { title: copy.title, description: copy.description, alternates: { canonical: url, languages: { ko: 'https://cne.io.kr/ko', en: 'https://cne.io.kr/en' } }, openGraph: { type: 'website', url, title: copy.title, description: copy.description, images: [{ url: '/images/workbench-hero.svg', alt: 'OSS engineering workbench' }] }, twitter: { card: 'summary_large_image', title: copy.title, description: copy.description, images: ['/images/workbench-hero.svg'] } };
+  return { title: copy.title, description: copy.description, alternates: { canonical: url, languages: { ko: 'https://cne.io.kr/ko', en: 'https://cne.io.kr/en' } }, openGraph: { type: 'website', url, title: copy.title, description: copy.description, images: [{ url: '/images/workbench-hero-v2.svg', alt: 'OSS engineering workbench' }] }, twitter: { card: 'summary_large_image', title: copy.title, description: copy.description, images: ['/images/workbench-hero-v2.svg'] } };
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -25,26 +25,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const latestDigest = digests[0]; const yearsActive = new Date().getFullYear() - 2011;
 
   return <div>
-    <section className="relative overflow-hidden border-b" style={{ borderColor: 'var(--border)' }}>
-      <div className="absolute inset-0 grid-bg opacity-70" />
-      <div className="absolute inset-x-0 top-0 h-[460px] bg-[radial-gradient(circle_at_50%_18%,rgba(15,118,110,0.12),transparent_58%)]" />
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-8 sm:pb-10">
-        <div className="mx-auto max-w-4xl text-center">
+    <section className="relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
+      <div className="absolute inset-x-0 top-0 h-[620px] bg-[radial-gradient(circle_at_50%_8%,rgba(15,118,110,0.16),transparent_55%)]" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28">
+        <div className="mx-auto max-w-5xl text-center">
           <div className="workbench-eyebrow mb-6">{t('hero.eyebrow')}</div>
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] mb-6" style={{ color: 'var(--text)' }}>
+          <h1 className="mx-auto max-w-5xl text-5xl sm:text-7xl lg:text-8xl font-bold tracking-[-0.045em] leading-[0.97]" style={{ color: 'var(--text)' }}>
             {t('hero.headline_1')}<span style={{ color: 'var(--accent)' }}>{t('hero.headline_accent')}</span>{t('hero.headline_2')}
           </h1>
-          <p className="mx-auto text-base sm:text-lg max-w-2xl leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>{t('hero.description')}</p>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            <Link href={`${base}/projects`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium shadow-sm" style={{ backgroundColor: 'var(--accent)', color: '#fff' }}>{t('hero.cta_projects')} <ArrowUpRight className="w-4 h-4" /></Link>
-            <Link href={`${base}/notes`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border-hi)', color: 'var(--text)' }}>{t('hero.cta_notes')} <ArrowUpRight className="w-4 h-4" /></Link>
+          <p className="mx-auto mt-7 max-w-2xl text-base sm:text-lg leading-8" style={{ color: 'var(--text-muted)' }}>{t('hero.description')}</p>
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <Link href={`${base}/projects`} className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-sm" style={{ backgroundColor: 'var(--accent)', color: '#fff' }}>{t('hero.cta_projects')} <ArrowUpRight className="w-4 h-4" /></Link>
+            <Link href={`${base}/notes`} className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border-hi)', color: 'var(--text)' }}>{t('hero.cta_notes')} <ArrowUpRight className="w-4 h-4" /></Link>
           </div>
         </div>
-        <div className="relative mx-auto max-w-5xl -mb-16 sm:-mb-24">
-          <div className="overflow-hidden rounded-2xl sm:rounded-3xl" style={{ border: '1px solid var(--border-hi)', backgroundColor: 'var(--surface)', boxShadow: '0 24px 70px rgba(23, 23, 23, 0.10)' }}>
-            <Image src="/images/workbench-hero.svg" alt="OSS engineering workbench visual" width={1600} height={900} unoptimized className="block w-full h-auto" priority />
-          </div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[var(--background)] via-[color:var(--background)/0.92] to-transparent" />
+        <div className="relative mt-16 sm:mt-20 mx-auto max-w-6xl">
+          <Image src="/images/workbench-hero-v2.svg" alt="OSS engineering workbench visual" width={1600} height={720} unoptimized className="block w-full h-auto" priority />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-44 bg-gradient-to-t from-[var(--background)] via-[color:var(--background)/0.88] to-transparent" />
         </div>
       </div>
     </section>
