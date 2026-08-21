@@ -7,6 +7,12 @@ const STORAGE_KEY = 'cne-theme';
 
 type Theme = 'light' | 'dark';
 
+function resolveTheme(): Theme {
+  const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
+  if (stored === 'dark' || stored === 'light') return stored;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
 function applyTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
   document.documentElement.style.colorScheme = theme;
@@ -16,11 +22,13 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const initial = stored === 'dark' || stored === 'light' ? stored : preferred;
-    setTheme(initial);
-    applyTheme(initial);
+    const frame = window.requestAnimationFrame(() => {
+      const initial = resolveTheme();
+      setTheme(initial);
+      applyTheme(initial);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const toggle = () => {
