@@ -11,9 +11,6 @@ permissions:
 env:
   NEXT_TELEMETRY_DISABLED: '1'
 
-# A PR gets exactly one validation lane. Pushes to the PR branch are already
-# reflected in the pull_request event, so a separate push trigger only creates
-# duplicate runs that serialize behind each other.
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -34,8 +31,6 @@ jobs:
         run: bun --version
 
       - name: Install dependencies
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -f bun.lock ]; then
             bun install --frozen-lockfile --no-progress
@@ -55,15 +50,17 @@ jobs:
 
       - name: Persist generated Bun lockfile
         if: ${{ !cancelled() }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f bun.lock ] && ! git diff --quiet -- bun.lock; then
+          if [ ! -f bun.lock ]; then
+            echo "bun.lock was not generated."
+            exit 1
+          fi
+          if git status --porcelain -- bun.lock | grep -q .; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add bun.lock
             git commit -m "chore: generate Bun lockfile"
             git push
           else
-            echo "No new Bun lockfile changes to persist."
+            echo "bun.lock already matches the repository."
           fi
