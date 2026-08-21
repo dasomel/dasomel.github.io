@@ -1,8 +1,7 @@
 # Build output
 dist/
 .astro/
-
-# TypeScript
+.bun-dist/
 tsconfig.tsbuildinfo
 
 # Dependencies
