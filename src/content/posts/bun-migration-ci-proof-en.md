@@ -561,3 +561,32 @@ So the most accurate conclusion is:
 For me, the more important outcome was methodological: **fail, isolate the cause, repair the execution boundary, measure again, and then simplify the pipeline.**
 
 That is a much more useful way to approach a tooling migration than simply declaring that the new tool is faster.
+
+## 12. Sequential main changes and cancelled deploy runs are part of the deployment model
+
+While cleaning up the Bun-based CI/CD flow, I observed a case where a newer `main` revision arrived while an earlier GitHub Pages deployment was still running. The earlier run became `cancelled`, and a new deployment started for the latest revision.
+
+<Mermaid chart={`flowchart TD
+    classDef commit fill:#f8fafc,stroke:#94a3b8,color:#334155,stroke-width:1px
+    classDef deploy fill:#ecfeff,stroke:#06b6d4,color:#155e75,stroke-width:1.5px
+    classDef cancel fill:#fef2f2,stroke:#ef4444,color:#991b1b,stroke-width:1.5px
+    classDef success fill:#ecfdf5,stroke:#10b981,color:#065f46,stroke-width:1.5px
+
+    A[Commit A on main] --> B[Deploy A]
+    C[Commit B on main] --> D[Deploy B]
+    B --> E[Deploy A cancelled]
+    D --> F[Deploy B succeeds]
+    class A,C commit
+    class B,D deploy
+    class E cancel
+    class F success
+`} />
+
+A `cancelled` run does not mean the earlier code was deleted. In a linear `main` history, the newer revision normally contains the previous revision's changes, so the earlier deployment work can be stopped and the latest revision can become the final deployment target.
+
+When diagnosing a deployment, check all three signals together: the previous run's `cancelled` state, the presence of a newer `main` revision, and the outcome of the latest deployment.
+
+In this case, Deploy #364 was cancelled after a newer commit appeared, and Deploy #365 started for `76e1a3e`; its production build completed successfully.
+
+This is better described as **converging deployment state on the latest `main` revision** than as blindly overwriting a previous result. Systems publishing independent artifacts may need a different concurrency policy.
+

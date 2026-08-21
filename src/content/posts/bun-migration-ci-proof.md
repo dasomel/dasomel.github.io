@@ -411,3 +411,38 @@ bun install    8.99s
 반면 Next.js build 자체는 거의 동일했습니다.
 
 이번 migration의 핵심은 단순한 속도 향상이 아니라 **실패 → 원인 분리 → runtime 보완 → 실측 → pipeline 단순화**의 순서였습니다.
+
+## 12. 연속된 main 변경과 Deploy 취소도 배포 모델의 일부다
+
+Bun 전환 이후 CI/CD를 정리하는 과정에서 `main`에 짧은 간격으로 여러 변경이 들어오면서 이전 GitHub Pages Deploy run이 `cancelled`되고 최신 revision의 Deploy가 이어지는 상황도 확인했습니다.
+
+<Mermaid chart={`flowchart TD
+    classDef commit fill:#f8fafc,stroke:#94a3b8,color:#334155,stroke-width:1px
+    classDef deploy fill:#ecfeff,stroke:#06b6d4,color:#155e75,stroke-width:1.5px
+    classDef cancel fill:#fef2f2,stroke:#ef4444,color:#991b1b,stroke-width:1.5px
+    classDef success fill:#ecfdf5,stroke:#10b981,color:#065f46,stroke-width:1.5px
+
+    A[Commit A on main] --> B[Deploy A]
+    C[Commit B on main] --> D[Deploy B]
+    B --> E[Deploy A cancelled]
+    D --> F[Deploy B succeeds]
+    class A,C commit
+    class B,D deploy
+    class E cancel
+    class F success
+`} />
+
+여기서 `cancelled`는 이전 코드가 삭제되었다는 뜻이 아닙니다. `main`이 선형적으로 갱신되는 저장소에서는 보통 최신 revision이 이전 변경을 포함하므로, 이전 revision의 배포 작업을 중단하고 최신 revision을 최종 배포 대상으로 선택하는 흐름으로 이해하는 것이 정확합니다.
+
+따라서 Deploy run을 확인할 때는 `cancelled`만 보고 장애라고 판단하지 않고 다음을 함께 확인해야 합니다.
+
+| 확인 항목 | 판단 기준 |
+| --- | --- |
+| 이전 Deploy | `cancelled`인지 |
+| 최신 main commit | 더 새로운 revision이 존재하는지 |
+| 최신 Deploy | build와 deploy가 성공했는지 |
+
+이번 사례에서도 Deploy #364가 취소된 뒤 최신 commit `76e1a3e`를 대상으로 Deploy #365가 실행됐고 production build는 정상 완료됐습니다.
+
+즉 이 동작은 기존 결과를 무작정 덮어쓰는 것보다 **최신 `main` revision으로 배포 상태를 수렴시키는 것**에 가깝습니다. 독립적인 artifact를 배포하는 시스템은 concurrency 정책을 별도로 검토해야 합니다.
+
