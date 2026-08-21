@@ -2,16 +2,19 @@
   "name": "dasomel-blog",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.4.0",
   "engines": {
     "bun": ">=1.4.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && bun scripts/generate-rss.js",
+    "dev": "bun run next dev",
+    "build": "bun run next build && bun scripts/generate-rss.js",
+    "build:tools": "bun build scripts/generate-rss.js --outfile .bun-dist/generate-rss.js --target=bun",
+    "test": "bun test",
     "events:fetch": "bun scripts/fetch-seoul-events.mjs",
     "festivals:fetch": "bun scripts/fetch-festivals.mjs",
-    "start": "next start",
-    "lint": "eslint .",
+    "start": "bun run next start",
+    "lint": "bun run eslint .",
     "projects:refresh": "bun scripts/refresh-project-metadata.mjs",
     "digest:collect": "bun scripts/collect-feeds.mjs",
     "digest": "bun scripts/generate-daily-digest.mjs",
@@ -54,6 +57,12 @@
     "rss-parser": "^3.13.0",
     "typescript": "^5.9.3"
   },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@swc/core",
+    "sharp",
+    "unrs-resolver"
+  ],
   "overrides": {
     "postcss": "^8.5.26",
     "sharp": "^0.35.0",
