@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Doc, Project } from '@/lib/types';
+import OssTableOfContents from '@/components/oss/OssTableOfContents';
 
 function sectionName(slug: string) {
   const parts = slug.split('/');
@@ -22,7 +23,7 @@ export default function OssProjectShell({ project, docs, locale, children }: { p
       <aside className="border-r border-[#e5e3dc] bg-[#fafaf7] lg:min-h-[calc(100vh-60px)]">
         <div className="sticky top-[60px] max-h-[calc(100vh-60px)] overflow-y-auto px-4 py-7">
           <Link href={locale === 'en' ? '/oss/en/' : '/oss/'} className="mb-6 block px-2 text-xs font-medium text-[#7b7b73] transition hover:text-[#171717]">← {locale === 'en' ? 'All OSS projects' : 'OSS 프로젝트 전체'}</Link>
-          <nav className="space-y-5">
+          <nav className="space-y-5" aria-label={locale === 'en' ? 'Documentation' : '문서'}>
             {overview && <Link href={`${base}/`} className="group flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-semibold text-[#171717] transition hover:bg-white"><span className="h-1.5 w-1.5 rounded-full bg-[#0f766e] ring-2 ring-[#ccfbf1]" />{locale === 'en' ? 'Overview' : '개요'}</Link>}
             {Object.entries(sections).map(([section, pages]) => (
               <div key={section}>
@@ -35,7 +36,7 @@ export default function OssProjectShell({ project, docs, locale, children }: { p
         </div>
       </aside>
       <div className="min-w-0 bg-white px-5 py-10 sm:px-8 lg:px-12 lg:py-14">{children}</div>
-      <aside className="hidden border-l border-[#ecebe5] bg-[#fffdfa] lg:block"><div className="sticky top-[60px] px-5 py-10"><div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9a9a91]">On this page</div><div className="mt-3 h-px bg-[#ecebe5]" /><p className="mt-4 text-xs leading-5 text-[#85857d]">Headings and reference links appear here as the documentation grows.</p></div></aside>
+      <OssTableOfContents title={locale === 'en' ? 'On this page' : '이 페이지의 내용'} />
     </div>
   );
 }
