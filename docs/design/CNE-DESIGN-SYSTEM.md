@@ -15,7 +15,7 @@ CNE is an engineering workbench, not a generic SaaS landing page. The interface 
 
 ## Color tokens
 
-The system intentionally separates canvas, surfaces, borders, and text by perceptual contrast. Similar colors must not be used for adjacent semantic layers merely to keep the palette visually quiet.
+The system intentionally separates canvas, surfaces, panel surfaces, borders, and text by perceptual contrast. Similar colors must not be used for adjacent semantic layers merely to keep the palette visually quiet.
 
 ### Light
 
@@ -23,16 +23,20 @@ The system intentionally separates canvas, surfaces, borders, and text by percep
 - `--bg-subtle`: `#e9efec` — navigation / secondary shell
 - `--surface`: `#ffffff` — cards and primary surfaces
 - `--surface-hi`: `#e4ebe8` — selected / secondary surface
-- `--border`: `#6f837a` — visible default border; at least 3:1 against the page canvas
+- `--border`: `#6f837a` — visible default border; target at least 3:1 against the adjacent canvas
 - `--border-soft`: `#c5d1cb` — low-emphasis divider
 - `--border-hi`: `#4d6158` — emphasized border
 - `--text`: `#111613` — primary text
 - `--text-muted`: `#34433d` — readable secondary text
 - `--text-faint`: `#63716b` — metadata / tertiary text
 - `--accent`: `#08786f`
-- `--code-bg`: `#e8efeb` — documentation/code surface
-- `--code-fg`: `#1b2621` — code/plain-text foreground
-- `--code-border`: `#6f837a` — visible code surface boundary
+- `--code-bg`: `#dfe9e3` — code and lifecycle surface
+- `--code-fg`: `#101a15` — code and lifecycle foreground
+- `--code-border`: `#557067` — code/lifecycle boundary
+- `--doc-panel-bg`: `#e1ebe5` — explanatory callout surface
+- `--doc-panel-fg`: `#17231e` — explanatory callout foreground
+- `--doc-panel-border`: `#557067` — explanatory callout boundary
+- `--doc-panel-header`: `#cfddd5` — table header surface
 
 ### Dark
 
@@ -40,30 +44,34 @@ The system intentionally separates canvas, surfaces, borders, and text by percep
 - `--bg-subtle`: `#101816`
 - `--surface`: `#18211e`
 - `--surface-hi`: `#23302b`
-- `--border`: `#6b8077` — visible default border; at least 3:1 against the canvas
+- `--border`: `#6b8077` — visible default border; target at least 3:1 against the canvas
 - `--border-soft`: `#3b4c45` — low-emphasis divider
 - `--border-hi`: `#81968d` — emphasized border
 - `--text`: `#f1f7f4`
 - `--text-muted`: `#c0ccc6`
 - `--text-faint`: `#91a099`
 - `--accent`: `#62e3d7`
-- `--code-bg`: `#0d1411` — documentation/code surface
-- `--code-fg`: `#eef6f2` — code/plain-text foreground
-- `--code-border`: `#6b8077` — visible code surface boundary
+- `--code-bg`: `#111b17` — code and lifecycle surface
+- `--code-fg`: `#f0f7f3` — code and lifecycle foreground
+- `--code-border`: `#6b8077` — code/lifecycle boundary
+- `--doc-panel-bg`: `#16221d` — explanatory callout surface
+- `--doc-panel-fg`: `#eef6f2` — explanatory callout foreground
+- `--doc-panel-border`: `#6b8077` — explanatory callout boundary
+- `--doc-panel-header`: `#23322b` — table header surface
 
 ## Contrast rules
 
-- WCAG 2.2 AA requires at least **4.5:1 for normal text** and **3:1 for large text**. citeturn629156search2
-- WCAG 2.2 also requires **3:1 non-text contrast** for essential component boundaries and states. citeturn629156search3
+- WCAG 2.2 AA requires at least **4.5:1 for normal text** and **3:1 for large text**.
+- WCAG 2.2 also requires **3:1 non-text contrast** for essential component boundaries and states.
 - Primary body text must remain visually strong against both `bg` and `surface`.
 - Secondary text must be clearly darker than the surface in Light mode and clearly lighter than the surface in Dark mode.
 - Cards and documentation boxes must be distinguishable from the page canvas by **both fill and border**; do not rely on a subtle shadow alone.
-- Default borders used to communicate a component boundary should target at least 3:1 against the adjacent canvas. This is intentionally stronger than the previous quiet-border palette.
+- Default borders used to communicate a component boundary should target at least 3:1 against the adjacent canvas.
 - Adjacent surfaces should not differ only by a few RGB levels.
 - Box content should use `text` or `text-muted`, never `text-faint`, for primary explanatory prose.
 - Accent is for emphasis, links, focus, and hero highlights; it is not a substitute for body text.
 - Validate Light and Dark separately. A palette that works in one mode may require a different value in the other mode.
-- Treat focus indicators separately from ordinary borders; WCAG guidance recommends a visible focus treatment with sufficient contrast, and the change in appearance should reach 3:1. citeturn629156search1
+- Treat focus indicators separately from ordinary borders; they need their own visible high-contrast treatment.
 
 ## Surface hierarchy
 
@@ -79,6 +87,10 @@ Use these levels consistently:
 
 `code-bg` → code, lifecycle examples, command output, operational evidence
 
+`doc-panel-bg` → explanatory callouts
+
+`doc-panel-header` → table headers and structured evidence summaries
+
 Do not use fixed `bg-white`, `bg-gray-*`, or fixed light hex backgrounds inside shared components.
 
 ## Box readability
@@ -89,7 +101,9 @@ Documentation boxes are information containers, not decoration. Every box should
 2. **Text** — readable without depending on the border or accent color.
 3. **Boundary** — visible enough that the box remains legible without hover or shadow.
 
-For code/lifecycle examples, use `code-bg` + `code-fg` + `code-border`. For explanatory callouts, use `surface-hi` + `text-muted` with an accent or semantic border only where it conveys meaning.
+For code/lifecycle examples, use `code-bg` + `code-fg` + `code-border`. For explanatory callouts, use `doc-panel-bg` + `doc-panel-fg` with an accent or semantic border only where it conveys meaning. For tables, use `surface` + `doc-panel-header` + visible outer and internal dividers.
+
+Do not use a generic `prose-neutral` palette over the CNE documentation tokens. The documentation renderer must explicitly inherit CNE theme colors so Light and Dark mode remain consistent.
 
 Avoid pale text on pale surfaces, dark text on near-black surfaces, and one-pixel borders whose contrast is too weak to communicate grouping.
 
@@ -101,6 +115,8 @@ Avoid pale text on pale surfaces, dark text on near-black surfaces, and one-pixe
 - Hero headline: large editorial sans, tight tracking
 - Body: readable 16–18px with generous line height
 - Metadata: muted monospace or compact sans
+- Documentation prose: approximately 16px with 1.8 line-height for dense technical content
+- Box/code text should not be reduced merely to make containers look quieter
 
 ## Layout
 
@@ -132,10 +148,11 @@ Avoid pale text on pale surfaces, dark text on near-black surfaces, and one-pixe
 - Use dual-theme syntax highlighting.
 - Keep code background visually distinct from surrounding surfaces.
 - Plain lifecycle examples and operational sequences use the same `code-bg` / `code-fg` / `code-border` treatment as code blocks.
+- Plain lifecycle blocks without a syntax language must render as solid `code-fg` text rather than relying on a faint syntax-highlight palette.
 
 ### Tables
 
-- Use `surface` for the table body and `surface-hi` for the header row.
+- Use `surface` for the table body and `doc-panel-header` for the header row.
 - Use a visible outer border and internal dividers.
 - Header and body text must use `text`, not `text-faint`.
 - Avoid tables where the only distinction between rows is a barely visible divider.
@@ -146,10 +163,11 @@ Avoid pale text on pale surfaces, dark text on near-black surfaces, and one-pixe
 - Project pages use a quiet documentation shell.
 - `On this page` is a navigation aid, not a decorative card.
 - Project identity comes from typography, metadata, diagrams, and architecture visuals rather than heavy branded chrome.
+- Korean and English documentation pages must use the same theme-aware typography and surface rules.
 
 ## Hero direction
 
-The home hero borrows the composition principles of modern editorial documentation heroes while remaining CNE-specific. VitePress demonstrates a strong hero-name/text/tagline/action hierarchy, while its theme is controlled through explicit CSS variables. Docusaurus similarly separates theme palettes and recommends WCAG-AA contrast; CNE follows the same principle without copying their implementation. citeturn886154search0turn886154search4
+The home hero borrows the composition principles of modern editorial documentation heroes while remaining CNE-specific. VitePress demonstrates a strong hero-name/text/tagline/action hierarchy, while its theme is controlled through explicit CSS variables. Docusaurus similarly separates theme palettes and recommends WCAG-AA contrast; CNE follows the same principle without copying their implementation.
 
 - short technical eyebrow
 - strong two-line message
@@ -182,4 +200,4 @@ When asking an AI design or coding system to modify CNE:
 5. Do not copy a third-party component implementation; use the design idea and implement it with CNE's own tokens/components.
 6. Verify both Light and Dark themes before merging.
 7. Keep copy controls restricted to code blocks.
-8. Check visual contrast for cards, sidebars, headers, buttons, tables, callouts, and code surfaces in both themes.
+8. Check visual contrast for cards, sidebars, headers, buttons, tables, callouts, lifecycle blocks, and code surfaces in both themes.

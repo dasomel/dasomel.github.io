@@ -19,12 +19,12 @@ export default async function OssDocPage({ params }: { params: Promise<{ project
 
   return (
     <OssProjectShell project={project.meta} docs={docs} locale="ko">
-      <div className="mb-10 border-b border-[#ecece7] pb-8">
-        <div className="mb-3 font-mono text-[11px] font-medium text-[#9a9a92]">/oss/{projectSlug}/{segments.join('/')}</div>
-        <h2 className="text-4xl font-bold tracking-tight text-[#171717] sm:text-5xl">{doc.meta.title}</h2>
-        {doc.meta.description && <p className="mt-4 max-w-3xl text-lg leading-8 text-[#686861]">{doc.meta.description}</p>}
+      <div className="mb-10 border-b pb-8" style={{ borderColor: 'var(--border-soft)' }}>
+        <div className="mb-3 font-mono text-[11px] font-medium" style={{ color: 'var(--text-faint)' }}>/oss/{projectSlug}/{segments.join('/')}</div>
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>{doc.meta.title}</h2>
+        {doc.meta.description && <p className="mt-4 max-w-3xl text-lg leading-8" style={{ color: 'var(--text-muted)' }}>{doc.meta.description}</p>}
       </div>
-      <article id="oss-doc-content" className="prose prose-neutral max-w-3xl prose-headings:scroll-mt-24 prose-a:text-[#0f766e] prose-a:no-underline hover:prose-a:underline">
+      <article id="oss-doc-content" className="prose cne-doc-prose max-w-3xl prose-headings:scroll-mt-24">
         <MDXContent source={doc.content} />
       </article>
     </OssProjectShell>
