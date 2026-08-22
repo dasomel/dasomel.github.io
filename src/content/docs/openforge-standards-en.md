@@ -1,42 +1,61 @@
 ---
 title: Standards
-description: OpenForge standards grouped by engineering concern.
+description: OpenForge standards grouped by engineering concern and lifecycle.
 project: OpenForge
 path: openforge/standards
 order: 1003
-lastModified: 2026-08-21
+lastModified: 2026-08-22
 ---
 
 # Standards
 
-OpenForge standards define outcomes; projects choose implementation details.
+OpenForge standards define **verifiable engineering outcomes** rather than prescribing a single implementation. Projects choose technologies and controls that fit their environment and threat model.
 
-## Core
+## Foundation
 
-- Documentation and repository structure
-- GitHub and development tooling
-- Change management and impact analysis
-- Upgrade and compatibility engineering
+- Documentation Standard
+- Repository Standard
+- GitHub Standard
+- Development Standard
+- Engineering Tooling Standard / Matrix
+- CI/CD Standard
+- Release Standard
+- Internationalization Standard
+- OSS Compliance Standard
 
-## Security
+## Change & Compatibility
 
-- Security baseline
-- Supply-chain security
-- Package/artifact identity
-- CI/CD security and resilience
-- Secrets and machine identity
-- Vulnerability management
-- Incident response
-- Release security
-- Security exceptions
+- Change Management and Impact Analysis
+- Upgrade and Compatibility Engineering
+- Reproducible Build
 
-## Engineering
+Dependency, runtime, and toolchain changes are treated as workflow-wide impact-analysis events. A newer release is not adopted merely because it is newer; compatibility, operational impact, and verification are considered together.
 
-- Reproducible build
-- Developer environment security
-- AI-assisted engineering security
-- Container/Kubernetes/IaC security
-- Maintainer governance
-- OSS compliance
+## Security & Supply Chain
 
-The authoritative documents and templates are maintained in the [OpenForge repository](https://github.com/dasomel/openforge/tree/main/docs).
+- Security Standard
+- Supply Chain Security Standard
+- Package and Artifact Identity
+- CI/CD Security / Resilience
+- Developer Environment Security
+- AI-Assisted Engineering Security
+- Container / Kubernetes / IaC Security
+- Secrets and Machine Identity
+- Vulnerability Management
+- Security and Supply-Chain Incident Response
+- Release Security
+- Security Exceptions and Waivers
+
+## Governance & Evidence
+
+- Maintainer Governance
+- Reference Practices Audit
+- Reference Implementation Metrics
+
+The metrics score practical maturity across documentation, architecture, GitHub, CI/CD, security, supply chain, change management, upgrade/compatibility, developer environment, AI-assisted engineering, release, resilience, configuration, and localization.
+
+## Authoritative Source
+
+The authoritative standards are maintained in [`docs/`](https://github.com/dasomel/openforge/tree/main/docs) in the OpenForge repository.
+
+This portal explains the purpose, adoption context, trade-offs, and evidence associated with those standards in real OSS projects.
