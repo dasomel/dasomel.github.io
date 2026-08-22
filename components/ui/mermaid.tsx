@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mermaid from 'mermaid';
 
 interface MermaidProps { chart: string; }
@@ -19,13 +19,13 @@ function themeToken(name: string, fallback: string) {
 }
 
 export function Mermaid({ chart }: MermaidProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const [themeRevision, setThemeRevision] = useState(0);
 
   useEffect(() => {
     const root = document.documentElement;
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     const notify = () => setThemeRevision((revision) => revision + 1);
-
     const observer = new MutationObserver((mutations) => {
       if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) notify();
     });
@@ -40,30 +40,7 @@ export function Mermaid({ chart }: MermaidProps) {
   }, []);
 
   useEffect(() => {
-    const ref = document.querySelectorAll<HTMLElement>('[data-mermaid-root]');
-    const targets = Array.from(ref).filter((element) => element.dataset.mermaidChart === chart);
-    void targets;
-  }, [chart, themeRevision]);
-
-  return <MermaidCanvas chart={chart} themeRevision={themeRevision} />;
-}
-
-function MermaidCanvas({ chart }: MermaidProps & { themeRevision: number }) {
-  const ref = useState<HTMLDivElement | null>(null)[0];
-  return <MermaidRenderer chart={chart} themeRevision={themeRevision} refValue={ref} />;
-}
-
-function MermaidRenderer({ chart, themeRevision }: MermaidProps & { themeRevision: number; refValue: HTMLDivElement | null }) {
-  // Theme changes are surfaced through the parent revision so the renderer effect reruns.
-  void themeRevision;
-  return <MermaidMarkup chart={chart} themeRevision={themeRevision} />;
-}
-
-function MermaidMarkup({ chart, themeRevision }: MermaidProps & { themeRevision: number }) {
-  const [element, setElement] = useState<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!element) return;
+    if (!ref.current) return;
 
     const id = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
     const dark = isDarkMode();
@@ -115,10 +92,10 @@ function MermaidMarkup({ chart, themeRevision }: MermaidProps & { themeRevision:
     });
 
     mermaid.render(id, chart).then(({ svg }) => {
-      if (!element) return;
-      element.innerHTML = svg;
+      if (!ref.current) return;
+      ref.current.innerHTML = svg;
 
-      const rendered = element.querySelector('svg');
+      const rendered = ref.current.querySelector('svg');
       if (!rendered) return;
 
       rendered.querySelectorAll('.node:not(.bar):not(.xychart-bar) rect, .node:not(.bar):not(.xychart-bar) circle, .node:not(.bar):not(.xychart-bar) ellipse, .node:not(.bar):not(.xychart-bar) polygon, .node:not(.bar):not(.xychart-bar) path:not(.flowchart-link)').forEach((shape) => {
@@ -137,8 +114,8 @@ function MermaidMarkup({ chart, themeRevision }: MermaidProps & { themeRevision:
       });
 
       rendered.querySelectorAll('.nodeLabel, .nodeLabel p, .nodeLabel span').forEach((node) => {
-        const elementNode = node as HTMLElement;
-        elementNode.style.setProperty('color', text, 'important');
+        const element = node as HTMLElement;
+        element.style.setProperty('color', text, 'important');
       });
 
       rendered.querySelectorAll('text, tspan').forEach((node) => {
@@ -146,11 +123,11 @@ function MermaidMarkup({ chart, themeRevision }: MermaidProps & { themeRevision:
       });
 
       rendered.querySelectorAll('.edgeLabel, .edgeLabel p, .edgeLabel span').forEach((node) => {
-        const elementNode = node as HTMLElement;
-        elementNode.style.setProperty('color', textMuted, 'important');
+        const element = node as HTMLElement;
+        element.style.setProperty('color', textMuted, 'important');
       });
     });
-  }, [chart, themeRevision, element]);
+  }, [chart, themeRevision]);
 
-  return <div ref={setElement} data-mermaid-root data-mermaid-chart={chart} className="my-6 overflow-x-auto [&>svg]:mx-auto" />;
+  return <div ref={ref} className="my-6 overflow-x-auto [&>svg]:mx-auto" />;
 }
