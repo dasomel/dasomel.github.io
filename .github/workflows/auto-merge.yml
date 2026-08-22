@@ -21,8 +21,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+          REPO: ${{ github.repository }}
         run: |
+          IS_DRAFT=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json isDraft --jq '.isDraft')
+          if [ "$IS_DRAFT" = "true" ]; then
+            gh pr ready "$PR_NUMBER" --repo "$REPO"
+          fi
           gh pr merge "$PR_NUMBER" \
-            --repo "${{ github.repository }}" \
+            --repo "$REPO" \
             --squash \
             --delete-branch
