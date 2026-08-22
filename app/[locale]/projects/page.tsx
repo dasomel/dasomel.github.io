@@ -19,15 +19,24 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'work' });
   const projects = getProjects(lang);
   const base = lang === 'en' ? '/en' : '/ko';
+  const owned = projects.filter((project) => project.type !== 'fork').length;
+  const forks = projects.filter((project) => project.type === 'fork').length;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 slide-enter-content">
-      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text)' }}>
-        {t('title')}
-      </h1>
-      <p className="text-base mb-8" style={{ color: 'var(--text-muted)' }}>
-        {t('subtitle')}
-      </p>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-18 slide-enter-content">
+      <header className="mb-10">
+        <div className="workbench-eyebrow mb-3">OSS ENGINEERING PORTFOLIO</div>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-[-0.04em]" style={{ color: 'var(--text)' }}>{t('title')}</h1>
+            <p className="text-base sm:text-lg mt-3 max-w-2xl leading-8" style={{ color: 'var(--text-muted)' }}>{t('subtitle')}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--border)' }}>
+            <div className="px-5 py-4 text-center" style={{ backgroundColor: 'var(--surface)' }}><div className="text-2xl font-semibold" style={{ color: 'var(--text)' }}>{owned}</div><div className="text-[10px] mt-1 font-mono tracking-[.12em]" style={{ color: 'var(--text-faint)' }}>OWNED</div></div>
+            <div className="px-5 py-4 text-center" style={{ backgroundColor: 'var(--surface)' }}><div className="text-2xl font-semibold" style={{ color: 'var(--text)' }}>{forks}</div><div className="text-[10px] mt-1 font-mono tracking-[.12em]" style={{ color: 'var(--text-faint)' }}>FORKS</div></div>
+          </div>
+        </div>
+      </header>
       <ProjectList
         projects={projects}
         base={base}
