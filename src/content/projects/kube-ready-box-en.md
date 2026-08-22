@@ -1,86 +1,161 @@
 ---
 title: "Kube-Ready-Box"
-description: "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box (Multi-arch / Multi-provider)"
+description: "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Base Boxes for ARM64/AMD64, ext4/XFS, and local hypervisors"
 github: "https://github.com/dasomel/kube-ready-box"
-tags: ["Kubernetes", "Vagrant", "Packer", "Ubuntu", "XFS", "cgroupv2", "containerd", "ARM64"]
+tags: ["Kubernetes", "Vagrant", "Packer", "Ubuntu", "ARM64", "AMD64", "XFS", "ext4", "VMware", "VirtualBox"]
 order: 9
 type: "own"
 featured: true
-problem: "Bootstrapping local multi-node Kubernetes clusters takes 15+ minutes per run due to repetitive OS package installs, kernel tuning, and quota setup"
-solution: "Pre-baked, production-tuned Ubuntu Vagrant boxes with XFS Project Quotas, containerd v2, and cgroupv2 built automatically via Packer"
+problem: "Local Kubernetes projects repeatedly rebuild the same OS, kernel, networking, storage, and diagnostic baseline across architectures and hypervisors"
+solution: "Reproducible Ubuntu Vagrant base boxes built with Packer so higher-level Kubernetes projects can start from a consistent node-ready operating system"
 ---
 
 ## Project Overview
 
-**Kube-Ready-Box** provides pre-optimized Ubuntu 24.04 / 26.04 LTS Vagrant base boxes designed for instantaneous local Kubernetes cluster provisioning.
+**Kube-Ready-Box** provides the operating-system baseline required before Kubernetes is installed on local VMs.
 
-Built deterministically via HashiCorp Packer, boxes support VMware Desktop, VirtualBox, and Libvirt across Apple Silicon (ARM64) and Intel/AMD (AMD64) architectures.
+It deliberately does **not** include Kubernetes itself. Instead, it standardizes the repetitive work around kernel modules, networking, storage prerequisites, filesystem choices, diagnostics, time synchronization, and disk expansion so projects such as Narwhal and Beluga can focus on cluster bootstrap.
 
-### Key Highlights
+The project publishes Ubuntu **24.04 LTS** and **26.04 LTS** variants for ext4 and XFS, with ARM64 and AMD64 support and common local hypervisors such as VirtualBox and VMware Fusion.
 
-- **XFS Project Quotas Pre-enabled**: Root and data mounts formatted with `pquota` for instant directory-level quotas
-- **cgroup v2 & containerd v2**: Modern container execution baseline fully compliant with Kubernetes v1.35+
-- **Kernel sysctl Tuning**: Pre-configured `br_netfilter`, `overlay`, `ip_forward`, and expanded user watches
-- **Automated Packer Pipeline**: Multi-provider builds published directly to Vagrant Cloud (`dasomel/ubuntu-26.04-xfs`)
-- **Node Readiness Attestation**: 30+ automated system and kernel module integrity checks upon boot
-
----
-
-## Architecture Diagram
+## Why the Layer Exists
 
 ```text
-  Packer Build Pipeline
-┌────────────────────────────────────────────────────────┐
-│  Ubuntu 26.04 LTS Base ISO                             │
-│  ├─ XFS Partitioning (pquota enabled)                  │
-│  ├─ Kernel sysctl.d Tuning (br_netfilter, ip_forward)  │
-│  ├─ containerd v2 & runc Setup                         │
-│  └─ Security Hardening & Zero-Key Invariants           │
-└───────────────────────────┬────────────────────────────┘
-                            │ Multi-Provider Packaging
-                            ▼
-  Vagrant Cloud (dasomel/ubuntu-26.04-xfs)
-  - VMware Desktop (ARM64 / AMD64)
-  - VirtualBox (AMD64)
-  - Libvirt / KVM
-                            │
-                            ▼ vagrant up (0-sec bootstrap)
-  Narwhal / Beluga Local Kubernetes Clusters
+Ubuntu Cloud Image
+      ↓
+filesystem / disk setup
+      ↓
+kernel modules / sysctl
+      ↓
+network / conntrack / buffers
+      ↓
+CSI / iSCSI / NFS prerequisites
+      ↓
+time synchronization / diagnostics
+      ↓
+Kubernetes bootstrap
 ```
 
----
+Kube-Ready-Box standardizes the left side of this boundary and leaves Kubernetes version and runtime selection to the consuming project.
+
+## Published Variants
+
+| Ubuntu | Filesystem | Typical use |
+|---|---|---|
+| 24.04 LTS | ext4 | Stable general-purpose Kubernetes nodes |
+| 24.04 LTS | XFS | Storage/quota and large-file workloads |
+| 26.04 LTS | ext4 | Latest LTS / cgroup v2-only environment |
+| 26.04 LTS | XFS | Latest LTS with project quota use cases |
+
+Vagrant Cloud names include:
+
+```text
+dasomel/ubuntu-24.04-ext4
+dasomel/ubuntu-24.04-xfs
+dasomel/ubuntu-26.04-ext4
+dasomel/ubuntu-26.04-xfs
+```
+
+## Kubernetes Readiness Baseline
+
+The boxes include OS-level preparation such as:
+
+- disabled swap
+- Kubernetes kernel modules
+- IP forwarding and bridge networking
+- conntrack and network buffer tuning
+- `/sys/fs/bpf` and CNI-related prerequisites
+- `open-iscsi`, `cryptsetup`, `dmsetup`, `nfs-common`
+- `chrony` time synchronization
+- audit and diagnostics tooling
+- Kubernetes/network/performance CLI utilities
+- automatic disk/partition/LVM/filesystem expansion
+
+Container runtimes and Kubernetes packages are intentionally left to the consumer project.
+
+## 24.04 vs 26.04
+
+Ubuntu 26.04 is a cgroup v2-only environment. Kubernetes installations using it should explicitly configure systemd cgroup integration for the chosen runtime. Ubuntu 24.04 remains the more conservative default when stability is the priority.
+
+| Item | Ubuntu 24.04 | Ubuntu 26.04 |
+|---|---|---|
+| Kernel | 6.8 | 7.0 |
+| cgroup | v2 default | v2-only |
+| Focus | Stability | New LTS / newer kernel |
+| Kubernetes note | Standard setup | Verify `SystemdCgroup=true` |
+
+## Build and Release Model
+
+```text
+Ubuntu Cloud Image
+       ↓
+     Packer
+       ↓
+OS configuration + filesystem tuning
+       ↓
+provider / architecture validation
+       ↓
+Vagrant Box
+       ↓
+Vagrant Cloud
+       ↓
+Narwhal / Beluga / local Kubernetes
+```
+
+Packer defines the image construction process, while CI validates and publishes the provider/architecture combinations.
+
+## Filesystem Choice
+
+### ext4
+A broad default for general Kubernetes development, with familiar Linux tooling and online operations appropriate to common workloads.
+
+### XFS
+Useful for large files and filesystem quota scenarios. It is also the natural companion for NFS Quota Agent when XFS project quotas are required.
 
 ## Getting Started
 
-```ruby
-# Example Vagrantfile
-Vagrant.configure("2") do |config|
-  config.vm.box = "dasomel/ubuntu-26.04-xfs"
-  config.vm.box_version = ">= 1.2.0"
-  
-  config.vm.provider "vmware_desktop" do |v|
-    v.cpus = 2
-    v.memory = 4096
-  end
-end
-```
-
 ```bash
-# 1. Boot box
+# Stable default
+vagrant init dasomel/ubuntu-24.04-ext4
 vagrant up --provider=vmware_desktop
 
-# 2. Check XFS quota mount and IP forwarding
-vagrant ssh -c "mount | grep xfs; sysctl net.ipv4.ip_forward"
+# XFS / quota-oriented environment
+vagrant init dasomel/ubuntu-24.04-xfs
+vagrant up --provider=vmware_desktop
+
+# Ubuntu 26.04
+vagrant init dasomel/ubuntu-26.04-ext4
+vagrant up --provider=vmware_desktop
 ```
 
----
+After boot, install the Kubernetes/runtime versions required by the consuming project.
+
+## Verification
+
+```bash
+vagrant ssh -c "cat /etc/vagrant-box/info.json"
+vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
+```
+
+The goal is to verify OS readiness, not merely whether the VM starts.
 
 ## Documentation Index
 
-| Topic | Document Link | Summary |
+| Topic | Document | Purpose |
 |---|---|---|
-| **Overview** | [Box Overview](/oss/en/kube-ready-box/overview) | Optimization goals and architecture support |
-| **Architecture** | [System Architecture](/oss/en/kube-ready-box/architecture) | XFS partitioning, kernel sysctl, and cgroupv2 |
-| **Getting Started** | [Vagrantfile Guide](/oss/en/kube-ready-box/getting-started) | Multi-provider configs and cluster provisioning |
-| **Operations** | [Packer Builds & Releases](/oss/en/kube-ready-box/operations) | Vagrant Cloud pipeline and versioning discipline |
-| **Verification** | [Node Verification](/oss/en/kube-ready-box/verification) | Node Readiness Attestation and 30 integrity checks |
+| Overview | [Box Overview](/oss/en/kube-ready-box/overview) | Goals and supported scope |
+| Architecture | [System Architecture](/oss/en/kube-ready-box/architecture) | Packer → Box → Vagrant |
+| Getting Started | [Usage Guide](/oss/en/kube-ready-box/getting-started) | Provider and filesystem selection |
+| Operations | [Builds & Releases](/oss/en/kube-ready-box/operations) | Packer and Vagrant Cloud |
+| Verification | [Node Verification](/oss/en/kube-ready-box/verification) | Readiness checks and release validation |
+
+## Project Relationship
+
+```text
+kube-ready-box
+       ↓
+local Kubernetes node baseline
+       ├── Narwhal
+       ├── Beluga
+       └── other local K8s projects
+```
