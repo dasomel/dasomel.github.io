@@ -180,7 +180,17 @@ export function ProjectList({ projects, base, translations }: Props) {
       </div>
 
       <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={setSelected} allLabel={translations.all} />
-      {filtered.length === 0 ? <div className="rounded-2xl border p-10 text-center" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{translations.noResults}</div> : (
+      {filtered.length === 0 ? (
+        <div className="rounded-2xl border p-8 sm:p-10 text-center" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)', color: 'var(--text-muted)' }} role="status" aria-live="polite">
+          <Search className="mx-auto mb-3 w-5 h-5" style={{ color: 'var(--text-faint)' }} aria-hidden="true" />
+          <p className="text-sm leading-6">{translations.noResults}</p>
+          {hasFilters && (
+            <button type="button" onClick={resetFilters} className="mt-4 inline-flex items-center justify-center rounded-xl border px-3.5 py-2 text-xs font-mono transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+              {translations.clearFilters}
+            </button>
+          )}
+        </div>
+      ) : (
         <div className="space-y-14 mt-8">
           {featured.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">CORE OSS / SHOWCASE</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.core}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(core.length)}</span></div>{renderFeatured(featured)}{compactCore.length > 0 && <div className="mt-4">{renderCompact(compactCore)}</div>}</section>}
           {tools.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">TOOLS · EXPERIMENTS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.tools}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(tools.length)}</span></div>{renderCompact(tools)}</section>}
