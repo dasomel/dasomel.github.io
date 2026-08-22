@@ -31,11 +31,13 @@
   transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
 }
 
-.featureCard:hover,
-.compactCard:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
-  box-shadow: 0 26px 54px -34px var(--accent-glow);
+@media (hover: hover) and (pointer: fine) {
+  .featureCard:hover,
+  .compactCard:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+    box-shadow: 0 26px 54px -34px var(--accent-glow);
+  }
 }
 
 .featureCard {
