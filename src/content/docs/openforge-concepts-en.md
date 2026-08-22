@@ -1,32 +1,86 @@
 ---
 title: Concepts
-description: Core ideas behind the OpenForge engineering model.
+description: Core ideas and adoption principles behind the OpenForge engineering model.
 project: OpenForge
 path: openforge/concepts
 order: 1001
-lastModified: 2026-08-21
+lastModified: 2026-08-22
 ---
 
 # Concepts
 
-OpenForge separates **policy**, **implementation**, and **evidence**.
+OpenForge separates **policy**, **implementation**, and **evidence**, then connects them through the project lifecycle.
 
-## Three layers
+## Three Layers
 
 | Layer | Purpose | Example |
 |---|---|---|
 | Standard | Defines the expected engineering outcome | Supply Chain Security Standard |
-| Template | Provides a reusable starting implementation | Kubernetes Deployment baseline |
-| Reference implementation | Shows project-specific adaptation | Narwhal deployment |
+| Template | Provides a reusable implementation starting point | Kubernetes Deployment baseline |
+| Reference implementation | Shows real project adaptation and trade-offs | Narwhal / KubeMetal |
 
-## Trust model
+This separation prevents a project-specific implementation from being mistaken for a universal standard.
 
-A provenance document, signature, or SBOM is evidence, not an assertion that an artifact is safe. Verification must consider source, build inputs, workflow identity, artifact contents, and the intended deployment context.
+## Trust Model
 
-## Change model
+Provenance, signatures, and SBOMs are **evidence for verification**, not declarations that an artifact is safe.
 
-A dependency/runtime/toolchain change is a workflow-wide change. A build command that starts using Bun, for example, changes every workflow that can execute that command.
+Verification should consider:
 
-## Governance model
+```text
+Source
+  + Build Inputs
+  + Workflow Identity
+  + Artifact Content
+  + Deployment Context
+      ↓
+Verification
+```
 
-OpenForge is designed for both single-maintainer and multi-maintainer projects. Governance scales with change risk and automated controls rather than requiring a fixed number of people.
+## Change Model
+
+Dependency, runtime, and toolchain changes are treated as **workflow-wide changes**, not isolated file edits.
+
+For example, when a build command starts using Bun, every workflow and script that can execute that command should be reviewed together with install steps, caching, and release paths.
+
+OpenForge's Change Management and Upgrade & Compatibility guidance makes this impact analysis part of the lifecycle.
+
+## Governance Model
+
+Single-maintainer and multi-maintainer OSS should not be forced into the same fixed people-count rule.
+
+```text
+Change Risk
+    ↓
+Required Controls
+    ↓
+Automation / Review / Evidence
+```
+
+Governance scales with change risk and automated controls rather than requiring a fixed number of maintainers.
+
+## Template Model
+
+Templates are **implementation starting points**, not universal drop-in configuration.
+
+Versions, permissions, paths, images, domains, identities, and ecosystem-specific security controls must be adapted to the target repository and threat model.
+
+## Lifecycle Model
+
+OpenForge continuously learns from real project operation.
+
+```text
+Define
+  ↓
+Bootstrap
+  ↓
+Implement
+  ↓
+Validate
+  ↓
+Release / Operate
+  ↓
+Incident / Review / Metrics
+  ↓
+Improve Standard
+```
