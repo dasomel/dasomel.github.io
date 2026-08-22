@@ -9,7 +9,11 @@
       "title": "Spline rebuilt its entire 3D editor. Then it handed the keys to Claude Code.",
       "link": "https://thenewstack.io/spline-v2-mcp-agents/",
       "date": "2026-08-21T19:58:33.000Z",
-      "excerpt": "Spline released V2 on Thursday, a complete rebuild of its 3D editor that enables external coding agents to work directly"
+      "excerpt": "Spline released V2 on Thursday, a complete rebuild of its 3D editor that enables external coding agents to work directly",
+      "summaryKo": "Spline이 3D 에디터 V2를 전면 재구축하면서 Claude Code 같은 외부 코딩 에이전트가 편집 환경과 직접 상호작용할 수 있는 구조를 선보였다. 디자인 도구가 AI 에이전트의 실행 대상이 되는 방향을 보여준다.",
+      "summaryEn": "Spline rebuilt its 3D editor for V2 and opened it to external coding agents such as Claude Code. The release shows creative tools becoming direct execution surfaces for AI agents.",
+      "insightKo": "에이전트가 개발 도구를 넘어 설계·콘텐츠 도구까지 조작하게 되면 권한 경계와 변경 검증이 플랫폼 요구사항이 된다.",
+      "insightEn": "As agents move beyond coding tools into design and content systems, permission boundaries and change validation become platform requirements."
     },
     {
       "source": "The New Stack",
@@ -17,7 +21,11 @@
       "title": "Anthropic brings Mythos 5 to its Claude Security vulnerability scanner",
       "link": "https://thenewstack.io/anthropic-mythos-claude-security/",
       "date": "2026-08-21T19:11:38.000Z",
-      "excerpt": "Earlier this year, Anthropic launched Claude Security, an enterprise tool that helps development teams scan their codebase for security vulnerabilities"
+      "excerpt": "Earlier this year, Anthropic launched Claude Security, an enterprise tool that helps development teams scan their codebase for security vulnerabilities",
+      "summaryKo": "Anthropic이 Claude Security 취약점 스캐너에 Mythos 5를 적용해 코드베이스 보안 분석 역량을 높이고 있다. AI가 취약점 탐지뿐 아니라 보안 개발 흐름 자체에 더 깊게 들어가는 사례다.",
+      "summaryEn": "Anthropic is bringing Mythos 5 into Claude Security to strengthen codebase vulnerability analysis. It is another step toward embedding AI directly into the security development workflow.",
+      "insightKo": "AI 보안 분석이 보편화될수록 탐지 정확도뿐 아니라 오탐 검증과 수정 결과의 자동 검증이 중요해진다.",
+      "insightEn": "As AI security analysis becomes common, false-positive handling and automated validation of remediation matter as much as detection quality."
     },
     {
       "source": "AWS Architecture",
@@ -25,7 +33,11 @@
       "title": "Build a unified AI agent architecture with DynamoDB and Bedrock",
       "link": "https://aws.amazon.com/blogs/architecture/build-a-unified-ai-agent-architecture-with-dynamodb-and-bedrock/",
       "date": "2026-08-21T18:19:23.000Z",
-      "excerpt": "With native vector search in Amazon DynamoDB, you can store vector embeddings alongside your operational data in a single table."
+      "excerpt": "With native vector search in Amazon DynamoDB, you can store vector embeddings alongside your operational data in a single table.",
+      "summaryKo": "AWS는 DynamoDB의 네이티브 벡터 검색과 Bedrock을 결합해 운영 데이터와 임베딩을 하나의 데이터 계층에서 다루는 AI 에이전트 아키텍처를 제시한다. 애플리케이션 데이터와 검색용 벡터를 분리하지 않는 설계가 핵심이다.",
+      "summaryEn": "AWS presents an AI agent architecture that combines DynamoDB vector search with Bedrock, keeping operational data and embeddings in one data layer. The design reduces the separation between application state and retrieval data.",
+      "insightKo": "RAG 시스템에서는 벡터 저장소를 별도 시스템으로 추가하기 전에 기존 운영 데이터 계층으로 통합할 때의 일관성과 운영 단순성을 비교할 가치가 있다.",
+      "insightEn": "Before adding a separate vector database, evaluate whether the existing operational data layer can provide simpler consistency and operations."
     },
     {
       "source": "Google Research",
@@ -33,7 +45,11 @@
       "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data",
       "link": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
       "date": "2026-08-21T17:02:24.000Z",
-      "excerpt": "Generative AI"
+      "excerpt": "Generative AI",
+      "summaryKo": "Google Research가 웨어러블 센서 데이터에서 후보 바이오마커의 우선순위를 정하는 AI 도구를 소개했다. 복잡한 시계열 데이터를 분석해 연구자가 검토할 후보를 좁히는 데 초점을 둔다.",
+      "summaryEn": "Google Research introduces an AI tool for prioritizing candidate biomarkers from wearable-sensor data. The approach narrows complex time-series signals into a smaller set of candidates for researchers to investigate.",
+      "insightKo": "AI가 최종 의사결정을 대신하기보다 연구 후보를 줄이는 역할을 맡을 때 검증 비용을 낮추면서도 인간의 판단을 유지할 수 있다.",
+      "insightEn": "Using AI to narrow research candidates rather than replace final decisions can reduce analysis cost while retaining human validation."
     },
     {
       "source": "The New Stack",
@@ -41,7 +57,11 @@
       "title": "Anthropic’s new browser tool doesn’t actually run a browser",
       "link": "https://thenewstack.io/anthropic-browser-use-tool/",
       "date": "2026-08-21T16:52:36.000Z",
-      "excerpt": "Anthropic launched a new Browser Use tool that gives Claude a structured view of a web page in addition to"
+      "excerpt": "Anthropic launched a new Browser Use tool that gives Claude a structured view of a web page in addition to",
+      "summaryKo": "Anthropic의 새 Browser Use 도구는 브라우저를 사람이 조작하는 방식보다 구조화된 웹 페이지 표현을 Claude에 제공해 웹 작업을 수행하도록 하는 접근을 취한다. 에이전트의 웹 자동화를 더 추상화된 인터페이스로 다루는 방식이다.",
+      "summaryEn": "Anthropic's Browser Use tool gives Claude a structured representation of web pages rather than relying on traditional visual browser control. It represents a more abstract interface for web automation.",
+      "insightKo": "웹 에이전트의 안정성을 높이려면 화면 좌표보다 구조화된 DOM·액션 인터페이스를 제공하는 설계가 유리하다.",
+      "insightEn": "For more reliable web agents, structured page and action interfaces can be more robust than coordinate-driven browser control."
     },
     {
       "source": "Netflix",
@@ -49,7 +69,11 @@
       "title": "A Tale of Two Flink Autoscalers",
       "link": "https://netflixtechblog.com/a-tale-of-two-flink-autoscalers-e9f6a1b1492b?source=rss----2615bd06b42e---4",
       "date": "2026-08-21T16:01:01.000Z",
-      "excerpt": ""
+      "excerpt": "",
+      "summaryKo": "Netflix는 Flink 자동 확장 방식 두 가지를 비교하며 스트리밍 워크로드에서 autoscaling 전략이 처리량과 안정성에 어떤 영향을 주는지 다룬다. 이벤트 처리 특성에 맞는 확장 정책 선택이 핵심이다.",
+      "summaryEn": "Netflix compares two Flink autoscaling approaches and their impact on throughput and stability for streaming workloads. The key is choosing scaling policies that match event-processing behavior.",
+      "insightKo": "스트리밍 환경에서는 CPU 사용률만 기준으로 확장하기보다 lag·throughput·backpressure 같은 작업 특화 신호를 함께 써야 한다.",
+      "insightEn": "Streaming autoscaling should consider workload signals such as lag, throughput, and backpressure rather than CPU utilization alone."
     },
     {
       "source": "Google Cloud",
@@ -57,7 +81,11 @@
       "title": "Cloud CISO Perspectives: Sticking to security fundamentals in the AI era",
       "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-sticking-to-security-fundamentals-in-the-ai-era/",
       "date": "2026-08-21T16:00:00.000Z",
-      "excerpt": "Welcome to the first Cloud CISO Perspectives for August 2026. Today, Chris Betz explains why the AI era makes it more important than ever to lean into security fundamentals."
+      "excerpt": "Welcome to the first Cloud CISO Perspectives for August 2026. Today, Chris Betz explains why the AI era makes it more important than ever to lean into security fundamentals.",
+      "summaryKo": "Google Cloud의 CISO 관점 글은 AI 시대에도 기본적인 보안 원칙과 통제가 중요하다고 강조한다. AI 도입이 기존 보안 기초를 대체하는 것이 아니라 더 엄격하게 적용해야 한다는 메시지다.",
+      "summaryEn": "Google Cloud's CISO perspective argues that security fundamentals remain essential in the AI era. AI adoption should strengthen, not replace, established controls and practices.",
+      "insightKo": "AI 프로젝트를 별도 예외 경로로 만들기보다 기존 IAM·로깅·취약점 관리·정책 체계 안에 넣는 것이 운영 리스크를 줄인다.",
+      "insightEn": "Keeping AI workloads inside existing IAM, logging, vulnerability-management, and policy controls reduces operational risk."
     },
     {
       "source": "Google Cloud",
@@ -65,7 +93,11 @@
       "title": "How agents can delegate better",
       "link": "https://cloud.google.com/blog/products/ai-machine-learning/how-agents-can-delegate-better/",
       "date": "2026-08-21T16:00:00.000Z",
-      "excerpt": "In any organizational behavior class, students will learn that effective delegation is among the most important skills for a seasoned leader."
+      "excerpt": "In any organizational behavior class, students will learn that effective delegation is among the most important skills for a seasoned leader.",
+      "summaryKo": "Google Cloud는 AI 에이전트가 작업을 다른 에이전트나 도구에 위임할 때 명확한 역할 분담과 컨텍스트 전달이 중요하다는 관점에서 delegation을 설명한다.",
+      "summaryEn": "Google Cloud explores how AI agents can delegate work effectively, emphasizing clear role boundaries and context transfer between agents and tools.",
+      "insightKo": "멀티에이전트 시스템의 품질은 모델 수보다 작업 경계와 입력·출력 계약을 얼마나 명확히 정의했는지에 좌우된다.",
+      "insightEn": "Multi-agent quality depends less on the number of models and more on clear task boundaries and input/output contracts."
     },
     {
       "source": "Docker",
@@ -73,7 +105,11 @@
       "title": "Running AI agents in GitHub Actions with Docker Sandboxes",
       "link": "https://www.docker.com/blog/running-ai-agents-in-github-actions-with-docker-sandboxes/",
       "date": "2026-08-21T13:00:00.000Z",
-      "excerpt": "Run AI agents in GitHub Actions with Docker Sandboxes. See how isolated agents can run Testcontainers tests, fix code, and open draft pull requests."
+      "excerpt": "Run AI agents in GitHub Actions with Docker Sandboxes. See how isolated agents can run Testcontainers tests, fix code, and open draft pull requests.",
+      "summaryKo": "Docker는 GitHub Actions 안에서 Docker Sandboxes를 이용해 AI 에이전트를 격리 실행하고 테스트, 코드 수정, draft PR 생성까지 연결하는 방법을 소개한다.",
+      "summaryEn": "Docker shows how AI agents can run inside GitHub Actions using Docker Sandboxes for isolation, tests, code fixes, and draft pull-request creation.",
+      "insightKo": "CI에서 에이전트 실행을 허용할 때는 저장소 권한보다 먼저 실행 환경의 파일·네트워크·비밀 접근 범위를 제한해야 한다.",
+      "insightEn": "When agents run in CI, sandboxing file, network, and secret access is more fundamental than repository permissions alone."
     },
     {
       "source": "CNCF",
@@ -81,7 +117,11 @@
       "title": "How to turn slow queries into actionable reliability metrics with OpenTelemetry",
       "link": "https://www.cncf.io/blog/2026/08/21/how-to-turn-slow-queries-into-actionable-reliability-metrics-with-opentelemetry/",
       "date": "2026-08-21T11:00:00.000Z",
-      "excerpt": "Slow SQL queries degrade user experience, cause cascading failures, and turn simple operations into production incidents. The traditional fix?"
+      "excerpt": "Slow SQL queries degrade user experience, cause cascading failures, and turn simple operations into production incidents. The traditional fix?",
+      "summaryKo": "CNCF 글은 느린 SQL 쿼리를 단순 성능 지표가 아니라 서비스 신뢰성 신호로 전환하고 OpenTelemetry를 통해 관측 가능한 운영 지표로 만드는 방법을 다룬다.",
+      "summaryEn": "The CNCF article treats slow SQL queries as reliability signals and shows how OpenTelemetry can turn them into actionable operational metrics.",
+      "insightKo": "DB latency를 애플리케이션 오류와 연결해 관측하면 장애 징후를 평균 응답시간보다 빠르게 포착할 수 있다.",
+      "insightEn": "Correlating database latency with application behavior can expose incident signals earlier than aggregate response time alone."
     },
     {
       "source": "Google Research",
@@ -89,7 +129,11 @@
       "title": "How mobility gives language models a deeper understanding of place",
       "link": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
       "date": "2026-08-21T10:54:00.000Z",
-      "excerpt": "Algorithms & Theory"
+      "excerpt": "Algorithms & Theory",
+      "summaryKo": "Google Research는 이동성 데이터를 활용해 언어 모델이 장소와 지역적 맥락을 더 깊게 이해하도록 하는 연구를 소개한다. 위치 정보와 언어적 지식을 결합해 공간적 의미를 강화하는 접근이다.",
+      "summaryEn": "Google Research explores using mobility data to give language models a deeper understanding of places and geographic context by combining movement signals with language knowledge.",
+      "insightKo": "공간·위치 데이터를 AI에 결합할 때는 정확도뿐 아니라 개인정보 보호와 데이터 최소화가 함께 설계돼야 한다.",
+      "insightEn": "Combining location data with AI requires privacy and data-minimization controls alongside accuracy improvements."
     },
     {
       "source": "AWS DevOps",
@@ -97,7 +141,11 @@
       "title": "From clickops to governed IaC: CloudFormation drift detection in practice",
       "link": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
       "date": "2026-08-21T10:48:22.000Z",
-      "excerpt": "AWS environments that have grown organically over time often share a common characteristic: infrastructure provisioned through the AWS Management Console, SDKs, or CLI without corresponding Infrastructure as Code (IaC) templates."
+      "excerpt": "AWS environments that have grown organically over time often share a common characteristic: infrastructure provisioned through the AWS Management Console, SDKs, or CLI without corresponding Infrastructure as Code (IaC) templates.",
+      "summaryKo": "AWS는 콘솔이나 CLI에서 임시로 변경된 인프라와 IaC 정의가 어긋나는 drift 문제를 CloudFormation drift detection으로 식별하고 관리하는 방법을 설명한다.",
+      "summaryEn": "AWS explains how CloudFormation drift detection can identify infrastructure that has diverged from its Infrastructure-as-Code definitions after manual or CLI changes.",
+      "insightKo": "GitOps와 IaC를 도입해도 drift 탐지가 없으면 실제 환경과 선언 상태의 차이를 놓칠 수 있으므로 정기적인 검증이 필요하다.",
+      "insightEn": "Even with IaC and GitOps, regular drift detection is necessary to verify that the live environment still matches the declared state."
     },
     {
       "source": "AWS Architecture",
@@ -105,7 +153,11 @@
       "title": "How AgentFlo built AI sales agents with Amazon Bedrock AgentCore – Part 2",
       "link": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-2/",
       "date": "2026-08-21T10:01:18.000Z",
-      "excerpt": "Part 2: how AgentFlo built trusted, reliable AI sales agents on Amazon Bedrock AgentCore and AWS serverless architecture. Learn the three-layer guardrails, grounded data foundation, and end-to-end observability behind a +12% net revenue uplift, plus what's next for real-time voice and server-side tool execution."
+      "excerpt": "Part 2: how AgentFlo built trusted, reliable AI sales agents on Amazon Bedrock AgentCore and AWS serverless architecture. Learn the three-layer guardrails, grounded data foundation, and end-to-end observability behind a +12% net revenue uplift, plus what's next for real-time voice and server-side tool execution.",
+      "summaryKo": "AgentFlo 사례는 Bedrock AgentCore와 서버리스 아키텍처 위에서 신뢰 가능한 영업 에이전트를 만들고 guardrail, grounded data, observability를 조합한 구조를 설명한다.",
+      "summaryEn": "AgentFlo's case study describes reliable sales agents built on Bedrock AgentCore and serverless services, combining guardrails, grounded data, and end-to-end observability.",
+      "insightKo": "에이전트의 비즈니스 성과보다 먼저 guardrail·데이터 근거·관측성을 함께 설계해야 운영 가능한 에이전트가 된다.",
+      "insightEn": "Operational agents need guardrails, grounded data, and observability designed together before business outcomes can be trusted."
     },
     {
       "source": "LINE",
@@ -113,7 +165,11 @@
       "title": "일본어 상품 검색 정확도 높이기: Elasticsearch + Kuromoji에서 OpenSearch + Sudachi로",
       "link": "https://techblog.lycorp.co.jp/ko/japanese-search-kuromoji-to-sudachi",
       "date": "2026-08-21T02:00:00.000Z",
-      "excerpt": "들어가며안녕하세요. LINE Plus에서 통합 커머스 개발을 맡고 있는 김진성입니다."
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 통합 커머스 개발을 맡고 있는 김진성입니다.",
+      "summaryKo": "LINE은 일본어 상품 검색 정확도를 높이기 위해 기존 Elasticsearch·Kuromoji 기반 검색을 OpenSearch·Sudachi 조합으로 개선한 경험을 공유한다. 형태소 분석과 검색 품질을 함께 조정한 사례다.",
+      "summaryEn": "LINE describes improving Japanese product-search accuracy by moving from Elasticsearch with Kuromoji toward OpenSearch with Sudachi, tuning tokenization and search quality together.",
+      "insightKo": "검색 품질은 엔진 교체 하나로 끝나지 않으며 언어별 토큰화와 실제 검색 질의 분포를 함께 평가해야 한다.",
+      "insightEn": "Search quality rarely comes from the engine alone; language-specific tokenization and real query distributions must be evaluated together."
     },
     {
       "source": "토스",
@@ -121,7 +177,11 @@
       "title": "LLM 서빙, 띄우는 것과 잘 띄우는 것 사이",
       "link": "https://toss.tech/article/tech_talk_talk_2",
       "date": "2026-08-21T01:00:00.000Z",
-      "excerpt": "비어 있는 캐시, 완벽한 알리바이, 사라진 처리량"
+      "excerpt": "비어 있는 캐시, 완벽한 알리바이, 사라진 처리량",
+      "summaryKo": "토스는 LLM 서빙에서 단순히 모델을 띄우는 것과 실제 운영 환경에서 처리량과 지연시간을 안정적으로 유지하는 것의 차이를 다룬다. 캐시와 자원 활용 같은 운영 세부사항이 핵심이다.",
+      "summaryEn": "Toss contrasts simply deploying an LLM with operating it well in production, focusing on practical factors such as caching, throughput, and resource utilization.",
+      "insightKo": "LLM serving 성능은 모델 자체보다 캐시, batching, 메모리, 동시성 같은 시스템 계층에서 크게 좌우될 수 있다.",
+      "insightEn": "LLM serving performance is often constrained by system factors such as caching, batching, memory, and concurrency rather than the model alone."
     },
     {
       "source": "Hugging Face",
@@ -129,7 +189,11 @@
       "title": "Measuring benchmark optimization in speech recognition",
       "link": "https://huggingface.co/blog/asr-benchmark-optimization",
       "date": "2026-08-21T00:00:00.000Z",
-      "excerpt": ""
+      "excerpt": "",
+      "summaryKo": "Hugging Face는 음성 인식 벤치마크에서 점수를 높이기 위해 평가 설정과 최적화 전략을 어떻게 조정할 수 있는지 다룬다. 모델 성능과 평가 방법 사이의 차이를 보여주는 사례다.",
+      "summaryEn": "Hugging Face examines how benchmark settings and optimization techniques can influence speech-recognition scores, highlighting the gap between model quality and evaluation behavior.",
+      "insightKo": "벤치마크 최적화는 실제 서비스 품질과 다를 수 있으므로 운영 환경의 대표 데이터셋과 별도 검증이 필요하다.",
+      "insightEn": "Benchmark optimization may not equal production quality, so representative real-world datasets should remain part of validation."
     },
     {
       "source": "Red Hat",
@@ -137,7 +201,11 @@
       "title": "Unify IT workflows at scale with the new automation orchestrator for Ansible Automation Platform",
       "link": "https://www.redhat.com/en/blog/unify-it-workflows-scale-new-automation-orchestrator-ansible-automation-platform",
       "date": "2026-08-21T00:00:00.000Z",
-      "excerpt": "As automation practices mature, the workflows they need to support naturally grow more complex—there are more teams, trigger types, decision points, and AI recommendations to account for."
+      "excerpt": "As automation practices mature, the workflows they need to support naturally grow more complex—there are more teams, trigger types, decision points, and AI recommendations to account for.",
+      "summaryKo": "Red Hat은 복잡해진 엔터프라이즈 자동화 흐름을 여러 팀과 이벤트, 의사결정 지점, AI 추천을 연결할 수 있는 오케스트레이션 계층으로 통합하는 방향을 제시한다.",
+      "summaryEn": "Red Hat presents an orchestration layer for increasingly complex enterprise automation, connecting teams, triggers, decision points, and AI recommendations into governed workflows.",
+      "insightKo": "자동화가 늘어날수록 개별 스크립트 수보다 승인·관측·재시도 정책을 포함한 workflow orchestration이 중요해진다.",
+      "insightEn": "As automation grows, workflow orchestration with approval, observability, and retry policies becomes more important than the number of individual scripts."
     },
     {
       "source": "Red Hat",
@@ -145,7 +213,11 @@
       "title": "How a global financial messaging network secured millions of containers and defeated alert fatigue",
       "link": "https://www.redhat.com/en/blog/how-global-financial-messaging-network-secured-millions-containers-and-defeated-alert-fatigue",
       "date": "2026-08-21T00:00:00.000Z",
-      "excerpt": "For a network that helps the financial community securely exchange payment instructions representing the equivalent of the world's GDP every 3 days, security isn't just a concern, it's the number one priority."
+      "excerpt": "For a network that helps the financial community securely exchange payment instructions representing the equivalent of the world's GDP every 3 days, security isn't just a concern, it's the number one priority.",
+      "summaryKo": "Red Hat은 대규모 금융 메시징 환경에서 수백만 개 컨테이너의 보안을 관리하면서 경보 피로를 줄인 사례를 소개한다. 핵심은 대규모 환경에서 보안 신호를 우선순위화하는 것이다.",
+      "summaryEn": "Red Hat describes securing millions of containers in a global financial messaging environment while reducing alert fatigue through better prioritization of security signals.",
+      "insightKo": "대규모 보안 운영에서는 탐지 건수를 늘리는 것보다 실제 위험을 우선순위화해 대응량을 줄이는 것이 중요하다.",
+      "insightEn": "At large scale, reducing response load through risk prioritization is more valuable than simply increasing the number of detections."
     },
     {
       "source": "Red Hat",
@@ -153,7 +225,11 @@
       "title": "From fragmented to flawless: Unifying the AI development lifecycle",
       "link": "https://www.redhat.com/en/blog/fragmented-flawless-unifying-ai-development-lifecycle",
       "date": "2026-08-21T00:00:00.000Z",
-      "excerpt": "AI teams struggle because data, experiments, models, and deployments often live in separate systems. The DagsHub AI quickstart for Red Hat OpenShift AI gives teams a way to manage dataset versioning, annotation, experiment tracking, model registry, and deployment workflows in a single OpenShift-based environment."
+      "excerpt": "AI teams struggle because data, experiments, models, and deployments often live in separate systems. The DagsHub AI quickstart for Red Hat OpenShift AI gives teams a way to manage dataset versioning, annotation, experiment tracking, model registry, and deployment workflows in a single OpenShift-based environment.",
+      "summaryKo": "Red Hat과 DagsHub 사례는 데이터 버전 관리, annotation, 실험 추적, 모델 레지스트리, 배포를 하나의 OpenShift 기반 흐름으로 연결해 AI 개발 라이프사이클의 분절을 줄이는 접근을 보여준다.",
+      "summaryEn": "The Red Hat and DagsHub example connects dataset versioning, annotation, experiment tracking, model registry, and deployment on OpenShift to reduce fragmentation in the AI lifecycle.",
+      "insightKo": "AI 플랫폼은 모델 학습 도구만 제공하기보다 데이터부터 배포까지 traceability를 연결하는 것이 장기 운영에 중요하다.",
+      "insightEn": "AI platforms need end-to-end traceability from data through deployment, not just better model-training tools."
     },
     {
       "source": "Datadog",
@@ -161,7 +237,11 @@
       "title": "Control trace volume with OpenTelemetry tail-based sampling",
       "link": "https://www.datadoghq.com/blog/control-trace-volume-with-opentelemetry-tail-based-sampling/",
       "date": "2026-08-21T00:00:00.000Z",
-      "excerpt": "Learn how to configure tail-based sampling in the OpenTelemetry Collector to drop noisy traces, keep the ones that matter, and control APM costs."
+      "excerpt": "Learn how to configure tail-based sampling in the OpenTelemetry Collector to drop noisy traces, keep the ones that matter, and control APM costs.",
+      "summaryKo": "Datadog은 OpenTelemetry Collector의 tail-based sampling으로 noisy trace를 줄이고 중요한 trace를 보존해 관측 데이터 양과 APM 비용을 제어하는 방법을 설명합니다.",
+      "summaryEn": "Datadog explains how tail-based sampling in the OpenTelemetry Collector can drop noisy traces, retain meaningful ones, and control observability volume and cost.",
+      "insightKo": "관측성 비용은 무조건 수집량을 줄이기보다 장애 분석에 가치가 있는 trace를 보존하는 정책 기반 샘플링으로 최적화하는 편이 낫습니다.",
+      "insightEn": "Policy-based sampling can preserve diagnostically valuable traces while controlling observability spend."
     },
     {
       "source": "Google Cloud",
@@ -169,7 +249,11 @@
       "title": "Google is a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms",
       "link": "https://cloud.google.com/blog/products/application-development/2026-gartner-mq-for-cloud-native-application-platforms/",
       "date": "2026-08-20T16:00:00.000Z",
-      "excerpt": "We are thrilled to announce that Google has been recognized as a Leader for the third year in a row in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms (CNAP)."
+      "excerpt": "We are thrilled to announce that Google has been recognized as a Leader for the third year in a row in the 2026 Gartner® Magic Quadrant™ for Cloud-Native Application Platforms (CNAP).",
+      "summaryKo": "Google Cloud는 2026 Gartner Cloud-Native Application Platforms 평가에서 3년 연속 Leader로 선정됐다고 발표했다. 플랫폼 경쟁이 애플리케이션 개발·배포·운영 경험 전체로 확장되고 있음을 보여주는 소식이다.",
+      "summaryEn": "Google Cloud says it was named a Leader in the 2026 Gartner Magic Quadrant for Cloud-Native Application Platforms for the third consecutive year. The announcement reflects continued competition around the full app-platform lifecycle.",
+      "insightKo": "플랫폼 선택에서는 개별 기능 수보다 개발자 경험과 운영 표준화가 조직의 실제 생산성에 미치는 영향을 함께 봐야 한다.",
+      "insightEn": "Platform evaluation should weigh developer experience and operational standardization, not just feature count."
     },
     {
       "source": "GitLab",
@@ -177,7 +261,11 @@
       "title": "GitLab 19.3 released",
       "link": "https://docs.gitlab.com/releases/19/gitlab-19-3-released/",
       "date": "2026-08-20T00:00:00.000Z",
-      "excerpt": ""
+      "excerpt": "",
+      "summaryKo": "GitLab 19.3은 개발·보안·운영 workflow를 확장하는 새로운 기능을 포함한 정기 릴리스다. 다이제스트에서는 구체적인 RSS 발췌가 충분하지 않아 릴리스 자체를 참고 대상으로 분류한다.",
+      "summaryEn": "GitLab 19.3 is a regular release extending the development, security, and operations workflow. The feed excerpt is sparse, so this item is best treated as a release reference rather than a detailed analysis.",
+      "insightKo": "릴리스 노트 기반 항목은 RSS 요약만으로 판단하지 말고 실제 변경 목록을 확인한 뒤 도입 여부를 결정하는 것이 안전하다.",
+      "insightEn": "For release-note items with sparse feed data, check the full changelog before deciding on adoption."
     }
   ]
 }
