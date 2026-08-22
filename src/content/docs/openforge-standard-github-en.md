@@ -4,61 +4,20 @@ description: Issue, PR, branch protection, and collaborative maintainer workflow
 project: OpenForge
 path: openforge/standards/github
 order: 1013
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # GitHub Standard
 
-OpenForge projects use GitHub as the primary system for collaboration and change management.
+GitHub serves as the central platform for transparently recording, discussing, and verifying code changes.
 
-## Issues
+## Baseline Rules
 
-Recommended types:
+- **Issue Templates**: Distinct templates for Bug Reports, Feature Requests, and Security Disclosures.
+- **PR Template**: Mandatory sections for context, solution rationale, verification evidence, and issue references.
+- **Branch Protection**: Direct pushes to `main` are restricted; pre-merge CI quality gating and squash merges are enforced.
+- **Label Taxonomy**: Consistent prefixes (`kind/*`, `area/*`, `status/*`, `risk/*`) for triage and searchability.
 
-- Bug
-- Feature
-- Architecture
-- Documentation
-- Dependency
-- Security
-
-Use issues to capture requirements, decisions and implementation scope before substantial changes.
-
-## Pull Requests
-
-Every meaningful change should be submitted through a pull request when collaboration or review is expected.
-
-PRs should:
-
-- explain the problem and solution
-- link relevant issues
-- describe tests
-- include documentation updates when needed
-- keep commits focused
-
-## Branches
-
-Prefer short-lived branches such as:
-
-```text
-feat/<name>
-fix/<name>
-refactor/<name>
-chore/<name>
-docs/<name>
-```
-
-## Commits
-
-Prefer Conventional Commits:
-
-```text
-feat: add unified service API
-fix: handle stale metadata
-chore: update dependencies
-docs: add architecture guide
-```
-
-## Canonical source
+## Canonical Source
 
 - [GitHub Standard](https://github.com/dasomel/openforge/blob/main/docs/github.md)

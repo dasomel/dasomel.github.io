@@ -1,71 +1,32 @@
 ---
 title: Repository Standard
-description: OSS repository structure, required files, and maintainability baseline.
+description: OSS repository structure, required root files, and maintainability baseline.
 project: OpenForge
 path: openforge/standards/repository
 order: 1011
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # Repository Standard
 
-Every OpenForge-based project should start with a predictable, maintainable repository layout.
+Repository structure is the foundational engineering contract of an open-source project. New contributors should immediately understand how to build, test, secure, and govern the project without reverse-engineering implicit conventions.
 
-```text
-project/
-├── README.md
-├── README-ko.md
-├── LICENSE
-├── NOTICE                         # when required
-├── THIRD-PARTY-LICENSES.md       # when required
-├── CONTRIBUTING.md
-├── CONTRIBUTING-ko.md
-├── SECURITY.md
-├── SECURITY-ko.md
-├── CODE_OF_CONDUCT.md
-├── CODE_OF_CONDUCT-ko.md
-├── CHANGELOG.md
-├── CHANGELOG-ko.md
-├── VERSIONS.md                   # when multiple versions/targets matter
-├── .env.example                  # when environment configuration exists
-├── .editorconfig
-├── .gitignore
-├── .github/
-├── docs/
-├── src/ or application-specific source tree
-├── tests/                         # when applicable
-└── Makefile                       # when a common command surface is useful
-```
+## Baseline Requirements
 
-## Rules
+- **Predictable Layout**: Clean separation of source code, documentation, CI workflows, and deployment assets.
+- **Root Invariant Files**: Required files present at the root: `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`, `README.md`, and `README-ko.md`.
+- **Issue & PR Templates**: Structured templates under `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`.
+- **Explicit Ownership Model**: Maintained `CODEOWNERS` defining clear domain responsibilities.
+- **Zero Secret Ingestion**: Only `.env.example` templates committed; zero credentials in source control.
 
-- Use lowercase kebab-case repository names where applicable.
-- Keep generated artifacts out of source control unless they are deliberate release assets or required checked-in generated sources.
-- Keep configuration examples safe and secret-free.
-- Prefer one authoritative source for versions and compatibility information. Use `VERSIONS.md` when version drift across manifests, charts, images or deployment targets is material.
-- Use standard directory names for source, tests, docs and GitHub metadata.
-- Keep architecture and lifecycle documents versioned with the project.
-- Use a small Makefile or equivalent command runner when it materially improves discoverability and reproducibility.
-- Add release, legal and third-party artifacts when the distribution model requires them.
-- Add repository-local AI guidance when AI-assisted development is part of the workflow.
+## Change Discipline
 
-## Deployment-specific documentation
+Repository-wide configuration is executable software behavior. Modifications to CI workflows, manifests, or tooling configs require full impact analysis across all consuming workflows.
 
-Infrastructure projects may separate common documentation from target-specific operational guides:
+## Single-Maintainer Scaling
 
-```text
-docs/common/
-docs/vagrant/
-docs/cloud/
-docs/airgap/
-```
+Controls scale according to automated coverage and change risk rather than requiring an arbitrary team size.
 
-Do not duplicate common rules merely because deployment targets differ.
-
-## Exceptions
-
-Third-party, vendored, generated, or upstream-contract files may preserve their original naming conventions. The English/Korean filename policy in the Documentation Standard applies to project-owned user-facing documentation.
-
-## Canonical source
+## Canonical Source
 
 - [Repository Standard](https://github.com/dasomel/openforge/blob/main/docs/repository.md)

@@ -1,54 +1,22 @@
 ---
-title: Reference
-description: How OpenForge standards, templates, reference implementations, and evidence are connected.
+title: Reference & Source Map
+description: Authoritative source mapping across OpenForge standards, templates, reference implementations, and evidence.
 project: OpenForge
 path: openforge/reference
 order: 1007
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Reference
+# Reference & Source Map
 
-OpenForge does not copy every artifact into one location. It separates the authoritative source by asset type and connects those sources through project evidence.
+OpenForge establishes clear **Sources of Truth** separated by asset type, avoiding monolithic duplication while ensuring traceability.
 
-## Source Map
+## Authoritative Source Map
 
-| Need | Authoritative source | Portal role |
+| Asset Type | Authoritative Source | Portal Role (`/oss/en/openforge/`) |
 |---|---|---|
-| Standard | `openforge/docs/` | Explain purpose, adoption context, and trade-offs |
-| Template | `openforge/templates/` | Explain usage and project-specific adaptation |
-| Reference implementation | Target OSS repository | Explain implementation and constraints |
-| Engineering decision | Project ADR | Record rationale and alternatives |
-| Incident lesson | Issue / incident / regression test | Provide evidence for standard improvement |
-| Maturity | `docs/reference-metrics.md` | Provide a practical maturity model |
-
-## Evidence Loop
-
-```text
-OpenForge Standard
-      ↓
-Project Application
-      ↓
-Implementation
-      ↓
-CI / Review / Runtime Evidence
-      ↓
-Incident / Lesson / Metric
-      ↓
-Standard Improvement
-```
-
-This separates “a standard exists” from “the standard has been exercised in a real project” while keeping the two connected.
-
-## Reference Projects
-
-The OpenForge README identifies projects such as Narwhal, Narwhal Portal, nfs-quota-agent, kube-ready-box, KubeMetal, ldapium, and Beluga Manager as reference projects.
-
-They are not dependencies. They form a **reference set used to validate and improve repeatable engineering practices**.
-
-## Canonical Links
-
-- [OpenForge repository](https://github.com/dasomel/openforge)
-- [OpenForge standards](https://github.com/dasomel/openforge/tree/main/docs)
-- [OpenForge templates](https://github.com/dasomel/openforge/tree/main/templates)
-- [Reference metrics](https://github.com/dasomel/openforge/blob/main/docs/reference-metrics.md)
+| **[Engineering Standards](/oss/en/openforge/standards)** | `dasomel/openforge/docs/` | Purpose, adoption context, and trade-off analysis |
+| **[Reusable Templates](/oss/en/openforge/templates)** | `dasomel/openforge/templates/` | Usage guidelines and customization parameters |
+| **[Maturity Metrics](/oss/en/openforge/reference/metrics)** | `dasomel/openforge/docs/reference-metrics.md` | Repository maturity scorecard and evaluation rubrics |
+| **Reference Implementations** | Live OSS repos (Narwhal, KubeMetal, etc.) | Real-world application case studies and metrics |
+| **Architecture Decisions** | `openforge/docs/adr/` | Architectural context, decisions, and trade-offs |

@@ -4,68 +4,29 @@ description: OSS 저장소 구조, 필수 파일 및 유지보수성 베이스�
 project: OpenForge
 path: openforge/standards/repository
 order: 1011
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Repository Standard
+# 저장소 표준
 
-Every OpenForge-based project should start with a predictable, maintainable repository layout.
+저장소 구조는 프로젝트의 가장 기본적인 엔지니어링 계약입니다. 새로운 기여자가 숨겨진 관행을 역공학할 필요 없이 프로젝트를 빌드, 테스트, 릴리스, 거버넌스 및 보안 조치할 수 있어야 합니다.
 
-```text
-project/
-├── README.md
-├── README-ko.md
-├── LICENSE
-├── NOTICE                         # when required
-├── THIRD-PARTY-LICENSES.md       # when required
-├── CONTRIBUTING.md
-├── CONTRIBUTING-ko.md
-├── SECURITY.md
-├── SECURITY-ko.md
-├── CODE_OF_CONDUCT.md
-├── CODE_OF_CONDUCT-ko.md
-├── CHANGELOG.md
-├── CHANGELOG-ko.md
-├── VERSIONS.md                   # when multiple versions/targets matter
-├── .env.example                  # when environment configuration exists
-├── .editorconfig
-├── .gitignore
-├── .github/
-├── docs/
-├── src/ or application-specific source tree
-├── tests/                         # when applicable
-└── Makefile                       # when a common command surface is useful
-```
+## 기본 요구사항 (Baseline)
 
-## Rules
+- **예측 가능한 디렉토리 구조**: 소스 코드, 문서, 빌드 스크립트, 배포 매니페스트를 표준 위치에 배치합니다.
+- **루트 필수 파일 완비**: `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`, `README.md`, `README-ko.md`를 루트에 배치합니다.
+- **Issue 및 PR 템플릿**: `.github/ISSUE_TEMPLATE/` 및 `.github/PULL_REQUEST_TEMPLATE.md`를 통해 구조화된 변경 요청을 유도합니다.
+- **명시적 소유권 모델**: `CODEOWNERS` 파일을 정의하여 영역별 책임자를 명확히 합니다.
+- **시크릿 격리**: 환경변수 예시 파일(`.env.example`)만 커밋하고 실제 비밀값은 소스 제어에 커밋하지 않습니다.
 
-- Use lowercase kebab-case repository names where applicable.
-- Keep generated artifacts out of source control unless they are deliberate release assets or required checked-in generated sources.
-- Keep configuration examples safe and secret-free.
-- Prefer one authoritative source for versions and compatibility information. Use `VERSIONS.md` when version drift across manifests, charts, images or deployment targets is material.
-- Use standard directory names for source, tests, docs and GitHub metadata.
-- Keep architecture and lifecycle documents versioned with the project.
-- Use a small Makefile or equivalent command runner when it materially improves discoverability and reproducibility.
-- Add release, legal and third-party artifacts when the distribution model requires them.
-- Add repository-local AI guidance when AI-assisted development is part of the workflow.
+## 변경 원칙
 
-## Deployment-specific documentation
+저장소 전역 설정은 실행 가능한 소프트웨어 동작입니다. 워크플로 파일, 패키지 매니페스트, 훅, 린트 설정 변경 시 영향을 받는 모든 워크플로를 전수 검토합니다.
 
-Infrastructure projects may separate common documentation from target-specific operational guides:
+## 1인 메인테이너 고려사항
 
-```text
-docs/common/
-docs/vagrant/
-docs/cloud/
-docs/airgap/
-```
+OpenForge는 특정 인원수를 강제하지 않으며, 변경 위험도와 자동화 수준에 맞춰 거버넌스를 확장합니다.
 
-Do not duplicate common rules merely because deployment targets differ.
-
-## Exceptions
-
-Third-party, vendored, generated, or upstream-contract files may preserve their original naming conventions. The English/Korean filename policy in the Documentation Standard applies to project-owned user-facing documentation.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Repository Standard](https://github.com/dasomel/openforge/blob/main/docs/repository.md)

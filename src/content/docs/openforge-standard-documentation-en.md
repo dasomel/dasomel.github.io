@@ -4,72 +4,25 @@ description: Dual-language documentation model, source-of-truth invariants, and 
 project: OpenForge
 path: openforge/standards/documentation
 order: 1012
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # Documentation Standard
 
-OpenForge standardizes **project-owned, user-facing** documentation as separate English and Korean files.
+Documentation is a primary interface defining how the software is constructed, operated, and maintained.
 
-## File naming
+## Bilingual Policy
 
-```text
-README.md
-README-ko.md
+- **Canonical English**: English serves as the canonical project language (`<name>.md` or `<name>-en.md`).
+- **First-Class Korean**: Korean is maintained as an equal, first-class translation (`<name>-ko.md` or `<name>.md`).
+- **1:1 Structural Parity**: English and Korean documents maintain identical section headings, code snippets, and link structures.
 
-docs/architecture.md
-docs/architecture-ko.md
-```
+## Source of Truth Invariants
 
-English is the canonical filename. Korean uses the `-ko.md` suffix.
+- Core templates and authoritative standards reside in the OpenForge repository.
+- The web portal (`/oss/en/openforge/`) provides contextual explanations, tutorials, and empirical evidence.
+- Duplication is avoided through explicit authoritative source mappings.
 
-## Rules
-
-- Keep English and Korean semantically synchronized.
-- Use relative links between language versions.
-- Put project-owned user-facing documentation in Markdown unless another format is required by the ecosystem.
-- Keep README focused on purpose, features, quick start, architecture, status, documentation and license.
-- Put detailed operational content under `docs/`.
-- Record architecture decisions as ADRs.
-- Record important operational failures as lessons/incidents/mistakes and connect them to tests when practical.
-- Do not put secrets, private endpoints or credentials in documentation.
-- Treat build, runtime, dependency and release contracts as documented engineering interfaces.
-- Update relevant documentation when a change modifies those contracts.
-
-## Documentation set
-
-Recommended minimum:
-
-```text
-README.md / README-ko.md
-CONTRIBUTING.md / CONTRIBUTING-ko.md
-SECURITY.md / SECURITY-ko.md
-CODE_OF_CONDUCT.md / CODE_OF_CONDUCT-ko.md
-CHANGELOG.md / CHANGELOG-ko.md
-docs/architecture.md / docs/architecture-ko.md
-docs/development.md / docs/development-ko.md
-docs/change-management.md
-```
-
-Add when applicable:
-
-```text
-RELEASING.md / RELEASING-ko.md
-VERSIONS.md / VERSIONS-ko.md
-docs/supply-chain.md / docs/supply-chain-ko.md
-NOTICE / THIRD-PARTY-LICENSES.md
-docs/common/
-docs/<deployment-target>/
-```
-
-Supply-chain and change-management standards are canonical portfolio guidance; repository-specific documents should link to them rather than define conflicting policies.
-
-## Filename exceptions
-
-The `-ko.md` convention does **not** require renaming third-party, vendored, generated, or upstream-contract documentation. Preserve upstream names when changing them would make updates harder or break the upstream distribution contract.
-
-For example, a project may keep a vendored chart's upstream `README.md` even when project-owned documentation uses the OpenForge bilingual naming convention.
-
-## Canonical source
+## Canonical Source
 
 - [Documentation Standard](https://github.com/dasomel/openforge/blob/main/docs/documentation.md)

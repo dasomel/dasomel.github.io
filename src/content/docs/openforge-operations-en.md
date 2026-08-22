@@ -1,38 +1,21 @@
 ---
-title: Operations
-description: Operational documentation contract for OpenForge-based projects.
+title: Operations Guide
+description: Post-deployment lifecycle, observability, backup/recovery, and operational standards.
 project: OpenForge
 path: openforge/operations
 order: 1006
-lastModified: 2026-08-21
+lastModified: 2026-08-23
 ---
 
-# Operations
+# Operations Guide
 
-An OpenForge-based project should document the lifecycle after deployment, not only installation.
+OpenForge projects document the full **post-deployment lifecycle** in addition to initial setup and installation.
 
-## Minimum operational set
+## Essential Operational Checkpoints
 
-- health and readiness
-- metrics, traces and structured logs
-- configuration and secret boundaries
-- upgrade and rollback path
-- backup and restore validation
-- offline/air-gap behavior where applicable
-- incident response
-
-## Evidence
-
-Operations documentation should link to actual manifests, workflows, runbooks, and validation commands. A statement such as “backup supported” is incomplete without restore evidence.
-
-## Release lifecycle
-
-```text
-Release
- → verify
- → deploy/canary
- → observe
- → promote
- → record evidence
- → retain last-known-good
-```
+1. **Health Probes**: Explicitly defined Liveness (`/healthz`), Readiness (`/readyz`), and Startup probe contracts.
+2. **Observability**: Standardized Prometheus metric endpoints, structured JSON logging, and OpenTelemetry trace conventions.
+3. **Secret Isolation**: Secrets are strictly separated from configurations and injected via environment variables or secret volumes.
+4. **Upgrades & Rollbacks**: Zero-downtime rolling updates, database schema migration compatibility, and emergency rollback runbooks.
+5. **Backup & Recovery (DR)**: Automated regular backups verified through tested restore runbooks.
+6. **Incident Response**: Severity-based incident response workflows aligned with the [Troubleshooting Guide](/oss/en/openforge/troubleshooting).

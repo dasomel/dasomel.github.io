@@ -4,49 +4,21 @@ description: 경량 컨테이너 이미지, Non-root 실행, NetworkPolicy 및 I
 project: OpenForge
 path: openforge/standards/container-iac-security
 order: 1029
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Container, Kubernetes 및 IaC 보안 표준
+# 컨테이너, K8s 및 IaC 보안 표준
 
-Cloud-native OSS에서는 container, Helm, Kubernetes, IaC input을 software supply chain의 일부로 취급합니다.
+클라우드 네이티브 워크로드는 컨테이너와 쿠버네티스 인프라 계층에서 철저히 격리되어야 합니다.
 
-## Container / OCI
+## 컨테이너 & 쿠버네티스 보안 베이스라인
 
-- release-critical base image를 digest로 고정합니다.
-- downloaded tool과 package input은 가능한 경우 checksum/signature로 검증합니다.
-- compatibility가 허용하면 최소 image와 non-root 실행을 우선합니다.
-- release image에 SBOM/provenance를 생성합니다.
-- build, mirror, promotion 후 image digest를 검증합니다.
-- release path에서 mutable `latest` tag를 사용하지 않습니다.
-- compromised base image/package 발생 시 검증된 last-known-good input으로 rebuild합니다.
+- **Multi-stage 빌드**: 불필요한 빌드 도구와 패키지를 배제하여 경량 런타임 이미지를 생성합니다.
+- **Non-root 사용자 강제**: 컨테이너 내부에서 `USER 65532` 또는 비루트 사용자로 프로세스를 실행합니다.
+- **Read-only 루트 파일시스템**: 컨테이너 루트 파일시스템을 읽기 전용으로 설정하고 임시 쓰기는 `emptyDir`로 제한합니다.
+- **NetworkPolicy 격리**: 네임스페이스 간 및 워크로드 간 불필요한 네트워크 트래픽을 기본 차단합니다.
+- **PodDisruptionBudget (PDB)**: 노드 점검 중에도 고가용성을 유지할 수 있도록 PDB를 구성합니다.
 
-## Helm / Kubernetes
-
-- chart와 dependency version/digest를 고정합니다.
-- Helm values, initContainer, hook, startup command를 executable configuration으로 취급합니다.
-- privileged, hostPath, hostPID, hostNetwork, capability, ServiceAccount 권한을 검토합니다.
-- controlled deployment에서는 immutable image digest를 사용합니다.
-- RBAC least privilege를 적용합니다.
-- Secret을 chart/GitOps artifact에 평문으로 넣지 않습니다.
-- 가능한 경우 admission/deployment에서 image/chart identity를 검증합니다.
-
-## IaC
-
-Terraform/OpenTofu/Packer/Ansible 등은 lock/checksum, version pinning, external download 검증, remote script 제한, plan security review, state/credential 보호, last-known-good 구성을 적용합니다.
-
-## Remote Execution
-
-다음을 검증 없이 사용하지 않습니다.
-
-```text
-curl <url> | sh
-wget <url> | bash
-python <remote-url>
-```
-
-예외에는 immutable source identity, integrity verification, reason, review가 필요합니다.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Container, Kubernetes & IaC Security](https://github.com/dasomel/openforge/blob/main/docs/container-iac-security.md)

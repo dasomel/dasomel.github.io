@@ -1,37 +1,37 @@
 ---
 title: Reference Implementation Metrics
-description: OpenForge maturity scorecard and evidence model.
+description: Repository maturity scorecard and evidence model for OpenForge standards compliance.
 project: OpenForge
 path: openforge/reference/metrics
 order: 1030
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # Reference Implementation Metrics
 
-OpenForge provides a maturity scorecard to measure whether engineering practices are actually implemented.
+OpenForge provides a practical **Maturity Scorecard** to evaluate repository engineering quality and standards compliance.
 
-## Scoring
+## Scoring Rubric
 
-| Score | Meaning |
-|---|---|
-| `2` | implemented and automated where practical |
-| `1` | partially implemented or manual |
-| `0` | missing |
-| `N/A` | not applicable |
+| Score | Status | Description |
+|---|---|---|
+| **`2`** | Automated | Fully implemented and automated via CI/CD where practical |
+| **`1`** | Manual | Partially implemented or manually maintained |
+| **`0`** | Missing | Missing or non-compliant with standard baseline |
+| **`N/A`** | Not Applicable | Not applicable to the project type (e.g. UI localization for CLI tools) |
 
-## Coverage
+---
 
-The scorecard covers documentation, architecture, GitHub, CI/CD, security, supply chain, change management, upgrade/compatibility, developer environment, AI-assisted engineering, release, resilience, configuration, and localization.
+## 9 Core Assessment Domains
 
-## Evidence first
-
-The score alone is less important than the evidence behind it. Workflow results, regression tests, ADRs, incident lessons, repository configuration, and generated artifacts can provide that evidence.
-
-## Portfolio use
-
-The scorecard is not intended as a simple project ranking. It is a feedback mechanism for finding recurring gaps and improving the OpenForge baseline.
-
-## Canonical source
-
-[Reference Implementation Metrics](https://github.com/dasomel/openforge/blob/main/docs/reference-metrics.md)
+| Domain | Core Checkpoints | Target State |
+|---|---|---|
+| **Documentation** | Dual README pair, architecture docs, development guide, lessons log | Complete 1:1 EN/KO parity, active lessons log |
+| **Architecture** | Architecture Decision Record (ADR) system | Maintained `docs/adr/` index and records |
+| **GitHub** | Issue/PR templates, CODEOWNERS, labeling taxonomy | Structured, template-driven change management |
+| **CI / Validation** | Automated build, test, format, and documentation checks | Mandatory pre-merge automated gates |
+| **Security** | Dependabot, container scanning, secret detection, SECURITY policy | Automated scheduled scans and SBOM generation |
+| **Development** | Language formatters (`gofumpt`), Makefile task automation | Single-command local build and verification |
+| **Release** | SemVer, CHANGELOG, release workflows, cryptographic signing | Tag-triggered automated signed distribution |
+| **Configuration** | `.env.example`, clean configuration boundaries | Clean separation of secrets from configuration |
+| **Localization** | Multilingual UI resources (`en-US`, `ko-KR`) | Structured, modular i18n resource bundles |

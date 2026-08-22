@@ -4,44 +4,19 @@ description: Semantic Versioning, 자동화된 변경 이력 관리 및 배포 �
 project: OpenForge
 path: openforge/standards/release
 order: 1033
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # 릴리스 표준
 
-예측 가능한 릴리스 생명주기를 사용하고 릴리스 산출물을 특정 commit으로 추적 가능하게 유지합니다.
+릴리스는 예측 가능하고 추적 가능하며 재현 가능해야 합니다.
 
-## 버전 관리
+## 릴리스 수칙
 
-라이브러리와 애플리케이션은 가능한 경우 Semantic Versioning을 사용합니다.
+- **Semantic Versioning (SemVer)**: `MAJOR.MINOR.PATCH` 규칙을 엄격히 준수합니다.
+- **CHANGELOG 관리**: 변경 사항을 기능 추가, 버그 수정, 보안 패치로 구분하여 명확히 정리합니다.
+- **Git 태그 트리거**: 릴리스는 Git 태그(`vX.Y.Z`) 푸시를 통해서만 자동으로 빌드되고 배포됩니다.
 
-```text
-MAJOR.MINOR.PATCH
-```
-
-Breaking change는 명확하게 문서화합니다.
-
-## 변경 기록
-
-다음 두 파일을 유지합니다.
-
-```text
-CHANGELOG.md
-CHANGELOG-ko.md
-```
-
-English와 Korean 변경 기록은 의미가 일치해야 합니다.
-
-## 릴리스 체크리스트
-
-- 릴리스 commit의 CI 통과
-- 보안/dependency 검사 검토
-- 버전 일관성 확인
-- changelog 업데이트
-- 영/한 release note 작성
-- 알려진 commit에서 artifact 생성
-- 필요한 경우 rollback/recovery 문서화
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Release Standard](https://github.com/dasomel/openforge/blob/main/docs/release.md)

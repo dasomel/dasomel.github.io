@@ -4,36 +4,19 @@ description: Short-lived tokens, OIDC federation, secret scanning, and zero hard
 project: OpenForge
 path: openforge/standards/secrets-identity
 order: 1030
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Secrets and Machine Identity Standard
+# Secrets & Machine Identity
 
-Credentials used by development, CI, release and deployment are supply-chain assets.
+Secrets and machine identities must minimize lifetime and exposure surfaces.
 
-## Requirements
+## Management Principles
 
-- Prefer short-lived credentials and OIDC over long-lived tokens.
-- Scope credentials to repository, environment, job and action as narrowly as practical.
-- Separate developer, CI, release and production identities.
-- Grant publish permissions only to release jobs that require them.
-- Never store secrets in source, generated artifacts, cache or logs.
-- Apply secret scanning to source and generated release material where practical.
-- Rotate or revoke credentials immediately after suspected exposure.
-- Document emergency credential recovery and replacement.
+- **Zero Hardcoded Secrets**: Static credentials never exist in source code or configuration files.
+- **Short-Lived Identities**: Long-lived API keys replaced with temporary tokens via OIDC federation.
+- **Automated Rotation**: Secrets rotated periodically with verified emergency revocation workflows.
 
-## Identity separation
-
-```text
-developer
-  ≠ CI build
-  ≠ release
-  ≠ package publish
-  ≠ production deployment
-```
-
-Identity changes, OIDC trust changes and publishing configuration changes are security-sensitive changes.
-
-## Canonical source
+## Canonical Source
 
 - [Secrets & Machine Identity](https://github.com/dasomel/openforge/blob/main/docs/secrets-identity.md)

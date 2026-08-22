@@ -4,34 +4,19 @@ description: CI 서비스 장애 시 안전한 Fallback 전략 및 리스크 완
 project: OpenForge
 path: openforge/standards/ci-resilience
 order: 1019
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# CI/CD Resilience 표준
+# CI/CD 복원력 표준
 
-CI/CD는 OSS의 운영 의존성이므로 일시적인 플랫폼, registry, network 장애가 상태를 훼손하거나 안전하지 않은 release를 유도하지 않아야 합니다.
+CI 서비스는 외부 플랫폼 장애에 취약할 수 있으므로, 장애 발생 시에도 보안 원칙을 훼손하지 않는 복원력을 갖추어야 합니다.
 
-## 요구사항
+## 복원력 원칙
 
-- build/test/release job은 가능한 경우 retry-safe/idempotent하게 설계합니다.
-- workflow failure에서도 중요한 artifact/evidence를 보존합니다.
-- transient retry와 semantic failure를 구분하며 destructive publish/deploy를 무조건 retry하지 않습니다.
-- release-critical project는 가능한 경우 manual/offline fallback을 문서화합니다.
-- 선언된 offline/air-gap mode에서는 dependency/artifact mirror 또는 cache를 준비합니다.
-- workflow 재실행으로 duplicate/unintended artifact가 publish되지 않도록 합니다.
-- 명확한 last-known-good release reference를 유지합니다.
-- outage로 발생한 exception을 기록하고 반복 장애는 regression check로 전환합니다.
+- **Fail-Safe 기본 동작**: CI 검증 실패나 네트워크 장애 시 자동 배포가 무분별하게 실행되지 않도록 차단합니다.
+- **비상 배포 절차**: CI 서비스 중단 시 로컬 검증 증거를 문서화하고 서명된 산출물로 수동 릴리스하는 표준 SOP를 정의합니다.
+- **캐시 종속성 완화**: 외부 패키지 레지스트리 일시 장애에 대비하여 로컬/미러 캐시 전략을 수립합니다.
 
-CI outage가 발생해도 security gate를 무시하고 긴급 publish하지 않습니다.
-
-```text
-CI unavailable
-→ release candidate 보존
-→ approved fallback validation
-→ 필요한 경우 명시적 exception
-→ 필수 evidence 복구 후 publish
-```
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [CI/CD Resilience Standard](https://github.com/dasomel/openforge/blob/main/docs/ci-resilience.md)

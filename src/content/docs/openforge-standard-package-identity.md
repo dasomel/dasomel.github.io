@@ -4,35 +4,19 @@ description: 불변 패키지 출처, 체크섬, 전자서명 및 메타데이�
 project: OpenForge
 path: openforge/standards/package-identity
 order: 1025
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Package 및 Artifact Identity 표준
+# 패키지 및 산출물 신원 표준
 
-Package name, namespace, publisher identity는 supply-chain trust model의 일부입니다.
+패키지와 배포 산출물은 변경 불가능한 고유 식별자와 무결성 검증 수단을 가져야 합니다.
 
-## 위협
+## 신원 검증 규칙
 
-- typosquatting
-- dependency confusion
-- namespace squatting
-- evil-twin package/extension
-- ownership transfer
-- unexpected publisher change
-- suspicious low-age dependency
+- **체크섬 대조**: 모든 다운로드 산출물에 대해 SHA256 체크섬을 생성하고 검증합니다.
+- **불변 태그 및 다이제스트**: 컨테이너 이미지는 변조 가능한 태그 대신 불변 다이제스트(`@sha256:...`)로 참조합니다.
+- **디지털 서명**: Cosign 등을 활용하여 릴리스 바이너리와 컨테이너 이미지에 서명합니다.
 
-## 요구사항
-
-- 신규 dependency의 source와 publisher/namespace identity를 확인합니다.
-- 내부/private dependency가 public registry와 이름이 같다고 public source를 자동 선택하지 않습니다.
-- ownership/namespace/publisher 변경을 security-impact change로 검토합니다.
-- 가능한 경우 신규 package에 cooling/review를 적용합니다.
-- immutable package identity와 integrity metadata를 기록합니다.
-- release build에서는 approved registry/mirror를 우선합니다.
-- known-malicious/withdrawn package를 quarantine합니다.
-
-IDE extension, agent plugin, CLI tool도 동일한 정책을 적용합니다.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Package & Artifact Identity](https://github.com/dasomel/openforge/blob/main/docs/package-identity.md)

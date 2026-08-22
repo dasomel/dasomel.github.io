@@ -4,47 +4,19 @@ description: 전자서명, SBOM 생성, 출처 증명 및 배포 무결성 검�
 project: OpenForge
 path: openforge/standards/release-security
 order: 1034
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Release 보안 표준
+# 릴리스 보안 표준
 
-Release는 build와 distribution 사이의 별도 trust boundary입니다.
+릴리스 산출물은 최종 사용자에게 전달되기까지 변조되지 않았음을 수학적으로 증명할 수 있어야 합니다.
 
-```text
-Source
-→ Build
-→ Test
-→ Security Gate
-→ Artifact Freeze
-→ Approval
-→ Publish
-→ Post-publish Verify
-→ Monitor
-```
+## 릴리스 보안 요구사항
 
-## 요구사항
+- **암호화 전자서명**: 릴리스 바이너리와 컨테이너 이미지에 서명하고 공개 검증 키를 제공합니다.
+- **SBOM 동봉**: SPDX 또는 CycloneDX 형식의 SBOM 파일을 릴리스 아티팩트에 포함합니다.
+- **빌드 출처 증명(Provenance)**: 빌드가 신뢰할 수 있는 CI 파이프라인에서 생성되었음을 증명하는 Attestation을 발행합니다.
 
-- build identity와 publish identity를 분리합니다.
-- untrusted 또는 일반 CI job에서 직접 publish하지 않습니다.
-- publish 전 exact artifact digest를 freeze합니다.
-- 가능한 경우 publish 직전 artifact identity를 재검증합니다.
-- registry가 지원하면 staged publishing/approval 기능을 우선합니다.
-- release branch/tag와 publishing configuration을 보호합니다.
-- published artifact가 승인된 artifact와 동일한지 검증합니다.
-- last-known-good release와 rollback 절차를 유지합니다.
-- compromised release의 quarantine/revocation 절차를 정의합니다.
-- source, dependency, builder, artifact, approver를 연결하는 release evidence를 기록합니다.
-
-## Trust 제한
-
-- signature는 artifact가 benign하다는 증명이 아닙니다.
-- provenance는 source/behavior가 의도되었다는 증명이 아닙니다.
-- SBOM은 malware absence의 증명이 아닙니다.
-- CI 성공은 release 안전성의 증명이 아닙니다.
-
-이 정보들은 publish policy 판단을 위한 evidence이며 자동 publish authorization 자체가 아닙니다.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Release Security](https://github.com/dasomel/openforge/blob/main/docs/release-security.md)

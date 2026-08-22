@@ -1,54 +1,22 @@
 ---
-title: Reference
-description: OpenForge의 기준 문서, template, reference implementation, evidence 연결 모델.
+title: 참조 자료 및 소스 맵
+description: OpenForge 기준 문서, 템플릿, 참고 구현체 및 증거 자산의 권위 소스 맵.
 project: OpenForge
 path: openforge/reference
 order: 1007
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Reference
+# 참조 자료 및 소스 맵 (Reference)
 
-OpenForge는 **하나의 Source of Truth로 모든 것을 복사하는 구조가 아니라, 자산의 종류에 따라 권위 있는 원본을 분리**합니다.
+OpenForge는 모든 자산을 한곳에 복사해 두는 것이 아니라, 자산의 성격에 따라 **권위 있는 원본(Source of Truth)**을 명확히 분리하여 관리합니다.
 
-## Source Map
+## 권위 소스 맵 (Source Map)
 
-| 필요한 것 | 권위 있는 원본 | 이 포털의 역할 |
+| 자산 유형 | 권위 있는 원본 위치 | 포털(`/oss/openforge/`)의 역할 |
 |---|---|---|
-| Standard | `openforge/docs/` | 목적, 적용 시점, trade-off 설명 |
-| Template | `openforge/templates/` | 사용 방법과 대상 프로젝트 적용 예시 |
-| Reference Implementation | 실제 OSS repository | 프로젝트별 구현과 제약 설명 |
-| Engineering Decision | Project ADR | 선택 이유와 대안 기록 |
-| Incident Lesson | Issue / Incident / Regression Test | 문제가 기준 개선으로 연결된 근거 |
-| Maturity | `docs/reference-metrics.md` | 프로젝트 상태를 정량적으로 평가하는 기준 |
-
-## Evidence Loop
-
-```text
-OpenForge Standard
-      ↓
-Project Application
-      ↓
-Implementation
-      ↓
-CI / Review / Runtime Evidence
-      ↓
-Incident / Lesson / Metric
-      ↓
-Standard Improvement
-```
-
-이 구조를 통해 “기준이 존재한다”와 “실제 프로젝트에서 검증되었다”를 분리하면서도 서로 연결합니다.
-
-## Reference Projects
-
-OpenForge README에서 reference project로 명시하는 OSS는 Narwhal, Narwhal Portal, nfs-quota-agent, kube-ready-box, KubeMetal, ldapium, Beluga Manager 등입니다.
-
-이 프로젝트들은 OpenForge의 종속성이 아니라 **실제 적용을 통해 기준을 검증하고 개선하는 reference set**입니다.
-
-## Canonical Links
-
-- [OpenForge repository](https://github.com/dasomel/openforge)
-- [OpenForge standards](https://github.com/dasomel/openforge/tree/main/docs)
-- [OpenForge templates](https://github.com/dasomel/openforge/tree/main/templates)
-- [Reference metrics](https://github.com/dasomel/openforge/blob/main/docs/reference-metrics.md)
+| **[Engineering Standards](/oss/openforge/standards)** | `dasomel/openforge/docs/` | 표준의 목적, 적용 시점, 트레이드오프 해설 |
+| **[Reusable Templates](/oss/openforge/templates)** | `dasomel/openforge/templates/` | 템플릿 사용법 및 대상 프로젝트 커스터마이징 가이드 |
+| **[Maturity Metrics](/oss/openforge/reference/metrics)** | `dasomel/openforge/docs/reference-metrics.md` | 저장소 엔지니어링 성숙도 채점 및 체크포인트 |
+| **Reference Implementations** | 실제 OSS 저장소 (Narwhal, KubeMetal 등) | 표준 적용 사례, 실측 데이터 및 장애 학습 공유 |
+| **Architecture Decisions** | `openforge/docs/adr/` | 아키텍처 핵심 결정 기록 및 기술적 배경 |

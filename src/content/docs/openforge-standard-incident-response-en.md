@@ -4,56 +4,20 @@ description: Incident triage, mitigation, communication, and lessons-learned cod
 project: OpenForge
 path: openforge/standards/incident-response
 order: 1032
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Security and Supply-Chain Incident Response Standard
+# Security & Incident Response
 
-A suspected compromised dependency, artifact, credential, workflow or maintainer account must be handled as a supply-chain incident until disproven.
+Incidents and security events represent critical opportunities to harden systems and processes.
 
-## Response lifecycle
+## 4-Step Incident Lifecycle
 
-```text
-Detect
-→ Contain
-→ Quarantine
-→ Revoke/Rotate
-→ Determine Blast Radius
-→ Rebuild
-→ Verify
-→ Recover
-→ Notify
-→ Add Regression Control
-```
+1. **Containment & Mitigation**: Isolate affected components and execute rollbacks to restore service.
+2. **Root Cause Analysis**: Correlate logs, metrics, and change history to determine root causes.
+3. **Regression Test Codification**: Author automated test cases preventing identical failures.
+4. **Lessons Log Integration**: Codify post-mortem findings into `docs/lessons-log.md` to improve standards.
 
-## Minimum response actions
-
-1. Freeze promotion of affected versions/artifacts.
-2. Quarantine the dependency, artifact, workflow or credential.
-3. Revoke or rotate exposed credentials, especially publishing and cloud identities.
-4. Identify affected commits, builds, releases and downstream consumers.
-5. Restore the last-known-good dependency/artifact set.
-6. Rebuild from a clean, approved environment.
-7. Verify artifact identity, provenance, SBOM and security results.
-8. Record incident evidence and update detection/regression controls.
-
-## Blast radius
-
-Track:
-
-- affected package/version
-- source commits
-- CI workflow runs
-- generated artifacts
-- published versions
-- repositories consuming the artifact
-- credentials potentially exposed
-- environments potentially reached
-
-## Emergency release
-
-Emergency fixes may bypass routine cooling only when the exception includes reason, scope, risk, owner/reviewer where available, verification evidence and rollback plan.
-
-## Canonical source
+## Canonical Source
 
 - [Security & Incident Response](https://github.com/dasomel/openforge/blob/main/docs/incident-response.md)

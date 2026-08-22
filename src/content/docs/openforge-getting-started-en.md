@@ -1,43 +1,72 @@
 ---
 title: Getting Started
-description: Apply OpenForge to an existing OSS repository in a controlled sequence.
+description: Step-by-step roadmap for adopting OpenForge standards and templates in new or existing OSS projects.
 project: OpenForge
 path: openforge/getting-started
 order: 1002
-lastModified: 2026-08-21
+lastModified: 2026-08-23
 ---
 
 # Getting Started
 
-Start with the smallest useful baseline and expand by evidence.
+OpenForge recommends a progressive adoption path: starting from the smallest viable baseline and expanding coverage as empirical evidence accumulates.
 
-## 1. Inventory
+## 4-Step Progressive Roadmap
 
-Identify:
+```text
+[Step 1] Repository Inventory Assessment
+      ↓
+[Step 2] Bootstrap Directory & GitHub Templates
+      ↓
+[Step 3] CI Quality Gates & Toolchain Automation
+      ↓
+[Step 4] Security Governance & Maturity Scorecard
+```
 
-- repository structure and documentation
-- language/runtime/toolchain
-- package managers and lockfiles
-- CI/CD workflows
-- container and deployment assets
-- identity, observability, backup, and offline requirements
+---
 
-## 2. Adopt repository templates
+## Step-by-Step Guide
 
-Begin with GitHub, PR, security-sensitive paths, toolchain verification, and CI templates.
+### Step 1: Inventory Assessment
 
-## 3. Adopt build and release controls
+Audit the target repository's current state:
 
-Add dependency policy, SBOM, immutable workflow actions, release verification, and rollback evidence.
+- Repository directory layout and root invariants (`LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`)
+- Programming languages, runtime versions, package managers, and lockfile pinning
+- GitHub Issue/PR templates and branch protection rules
+- CI/CD pipelines (build, test, lint) and container build configurations
 
-## 4. Adopt deployment baselines
+### Step 2: Template Adoption (Bootstrap)
 
-Use only the layers the project needs: Docker, Kubernetes/Kustomize, GitOps, OIDC/SSO, observability, backup/restore, or offline bundle.
+Copy baseline templates into your repository:
 
-## 5. Record deviations
+```bash
+# 1. Clone OpenForge
+git clone https://github.com/dasomel/openforge.git
 
-A template is a starting point, not a universal drop-in configuration. Document project-specific exceptions, especially where they change security boundaries or operational behavior.
+# 2. Copy GitHub Issue and PR templates
+cp -r openforge/templates/github/ .github/
 
-## 6. Link evidence
+# 3. Adopt dual README templates
+cp openforge/templates/design/README-template.md README.md
+cp openforge/templates/design/README-template-ko.md README-ko.md
+```
 
-The project README should point to its documentation on cne.io.kr. Documentation should link back to the exact OpenForge template and the repository implementation.
+### Step 3: CI Toolchain & Quality Gating
+
+Deploy language-specific linters and automated CI workflows:
+
+```bash
+# Copy CI workflow
+cp openforge/templates/workflows/ci.yml .github/workflows/ci.yml
+```
+
+- **Go**: `gofumpt`, `staticcheck`, `golangci-lint`
+- **TypeScript/Node**: `eslint`, `prettier`, `typescript`
+- **Python**: `ruff`, `mypy`, `pytest`
+
+### Step 4: Security Governance & Maturity Measurement
+
+- Enable Dependabot and secret scanning
+- Harden container builds with multi-stage files and non-root execution
+- Evaluate against the [Reference Implementation Metrics](/oss/en/openforge/reference/metrics) scorecard

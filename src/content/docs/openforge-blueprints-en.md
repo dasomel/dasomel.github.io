@@ -1,34 +1,46 @@
 ---
-title: Blueprints
-description: Opinionated architecture patterns assembled from OpenForge standards and templates.
+title: Architecture Blueprints
+description: Recommended platform and service architecture patterns combining OpenForge standards and templates.
 project: OpenForge
 path: openforge/blueprints
 order: 1005
-lastModified: 2026-08-21
+lastModified: 2026-08-23
 ---
 
-# Blueprints
+# Architecture Blueprints
 
-Blueprints combine multiple templates into a coherent deployment or engineering scenario.
+Blueprints combine individual standards and implementation templates into cohesive, end-to-end engineering architecture patterns.
 
-## OSS service blueprint
+## 1. OSS Service Blueprint
+
+End-to-end delivery pattern for cloud-native services and applications:
 
 ```text
-Repository
- → CI
- → SBOM / Security Gate
- → Container
- → Registry
- → Kubernetes / GitOps
- → OIDC / SSO
- → Observability
- → Backup / Restore
+Repository Bootstrap (Standard layout, dual README)
+      ↓
+CI Pipeline (Linting, unit testing, static analysis)
+      ↓
+Security Gate (Secret detection, SBOM generation, container scan)
+      ↓
+Container Build (Multi-stage minimal image build)
+      ↓
+Artifact Registry (Signed image publication)
+      ↓
+Kubernetes / GitOps (Argo CD declarative synchronization)
+      ↓
+Identity & Security (OIDC federation, NetworkPolicy isolation)
+      ↓
+Observability (Prometheus metrics, structured logging, /healthz)
+      ↓
+Backup & Runbooks (Automated backup validation and disaster recovery)
 ```
 
-## Platform component blueprint
+---
 
-Add Kubernetes bootstrap, policy/admission, GitOps, identity, telemetry, persistent storage, and offline bundle only when required by the component.
+## 2. Platform Component Blueprint
 
-## Design principle
+Architectural pattern for infrastructure daemons, bare-metal controllers, and system-level agents:
 
-Blueprints should be opinionated enough to reduce repeated decisions but explicit about assumptions and boundaries. They are not product-specific implementations.
+- **Host & System Integration**: systemd service templates, kernel parameter tuning, storage project quota controls
+- **Offline / Air-gap Support**: Pre-packaged container bundles and trusted offline mirror manifests
+- **Hardware Compatibility**: Cross-compilation (amd64/arm64) and kernel version compatibility matrices

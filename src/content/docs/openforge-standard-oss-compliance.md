@@ -4,33 +4,19 @@ description: Apache 2.0 라이선스, SPDX 헤더, 의존성 라이선스 호환
 project: OpenForge
 path: openforge/standards/oss-compliance
 order: 1038
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# OSS 컴플라이언스 표준
+# 오픈소스 컴플라이언스 표준
 
-라이선스, 저작권 고지, 제3자 구성요소는 개발 작업의 일부로 관리합니다.
+오픈소스 라이선스와 저작권 준수는 법적 신뢰성을 확보하기 위한 기본 의무입니다.
 
-## 규칙
+## 컴플라이언스 규칙
 
-- 첫 공개 릴리스 전에 프로젝트 라이선스를 선택하고 공개합니다.
-- 제3자 dependency와 라이선스를 추적합니다.
-- 필요한 copyright와 attribution notice를 유지합니다.
-- 소스가 공개되어 있다는 이유만으로 permissive license라고 가정하지 않습니다.
-- source-available 및 copyleft license를 별도로 검토합니다.
-- 필요한 경우 NOTICE 또는 third-party attribution 파일을 제공합니다.
-- 중요한 license exception이나 배포 제약을 문서화합니다.
+- **표준 라이선스**: OpenForge 프로젝트는 Apache License 2.0을 기본 라이선스로 채택합니다.
+- **SPDX 헤더 명시**: 모든 소스 파일 상단에 `SPDX-License-Identifier: Apache-2.0` 식별자를 표기합니다.
+- **의존성 호환성 감사**: 상용 배포 및 오픈소스 호환성을 저해하는 의존성 라이선스 유입을 CI에서 차단합니다.
 
-## 권장 파일
-
-```text
-LICENSE
-NOTICE
-THIRD-PARTY-LICENSES.md
-```
-
-가능한 경우 SPDX identifier를 사용합니다.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [OSS Compliance Standard](https://github.com/dasomel/openforge/blob/main/docs/oss-compliance.md)

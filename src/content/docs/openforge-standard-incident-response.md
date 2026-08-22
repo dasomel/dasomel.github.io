@@ -4,41 +4,20 @@ description: 장애 및 보안 사고 분석, 완화 절차, Lessons Log 회귀 
 project: OpenForge
 path: openforge/standards/incident-response
 order: 1032
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Security 및 Supply-Chain Incident Response 표준
+# 보안 및 장애 대응 표준
 
-Compromised dependency, artifact, credential, workflow 또는 maintainer account가 의심되면 사실 확인 전까지 supply-chain incident로 취급합니다.
+장애와 보안 사고는 시스템을 개선하고 신뢰성을 강화할 수 있는 중요한 학습 기회입니다.
 
-## 대응 lifecycle
+## 장애 대응 4단계
 
-```text
-Detect
-→ Contain
-→ Quarantine
-→ Revoke/Rotate
-→ Blast Radius 확인
-→ Rebuild
-→ Verify
-→ Recover
-→ Notify
-→ Regression Control 추가
-```
+1. **격리 및 완화 (Mitigate)**: 영향받는 서비스를 격리하고 빠른 롤백 또는 핫픽스로 피해를 최소화합니다.
+2. **원인 분석 (Analyze)**: 시스템 로그, 메트릭, 변경 이력을 수집하여 근본 원인을 분석합니다.
+3. **회귀 테스트 작성 (Prevent)**: 동일한 장애가 다시 발생하지 않도록 자동화된 회귀 테스트를 작성합니다.
+4. **Lessons Log 기록 (Learn)**: `docs/lessons-log.md`에 사고 내용과 교훈을 기록하고 표준을 개선합니다.
 
-## 최소 대응
-
-1. 영향 version/artifact promotion을 중지합니다.
-2. dependency, artifact, workflow, credential을 quarantine합니다.
-3. 노출 가능 credential, 특히 publish/cloud identity를 revoke/rotate합니다.
-4. 영향을 받은 commit, build, release, downstream consumer를 찾습니다.
-5. last-known-good dependency/artifact를 복원합니다.
-6. clean approved environment에서 rebuild합니다.
-7. artifact identity, provenance, SBOM, security result를 검증합니다.
-8. 증적을 남기고 detection/regression control을 추가합니다.
-
-Emergency release는 reason, scope, risk, owner/reviewer, verification evidence, rollback plan이 있어야 routine cooling을 예외 처리할 수 있습니다.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Security & Incident Response](https://github.com/dasomel/openforge/blob/main/docs/incident-response.md)

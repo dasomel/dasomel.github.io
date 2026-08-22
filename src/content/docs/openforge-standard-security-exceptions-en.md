@@ -4,40 +4,19 @@ description: Time-bounded exception handling, risk ownership, and expiration aud
 project: OpenForge
 path: openforge/standards/security-exceptions
 order: 1035
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Security Exception and Waiver Standard
+# Security Exceptions & Waivers
 
-Exceptions are controlled risk decisions, not permanent bypasses.
+Security exceptions are controlled, time-bounded risk decisions rather than permanent waivers.
 
-## Required fields
+## Waiver Rules
 
-Every security/supply-chain exception SHOULD record:
+- **Formal Documentation**: Explicit scope, technical justification, mitigating controls, and risk owner.
+- **Time-Bounded Expiration**: Maximum 90-day expiration window requiring formal renewal reviews.
+- **No Silent Suppressions**: Security gates must not silently ignore failures without documented waivers.
 
-- scope
-- affected repository/component
-- reason
-- risk assessment
-- compensating controls
-- owner
-- reviewer/approver where available
-- creation date
-- expiration/review date
-- rollback or remediation plan
-
-## Rules
-
-- No indefinite exception without explicit periodic re-approval.
-- Emergency exceptions may bypass routine cooling or review only for a defined scope and duration.
-- Compensating controls MUST be stronger where normal controls cannot be applied.
-- Expired exceptions fail closed where practical.
-- Exceptions must not silently become project defaults.
-
-## Single-maintainer projects
-
-A single maintainer may approve an emergency exception when no independent reviewer is available. Automated checks, explicit evidence and a time-bounded retrospective review should compensate for the missing second person.
-
-## Canonical source
+## Canonical Source
 
 - [Security Exceptions & Waivers](https://github.com/dasomel/openforge/blob/main/docs/security-exceptions.md)

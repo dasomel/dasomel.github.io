@@ -4,38 +4,19 @@ description: 결정론적 빌드 산출물, 환경 고정 및 재현성 검증 �
 project: OpenForge
 path: openforge/standards/reproducible-build
 order: 1020
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# 재현 가능한 Build 표준
+# 재현 가능한 빌드 표준
 
-Release-critical build는 immutable source, dependency, toolchain input으로 재현할 수 있어야 합니다.
+동일한 소스 코드와 커밋 해시로부터 빌드된 산출물은 언제나 비트 단위로 동일해야 합니다.
 
-## Build Identity
+## 재현성 요구사항
 
-가능한 범위에서 다음을 연결합니다.
+- **빌드 환경 고정**: 컨테이너 베이스 이미지 태그(SHA256 다이제스트)와 컴파일러 버전을 고정합니다.
+- **타임스탬프 정규화**: `SOURCE_DATE_EPOCH` 환경변수를 사용하여 빌드 아티팩트의 생성 시각을 결정론적으로 고정합니다.
+- **Lockfile 필수**: 모든 패키지 매니저는 의존성 체크섬이 포함된 Lockfile을 필수로 커밋하고 CI에서 `--frozen-lockfile`로 설치합니다.
 
-- source commit
-- dependency lock/checksum state
-- compiler/interpreter/runtime version
-- build tool version
-- base image/builder identity
-- 환경/profile
-- generated input version
-- resulting artifact digest
-
-## 통제
-
-- release-critical input을 pin합니다.
-- 가능한 경우 hermetic/isolated build를 사용합니다.
-- runner에 우연히 설치된 tool에 의존하지 않습니다.
-- timestamp와 비결정 metadata를 가능한 경우 normalize합니다.
-- 중요한 artifact는 clean build를 반복해 비교합니다.
-- offline/air-gap capability를 주장하는 경우 동일 환경에서 재현합니다.
-- dependency와 builder context를 재구성할 수 있는 evidence를 보존합니다.
-
-재현 가능한 build는 process와 input의 일관성을 보여주지만 source나 dependency가 안전하다는 보장은 아닙니다. Supply-chain/security 검사를 별도로 적용합니다.
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Reproducible Build Standard](https://github.com/dasomel/openforge/blob/main/docs/reproducible-build.md)

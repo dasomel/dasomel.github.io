@@ -4,39 +4,19 @@ description: Immutable package provenance, checksum, signature, and metadata ver
 project: OpenForge
 path: openforge/standards/package-identity
 order: 1025
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Package and Artifact Identity Standard
+# Package & Artifact Identity
 
-Package names, namespaces and publisher identities are part of the supply chain trust model.
+Packages and distribution artifacts must maintain immutable identities and cryptographic integrity.
 
-## Threats
+## Invariants
 
-Projects SHOULD consider:
+- **Cryptographic Checksums**: SHA256 checksums generated and verified for all distribution artifacts.
+- **Immutable Digests**: Container references resolve to immutable `@sha256:...` digests rather than mutable tags.
+- **Digital Signatures**: Binaries and images signed using tools like Cosign.
 
-- typosquatting
-- dependency confusion
-- namespace squatting
-- evil-twin packages/extensions
-- ownership transfer
-- unexpected publisher changes
-- suspicious low-age or low-download dependencies
-
-## Requirements
-
-- Verify package source and publisher/namespace identity for new dependencies.
-- Do not resolve an internal/private dependency from a public registry merely because the public name matches.
-- Review ownership, namespace and publisher changes for security impact.
-- Apply cooling/review to newly published packages where practical.
-- Record immutable package identity and integrity metadata.
-- Prefer approved registries/mirrors for release builds.
-- Quarantine known-malicious or withdrawn packages.
-
-## Developer tooling
-
-The same rules apply to IDE extensions, agent plugins, CLI tools and registry artifacts.
-
-## Canonical source
+## Canonical Source
 
 - [Package & Artifact Identity](https://github.com/dasomel/openforge/blob/main/docs/package-identity.md)

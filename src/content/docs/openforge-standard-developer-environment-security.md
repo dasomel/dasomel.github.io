@@ -4,72 +4,19 @@ description: 로컬 개발 환경 경계, 자격증명 격리 및 안전한 도�
 project: OpenForge
 path: openforge/standards/developer-environment-security
 order: 1027
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Developer Environment Security Standard
+# 개발 환경 보안 표준
 
-Developer workstations, IDEs, extensions, Git hooks and repository-local configuration are part of the OSS supply chain.
+개발자 로컬 워크스테이션은 소스 코드와 배포 자격증명이 공존하는 중요한 보안 영역입니다.
 
-## Scope
+## 로컬 환경 보안 수칙
 
-- VS Code and compatible editors
-- IDE extensions and marketplaces
-- devcontainers and local images
-- Git hooks and repository config
-- task runners and local scripts
-- `.vscode`, `.devcontainer`, agent configuration and instruction files
-- local credentials and cloud contexts
+- **자격증명 분리**: 프로덕션 비밀값과 개발용 비밀값을 엄격히 분리하고 로컬에 영구 저장하지 않습니다.
+- **신뢰할 수 없는 스크립트 실행 방지**: `curl | bash` 등 검증되지 않은 원격 스크립트 실행을 금지합니다.
+- **IDE 및 확장 도구 감사**: 신뢰할 수 있는 개발 도구와 플러그인만 설치합니다.
 
-## Rules
-
-- Verify extension publisher/namespace and pin versions for reproducible development environments where practical.
-- Treat new extensions, tools and plugins as third-party dependencies.
-- Do not install extensions solely because a repository recommends a name; verify publisher identity.
-- Pin devcontainer base images by immutable digest where practical.
-- Review `Dockerfile`, `devcontainer.json`, editor tasks and workspace commands before execution.
-- Treat repository configuration as executable input when it can trigger commands, downloads or hooks.
-- Review Git hooks and custom `core.hooksPath` settings before enabling them.
-- Do not persist production credentials in developer workspaces.
-- Separate local, development, test and production credentials and contexts.
-- Do not copy CI/release credentials into local agent environments.
-
-## Repository-local executable files
-
-Changes to the following SHOULD be treated as security-sensitive:
-
-```text
-.devcontainer/**
-.vscode/**
-.git/hooks/**
-Makefile
-Taskfile*
-*.sh
-package.json
-AGENTS.md
-CLAUDE.md
-other agent configuration
-```
-
-## Verification
-
-For new third-party developer tooling, record publisher/source, version, license, integrity information where available, required network access and whether the tool can execute arbitrary commands.
-
-## Incident response
-
-When a malicious extension/tool is suspected:
-
-```text
-stop use
-→ isolate credentials
-→ revoke exposed sessions/tokens
-→ identify affected repositories/workspaces
-→ remove/quarantine tool
-→ inspect persistence/configuration
-→ rotate credentials
-→ document and add regression control
-```
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Developer Environment Security](https://github.com/dasomel/openforge/blob/main/docs/developer-environment-security.md)

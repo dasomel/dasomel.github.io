@@ -4,47 +4,25 @@ description: 이중 언어 문서 모델, 단일 진실 공급원(SoT) 및 문�
 project: OpenForge
 path: openforge/standards/documentation
 order: 1012
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# 문서 표준
+# 문서화 표준
 
-OpenForge는 사용자에게 제공하는 문서를 English와 Korean의 별도 파일로 표준화합니다.
+문서화는 단순한 부가 산출물이 아니라 프로젝트의 동작 방식을 정의하는 핵심 인터페이스입니다.
 
-## 파일명 규칙
+## 이중 언어 정책 (Bilingual Policy)
 
-```text
-README.md
-README-ko.md
+- **영어(English) Canonical**: 영어를 표준 프로젝트 언어로 사용합니다 (`<name>.md` 또는 `<name>-en.md`).
+- **한국어(Korean) First-Class**: 한국어를 1급 번역으로 동등하게 제공합니다 (`<name>-ko.md` 또는 `<name>.md`).
+- **1:1 구조 대칭성**: 영문과 한글 문서는 제목, 목차, 코드 블록, 링크가 1:1 대칭을 이루어야 합니다.
 
-docs/architecture.md
-docs/architecture-ko.md
-```
+## 단일 진실 공급원 (Source of Truth)
 
-English 파일명을 canonical name으로 사용하고 Korean은 `-ko.md` suffix를 사용합니다.
+- 구현 템플릿과 정식 기준은 `openforge` 저장소에 유지합니다.
+- 웹 포털(`/oss/openforge/`)은 개념 설명, 튜토리얼, 트레이드오프 및 적용 증거를 제공합니다.
+- 동일한 소스를 여러 곳에 중복 복사하지 않고 명시적인 소스 맵으로 연결합니다.
 
-## 규칙
-
-- English와 Korean 문서는 의미와 구조를 일치시킵니다.
-- 두 언어 버전 간 상대 링크를 제공합니다.
-- 사용자용 문서는 Markdown으로 관리합니다.
-- README는 목적, 기능, 빠른 시작, 아키텍처, 상태, 문서, 라이선스에 집중합니다.
-- 상세 운영 문서는 `docs/`에 둡니다.
-- 아키텍처 결정은 ADR로 기록합니다.
-- 문서에 secret, private endpoint, credential을 기록하지 않습니다.
-
-## 권장 기본 문서
-
-```text
-README.md / README-ko.md
-CONTRIBUTING.md / CONTRIBUTING-ko.md
-SECURITY.md / SECURITY-ko.md
-CODE_OF_CONDUCT.md / CODE_OF_CONDUCT-ko.md
-CHANGELOG.md / CHANGELOG-ko.md
-docs/architecture.md / docs/architecture-ko.md
-docs/development.md / docs/development-ko.md
-```
-
-## Canonical source
+## 원문 및 권위 소스 (Canonical Source)
 
 - [Documentation Standard](https://github.com/dasomel/openforge/blob/main/docs/documentation.md)

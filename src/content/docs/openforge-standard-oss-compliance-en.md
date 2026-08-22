@@ -4,33 +4,19 @@ description: Apache 2.0 licensing, SPDX headers, dependency compatibility, and a
 project: OpenForge
 path: openforge/standards/oss-compliance
 order: 1038
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # OSS Compliance Standard
 
-Treat licensing, attribution and third-party components as part of engineering work.
+Open-source licensing and copyright compliance establish legal certainty and community trust.
 
-## Rules
+## Compliance Rules
 
-- Choose and publish a project license before the first public release.
-- Track third-party dependencies and their licenses.
-- Preserve required copyright and attribution notices.
-- Do not assume permissive licensing from source availability.
-- Review source-available and copyleft licenses separately.
-- Maintain NOTICE or third-party attribution files when required.
-- Document important license exceptions or distribution constraints.
+- **Standard License**: Projects adopt the Apache License 2.0 as the baseline license.
+- **SPDX Identifiers**: Source files include `SPDX-License-Identifier: Apache-2.0` headers.
+- **License Compatibility Gating**: Automated dependency reviews block incompatible copyleft licenses.
 
-## Recommended artifacts
-
-```text
-LICENSE
-NOTICE
-THIRD-PARTY-LICENSES.md
-```
-
-Use SPDX identifiers where practical.
-
-## Canonical source
+## Canonical Source
 
 - [OSS Compliance Standard](https://github.com/dasomel/openforge/blob/main/docs/oss-compliance.md)

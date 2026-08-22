@@ -1,86 +1,44 @@
 ---
-title: Concepts
-description: Core ideas and adoption principles behind the OpenForge engineering model.
+title: Core Concepts
+description: Core concepts, three-tier architecture, trust models, and governance principles in OpenForge.
 project: OpenForge
 path: openforge/concepts
 order: 1001
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
-# Concepts
+# Core Concepts
 
-OpenForge separates **policy**, **implementation**, and **evidence**, then connects them through the project lifecycle.
+OpenForge cleanly separates **Policy**, **Implementation**, and **Evidence**, linking them directly to the continuous project lifecycle.
 
-## Three Layers
+## Three-Tier Model
 
-| Layer | Purpose | Example |
+| Layer | Responsibility | Artifacts & Examples |
 |---|---|---|
-| Standard | Defines the expected engineering outcome | Supply Chain Security Standard |
-| Template | Provides a reusable implementation starting point | Kubernetes Deployment baseline |
-| Reference implementation | Shows real project adaptation and trade-offs | Narwhal / KubeMetal |
+| **[Standards](/oss/en/openforge/standards)** | Defines expected engineering outcomes and principles | Supply Chain Security Standard, CI/CD Resilience Standard |
+| **[Templates](/oss/en/openforge/templates)** | Provides safe, conservative, and ready-to-use starting assets | Multi-stage Dockerfiles, GitHub Workflows, K8s Manifests |
+| **[Reference Implementation](/oss/en/openforge/reference)** | Real-world OSS adoption, trade-offs, and empirical metrics | Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager |
 
-This separation prevents a project-specific implementation from being mistaken for a universal standard.
+---
 
-## Trust Model
+## 8 Foundational Principles
 
-Provenance, signatures, and SBOMs are **evidence for verification**, not declarations that an artifact is safe.
+1. **Dual-Language Documentation Policy**: English is the canonical project language; Korean is a first-class translation. User-facing Markdown follows the `<name>.md` and `<name>-ko.md` pairing rule.
+2. **Secure & Reproducible by Default**: Projects must be reproducible, documented, testable, observable, accessible, and secure by default.
+3. **Transparent Change Management & ADRs**: GitHub Issues and Pull Requests serve as the primary change-management mechanism. Critical architectural decisions are recorded as [ADRs](/oss/en/openforge/adr).
+4. **CI Quality Gating**: All changes must pass build, test, lint, and security checks in CI before merging.
+5. **Supply Chain Governance & Impact Analysis**: Dependency compatibility alone does not justify immediate adoption of new releases. Changes require workflow-wide impact analysis.
+6. **Trust Boundaries for AI Agents & Local Instructions**: AI agents and repository-local instructions (`AGENTS.md`, `CLAUDE.md`) are treated as potentially untrusted execution inputs with explicit permission and sandbox boundaries.
+7. **Risk-Based Governance & CI Resilience**: Even single-maintainer projects maintain automated governance controls without excessive manual overhead. CI outages must never force maintainers to bypass security gates blindly.
+8. **Time-Bounded Security Exceptions**: Intentional deviations from the baseline must be documented with rationale, scope, and expiration dates.
 
-Verification should consider:
+---
 
-```text
-Source
-  + Build Inputs
-  + Workflow Identity
-  + Artifact Content
-  + Deployment Context
-      ↓
-Verification
-```
+## Trust Boundary Model
 
-## Change Model
+OpenForge divides development and runtime environments into distinct trust domains:
 
-Dependency, runtime, and toolchain changes are treated as **workflow-wide changes**, not isolated file edits.
-
-For example, when a build command starts using Bun, every workflow and script that can execute that command should be reviewed together with install steps, caching, and release paths.
-
-OpenForge's Change Management and Upgrade & Compatibility guidance makes this impact analysis part of the lifecycle.
-
-## Governance Model
-
-Single-maintainer and multi-maintainer OSS should not be forced into the same fixed people-count rule.
-
-```text
-Change Risk
-    ↓
-Required Controls
-    ↓
-Automation / Review / Evidence
-```
-
-Governance scales with change risk and automated controls rather than requiring a fixed number of maintainers.
-
-## Template Model
-
-Templates are **implementation starting points**, not universal drop-in configuration.
-
-Versions, permissions, paths, images, domains, identities, and ecosystem-specific security controls must be adapted to the target repository and threat model.
-
-## Lifecycle Model
-
-OpenForge continuously learns from real project operation.
-
-```text
-Define
-  ↓
-Bootstrap
-  ↓
-Implement
-  ↓
-Validate
-  ↓
-Release / Operate
-  ↓
-Incident / Review / Metrics
-  ↓
-Improve Standard
-```
+- **Source Code & PRs**: External contributions and AI-generated code are treated as untrusted inputs until validated.
+- **CI Runners**: Untrusted fork PR workflows run in isolated environments without access to release secrets.
+- **Publishing & Release Credentials**: Short-lived OIDC tokens replace static long-lived credentials.
+- **Runtime Containers**: Workloads execute with non-root users, read-only root filesystems, and strict NetworkPolicies.

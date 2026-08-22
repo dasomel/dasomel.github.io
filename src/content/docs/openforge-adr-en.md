@@ -1,26 +1,24 @@
 ---
-title: ADR
-description: Decision records for the OpenForge documentation architecture and standards.
+title: Architecture Decision Records (ADR)
+description: Key architectural decisions, design rationale, and trade-offs behind OpenForge.
 project: OpenForge
 path: openforge/adr
 order: 1009
-lastModified: 2026-08-21
+lastModified: 2026-08-23
 ---
 
-# ADR
+# Architecture Decision Records (ADR)
 
-Architecture Decision Records capture why a choice was made, not only what was implemented.
+ADRs capture not just what was implemented, but **why specific architectural choices and trade-offs were made**.
 
-## ADR-0001: Separate source assets from public documentation
+## ADR Index
 
-**Status:** Accepted
+### ADR-0001: Separation of Source Assets and Public Documentation
+- **Status**: Accepted
+- **Decision**: The OpenForge GitHub repository remains the authoritative Source of Truth for standards, templates, and reusable assets. The `cne.io.kr` web portal provides bilingual documentation, conceptual guides, tutorials, and adoption evidence.
+- **Rationale**: Keeps implementation assets and public presentation layers decoupled, allowing each to evolve according to its own lifecycle.
 
-**Decision:** OpenForge remains the source of truth for standards, templates, and reusable implementation assets. `cne.io.kr` provides bilingual documentation, tutorials, reference explanations, and evidence for those assets.
-
-**Reason:** Duplicating implementation content across repositories creates drift. Separating source assets from explanatory documentation keeps ownership clear while allowing the documentation site to provide a better learning and discovery experience.
-
-**Consequence:** Projects link to both the exact OpenForge asset and the corresponding documentation page.
-
-## Future ADRs
-
-Add decisions here when the documentation architecture, template contract, or portfolio-wide engineering baseline changes.
+### ADR-0002: 1:1 Bilingual Documentation Policy
+- **Status**: Accepted
+- **Decision**: All public documentation maintains strict 1:1 structural parity between canonical English (`<name>-en.md`) and first-class Korean (`<name>.md`).
+- **Rationale**: Ensures global open-source accessibility while providing native, high-quality documentation for Korean-speaking engineers.

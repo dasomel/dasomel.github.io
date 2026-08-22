@@ -4,60 +4,19 @@ description: Semantic Versioning, automated changelog, and tag-triggered distrib
 project: OpenForge
 path: openforge/standards/release
 order: 1033
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # Release Standard
 
-Use a predictable release lifecycle and keep release artifacts traceable.
+Releases must be predictable, traceable, and fully reproducible.
 
-## Versioning
+## Invariants
 
-Prefer Semantic Versioning for libraries and applications where it fits:
+- **Semantic Versioning**: Strict adherence to `MAJOR.MINOR.PATCH` versioning rules.
+- **Structured Changelogs**: Changes grouped into Features, Bug Fixes, Breaking Changes, and Security Patches.
+- **Tag-Driven Pipelines**: Releases triggered deterministically by signed Git tags (`vX.Y.Z`).
 
-```text
-MAJOR.MINOR.PATCH
-```
-
-Document breaking changes clearly.
-
-When multiple artifacts carry versions (application, image, Helm chart, CLI, base image, deployment bundle), keep one authoritative compatibility inventory such as `VERSIONS.md` and validate drift automatically where practical.
-
-## Changelog
-
-Maintain:
-
-```text
-CHANGELOG.md
-CHANGELOG-ko.md
-```
-
-Korean and English changelogs must remain semantically synchronized.
-
-## Release procedure
-
-Projects with non-trivial packaging should keep an explicit release guide:
-
-```text
-RELEASING.md
-RELEASING-ko.md
-```
-
-Document version bumping, artifact build, signing/provenance, registry publication, verification and rollback/recovery.
-
-## Release checklist
-
-- CI passes on the release commit
-- security/dependency checks reviewed
-- version updated consistently
-- version compatibility inventory updated when applicable
-- changelog updated
-- release notes prepared in English and Korean
-- artifacts published from a known commit
-- image/package provenance and SBOM produced when applicable
-- artifact digests recorded when practical
-- rollback/recovery notes documented when applicable
-
-## Canonical source
+## Canonical Source
 
 - [Release Standard](https://github.com/dasomel/openforge/blob/main/docs/release.md)

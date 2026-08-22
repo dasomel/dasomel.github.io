@@ -4,40 +4,19 @@ description: Deterministic build artifacts, pinned environments, and verificatio
 project: OpenForge
 path: openforge/standards/reproducible-build
 order: 1020
-lastModified: 2026-08-22
+lastModified: 2026-08-23
 ---
 
 # Reproducible Build Standard
 
-Release-critical builds SHOULD be reproducible from immutable source, dependency and toolchain inputs.
+Builds executed from the same source commit must produce bit-for-bit identical binary artifacts.
 
-## Build identity
+## Reproducibility Invariants
 
-Record or bind:
+- **Pinned Environments**: Compiler versions and container base images pinned by SHA256 digest.
+- **Normalized Timestamps**: `SOURCE_DATE_EPOCH` used to ensure deterministic artifact timestamps.
+- **Strict Lockfiles**: Lockfiles with cryptographic checksums enforced via `--frozen-lockfile` in CI.
 
-- source commit
-- dependency lock/checksum state
-- compiler/interpreter/runtime version
-- build tool version
-- base image/builder identity
-- relevant environment/profile
-- generated input versions
-- resulting artifact digest
-
-## Controls
-
-- Pin release-critical inputs.
-- Prefer hermetic/isolated builds where practical.
-- Do not rely on undeclared runner-preinstalled tools.
-- Normalize timestamps and nondeterministic metadata where possible.
-- Compare repeated clean builds for important artifacts.
-- Support offline reproduction when the project claims air-gap/offline capability.
-- Preserve build evidence needed to reconstruct the dependency and builder context.
-
-## Trust principle
-
-A reproducible build proves consistency of a process and inputs; it does not by itself prove that the source or dependency set is benign. Apply supply-chain, malware and security policy separately.
-
-## Canonical source
+## Canonical Source
 
 - [Reproducible Build Standard](https://github.com/dasomel/openforge/blob/main/docs/reproducible-build.md)
