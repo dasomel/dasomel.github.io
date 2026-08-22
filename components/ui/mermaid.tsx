@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mermaid from 'mermaid';
 
 interface MermaidProps { chart: string; }
@@ -20,6 +20,24 @@ function themeToken(name: string, fallback: string) {
 
 export function Mermaid({ chart }: MermaidProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [themeRevision, setThemeRevision] = useState(0);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const notify = () => setThemeRevision((revision) => revision + 1);
+    const observer = new MutationObserver((mutations) => {
+      if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) notify();
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    media.addEventListener('change', notify);
+
+    return () => {
+      observer.disconnect();
+      media.removeEventListener('change', notify);
+    };
+  }, []);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -109,9 +127,7 @@ export function Mermaid({ chart }: MermaidProps) {
         element.style.setProperty('color', textMuted, 'important');
       });
     });
-  }, [chart]);
+  }, [chart, themeRevision]);
 
-  // 다이어그램은 좁은 화면에서 축소하면 글자를 읽을 수 없다. 폭을 줄이는 대신
-  // 다이어그램만 가로 스크롤시키고, 화면보다 좁을 때는 가운데 정렬을 유지한다.
   return <div ref={ref} className="my-6 overflow-x-auto [&>svg]:mx-auto" />;
 }
