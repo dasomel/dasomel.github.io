@@ -5,13 +5,14 @@ interface TagFilterProps {
   selected: string;
   onChange: (tag: string) => void;
   allLabel?: string;
+  ariaLabel?: string;
 }
 
-export function TagFilter({ tags, selected, onChange, allLabel = 'All' }: TagFilterProps) {
+export function TagFilter({ tags, selected, onChange, allLabel = 'All', ariaLabel = 'Project filters' }: TagFilterProps) {
   return (
     <div
       className="flex gap-2 mb-6 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none snap-x snap-mandatory"
-      aria-label="Project filters"
+      aria-label={ariaLabel}
     >
       <button
         type="button"
