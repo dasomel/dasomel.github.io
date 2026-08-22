@@ -79,6 +79,7 @@ export function ProjectList({ projects, base, translations }: Props) {
     setQuery('');
     setSelected('all');
   };
+  const clearQuery = () => setQuery('');
 
   const resolveStatus = (project: Project) => project.status ?? statusBySlug[project.slug];
   const core = sortCore(filtered.filter(project => project.type !== 'fork' && coreRank.has(project.slug)));
@@ -152,7 +153,12 @@ export function ProjectList({ projects, base, translations }: Props) {
         <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
           <label className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'var(--text-faint)' }} aria-hidden="true" />
-            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={translations.search} aria-label={translations.search} className="w-full rounded-xl border bg-transparent pl-9 pr-3 py-2.5 text-sm outline-none focus:ring-2" style={{ borderColor: 'var(--border)', color: 'var(--text)', ['--tw-ring-color' as string]: 'var(--accent-glow)' }} />
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={translations.search} aria-label={translations.search} className="w-full rounded-xl border bg-transparent pl-9 pr-10 py-2.5 text-sm outline-none transition-[border-color,box-shadow] duration-200 focus:ring-2" style={{ borderColor: query ? 'var(--accent)' : 'var(--border)', color: 'var(--text)', ['--tw-ring-color' as string]: 'var(--accent-glow)' }} />
+            {query && (
+              <button type="button" onClick={clearQuery} aria-label={translations.clearFilters} className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-[var(--text-faint)] transition-colors hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" title={translations.clearFilters}>
+                <X className="w-4 h-4" aria-hidden="true" />
+              </button>
+            )}
           </label>
           {hasFilters && (
             <button type="button" onClick={resetFilters} className="inline-flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-xs font-mono transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
@@ -162,7 +168,7 @@ export function ProjectList({ projects, base, translations }: Props) {
           )}
         </div>
         <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
-          <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{translations.results.replace('{count}', String(filtered.length))}</div>
+          <div className="text-xs font-mono transition-opacity duration-200" style={{ color: 'var(--text-faint)', opacity: filtered.length === projects.length ? 0.72 : 1 }}>{translations.results.replace('{count}', String(filtered.length))}</div>
           {hasFilters && (
             <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
               <span style={{ color: 'var(--text-muted)' }}>{translations.filter}</span>
