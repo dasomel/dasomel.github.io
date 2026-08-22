@@ -144,6 +144,8 @@ export function ProjectList({ projects, base, translations }: Props) {
     </div>
   );
 
+  const sectionCount = (count: number) => translations.results.replace('{count}', String(count));
+
   return (
     <div className={styles.showcase}>
       <div className="rounded-2xl border p-3 sm:p-4 mb-6" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
@@ -174,9 +176,9 @@ export function ProjectList({ projects, base, translations }: Props) {
       <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={setSelected} allLabel={translations.all} />
       {filtered.length === 0 ? <div className="rounded-2xl border p-10 text-center" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{translations.noResults}</div> : (
         <div className="space-y-14 mt-8">
-          {featured.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">CORE OSS / SHOWCASE</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.core}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{core.length} projects</span></div>{renderFeatured(featured)}{compactCore.length > 0 && <div className="mt-4">{renderCompact(compactCore)}</div>}</section>}
-          {tools.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">TOOLS · EXPERIMENTS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.tools}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{tools.length}</span></div>{renderCompact(tools)}</section>}
-          {forks.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">FORKS · ADAPTATIONS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.forks}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{forks.length}</span></div>{renderCompact(forks)}</section>}
+          {featured.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">CORE OSS / SHOWCASE</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.core}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(core.length)}</span></div>{renderFeatured(featured)}{compactCore.length > 0 && <div className="mt-4">{renderCompact(compactCore)}</div>}</section>}
+          {tools.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">TOOLS · EXPERIMENTS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.tools}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(tools.length)}</span></div>{renderCompact(tools)}</section>}
+          {forks.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">FORKS · ADAPTATIONS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.forks}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(forks.length)}</span></div>{renderCompact(forks)}</section>}
         </div>
       )}
     </div>
