@@ -122,4 +122,16 @@
   .detail :global(.project-signal) { min-height:100px; }
   .detail :global(.project-signal-value) { font-size:1.5rem; }
   .detail :global(.project-visual-frame)::after { display:none; }
+  .detail :global(.project-lede) { margin-top:1rem; font-size:.98rem; line-height:1.7; }
+  .detail :global(.project-actions) { margin-top:1.15rem; gap:.5rem; }
+  .detail :global(.project-tags) { margin-top:.8rem; }
+  .detail :global(.project-evidence) { gap:.65rem; margin:0 0 1.75rem; }
+  .detail :global(.project-problem),
+  .detail :global(.project-response) { padding:1rem 1.05rem; }
+  .detail :global(.project-evidence-text) { font-size:.9rem; line-height:1.65; }
+  .detail :global(.project-signals) { margin-bottom:2rem; }
+  .detail :global(.project-signal) { padding:.85rem; }
+  .detail :global(.project-links-grid) { gap:1.5rem; margin-bottom:2.25rem; }
+  .detail :global(.project-link-card) { padding:.8rem .9rem; }
+  .detail :global(.project-body-wrap) { gap:1.5rem; }
 }
