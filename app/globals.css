@@ -114,7 +114,9 @@
 }
 
 .hero-glow {
-  background: radial-gradient(ellipse 72% 58% at 50% 0%, var(--accent-glow) 0%, transparent 72%);
+  background:
+    radial-gradient(ellipse 72% 58% at 50% 0%, var(--accent-glow) 0%, transparent 72%),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent-dim) 45%, transparent), transparent 52%);
 }
 
 .workbench-eyebrow {
@@ -127,28 +129,91 @@
 }
 
 .workbench-card {
+  position: relative;
   display: block;
-  padding: 1.35rem;
+  min-height: 168px;
+  padding: 1.45rem 1.5rem 1.4rem;
   border: 1px solid var(--border);
-  border-radius: 0.9rem;
-  background: var(--surface);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 1rem;
+  background:
+    linear-gradient(140deg, color-mix(in srgb, var(--surface-hi) 32%, transparent), transparent 52%),
+    var(--surface);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+.workbench-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), transparent 88%);
+  opacity: 0.35;
+  transition: opacity 0.22s ease, width 0.22s ease;
+  z-index: -1;
+}
+.workbench-card::after {
+  content: 'OSS / BUILD';
+  position: absolute;
+  right: 1rem;
+  top: 0.9rem;
+  font: 600 0.58rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  letter-spacing: 0.13em;
+  color: var(--text-faint);
+  opacity: 0.55;
 }
 .workbench-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-hi);
-  box-shadow: 0 10px 26px -18px var(--accent-glow);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  box-shadow: 0 22px 48px -30px var(--accent-glow), 0 8px 20px -16px rgba(0,0,0,0.18);
 }
+.workbench-card:hover::before { width: 4px; opacity: 1; }
+.workbench-card .workbench-chip {
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+.workbench-card:hover .workbench-chip {
+  border-color: var(--border-hi);
+  background: var(--surface-hi);
+}
+
 .workbench-note {
+  position: relative;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:1rem;
-  padding:1rem 0.2rem;
+  padding:1.1rem 0.35rem 1.1rem 2.25rem;
   border-bottom:1px solid var(--border-soft);
-  transition:padding 0.2s ease, color 0.2s ease;
+  transition:padding 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
-.workbench-note:hover { padding-left:0.55rem; }
+.workbench-note::before {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  top: 50%;
+  width: 0.48rem;
+  height: 0.48rem;
+  border: 1px solid var(--border-hi);
+  border-radius: 999px;
+  background: var(--bg);
+  transform: translateY(-50%);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+.workbench-note::after {
+  content: '';
+  position: absolute;
+  left: 0.57rem;
+  top: calc(50% + 0.55rem);
+  bottom: -0.55rem;
+  width: 1px;
+  background: var(--border-soft);
+}
+.workbench-note:last-child::after { display:none; }
+.workbench-note:hover { padding-left:2.6rem; background: linear-gradient(90deg, var(--accent-dim), transparent 58%); }
+.workbench-note:hover::before { transform: translateY(-50%) scale(1.35); background: var(--accent); border-color: var(--accent); }
+
 .workbench-chip {
   display:inline-flex;
   align-items:center;
@@ -160,12 +225,40 @@
   font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace;
   font-size:0.68rem;
 }
+
 .workbench-quote {
-  padding:1.3rem 1.4rem;
+  position: relative;
+  padding:1.45rem 1.5rem 1.5rem;
+  border:1px solid var(--border);
   border-left:3px solid var(--accent);
-  border-radius:0.2rem 0.8rem 0.8rem 0.2rem;
-  background:linear-gradient(90deg,var(--accent-dim),transparent 90%);
+  border-radius:0.25rem 0.95rem 0.95rem 0.25rem;
+  background:
+    radial-gradient(ellipse at 100% 0%, var(--accent-dim), transparent 58%),
+    var(--surface);
+  box-shadow: 0 18px 34px -28px var(--accent-glow);
 }
+.workbench-quote::after {
+  content: 'QUESTION / NEXT';
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font: 600 0.58rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+}
+
+.impact-stats {
+  position: relative;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-hi) 44%, transparent), transparent 80%);
+}
+.impact-stats > div {
+  transition: background-color 0.2s ease;
+}
+.impact-stats > div:hover {
+  background: var(--accent-dim);
+}
+.impact-stats > div:hover > div:last-child { opacity: 1; }
+
 .card-outline {
   background-color:var(--surface);
   border-radius:0.875rem;
@@ -283,7 +376,49 @@
 .cne-doc-prose tbody tr:last-child td { border-bottom:0 !important; }
 .cne-doc-prose a { text-decoration-thickness:1px; text-underline-offset:3px; }
 
+/* Homepage section rhythm: stronger breaks without adding visual noise. */
+main > section + section { position: relative; }
+main > section + section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2.4rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* The digest becomes a distinct editorial block rather than a generic card. */
+main > section:nth-child(3) {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, var(--surface-hi), transparent 48%),
+    var(--surface) !important;
+  box-shadow: 0 20px 48px -36px var(--accent-glow);
+}
+main > section:nth-child(3)::after {
+  content: 'DAILY SIGNAL';
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  font: 600 0.58rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  opacity: 0.55;
+}
+
 html[data-theme='dark'] .cne-doc-prose pre { box-shadow:0 18px 50px rgba(0,0,0,0.45); }
+
+@media (max-width: 767px) {
+  .workbench-card { min-height: 0; }
+  .workbench-card::after,
+  .workbench-quote::after,
+  main > section:nth-child(3)::after { display: none; }
+  .workbench-note { padding-left: 1.8rem; }
+  .workbench-note:hover { padding-left: 2rem; }
+  main > section + section::before { top: -1.6rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior:auto; }
