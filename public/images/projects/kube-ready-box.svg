@@ -1,1 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420"><rect width="1200" height="420" rx="28" fill="#0b1220"/><g stroke="#263244" stroke-width="1"><path d="M70 100h1060M70 210h1060M70 320h1060"/><path d="M180 65v290M400 65v290M620 65v290M840 65v290M1060 65v290"/></g><g fill="#111827" stroke="#fb923c" stroke-width="3"><rect x="105" y="135" width="220" height="95" rx="16"/><rect x="490" y="135" width="220" height="95" rx="16"/><rect x="875" y="135" width="220" height="95" rx="16"/></g><g fill="none" stroke="#fdba74" stroke-width="3"><path d="M325 182h165M710 182h165"/></g><g fill="#f8fafc" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"><text x="105" y="167" font-size="15" fill="#94a3b8">BASE IMAGE</text><text x="145" y="207" font-size="23" font-weight="700">Ubuntu</text><text x="490" y="167" font-size="15" fill="#94a3b8">BUILD</text><text x="545" y="207" font-size="23" font-weight="700">Packer</text><text x="875" y="167" font-size="15" fill="#94a3b8">LAB</text><text x="930" y="207" font-size="23" font-weight="700">Kubernetes</text><text x="105" y="370" font-size="30" font-weight="700">Kube-Ready-Box</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img">
+  <style>
+    .svg-bg { fill: var(--surface, #ffffff); }
+    .svg-grid { stroke: var(--border-soft, #e2e8f0); }
+    .svg-card { fill: var(--surface-hi, #f8fafc); stroke: var(--accent, #0d9488); }
+    .svg-link { stroke: var(--accent, #14b8a6); }
+    .svg-text-title { fill: var(--text, #1e293b); }
+    .svg-text-sub { fill: var(--text-faint, #64748b); }
+    .svg-brand { fill: var(--text, #0f172a); }
+    @media (prefers-color-scheme: dark) {
+      .svg-bg { fill: var(--surface, #212a36); }
+      .svg-grid { stroke: var(--border-soft, #253242); }
+      .svg-card { fill: var(--surface-hi, #1a222c); stroke: var(--accent, #2dd4bf); }
+      .svg-link { stroke: var(--accent, #5eead4); }
+      .svg-text-title { fill: var(--text, #f0f6fc); }
+      .svg-text-sub { fill: var(--text-faint, #94a3b8); }
+      .svg-brand { fill: var(--text, #f0f6fc); }
+    }
+  </style>
+  <rect width="1200" height="420" rx="24" class="svg-bg"/>
+  <g class="svg-grid" stroke-width="1"><path d="M70 100h1060M70 210h1060M70 320h1060"/><path d="M190 65v290M410 65v290M630 65v290M850 65v290M1070 65v290"/></g>
+  <g class="svg-card" stroke-width="2.5"><rect x="110" y="135" width="220" height="95" rx="16"/><rect x="490" y="105" width="220" height="95" rx="16"/><rect x="870" y="135" width="220" height="95" rx="16"/></g>
+  <g class="svg-link" fill="none" stroke-width="2.5"><path d="M330 182h160M710 182h160"/></g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <text x="110" y="167" font-size="14" font-weight="600" class="svg-text-sub">LOCAL VM</text>
+    <text x="145" y="207" font-size="22" font-weight="700" class="svg-text-title">Vagrant Box</text>
+    <text x="490" y="137" font-size="14" font-weight="600" class="svg-text-sub">PROVISION</text>
+    <text x="545" y="177" font-size="22" font-weight="700" class="svg-text-title">Ansible</text>
+    <text x="870" y="167" font-size="14" font-weight="600" class="svg-text-sub">READY</text>
+    <text x="915" y="207" font-size="22" font-weight="700" class="svg-text-title">K8s Ready</text>
+    <text x="110" y="370" font-size="28" font-weight="700" class="svg-brand">KubeReadyBox</text>
+  </g>
+</svg>

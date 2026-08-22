@@ -1,1 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="t d"><title id="t">Beluga</title><desc id="d">Data platform pipeline from CDC through lakehouse analytics.</desc><rect width="1200" height="420" rx="28" fill="#0b1220"/><g stroke="#263244" stroke-width="1"><path d="M70 100h1060M70 210h1060M70 320h1060"/><path d="M170 65v290M360 65v290M550 65v290M740 65v290M930 65v290"/></g><g fill="#111827" stroke="#38bdf8" stroke-width="3"><rect x="75" y="145" width="150" height="75" rx="14"/><rect x="265" y="105" width="150" height="75" rx="14"/><rect x="455" y="145" width="150" height="75" rx="14"/><rect x="645" y="105" width="150" height="75" rx="14"/><rect x="835" y="145" width="150" height="75" rx="14"/></g><g fill="none" stroke="#7dd3fc" stroke-width="3"><path d="M225 182h40M415 142h40M605 182h40M795 142h40"/></g><g fill="#f8fafc" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"><text x="75" y="55" font-size="16" fill="#94a3b8" letter-spacing="2">DATA PLATFORM / LAKEHOUSE</text><text x="98" y="190" font-size="18">CDC</text><text x="292" y="150" font-size="18">Kafka</text><text x="480" y="190" font-size="18">Flink</text><text x="670" y="150" font-size="18">Iceberg</text><text x="858" y="190" font-size="18">Trino</text><text x="75" y="370" font-size="30" font-weight="700">Beluga</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+  <title id="t">Beluga</title>
+  <desc id="d">Data platform pipeline from CDC through lakehouse analytics.</desc>
+  <style>
+    .svg-bg { fill: var(--surface, #ffffff); }
+    .svg-grid { stroke: var(--border-soft, #e2e8f0); }
+    .svg-card { fill: var(--surface-hi, #f8fafc); stroke: var(--accent, #0d9488); }
+    .svg-link { stroke: var(--accent, #14b8a6); }
+    .svg-text-title { fill: var(--text, #1e293b); }
+    .svg-text-sub { fill: var(--text-faint, #64748b); }
+    .svg-brand { fill: var(--text, #0f172a); }
+    @media (prefers-color-scheme: dark) {
+      .svg-bg { fill: var(--surface, #212a36); }
+      .svg-grid { stroke: var(--border-soft, #253242); }
+      .svg-card { fill: var(--surface-hi, #1a222c); stroke: var(--accent, #2dd4bf); }
+      .svg-link { stroke: var(--accent, #5eead4); }
+      .svg-text-title { fill: var(--text, #f0f6fc); }
+      .svg-text-sub { fill: var(--text-faint, #94a3b8); }
+      .svg-brand { fill: var(--text, #f0f6fc); }
+    }
+  </style>
+  <rect width="1200" height="420" rx="24" class="svg-bg"/>
+  <g class="svg-grid" stroke-width="1"><path d="M70 100h1060M70 210h1060M70 320h1060"/><path d="M170 65v290M360 65v290M550 65v290M740 65v290M930 65v290"/></g>
+  <g class="svg-card" stroke-width="2.5"><rect x="75" y="145" width="150" height="75" rx="14"/><rect x="265" y="105" width="150" height="75" rx="14"/><rect x="455" y="145" width="150" height="75" rx="14"/><rect x="645" y="105" width="150" height="75" rx="14"/><rect x="835" y="145" width="150" height="75" rx="14"/></g>
+  <g class="svg-link" fill="none" stroke-width="2.5"><path d="M225 182h40M415 142h40M605 182h40M795 142h40"/></g>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <text x="75" y="55" font-size="14" font-weight="600" class="svg-text-sub" letter-spacing="2">DATA PLATFORM / LAKEHOUSE</text>
+    <text x="98" y="190" font-size="18" font-weight="700" class="svg-text-title">CDC</text>
+    <text x="292" y="150" font-size="18" font-weight="700" class="svg-text-title">Kafka</text>
+    <text x="480" y="190" font-size="18" font-weight="700" class="svg-text-title">Flink</text>
+    <text x="670" y="150" font-size="18" font-weight="700" class="svg-text-title">Iceberg</text>
+    <text x="858" y="190" font-size="18" font-weight="700" class="svg-text-title">Trino</text>
+    <text x="75" y="370" font-size="28" font-weight="700" class="svg-brand">Beluga</text>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface ProjectVisualProps {
   src: string;
@@ -11,7 +11,32 @@ interface ProjectVisualProps {
 }
 
 export function ProjectVisual({ src, alt = '', className = '', loading = 'lazy' }: ProjectVisualProps) {
+  const [svgContent, setSvgContent] = useState<string | null>(null);
   const [imageSrc, setImageSrc] = useState(src);
+
+  useEffect(() => {
+    if (src.endsWith('.svg')) {
+      fetch(src)
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to fetch SVG');
+          return res.text();
+        })
+        .then((text) => setSvgContent(text))
+        .catch(() => setSvgContent(null));
+    } else {
+      setSvgContent(null);
+    }
+  }, [src]);
+
+  if (svgContent) {
+    return (
+      <div
+        className={`w-full overflow-hidden [&_svg]:block [&_svg]:h-auto [&_svg]:w-full ${className}`}
+        dangerouslySetInnerHTML={{ __html: svgContent }}
+      />
+    );
+  }
+
   return (
     <Image
       src={imageSrc}
