@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { MDXContent } from '@/components/MDXContent';
 import { routing } from '@/i18n/routing';
 import { ArrowLeft, ArrowUpRight, ExternalLink } from 'lucide-react';
+import readingTime from 'reading-time';
+import styles from './PostRefresh.module.css';
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -47,6 +49,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   const base = lang === 'en' ? '/en' : '/ko';
   const digest = slug.startsWith('daily-digest-');
   const projects = getProjects(lang);
+  const read = readingTime(content);
   const explicitlyLinkedProjects = projects.filter(project => meta.projects?.includes(project.slug));
   const relatedProjects = digest
     ? explicitlyLinkedProjects
@@ -58,58 +61,65 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
         }).slice(0, 3);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-      <Link href={digest ? `${base}/tech-digest` : `${base}/notes`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}>
+    <div className="post-shell max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div className="sr-only">{styles.refresh}</div>
+      <Link href={digest ? `${base}/tech-digest` : `${base}/notes`} className="post-back inline-flex items-center gap-2 text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
         <ArrowLeft className="w-4 h-4" aria-hidden="true" />{t('back')}
       </Link>
 
-      <header className="mb-10">
-        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+      <header className="post-hero mb-12">
+        <div className="post-hero-copy">
+          <div className="post-kicker-row flex items-center gap-3 flex-wrap mb-5">
+            <span className="post-kicker text-[10px] uppercase tracking-[.18em] font-mono px-2.5 py-1.5 rounded-full" style={{ backgroundColor: digest ? 'var(--surface)' : 'var(--accent-dim)', color: digest ? 'var(--text-muted)' : 'var(--accent)', border: '1px solid var(--border)' }}>
+              {digest ? 'TECH DIGEST' : 'ENGINEERING NOTE'}
+            </span>
+            <time className="font-mono text-xs" dateTime={meta.pubDate} style={{ color: 'var(--text-faint)' }}>{meta.pubDate.slice(0, 10)}</time>
+            <span className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{Math.max(1, Math.ceil(read.minutes))} min read</span>
+            {meta.updatedDate && <time className="font-mono text-xs" dateTime={meta.updatedDate} style={{ color: 'var(--text-faint)' }}>updated {meta.updatedDate.slice(0, 10)}</time>}
+            {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Featured</span>}
+          </div>
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.055em] leading-[0.98] mb-5" style={{ color: 'var(--text)' }}>{meta.title}</h1>
+          {meta.description && <p className="text-base sm:text-lg max-w-3xl leading-8" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>}
+          <div className="mt-6 flex flex-wrap gap-1.5">{meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}</div>
+        </div>
+        <div className="post-cover-frame" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
           <Image src={meta.image ?? (digest ? '/images/digest-cover.svg' : '/images/notes-cover.svg')} alt="" aria-hidden="true" width={1600} height={900} unoptimized className="block w-full h-auto" loading="eager" />
         </div>
-        <div className="flex items-center gap-3 flex-wrap mb-4">
-          <span className="text-[10px] uppercase tracking-[.18em] font-mono px-2 py-1 rounded-full" style={{ backgroundColor: digest ? 'var(--surface)' : 'var(--accent-dim)', color: digest ? 'var(--text-muted)' : 'var(--accent)', border: '1px solid var(--border)' }}>
-            {digest ? 'TECH DIGEST' : 'ENGINEERING NOTE'}
-          </span>
-          <time className="font-mono text-xs" dateTime={meta.pubDate} style={{ color: 'var(--text-faint)' }}>{meta.pubDate.slice(0, 10)}</time>
-          {meta.updatedDate && <time className="font-mono text-xs" dateTime={meta.updatedDate} style={{ color: 'var(--text-faint)' }}>updated {meta.updatedDate.slice(0, 10)}</time>}
-          {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Featured</span>}
-          {meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4" style={{ color: 'var(--text)' }}>{meta.title}</h1>
-        {meta.description && <p className="text-base sm:text-lg max-w-3xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>}
       </header>
 
-      <div className="rounded-2xl p-4 sm:p-5 mb-10" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <div className="text-[10px] uppercase tracking-[.18em] font-mono mb-1" style={{ color: 'var(--text-faint)' }}>{digest ? 'Curated digest' : 'Engineering note'}</div>
-            <div className="text-sm" style={{ color: 'var(--text-muted)' }}>{digest ? 'A source-first technology digest, kept separate from original engineering writing.' : 'A public record of what was built, tested, learned, and changed.'}</div>
+      <div className="post-layout">
+        <aside className="post-aside">
+          <div className="post-aside-card" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
+            <div className="text-[10px] uppercase tracking-[.18em] font-mono mb-3" style={{ color: 'var(--text-faint)' }}>{digest ? 'Curated signal' : 'Engineering record'}</div>
+            <p className="text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{digest ? 'A source-first technology digest, kept separate from original engineering writing.' : 'A public record of what was built, tested, learned, and changed.'}</p>
+            <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--border-soft)' }}>
+              <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{read.words.toLocaleString()} words</div>
+              {meta.updatedDate && <div className="text-xs font-mono mt-1" style={{ color: 'var(--text-faint)' }}>updated {meta.updatedDate.slice(0, 10)}</div>}
+            </div>
           </div>
-          <ArrowUpRight className="w-4 h-4 flex-shrink-0" aria-hidden="true" style={{ color: 'var(--accent)' }} />
-        </div>
+        </aside>
+
+        <article className="post-article prose prose-lg cne-doc-prose max-w-none prose-headings:font-bold">
+          <MDXContent source={content} />
+
+          {relatedProjects.length > 0 && (
+            <section className="post-related mt-16 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+              <div className="text-xs font-mono uppercase tracking-[.16em] mb-4" style={{ color: 'var(--text-faint)' }}>{digest ? 'Projects influenced by this digest' : 'Related OSS'}</div>
+              <div className="grid sm:grid-cols-3 gap-3 not-prose">
+                {relatedProjects.map(project => (
+                  <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group rounded-2xl p-4 transition-all" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="text-sm font-semibold group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{project.title}</div>
+                      <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" style={{ color: 'var(--text-faint)' }} />
+                    </div>
+                    <p className="text-xs mt-2 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{project.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+        </article>
       </div>
-
-      <article className="prose prose-lg cne-doc-prose max-w-none prose-headings:font-bold">
-        <MDXContent source={content} />
-      </article>
-
-      {relatedProjects.length > 0 && (
-        <section className="mt-14 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
-          <div className="text-xs font-mono uppercase tracking-wider mb-4" style={{ color: 'var(--text-faint)' }}>{digest ? 'Projects influenced by this digest' : 'Related OSS'}</div>
-          <div className="grid sm:grid-cols-3 gap-3">
-            {relatedProjects.map(project => (
-              <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
-                <div className="flex items-start justify-between gap-2">
-                  <div className="text-sm font-semibold group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{project.title}</div>
-                  <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" style={{ color: 'var(--text-faint)' }} />
-                </div>
-                <p className="text-xs mt-2 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{project.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
     </div>
   );
 }
