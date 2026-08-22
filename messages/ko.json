@@ -27,6 +27,7 @@
   "seminars": { "slides": "슬라이드", "video": "영상" },
   "events": { "title": "행사 · 축제", "subtitle": "서울시 문화행사 + 전국 축제 정보 (서울 열린데이터광장 · 한국관광공사 제공)", "updated_at": "{date} 기준", "upcoming": "진행 중 · 예정", "past": "종료된 행사", "free": "무료", "paid": "유료", "tab_all": "전체", "tab_seoul": "서울 행사", "tab_festival": "전국 축제", "search_placeholder": "행사명·장소 검색", "category_all": "전체 분류", "free_only": "무료만", "loading_more": "{n}개 더 불러오는 중…", "no_result": "조건에 맞는 행사가 없습니다", "no_events": "현재 등록된 행사가 없습니다", "no_events_desc": "매일 자동으로 업데이트됩니다" },
   "about": { "title": "About" },
+  "post": { "tech_digest": "TECH DIGEST", "engineering_note": "ENGINEERING NOTE", "curated_signal": "큐레이션 신호", "engineering_record": "엔지니어링 기록", "digest_description": "출처를 중심으로 정리한 기술 다이제스트로, 직접 작성하는 엔지니어링 기록과 분리해 제공합니다.", "note_description": "무엇을 만들고, 검증하고, 배웠는지 공개적으로 남긴 엔지니어링 기록입니다.", "min_read": "분 읽기", "updated": "업데이트", "featured": "추천", "words": "단어", "related_projects_digest": "이 다이제스트와 연결된 프로젝트", "related_oss": "관련 OSS" },
   "common": { "github": "GitHub", "back": "← 목록으로" },
   "footer": { "built_with": "built with next.js" }
 }

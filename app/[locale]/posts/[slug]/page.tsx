@@ -7,7 +7,7 @@ import { getPostBySlug, getPosts, getProjects } from '@/lib/content';
 import { Badge } from '@/components/ui/badge';
 import { MDXContent } from '@/components/MDXContent';
 import { routing } from '@/i18n/routing';
-import { ArrowLeft, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 import readingTime from 'reading-time';
 import styles from './PostRefresh.module.css';
 
@@ -46,6 +46,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   if (!result) notFound();
   const { meta, content } = result;
   const t = await getTranslations({ locale, namespace: 'common' });
+  const p = await getTranslations({ locale, namespace: 'post' });
   const base = lang === 'en' ? '/en' : '/ko';
   const digest = slug.startsWith('daily-digest-');
   const projects = getProjects(lang);
@@ -71,12 +72,12 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
         <div className="post-hero-copy">
           <div className="post-kicker-row flex items-center gap-3 flex-wrap mb-5">
             <span className="post-kicker text-[10px] uppercase tracking-[.18em] font-mono px-2.5 py-1.5 rounded-full" style={{ backgroundColor: digest ? 'var(--surface)' : 'var(--accent-dim)', color: digest ? 'var(--text-muted)' : 'var(--accent)', border: '1px solid var(--border)' }}>
-              {digest ? 'TECH DIGEST' : 'ENGINEERING NOTE'}
+              {digest ? p('tech_digest') : p('engineering_note')}
             </span>
             <time className="font-mono text-xs" dateTime={meta.pubDate} style={{ color: 'var(--text-faint)' }}>{meta.pubDate.slice(0, 10)}</time>
-            <span className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{Math.max(1, Math.ceil(read.minutes))} min read</span>
-            {meta.updatedDate && <time className="font-mono text-xs" dateTime={meta.updatedDate} style={{ color: 'var(--text-faint)' }}>updated {meta.updatedDate.slice(0, 10)}</time>}
-            {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Featured</span>}
+            <span className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{Math.max(1, Math.ceil(read.minutes))} {p('min_read')}</span>
+            {meta.updatedDate && <time className="font-mono text-xs" dateTime={meta.updatedDate} style={{ color: 'var(--text-faint)' }}>{p('updated')} {meta.updatedDate.slice(0, 10)}</time>}
+            {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>{p('featured')}</span>}
           </div>
           <h1 className="text-4xl sm:text-6xl font-bold tracking-[-0.055em] leading-[0.98] mb-5" style={{ color: 'var(--text)' }}>{meta.title}</h1>
           {meta.description && <p className="text-base sm:text-lg max-w-3xl leading-8" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>}
@@ -90,11 +91,11 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
       <div className="post-layout">
         <aside className="post-aside">
           <div className="post-aside-card" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
-            <div className="text-[10px] uppercase tracking-[.18em] font-mono mb-3" style={{ color: 'var(--text-faint)' }}>{digest ? 'Curated signal' : 'Engineering record'}</div>
-            <p className="text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{digest ? 'A source-first technology digest, kept separate from original engineering writing.' : 'A public record of what was built, tested, learned, and changed.'}</p>
+            <div className="text-[10px] uppercase tracking-[.18em] font-mono mb-3" style={{ color: 'var(--text-faint)' }}>{digest ? p('curated_signal') : p('engineering_record')}</div>
+            <p className="text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{digest ? p('digest_description') : p('note_description')}</p>
             <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--border-soft)' }}>
-              <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{read.words.toLocaleString()} words</div>
-              {meta.updatedDate && <div className="text-xs font-mono mt-1" style={{ color: 'var(--text-faint)' }}>updated {meta.updatedDate.slice(0, 10)}</div>}
+              <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{read.words.toLocaleString()} {p('words')}</div>
+              {meta.updatedDate && <div className="text-xs font-mono mt-1" style={{ color: 'var(--text-faint)' }}>{p('updated')} {meta.updatedDate.slice(0, 10)}</div>}
             </div>
           </div>
         </aside>
@@ -104,7 +105,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
 
           {relatedProjects.length > 0 && (
             <section className="post-related mt-16 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
-              <div className="text-xs font-mono uppercase tracking-[.16em] mb-4" style={{ color: 'var(--text-faint)' }}>{digest ? 'Projects influenced by this digest' : 'Related OSS'}</div>
+              <div className="text-xs font-mono uppercase tracking-[.16em] mb-4" style={{ color: 'var(--text-faint)' }}>{digest ? p('related_projects_digest') : p('related_oss')}</div>
               <div className="grid sm:grid-cols-3 gap-3 not-prose">
                 {relatedProjects.map(project => (
                   <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group rounded-2xl p-4 transition-all" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>

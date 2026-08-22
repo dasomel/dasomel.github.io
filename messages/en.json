@@ -19,6 +19,7 @@
   "seminars": { "slides": "Slides", "video": "Video" },
   "events": { "title": "Events & Festivals", "subtitle": "Seoul cultural events + nationwide festivals (via Seoul Open Data Plaza · Korea Tourism Org.)", "updated_at": "As of {date}", "upcoming": "Ongoing · Upcoming", "past": "Past Events", "free": "Free", "paid": "Paid", "tab_all": "All", "tab_seoul": "Seoul", "tab_festival": "Festivals", "search_placeholder": "Search by name or place", "category_all": "All categories", "free_only": "Free only", "loading_more": "Loading {n} more…", "no_result": "No events match your filters", "no_events": "No events available", "no_events_desc": "Updated automatically every day" },
   "about": { "title": "About" },
+  "post": { "tech_digest": "TECH DIGEST", "engineering_note": "ENGINEERING NOTE", "curated_signal": "Curated signal", "engineering_record": "Engineering record", "digest_description": "A source-first technology digest, kept separate from original engineering writing.", "note_description": "A public record of what was built, tested, learned, and changed.", "min_read": "min read", "updated": "updated", "featured": "Featured", "words": "words", "related_projects_digest": "Projects influenced by this digest", "related_oss": "Related OSS" },
   "common": { "github": "GitHub", "back": "← Back" },
   "footer": { "built_with": "built with next.js" }
 }
