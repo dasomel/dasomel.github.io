@@ -211,6 +211,7 @@
   font-size:1rem;
   line-height:1.8;
 }
+.cne-doc-prose > h1:first-of-type { display: none !important; }
 .cne-doc-prose > :where(p,ul,ol) { color:var(--text) !important; }
 .cne-doc-prose strong { color:var(--text) !important; }
 .cne-doc-prose code {
@@ -226,12 +227,12 @@
 .cne-doc-prose code::after { content:none; }
 .cne-doc-prose pre {
   margin-block:1.8rem;
-  border:2px solid var(--code-border) !important;
+  border:1px solid var(--border) !important;
   border-radius:0.85rem;
   background:var(--code-bg) !important;
   color:var(--code-fg) !important;
   overflow-x:auto;
-  box-shadow:0 10px 30px -24px rgba(0,0,0,0.40);
+  box-shadow:0 6px 24px -14px rgba(0,0,0,0.35);
 }
 .cne-doc-prose pre code {
   background:transparent !important;

@@ -34,10 +34,10 @@ export default function OssTableOfContents({ contentId = 'oss-doc-content', titl
   if (!items.length) return null;
 
   return (
-    <aside className="hidden lg:block" style={{ borderLeft: '1px solid var(--border)', backgroundColor: 'var(--bg-subtle)' }}>
-      <div className="sticky top-[60px] max-h-[calc(100vh-60px)] overflow-y-auto px-5 py-10">
+    <aside className="hidden lg:block" style={{ borderLeft: '1px solid var(--border)' }}>
+      <div className="sticky top-[60px] max-h-[calc(100vh-60px)] overflow-y-auto px-5 py-8">
         <div className="text-[11px] font-mono font-bold uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>{title}</div>
-        <div className="mt-3 h-px" style={{ backgroundColor: 'var(--border)' }} />
+        <div className="mt-3 h-px" style={{ backgroundColor: 'var(--border-soft)' }} />
         <nav className="mt-4 space-y-1" aria-label={title}>
           {items.map((item) => (
             <Link

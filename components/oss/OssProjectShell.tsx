@@ -23,55 +23,59 @@ export default function OssProjectShell({ project, docs, locale, children }: { p
   }, {});
 
   return (
-    <div className="mx-auto grid max-w-[1440px] grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)_200px]" style={{ backgroundColor: 'var(--bg)' }}>
-      <aside className="lg:min-h-[calc(100vh-60px)]" style={{ borderRight: '1px solid var(--border)', backgroundColor: 'var(--bg-subtle)' }}>
-        <div className="sticky top-[60px] max-h-[calc(100vh-60px)] overflow-y-auto px-4 py-7">
-          <Link href={locale === 'en' ? '/oss/en/' : '/oss/'} className="mb-6 inline-flex items-center gap-1.5 px-2.5 text-xs font-semibold transition hover:text-[var(--accent)]" style={{ color: 'var(--text-muted)' }}>
-            ← {locale === 'en' ? 'All OSS projects' : 'OSS 프로젝트 전체'}
-          </Link>
-          <nav className="space-y-6" aria-label={locale === 'en' ? 'Documentation' : '문서'}>
-            {overview && (
-              <Link
-                href={`${base}/`}
-                className={`group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition ${isOverviewActive ? 'bg-[var(--accent-dim)] font-semibold' : 'hover:bg-[var(--surface-hi)] hover:text-[var(--text)]'}`}
-                style={{ color: isOverviewActive ? 'var(--accent)' : 'var(--text)' }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full ring-2" style={{ backgroundColor: 'var(--accent)', boxShadow: '0 0 0 2px var(--accent-dim)' }} />
-                {locale === 'en' ? 'Overview' : '개요'}
-              </Link>
-            )}
-            {Object.entries(sections).map(([section, pages]) => (
-              <div key={section}>
-                <div className="mb-1.5 px-3 text-[11px] font-mono font-bold uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>
-                  {section}
+    <div className="w-full" style={{ backgroundColor: 'var(--bg)' }}>
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 lg:grid-cols-[250px_minmax(0,1fr)_220px]">
+        <aside className="lg:min-h-[calc(100vh-60px)]" style={{ borderRight: '1px solid var(--border)' }}>
+          <div className="sticky top-[60px] max-h-[calc(100vh-60px)] overflow-y-auto px-4 py-8">
+            <Link href={locale === 'en' ? '/oss/en/' : '/oss/'} className="mb-6 inline-flex items-center gap-1.5 px-2.5 text-xs font-semibold transition hover:text-[var(--accent)]" style={{ color: 'var(--text-muted)' }}>
+              ← {locale === 'en' ? 'All OSS projects' : 'OSS 프로젝트 전체'}
+            </Link>
+            <nav className="space-y-6" aria-label={locale === 'en' ? 'Documentation' : '문서'}>
+              {overview && (
+                <Link
+                  href={`${base}/`}
+                  className={`group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition ${isOverviewActive ? 'bg-[var(--accent-dim)] font-semibold' : 'hover:bg-[var(--surface-hi)] hover:text-[var(--text)]'}`}
+                  style={{ color: isOverviewActive ? 'var(--accent)' : 'var(--text)' }}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full ring-2" style={{ backgroundColor: 'var(--accent)', boxShadow: '0 0 0 2px var(--accent-dim)' }} />
+                  {locale === 'en' ? 'Overview' : '개요'}
+                </Link>
+              )}
+              {Object.entries(sections).map(([section, pages]) => (
+                <div key={section}>
+                  <div className="mb-1.5 px-3 text-[11px] font-mono font-bold uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>
+                    {section}
+                  </div>
+                  <div className="space-y-0.5">
+                    {pages.map((page) => {
+                      const pageHref = `${base}/${page.slug.split('/').slice(1).join('/')}/`;
+                      const pageHrefNoSlash = pageHref.slice(0, -1);
+                      const isActive = pathname === pageHref || pathname === pageHrefNoSlash;
+                      return (
+                        <Link
+                          key={page.slug}
+                          href={pageHref}
+                          className={`block rounded-lg px-3 py-1.5 text-sm transition ${isActive ? 'bg-[var(--accent-dim)] font-semibold' : 'hover:bg-[var(--surface-hi)] hover:text-[var(--text)]'}`}
+                          style={{
+                            color: isActive ? 'var(--accent)' : 'var(--text-muted)',
+                            borderLeft: isActive ? '2px solid var(--accent)' : '2px solid transparent',
+                          }}
+                        >
+                          {page.title}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="space-y-0.5">
-                  {pages.map((page) => {
-                    const pageHref = `${base}/${page.slug.split('/').slice(1).join('/')}/`;
-                    const pageHrefNoSlash = pageHref.slice(0, -1);
-                    const isActive = pathname === pageHref || pathname === pageHrefNoSlash;
-                    return (
-                      <Link
-                        key={page.slug}
-                        href={pageHref}
-                        className={`block rounded-lg px-3 py-1.5 text-sm transition ${isActive ? 'bg-[var(--accent-dim)] font-semibold' : 'hover:bg-[var(--surface-hi)] hover:text-[var(--text)]'}`}
-                        style={{
-                          color: isActive ? 'var(--accent)' : 'var(--text-muted)',
-                          borderLeft: isActive ? '2px solid var(--accent)' : '2px solid transparent',
-                        }}
-                      >
-                        {page.title}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </nav>
+              ))}
+            </nav>
+          </div>
+        </aside>
+        <div id="oss-doc-content" className="min-w-0 px-6 py-10 sm:px-10 lg:px-14 lg:py-14" style={{ color: 'var(--text)' }}>
+          {children}
         </div>
-      </aside>
-      <div id="oss-doc-content" className="min-w-0 px-5 py-10 sm:px-8 lg:px-12 lg:py-14" style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>{children}</div>
-      <OssTableOfContents title={locale === 'en' ? 'On this page' : '이 페이지의 내용'} />
+        <OssTableOfContents title={locale === 'en' ? 'On this page' : '이 페이지의 내용'} />
+      </div>
     </div>
   );
 }
