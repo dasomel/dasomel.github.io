@@ -1,95 +1,183 @@
 ---
 title: "Narwhal"
-description: "A reproducible, verifiable Kubernetes Internal Developer Platform (IDP)"
+description: "A reproducible and verifiable Kubernetes Internal Developer Platform"
 github: "https://github.com/dasomel/narwhal"
-tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio", "ArgoCD", "Cilium", "Air-Gap", "Keycloak", "Alloy"]
+tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio Ambient", "Argo CD", "Cilium", "Air-Gap", "Keycloak", "Observability"]
 order: 6
 type: "own"
 featured: true
-problem: "Integrating dozens of cloud-native components on Kubernetes causes recurring DNS, TLS, SSO, network, and version-compatibility failures"
-solution: "A unified GitOps platform managing 35 applications, codifying 263 incident lessons into 51 automated regression tests with air-gap bundling"
+problem: "Integrating dozens of cloud-native components creates recurring DNS, TLS, identity, networking, startup-order, and version-compatibility failures that must be re-proven after upgrades"
+solution: "Integrate 35 GitOps-managed applications into one reproducible IDP and turn 263 documented incidents into 51 CI regression checks plus live cluster verification"
 ---
 
 ## Project Overview
 
-**Narwhal** is an open-source **Internal Developer Platform (IDP)** built on Kubernetes v1.35, integrating GitOps, IAM/SSO, Service Mesh, Observability, Artifact Registry, Storage, Backup, Policy, API Gateway, and a Management Portal into a single reproducible unit.
+**Narwhal** is an open-source **Internal Developer Platform (IDP)** built around Kubernetes. It combines GitOps, IAM/SSO, service mesh, observability, registry, storage, backup, policy, API gateway, and management portal capabilities into one reproducible platform unit.
 
-Rather than acting as a simple installer, Narwhal treats component integration seams as core engineering assets.
+Narwhal is not primarily a Kubernetes installer. Its product boundary is the **integration seam between independently developed projects**.
 
-### Platform Highlights
+## Current Scale
 
-- **Kubernetes v1.35 HA**: 3 Control Plane + 3 Worker node topology with kube-vip API VIP (`192.168.56.100`)
-- **35 GitOps Applications**: Declarative lifecycle management via Argo CD and Gitea with Sync Waves dependency control
-- **263 Incident Lessons**: Root causes and discriminators codified in `lessons-log.md`
-- **51 CI Regression Checks**: Automated gating preventing past bugs from recurring across upgrades
-- **Air-Gap Bundle Support**: Pre-verified image, Helm chart, and OS package bundles for ARM64/AMD64
-- **Kube-Ready-Box Base**: Tuned Ubuntu 26.04 LTS base images with XFS Project Quota
+| Metric | Current state |
+|---|---|
+| Activity | 483 commits since 2026-02-08, 4 releases, latest v1.2.0 |
+| Integration | 35 GitOps-managed applications |
+| CI regression | 51 checks |
+| Live verification | 120+ cluster checks, 49 SSO checks |
+| Integration knowledge | 263 documented incidents |
+| Deployment | Vagrant ARM64, Kakao Cloud AMD64, air-gapped |
+| Offline bundle | 104 images, 27 Helm charts, binaries, manifests, and OS packages per architecture |
 
----
+These numbers are engineering evidence of repeated integration and verification, not simply activity metrics.
 
-## 35 Integrated Components Matrix
+## Platform Components
 
-| Domain | Component | Version | Role & Integration Seam |
-|---|---|---|---|
-| **Control Plane** | Kubernetes | v1.35 | 3-node HA etcd quorum, high-availability API servers |
-| **HA VIP** | kube-vip | v1.1.x | Virtual IP management for control plane (`192.168.56.100`) |
-| **CNI** | Cilium | v1.17+ | eBPF host routing, kube-proxy replacement, NetworkPolicies |
-| **Service Mesh** | Istio Ambient | v1.24+ | ztunnel L4 mTLS encryption, sidecar-less zero-trust mesh |
-| **Load Balancer** | MetalLB | v0.14+ | L2 mode IP pool allocation (`192.168.56.200~220`) |
-| **API Gateway** | Apache APISIX | v3.11+ | OIDC authentication plugins, dynamic routing, rate limiting |
-| **GitOps** | Argo CD | v2.13+ | App-of-Apps pattern, continuous drift detection and reconciliation |
-| **Git Engine** | Gitea | v1.23+ | Self-hosted Git repository with automated webhook sync triggers |
-| **IAM / SSO** | Keycloak | v26+ | Centralized identity provider, OIDC federation, role-based access |
-| **Metrics** | Prometheus | v2.55+ | Cluster metric collection and Alertmanager routing |
-| **Dashboards** | Grafana | v11+ | Pre-configured unified operations and telemetry dashboards |
-| **Logs** | Grafana Loki | v3.3+ | Multi-tenant log aggregation and live log streaming |
-| **Log Agent** | Grafana Alloy | v1.5+ | eBPF and container log forwarding daemon |
-| **Traces** | Grafana Tempo | v2.6+ | OpenTelemetry-compatible distributed tracing backend |
-| **Network Flow** | Cilium Hubble | v1.17+ | eBPF real-time service dependency and flow inspection |
-| **File Storage** | NFS CSI + Quota | v4.9+ | XFS Project Quota storage volume limiting (`nfs-quota-agent`) |
-| **Object Store** | SeaweedFS S3 | v3.79+ | Distributed high-performance S3-compatible storage tier |
-| **Relational DB** | CloudNativePG | v1.25+ | Production HA PostgreSQL clusters with Barman backup automation |
-| **Secrets** | OpenBao | v2.1+ | Encrypted secret storage and dynamic credential generation |
-| **Policy** | Kyverno | v1.13+ | Pod Security Standards (PSS) admission validation |
-| **Certificates** | cert-manager | v1.16+ | Automated internal CA and Let's Encrypt renewal |
-| **Backup / DR** | Velero | v1.15+ | Cluster resource and volume snapshot backup and restore |
-| **Chaos** | Chaos Mesh | v2.6+ | Chaos engineering experiments (network delay, packet drop, node loss) |
-| **UI Portal** | Narwhal Portal | Next.js 16 | Platform inspection, release status, and developer workbench |
+### Kubernetes and networking
 
----
+- Kubernetes **v1.35**
+- Cilium **v1.19.x**
+- Hubble **v1.19.x**
+- kube-vip **v1.1.x**
+- MetalLB **v0.16.x**
+- Apache APISIX **3.15.x**
+
+### GitOps and identity
+
+- Argo CD **v3.4.x**
+- Gitea **v1.26.x**
+- Keycloak **26.5.x**
+
+### Observability
+
+- Prometheus Stack **v0.91.x**
+- Loki **3.7.x**
+- Grafana Alloy **v1.17.x**
+- Tempo **2.9.x**
+- Hubble
+
+### Platform services
+
+- Harbor **v2.15.x**
+- OpenBao **v2.5.x**
+- Kyverno **v1.18.x**
+- Headlamp **v0.42.x**
+- SeaweedFS **v4.34.x**
+- Velero **v1.18.x**
+- CloudNative-PG **v1.29.x**
+- Istio **v1.30.x** in ambient mode
+
+## Integration Seams as Product
+
+A typical identity-to-application path crosses several independent systems:
+
+```text
+Keycloak OIDC
+      ↓
+APISIX authentication
+      ↓
+service routing
+      ↓
+Istio ambient / ztunnel
+      ↓
+Kubernetes workload
+```
+
+Narwhal records the assumptions at these boundaries as documentation, scripts, health checks, and regression checks so they can be revalidated during upgrades.
+
+## Knowledge as Tests
+
+The core maintenance loop is:
+
+```text
+Incident
+   ↓
+Root Cause
+   ↓
+Discriminator
+   ↓
+Regression Check
+   ↓
+Upgrade Gate
+```
+
+The incident log records not only what fixed an incident, but also how to distinguish it from similar failures and which tempting fixes do not work. This knowledge base is connected to the regression suite, producing 263 documented incidents and 51 CI checks.
+
+## Verification Model
+
+Narwhal validates different layers for different questions.
+
+| Layer | Scope | Question |
+|---|---:|---|
+| Cluster verification | 120+ | Is the cluster and platform actually healthy? |
+| SSO verification | 49 | Does identity work end to end across integrated apps? |
+| CI regression | 51 | Have known integration failures returned? |
+
+This separation keeps fast CI regression checks independent from deeper live-cluster validation.
+
+## Air-Gapped Installation
+
+Disconnected installation is a first-class deployment target.
+
+```text
+Online build
+   ↓
+images / charts / binaries / manifests / packages
+   ↓
+architecture-specific offline bundle
+   ↓
+verification
+   ↓
+install without live Internet
+```
+
+The bundle contains the artifacts required to reproduce the platform without reaching upstream registries during installation.
+
+## Management Portal
+
+Narwhal Portal provides the day-2 user experience for the platform: dashboard, applications, security, cost, governance, catalog, and architecture views.
+
+The product boundary is therefore:
+
+```text
+Narwhal = platform integration + operation
+Portal  = developer / operator experience
+```
 
 ## Getting Started
 
 ```bash
-# 1. Clone repository
 git clone https://github.com/dasomel/narwhal.git
 cd narwhal
-
-# 2. Boot local 6-node HA cluster (VMware Desktop / VirtualBox)
 vagrant up --provider=vmware_desktop
-
-# 3. Verify node readiness
-vagrant ssh master-1 -c "kubectl get nodes -o wide"
-
-# 4. Check GitOps synchronization status
-vagrant ssh master-1 -c "kubectl get applications -n argocd"
-
-# 5. Run full platform verification suite (120+ checks)
-vagrant ssh master-1 -c "/opt/narwhal/scripts/verify-cluster.sh"
+vagrant ssh master-1 -c "kubectl get nodes"
+vagrant ssh master-1 -c "kubectl get applications -A"
+vagrant ssh master-1 -c "bash /home/vagrant/scripts/test/verify-cluster.sh"
 ```
-
----
 
 ## Documentation Index
 
-| Topic | Document Link | Summary |
+| Topic | Document | Purpose |
 |---|---|---|
-| **Overview** | [Platform Overview](/oss/en/narwhal/overview) | Narwhal IDP philosophy and three-tier integration model |
-| **Architecture** | [Cluster Architecture](/oss/en/narwhal/architecture) | 3M+3W node topology, HA control plane, and packet flows |
-| **GitOps** | [GitOps Workflow](/oss/en/narwhal/gitops) | Argo CD + Gitea App-of-Apps declarative delivery |
-| **Networking** | [Networking & Ingress](/oss/en/narwhal/networking) | Cilium eBPF, MetalLB, APISIX routing, and DNS |
-| **Security** | [Security & SSO](/oss/en/narwhal/security) | Keycloak OIDC, OpenBao secrets, and Kyverno policies |
-| **Observability** | [Monitoring & Logs](/oss/en/narwhal/observability) | Prometheus, Grafana, Loki, Tempo, and Hubble |
-| **Storage** | [Storage & Databases](/oss/en/narwhal/storage) | NFS CSI, SeaweedFS S3, nfs-quota-agent, CNPG |
-| **Operations** | [Day-2 Operations & DR](/oss/en/narwhal/operations) | Velero backup, air-gap offline bundles, and maintenance |
-| **Testing** | [Regression Testing & Chaos](/oss/en/narwhal/testing) | 263 incident lessons codified into 51 CI checks & Chaos Mesh |
+| Overview | [Platform Overview](/oss/en/narwhal/overview) | IDP scope and integration philosophy |
+| Architecture | [Cluster Architecture](/oss/en/narwhal/architecture) | HA control plane, networking, service layout |
+| GitOps | [GitOps Workflow](/oss/en/narwhal/gitops) | Argo CD + Gitea App-of-Apps |
+| Networking | [Networking & Ingress](/oss/en/narwhal/networking) | Cilium, MetalLB, APISIX, DNS |
+| Security | [Security & SSO](/oss/en/narwhal/security) | Keycloak, OpenBao, Kyverno, TLS |
+| Observability | [Monitoring & Logs](/oss/en/narwhal/observability) | Prometheus, Grafana, Loki, Tempo, Hubble |
+| Storage | [Storage & Databases](/oss/en/narwhal/storage) | NFS CSI, SeaweedFS, quota, PostgreSQL |
+| Operations | [Day-2 Operations & DR](/oss/en/narwhal/operations) | Backup, restore, upgrades, air-gap |
+| Testing | [Regression Testing & Chaos](/oss/en/narwhal/testing) | Live verification and regression practice |
+
+## Project Relationship
+
+```text
+kube-ready-box
+       ↓
+   Narwhal IDP
+   ├── nfs-quota-agent
+   ├── ldapium
+   └── Narwhal Portal
+
+OpenForge
+   └── shared engineering / supply-chain practices
+```
