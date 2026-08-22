@@ -15,17 +15,24 @@ export function ProjectVisual({ src, alt = '', className = '', loading = 'lazy' 
   const [imageSrc, setImageSrc] = useState(src);
 
   useEffect(() => {
+    let isMounted = true;
     if (src.endsWith('.svg')) {
       fetch(src)
         .then((res) => {
           if (!res.ok) throw new Error('Failed to fetch SVG');
           return res.text();
         })
-        .then((text) => setSvgContent(text))
-        .catch(() => setSvgContent(null));
-    } else {
-      setSvgContent(null);
+        .then((text) => {
+          if (isMounted) setSvgContent(text);
+        })
+        .catch(() => {
+          if (isMounted) setSvgContent(null);
+        });
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [src]);
 
   if (svgContent) {
