@@ -188,9 +188,9 @@ Toss contrasts deploying an LLM with operating one effectively in production. A 
 
 _Datadog_
 
-Datadog explains how tail-based sampling in the OpenTelemetry Collector can drop noisy traces, retain meaningful ones, and control observability volume and cost.
+Datadog explains how tail-based sampling in the OpenTelemetry Collector can reduce noisy traces while preserving diagnostically valuable requests. Unlike simple probabilistic sampling, tail-based policies can evaluate the complete trace before deciding whether to keep it. Teams can prioritize traces with errors, high latency, or other useful signals for incident analysis. Routine traces can be sampled down to reduce storage, processing, and APM cost. The approach treats observability as a policy problem: preserve the signals needed for diagnosis rather than collecting every trace equally.
 
-> 💡 Policy-based sampling can preserve diagnostically valuable traces while controlling observability spend.
+> 💡 Policy-based sampling can preserve diagnostically valuable traces while controlling observability volume and cost.
 
 ### [GitLab 19.3 released](https://docs.gitlab.com/releases/19/gitlab-19-3-released/)
 

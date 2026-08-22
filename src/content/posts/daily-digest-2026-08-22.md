@@ -188,9 +188,9 @@ _토스_
 
 _Datadog_
 
-Datadog은 OpenTelemetry Collector의 tail-based sampling으로 noisy trace를 줄이고 중요한 trace를 보존해 관측 데이터 양과 APM 비용을 제어하는 방법을 설명합니다.
+Datadog은 OpenTelemetry Collector의 tail-based sampling으로 noisy trace를 줄이고 중요한 trace를 보존해 관측 데이터 양과 APM 비용을 제어하는 방법을 설명합니다. Tail-based sampling은 trace 전체의 특성을 본 뒤 보존 여부를 결정할 수 있어 단순 확률 샘플링보다 의미 있는 요청을 선택하기 쉽습니다. 오류나 지연이 큰 요청처럼 진단 가치가 높은 trace를 우선 보존하는 정책을 만들 수 있습니다. 반대로 정상적이고 반복적인 trace는 줄여 저장 및 분석 비용을 낮출 수 있습니다. 이 접근은 관측성 데이터를 무조건 많이 모으는 것보다 장애 분석에 필요한 signal을 선택적으로 보존하는 운영 전략입니다.
 
-> 💡 관측성 비용은 무조건 수집량을 줄이기보다 장애 분석에 가치가 있는 trace를 보존하는 정책 기반 샘플링으로 최적화하는 편이 낫습니다.
+> 💡 관측성 비용은 수집량을 무조건 늘리기보다 장애 분석 가치가 높은 trace를 정책 기반으로 보존하는 방식이 더 효율적입니다.
 
 ### [GitLab 19.3 released](https://docs.gitlab.com/releases/19/gitlab-19-3-released/)
 
