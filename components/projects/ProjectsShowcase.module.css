@@ -2,6 +2,19 @@
   margin-top: 2rem;
 }
 
+.showcase input[aria-label] {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: 0 10px 28px -24px var(--accent-glow);
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.showcase input[aria-label]:focus {
+  border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+  background: var(--surface-hi);
+  box-shadow: 0 14px 32px -24px var(--accent-glow);
+}
+
 .featured {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
@@ -97,9 +110,9 @@
 
 :global(html[data-theme='dark']) .featureCard,
 :global(html[data-theme='dark']) .compactCard {
-  background: linear-gradient(145deg, rgba(45,212,191,.05), transparent 48%), #151f2b;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 5%, transparent), transparent 48%), var(--surface);
 }
 
 :global(html[data-theme='dark']) .featureCard {
-  background: radial-gradient(circle at 100% 0, rgba(45,212,191,.12), transparent 32%), #17232f;
+  background: radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 12%, transparent), transparent 32%), var(--surface);
 }
