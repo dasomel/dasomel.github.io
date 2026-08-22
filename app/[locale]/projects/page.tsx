@@ -47,6 +47,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           noResults: t('no_results'),
           results: t('results'),
           clearFilters: t('clear_filters'),
+          all: t('all'),
+          filter: t('filter'),
           core: t('core'),
           tools: t('tools'),
           forks: t('forks'),
