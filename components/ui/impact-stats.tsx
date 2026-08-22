@@ -10,7 +10,7 @@ interface ImpactStatsProps {
 export function ImpactStats({ stats }: ImpactStatsProps) {
   return (
     <div
-      className="grid gap-0"
+      className="impact-stats grid gap-0"
       style={{
         gridTemplateColumns: `repeat(${stats.length}, 1fr)`,
         borderTop: '1px solid var(--border)',
@@ -20,17 +20,18 @@ export function ImpactStats({ stats }: ImpactStatsProps) {
       {stats.map((stat, i) => (
         <div
           key={stat.label}
-          className="text-center py-5 px-3"
+          className="relative py-6 sm:py-7 px-4 sm:px-6 text-left sm:text-center"
           style={{
             borderRight: i < stats.length - 1 ? '1px solid var(--border)' : 'none',
           }}
         >
-          <div className="text-2xl font-bold" style={{ color: 'var(--accent)' }}>
+          <div className="impact-stats-value text-3xl sm:text-4xl font-semibold tracking-[-0.04em]" style={{ color: 'var(--text)' }}>
             {stat.value}
           </div>
-          <div className="text-xs mt-1" style={{ color: 'var(--text-faint)' }}>
+          <div className="text-[0.68rem] mt-1.5 font-mono uppercase tracking-[0.12em]" style={{ color: 'var(--text-faint)' }}>
             {stat.label}
           </div>
+          <div className="absolute inset-x-4 sm:inset-x-8 bottom-0 h-px opacity-0 transition-opacity" style={{ background: 'var(--accent)' }} />
         </div>
       ))}
     </div>
