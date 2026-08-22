@@ -1,78 +1,126 @@
 ---
 title: "Narwhal Portal"
-description: "Cloud-native unified management portal for Narwhal IDP (Next.js 16 + React 19)"
+description: "Operations and developer workbench for the Narwhal Kubernetes Internal Developer Platform"
 github: "https://github.com/dasomel/narwhal-portal"
-tags: ["Next.js", "React", "TypeScript", "TailwindCSS", "IDP", "gRPC", "Keycloak"]
+tags: ["Kubernetes", "IDP", "Next.js", "React", "TypeScript", "Keycloak", "GitOps", "Platform Engineering"]
 order: 7
 type: "own"
 featured: true
-problem: "Managing dozens of disparate component dashboards causes operational fragmentation and poor developer UX"
-solution: "A unified management portal built with Next.js 16 and gRPC providing centralized visibility and operational control"
+problem: "A Kubernetes IDP can expose dozens of independent dashboards while leaving platform-wide state, relationships, and operator workflows fragmented"
+solution: "A unified Next.js portal that presents cluster, application, catalog, security, cost, governance, and onboarding workflows as one operational surface"
 ---
 
 ## Project Overview
 
-**Narwhal Portal** is the central control plane UI and developer workbench for the Narwhal Kubernetes IDP.
+**Narwhal Portal** is the management portal and developer workbench for the Narwhal Kubernetes Internal Developer Platform.
 
-Built with Next.js 16, React 19, TypeScript, and Tailwind CSS, it seamlessly integrates Keycloak OIDC authentication with type-safe gRPC backend communications.
+Narwhal provides the underlying GitOps, SSO, observability, storage, security, and platform services. The Portal provides the **day-2 operational surface** that makes those services understandable and usable as one platform.
 
-### Key Highlights
+The portal does not try to replace every upstream UI. Kubernetes, Argo CD, Keycloak, and other systems remain authoritative; the Portal aggregates platform signals and exposes them through platform-level concepts.
 
-- **Next.js 16 & React 19**: Modern architecture combining Server Components with responsive client UI
-- **Keycloak OIDC Federation**: Enterprise identity integration and token-based RBAC
-- **gRPC / Protocol Buffers**: High-performance, type-safe communication with cluster services
-- **Skaffold Live Reload**: Rapid inner-loop container development on local Kubernetes
-- **Design System**: Accessible UI built with Radix primitives and Tailwind CSS
+## Core Areas
 
----
+| Area | Purpose |
+|---|---|
+| Dashboard | Cluster health, Argo CD applications, alerts, and overall platform status |
+| Onboarding | Getting-started workflow and kubeconfig issuance |
+| Catalog / My Apps | Service catalog and per-user application view |
+| Nodes | Node inventory and status |
+| Cost | Namespace/workload cost visibility |
+| Security / Compliance | Security posture, policies, RBAC, and audit-related information |
+| Governance | Scorecards, DORA-related information, and platform maturity signals |
+| Architecture | Platform and service relationships |
+| Templates / Tools | Developer-oriented platform utilities |
+| Settings | Users, routes, certificates, and policy settings |
 
-## Architecture Diagram
+## Position in Narwhal
 
 ```text
-  Browser (Developer / Admin)
-             │
-             ▼ HTTPS / OIDC
-  ┌───────────────────────────────────────────────┐
-  │  Narwhal Portal (Next.js 16 App Router)       │
-  │  - Keycloak Auth Session Verification         │
-  │  - Dashboard Server Components                │
-  │  - Developer Workbench Client UI              │
-  └──────────────────────┬────────────────────────┘
-                         │
-                         ▼ gRPC / Proto
-  ┌───────────────────────────────────────────────┐
-  │  Narwhal IDP Backend & Control Plane Services │
-  │  (Kubernetes API · Gitea · ArgoCD · Keycloak) │
-  └───────────────────────────────────────────────┘
+                    Narwhal IDP
+┌───────────────────────────────────────────────────────┐
+│ Kubernetes                                             │
+│ GitOps · SSO · Observability · Storage · Security      │
+└─────────────────────────┬─────────────────────────────┘
+                          │ platform state / APIs
+                          ▼
+                ┌──────────────────────┐
+                │   Narwhal Portal     │
+                │   Next.js + React    │
+                ├──────────────────────┤
+                │ Dashboard            │
+                │ Catalog / My Apps     │
+                │ Nodes / Cost          │
+                │ Security / Governance│
+                │ Architecture / Tools │
+                └──────────┬───────────┘
+                           │
+                           ▼
+                  Developer / Operator
 ```
 
----
+## Technology Stack
 
-## Getting Started
+- **Next.js 16 / React 19** — App Router application
+- **TypeScript** — typed frontend/API boundaries
+- **Tailwind CSS 4 / shadcn/ui** — reusable admin UI
+- **TanStack Query / Zustand** — server/client state
+- **Keycloak OIDC** — authentication and sessions
+- **Valkey** — application cache
+- **OpenBao Agent Injector** — runtime secrets injection
+- **Skaffold / Kaniko** — Kubernetes inner-loop development and in-cluster image builds
+
+## Deployment Model
+
+The production portal is served inside the Narwhal cluster at `https://portal.local.narwhal.internal` through the APISIX gateway.
+
+A local development loop is available with:
 
 ```bash
-# 1. Clone repository
 git clone https://github.com/dasomel/narwhal-portal.git
 cd narwhal-portal
-
-# 2. Install dependencies
 pnpm install
-
-# 3. Start local development server
 pnpm dev
-
-# Or run with Skaffold live reload on Kubernetes
-skaffold dev
 ```
 
----
+For cluster-based development, the project also supports Skaffold HMR. Production image workflows can use the in-cluster Gitea → Kaniko → Harbor path, avoiding a local Docker daemon for the normal deployment flow.
+
+## Design Principles
+
+### Preserve authoritative sources
+
+Argo CD, Kubernetes, Keycloak, and other platform services keep ownership of their resources. The Portal is a user-facing integration layer, not a competing source of truth.
+
+### Use platform domains
+
+Users should not need to understand every upstream product to answer platform questions. Concepts such as Application, Service, Catalog, Security, and Governance create a consistent IDP vocabulary.
+
+### Expose operational boundaries
+
+GitOps ownership, policy violations, authentication state, certificate state, and failure conditions should be visible in the UI rather than hidden behind an upstream product boundary.
+
+### Connect Day-0 and Day-2
+
+Onboarding, Catalog, Templates, Tools, and operational dashboards are part of the same workbench so the portal spans from initial access to ongoing operations.
 
 ## Documentation Index
 
-| Topic | Document Link | Summary |
+| Topic | Document | Purpose |
 |---|---|---|
-| **Overview** | [Portal Overview](/oss/en/narwhal-portal/overview) | Architectural philosophy and developer workflows |
-| **Architecture** | [Portal Architecture](/oss/en/narwhal-portal/architecture) | Next.js 16 layout, gRPC clients, and OIDC sessions |
-| **Getting Started** | [Development Setup](/oss/en/narwhal-portal/getting-started) | pnpm setup, environment variables, and Skaffold |
-| **Operations** | [Deployment & Operations](/oss/en/narwhal-portal/operations) | Multi-stage Docker builds, health probes, and config |
-| **ADRs** | [Architecture Decision Records](/oss/en/narwhal-portal/adr) | Skaffold dev workflow and cost-basis decisions |
+| Overview | [Portal Overview](/oss/en/narwhal-portal/overview) | Role and user scenarios |
+| Architecture | [Portal Architecture](/oss/en/narwhal-portal/architecture) | Application/data flow |
+| Getting Started | [Development Setup](/oss/en/narwhal-portal/getting-started) | pnpm, environment, Skaffold |
+| Operations | [Deployment & Operations](/oss/en/narwhal-portal/operations) | Build, deployment, health |
+| ADR | [Architecture Decision Records](/oss/en/narwhal-portal/adr) | Technical decisions and trade-offs |
+
+## Project Relationship
+
+```text
+kube-ready-box
+       ↓
+   Narwhal Cluster
+       ├── GitOps / SSO / Observability / Storage / Security
+       │
+       └── Narwhal Portal
+              ↓
+       Developer / Operator UX
+```
