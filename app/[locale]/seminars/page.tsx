@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getSeminars } from '@/lib/content';
 import { routing } from '@/i18n/routing';
 import { ImpactStats } from '@/components/ui/impact-stats';
-import { FeaturedCard } from '@/components/ui/featured-card';
+import styles from './SeminarsRefresh.module.css';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -15,29 +15,36 @@ export default async function SeminarsPage({ params }: { params: Promise<{ local
   const t = await getTranslations({ locale, namespace: 'speaking' });
   const seminars = getSeminars(lang);
   const base = lang === 'en' ? '/en' : '/ko';
-
   const yearsActive = new Date().getFullYear() - 2013;
-  const conferenceCount = new Set(seminars.map(s => s.event)).size;
-  const featured = seminars.filter(s => s.featured);
-
-  // 연도별 그룹핑
-  const grouped = seminars.reduce((acc, s) => {
-    const year = s.date.slice(0, 4);
-    if (!acc[year]) acc[year] = [];
-    acc[year].push(s);
+  const conferenceCount = new Set(seminars.map((s) => s.event)).size;
+  const featured = seminars.filter((s) => s.featured).slice(0, 6);
+  const grouped = seminars.reduce((acc, seminar) => {
+    const year = seminar.date.slice(0, 4);
+    (acc[year] ??= []).push(seminar);
     return acc;
   }, {} as Record<string, typeof seminars>);
   const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text)' }}>
-          {t('title')}
-        </h1>
-        <p className="text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
-          {yearsActive}{t('subtitle_prefix')} {seminars.length}+ {t('subtitle_suffix')}
-        </p>
+    <main className={styles.speakingPage}>
+      <section className={styles.speakingHero}>
+        <div>
+          <div className={styles.speakingKicker}>OSS WORKBENCH · SPEAKING</div>
+          <h1 className={styles.speakingTitle}>{t('title')}</h1>
+          <p className={styles.speakingLead}>
+            {yearsActive}{t('subtitle_prefix')} {seminars.length}+ {t('subtitle_suffix')}
+          </p>
+        </div>
+        <aside className={styles.speakingAside}>
+          <div className={styles.speakingAsideLabel}>{t('highlights')}</div>
+          <div className={styles.speakingAsideValue}>{conferenceCount}+</div>
+          <div className={styles.speakingAsideMeta}>
+            {lang === 'en' ? 'Conferences and communities across the platform-engineering journey.' : '플랫폼 엔지니어링 여정에서 만난 컨퍼런스와 커뮤니티의 기록입니다.'}
+          </div>
+        </aside>
+      </section>
+
+      <div className={styles.speakingStats}>
         <ImpactStats stats={[
           { value: String(seminars.length), label: t('total') },
           { value: `${conferenceCount}+`, label: t('conferences') },
@@ -45,79 +52,41 @@ export default async function SeminarsPage({ params }: { params: Promise<{ local
         ]} />
       </div>
 
-      <div className="slide-enter-content">
-        {featured.length > 0 && (
-          <section className="mt-10 mb-10">
-            <h2 className="text-xs font-mono uppercase tracking-widest mb-6" style={{ color: 'var(--text-faint)' }}>
-              {t('highlights')}
-            </h2>
-            {featured.map(seminar => (
-              <FeaturedCard key={seminar.slug}>
-                <div className="flex items-center gap-3 mb-2">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-[8px] font-mono"
-                    style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-faint)' }}
-                  >
-                    {seminar.event.substring(0, 3).toUpperCase()}
-                  </div>
-                  <div>
-                    <Link href={`${base}/seminars/${seminar.slug}`}>
-                      <h3 className="text-sm font-bold" style={{ color: 'var(--text)' }}>{seminar.title}</h3>
-                    </Link>
-                    <p className="text-xs" style={{ color: 'var(--accent)' }}>{seminar.event} · {seminar.date.slice(0, 4)}</p>
-                  </div>
-                </div>
-              </FeaturedCard>
-            ))}
-          </section>
-        )}
-
+      {featured.length > 0 && (
         <section>
-          <h2 className="text-xs font-mono uppercase tracking-widest mb-6" style={{ color: 'var(--text-faint)' }}>
-            {t('timeline')}
-          </h2>
-          {years.map((year, yi) => (
-            <div key={year} className="flex gap-4 mb-6">
-              {/* 왼쪽: 연도 + 세로선 */}
-              <div className="flex flex-col items-center w-10 flex-shrink-0">
-                <span className="text-xs font-bold" style={{ color: 'var(--accent)' }}>{year}</span>
-                {yi < years.length - 1 && (
-                  <div className="w-0.5 flex-1 mt-2" style={{ backgroundColor: 'var(--border)' }} />
-                )}
-              </div>
-              {/* 오른쪽: 세미나 목록 */}
-              <div className="flex-1 flex flex-col gap-2 pb-2">
-                {grouped[year].map(seminar => (
-                  <Link
-                    key={seminar.slug}
-                    href={`${base}/seminars/${seminar.slug}`}
-                    className="flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-[var(--surface-hi)] group"
-                    style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}
-                  >
-                    <div
-                      className="w-6 h-6 rounded flex items-center justify-center text-[7px] font-mono flex-shrink-0"
-                      style={{ backgroundColor: 'var(--surface-hi)', color: 'var(--text-faint)', border: '1px solid var(--border)' }}
-                    >
-                      {seminar.event.substring(0, 3).toUpperCase()}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3
-                        className="text-sm font-medium truncate group-hover:text-[var(--accent)] transition-colors"
-                        style={{ color: 'var(--text)' }}
-                      >
-                        {seminar.title}
-                      </h3>
-                      <p className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
-                        {seminar.event} · {new Date(seminar.date).toLocaleDateString('en-US', { month: 'short' })}
-                      </p>
+          <div className={styles.speakingSectionLabel}>{t('highlights')}</div>
+          <div className={styles.speakingFeatured}>
+            {featured.map((seminar) => (
+              <Link key={seminar.slug} href={`${base}/seminars/${seminar.slug}`} className={styles.speakingFeature}>
+                <div className={styles.speakingFeatureEvent}>{seminar.event} · {seminar.date.slice(0, 4)}</div>
+                <div className={styles.speakingFeatureTitle}>{seminar.title}</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section>
+        <div className={styles.speakingSectionLabel}>{t('timeline')}</div>
+        <div className={styles.speakingTimeline}>
+          {years.map((year) => (
+            <div key={year} className={styles.speakingYearGroup}>
+              <div className={styles.speakingYear}>{year}</div>
+              <div className={styles.speakingItems}>
+                {grouped[year].map((seminar) => (
+                  <Link key={seminar.slug} href={`${base}/seminars/${seminar.slug}`} className={styles.speakingItem}>
+                    <div className={styles.speakingBadge}>{seminar.event.substring(0, 3).toUpperCase()}</div>
+                    <div className={styles.speakingItemMain}>
+                      <div className={styles.speakingItemTitle}>{seminar.title}</div>
+                      <div className={styles.speakingItemMeta}>{seminar.event} · {new Date(seminar.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
           ))}
-        </section>
-      </div>
-    </div>
+        </div>
+      </section>
+    </main>
   );
 }
