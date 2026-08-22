@@ -19,7 +19,7 @@ export default function OssHeader() {
       <div className="mx-auto flex h-[60px] max-w-[1440px] items-center justify-between px-5 sm:px-7">
         <div className="flex items-center gap-7">
           <Link href={home} className="flex items-center gap-2.5 font-semibold tracking-tight" style={{ color: 'var(--text)' }}>
-            <span className="grid h-7 w-7 place-items-center rounded-md text-[9px] font-bold tracking-tight" style={{ backgroundColor: 'var(--text)', color: 'var(--bg)' }}>OSS</span>
+            <span className="grid h-7 w-7 place-items-center rounded-md text-[9px] font-bold tracking-tight font-mono" style={{ backgroundColor: 'var(--surface-hi)', color: 'var(--accent)', border: '1px solid var(--border)' }}>OSS</span>
             <span className="hidden sm:inline">Engineering Docs</span>
           </Link>
           <nav className="hidden items-center gap-1 text-sm md:flex">

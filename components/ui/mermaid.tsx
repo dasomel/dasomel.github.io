@@ -29,13 +29,13 @@ export function Mermaid({ chart }: MermaidProps) {
       theme: 'base',
       fontFamily: 'Pretendard Variable, sans-serif',
       themeVariables: {
-        background: dark ? '#0d1317' : '#ffffff',
-        primaryTextColor: dark ? '#f1f5f9' : '#0f172a',
-        secondaryTextColor: dark ? '#94a3b8' : '#475569',
-        tertiaryTextColor: dark ? '#64748b' : '#64748b',
-        textColor: dark ? '#f1f5f9' : '#0f172a',
-        lineColor: dark ? '#425462' : '#94a3b8',
-        edgeLabelBackground: dark ? '#141b20' : '#ffffff',
+        background: dark ? '#121820' : '#ffffff',
+        primaryTextColor: dark ? '#e6edf3' : '#334155',
+        secondaryTextColor: dark ? '#9daab6' : '#64748b',
+        tertiaryTextColor: dark ? '#6e7d8c' : '#94a3b8',
+        textColor: dark ? '#e6edf3' : '#334155',
+        lineColor: dark ? '#4d627d' : '#cbd5e1',
+        edgeLabelBackground: dark ? '#212a36' : '#ffffff',
       },
     });
 
@@ -51,15 +51,15 @@ export function Mermaid({ chart }: MermaidProps) {
       // surrounding theme instead.
       rendered.querySelectorAll('.nodeLabel').forEach((node) => {
         const element = node as HTMLElement;
-        element.style.setProperty('color', dark ? '#f1f5f9' : '#0f172a', 'important');
+        element.style.setProperty('color', dark ? '#e6edf3' : '#334155', 'important');
       });
 
-      const chartTextColor = dark ? '#f1f5f9' : '#0f172a';
+      const chartTextColor = dark ? '#e6edf3' : '#334155';
       rendered.querySelectorAll('text, tspan').forEach((node) => {
         node.setAttribute('fill', chartTextColor);
       });
 
-      const edgeLabelColor = dark ? '#f1f5f9' : '#0f172a';
+      const edgeLabelColor = dark ? '#e6edf3' : '#334155';
       rendered.querySelectorAll('.edgeLabel, .edgeLabel p').forEach((node) => {
         const element = node as HTMLElement;
         element.style.setProperty('color', edgeLabelColor, 'important');

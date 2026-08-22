@@ -36,13 +36,13 @@ The palette intentionally separates canvas, surfaces, evidence panels, borders, 
 - `--bg`: `#fafaf9` — warm clean canvas
 - `--bg-subtle`: `#f4f4f2` — navigation / secondary shell
 - `--surface`: `#ffffff` — cards and primary surfaces
-- `--surface-hi`: `#f0f2f1` — selected / secondary surface
-- `--border`: `#e2e5e4` — visible default boundary
-- `--border-soft`: `#ededeb` — low-emphasis divider
-- `--border-hi`: `#94a3b8` — emphasized boundary
-- `--text`: `#0f172a` — primary text (deep slate)
-- `--text-muted`: `#475569` — readable secondary text
-- `--text-faint`: `#64748b` — metadata / tertiary text
+- `--surface-hi`: `#f1f5f9` — selected / secondary surface
+- `--border`: `#e2e8f0` — visible default boundary
+- `--border-soft`: `#f1f5f9` — low-emphasis divider
+- `--border-hi`: `#cbd5e1` — emphasized boundary
+- `--text`: `#334155` — primary text (soft, comfortable slate-700)
+- `--text-muted`: `#64748b` — readable secondary slate text
+- `--text-faint`: `#94a3b8` — metadata / tertiary text
 - `--accent`: `#0d9488` — primary brand accent (vibrant teal)
 - `--accent-strong`: `#0f766e` — accent on high-emphasis states
 - `--accent-dim`: `rgba(13,148,136,0.08)` — subtle accent surface
@@ -51,39 +51,39 @@ The palette intentionally separates canvas, surfaces, evidence panels, borders, 
 - `--signal`: `#d97706` — semantic evidence/warning signal only
 - `--signal-dim`: `rgba(217,119,6,0.09)`
 - `--code-bg`: `#f8fafc` — code and lifecycle surface
-- `--code-fg`: `#0f172a` — code/lifecycle foreground
+- `--code-fg`: `#334155` — code/lifecycle foreground
 - `--code-border`: `#e2e8f0` — code/lifecycle boundary
 - `--doc-panel-bg`: `#f8fafc` — explanatory callout surface
-- `--doc-panel-fg`: `#0f172a` — explanatory callout foreground
+- `--doc-panel-fg`: `#334155` — explanatory callout foreground
 - `--doc-panel-border`: `#cbd5e1` — explanatory callout boundary
 - `--doc-panel-header`: `#f1f5f9` — table header surface
 
 ### Dark
 
-- `--bg`: `#090d10` — deep obsidian canvas
-- `--bg-subtle`: `#0f1418` — navigation / secondary shell
-- `--surface`: `#141b20` — elevated card surface
-- `--surface-hi`: `#1b242b` — selected / secondary surface
-- `--border`: `#25313a` — clean, visible boundary
-- `--border-soft`: `#1a232a` — low-emphasis divider
-- `--border-hi`: `#425462` — emphasized boundary
-- `--text`: `#f1f5f9` — primary text (crisp off-white)
-- `--text-muted`: `#94a3b8` — readable secondary text
-- `--text-faint`: `#64748b` — metadata / tertiary text
-- `--accent`: `#14b8a6` — primary brand accent (luminous teal)
-- `--accent-strong`: `#2dd4bf` — accent on high-emphasis states
-- `--accent-dim`: `rgba(20,184,166,0.12)` — subtle accent surface
-- `--accent-glow`: `rgba(20,184,166,0.22)`
+- `--bg`: `#151b23` — soft dark slate canvas
+- `--bg-subtle`: `#1a222c` — navigation / secondary shell
+- `--surface`: `#212a36` — elevated card surface with comfortable depth
+- `--surface-hi`: `#2a3645` — selected / secondary surface
+- `--border`: `#303e50` — crisp micro-boundary
+- `--border-soft`: `#253242` — low-emphasis divider
+- `--border-hi`: `#4d627d` — emphasized boundary
+- `--text`: `#e6edf3` — primary text (soft luminous off-white)
+- `--text-muted`: `#9daab6` — readable secondary slate
+- `--text-faint`: `#6e7d8c` — metadata / tertiary text
+- `--accent`: `#2dd4bf` — primary brand accent (luminous electric teal)
+- `--accent-strong`: `#5eead4` — accent on high-emphasis states
+- `--accent-dim`: `rgba(45,212,191,0.12)` — subtle accent surface
+- `--accent-glow`: `rgba(45,212,191,0.22)`
 - `--accent-fg`: `#042f2e`
-- `--signal`: `#f59e0b` — semantic evidence/warning signal only
-- `--signal-dim`: `rgba(245,158,11,0.12)`
-- `--code-bg`: `#0d1317` — code and lifecycle surface
-- `--code-fg`: `#f1f5f9` — code/lifecycle foreground
-- `--code-border`: `#25313a` — code/lifecycle boundary
-- `--doc-panel-bg`: `#11181d` — explanatory callout surface
-- `--doc-panel-fg`: `#f1f5f9` — explanatory callout foreground
-- `--doc-panel-border`: `#25313a` — explanatory callout boundary
-- `--doc-panel-header`: `#172027` — table header surface
+- `--signal`: `#fbbf24` — semantic evidence/warning signal only
+- `--signal-dim`: `rgba(251,191,36,0.14)`
+- `--code-bg`: `#121820` — code and lifecycle surface
+- `--code-fg`: `#e6edf3` — code/lifecycle foreground
+- `--code-border`: `#283545` — code/lifecycle boundary
+- `--doc-panel-bg`: `#1a222d` — explanatory callout surface
+- `--doc-panel-fg`: `#e6edf3` — explanatory callout foreground
+- `--doc-panel-border`: `#303e50` — explanatory callout boundary
+- `--doc-panel-header`: `#222d3b` — table header surface
 
 ## Contrast rules
 
