@@ -1,71 +1,71 @@
 ---
 title: "Beluga Manager"
-description: "Unified Control Plane and management layer for the Beluga Data Platform"
+description: "Unified Control Plane & Edge UI for the Beluga Data Platform"
 github: "https://github.com/dasomel/beluga-manager"
-tags: ["Data Platform", "Control Plane", "Kafka", "Flink", "Iceberg", "Trino", "Airflow", "Kubernetes"]
-order: 3
+tags: ["Next.js", "React", "DataPlatform", "ControlPlane", "TypeScript", "TailwindCSS"]
+order: 11
 type: "own"
 featured: true
-problem: "Operating Kafka, Flink, Iceberg, Trino, and Airflow separately makes it difficult to understand service-spanning data flows, health, and operational context from one place"
-solution: "Integrate authoritative upstream APIs through adapters and discovery/correlation to expose unified Beluga domains and a single management experience for Pipelines, Data Assets, Services, and Operations"
+problem: "Fragmented operations across disparate dashboards (Kafka, Flink, Iceberg, Trino) slow down troubleshooting and pipeline orchestration"
+solution: "A unified control plane web UI aggregating pipeline health, job lifecycle states, and Iceberg schemas into a single workbench"
 ---
 
 ## Project Overview
 
-**Beluga Manager** is the unified entry point and management layer for the Beluga Data Platform.
+**Beluga Manager** is the unified control plane web application for managing and inspecting the Beluga data platform.
+
+Built with Next.js, React, TypeScript, and Tailwind CSS, it offers a responsive and intuitive user interface for multi-stage data pipeline orchestration.
+
+### Key Highlights
+
+- **Real-Time Topology Visualization**: Interactive visual mapping of data flows from CDC sources to Iceberg lakehouses
+- **Job Lifecycle Controls**: Trigger Flink savepoints, restart streaming jobs, and run Airflow DAGs
+- **Schema Explorer**: Inspect Iceberg table schemas, partition evolution, and snapshot time travel
+- **Centralized Alerting Hub**: Instant alerts for Kafka consumer lag spikes and Flink job exceptions
+
+---
+
+## Architecture Diagram
 
 ```text
-Upstream OSS
-    ↓
-Authoritative APIs
-    ↓
-Integration Adapters
-    ↓
-Discovery / Correlation
-    ↓
-Beluga Domain API
-    ↓
-Beluga Manager UI
+  Browser (Data Engineer / Ops)
+             │
+             ▼
+  ┌────────────────────────────────────────────────────────┐
+  │  Beluga Manager UI (Next.js App Router)               │
+  │  - Real-time Pipeline Topology Visualizer              │
+  │  - Flink / Kafka / Airflow Status Aggregator           │
+  │  - Iceberg Schema & Time-Travel Explorer               │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼ REST / WebSocket API
+  ┌────────────────────────────────────────────────────────┐
+  │  Beluga Platform Services                              │
+  │  (Kafka Connect · Flink REST · Trino Coordinator)     │
+  └────────────────────────────────────────────────────────┘
 ```
 
-It is not an OSS collection portal. It creates **cross-service operational context** by composing the APIs of specialized open-source components.
+---
 
-## Core Domains
+## Getting Started
 
-- **Pipeline** — cross-service data flow across Kafka Topics, Flink Jobs, Iceberg Tables, and Trino contexts
-- **Data Asset** — Catalog, Schema, Table, Column, Partition, and Query Context
-- **Service** — Identity, Version, Health, Dependencies, and Capabilities
-- **Operations** — Resource, Event, Health, Log, and Dependency-driven troubleshooting
+```bash
+# 1. Clone repository
+git clone https://github.com/dasomel/beluga-manager.git
+cd beluga-manager
 
-## Initial MVP
-
-The first vertical slice focuses on:
-
-```text
-Kafka → Flink → Iceberg → Trino
+# 2. Install dependencies and start dev server
+pnpm install
+pnpm dev
 ```
 
-The MVP validates Unified Service API, Service Discovery, Cross-service Correlation, Pipeline Domain API, health/status, drill-down, and the English/Korean UI foundation.
+---
 
-## Design Principles
+## Documentation Index
 
-- Keep each OSS authoritative for its own resources
-- Frontends consume Beluga Domain APIs rather than OSS-specific APIs
-- Prefer correlation and minimal cache/index state over broad metadata duplication
-- Isolate upstream API/version differences behind integration adapters
-- Never present uncertain relationships as authoritative facts
-- Validate product value read-first before introducing broad mutating operations
-
-## Internationalization
-
-- `en-US` — English
-- `ko-KR` — Korean
-- Browser locale detection
-- Manual language selection
-- Locale-neutral APIs
-- Actual Kafka Topics, Tables, Jobs, Namespaces, and identifiers are never translated
-
-## Links
-
-- **GitHub**: [dasomel/beluga-manager](https://github.com/dasomel/beluga-manager)
-- **Architecture**: [Beluga Manager Architecture](https://github.com/dasomel/beluga-manager/blob/main/docs/architecture.md)
+| Topic | Document Link | Summary |
+|---|---|---|
+| **Overview** | [Manager Overview](/oss/en/beluga-manager/overview) | Control plane philosophy and inspection scope |
+| **Architecture** | [Control Plane Architecture](/oss/en/beluga-manager/architecture) | Frontend/backend communication and state aggregation |
+| **Development** | [Development Guide](/oss/en/beluga-manager/development) | pnpm setup, component structure, and mock servers |
+| **Operations** | [Deployment & Operations](/oss/en/beluga-manager/operations) | Container packaging, environment variables, and K8s |

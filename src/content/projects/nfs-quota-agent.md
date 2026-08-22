@@ -1,132 +1,75 @@
 ---
 title: "NFS Quota Agent"
-description: "Kubernetes NFS PV에 XFS·ext4·Btrfs 파일시스템 쿼터를 자동 적용하고 웹 대시보드로 관리하는 에이전트"
+description: "Kubernetes NFS PersistentVolume 스토리지 쿼터 강제 에이전트"
 github: "https://github.com/dasomel/nfs-quota-agent"
-tags: ["Kubernetes", "NFS", "Storage", "Quota", "Go", "Web UI", "Helm", "Btrfs"]
-order: 2
+tags: ["Kubernetes", "Go", "Storage", "NFS", "XFS", "Quota", "gRPC", "Prometheus"]
+order: 8
 type: "own"
+featured: true
+problem: "Kubernetes 기본 NFS CSI 드라이버는 PersistentVolume에 대한 물리적 스토리지 용량 제한(Quota)을 강제하지 못해 특정 워크로드가 전체 NFS 스토리지를 고갈시킬 위험이 있음"
+solution: "Linux XFS Project Quota 메커니즘을 활용하여 NFS 공유 디렉토리별로 바이트 단위의 정확한 스토리지 쿼터를 강제하는 Go 데몬 및 QuotaPolicy CRD 구축"
 ---
 
 ## 프로젝트 소개
 
-**NFS Quota Agent**는 Kubernetes의 NFS 기반 PersistentVolume에 파일시스템 수준의 프로젝트 쿼터를 자동 적용하고, 사용량·정책·감사·고아 디렉터리를 웹 UI로 관리하는 Kubernetes 에이전트입니다.
+**NFS Quota Agent**는 Kubernetes 클러스터에서 NFS 기반 PersistentVolume(PV)에 대해 파일시스템 수준의 엄격한 용량 쿼터(Quota)를 강제하는 고성능 스토리지 에이전트 데몬입니다.
 
-NFS 환경에서는 PVC의 `requests.storage`가 실제 파일시스템 사용량 제한으로 자동 연결되지 않는 경우가 많습니다. 이 프로젝트는 NFS 서버 노드에서 실제 export 파일시스템을 제어해 그 간극을 메웁니다.
+Kubernetes 표준 NFS 프로비저너가 용량 제한을 강제하지 못하는 문제를 Linux 커널의 **XFS Project Quotas (`xfs_quota`)** 기능을 활용하여 해결합니다.
 
-## 최신 소스 점검 · 2026-08-20
+### 주요 기능 및 특징
 
-최근 소스에서는 **Go 1.26 환경에 맞춘 CI/toolchain 현대화**가 진행됐습니다.
+- **XFS Project Quota 엔진**: 서브디렉토리별 불변 프로젝트 ID 할당 및 하드/소프트 용량 제한 강제
+- **gRPC & HTTP API**: CSI 프로비저너 또는 외부 오케스트레이터와 연동 가능한 고속 인터페이스
+- **QuotaPolicy CRD**: 쿠버네티스 네이티브 매니페스트로 네임스페이스 및 PVC별 스토리지 정책 선언
+- **Prometheus 모니터링**: 용량 사용률, 남은 공간, 쿼터 초과 이벤트 메트릭 제공
+- **웹 관리 UI**: 직관적인 스토리지 사용 현황 대시보드 및 실시간 알림 기능
 
-- golangci-lint를 Go 1.26에 맞춰 modernize
-- 최신 Go toolchain에서 lint/build가 안정적으로 동작하도록 CI 기준 정리
+---
 
-현재 프로젝트 문서의 Go 1.26 / client-go v0.36.2 baseline과도 일치합니다.
-
-## 현재 상태
-
-- **v0.3.0 계열**
-- Go 1.26
-- Kubernetes client-go v0.36.2
-- XFS / ext4 / **Btrfs** 지원
-- Helm Chart
-- Multi-arch 이미지
-- Web UI 및 KO/EN i18n
-- ServiceMonitor / PrometheusRule / PDB 옵션
-
-## 주요 기능
-
-### 쿼터 관리
-
-- Native NFS PV 및 CSI NFS PV 감시
-- PV 용량 기반 자동 quota 적용
-- XFS project quota
-- ext4 project quota
-- Btrfs qgroup quota
-- `nfs.io/quota-status` 어노테이션 상태 추적
-
-### 웹 UI
-
-| 메뉴 | 기능 |
-|---|---|
-| **Quotas** | 실시간 사용량, PV/PVC 상태, quota 대비 사용률 |
-| **Orphans** | 고아 디렉터리 탐지·Dry-Run·정리 |
-| **Trends** | 24시간/7일/30일 사용량 추이 |
-| **Policies** | LimitRange/ResourceQuota 및 namespace 정책 |
-| **Audit Logs** | CREATE/UPDATE/DELETE/CLEANUP 감사 이력 |
-
-UI는 한국어/영어를 지원하며 quota 상태, 파일시스템 타입, 정리 결과 등을 운영자가 바로 확인할 수 있습니다.
-
-## 지원 파일시스템
-
-| 파일시스템 | 방식 | 요구사항 |
-|---|---|---|
-| XFS | `xfs_quota` project quota | `prjquota` |
-| ext4 | `setquota` + project attribute | `prjquota` |
-| Btrfs | qgroup quota | 대상 경로가 subvolume이어야 함 |
-
-Btrfs는 일반 디렉터리를 quota 대상으로 만들지 않고 qgroup 기반으로 동작하므로 대상이 subvolume인지 검증합니다.
-
-## 아키텍처
+## 아키텍처 다이어그램
 
 ```text
-Kubernetes API
-      ↓ Watch
-NFS Quota Agent
- ├─ PV/NFS path mapping
- ├─ Policy evaluation
- ├─ Quota Manager
- │   ├─ XFS
- │   ├─ ext4
- │   └─ Btrfs
- ├─ History
- ├─ Audit
- ├─ Metrics
- ├─ Cleanup
- └─ Web UI
-      ↓
-NFS Server local filesystem
+  Kubernetes Cluster               NFS Storage Host
+┌─────────────────────┐          ┌───────────────────────────────────┐
+│ PVC (Claim: 10Gi)   │          │  nfs-quota-agent Daemon (Go)      │
+│         │           │          │  - gRPC Server (:50051)           │
+│         ▼           │  gRPC    │  - HTTP API & Metrics (:8080)     │
+│ NFS CSI Provisioner ├─────────►│  - Quota Controller               │
+└─────────────────────┘          └─────────────────┬─────────────────┘
+                                                   │
+                                                   ▼ xfs_quota CLI / ioctl
+                                 ┌───────────────────────────────────┐
+                                 │  Linux XFS Filesystem             │
+                                 │  /srv/nfs/pvc-12345 (ProjID: 101) │
+                                 │  [Hard Limit: 10 GiB Enforced]    │
+                                 └───────────────────────────────────┘
 ```
 
-에이전트는 실제 파일시스템 quota 명령을 실행해야 하므로 **NFS 서버 노드에서 실행해야 합니다.** Kubernetes NFS client 노드에서 원격 mount만으로 quota를 설정할 수 없습니다.
+---
 
-## 정책 우선순위
-
-정책 기능은 다음 순서로 quota 기준을 결정합니다.
-
-**LimitRange > Namespace Annotation > Global Default**
-
-## Prometheus
-
-`:9090/metrics`에서 quota 및 agent 상태 메트릭을 제공하고, Helm에서는 선택적으로 `ServiceMonitor`와 `PrometheusRule`을 생성할 수 있습니다.
-
-## Helm
+## 시작하기 (Quickstart)
 
 ```bash
-helm install nfs-quota-agent ./charts/nfs-quota-agent \
-  --namespace nfs-quota-agent \
-  --create-namespace \
-  --set config.nfsBasePath=/export \
-  --set config.nfsServerPath=/data \
-  --set config.provisionerName=nfs.csi.k8s.io \
-  --set webUI.enabled=true
+# 1. 저장소 클론 및 빌드
+git clone https://github.com/dasomel/nfs-quota-agent.git
+cd nfs-quota-agent
+make build
+
+# 2. XFS 마운트 경로를 지정하여 데몬 실행
+sudo ./bin/nfs-quota-agent --nfs-root=/srv/nfs --port=8080 --grpc-port=50051
+
+# 3. Helm 차트로 쿠버네티스에 배포
+helm install nfs-quota-agent ./charts/nfs-quota-agent -n storage --create-namespace
 ```
 
-주요 기능 옵션은 `webUI`, `audit`, `cleanup`, `history`, `policy`, `metrics.serviceMonitor`, `metrics.prometheusRule`, `podDisruptionBudget`입니다.
+---
 
-## 품질과 보안
+## 상세 기술 문서
 
-최근 OSS modernization에서 Go 1.26 및 Kubernetes 라이브러리 업그레이드, hermetic unit test, `govulncheck`, quota command seam 테스트, path/project-name validation, UI XSS 방어 및 HTTP timeout 등을 정비했습니다.
-
-## 기술 문서
-
-| 문서 | 내용 |
-|---|---|
-| [에이전트 아키텍처](/ko/docs/nfs-quota-agent-architecture) | reconcile loop, 파일시스템별 quota, Helm 배포 |
-| [기능 가이드](/ko/docs/nfs-quota-agent-features) | 정책, 감사, 이력, cleanup, metrics |
-| [웹 UI](/ko/docs/nfs-quota-agent-web-ui) | dashboard와 API |
-
-## 참고 링크
-
-- **GitHub**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
-- **Helm Chart**: [nfs-quota-agent Charts](https://dasomel.github.io/nfs-quota-agent)
-- **Narwhal 연계**: [Narwhal](/ko/projects/narwhal)
+| 주제 | 문서 링크 | 설명 |
+|---|---|---|
+| **개요 (Overview)** | [에이전트 개요](/oss/nfs-quota-agent/overview) | XFS 기반 쿼터 강제 메커니즘과 설계 원칙 |
+| **아키텍처 (Architecture)** | [스토리지 아키텍처](/oss/nfs-quota-agent/architecture) | Linux XFS Project Quota 및 gRPC 데몬 내부 구조 |
+| **기능 가이드 (Feature Guide)** | [기능 및 CRD 가이드](/oss/nfs-quota-agent/feature-guide) | QuotaPolicy CRD, 동적 프로비저닝, 메트릭 |
+| **시작하기 (Getting Started)** | [설치 및 설정](/oss/nfs-quota-agent/getting-started) | systemd 서비스 등록 및 Helm 배포 가이드 |
+| **운영 가이드 (Operations)** | [운영 및 모니터링](/oss/nfs-quota-agent/operations) | Web UI 운영, 알림 설정 및 장애 복구 절차 |

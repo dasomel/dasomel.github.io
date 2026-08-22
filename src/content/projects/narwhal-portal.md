@@ -1,82 +1,78 @@
 ---
 title: "Narwhal Portal"
-description: "Narwhal Kubernetes Internal Developer Platform (IDP) 클러스터를 위한 관리 포탈"
+description: "Narwhal IDP를 위한 클라우드 네이티브 통합 관리 포털 (Next.js 16 + React 19)"
 github: "https://github.com/dasomel/narwhal-portal"
-tags: ["Next.js", "React", "Kubernetes", "IDP", "TypeScript", "Keycloak"]
+tags: ["Next.js", "React", "TypeScript", "TailwindCSS", "IDP", "gRPC", "Keycloak"]
 order: 7
 type: "own"
 featured: true
-problem: "Narwhal 클러스터의 상태, 앱 배포, 비용, 보안 등을 한눈에 파악하고 제어할 수 있는 통합 UI가 필요함"
-solution: "클러스터 메트릭, ArgoCD, 보안 스캔 등을 한 곳에 모은 자체 제작 Next.js 기반의 통합 관리 포탈 제공"
+problem: "수십 개 플랫폼 컴포넌트의 상태, 릴리스, 사용자 권한 및 리소스를 개별 대시보드로 관리하는 데 따른 운영 분절"
+solution: "Next.js 16과 gRPC 백엔드 기반으로 IDP 전반의 가시성과 운영 워크벤치를 제공하는 중앙 통합 포털 구축"
 ---
 
 ## 프로젝트 소개
 
-**Narwhal Portal**은 [Narwhal](/ko/projects/narwhal) Kubernetes **Internal Developer Platform (IDP)** 클러스터를 위한 관리 포탈(Next.js)입니다.
+**Narwhal Portal**은 Narwhal Kubernetes IDP의 중앙 제어 플레인과 개발자 워크벤치를 제공하는 현대적인 관리 포털 애플리케이션입니다.
 
-운영자와 개발자가 클러스터를 관찰하고 운영하는 데 사용하는 웹 UI로, 클러스터의 APISIX 게이트웨이를 통해 클러스터 내부에서 `https://portal.local.narwhal.internal` 주소로 서비스됩니다. 대시보드, 카탈로그, 비용 관리, 보안 및 거버넌스 뷰 등을 단일 인터페이스에서 통합 제공합니다.
+Next.js 16, React 19, TypeScript 및 Tailwind CSS를 기반으로 구축되었으며, Keycloak OIDC 통합 인증과 gRPC/Protocol Buffers 기반의 고성능 플랫폼 백엔드 통신을 지원합니다.
 
-## 주요 기능
+### 핵심 기술 및 특징
 
-| 메뉴 | 기능 |
-|------|------|
-| **Dashboard** | 클러스터 헬스, ArgoCD 앱 상태, 경고/알림 |
-| **Onboarding** | kubeconfig 발급, 시작 가이드 |
-| **Catalog / My Apps** | 배포된 서비스 카탈로그, 사용자별 앱 뷰 |
-| **Nodes** | 클러스터 노드 인벤토리 및 상태 |
-| **Cost** | 비용 시각화 및 가시성 |
-| **Security / Governance / Compliance** | Trivy 취약점 리포트, 스코어카드, 정책, RBAC 및 감사 뷰 |
-| **Architecture / Templates / Tools** | 노드·네임스페이스·서비스 그래프, 템플릿, 플랫폼 도구 그리드 |
-| **Settings** | 사용자, 라우트, 인증서, 정책 관리 |
+- **Next.js 16 & React 19**: Server Components와 클라이언트 인터랙션이 조화된 고성능 아키텍처
+- **Keycloak OIDC 연동**: 포털 접근 권한 및 플랫폼 API 요청에 대한 토큰 기반 보안 인가
+- **gRPC / Protocol Buffers**: 마이크로서비스 및 플랫폼 에이전트 간의 타입 안전한 초고속 통신
+- **Skaffold 개발 워크플로**: 로컬 쿠버네티스 환경에서의 컨테이너 실시간 핫리로딩 지원
+- **선언적 컴포넌트 시스템**: Radix UI 및 Tailwind CSS 기반의 반응형 엔지니어링 대시보드
 
-## 최신 소스 점검 · 2026-08-20
+---
 
-최근 소스에서는 포탈 자체 기능뿐 아니라 **공급망 보안과 CI 신뢰성**을 강화했습니다.
+## 아키텍처 다이어그램
 
-- GitHub Actions를 mutable tag 대신 **commit SHA pinning**으로 고정
-- Dependabot으로 GitHub Actions 및 npm 의존성 주간 업데이트 구성
-- 주요 dependency 변경은 Build Check에서 frozen-lockfile install, type-check, build로 검증
-- 컨테이너 이미지에 **SPDX SBOM + SLSA provenance**를 첨부
-- 아키텍처별 native runner 빌드로 multi-arch 이미지 생성
-- private vulnerability reporting과 `SECURITY.md` 추가
-- Next/React major upgrade는 routine dependency PR에서 제외하고 별도 migration으로 취급
-
-즉 Narwhal Portal의 최신 방향은 단순 dashboard 기능 확장보다 **플랫폼 UI 자체의 supply-chain 보안과 배포 신뢰성 강화**입니다.
-
-## 기술 스택
-
-| 레이어 | 기술 |
-|-------|------------|
-| **프레임워크** | Next.js 16 (App Router) + React 19 |
-| **스타일링** | TailwindCSS 4 + shadcn/ui |
-| **데이터** | TanStack Query (서버) + Zustand (클라이언트) |
-| **인증** | NextAuth 5 (베타) + Keycloak OIDC |
-| **캐시** | Valkey (ioredis) |
-| **시크릿** | OpenBao Agent Injector |
-| **패키지 매니저** | pnpm (@10.27.0) |
-
-## 아키텍처 및 역할
-
-포탈은 4가지 역할(`cluster-admin`, `developer`, `viewer`, `guest`)에 기반한 RBAC 접근 제어를 적용하며, OIDC 연동은 Keycloak을 사용합니다. 다국어(i18n)도 지원하여 쿠키를 통해 한국어/영어 전환이 가능합니다.
-
-자세한 시스템 설계와 컴포넌트 간 상호작용은 [아키텍처 문서](/ko/docs/narwhal-portal-architecture)를 참조하세요.
-
-## 시작하기 및 배포
-
-로컬 개발 환경에서는 아래의 명령어로 실행할 수 있습니다.
-
-```bash
-pnpm install
-pnpm dev
+```text
+  Browser (Developer / Admin)
+             │
+             ▼ HTTPS / OIDC
+  ┌───────────────────────────────────────────────┐
+  │  Narwhal Portal (Next.js 16 App Router)       │
+  │  - Keycloak Auth Session Verification         │
+  │  - Dashboard Server Components                │
+  │  - Developer Workbench Client UI              │
+  └──────────────────────┬────────────────────────┘
+                         │
+                         ▼ gRPC / Proto
+  ┌───────────────────────────────────────────────┐
+  │  Narwhal IDP Backend & Control Plane Services │
+  │  (Kubernetes API · Gitea · ArgoCD · Keycloak) │
+  └───────────────────────────────────────────────┘
 ```
 
-Skaffold와 Kaniko를 활용하여 로컬 Docker 없이 클러스터 내부에서 핫 리로드를 지원하는 HMR 개발 루프(`pnpm run dev:skaffold`)도 제공합니다.
+---
 
-## 참고 링크
+## 시작하기 (Quickstart)
 
-- **GitHub Repository**: [dasomel/narwhal-portal](https://github.com/dasomel/narwhal-portal)
-- **Narwhal 클러스터**: [IDP 클러스터 프로젝트](/ko/projects/narwhal)
-- **문서 가이드**:
-  - [아키텍처](/ko/docs/narwhal-portal-architecture)
-  - [개발 가이드](/ko/docs/narwhal-portal-development)
-  - [배포 가이드](/ko/docs/narwhal-portal-deployment)
+```bash
+# 1. 저장소 클론
+git clone https://github.com/dasomel/narwhal-portal.git
+cd narwhal-portal
+
+# 2. 의존성 설치
+pnpm install
+
+# 3. 로컬 개발 서버 실행
+pnpm dev
+
+# 또는 Skaffold로 쿠버네티스에 실시간 핫리로딩 배포
+skaffold dev
+```
+
+---
+
+## 상세 기술 문서
+
+| 주제 | 문서 링크 | 설명 |
+|---|---|---|
+| **개요 (Overview)** | [포털 개요](/oss/narwhal-portal/overview) | Narwhal Portal의 아키텍처 철학과 사용자 시나리오 |
+| **아키텍처 (Architecture)** | [포털 아키텍처](/oss/narwhal-portal/architecture) | Next.js 16 구조, gRPC 클라이언트 및 OIDC 흐름 |
+| **시작하기 (Getting Started)** | [개발 환경 설정](/oss/narwhal-portal/getting-started) | pnpm, 로컬 환경변수 및 Skaffold 실행 가이드 |
+| **운영 가이드 (Operations)** | [배포 및 운영](/oss/narwhal-portal/operations) | Multi-stage 컨테이너 빌드, 헬스체크 및 환경변수 |
+| **의사결정 기록 (ADR)** | [아키텍처 결정 기록](/oss/narwhal-portal/adr) | Skaffold 개발 워크플로 및 비용 최적화 ADR |

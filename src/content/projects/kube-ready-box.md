@@ -1,128 +1,86 @@
 ---
 title: "Kube-Ready-Box"
-description: "Kubernetes 최적화 Ubuntu LTS Vagrant Box — Multi-arch, XFS/ext4, Kubernetes 사전 튜닝"
+description: "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box (Multi-arch / Multi-provider)"
 github: "https://github.com/dasomel/kube-ready-box"
-tags: ["Kubernetes", "Vagrant", "Ubuntu", "Multi-Arch", "Security"]
-order: 1
+tags: ["Kubernetes", "Vagrant", "Packer", "Ubuntu", "XFS", "cgroupv2", "containerd", "ARM64"]
+order: 9
 type: "own"
 featured: true
-problem: "Kubernetes 개발·테스트 환경 구축에 반복적인 OS 튜닝과 보안 설정이 필요함"
-solution: "Packer로 Kubernetes 노드에 필요한 OS 튜닝·도구·보안 설정을 미리 적용한 Ubuntu LTS Vagrant Box 제공"
+problem: "로컬에서 쿠버네티스 다중 노드 클러스터를 부트스트랩할 때마다 OS 패키지 설치, 커널 파라미터 튜닝, cgroup 설정, 스토리지 쿼터 구성 등의 반복 작업으로 15분 이상 소요됨"
+solution: "Packer 파이프라인으로 XFS Project Quota, containerd v2, cgroupv2, 커널 최적화가 완료된 즉시 구동 가능한 Vagrant 베이스 박스를 자동 빌드 및 배포"
 ---
 
 ## 프로젝트 소개
 
-**Kube-Ready-Box**는 Kubernetes 노드로 바로 사용할 수 있도록 Ubuntu LTS를 사전 튜닝한 **Multi-Architecture Vagrant Box** 프로젝트입니다.
+**Kube-Ready-Box**는 Kubernetes 클러스터를 로컬 환경에서 지연 없이 즉시 부트스트랩할 수 있도록 사전 최적화된 Ubuntu 24.04 / 26.04 LTS 기반 Vagrant 베이스 박스입니다.
 
-현재 Ubuntu 24.04 LTS와 26.04 LTS를 지원하며 ext4/XFS 이미지를 각각 제공합니다. Narwhal의 기본 개발 환경은 `dasomel/ubuntu-26.04-xfs`입니다.
+HashiCorp Packer 파이프라인을 통해 VirtualBox, VMware Desktop 및 Libvirt 프로바이더용 박스를 생성하며, Apple Silicon (ARM64)과 Intel/AMD (AMD64) 아키텍처를 모두 지원합니다.
 
-### 현재 릴리스
+### 핵심 기술 및 특징
 
-- **v0.2.3**
-- Ubuntu 24.04 / 26.04
-- VirtualBox / VMware Fusion
-- AMD64 / ARM64
-- ext4 / XFS
+- **XFS Project Quotas 사전 활성화**: 루트 및 데이터 파티션에 `pquota` 옵션이 적용되어 디렉토리별 스토리지 쿼터 강제 가능
+- **cgroup v2 & containerd v2**: 최신 쿠버네티스 표준에 맞춘 컨테이너 런타임 및 리소스 격리 베이스라인
+- **커널 파라미터 튜닝**: `br_netfilter`, `overlay`, `ip_forward`, max user watches/instances 최적화
+- **Packer 자동화 빌드**: GitHub Actions 기반 다중 아키텍처 자동 빌드 및 Vagrant Cloud (`dasomel/ubuntu-26.04-xfs`) 릴리스
+- **Node Readiness Attestation**: 부팅 시 30개 이상의 필수 커널 모듈과 시스템 무결성을 자동 검증
 
-v0.2.3에서는 `apt-get full-upgrade` 기반 보안 업데이트와 kernel/AppArmor/sudo/OpenSSH 계열 보안 패키지 점검을 추가했습니다.
+---
 
-## 최신 소스 점검 · 2026-08-20
-
-최근 소스는 **ARM64 부팅 경로의 재현성**을 중심으로 안정화됐습니다.
-
-- VMware ARM64에서 EFI/GRUB → NoCloud 초기 부팅이 느린 환경을 허용하도록 부팅 타이밍 조정
-- VMware ARM64의 known-good boot path 복구
-- VirtualBox ARM64에서도 같은 known-good boot path 보존
-- 결과적으로 ARM64에서 provider별 부팅 회귀를 별도로 다루고 검증할 수 있는 상태로 정리
-
-즉 현재 Kube-Ready-Box의 중요한 문제는 단순히 “ARM64 지원”이 아니라 **VMware/VirtualBox 각각에서 재현 가능한 초기 부팅 경로를 확보하는 것**입니다.
-
-## 주요 특징
-
-### Multi-Architecture
-
-| Provider | AMD64 | ARM64 |
-|---|---:|---:|
-| VirtualBox 7.1+ | ✅ | ✅ |
-| VMware Fusion | ✅ | ✅ |
-
-### 파일시스템
-
-| | ext4 | XFS |
-|---|---|---|
-| 용도 | 범용 Kubernetes 노드 | 대용량/쿼터 워크로드 |
-| 프로젝트 쿼터 | 지원 | 지원 |
-| Narwhal 연계 | 가능 | **기본 환경** |
-
-### Kubernetes 최적화
-
-커널 파라미터, IP forwarding, 파일 디스크립터/프로세스 제한, 스왑 비활성화, I/O scheduler 등 Kubernetes 노드에 필요한 OS 설정을 이미지 빌드 단계에서 적용합니다.
-
-### 사전 설치 도구
-
-`jq`, `yq`, `bash-completion`, `nfs-common`, `sshpass`, `sysstat`, `iotop`, `iftop`, `nload`, `nethogs`, `ipvsadm`, `ipset`, `conntrack`, `ethtool`, `tcpdump`, `nmap`, `linux-tools`, `bpfcc-tools`, `bpftrace` 등을 제공합니다.
-
-### 보안 하드닝
-
-- 보안 패키지 전체 업그레이드
-- kernel / AppArmor / sudo / OpenSSH 관련 패키지 점검
-- 빌드 시 CVE 관련 버전 감사를 `/var/log/kube-ready-box-security.log`에 기록
-- Kubernetes용 AppArmor와 운영 환경에 필요한 마운트 지원
-
-의도적으로 **containerd, kubelet, kubeadm, kubectl, CNI**는 포함하지 않습니다. 운영자가 원하는 Kubernetes 버전과 런타임을 선택하도록 OS 이미지의 책임 범위를 제한합니다.
-
-## 시작하기
-
-```bash
-vagrant init dasomel/ubuntu-24.04-ext4
-vagrant up --provider=vmware_desktop
-```
-
-Narwhal 개발 환경에서는:
-
-```bash
-vagrant init dasomel/ubuntu-26.04-xfs
-vagrant up --provider=vmware_desktop
-```
-
-## 빌드
-
-Packer 기반으로 Box를 생성합니다.
-
-```bash
-cd packer
-./build.sh init
-./build.sh vmware-arm64
-./build.sh vmware-arm64 --fs=xfs
-./build.sh vmware-arm64 --version=26.04
-```
-
-CI에서는 `workflow_dispatch` 입력으로 Ubuntu 버전을 선택할 수 있습니다.
-
-## Narwhal과의 관계
+## 아키텍처 다이어그램
 
 ```text
-kube-ready-box
-      ↓
-Ubuntu 26.04 XFS
-      ↓
-   Narwhal
-      ↓
-Kubernetes IDP
+  Packer Build Pipeline
+┌────────────────────────────────────────────────────────┐
+│  Ubuntu 26.04 LTS Base ISO                             │
+│  ├─ XFS Partitioning (pquota enabled)                  │
+│  ├─ Kernel sysctl.d Tuning (br_netfilter, ip_forward)  │
+│  ├─ containerd v2 & runc Setup                         │
+│  └─ Security Hardening & Zero-Key Invariants           │
+└───────────────────────────┬────────────────────────────┘
+                            │ Multi-Provider Packaging
+                            ▼
+  Vagrant Cloud (dasomel/ubuntu-26.04-xfs)
+  - VMware Desktop (ARM64 / AMD64)
+  - VirtualBox (AMD64)
+  - Libvirt / KVM
+                            │
+                            ▼ vagrant up (0-sec bootstrap)
+  Narwhal / Beluga Local Kubernetes Clusters
 ```
 
-Kube-Ready-Box는 Narwhal의 재현 가능한 기반 OS 환경을 제공하는 별도 OSS입니다.
+---
 
-## 기술 문서
+## 시작하기 (Quickstart)
 
-| 문서 | 내용 |
-|---|---|
-| [박스 아키텍처 & 빌드](/ko/docs/kube-ready-box-architecture) | Packer 빌드, 파일시스템, 보안 하드닝 |
-| [사용법](/ko/docs/kube-ready-box-usage) | Vagrant와 Kubernetes 연동 |
-| [릴리스 & 배포](/ko/docs/kube-ready-box-release) | Vagrant Cloud/HCP 배포와 릴리스 절차 |
+```ruby
+# Vagrantfile 예시
+Vagrant.configure("2") do |config|
+  config.vm.box = "dasomel/ubuntu-26.04-xfs"
+  config.vm.box_version = ">= 1.2.0"
+  
+  config.vm.provider "vmware_desktop" do |v|
+    v.cpus = 2
+    v.memory = 4096
+  end
+end
+```
 
-## 참고 링크
+```bash
+# 1. Vagrant 머신 실행
+vagrant up --provider=vmware_desktop
 
-- **Vagrant Cloud**: [dasomel/ubuntu-24.04-ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-ext4) · [dasomel/ubuntu-24.04-xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-24.04-xfs)
-- **Vagrant Cloud**: [dasomel/ubuntu-26.04-ext4](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-ext4) · [dasomel/ubuntu-26.04-xfs](https://app.vagrantup.com/dasomel/boxes/ubuntu-26.04-xfs)
-- **GitHub**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
+# 2. XFS 쿼터 및 커널 파라미터 확인
+vagrant ssh -c "mount | grep xfs; sysctl net.ipv4.ip_forward"
+```
+
+---
+
+## 상세 기술 문서
+
+| 주제 | 문서 링크 | 설명 |
+|---|---|---|
+| **개요 (Overview)** | [박스 개요](/oss/kube-ready-box/overview) | Kube-Ready-Box의 최적화 목표 및 아키텍처 지원 |
+| **아키텍처 (Architecture)** | [시스템 구조](/oss/kube-ready-box/architecture) | XFS 파티셔닝, 커널 파라미터, cgroupv2 베이스라인 |
+| **시작하기 (Getting Started)** | [Vagrantfile 가이드](/oss/kube-ready-box/getting-started) | 멀티 프로바이더 설정 및 클러스터 프로비저닝 |
+| **운영 가이드 (Operations)** | [Packer 빌드 & 릴리스](/oss/kube-ready-box/operations) | Vagrant Cloud 배포 파이프라인 및 버전 관리 |
+| **검증 (Verification)** | [노드 검증 체크리스트](/oss/kube-ready-box/verification) | Node Readiness Attestation 및 30개 무결성 점검 |

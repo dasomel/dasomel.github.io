@@ -4,12 +4,12 @@ import { MDXContent } from '@/components/MDXContent';
 import OssProjectShell from '@/components/oss/OssProjectShell';
 
 export function generateStaticParams() {
-  const docs = getDocs('ko').filter((d) => d.slug.startsWith('openforge/'));
+  const docs = getDocs('ko').filter((d) => d.slug.includes('/'));
   return docs.map((doc) => {
-    const relativeSlug = doc.slug.replace(/^openforge\//, '');
+    const [project, ...slug] = doc.slug.split('/');
     return {
-      project: 'openforge',
-      slug: relativeSlug.split('/'),
+      project,
+      slug,
     };
   });
 }

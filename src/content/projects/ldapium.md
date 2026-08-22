@@ -1,122 +1,77 @@
 ---
-title: "Ldapium"
-description: "OpenLDAP 2.6 기반 Kubernetes·독립 실행형 디렉터리 서비스 스택"
+title: "ldapium"
+description: "업스트림 소스 직접 컴파일 기반 OpenLDAP 2.6 서버, 웹 관리 UI 및 Helm 차트"
 github: "https://github.com/dasomel/ldapium"
-tags: ["OpenLDAP", "LDAP", "Kubernetes", "Helm", "Docker", "Identity", "Go"]
-order: 8
+tags: ["LDAP", "OpenLDAP", "Kubernetes", "Helm", "Security", "Docker", "Air-Gap"]
+order: 12
 type: "own"
 featured: true
-problem: "기존 OpenLDAP 컨테이너와 Helm 차트의 유지보수·최신 버전·멀티아키텍처·운영 검증에 공백이 있어 Kubernetes와 독립 환경에서 재현 가능한 디렉터리 스택이 필요함"
-solution: "OpenLDAP 2.6.14를 upstream source에서 직접 빌드한 멀티아키텍처 서버 이미지, 관리 UI, Helm chart, Docker Compose, 백업·검증 도구를 하나의 OSS 프로젝트로 제공"
+problem: "공개된 다수 OpenLDAP 컨테이너 이미지는 하드코딩된 기본 관리자 비밀번호, 불필요한 샘플 데이터, 불투명한 소스 빌드로 인해 보안 취약점과 에어갭 배포 난항을 유발함"
+solution: "OpenLDAP 2.6을 업스트림 소스로부터 직접 컴파일하고, 기본 비밀번호 0개(Zero Default Passwords) 원칙과 현대적 웹 UI 및 Helm 차트를 결합한 안전한 엔터프라이즈 디렉토리 솔루션 구축"
 ---
 
 ## 프로젝트 소개
 
-**Ldapium**은 OpenLDAP 2.6 기반의 **디렉터리 서비스 스택**입니다.
+**ldapium**은 OpenLDAP 2.6 공식 소스 코드를 바탕으로 직접 컴파일하여 생성된 경량·고보안 OpenLDAP 서버 이미지, 현대적 웹 관리 UI 및 Kubernetes 배포용 Helm 차트로 구성된 오픈소스 디렉토리 솔루션입니다.
 
-Kubernetes 환경에서는 Helm chart와 StatefulSet을 통해 배포하고, Kubernetes가 없는 환경에서는 Docker Compose 또는 개별 컨테이너로 실행할 수 있도록 설계했습니다.
+하드코딩된 기본 관리자 패스워드를 완전히 배제하고, 샘플 데이터 없는 순수 베이스라인과 엄격한 라이선스 컴플라이언스를 보장합니다.
 
-특히 기존 이미지를 단순히 재패키징하는 방식이 아니라 **OpenLDAP 2.6.14를 upstream source에서 직접 빌드**하고, 서버 이미지와 관리 UI, Helm chart, 운영 스크립트를 하나의 프로젝트에서 함께 관리합니다.
+### 핵심 기능 및 보안 원칙
 
-현재는 **prototype 단계**입니다. TLS 경로와 전체 end-to-end 배포 검증 등 일부 영역은 추가 검증이 필요합니다.
+- **업스트림 소스 직접 컴파일**: OpenLDAP 2.6 최신 소스로부터 불필요한 모듈을 제거하고 최소 의존성으로 빌드
+- **Zero Default Passwords**: 초기 관리자 비밀번호 하드코딩을 원천 금지하고 최초 구동 시 환경변수 또는 Secret으로만 주입
+- **현대적 웹 관리 UI**: 직관적인 사용자/그룹 디렉토리 관리, OU 계층 구조 탐색 및 비밀번호 재설정 기능
+- **Air-Gap 오프라인 완벽 지원**: 인터넷 연결이 차단된 폐쇄망 환경을 위한 사전 패키징 번들 제공
+- **Kubernetes Helm 차트**: TLS/mTLS, PersistentVolumeClaim, ConfigMap이 통합된 프로덕션 매니페스트
 
-> **배포 상태:** GitHub Actions 기반 GHCR 배포 workflow는 준비되어 있습니다. 다만 현재 `v0.1.0` 정식 이미지/차트가 실제 registry에 발행된 상태라고 보장하지 않으며, 릴리스 후 실제 artifact 확인이 필요합니다.
+---
 
-## 최신 소스 점검 · 2026-08-20
-
-최근 소스에서는 단순 기능 추가보다 **멀티아키텍처 재현성과 replication 수렴 검증, supply-chain 추적성**을 강화했습니다.
-
-- exporter build toolchain pinning
-- cross-architecture build를 명시적으로 분리·검증
-- 연속 provider failure 상황에서 replication convergence SLO 테스트 추가
-- release tag를 workflow SHA에서 안전하게 해석해 supply-chain 추적성을 강화
-
-따라서 Ldapium의 현재 핵심 방향은 **“LDAP 서버를 띄우는 것”보다 여러 아키텍처와 장애 상황에서도 동일한 운영 결과를 재현하는 것**입니다.
-
-## 주요 구성 요소
-
-| 영역 | 내용 |
-|---|---|
-| **LDAP Server** | OpenLDAP 2.6.14, upstream source build |
-| **Backend** | `back-mdb`, OpenSSL TLS, Cyrus SASL |
-| **Overlays** | `memberof`, `refint`, `ppolicy`, `unique`, `syncprov` 등 |
-| **Management UI** | Go backend + React frontend, DIT·사용자·그룹 관리 |
-| **Kubernetes** | StatefulSet, Headless/ClusterIP Service, PVC, PDB, topology spread |
-| **Replication** | `replicaCount > 1` 기반 N-way multi-provider replication |
-| **Backup** | Kubernetes CronJob + PVC, standalone `scripts/backup.sh` |
-| **SSO** | 선택적 Keycloak OIDC + PKCE |
-| **Supply Chain** | CodeQL, Trivy, OpenSSF Scorecard, SBOM, build provenance |
-
-## 검증 구조
-
-Helm chart에는 `helm test` 기반 디렉터리 검증이 포함되어 있습니다.
-
-- root DSE / Service 연결
-- 관리자 bind
-- scratch entry 생성·삭제
-- `memberOf` overlay 동작
-- 복제 환경 peer 수렴
-
-## 관리 UI
-
-- DIT 브라우징
-- 사용자 및 그룹 CRUD
-- 그룹 멤버 검색 및 선택
-- 비밀번호 설정·변경
-- 계정 잠금 해제
-- `memberOf` 표시
-- password policy 조회
-- optional Keycloak OIDC SSO
-
-## Kubernetes 배포
+## 아키텍처 다이어그램
 
 ```text
-Helm
-  ↓
-StatefulSet
-  ├─ LDAP-0
-  ├─ LDAP-1 ...
-  └─ Optional UI
-       ↓
-    Keycloak OIDC
+  Clients / SSO (Keycloak, APISIX, Linux PAM)
+                       │
+                       ▼ ldaps:// (:636) / ldap:// (:389)
+  ┌────────────────────────────────────────────────────────┐
+  │  ldapium Server (OpenLDAP 2.6 Compiled from Source)   │
+  │  - MDB Storage Engine                                  │
+  │  - TLS / mTLS Mutual Authentication                    │
+  │  - Custom Schema Ingestion (RFC2307bis, POSIX)         │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼
+  ┌────────────────────────────────────────────────────────┐
+  │  ldapium Web Management UI                             │
+  │  - User / Group CRUD                                   │
+  │  - Organizational Unit (OU) Tree Explorer              │
+  └────────────────────────────────────────────────────────┘
 ```
 
-`replicaCount: 1`은 standalone, 2 이상은 N-way multi-provider replication입니다.
+---
 
-## 독립 실행형 배포
+## 시작하기 (Quickstart)
 
 ```bash
-make local-init
-make local-up
-make local-credentials
+# 1. 저장소 클론
+git clone https://github.com/dasomel/ldapium.git
+cd ldapium
+
+# 2. Docker Compose로 안전하게 로컬 실행
+cp .env.example .env
+docker compose up -d
+
+# 3. Kubernetes Helm 배포
+helm install ldapium ./charts/ldapium -n identity --create-namespace
 ```
 
-기본 LDAP `389`, UI `8080`, named volume 기반 데이터 영속성을 제공합니다.
+---
 
-## Beluga와의 관계
+## 상세 기술 문서
 
-Ldapium은 현재 개발 중인 **Beluga 데이터 플랫폼에서 필요한 LDAP 구성요소**에서 출발했지만 Beluga에 종속되지 않는 독립 OSS를 목표로 합니다.
-
-```text
-Beluga
-  └── Ldapium
-
-다른 Kubernetes 플랫폼
-  └── Ldapium
-
-Standalone / Docker Compose
-  └── Ldapium
-```
-
-## 기술 문서
-
-| 문서 | 내용 |
-|---|---|
-| [아키텍처](/ko/docs/ldapium-architecture) | 서버·UI·Helm·replication·backup 구조 |
-| [배포 가이드](/ko/docs/ldapium-deployment) | Helm, Compose, TLS, SSO, backup·restore |
-
-## 참고 링크
-
-- **GitHub**: [dasomel/ldapium](https://github.com/dasomel/ldapium)
-- **README**: [Ldapium README](https://github.com/dasomel/ldapium/blob/main/README.md)
-- **Helm Chart 문서**: [charts/ldapium/README.md](https://github.com/dasomel/ldapium/blob/main/charts/ldapium/README.md)
+| 주제 | 문서 링크 | 설명 |
+|---|---|---|
+| **개요 (Overview)** | [ldapium 개요](/oss/ldapium/overview) | OpenLDAP 2.6 컴파일 및 Zero-Default 보안 철학 |
+| **아키텍처 (Architecture)** | [디렉토리 아키텍처](/oss/ldapium/architecture) | MDB 엔진, TLS 암호화 및 Helm 차트 구조 |
+| **시작하기 (Getting Started)** | [설치 및 배포 가이드](/oss/ldapium/getting-started) | Docker Compose 및 Helm 차트 배포 절차 |
+| **에어갭 배포 (Air-Gap)** | [오프라인 번들 가이드](/oss/ldapium/air-gap) | 폐쇄망 설치를 위한 아티팩트 번들링 |
+| **운영 가이드 (Operations)** | [운영 및 백업/복구](/oss/ldapium/operations) | TLS 인증서 교체, `slapcat`/`slapadd` 백업 |

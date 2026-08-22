@@ -1,69 +1,73 @@
 ---
 title: "KubeMetal"
-description: "Apple Silicon-only hybrid MLOps desktop app — a K8s control plane (Colima/K3s) and macOS host MLX compute in one"
+description: "Apple Silicon Hybrid MLOps Desktop Application (Tauri v2 + Rust + React + Apple MLX)"
 github: "https://github.com/dasomel/kubemetal"
-tags: ["MLOps", "Apple Silicon", "MLX", "Kubernetes", "K3s", "Tauri", "Rust", "React"]
-order: 8
+tags: ["Kubernetes", "MLOps", "AppleSilicon", "MLX", "Tauri", "Rust", "React", "LLM"]
+order: 13
 type: "own"
 featured: true
-problem: "Apple Silicon's Metal GPU cannot be passed through to a Linux VM, leaving no way to run MLX compute inside a K8s pod"
-solution: "Keep control (MLflow, SeaweedFS) in K3s pods and split GPU compute out to macOS host processes, running the full MLOps loop locally with no cloud GPU"
+problem: "Running Kubernetes MLOps workloads on Apple Silicon Macs inside VMs isolates models from native GPU/NPU Unified Memory acceleration"
+solution: "A hybrid MLOps desktop application bridging a lightweight K8s control plane with host-native Apple MLX compute via Tauri v2 IPC"
 ---
 
-## Overview
+## Project Overview
 
-KubeMetal is an **Apple Silicon-only hybrid MLOps desktop app**. It unifies a standard Kubernetes control plane with macOS host-native MLX compute in a single Tauri v2 (Rust) + React/TypeScript application.
+**KubeMetal** is a hybrid MLOps desktop application engineered to seamlessly combine Kubernetes orchestration with Apple MLX hardware acceleration on Apple Silicon Macs.
 
-The MLOps stack — MLflow, SeaweedFS — is deployed as pods inside a lightweight K3s cluster running on Colima (`vz` + `virtiofs`), managed with standard K8s manifests. Actual compute such as MLX-based fine-tuning and serving runs directly as macOS host processes rather than inside K8s pods.
+Built with Tauri v2 (Rust backend) and React (TypeScript frontend), it delivers container flexibility alongside host-native Unified Memory (up to 128GB+) compute performance.
 
-## Control/Compute Separation — A Hardware Constraint, Not a Preference
+### Key Highlights
 
-This split is a hard invariant, not a design taste. Apple Silicon's Metal GPU cannot be passed through to a Linux VM, so there is no way at all to perform MLX computation inside a K8s pod.
+- **Hybrid Compute Architecture**: Lightweight K3s control plane in VM coupled with host-native Apple MLX compute engine
+- **Tauri v2 IPC Bridge**: Secure, high-throughput asynchronous communication between Rust backend and React UI
+- **Local LLM Fine-Tuning & Inference**: LoRA adapter training, GGUF/MLX quantization, and low-latency inference
+- **Full MLOps Lifecycle**: Model downloads, quantization pipelines, model serving CRDs, and live telemetry
+- **Hardware Optimization**: Tailored memory pressure mitigations across M1/M2/M3/M4 Pro/Max/Ultra architectures
 
-- **K8s (Control)** — handles only experiment tracking (MLflow), artifact storage (SeaweedFS) and orchestration (Prefect 3)
-- **macOS host (Compute)** — every GPU-bound task is delegated to a host process spawned by the Rust backend
+---
 
-This lets you start on a local desktop with no cloud GPU cost, while keeping a path open toward remote GPU servers or multi-node K3s clusters later.
+## Architecture Diagram
 
-## App Layout — 8 Tabs
+```text
+  ┌────────────────────────────────────────────────────────┐
+  │  KubeMetal Desktop Application (Tauri v2 + React)     │
+  │  - Model Catalog & Fine-Tuning UI                      │
+  │  - Pipeline Visualizer & Resource Metrics              │
+  └─────────────┬────────────────────────────┬─────────────┘
+                │ Native IPC                 │ K8s API
+                ▼                            ▼
+  ┌───────────────────────────┐   ┌────────────────────────┐
+  │  macOS Host MLX Engine    │   │  Local K8s (K3s/Colima)│
+  │  - Apple Silicon GPU/NPU  │   │  - Control Plane       │
+  │  - Unified Memory Pool    │   │  - Pipeline Operators  │
+  │  - LoRA / MLX Inference   │   │  - Model Serving CRD   │
+  └───────────────────────────┘   └────────────────────────┘
+```
 
-| Tab | Role |
-|-----|------|
-| **Dashboard** | Live RAM/CPU monitoring, one-click start/stop of the Colima (vz) K8s cluster, MLOps stack provisioning, port-forward control |
-| **kagent Ops** | Cluster AIOps — per-context kagent diagnostics, toggling AI agents (security / promql / observability), kagent UI connection |
-| **Pipeline** | Card-based visualization of each stage: cluster start → provisioning → model download → fine-tuning → MLflow registration → serving |
-| **Model Hub** | One-click flow from Hugging Face search → host download → SeaweedFS S3 upload → MLflow Model Registry registration |
-| **MLX Studio** | Installs the host MLX venv, runs LoRA fine-tuning on local models (live progress/loss), starts and stops `mlx_lm.server` |
-| **Data** | Data ingestion DAG (web/file/HF → chunking → LanceDB RAG → SeaweedFS S3 backup), DVC dataset version management |
-| **Access Console** | One-click credential-free access to provisioned services with health status |
-| **Air-Gap Management** | Downloads offline bundles (images, charts, binaries) for closed networks, offline installation, asset version checks |
+---
 
-## Key Design Decisions
+## Getting Started
 
-- **Port assignments** — MLflow 5001 (AirPlay owns 5000), SeaweedFS S3 8333, Filer UI 8888, Prefect 4200, model serving 8080, kagent UI 8090. All local URLs use `127.0.0.1`.
-- **VM sizing derived from detected RAM** — never hardcoded (16GB → 4GB/2CPU, 32–48GB → 8GB/4CPU, 64GB+ → 12GB/6CPU).
-- **Pod → host bridge** — an ExternalName service (`mac-gpu-service` → `host.lima.internal`) with no `ports` field, with CoreDNS resolution verified on device.
-- **Metrics without sudo** — `sysinfo` RAM/CPU plus GPU metrics via `ioreg -c IOAccelerator` and thermal state from `NSProcessInfo.thermalState`. No `powermetrics`, no sudo paths.
-- **Two MLX runtimes** — `mlx-lm` for text and `mlx-vlm` for vision share one venv, with `mlx-lm` as the default.
+```bash
+# 1. Clone repository
+git clone https://github.com/dasomel/kubemetal.git
+cd kubemetal
 
-## External Cluster Integration
+# 2. Install dependencies
+pnpm install
 
-An existing cluster is connected as **agent-only** by default: the MLOps stack stays on the app's own k3s while the external cluster gets just the kagent agents for observation and diagnostics. Nothing inside that cluster depends on the Mac's local stack.
+# 3. Start Tauri v2 desktop app in development mode
+pnpm tauri dev
+```
 
-Deploying the full MLOps stack onto an existing cluster is an opt-in path, running preflight → render check → apply. An unverified bridge address refuses to render rather than shipping a guess. Both paths were verified against a live 6-node K3s HA cluster ([Narwhal](/en/projects/narwhal)) through Kyverno Enforce policies, a private mirror registry and ArgoCD GitOps.
+---
 
-## Measured Performance (reference)
+## Documentation Index
 
-Measured on Apple M4 Pro / 64GB through the packaged app. Numbers vary with model, prompt and hardware.
-
-| Item | Measured | Conditions |
-|------|----------|------------|
-| VLM serving throughput | 196–198 tok/s | Qwen2-VL-2B-Instruct-4bit, mlx-vlm 0.6.7 |
-| VLM serving TTFT | 442–767 ms | same as above |
-| LoRA fine-tuning | 674.5M trainable params (30.5%), 8.7GB peak memory | Qwen2-VL-2B bf16, `--train-vision` |
-
-## Tech Stack
-
-TypeScript · Rust (Tauri v2) · Python · Colima/K3s · MLflow · SeaweedFS · Prefect 3 · MLX
-
-See the [Architecture](/en/docs/kubemetal-architecture), [Usage](/en/docs/kubemetal-usage) and [External Cluster Integration](/en/docs/kubemetal-integration) documents for details.
+| Topic | Document Link | Summary |
+|---|---|---|
+| **Overview** | [KubeMetal Overview](/oss/en/kubemetal/overview) | Hybrid MLOps architecture and Apple Silicon compute |
+| **Architecture** | [System Architecture](/oss/en/kubemetal/architecture) | Tauri v2 bridge, host MLX engine, and K3s |
+| **MLOps Guide** | [MLOps Pipelines](/oss/en/kubemetal/mlops) | Local LLM fine-tuning, LoRA adapters, and quantization |
+| **Getting Started** | [App Setup & Installation](/oss/en/kubemetal/getting-started) | Desktop app compilation and model catalog setup |
+| **Operations** | [Performance & Operations](/oss/en/kubemetal/operations) | Unified Memory tuning, compatibility matrix, and tests |

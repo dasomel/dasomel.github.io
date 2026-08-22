@@ -1,93 +1,100 @@
 ---
 title: "Narwhal"
-description: "Vagrant-based Kubernetes Internal Developer Platform (IDP) cluster"
+description: "A reproducible, verifiable Kubernetes Internal Developer Platform (IDP)"
 github: "https://github.com/dasomel/narwhal"
-tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio", "ArgoCD", "Cilium"]
+tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio", "ArgoCD", "Cilium", "Air-Gap", "Keycloak"]
 order: 6
 type: "own"
 featured: true
-problem: "Setting up a production-grade Kubernetes IDP locally requires manually installing and integrating dozens of components"
-solution: "A single `vagrant up` automatically provisions a full IDP cluster with HA control plane, GitOps, SSO, Observability, and Service Mesh"
+problem: "Integrating dozens of cloud-native components on Kubernetes causes recurring DNS, TLS, SSO, network, and version-compatibility failures"
+solution: "A unified GitOps platform managing 35 applications, codifying 263 incident lessons into 51 automated regression tests with air-gap bundling"
 ---
 
 ## Project Overview
 
-**Narwhal** is a Vagrant-based Kubernetes **Internal Developer Platform (IDP)** cluster.
+**Narwhal** is an open-source **Internal Developer Platform (IDP)** built on Kubernetes v1.35, integrating GitOps, IAM/SSO, Service Mesh, Observability, Artifact Registry, Storage, Backup, Policy, API Gateway, and a Management Portal into a single reproducible unit.
 
-Like the narwhal — the "unicorn of the sea" — it delivers a powerful full platform in a single cluster. Built on the [kube-ready-box](https://github.com/dasomel/kube-ready-box) `dasomel/ubuntu-26.04-xfs` Box, it fully automates provisioning of a Kubernetes v1.35 HA cluster with GitOps, SSO, Observability, Service Mesh, Storage, and Backup.
+Rather than acting as a simple installer, Narwhal treats component integration seams as core engineering assets.
 
-## Key Components
+### Platform Highlights
 
-| Layer | Components |
-|-------|------------|
-| **Orchestration** | Kubernetes v1.35 (HA: 3 masters, 3 workers) |
-| **Networking** | Cilium CNI, MetalLB, kube-vip (VIP HA), APISIX API Gateway |
-| **GitOps** | ArgoCD + Gitea (App-of-Apps pattern) |
-| **SSO** | Keycloak OIDC (ArgoCD, Grafana, Gitea, Harbor, Headlamp) |
-| **Observability** | Prometheus, Grafana, Loki, Tempo, Hubble |
-| **Storage** | NFS (Block) + SeaweedFS (Object/S3) + nfs-quota-agent |
-| **Service Mesh** | Istio ambient mode (mTLS, ztunnel, zero sidecars) |
-| **Security** | cert-manager, OpenBao (Secrets), Kyverno (Policy) |
-| **Backup** | Velero + CNPG barman |
-| **Testing** | Chaos Mesh (chaos experiments), k6 (load testing) |
+- **Kubernetes v1.35 HA**: 3 Control Plane + 3 Worker node topology with kube-vip API VIP
+- **35 GitOps Applications**: Declarative lifecycle management via Argo CD and Gitea
+- **263 Incident Lessons**: Root causes and discriminators codified in `lessons-log.md`
+- **51 CI Regression Checks**: Automated gating preventing past bugs from recurring
+- **Air-Gap Bundle Support**: Pre-verified image, Helm chart, and OS package bundles for ARM64/AMD64
+- **Kube-Ready-Box Base**: Tuned Ubuntu 26.04 LTS base images with XFS Project Quota
 
-## Architecture
+---
 
+## Architecture Topology
+
+```text
+                     Kubernetes v1.35 HA Cluster
+                                  │
+         ┌────────────────────────┼────────────────────────┐
+         │                        │                        │
+      Cilium eBPF             kube-vip (VIP)            MetalLB
+         │                                                 │
+    Istio Ambient                                       APISIX (API Gateway)
+         │                                                 │
+   ┌─────┴─────────────────────────────────────────────────┴─────┐
+   │ GitOps · SSO · Observability · Storage · Backup · Security  │
+   │ ArgoCD / Gitea · Keycloak OIDC · Prometheus / Grafana / Loki│
+   │ NFS CSI / SeaweedFS S3 · Velero / CNPG · OpenBao / Kyverno  │
+   └──────────────────────────────┬──────────────────────────────┘
+                                  │
+                          Narwhal Portal (UI)
 ```
-┌──────────────────────────────────────────────────┐
-│                  Vagrant VMs                     │
-├──────────────────┬─────────────┬─────────────────┤
-│  master-1        │ master-2/3  │ worker-1/2/3    │
-│  192.168.56.10   │ .11 / .12   │ .21 / .22 / .23 │
-│  2 CPU, 6GB      │ 2 CPU, 6GB  │ 2 CPU, 6GB      │
-│  NFS, dnsmasq    │ dnsmasq     │                 │
-└──────────────────┴─────────────┴─────────────────┘
-                   VIP: 192.168.56.100 (kube-vip)
-                   LB:  192.168.56.200 (MetalLB/APISIX)
-                   DNS: *.local.narwhal.internal
-```
 
-## Requirements
+---
 
-- Vagrant 2.4+
-- VirtualBox 7.1+ or VMware Fusion 26H1
-- 32GB+ RAM (40GB+ recommended)
-- 30GB+ Disk per VM
+## 35 Integrated Components Matrix
 
-## Quick Start
+| Domain | Key Components | Core Responsibilities |
+|---|---|---|
+| **Orchestration** | Kubernetes v1.35, kube-vip | 3-node HA control plane, etcd quorum, high-availability API VIP |
+| **Networking & Ingress** | Cilium eBPF, MetalLB, Apache APISIX | BGP/L2 load balancing, high-performance API routing, OIDC plugins |
+| **GitOps Engine** | Argo CD, Gitea | App-of-Apps declarative synchronization, self-hosted Git repository |
+| **IAM & SSO** | Keycloak, OAuth2 Proxy | Centralized directory, OIDC federation, cross-service SSO |
+| **Service Mesh** | Istio Ambient, ztunnel | Sidecar-less mTLS, zero-trust L4/L7 policies, Hubble telemetry |
+| **Observability** | Prometheus, Grafana, Loki, Tempo, Alloy | Metric collection, distributed tracing, centralized logs |
+| **Storage & Data** | NFS CSI, SeaweedFS S3, nfs-quota-agent, CloudNativePG | XFS quota-enforced PVs, S3 object storage, HA PostgreSQL |
+| **Security & Policy** | cert-manager, OpenBao, Kyverno | Automated certificate lifecycle, secret management, policy engine |
+| **Backup & DR** | Velero, Barman | Full cluster backups, S3 snapshots, point-in-time database recovery |
+| **Management UI** | Narwhal Portal | Platform inspection, release status, developer workbench |
+
+---
+
+## Getting Started
 
 ```bash
+# 1. Clone repository
 git clone https://github.com/dasomel/narwhal.git
 cd narwhal
 
-# Create cluster (all components auto-provisioned)
+# 2. Boot local HA cluster (VMware / VirtualBox)
 vagrant up --provider=vmware_desktop
 
-# Check node status
-vagrant ssh master-1 -c "kubectl get nodes"
+# 3. Verify node readiness
+vagrant ssh master-1 -c "kubectl get nodes -o wide"
 
-# Destroy cluster
-vagrant destroy -f
+# 4. Check GitOps synchronization status
+vagrant ssh master-1 -c "kubectl get applications -n argocd"
 ```
 
-## Technical Documentation
+---
 
-Detailed write-ups of each area, sourced directly from the cluster repository.
+## Documentation Index
 
-| Document | Contents |
-|----------|----------|
-| [Architecture](/en/docs/narwhal-architecture) | Cluster topology, HA control plane, node layout |
-| [Networking](/en/docs/narwhal-networking) | Cilium, MetalLB, kube-vip, APISIX, DNS |
-| [GitOps](/en/docs/narwhal-gitops) | ArgoCD + Gitea App-of-Apps pattern |
-| [Security & SSO](/en/docs/narwhal-security) | Keycloak OIDC, OpenBao, Kyverno, cert-manager |
-| [Observability](/en/docs/narwhal-observability) | Prometheus, Grafana, Loki, Tempo, Hubble |
-| [Storage & Database](/en/docs/narwhal-storage) | NFS, SeaweedFS, nfs-quota-agent, CNPG |
-| [Operations & Disaster Recovery](/en/docs/narwhal-operations) | Day-2 ops, Velero backup/restore, incident response |
-| [Testing & Chaos Engineering](/en/docs/narwhal-testing) | Chaos Mesh experiment suite, k6 load tests, baselines |
-
-## References
-
-- **GitHub**: [dasomel/narwhal](https://github.com/dasomel/narwhal)
-- **Management portal**: [Narwhal Portal](/en/projects/narwhal-portal)
-- **Base Box**: [dasomel/kube-ready-box](https://github.com/dasomel/kube-ready-box)
-- **nfs-quota-agent**: [dasomel/nfs-quota-agent](https://github.com/dasomel/nfs-quota-agent)
+| Topic | Document Link | Summary |
+|---|---|---|
+| **Overview** | [Platform Overview](/oss/en/narwhal/overview) | Narwhal IDP philosophy and three-tier integration model |
+| **Architecture** | [Cluster Architecture](/oss/en/narwhal/architecture) | 3M+3W node topology, HA control plane, and packet flows |
+| **GitOps** | [GitOps Workflow](/oss/en/narwhal/gitops) | Argo CD + Gitea App-of-Apps declarative delivery |
+| **Networking** | [Networking & Ingress](/oss/en/narwhal/networking) | Cilium eBPF, MetalLB, APISIX routing, and DNS |
+| **Security** | [Security & SSO](/oss/en/narwhal/security) | Keycloak OIDC, OpenBao secrets, and Kyverno policies |
+| **Observability** | [Monitoring & Logs](/oss/en/narwhal/observability) | Prometheus, Grafana, Loki, Tempo, and Hubble |
+| **Storage** | [Storage & Databases](/oss/en/narwhal/storage) | NFS CSI, SeaweedFS S3, nfs-quota-agent, CNPG |
+| **Operations** | [Day-2 Operations & DR](/oss/en/narwhal/operations) | Velero backup, air-gap offline bundles, and maintenance |
+| **Testing** | [Regression Testing & Chaos](/oss/en/narwhal/testing) | 263 incident lessons codified into 51 CI checks & Chaos Mesh |
