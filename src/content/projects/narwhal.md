@@ -1,133 +1,207 @@
 ---
 title: "Narwhal"
-description: "재현 가능하고 검증 가능한 Kubernetes Internal Developer Platform (IDP)"
+description: "재현 가능하고 검증 가능한 Kubernetes Internal Developer Platform"
 github: "https://github.com/dasomel/narwhal"
-tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio", "ArgoCD", "Cilium", "Air-Gap", "Keycloak", "Alloy"]
+tags: ["Kubernetes", "Vagrant", "GitOps", "IDP", "Istio Ambient", "Argo CD", "Cilium", "Air-Gap", "Keycloak", "Observability"]
 order: 6
 type: "own"
 featured: true
-problem: "Kubernetes 위에 수십 개 Cloud Native 컴포넌트를 통합하면 DNS, TLS, SSO, 네트워크 및 버전 호환성 장애가 반복 발생함"
-solution: "35개 애플리케이션을 단일 GitOps 플랫폼으로 통합하고 263건의 인시던트 교훈을 회귀 테스트로 연결한 재현 가능한 IDP 구축"
+problem: "수십 개 Cloud Native 프로젝트를 개별적으로 설치하면 DNS, TLS, identity, networking, startup order, version compatibility 같은 integration seam에서 반복적인 장애가 발생하고 업그레이드 때 다시 검증해야 함"
+solution: "35개 GitOps-managed application을 하나의 reproducible IDP로 통합하고, 263건의 incident knowledge를 51개 CI regression checks와 live verification suite로 연결"
 ---
 
 ## 프로젝트 소개
 
-**Narwhal**은 Kubernetes v1.35 기반 위에서 GitOps, IAM/SSO, Service Mesh, Observability, Artifact Registry, Storage, Backup, Policy, API Gateway 및 관리 포털을 단일 단위로 통합한 오픈소스 **Internal Developer Platform (IDP)**입니다.
+**Narwhal**은 Kubernetes 위에 GitOps, IAM/SSO, Service Mesh, Observability, Registry, Storage, Backup, Policy, API Gateway와 Management Portal을 함께 제공하는 오픈소스 **Internal Developer Platform (IDP)**입니다.
 
-단순한 Kubernetes 설치 스크립트가 아니라, 컴포넌트 간의 결합 경계(Integration Seams)를 검증하고 유지보수하는 플랫폼 통합 솔루션입니다.
-
-### 플랫폼 핵심 현황
-
-- **Kubernetes v1.35 HA**: 3 Control Plane + 3 Worker 노드 토폴로지 (kube-vip 기반 VIP `192.168.56.100`)
-- **35개 GitOps 애플리케이션**: Argo CD + Gitea App-of-Apps 선언적 수명주기 관리 및 Sync Waves 의존성 제어
-- **263건의 통합 인시던트 교훈**: 장애 원인과 판별자(Discriminator)를 `lessons-log.md`에 체계적으로 기록
-- **51개 CI 회귀 테스트**: 클러스터 업그레이드 및 컴포넌트 변경 시 과거 장애 재발을 원천 차단
-- **Air-Gap 오프라인 번들링**: 아키텍처별(ARM64/AMD64) 이미지, Helm 차트, 바이너리 사전 검증 패키지 제공
-- **Kube-Ready-Box 기반**: Ubuntu 26.04 LTS 및 XFS Project Quota 최적화 커널 활용
-
----
-
-## 35개 통합 컴포넌트 매트릭스
-
-| 영역 | 컴포넌트 | 버전 / 기술 | 주요 역할 및 연동 방식 |
-|---|---|---|---|
-| **Control Plane** | Kubernetes | v1.35 | 3-node HA etcd 쿼럼, 고가용성 API 서버 |
-| **HA VIP** | kube-vip | v1.1.x | Control Plane IP 가상화 (`192.168.56.100`) |
-| **CNI** | Cilium | v1.17+ | eBPF Host Routing, Kube-proxy 대체, NetworkPolicy |
-| **Service Mesh** | Istio Ambient | v1.24+ | ztunnel L4 mTLS 암호화, Sidecar-less 아키텍처 |
-| **Load Balancer** | MetalLB | v0.14+ | L2 Mode IP Pool (`192.168.56.200~220`) |
-| **API Gateway** | Apache APISIX | v3.11+ | OIDC 플러그인, 동적 라우팅, Rate Limiting |
-| **GitOps** | Argo CD | v2.13+ | App-of-Apps 패턴, 선언적 클러스터 상태 동기화 |
-| **Git Engine** | Gitea | v1.23+ | 자체 호스팅 Git 저장소, 웹훅 기반 동기화 트리거 |
-| **IAM / SSO** | Keycloak | v26+ | OIDC 중앙 인증, 역할 기반 접근 제어(RBAC) |
-| **Metrics** | Prometheus | v2.55+ | 클러스터 메트릭 수집 및 Alertmanager 알림 |
-| **Dashboards** | Grafana | v11+ | 사전 구성된 플랫폼 통합 관제 대시보드 |
-| **Logs** | Grafana Loki | v3.3+ | 멀티 테넌트 로그 집계 및 실시간 로그 스트리밍 |
-| **Log Agent** | Grafana Alloy | v1.5+ | eBPF 및 파드 로그 수집 에이전트 |
-| **Traces** | Grafana Tempo | v2.6+ | OpenTelemetry 호환 분산 트레이싱 백엔드 |
-| **Network Flow** | Cilium Hubble | v1.17+ | eBPF 기반 실시간 서비스 맵 및 흐름 시각화 |
-| **File Storage** | NFS CSI + Quota | v4.9+ | XFS Project Quota 기반 용량 제한 (`nfs-quota-agent`) |
-| **Object Store** | SeaweedFS S3 | v3.79+ | 고성능 분산 S3 호환 객체 저장소 |
-| **Relational DB** | CloudNativePG | v1.25+ | HA PostgreSQL 클러스터 자동 복제 및 Barman 백업 |
-| **Secrets** | OpenBao | v2.1+ | 암호화된 시크릿 저장소 및 동적 토큰 발급 |
-| **Policy** | Kyverno | v1.13+ | Pod Security Standards(PSS) 강제 및 승인 제어 |
-| **Certificates** | cert-manager | v1.16+ | 내부 CA 및 Let's Encrypt 인증서 자동 갱신 |
-| **Backup / DR** | Velero | v1.15+ | 클러스터 리소스 및 PVC 스냅샷 백업/복구 |
-| **Chaos** | Chaos Mesh | v2.6+ | 네트워크 단절, 지연, 파드 다운 카오스 실험 |
-| **UI Portal** | Narwhal Portal | Next.js 16 | 플랫폼 리소스 조회, 릴리스 상태 점검 워크벤치 |
-
----
-
-## 아키텍처 토폴로지 및 트래픽 흐름
+Narwhal의 핵심은 Kubernetes 자체를 설치하는 것이 아닙니다. 실제 운영 비용이 발생하는 **컴포넌트 사이의 integration seam**을 하나의 제품 경계로 다루는 것입니다.
 
 ```text
-                        사용자 / 개발자 요청
-                                │
-                                ▼
-                   MetalLB (192.168.56.200)
-                                │
-                                ▼
-                   Apache APISIX (API Gateway)
-                                │
-        ┌───────────────────────┼───────────────────────┐
-        │ OIDC 인증 확인          │ mTLS 트래픽 라우팅     │
-        ▼                       ▼                       ▼
-   Keycloak SSO            Istio Ambient (ztunnel)   Workloads
-   (192.168.56.10:8080)    (L4/L7 Encryption)        (ArgoCD, Grafana, ...)
+Kubernetes
+   ↓
+GitOps / Identity / Networking / Security
+   ↓
+Observability / Storage / Backup / Registry
+   ↓
+Management Portal
+   ↓
+Developer / Operator Experience
 ```
 
----
+## 현재 규모
 
-## 263건의 인시던트 교훈을 통한 회귀 방지 (Knowledge as Tests)
+README 기준 현재 reference implementation은 다음과 같은 상태입니다.
 
-Narwhal은 장애를 일회성으로 해결하는 데 그치지 않고, `docs/lessons-log.md`에 원인과 **판별자(Discriminator)**를 기록한 뒤 자동화된 CI 회귀 테스트로 연결합니다.
+| 항목 | 현황 |
+|---|---|
+| Activity | 2026-02-08 이후 483 commits, 4 releases, latest v1.2.0 |
+| Integration | 35 GitOps-managed applications |
+| Regression | 51 CI regression checks |
+| Live verification | Cluster 120+ checks, SSO 49 checks |
+| Integration knowledge | 263 documented incidents |
+| Deployment | Vagrant ARM64, Kakao Cloud AMD64, air-gapped |
+| Offline bundle | Architecture별 104 container images, 27 Helm charts, binaries, manifests, OS packages |
+
+이 수치는 commit 수를 강조하기 위한 것이 아니라, **통합 복잡성을 얼마나 반복해서 검증했는지**를 설명하는 운영 증거입니다.
+
+## 핵심 구성
+
+### Kubernetes / Networking
+
+- Kubernetes **v1.35**
+- Cilium **v1.19.x**
+- Hubble **v1.19.x**
+- kube-vip **v1.1.x**
+- MetalLB **v0.16.x**
+- APISIX **3.15.x**
+
+### GitOps / Identity
+
+- Argo CD **v3.4.x**
+- Gitea **v1.26.x**
+- Keycloak **26.5.x**
+
+### Observability
+
+- Prometheus Stack **v0.91.x**
+- Loki **3.7.x**
+- Grafana Alloy **v1.17.x**
+- Tempo **2.9.x**
+- Hubble
+
+### Platform Services
+
+- Harbor **v2.15.x**
+- OpenBao **v2.5.x**
+- Kyverno **v1.18.x**
+- Headlamp **v0.42.x**
+- SeaweedFS **v4.34.x**
+- Velero **v1.18.x**
+- CloudNative-PG **v1.29.x**
+- Istio **v1.30.x** ambient mode
+
+## Integration Seams를 제품으로 보기
+
+예를 들어 다음은 단일 제품의 bug가 아니라 여러 시스템이 연결될 때 발생하는 문제입니다.
 
 ```text
-장애 발생 (Incident)
-      ↓
-근본 원인 및 판별자 식별 (Root Cause & Discriminator)
-      ↓
-lessons-log.md 기록 (Knowledge Codification)
-      ↓
-CI 자동화 회귀 테스트 작성 (51 Regression Checks)
-      ↓
-업그레이드 및 릴리스 시 재발 방지 (Zero-Drift Guarantee)
+Keycloak OIDC claim
+       ↓
+APISIX authentication
+       ↓
+service routing
+       ↓
+Istio ambient mTLS
+       ↓
+Kubernetes workload
 ```
 
----
+Narwhal에서는 이런 경계를 문서, scripts, health checks, regression checks로 남깁니다. 따라서 특정 설정을 “한번 맞춰 놓는 것”이 아니라 업그레이드마다 다시 검증할 수 있습니다.
 
-## 시작하기 (Quickstart)
+## Knowledge as Tests
+
+Narwhal의 가장 중요한 운영 자산 중 하나는 `lessons-log.md`입니다.
+
+장애를 다음과 같이 변환합니다.
+
+```text
+Incident
+   ↓
+Root Cause
+   ↓
+Discriminator
+   ↓
+Regression Check
+   ↓
+Future Upgrade Gate
+```
+
+각 incident에는 원인뿐 아니라 비슷하게 보이는 장애와 구분하기 위한 **discriminator**와 실패했던 접근까지 기록합니다. 이 방식이 누적되며 263건의 integration knowledge와 51개 CI checks로 연결되었습니다.
+
+## 검증 계층
+
+Narwhal은 “pod가 Running인가?”만 검증하지 않습니다.
+
+| Layer | Scope | Question |
+|---|---:|---|
+| Cluster Verification | 120+ | 클러스터와 플랫폼 application이 실제로 건강한가? |
+| SSO Verification | 49 | 여러 application의 identity flow가 end-to-end로 동작하는가? |
+| CI Regression | 51 | 과거에 해결한 integration failure가 다시 발생하지 않았는가? |
+
+실제 cluster 검증과 CI 회귀 검증을 분리함으로써 빠른 regression gate와 live environment verification을 동시에 유지합니다.
+
+## Air-Gapped Installation
+
+Narwhal은 인터넷 연결이 없는 환경을 중요한 운영 시나리오로 취급합니다.
+
+```text
+Online build
+   ↓
+images / charts / binaries / manifests / packages
+   ↓
+architecture-specific offline bundle
+   ↓
+verification
+   ↓
+install without live Internet
+```
+
+ARM64와 AMD64에 맞는 bundle을 사전에 만들고, upstream artifact identity와 내부 mirror 조건을 포함해 disconnected environment에서도 같은 platform contract를 재현하는 것을 목표로 합니다.
+
+## Management Portal
+
+Narwhal은 **Narwhal Portal**을 함께 사용해 day-2 운영을 제공합니다.
+
+Portal은 dashboard, Argo CD status, security, cost, governance, catalog, architecture 등의 platform-level context를 하나의 UI로 제공합니다.
+
+즉,
+
+```text
+Narwhal = platform integration + operation
+Narwhal Portal = developer / operator experience
+```
+
+라는 역할 분리를 유지합니다.
+
+## 시작하기
 
 ```bash
-# 1. 저장소 클론
 git clone https://github.com/dasomel/narwhal.git
 cd narwhal
 
-# 2. 로컬 6노드 HA 클러스터 부트스트랩 (VMware Desktop / VirtualBox)
 vagrant up --provider=vmware_desktop
 
-# 3. 마스터 노드 접속 및 클러스터 노드 상태 확인
-vagrant ssh master-1 -c "kubectl get nodes -o wide"
-
-# 4. Argo CD 전체 애플리케이션 동기화 상태 점검
-vagrant ssh master-1 -c "kubectl get applications -n argocd"
-
-# 5. 플랫폼 검증 스위트 실행 (120+ checks)
-vagrant ssh master-1 -c "/opt/narwhal/scripts/verify-cluster.sh"
+vagrant ssh master-1 -c "kubectl get nodes"
+vagrant ssh master-1 -c "kubectl get applications -A"
+vagrant ssh master-1 -c "bash /home/vagrant/scripts/test/verify-cluster.sh"
 ```
 
----
+지원 환경에는 Vagrant 기반 ARM64/AMD64 개발 환경과 Kakao Cloud deployment가 있으며, air-gapped install profile도 별도로 운영합니다.
 
 ## 상세 기술 문서
 
-| 주제 | 문서 링크 | 상세 내용 |
+| 주제 | 문서 | 내용 |
 |---|---|---|
-| **개요 (Overview)** | [플랫폼 개요](/oss/narwhal/overview) | Narwhal IDP 설계 철학과 3계층 통합 모델 |
-| **아키텍처 (Architecture)** | [클러스터 아키텍처](/oss/narwhal/architecture) | 3M+3W 노드 토폴로지, HA 컨트롤 플레인 및 네트워크 흐름 |
-| **GitOps** | [GitOps 워크플로](/oss/narwhal/gitops) | Argo CD + Gitea App-of-Apps 선언적 배포 체계 |
-| **네트워킹 (Networking)** | [네트워크 및 Ingress](/oss/narwhal/networking) | Cilium eBPF, MetalLB, APISIX 라우팅 및 DNS |
-| **보안 & SSO (Security)** | [보안 및 인증 체계](/oss/narwhal/security) | Keycloak OIDC, OpenBao, Kyverno 정책 통제 |
-| **관측성 (Observability)** | [모니터링 & 로깅](/oss/narwhal/observability) | Prometheus, Grafana, Loki, Tempo, Hubble 분산 추적 |
-| **스토리지 (Storage)** | [스토리지 & DB](/oss/narwhal/storage) | NFS CSI, SeaweedFS S3, nfs-quota-agent, CNPG |
-| **운영 & 백업 (Operations)** | [Day-2 운영 & 재해복구](/oss/narwhal/operations) | Velero 백업, 에어갭 오프라인 번들, 업그레이드 가이드 |
-| **테스트 & 카오스 (Testing)** | [회귀 검증 & 카오스](/oss/narwhal/testing) | 263건의 인시던트 회귀 테스트(51 checks) 및 Chaos Mesh |
+| Overview | [플랫폼 개요](/oss/narwhal/overview) | IDP 범위와 integration-first 철학 |
+| Architecture | [아키텍처](/oss/narwhal/architecture) | HA control plane, network, service layout |
+| GitOps | [GitOps](/oss/narwhal/gitops) | Argo CD + Gitea App-of-Apps |
+| Networking | [네트워킹](/oss/narwhal/networking) | Cilium, MetalLB, APISIX, DNS |
+| Security | [보안/SSO](/oss/narwhal/security) | Keycloak, OpenBao, Kyverno, TLS |
+| Observability | [관측성](/oss/narwhal/observability) | Prometheus, Grafana, Loki, Tempo, Hubble |
+| Storage | [스토리지](/oss/narwhal/storage) | NFS CSI, SeaweedFS, quota, PostgreSQL |
+| Operations | [운영](/oss/narwhal/operations) | backup, restore, upgrade, air-gap |
+| Testing | [검증/카오스](/oss/narwhal/testing) | regression, cluster verification, chaos |
+
+## 프로젝트 관계
+
+```text
+kube-ready-box
+       ↓
+   Narwhal IDP
+   ├── nfs-quota-agent
+   ├── ldapium
+   └── Narwhal Portal
+
+OpenForge
+   └── shared engineering / supply-chain practices
+```
