@@ -99,9 +99,9 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
           <div className="text-xs font-mono uppercase tracking-wider mb-4" style={{ color: 'var(--text-faint)' }}>{digest ? 'Projects influenced by this digest' : 'Related OSS'}</div>
           <div className="grid sm:grid-cols-3 gap-3">
             {relatedProjects.map(project => (
-              <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group rounded-xl p-4" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+              <Link key={project.slug} href={`${base}/projects/${project.slug}`} className="group rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
                 <div className="flex items-start justify-between gap-2">
-                  <div className="text-sm font-semibold group-hover:text-emerald-500" style={{ color: 'var(--text)' }}>{project.title}</div>
+                  <div className="text-sm font-semibold group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{project.title}</div>
                   <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" style={{ color: 'var(--text-faint)' }} />
                 </div>
                 <p className="text-xs mt-2 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{project.description}</p>

@@ -28,12 +28,12 @@ export default async function SeminarPage({ params }: { params: Promise<{ locale
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <Link href={`${base}/seminars`} className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 mb-8 transition-colors">
+      <Link href={`${base}/seminars`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}>
         <ArrowLeft className="w-4 h-4" />{tc('back')}
       </Link>
       <header className="mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-3">{meta.title}</h1>
-        <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-500">
+        <h1 className="text-3xl font-bold mb-3" style={{ color: 'var(--text)' }}>{meta.title}</h1>
+        <div className="flex flex-wrap gap-3 mb-4 text-sm font-mono" style={{ color: 'var(--text-faint)' }}>
           <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{meta.date.slice(0, 10)}</span>
           <span>{meta.event}</span>
           {meta.location && <span className="flex items-center gap-1"><MapPin className="w-4 h-4" />{meta.location}</span>}
@@ -55,12 +55,12 @@ export default async function SeminarPage({ params }: { params: Promise<{ locale
           )}
         </div>
         {meta.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-3">
+          <div className="flex flex-wrap gap-1.5 mt-4">
             {meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}
           </div>
         )}
       </header>
-      <article className="prose prose-lg prose-gray max-w-none prose-a:text-emerald-600">
+      <article className="prose cne-doc-prose max-w-none">
         <MDXContent source={content} />
       </article>
     </div>

@@ -29,19 +29,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <div className="absolute inset-x-0 top-0 h-[620px] hero-glow" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28">
         <div className="mx-auto max-w-5xl text-center">
-          <div className="workbench-eyebrow mb-6">{t('hero.eyebrow')}</div>
+          <div className="workbench-eyebrow mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border" style={{ backgroundColor: 'var(--surface-hi)', borderColor: 'var(--border)' }}>
+            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
+            {t('hero.eyebrow')}
+          </div>
           <h1 className="mx-auto max-w-5xl text-5xl sm:text-7xl lg:text-8xl font-bold tracking-[-0.045em] leading-[0.97]" style={{ color: 'var(--text)' }}>
             {t('hero.headline_1')}<span style={{ color: 'var(--accent)' }}>{t('hero.headline_accent')}</span>{t('hero.headline_2')}
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-base sm:text-lg leading-8" style={{ color: 'var(--text-muted)' }}>{t('hero.description')}</p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Link href={`${base}/projects`} className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold shadow-sm" style={{ backgroundColor: 'var(--accent)', color: 'var(--bg)' }}>{t('hero.cta_projects')} <ArrowUpRight className="w-4 h-4" /></Link>
-            <Link href={`${base}/notes`} className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border-hi)', color: 'var(--text)' }}>{t('hero.cta_notes')} <ArrowUpRight className="w-4 h-4" /></Link>
+            <Link href={`${base}/projects`} className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-sm transition-all hover:opacity-90 hover:shadow-md" style={{ backgroundColor: 'var(--accent)', color: 'var(--accent-fg)' }}>{t('hero.cta_projects')} <ArrowUpRight className="w-4 h-4" /></Link>
+            <Link href={`${base}/notes`} className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all hover:bg-[var(--surface-hi)] hover:border-[var(--border-hi)]" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)' }}>{t('hero.cta_notes')} <ArrowUpRight className="w-4 h-4" /></Link>
           </div>
         </div>
         <div className="relative mt-16 sm:mt-20 mx-auto max-w-6xl">
-          <Image src="/images/workbench-hero-v2.svg" alt="OSS engineering workbench visual" width={1600} height={720} unoptimized className="block w-full h-auto" priority />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-44 bg-gradient-to-t from-[var(--bg)] via-[color:var(--bg)/0.88] to-transparent" />
+          <div className="rounded-2xl border overflow-hidden p-1 sm:p-2" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)', boxShadow: '0 25px 60px -20px var(--accent-glow)' }}>
+            <Image src="/images/workbench-hero-v2.svg" alt="OSS engineering workbench visual" width={1600} height={760} unoptimized className="block w-full h-auto rounded-xl" priority />
+          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-[var(--bg)] via-[color:var(--bg)/0.85] to-transparent" />
         </div>
       </div>
     </section>

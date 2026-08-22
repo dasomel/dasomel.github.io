@@ -91,23 +91,23 @@ export default async function SeminarsPage({ params }: { params: Promise<{ local
                   <Link
                     key={seminar.slug}
                     href={`${base}/seminars/${seminar.slug}`}
-                    className="flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-gray-50 group"
-                    style={{ border: '1px solid var(--border)' }}
+                    className="flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-[var(--surface-hi)] group"
+                    style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}
                   >
                     <div
                       className="w-6 h-6 rounded flex items-center justify-center text-[7px] font-mono flex-shrink-0"
-                      style={{ backgroundColor: 'var(--surface)', color: 'var(--text-faint)' }}
+                      style={{ backgroundColor: 'var(--surface-hi)', color: 'var(--text-faint)', border: '1px solid var(--border)' }}
                     >
                       {seminar.event.substring(0, 3).toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3
-                        className="text-sm font-medium truncate group-hover:text-emerald-400 transition-colors"
+                        className="text-sm font-medium truncate group-hover:text-[var(--accent)] transition-colors"
                         style={{ color: 'var(--text)' }}
                       >
                         {seminar.title}
                       </h3>
-                      <p className="text-xs" style={{ color: 'var(--text-faint)' }}>
+                      <p className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
                         {seminar.event} · {new Date(seminar.date).toLocaleDateString('en-US', { month: 'short' })}
                       </p>
                     </div>

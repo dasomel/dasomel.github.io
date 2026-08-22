@@ -1,52 +1,131 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="t d">
-  <title id="t">Cloud Native engineering workbench</title>
-  <desc id="d">A light architectural canvas showing build, verify, observe and document flows across cloud native engineering work.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" width="100%" height="100%" role="img" aria-labelledby="t d">
+  <title id="t">Cloud Native OSS Engineering Workbench</title>
+  <desc id="d">An architectural engineering canvas showing build, verify, observe, document and iterate flows across cloud native systems.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f8fcfb"/>
-      <stop offset="0.55" stop-color="#f7faf8"/>
-      <stop offset="1" stop-color="#f5f1e8"/>
+    <linearGradient id="canvas-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#64748b" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0.06"/>
     </linearGradient>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0f766e"/>
-      <stop offset="1" stop-color="#8bb6b0"/>
+    <linearGradient id="card-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.88"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#17312e" flood-opacity="0.08"/>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#14b8a6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.08"/>
     </filter>
+    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#64748b" stroke-width="1" stroke-opacity="0.08"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0d9488"/>
+    </marker>
   </defs>
-  <rect width="1600" height="720" fill="url(#bg)"/>
-  <g stroke="#e1e9e5" stroke-width="1">
-    <path d="M70 110h1460M70 230h1460M70 350h1460M70 470h1460M70 590h1460"/>
-    <path d="M170 60v600M410 60v600M650 60v600M890 60v600M1130 60v600M1370 60v600"/>
+
+  <!-- Outer frame -->
+  <rect width="1600" height="760" rx="24" fill="url(#canvas-bg)" stroke="#64748b" stroke-opacity="0.15" stroke-width="1.5"/>
+  <rect width="1600" height="760" rx="24" fill="url(#grid-pattern)"/>
+
+  <!-- Top bar / Workbench header -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace">
+    <circle cx="48" cy="42" r="6" fill="#ef4444" opacity="0.8"/>
+    <circle cx="68" cy="42" r="6" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="88" cy="42" r="6" fill="#10b981" opacity="0.8"/>
+    <text x="116" y="47" font-size="13" font-weight="600" fill="#64748b" letter-spacing="1.5">DASOMEL // OSS WORKBENCH ARCHITECTURE</text>
+    <rect x="1420" y="30" width="130" height="24" rx="12" fill="#0d9488" fill-opacity="0.1" stroke="#0d9488" stroke-opacity="0.3"/>
+    <text x="1485" y="46" font-size="11" font-weight="600" fill="#0d9488" text-anchor="middle" letter-spacing="1">LIVE WORKFLOW</text>
   </g>
-  <g fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round" opacity="0.9">
-    <path d="M360 240h250"/>
-    <path d="M990 240h250"/>
-    <path d="M510 315l-70 120"/>
-    <path d="M800 315v120"/>
-    <path d="M1090 315l70 120"/>
-    <path d="M550 520h500"/>
+
+  <!-- Connector Lines with Gradient & Flow -->
+  <g fill="none" stroke="url(#line-grad)" stroke-width="2.5" stroke-linecap="round">
+    <!-- 01 -> 02 -->
+    <path d="M 380 230 L 590 230" marker-end="url(#arrow)"/>
+    <!-- 02 -> 03 -->
+    <path d="M 980 230 L 1190 230" marker-end="url(#arrow)"/>
+    <!-- 01 -> 04 -->
+    <path d="M 260 300 L 260 410 Q 260 440 290 440 L 460 440 Q 490 440 490 470 L 490 500" marker-end="url(#arrow)"/>
+    <!-- 02 -> 04 -->
+    <path d="M 785 300 L 785 500" marker-end="url(#arrow)"/>
+    <!-- 03 -> 05 -->
+    <path d="M 1340 300 L 1340 410 Q 1340 440 1310 440 L 1140 440 Q 1110 440 1110 470 L 1110 500" marker-end="url(#arrow)"/>
+    <!-- 04 -> 05 -->
+    <path d="M 680 575 L 900 575" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
   </g>
-  <g fill="#ffffff" stroke="#84b3ac" stroke-width="2" filter="url(#shadow)">
-    <rect x="120" y="160" width="240" height="120" rx="22"/>
-    <rect x="630" y="160" width="340" height="120" rx="22"/>
-    <rect x="1240" y="160" width="240" height="120" rx="22"/>
-    <rect x="330" y="435" width="300" height="120" rx="22"/>
-    <rect x="970" y="435" width="300" height="120" rx="22"/>
+
+  <!-- Node 01: BUILD -->
+  <g filter="url(#card-shadow)">
+    <rect x="110" y="150" width="270" height="150" rx="18" fill="url(#card-fill)" stroke="#0d9488" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="110" y="150" width="270" height="6" rx="3" fill="url(#accent-grad)"/>
+    <g font-family="'JetBrains Mono', ui-monospace, monospace">
+      <rect x="135" y="174" width="76" height="20" rx="6" fill="#0d9488" fill-opacity="0.12"/>
+      <text x="173" y="188" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle" letter-spacing="1">01 BUILD</text>
+      <text x="135" y="224" font-size="20" font-weight="700" fill="#0f172a">OPEN SOURCE</text>
+      <text x="135" y="250" font-size="12" font-weight="500" fill="#64748b">k8s · platform · tools</text>
+      <text x="135" y="274" font-size="11" font-weight="600" fill="#0d9488">narwhal / beluga ↗</text>
+    </g>
   </g>
-  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
-    <text x="120" y="105" font-size="16" font-weight="700" fill="#68817d" letter-spacing="2.4">DASOMEL / ENGINEERING WORKBENCH</text>
-    <text x="150" y="198" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">BUILD</text>
-    <text x="150" y="235" font-size="27" font-weight="700" fill="#1d2826">OPEN SOURCE</text>
-    <text x="660" y="198" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">VERIFY</text>
-    <text x="660" y="235" font-size="27" font-weight="700" fill="#1d2826">CI · TEST · SBOM</text>
-    <text x="1270" y="198" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">OBSERVE</text>
-    <text x="1270" y="235" font-size="27" font-weight="700" fill="#1d2826">EVIDENCE</text>
-    <text x="360" y="474" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">DOCUMENT</text>
-    <text x="360" y="511" font-size="27" font-weight="700" fill="#1d2826">NOTES · DOCS</text>
-    <text x="1000" y="474" font-size="13" font-weight="700" fill="#0f766e" letter-spacing="1.5">CONNECT</text>
-    <text x="1000" y="511" font-size="27" font-weight="700" fill="#1d2826">KNOWLEDGE</text>
-    <text x="120" y="645" font-size="32" font-weight="700" fill="#17312e">build · verify · learn · repeat</text>
+
+  <!-- Node 02: VERIFY -->
+  <g filter="url(#card-shadow)">
+    <rect x="590" y="150" width="390" height="150" rx="18" fill="url(#card-fill)" stroke="#0d9488" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="590" y="150" width="390" height="6" rx="3" fill="url(#accent-grad)"/>
+    <g font-family="'JetBrains Mono', ui-monospace, monospace">
+      <rect x="615" y="174" width="84" height="20" rx="6" fill="#0d9488" fill-opacity="0.12"/>
+      <text x="657" y="188" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle" letter-spacing="1">02 VERIFY</text>
+      <text x="615" y="224" font-size="20" font-weight="700" fill="#0f172a">CI · TEST · ARTIFACT</text>
+      <text x="615" y="250" font-size="12" font-weight="500" fill="#64748b">bun native · sbom · reproducibility</text>
+      <text x="615" y="274" font-size="11" font-weight="600" fill="#0d9488">proven in clean sandbox ↗</text>
+    </g>
+  </g>
+
+  <!-- Node 03: OBSERVE -->
+  <g filter="url(#card-shadow)">
+    <rect x="1190" y="150" width="300" height="150" rx="18" fill="url(#card-fill)" stroke="#0d9488" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="1190" y="150" width="300" height="6" rx="3" fill="url(#accent-grad)"/>
+    <g font-family="'JetBrains Mono', ui-monospace, monospace">
+      <rect x="1215" y="174" width="92" height="20" rx="6" fill="#0d9488" fill-opacity="0.12"/>
+      <text x="1261" y="188" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle" letter-spacing="1">03 OBSERVE</text>
+      <text x="1215" y="224" font-size="20" font-weight="700" fill="#0f172a">EVIDENCE</text>
+      <text x="1215" y="250" font-size="12" font-weight="500" fill="#64748b">metrics · logs · signals</text>
+      <text x="1215" y="274" font-size="11" font-weight="600" fill="#0d9488">measured outcomes ↗</text>
+    </g>
+  </g>
+
+  <!-- Node 04: DOCUMENT -->
+  <g filter="url(#card-shadow)">
+    <rect x="330" y="500" width="350" height="150" rx="18" fill="url(#card-fill)" stroke="#64748b" stroke-opacity="0.25" stroke-width="1.5"/>
+    <g font-family="'JetBrains Mono', ui-monospace, monospace">
+      <rect x="355" y="524" width="102" height="20" rx="6" fill="#0d9488" fill-opacity="0.12"/>
+      <text x="406" y="538" font-size="10" font-weight="700" fill="#0d9488" text-anchor="middle" letter-spacing="1">04 DOCUMENT</text>
+      <text x="355" y="574" font-size="20" font-weight="700" fill="#0f172a">NOTES · DOCS HUB</text>
+      <text x="355" y="600" font-size="12" font-weight="500" fill="#64748b">write while learning in public</text>
+      <text x="355" y="624" font-size="11" font-weight="600" fill="#0d9488">cne.io.kr / docs ↗</text>
+    </g>
+  </g>
+
+  <!-- Node 05: ITERATE -->
+  <g filter="url(#card-shadow)">
+    <rect x="900" y="500" width="370" height="150" rx="18" fill="url(#card-fill)" stroke="#64748b" stroke-opacity="0.25" stroke-width="1.5"/>
+    <g font-family="'JetBrains Mono', ui-monospace, monospace">
+      <rect x="925" y="524" width="94" height="20" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="972" y="538" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle" letter-spacing="1">05 ITERATE</text>
+      <text x="925" y="574" font-size="20" font-weight="700" fill="#0f172a">CHANGE MY MIND</text>
+      <text x="925" y="600" font-size="12" font-weight="500" fill="#64748b">rethink assumptions · retest</text>
+      <text x="925" y="624" font-size="11" font-weight="600" fill="#d97706">evidence-driven evolution ↗</text>
+    </g>
+  </g>
+
+  <!-- Footer Tagline -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace">
+    <text x="110" y="710" font-size="15" font-weight="700" fill="#64748b" letter-spacing="1">build · verify · observe · document · repeat</text>
   </g>
 </svg>

@@ -8,9 +8,10 @@ interface MermaidProps {
 }
 
 function isDarkMode() {
+  if (typeof document === 'undefined') return false;
   return (
-    document.documentElement.classList.contains('dark') ||
-    window.matchMedia('(prefers-color-scheme: dark)').matches
+    document.documentElement.dataset.theme === 'dark' ||
+    (!document.documentElement.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
   );
 }
 
@@ -28,13 +29,13 @@ export function Mermaid({ chart }: MermaidProps) {
       theme: 'base',
       fontFamily: 'Pretendard Variable, sans-serif',
       themeVariables: {
-        background: dark ? '#0f172a' : '#ffffff',
-        primaryTextColor: dark ? '#f8fafc' : '#111827',
-        secondaryTextColor: dark ? '#e5e7eb' : '#1f2937',
-        tertiaryTextColor: dark ? '#d1d5db' : '#374151',
-        textColor: dark ? '#f8fafc' : '#111827',
-        lineColor: dark ? '#94a3b8' : '#64748b',
-        edgeLabelBackground: dark ? '#1f2937' : '#ffffff',
+        background: dark ? '#0d1317' : '#ffffff',
+        primaryTextColor: dark ? '#f1f5f9' : '#0f172a',
+        secondaryTextColor: dark ? '#94a3b8' : '#475569',
+        tertiaryTextColor: dark ? '#64748b' : '#64748b',
+        textColor: dark ? '#f1f5f9' : '#0f172a',
+        lineColor: dark ? '#425462' : '#94a3b8',
+        edgeLabelBackground: dark ? '#141b20' : '#ffffff',
       },
     });
 
@@ -50,15 +51,15 @@ export function Mermaid({ chart }: MermaidProps) {
       // surrounding theme instead.
       rendered.querySelectorAll('.nodeLabel').forEach((node) => {
         const element = node as HTMLElement;
-        element.style.setProperty('color', '#111827', 'important');
+        element.style.setProperty('color', dark ? '#f1f5f9' : '#0f172a', 'important');
       });
 
-      const chartTextColor = dark ? '#f8fafc' : '#111827';
+      const chartTextColor = dark ? '#f1f5f9' : '#0f172a';
       rendered.querySelectorAll('text, tspan').forEach((node) => {
         node.setAttribute('fill', chartTextColor);
       });
 
-      const edgeLabelColor = dark ? '#f8fafc' : '#111827';
+      const edgeLabelColor = dark ? '#f1f5f9' : '#0f172a';
       rendered.querySelectorAll('.edgeLabel, .edgeLabel p').forEach((node) => {
         const element = node as HTMLElement;
         element.style.setProperty('color', edgeLabelColor, 'important');

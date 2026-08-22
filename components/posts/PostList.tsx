@@ -53,7 +53,7 @@ export function PostList({ posts, base, showTagFilter = true, translations }: Pr
       <h2 className="text-xs font-mono uppercase tracking-widest mb-4" style={{ color: 'var(--text-faint)' }}>{translations.all_posts}</h2>
       <div className="space-y-2">
         {regularPosts.map(post => (
-          <Link key={post.slug} href={`${base}/posts/${post.slug}`} className="group block rounded-xl p-4 transition-all" style={{ border: '1px solid var(--border)' }}>
+          <Link key={post.slug} href={`${base}/posts/${post.slug}`} className="group block rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <h3 className="text-base font-medium mb-1 transition-colors group-hover:text-[var(--accent)]" style={{ color: 'var(--text)' }}>{post.title}</h3>

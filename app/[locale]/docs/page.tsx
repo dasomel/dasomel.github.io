@@ -14,14 +14,20 @@ export default async function DocsIndexPage({ params }: { params: Promise<{ loca
   const groups = groupDocsByProject(getDocs(lang).filter((doc) => !doc.slug.includes('/')));
   const base = lang === 'en' ? '/en' : '/ko';
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <h1 className="text-3xl font-bold text-gray-900 mb-10">{t('docs')}</h1>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 slide-enter-content">
+      <div className="workbench-eyebrow mb-3">DOCUMENTATION</div>
+      <h1 className="text-3xl font-bold mb-10" style={{ color: 'var(--text)' }}>{t('docs')}</h1>
       {groups.map(([project, projectDocs]) => (
         <section key={project} className="mt-10 first:mt-0">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">{project}</h2>
+          <h2 className="text-xs font-mono font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-faint)' }}>{project}</h2>
           <ul className="space-y-2">
             {projectDocs.map((doc) => (
-              <li key={doc.slug}><Link href={`${base}/docs/${doc.slug}`} className="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:border-l-emerald-500 hover:shadow-sm transition-all group"><span className="font-medium text-gray-900 group-hover:text-emerald-600">{doc.title}</span>{doc.lastModified && <span className="font-mono text-xs text-gray-400">{doc.lastModified.slice(0, 10)}</span>}</Link></li>
+              <li key={doc.slug}>
+                <Link href={`${base}/docs/${doc.slug}`} className="flex items-center justify-between p-4 rounded-xl transition-all hover:bg-[var(--surface-hi)] hover:border-[var(--border-hi)] group" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+                  <span className="font-medium group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{doc.title}</span>
+                  {doc.lastModified && <span className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{doc.lastModified.slice(0, 10)}</span>}
+                </Link>
+              </li>
             ))}
           </ul>
         </section>

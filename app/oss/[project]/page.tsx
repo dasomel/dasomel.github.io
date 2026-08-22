@@ -15,16 +15,16 @@ export default async function OssProjectHome({ params }: { params: Promise<{ pro
 
   return (
     <OssProjectShell project={project.meta} docs={docs} locale="ko">
-      <div className="relative mb-10 overflow-hidden rounded-2xl border border-[#e5e3dc] bg-gradient-to-br from-[#f5fbfa] via-white to-[#f8f7f2] px-7 py-8 sm:px-9 sm:py-10">
-        <div className="absolute left-0 top-0 h-full w-1.5 bg-[#0f766e]" />
+      <div className="relative mb-10 overflow-hidden rounded-2xl p-7 sm:p-9" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+        <div className="absolute left-0 top-0 h-full w-1.5" style={{ backgroundColor: 'var(--accent)' }} />
         <div className="mb-4 flex items-center gap-3">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#0f766e] shadow-[0_0_0_5px_#ccfbf1]" />
-          <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0f766e]">OpenForge Documentation</span>
+          <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: 'var(--accent)', boxShadow: '0 0 0 4px var(--accent-dim)' }} />
+          <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: 'var(--accent)' }}>OpenForge Documentation</span>
         </div>
-        <h2 className="text-4xl font-bold tracking-tight text-[#171717] sm:text-5xl">{project.meta.title}</h2>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-[#5f625d]">{project.meta.description}</p>
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl" style={{ color: 'var(--text)' }}>{project.meta.title}</h2>
+        <p className="mt-4 max-w-3xl text-lg leading-8" style={{ color: 'var(--text-muted)' }}>{project.meta.description}</p>
       </div>
-      <article id="oss-doc-content" className="prose prose-neutral max-w-3xl prose-headings:scroll-mt-24 prose-headings:text-[#20201d] prose-a:text-[#0f766e] prose-a:no-underline hover:prose-a:underline prose-code:text-[#33413e] prose-strong:text-[#20201d]">
+      <article id="oss-doc-content" className="prose cne-doc-prose max-w-3xl prose-headings:scroll-mt-24">
         <MDXContent source={project.content} />
       </article>
     </OssProjectShell>
