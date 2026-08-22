@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'src/content/posts/.digest-data/*-ai.json'
+      - 'src/content/posts/.digest-data/*-ai-*.json'
   workflow_dispatch:
 
 permissions:
