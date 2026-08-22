@@ -1,0 +1,7 @@
+/* Mobile header refinement hooks */
+@media (max-width: 767px) {
+  header a,
+  header button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
