@@ -1,73 +1,164 @@
 ---
 title: "KubeMetal"
-description: "Apple Silicon 하이브리드 MLOps 데스크톱 앱 (Tauri v2 + Rust + React + Apple MLX)"
+description: "Apple Silicon에서 Kubernetes Control Plane과 macOS MLX Compute를 결합하는 하이브리드 MLOps 데스크톱 앱"
 github: "https://github.com/dasomel/kubemetal"
-tags: ["Kubernetes", "MLOps", "AppleSilicon", "MLX", "Tauri", "Rust", "React", "LLM"]
+tags: ["Apple Silicon", "macOS", "Tauri", "Rust", "React", "Kubernetes", "K3s", "Colima", "MLX", "MLOps"]
 order: 13
 type: "own"
 featured: true
-problem: "Apple Silicon Mac에서 쿠버네티스 기반 MLOps 워크로드를 구동할 때 가상화 VM 내부에서는 Apple Silicon GPU/NPU의 Unified Memory 하드웨어 가속을 활용하기 어려움"
-solution: "K3s/Colima 기반 K8s 컨트롤 플레인과 macOS 호스트 네이티브 Apple MLX 연산 엔진을 Tauri v2 IPC로 결합한 하이브리드 MLOps 데스크톱 플랫폼 구축"
+problem: "Apple Silicon의 Metal GPU 연산을 Linux VM 내부 Kubernetes Pod로 직접 전달하기 어렵기 때문에 일반적인 '모든 것을 Kubernetes 안에서 실행'하는 MLOps 구조가 로컬 Mac에서는 하드웨어를 제대로 활용하지 못함"
+solution: "K3s/Colima는 MLOps control plane으로 사용하고 실제 GPU-bound MLX fine-tuning/serving은 macOS host process에서 실행하는 control/compute separation 모델을 데스크톱 UX로 제공"
 ---
 
 ## 프로젝트 소개
 
-**KubeMetal**은 Apple Silicon Mac 환경에서 Kubernetes 오케스트레이션과 Apple MLX 하드웨어 가속을 완벽하게 결합한 차세대 하이브리드 MLOps 데스크톱 애플리케이션입니다.
+**KubeMetal**은 Apple Silicon Mac을 하나의 로컬 MLOps workstation으로 사용하는 하이브리드 데스크톱 애플리케이션입니다.
 
-Tauri v2 (Rust 백엔드)와 React (TypeScript 프론트엔드)를 기반으로 구축되었으며, 컨테이너 가상화의 유연성과 macOS 호스트의 초고속 Unified Memory(최대 128GB+) 하드웨어 연산 성능을 동시에 제공합니다.
+핵심 아이디어는 Kubernetes를 모든 작업의 실행 위치로 보지 않는 것입니다. K3s와 MLflow, SeaweedFS 같은 **control-plane / platform services는 Colima 기반 Kubernetes에서 실행**하고, Apple Silicon GPU/Metal을 사용하는 실제 ML computation은 **macOS host process에서 실행**합니다.
 
-### 핵심 기술 및 특징
+이 구조는 Apple Silicon에서 GPU를 Linux VM에 단순 passthrough하는 방식의 한계를 피하면서도, Kubernetes가 제공하는 선언적 배포·서비스 관리·관측성 패턴을 유지합니다.
 
-- **하이브리드 컴퓨트 아키텍처**: VM 내부의 가벼운 K3s 컨트롤 플레인 + 호스트 네이티브 Apple MLX/Metal 연산 분리
-- **Tauri v2 IPC 브리지**: Rust 비동기 런타임과 React UI 간의 안전하고 빠른 네이티브 시스템 통신
-- **로컬 LLM 파인튜닝 & 추론**: LoRA 어댑터 결합, GGUF/MLX 양자화 모델 로딩 및 고속 분산 추론
-- **MLOps 라이프사이클 관리**: 모델 가중치 다운로드, 양자화 변환, 파이프라인 배포 및 리소스 실시간 시각화
-- **하드웨어 호환성 최적화**: M1/M2/M3/M4 Pro/Max/Ultra 칩셋별 메모리 압박 완화 및 대역폭 극대화
-
----
-
-## 아키텍처 다이어그램
+## Control / Compute Separation
 
 ```text
-  ┌────────────────────────────────────────────────────────┐
-  │  KubeMetal Desktop Application (Tauri v2 + React)     │
-  │  - Model Catalog & Fine-Tuning UI                      │
-  │  - Pipeline Visualizer & Resource Metrics              │
-  └─────────────┬────────────────────────────┬─────────────┘
-                │ Native IPC                 │ K8s API
-                ▼                            ▼
-  ┌───────────────────────────┐   ┌────────────────────────┐
-  │  macOS Host MLX Engine    │   │  Local K8s (K3s/Colima)│
-  │  - Apple Silicon GPU/NPU  │   │  - Control Plane       │
-  │  - Unified Memory Pool    │   │  - Pipeline Operators  │
-  │  - LoRA / MLX Inference   │   │  - Model Serving CRD   │
-  └───────────────────────────┘   └────────────────────────┘
+                    KubeMetal Desktop
+             ┌──────────────────────────┐
+             │ Tauri v2 + React UI      │
+             │ Dashboard / Pipeline     │
+             │ Model Hub / MLX Studio   │
+             └────────────┬─────────────┘
+                          │
+               ┌──────────┴───────────┐
+               │                      │
+               ▼                      ▼
+      Kubernetes Control Plane     macOS Host Compute
+      ┌──────────────────────┐     ┌──────────────────────┐
+      │ K3s / Colima         │     │ MLX / Metal          │
+      │ MLflow               │     │ LoRA Fine-tuning     │
+      │ SeaweedFS            │     │ Model Serving        │
+      │ manifests / services │     │ Host resources       │
+      └──────────────────────┘     └──────────────────────┘
 ```
 
----
+Kubernetes가 실험 추적과 artifact storage를 담당하고, 모델 계산량이 큰 작업은 host에서 수행합니다.
 
-## 시작하기 (Quickstart)
+## 8개 사용자 작업 공간
+
+| Tab | 역할 |
+|---|---|
+| Dashboard | RAM/CPU, Colima cluster lifecycle, MLOps stack provisioning, port-forward |
+| kagent Ops | 외부 cluster의 agent-based diagnostics와 AI agent 관리 |
+| Pipeline | cluster → provisioning → model → fine-tuning → registration → serving 흐름 |
+| Model Hub | Hugging Face 검색 → host download → SeaweedFS upload → MLflow registration |
+| MLX Studio | host MLX environment, LoRA fine-tuning, model serving |
+| Data | ingestion DAG, chunking, LanceDB RAG, SeaweedFS backup, DVC |
+| Access Console | MLflow / SeaweedFS 등 provisioned service 접근 |
+| Air-Gap Management | image/chart/binary offline bundle 다운로드·설치·version verification |
+
+## 외부 Kubernetes 통합
+
+KubeMetal은 기존 Kubernetes cluster를 모두 로컬 stack으로 가져오려 하지 않습니다.
+
+기본 D30 경로는 **agent-only integration**입니다.
+
+```text
+Existing Kubernetes Cluster
+        │
+        │ kagent agent
+        ▼
+  KubeMetal kagent Ops
+        │
+        └── diagnostics / security / PromQL / observability
+
+KubeMetal local k3s
+        └── MLflow / SeaweedFS / local MLOps control plane
+```
+
+실제 테스트에서는 6-node K3s HA cluster에서 diagnostics/preflight 경로를 확인했고, 앱의 기본 통합 모델을 “기존 cluster를 다시 배포하는 것”이 아니라 “관찰·진단 대상으로 연결하는 것”으로 정리했습니다.
+
+Full-stack external deployment는 D26 opt-in 경로로 별도 제공합니다. 이 경우 target kubeconfig context, StorageClass, Kyverno policy, Argo CD ownership, host bridge reachability 등을 사전에 검사합니다.
+
+## 왜 서명된 macOS App이 중요한가
+
+KubeMetal은 Kubernetes API와 local network에 접근하는 desktop application이므로 macOS의 network/code-signing 경계가 실제 기능의 일부입니다.
+
+개발 환경에서는 ad-hoc signing으로 인해 local network permission identity가 빌드마다 달라질 수 있고, 배포용으로는 안정적인 code-signing identity가 필요합니다. 따라서 프로젝트는 signed application과 external cluster access를 함께 고려합니다.
+
+## Air-Gap
+
+KubeMetal은 air-gapped 환경도 데스크톱 UI에서 관리 대상으로 포함합니다.
+
+- container images
+- Helm charts
+- binaries
+- asset versions
+- offline bundle verification
+
+즉 단순한 “로컬 ML launcher”가 아니라 **edge / disconnected MLOps workstation**까지 확장 가능한 제어면을 지향합니다.
+
+## 성능 측정의 의미
+
+실제 측정값은 프로젝트의 하드웨어 특성을 설명하는 reference로 사용됩니다.
+
+2026-07-27~28 Apple M4 Pro / 64GB 환경에서 packaged app을 기준으로 다음과 같은 측정이 문서화되어 있습니다.
+
+- VLM serving: 약 **196–198 tok/s**
+- VLM TTFT: **442–767 ms**
+- LoRA fine-tuning: **674.5M trainable params**, peak memory **8.7GB**
+- 64GB host profile: K8s VM에 12GB/6CPU 수준 할당
+
+이는 특정 모델의 절대 성능을 보장하는 benchmark가 아니라, **host-native compute와 VM control plane을 분리했을 때 얻을 수 있는 로컬 MLOps baseline**입니다.
+
+## 개발 환경
 
 ```bash
-# 1. 저장소 클론
 git clone https://github.com/dasomel/kubemetal.git
 cd kubemetal
-
-# 2. 의존성 설치
 pnpm install
-
-# 3. Tauri v2 데스크톱 앱 개발 모드 실행
 pnpm tauri dev
 ```
 
----
+기본적으로 macOS 14+ Apple Silicon, Homebrew, Colima, kubectl, Node 22+, pnpm, Rust toolchain이 필요합니다.
+
+## 단계별 개발 상태
+
+README 기준으로 Phase 1~3의 핵심 기능이 구현된 상태이며, 이후 작업은 외부 cluster integration, hardware guardrails, GitOps 경계와 같은 실제 환경의 운영 조건을 다루는 방향으로 이어집니다.
+
+주요 완료 범위:
+
+- Tauri v2 + Colima lifecycle
+- MLflow / SeaweedFS provisioning
+- Model Hub
+- Host MLX LoRA fine-tuning
+- model serving
+- pipeline visualization
+- unified access console
+- packaged `.app` / `.dmg`
+- thermal / memory / sleep guardrails
 
 ## 상세 기술 문서
 
-| 주제 | 문서 링크 | 설명 |
+| 주제 | 문서 | 내용 |
 |---|---|---|
-| **개요 (Overview)** | [KubeMetal 개요](/oss/kubemetal/overview) | 하이브리드 MLOps 아키텍처 및 Apple Silicon 최적화 |
-| **아키텍처 (Architecture)** | [시스템 아키텍처](/oss/kubemetal/architecture) | Tauri v2 브리지, 호스트 MLX 엔진 및 K3s 컨트롤러 |
-| **MLOps 파이프라인 (MLOps)** | [MLOps 가이드](/oss/kubemetal/mlops) | 로컬 LLM 파인튜닝, LoRA 어댑터, 양자화 추론 |
-| **시작하기 (Getting Started)** | [앱 설치 및 설정](/oss/kubemetal/getting-started) | 데스크톱 앱 빌드, 모델 카탈로그 초기화 |
-| **운영 가이드 (Operations)** | [성능 최적화 & 운영](/oss/kubemetal/operations) | Unified Memory 튜닝, 호환성 매트릭스, E2E 검증 |
+| Overview | [KubeMetal 개요](/oss/kubemetal/overview) | 제품 목적과 control/compute separation |
+| Architecture | [아키텍처](/oss/kubemetal/architecture) | Tauri ↔ K3s ↔ host MLX 경계 |
+| MLOps | [MLOps 가이드](/oss/kubemetal/mlops) | model lifecycle과 fine-tuning |
+| Integration | [외부 클러스터 연계](/oss/kubemetal/integration) | D30/D26 통합 모델 |
+| Usage | [사용 가이드](/oss/kubemetal/usage) | 데스크톱 작업 흐름 |
+| Operations | [운영 가이드](/oss/kubemetal/operations) | signing, resource guardrails, troubleshooting |
+
+## 프로젝트 관계
+
+```text
+Kube-Ready-Box / Kubernetes experience
+                ↓
+         Narwhal / cloud-native IDP
+
+Apple Silicon Mac
+        ↓
+    KubeMetal
+     ├── Kubernetes control plane
+     └── native MLX compute
+                ↓
+      local / edge MLOps
+```
