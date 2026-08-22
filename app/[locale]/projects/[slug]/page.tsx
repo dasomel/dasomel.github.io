@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Github, GitFork, ArrowUpRight, FileText, BookOpen, Activity, Newspaper } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import styles from './ProjectDetailRefresh.module.css';
 
 const visualProjects = new Set(['narwhal', 'beluga', 'oh-my-cursor', 'kubemetal', 'kube-ready-box', 'ldapium', 'nfs-quota-agent', 'egovframe-launcher', 'k-paas']);
 const projectImage = (slug: string) => `/images/projects/${visualProjects.has(slug) ? slug : 'default'}.svg`;
@@ -53,37 +54,55 @@ export default async function ProjectPage({ params }: { params: Promise<{ locale
   const relatedDigests = digests.filter(digest => digest.projects?.includes(slug)).slice(0, 4);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-      <Link href={`${base}/projects`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}><ArrowLeft className="w-4 h-4" aria-hidden="true" />{tc('back')}</Link>
-      <header className="mb-10">
-        <div className="overflow-hidden rounded-2xl mb-7" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><ProjectVisual src={image} alt="" className="block w-full h-auto" loading="eager" /></div>
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          {meta.type === 'fork' && <span className="inline-flex items-center gap-1 text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--surface)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}><GitFork className="w-3 h-3" aria-hidden="true" />Fork</span>}
-          {meta.featured && <span className="text-xs font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>Active</span>}
+    <div className={styles.detail}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <Link href={`${base}/projects`} className="inline-flex items-center gap-2 text-sm mb-5 transition-colors" style={{ color: 'var(--text-muted)' }}><ArrowLeft className="w-4 h-4" aria-hidden="true" />{tc('back')}</Link>
+
+        <header className="project-hero">
+          <div className="project-hero-copy">
+            <div className="project-kicker">
+              <span className="workbench-eyebrow">OSS PROJECT</span>
+              {meta.type === 'fork' && <span className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--surface)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}><GitFork className="w-3 h-3" aria-hidden="true" />Fork</span>}
+              {meta.featured && <span className="text-[10px] font-mono px-2 py-1 rounded-full" style={{ backgroundColor: 'var(--accent-dim)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>ACTIVE</span>}
+            </div>
+            <h1 className="project-title font-semibold" style={{ color: 'var(--text)' }}>{meta.title}</h1>
+            <p className="project-lede mt-6" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>
+            <div className="project-actions">
+              {meta.github && <Button asChild size="sm"><a href={meta.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><Github className="w-4 h-4" aria-hidden="true" />{tc('github')}<ArrowUpRight className="w-3 h-3" /></a></Button>}
+              <Link href={`${base}/projects`} className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium" style={{ color: 'var(--text-muted)', border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>All Projects</Link>
+            </div>
+            <div className="project-tags">{meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}</div>
+          </div>
+          <div className="project-visual-frame">
+            <ProjectVisual src={image} alt="" className="block w-full h-auto" loading="eager" />
+          </div>
+        </header>
+
+        {meta.github && <ProjectSourceSnapshot github={meta.github} lang={lang} />}
+
+        {(meta.problem || meta.solution) && <section className="project-evidence" aria-label={tp('summary')}>
+          {meta.problem && <div className="project-problem"><div className="project-evidence-label">{tp('problem')}</div><p className="project-evidence-text">{meta.problem}</p></div>}
+          {meta.solution && <div className="project-response"><div className="project-evidence-label">{tp('response')}</div><p className="project-evidence-text">{meta.solution}</p></div>}
+        </section>}
+
+        <section className="project-signals" aria-label={tp('context')}>
+          <div className="project-signal"><div className="project-signal-label"><Activity className="inline w-3 h-3 mr-1" aria-hidden="true" />Signals</div><div className="project-signal-value">{meta.tags.length}</div><div className="text-xs" style={{ color: 'var(--text-muted)' }}>{tp('signals_desc')}</div></div>
+          <div className="project-signal"><div className="project-signal-label"><BookOpen className="inline w-3 h-3 mr-1" aria-hidden="true" />Docs</div><div className="project-signal-value">{relatedDocs.length}</div><div className="text-xs" style={{ color: 'var(--text-muted)' }}>{tp('docs_desc')}</div></div>
+          <div className="project-signal"><div className="project-signal-label"><FileText className="inline w-3 h-3 mr-1" aria-hidden="true" />Notes</div><div className="project-signal-value">{relatedNotes.length}</div><div className="text-xs" style={{ color: 'var(--text-muted)' }}>{tp('notes_desc')}</div></div>
+          <div className="project-signal"><div className="project-signal-label"><Newspaper className="inline w-3 h-3 mr-1" aria-hidden="true" />Digest</div><div className="project-signal-value">{relatedDigests.length}</div><div className="text-xs" style={{ color: 'var(--text-muted)' }}>Explicit source links</div></div>
+        </section>
+
+        {(relatedDocs.length > 0 || relatedNotes.length > 0 || relatedDigests.length > 0) && <section className="project-links-grid">
+          {relatedDocs.length > 0 && <div className="project-link-group"><h2>{tp('docs')}</h2><div className="project-link-list">{relatedDocs.map(doc => <Link key={doc.slug} href={`${base}/docs/${doc.slug}`} className="project-link-card group"><div><div className="project-link-title group-hover:text-[var(--accent)] transition-colors">{doc.title}</div>{doc.description && <div className="project-link-meta line-clamp-2">{doc.description}</div>}</div><ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-faint)' }} /></Link>)}</div></div>}
+          {relatedNotes.length > 0 && <div className="project-link-group"><h2>{tp('related_notes')}</h2><div className="project-link-list">{relatedNotes.map(note => <Link key={note.slug} href={`${base}/posts/${note.slug}`} className="project-link-card group"><div><div className="project-link-title group-hover:text-[var(--accent)] transition-colors">{note.title}</div><div className="project-link-meta">{note.pubDate.slice(0, 10)} · {note.tags.slice(0, 3).join(' · ')}</div></div><ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-faint)' }} /></Link>)}</div></div>}
+          {relatedDigests.length > 0 && <div className="project-link-group"><h2>Tech Digest</h2><div className="project-link-list">{relatedDigests.map(digest => <Link key={digest.slug} href={`${base}/posts/${digest.slug}`} className="project-link-card group"><div><div className="project-link-title group-hover:text-[var(--accent)] transition-colors">{digest.title}</div><div className="project-link-meta">{digest.pubDate.slice(0, 10)} · {digest.tags.slice(0, 3).join(' · ')}</div></div><ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-faint)' }} /></Link>)}</div></div>}
+        </section>}
+
+        <div className="project-body-wrap">
+          <article className="project-body prose cne-doc-prose max-w-none prose-headings:font-bold"><MDXContent source={content} /></article>
+          <aside className="project-body-aside hidden lg:block"><div className="project-body-aside-label">PROJECT RECORD</div><div className="project-body-aside-box">This page connects the project narrative to its source repository, documentation, engineering notes, and curated digest references.</div></aside>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4" style={{ color: 'var(--text)' }}>{meta.title}</h1>
-        <p className="text-base sm:text-lg max-w-3xl leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>{meta.description}</p>
-        <div className="flex items-center gap-3 flex-wrap">{meta.github && <Button asChild size="sm"><a href={meta.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><Github className="w-4 h-4" aria-hidden="true" />{tc('github')}<ArrowUpRight className="w-3 h-3" /></a></Button>}{meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}</div>
-      </header>
-
-      {meta.github && <ProjectSourceSnapshot github={meta.github} lang={lang} />}
-
-      {(meta.problem || meta.solution) && <section className="grid md:grid-cols-2 gap-3 mb-10" aria-label={tp('summary')}>
-        {meta.problem && <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}>{tp('problem')}</div><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.problem}</p></div>}
-        {meta.solution && <div className="rounded-2xl p-5" style={{ border: '1px solid var(--accent-glow)', backgroundColor: 'var(--accent-dim)' }}><div className="text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--accent)' }}>{tp('response')}</div><p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{meta.solution}</p></div>}
-      </section>}
-      <section className="grid sm:grid-cols-4 gap-3 mb-10" aria-label={tp('context')}>
-        <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}><Activity className="w-3.5 h-3.5" aria-hidden="true" />{tp('signals')}</div><div className="text-2xl font-semibold mb-1" style={{ color: 'var(--text)' }}>{meta.tags.length}</div><p className="text-xs" style={{ color: 'var(--text-muted)' }}>{tp('signals_desc')}</p></div>
-        <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}><BookOpen className="w-3.5 h-3.5" aria-hidden="true" />{tp('docs')}</div><div className="text-2xl font-semibold mb-1" style={{ color: 'var(--text)' }}>{relatedDocs.length}</div><p className="text-xs" style={{ color: 'var(--text-muted)' }}>{tp('docs_desc')}</p></div>
-        <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}><FileText className="w-3.5 h-3.5" aria-hidden="true" />{tp('related_notes')}</div><div className="text-2xl font-semibold mb-1" style={{ color: 'var(--text)' }}>{relatedNotes.length}</div><p className="text-xs" style={{ color: 'var(--text-muted)' }}>{tp('notes_desc')}</p></div>
-        <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}><Newspaper className="w-3.5 h-3.5" aria-hidden="true" />Tech Digest</div><div className="text-2xl font-semibold mb-1" style={{ color: 'var(--text)' }}>{relatedDigests.length}</div><p className="text-xs" style={{ color: 'var(--text-muted)' }}>Explicit source links only</p></div>
-      </section>
-      {(relatedDocs.length > 0 || relatedNotes.length > 0 || relatedDigests.length > 0) && <section className="grid lg:grid-cols-3 gap-5 mb-12">
-        {relatedDocs.length > 0 && <div><div className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-faint)' }}>{tp('docs')}</div><div className="space-y-2">{relatedDocs.map(doc => <Link key={doc.slug} href={`${base}/docs/${doc.slug}`} className="group flex items-center justify-between gap-3 rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div><div className="text-sm font-medium group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{doc.title}</div>{doc.description && <div className="text-xs mt-1 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{doc.description}</div>}</div><ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-faint)' }} aria-hidden="true" /></Link>)}</div></div>}
-        {relatedNotes.length > 0 && <div><div className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-faint)' }}>{tp('related_notes')}</div><div className="space-y-2">{relatedNotes.map(note => <Link key={note.slug} href={`${base}/posts/${note.slug}`} className="group block rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="text-sm font-medium group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{note.title}</div><div className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{note.pubDate.slice(0, 10)} · {note.tags.slice(0, 3).join(' · ')}</div></Link>)}</div></div>}
-        {relatedDigests.length > 0 && <div><div className="text-xs font-mono uppercase tracking-wider mb-3" style={{ color: 'var(--text-faint)' }}>Tech Digest</div><div className="space-y-2">{relatedDigests.map(digest => <Link key={digest.slug} href={`${base}/posts/${digest.slug}`} className="group block rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="text-sm font-medium group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{digest.title}</div><div className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{digest.pubDate.slice(0, 10)} · {digest.tags.slice(0, 3).join(' · ')}</div></Link>)}</div></div>}
-      </section>}
-      <article className="prose cne-doc-prose max-w-none prose-headings:font-bold"><MDXContent source={content} /></article>
+      </div>
     </div>
   );
 }
