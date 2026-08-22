@@ -1,0 +1,94 @@
+:global(.post-shell) { max-width: 76rem; }
+
+:global(.post-hero) {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, .72fr);
+  gap: 3.5rem;
+  align-items: end;
+  padding: 2rem 0 1rem;
+}
+
+:global(.post-hero::before) {
+  content: 'ENGINEERING / SIGNAL';
+  position: absolute;
+  top: 0;
+  right: 0;
+  font: 600 .58rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: .16em;
+  color: var(--text-faint);
+  opacity: .7;
+}
+
+:global(.post-cover-frame) {
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 1.25rem;
+  box-shadow: 0 28px 70px -38px rgba(0,0,0,.42);
+  transform: translateY(1rem);
+}
+
+:global(.post-kicker) { box-shadow: 0 8px 22px -18px var(--accent-glow); }
+
+:global(.post-layout) {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+:global(.post-aside) { position: sticky; top: 5.5rem; }
+:global(.post-aside-card) {
+  padding: 1.1rem;
+  border: 1px solid;
+  border-radius: 1rem;
+  box-shadow: 0 18px 42px -34px rgba(0,0,0,.42);
+}
+
+:global(.post-article) { min-width: 0; }
+:global(.post-article > :first-child) { margin-top: 0 !important; }
+:global(.post-article h2) { margin-top: 2.8em; }
+:global(.post-article h3) { margin-top: 2.2em; }
+:global(.post-article > p:first-of-type) {
+  font-size: 1.08em;
+  line-height: 1.9;
+}
+:global(.post-article hr) {
+  margin: 3rem 0;
+  border-color: var(--border);
+}
+:global(.post-related a) {
+  box-shadow: 0 14px 34px -28px rgba(0,0,0,.44);
+}
+:global(.post-related a:hover) {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border)) !important;
+  box-shadow: 0 20px 40px -30px var(--accent-glow);
+}
+
+:global(html[data-theme='dark'] .post-shell) {
+  background: radial-gradient(circle at 10% 4%, rgba(45,212,191,.045), transparent 24%);
+}
+:global(html[data-theme='dark'] .post-cover-frame) {
+  box-shadow: 0 34px 86px -36px rgba(0,0,0,.78), 0 0 0 7px rgba(45,212,191,.025);
+}
+:global(html[data-theme='dark'] .post-aside-card) {
+  background: linear-gradient(145deg, rgba(45,212,191,.055), transparent 55%), #141e29 !important;
+}
+
+@media (max-width: 1023px) {
+  :global(.post-hero) { grid-template-columns: 1fr; gap: 2rem; }
+  :global(.post-cover-frame) { transform: none; max-width: 48rem; }
+  :global(.post-layout) { grid-template-columns: 1fr; gap: 2rem; }
+  :global(.post-aside) { position: static; order: 2; }
+  :global(.post-aside-card) { max-width: 40rem; }
+}
+
+@media (max-width: 767px) {
+  :global(.post-shell) { padding-top: 1.25rem; }
+  :global(.post-hero) { padding-top: 1rem; }
+  :global(.post-hero::before) { display: none; }
+  :global(.post-cover-frame) { border-radius: 1rem; }
+  :global(.post-layout) { gap: 1.25rem; }
+  :global(.post-article > p:first-of-type) { font-size: 1rem; }
+}
