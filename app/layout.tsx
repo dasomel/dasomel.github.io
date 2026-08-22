@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
+import './about-identity.css';
 import { StructuredData } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {

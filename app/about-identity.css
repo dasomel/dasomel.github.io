@@ -1,0 +1,70 @@
+/* About page visual refinement: keep the existing content, strengthen identity and hierarchy. */
+main > div.max-w-5xl > section:first-child {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(ellipse 70% 85% at 100% 0%, var(--accent-dim), transparent 68%),
+    linear-gradient(140deg, color-mix(in srgb, var(--surface-hi) 46%, transparent), transparent 60%),
+    var(--surface);
+  box-shadow: 0 28px 70px -52px var(--accent-glow);
+  overflow: hidden;
+}
+main > div.max-w-5xl > section:first-child::after {
+  content: 'IDENTITY / ENGINEERING';
+  position: absolute;
+  right: 1.5rem;
+  top: 1.25rem;
+  color: var(--text-faint);
+  font: 600 0.58rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .15em;
+  opacity: .75;
+}
+main > div.max-w-5xl > section:first-child h1 {
+  max-width: 12ch;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: .96;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+main > div.max-w-5xl > section:first-child p {
+  max-width: 50rem;
+}
+main > div.max-w-5xl > section:nth-child(2) > div {
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease;
+}
+main > div.max-w-5xl > section:nth-child(2) > div:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border)) !important;
+  background: var(--surface-hi) !important;
+}
+main > div.max-w-5xl > section:nth-child(3) a {
+  position: relative;
+  overflow: hidden;
+}
+main > div.max-w-5xl > section:nth-child(3) a::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  opacity: .35;
+  transition: opacity .18s ease;
+}
+main > div.max-w-5xl > section:nth-child(3) a:hover::before { opacity: 1; }
+main > div.max-w-5xl > section:nth-child(5) > div > div {
+  transition: transform .18s ease, border-color .18s ease;
+}
+main > div.max-w-5xl > section:nth-child(5) > div > div:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border)) !important;
+}
+@media (max-width: 720px) {
+  main > div.max-w-5xl > section:first-child { border-radius: 1.15rem; padding: 1.25rem; }
+  main > div.max-w-5xl > section:first-child::after { display:none; }
+  main > div.max-w-5xl > section:first-child h1 { font-size: clamp(2.35rem, 14vw, 4rem); }
+}
