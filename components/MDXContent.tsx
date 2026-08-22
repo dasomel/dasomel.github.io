@@ -4,6 +4,10 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import remarkGfm from 'remark-gfm';
 import { Mermaid } from '@/components/ui/mermaid';
 import { CodeBlock } from '@/components/ui/CodeBlock';
+import { Badge } from '@/components/ui/badge';
+import { EvidenceCallout } from '@/components/patterns/EvidenceCallout';
+import { BenchmarkGrid } from '@/components/patterns/BenchmarkGrid';
+import { DigestCard } from '@/components/patterns/DigestCard';
 
 interface MDXContentProps {
   source: string;
@@ -21,6 +25,10 @@ const rehypeOptions = {
 // Keep wide tables scrollable without allowing them to widen the whole page.
 const components = {
   Mermaid,
+  Badge,
+  EvidenceCallout,
+  BenchmarkGrid,
+  DigestCard,
   pre: (props: ComponentPropsWithoutRef<'pre'>) => <CodeBlock {...props} />,
   table: (props: ComponentPropsWithoutRef<'table'>) => (
     <div className="overflow-x-auto">
