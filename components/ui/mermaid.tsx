@@ -3,9 +3,7 @@
 import { useEffect, useRef } from 'react';
 import mermaid from 'mermaid';
 
-interface MermaidProps {
-  chart: string;
-}
+interface MermaidProps { chart: string; }
 
 function isDarkMode() {
   if (typeof document === 'undefined') return false;
@@ -13,6 +11,11 @@ function isDarkMode() {
     document.documentElement.dataset.theme === 'dark' ||
     (!document.documentElement.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
   );
+}
+
+function themeToken(name: string, fallback: string) {
+  if (typeof document === 'undefined') return fallback;
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
 }
 
 export function Mermaid({ chart }: MermaidProps) {
@@ -23,48 +26,49 @@ export function Mermaid({ chart }: MermaidProps) {
 
     const id = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
     const dark = isDarkMode();
-
-    const fg = dark ? '#f0f6fc' : '#1e293b';
-    const subFg = dark ? '#cbd5e1' : '#475569';
-    const nodeBg = dark ? '#212a36' : '#f8fafc';
-    const nodeBorder = dark ? '#3e526d' : '#cbd5e1';
-    const accentColor = dark ? '#2dd4bf' : '#0d9488';
-    const accentAlt = dark ? '#5eead4' : '#14b8a6';
-    const lineColor = dark ? '#4d627d' : '#94a3b8';
-    const palette = dark
-      ? '#2dd4bf, #5eead4, #14b8a6, #38bdf8, #818cf8'
-      : '#0d9488, #14b8a6, #0f766e, #0284c7, #6366f1';
+    const bg = themeToken('--bg', dark ? '#151b23' : '#fafaf9');
+    const bgSubtle = themeToken('--bg-subtle', dark ? '#1a222c' : '#f4f4f2');
+    const surface = themeToken('--surface', dark ? '#212a36' : '#ffffff');
+    const surfaceHi = themeToken('--surface-hi', dark ? '#2a3645' : '#f1f5f9');
+    const border = themeToken('--border', dark ? '#303e50' : '#e2e8f0');
+    const borderHi = themeToken('--border-hi', dark ? '#4d627d' : '#cbd5e1');
+    const text = themeToken('--text', dark ? '#f0f6fc' : '#334155');
+    const textMuted = themeToken('--text-muted', dark ? '#cbd5e1' : '#475569');
+    const accent = themeToken('--accent', dark ? '#2dd4bf' : '#0d9488');
+    const accentStrong = themeToken('--accent-strong', dark ? '#5eead4' : '#0f766e');
+    const codeBg = themeToken('--code-bg', dark ? '#121820' : '#f8fafc');
+    const palette = [accent, accentStrong, '#38bdf8', '#818cf8'].join(', ');
 
     mermaid.initialize({
       startOnLoad: false,
       theme: 'base',
       fontFamily: 'Pretendard Variable, ui-sans-serif, system-ui, sans-serif',
       themeVariables: {
-        background: dark ? '#121820' : '#ffffff',
-        mainBkg: nodeBg,
-        nodeBorder: nodeBorder,
-        nodeTextColor: fg,
-        clusterBkg: dark ? '#151b23' : '#f1f5f9',
-        clusterBorder: dark ? '#303e50' : '#e2e8f0',
-        titleColor: fg,
-        primaryColor: nodeBg,
-        primaryTextColor: fg,
-        primaryBorderColor: nodeBorder,
-        secondaryColor: dark ? '#1a222c' : '#f1f5f9',
-        secondaryTextColor: subFg,
-        secondaryBorderColor: nodeBorder,
-        tertiaryColor: dark ? '#151b23' : '#fafaf9',
-        tertiaryTextColor: subFg,
-        tertiaryBorderColor: nodeBorder,
-        textColor: fg,
-        lineColor: lineColor,
-        edgeLabelBackground: dark ? '#151b23' : '#ffffff',
-        actorBkg: nodeBg,
-        actorBorder: nodeBorder,
-        actorTextColor: fg,
-        actorLineColor: lineColor,
-        signalColor: fg,
-        signalTextColor: fg,
+        background: codeBg,
+        mainBkg: surface,
+        nodeBorder: borderHi,
+        nodeTextColor: text,
+        clusterBkg: bg,
+        clusterBorder: border,
+        titleColor: text,
+        primaryColor: surface,
+        primaryTextColor: text,
+        primaryBorderColor: borderHi,
+        secondaryColor: surfaceHi,
+        secondaryTextColor: textMuted,
+        secondaryBorderColor: border,
+        tertiaryColor: bgSubtle,
+        tertiaryTextColor: textMuted,
+        tertiaryBorderColor: border,
+        textColor: text,
+        lineColor: borderHi,
+        edgeLabelBackground: bg,
+        actorBkg: surface,
+        actorBorder: borderHi,
+        actorTextColor: text,
+        actorLineColor: borderHi,
+        signalColor: text,
+        signalTextColor: text,
         plotColorPalette: palette,
       },
     });
@@ -76,38 +80,33 @@ export function Mermaid({ chart }: MermaidProps) {
       const rendered = ref.current.querySelector('svg');
       if (!rendered) return;
 
-      // Flowchart node shapes: fill with subtle surface and crisp border
       rendered.querySelectorAll('.node:not(.bar):not(.xychart-bar) rect, .node:not(.bar):not(.xychart-bar) circle, .node:not(.bar):not(.xychart-bar) ellipse, .node:not(.bar):not(.xychart-bar) polygon, .node:not(.bar):not(.xychart-bar) path:not(.flowchart-link)').forEach((shape) => {
         const el = shape as SVGElement;
-        el.setAttribute('fill', nodeBg);
-        el.setAttribute('stroke', nodeBorder);
-        el.style.setProperty('fill', nodeBg, 'important');
-        el.style.setProperty('stroke', nodeBorder, 'important');
+        el.setAttribute('fill', surface);
+        el.setAttribute('stroke', borderHi);
+        el.style.setProperty('fill', surface, 'important');
+        el.style.setProperty('stroke', borderHi, 'important');
       });
 
-      // Bar charts (xychart-beta): vibrant brand teal palette
       rendered.querySelectorAll('.bar, .xychart-bar, rect.bar, g.bar-plot rect, .chart-bar').forEach((bar, index) => {
+        const color = index % 2 === 0 ? accent : accentStrong;
         const el = bar as SVGElement;
-        const color = index % 2 === 0 ? accentColor : accentAlt;
         el.setAttribute('fill', color);
         el.style.setProperty('fill', color, 'important');
       });
 
-      // Flowchart node text
       rendered.querySelectorAll('.nodeLabel, .nodeLabel p, .nodeLabel span').forEach((node) => {
         const element = node as HTMLElement;
-        element.style.setProperty('color', fg, 'important');
+        element.style.setProperty('color', text, 'important');
       });
 
-      // General SVG text & chart axes/titles
       rendered.querySelectorAll('text, tspan').forEach((node) => {
-        node.setAttribute('fill', fg);
+        node.setAttribute('fill', text);
       });
 
-      // Edge labels
       rendered.querySelectorAll('.edgeLabel, .edgeLabel p, .edgeLabel span').forEach((node) => {
         const element = node as HTMLElement;
-        element.style.setProperty('color', subFg, 'important');
+        element.style.setProperty('color', textMuted, 'important');
       });
     });
   }, [chart]);
