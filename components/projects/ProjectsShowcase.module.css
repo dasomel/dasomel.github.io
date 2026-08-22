@@ -1,0 +1,105 @@
+.showcase {
+  margin-top: 2rem;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  gap: 1rem;
+}
+
+.featureCard,
+.compactCard {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  background: var(--surface);
+  transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+
+.featureCard:hover,
+.compactCard:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  box-shadow: 0 26px 54px -34px var(--accent-glow);
+}
+
+.featureCard {
+  background:
+    radial-gradient(circle at 100% 0, var(--accent-dim), transparent 34%),
+    var(--surface);
+}
+
+.featureVisual {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-hi);
+}
+
+.featureBody {
+  padding: 1.5rem;
+}
+
+.index {
+  font: 600 .62rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: .16em;
+  color: var(--text-faint);
+  margin-bottom: .9rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .95rem;
+}
+
+.meta span {
+  padding: .25rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: .45rem;
+  background: var(--surface-hi);
+  color: var(--text-faint);
+  font: 500 .62rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.compactVisual {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-hi);
+}
+
+.compactBody {
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.kicker {
+  color: var(--text-faint);
+  font: 600 .66rem/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .featured { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .featureGrid { grid-template-columns: 1fr; }
+  .featureBody { padding: 1.2rem; }
+}
+
+:global(html[data-theme='dark']) .featureCard,
+:global(html[data-theme='dark']) .compactCard {
+  background: linear-gradient(145deg, rgba(45,212,191,.05), transparent 48%), #151f2b;
+}
+
+:global(html[data-theme='dark']) .featureCard {
+  background: radial-gradient(circle at 100% 0, rgba(45,212,191,.12), transparent 32%), #17232f;
+}
