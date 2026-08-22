@@ -140,22 +140,22 @@
 
 :global(html[data-theme='dark'] body) {
   background:
-    radial-gradient(circle at 85% 8%, rgba(45,212,191,.055), transparent 28%),
-    linear-gradient(180deg, #0b1118 0%, #0d141d 38%, #101923 100%);
+    radial-gradient(circle at 85% 8%, var(--accent-dim), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-subtle) 100%);
 }
 :global(html[data-theme='dark'] .home-hero) {
   background:
-    radial-gradient(circle at 72% 16%, rgba(45,212,191,.14), transparent 26%),
-    radial-gradient(circle at 12% 55%, rgba(31,118,110,.08), transparent 24%),
-    linear-gradient(180deg, #0d141c 0%, #0a1016 100%);
+    radial-gradient(circle at 72% 16%, var(--accent-glow), transparent 26%),
+    radial-gradient(circle at 12% 55%, var(--accent-dim), transparent 24%),
+    linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%);
 }
-:global(html[data-theme='dark'] .home-hero-grid) { opacity: .8; }
-:global(html[data-theme='dark'] .hero-frame) { box-shadow: 0 36px 90px -30px rgba(0,0,0,.78), 0 0 0 8px rgba(45,212,191,.035); }
-:global(html[data-theme='dark'] .project-tile) { background: linear-gradient(145deg, rgba(45,212,191,.055), transparent 46%), #151f2b; }
-:global(html[data-theme='dark'] .project-tile-featured) { background: linear-gradient(145deg, rgba(45,212,191,.11), transparent 48%), #16222e; }
-:global(html[data-theme='dark'] .digest-feature) { background: radial-gradient(circle at 82% 14%, rgba(45,212,191,.14), transparent 28%), linear-gradient(145deg, #182431, #121b25); }
-:global(html[data-theme='dark'] .workbench-quote) { background: radial-gradient(circle at 100% 0%, rgba(45,212,191,.1), transparent 42%), #151f2a; }
-:global(html[data-theme='dark'] .cne-doc-prose pre) { background: #0d151e !important; border-color: #2b3b4e !important; box-shadow: 0 24px 60px rgba(0,0,0,.48); }
+:global(html[data-theme='dark'] .home-hero-grid) { opacity: .55; }
+:global(html[data-theme='dark'] .hero-frame) { box-shadow: 0 30px 78px -34px rgba(0,0,0,.55), 0 0 0 8px color-mix(in srgb, var(--accent) 4%, transparent); }
+:global(html[data-theme='dark'] .project-tile) { background: linear-gradient(145deg, var(--accent-dim), transparent 46%), var(--surface); }
+:global(html[data-theme='dark'] .project-tile-featured) { background: linear-gradient(145deg, var(--accent-glow), transparent 48%), var(--surface); }
+:global(html[data-theme='dark'] .digest-feature) { background: radial-gradient(circle at 82% 14%, var(--accent-glow), transparent 28%), linear-gradient(145deg, var(--surface-hi), var(--surface)); }
+:global(html[data-theme='dark'] .workbench-quote) { background: radial-gradient(circle at 100% 0%, var(--accent-dim), transparent 42%), var(--surface); }
+:global(html[data-theme='dark'] .cne-doc-prose pre) { background: var(--code-bg) !important; border-color: var(--code-border) !important; box-shadow: 0 20px 52px -24px rgba(0,0,0,.5); }
 
 @media (max-width: 1023px) {
   :global(.home-hero) { min-height: auto; }
