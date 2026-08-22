@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Github, ArrowUpRight, Search } from 'lucide-react';
+import { Github, ArrowUpRight, Search, X } from 'lucide-react';
 import { TagFilter } from '@/components/ui/tag-filter';
 import { ProjectVisual } from '@/components/projects/ProjectVisual';
 import type { Project } from '@/lib/types';
@@ -16,6 +16,8 @@ interface Props {
     solution: string;
     search: string;
     noResults: string;
+    results: string;
+    clearFilters: string;
     core: string;
     tools: string;
     forks: string;
@@ -69,6 +71,12 @@ export function ProjectList({ projects, base, translations }: Props) {
       return matchesTag && (!normalized || haystack.includes(normalized));
     });
   }, [projects, query, selected]);
+
+  const hasFilters = Boolean(query.trim()) || selected !== 'all';
+  const resetFilters = () => {
+    setQuery('');
+    setSelected('all');
+  };
 
   const resolveStatus = (project: Project) => project.status ?? statusBySlug[project.slug];
   const core = sortCore(filtered.filter(project => project.type !== 'fork' && coreRank.has(project.slug)));
@@ -136,12 +144,31 @@ export function ProjectList({ projects, base, translations }: Props) {
 
   return (
     <div className={styles.showcase}>
-      <div className="flex flex-col sm:flex-row gap-3 mb-5">
-        <label className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'var(--text-faint)' }} aria-hidden="true" />
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={translations.search} aria-label={translations.search} className="w-full rounded-xl border bg-transparent pl-9 pr-3 py-2.5 text-sm outline-none focus:ring-2" style={{ borderColor: 'var(--border)', color: 'var(--text)', ['--tw-ring-color' as string]: 'var(--accent-glow)' }} />
-        </label>
+      <div className="rounded-2xl border p-3 sm:p-4 mb-6" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
+        <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+          <label className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'var(--text-faint)' }} aria-hidden="true" />
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={translations.search} aria-label={translations.search} className="w-full rounded-xl border bg-transparent pl-9 pr-3 py-2.5 text-sm outline-none focus:ring-2" style={{ borderColor: 'var(--border)', color: 'var(--text)', ['--tw-ring-color' as string]: 'var(--accent-glow)' }} />
+          </label>
+          {hasFilters && (
+            <button type="button" onClick={resetFilters} className="inline-flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-xs font-mono transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+              <X className="w-3.5 h-3.5" aria-hidden="true" />
+              {translations.clearFilters}
+            </button>
+          )}
+        </div>
+        <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
+          <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{translations.results.replace('{count}', String(filtered.length))}</div>
+          {hasFilters && (
+            <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
+              <span style={{ color: 'var(--text-muted)' }}>FILTER</span>
+              {query.trim() && <span className="rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{query.trim()}</span>}
+              {selected !== 'all' && <span className="rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>{selected}</span>}
+            </div>
+          )}
+        </div>
       </div>
+
       <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={setSelected} />
       {filtered.length === 0 ? <div className="rounded-2xl border p-10 text-center" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{translations.noResults}</div> : (
         <div className="space-y-14 mt-8">
