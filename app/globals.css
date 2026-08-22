@@ -227,6 +227,7 @@
 .cne-doc-prose code::after { content:none; }
 .cne-doc-prose pre {
   margin-block:1.8rem;
+  padding:1.25rem 1.5rem !important;
   border:1px solid var(--border) !important;
   border-radius:0.85rem;
   background:var(--code-bg) !important;
@@ -253,10 +254,10 @@
 }
 .cne-doc-prose blockquote {
   margin-block:1.8rem;
-  border-left:5px solid var(--accent) !important;
+  border-left:4px solid var(--accent) !important;
   background:var(--doc-panel-bg) !important;
   color:var(--doc-panel-fg) !important;
-  padding:1rem 1.35rem !important;
+  padding:1.2rem 1.6rem !important;
   border-radius:0 0.8rem 0.8rem 0;
 }
 .cne-doc-prose blockquote p,
@@ -267,16 +268,16 @@
   border-collapse:separate;
   border-spacing:0;
   overflow:hidden;
-  border:2px solid var(--doc-panel-border) !important;
+  border:1px solid var(--border) !important;
   border-radius:0.8rem;
   background:var(--surface) !important;
 }
-.cne-doc-prose thead { background:var(--doc-panel-header) !important; }
+.cne-doc-prose thead { background:var(--surface-hi) !important; }
 .cne-doc-prose th,
 .cne-doc-prose td {
   border-bottom:1px solid var(--border-soft) !important;
   color:var(--text) !important;
-  padding:0.8rem 0.9rem;
+  padding:0.9rem 1.25rem !important;
 }
 .cne-doc-prose th { color:var(--text) !important; font-weight:750; }
 .cne-doc-prose tbody tr:last-child td { border-bottom:0 !important; }

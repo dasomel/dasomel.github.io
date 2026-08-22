@@ -19,15 +19,15 @@
   </style>
   <rect width="1200" height="420" rx="24" class="svg-bg"/>
   <g class="svg-grid" stroke-width="1"><path d="M70 100h1060M70 210h1060M70 320h1060"/><path d="M190 65v290M410 65v290M630 65v290M850 65v290M1070 65v290"/></g>
-  <g class="svg-card" stroke-width="2.5"><rect x="110" y="135" width="220" height="95" rx="16"/><rect x="490" y="105" width="220" height="95" rx="16"/><rect x="870" y="135" width="220" height="95" rx="16"/></g>
-  <g class="svg-link" fill="none" stroke-width="2.5"><path d="M330 182h160M710 182h160"/></g>
+  <g class="svg-card" stroke-width="2.5"><rect x="110" y="130" width="220" height="100" rx="16"/><rect x="490" y="105" width="220" height="100" rx="16"/><rect x="870" y="130" width="220" height="100" rx="16"/></g>
+  <g class="svg-link" fill="none" stroke-width="2.5"><path d="M330 180h160M710 180h160"/></g>
   <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
-    <text x="110" y="167" font-size="14" font-weight="600" class="svg-text-sub">LOCAL VM</text>
-    <text x="145" y="207" font-size="22" font-weight="700" class="svg-text-title">Vagrant Box</text>
-    <text x="490" y="137" font-size="14" font-weight="600" class="svg-text-sub">PROVISION</text>
-    <text x="545" y="177" font-size="22" font-weight="700" class="svg-text-title">Ansible</text>
-    <text x="870" y="167" font-size="14" font-weight="600" class="svg-text-sub">READY</text>
-    <text x="915" y="207" font-size="22" font-weight="700" class="svg-text-title">K8s Ready</text>
-    <text x="110" y="370" font-size="28" font-weight="700" class="svg-brand">KubeReadyBox</text>
+    <text x="220" y="162" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1.5" class="svg-text-sub">LOCAL VM</text>
+    <text x="220" y="196" text-anchor="middle" font-size="20" font-weight="700" class="svg-text-title">Vagrant Box</text>
+    <text x="600" y="137" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1.5" class="svg-text-sub">PROVISION</text>
+    <text x="600" y="171" text-anchor="middle" font-size="20" font-weight="700" class="svg-text-title">Ansible</text>
+    <text x="980" y="162" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1.5" class="svg-text-sub">READY</text>
+    <text x="980" y="196" text-anchor="middle" font-size="20" font-weight="700" class="svg-text-title">K8s Ready</text>
+    <text x="80" y="365" font-size="26" font-weight="700" class="svg-brand">KubeReadyBox</text>
   </g>
 </svg>
