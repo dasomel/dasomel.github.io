@@ -11,7 +11,7 @@ on:
     - cron: '40 2 * * *'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -23,7 +23,41 @@ env:
   NEXT_TELEMETRY_DISABLED: '1'
 
 jobs:
+  lock:
+    name: cross-repo CI lock
+    runs-on: ubuntu-latest
+    outputs:
+      acquired: ${{ steps.acquire.outputs.acquired }}
+    steps:
+      - name: Acquire shared execution lock
+        id: acquire
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LOCK_REPO: dasomel/dasomel.github.io
+          LOCK_BRANCH: ci-cross-repo-lock
+          LOCK_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          for attempt in $(seq 1 90); do
+            if ! gh api "repos/${LOCK_REPO}/git/ref/heads/${LOCK_BRANCH}" >/dev/null 2>&1; then
+              if gh api --method POST "repos/${LOCK_REPO}/git/refs" \
+                -f "ref=refs/heads/${LOCK_BRANCH}" \
+                -f "sha=${LOCK_SHA}" >/dev/null 2>&1; then
+                echo "acquired=true" >> "$GITHUB_OUTPUT"
+                echo "Cross-repo lock acquired"
+                exit 0
+              fi
+            fi
+            echo "Cross-repo lock busy (attempt ${attempt}/90); waiting 10s"
+            sleep 10
+          done
+
+          echo "::error::Timed out waiting for cross-repo execution lock"
+          exit 1
+
   build:
+    needs: lock
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -68,3 +102,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  unlock:
+    name: release cross-repo CI lock
+    if: always()
+    needs: [lock, build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release shared execution lock
+        if: needs.lock.outputs.acquired == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LOCK_REPO: dasomel/dasomel.github.io
+          LOCK_BRANCH: ci-cross-repo-lock
+        run: |
+          set -euo pipefail
+          gh api --method DELETE "repos/${LOCK_REPO}/git/refs/heads/${LOCK_BRANCH}" || true
