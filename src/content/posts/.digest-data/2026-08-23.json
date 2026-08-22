@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-23",
+  "generatedAt": "2026-08-22T20:43:56.669Z",
+  "count": 8,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The open mainframe: the keystone of the end-to-end digital enterprise",
+      "link": "https://thenewstack.io/open-mainframe-keystone-enterprise/",
+      "date": "2026-08-22T17:00:00.000Z",
+      "excerpt": "In the first article in this series, I discussed how the Open Mainframe Project (OMP) and its open-source framework, Zowe,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Securing sandboxes: What happens when AI agents escape containment?",
+      "link": "https://thenewstack.io/securing-ai-agent-sandboxes/",
+      "date": "2026-08-22T16:00:00.000Z",
+      "excerpt": "On July 16, the team at Hugging Face noticed something weird moving through their production systems: An intruder that was"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Six identity capabilities for securing autonomous AI agents",
+      "link": "https://thenewstack.io/securing-autonomous-ai-agents/",
+      "date": "2026-08-22T14:00:00.000Z",
+      "excerpt": "The artificial intelligence landscape has reached a pivotal inflection point. Over the past several years, the paradigm has shifted from"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Say it once: introducing Bot Preference Sync",
+      "link": "https://blog.cloudflare.com/bot-preference-sync/",
+      "date": "2026-08-21T23:19:57.000Z",
+      "excerpt": "Cloudflare's new Bot Preference Sync automatically aligns your robots.txt file with your AI bot policies for Search, Agent, and Training."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-08-21T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — August 21, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-august-21-2026-red-hat",
+      "date": "2026-08-21T00:00:00.000Z",
+      "excerpt": "Why proprietary software isn’t a retrospective trend but a trap for failureThink proprietary software is more secure because its code is hidden? In the AI era, that assumption is dangerously outdated."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Announcing quantum-safe key import in Cloud KMS",
+      "link": "https://cloud.google.com/blog/products/identity-security/announcing-quantum-safe-key-import-in-cloud-kms/",
+      "date": "2026-08-20T16:00:00.000Z",
+      "excerpt": "As enterprises increasingly adopt multicloud architectures, bring your own key (BYOK) has become a fundamental pillar for maintaining data sovereignty and helping protect critical cloud workloads."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Going with the Flow(s): Distinct Clusters Target Individuals of Interest to Russia",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/distinct-clusters-target-individuals-of-interest-to-russia/",
+      "date": "2026-08-20T14:00:00.000Z",
+      "excerpt": "Written by: Gabby Roncone, Wesley Shields Overview Google Threat Intelligence Group (GTIG) is tracking three distinct suspected Russian cyber espionage threat clusters abusing legitimate authentication flows to target individuals working in academia, aerospace and defense, governments and think tanks across Europe, as…"
+    }
+  ]
+}
