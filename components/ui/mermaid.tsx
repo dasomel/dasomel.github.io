@@ -27,15 +27,33 @@ export function Mermaid({ chart }: MermaidProps) {
     mermaid.initialize({
       startOnLoad: false,
       theme: 'base',
-      fontFamily: 'Pretendard Variable, sans-serif',
+      fontFamily: 'Pretendard Variable, ui-sans-serif, system-ui, sans-serif',
       themeVariables: {
         background: dark ? '#121820' : '#ffffff',
+        mainBkg: dark ? '#212a36' : '#ffffff',
+        nodeBorder: dark ? '#303e50' : '#cbd5e1',
+        nodeTextColor: dark ? '#e6edf3' : '#334155',
+        clusterBkg: dark ? '#151b23' : '#f8fafc',
+        clusterBorder: dark ? '#303e50' : '#e2e8f0',
+        titleColor: dark ? '#e6edf3' : '#334155',
+        primaryColor: dark ? '#212a36' : '#ffffff',
         primaryTextColor: dark ? '#e6edf3' : '#334155',
-        secondaryTextColor: dark ? '#9daab6' : '#64748b',
-        tertiaryTextColor: dark ? '#6e7d8c' : '#94a3b8',
+        primaryBorderColor: dark ? '#303e50' : '#cbd5e1',
+        secondaryColor: dark ? '#1a222c' : '#f1f5f9',
+        secondaryTextColor: dark ? '#cbd5e1' : '#475569',
+        secondaryBorderColor: dark ? '#303e50' : '#e2e8f0',
+        tertiaryColor: dark ? '#151b23' : '#f8fafc',
+        tertiaryTextColor: dark ? '#94a3b8' : '#64748b',
+        tertiaryBorderColor: dark ? '#303e50' : '#e2e8f0',
         textColor: dark ? '#e6edf3' : '#334155',
-        lineColor: dark ? '#4d627d' : '#cbd5e1',
-        edgeLabelBackground: dark ? '#212a36' : '#ffffff',
+        lineColor: dark ? '#4d627d' : '#94a3b8',
+        edgeLabelBackground: dark ? '#151b23' : '#f8fafc',
+        actorBkg: dark ? '#212a36' : '#ffffff',
+        actorBorder: dark ? '#303e50' : '#cbd5e1',
+        actorTextColor: dark ? '#e6edf3' : '#334155',
+        actorLineColor: dark ? '#4d627d' : '#94a3b8',
+        signalColor: dark ? '#e6edf3' : '#334155',
+        signalTextColor: dark ? '#e6edf3' : '#334155',
       },
     });
 
@@ -46,23 +64,32 @@ export function Mermaid({ chart }: MermaidProps) {
       const rendered = ref.current.querySelector('svg');
       if (!rendered) return;
 
-      // Mermaid flowchart nodes use intentionally light fills, so keep node
-      // labels dark in both themes. SVG chart labels (axes/titles) follow the
-      // surrounding theme instead.
-      rendered.querySelectorAll('.nodeLabel').forEach((node) => {
-        const element = node as HTMLElement;
-        element.style.setProperty('color', dark ? '#e6edf3' : '#334155', 'important');
+      const fg = dark ? '#e6edf3' : '#334155';
+      const nodeBg = dark ? '#212a36' : '#ffffff';
+      const nodeBorder = dark ? '#303e50' : '#cbd5e1';
+
+      // Override node backgrounds and borders
+      rendered.querySelectorAll('.node rect, .node circle, .node ellipse, .node polygon, .node path:not(.flowchart-link)').forEach((shape) => {
+        const el = shape as SVGElement;
+        el.setAttribute('fill', nodeBg);
+        el.setAttribute('stroke', nodeBorder);
       });
 
-      const chartTextColor = dark ? '#e6edf3' : '#334155';
+      // Override node labels
+      rendered.querySelectorAll('.nodeLabel, .nodeLabel p, .nodeLabel span').forEach((node) => {
+        const element = node as HTMLElement;
+        element.style.setProperty('color', fg, 'important');
+      });
+
+      // Override general SVG text
       rendered.querySelectorAll('text, tspan').forEach((node) => {
-        node.setAttribute('fill', chartTextColor);
+        node.setAttribute('fill', fg);
       });
 
-      const edgeLabelColor = dark ? '#e6edf3' : '#334155';
-      rendered.querySelectorAll('.edgeLabel, .edgeLabel p').forEach((node) => {
+      // Override edge labels
+      rendered.querySelectorAll('.edgeLabel, .edgeLabel p, .edgeLabel span').forEach((node) => {
         const element = node as HTMLElement;
-        element.style.setProperty('color', edgeLabelColor, 'important');
+        element.style.setProperty('color', fg, 'important');
       });
     });
   }, [chart]);

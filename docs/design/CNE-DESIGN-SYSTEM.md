@@ -41,8 +41,8 @@ The palette intentionally separates canvas, surfaces, evidence panels, borders, 
 - `--border-soft`: `#f1f5f9` — low-emphasis divider
 - `--border-hi`: `#cbd5e1` — emphasized boundary
 - `--text`: `#334155` — primary text (soft, comfortable slate-700)
-- `--text-muted`: `#64748b` — readable secondary slate text
-- `--text-faint`: `#94a3b8` — metadata / tertiary text
+- `--text-muted`: `#475569` — readable secondary slate text
+- `--text-faint`: `#64748b` — metadata / tertiary text
 - `--accent`: `#0d9488` — primary brand accent (vibrant teal)
 - `--accent-strong`: `#0f766e` — accent on high-emphasis states
 - `--accent-dim`: `rgba(13,148,136,0.08)` — subtle accent surface
@@ -67,9 +67,9 @@ The palette intentionally separates canvas, surfaces, evidence panels, borders, 
 - `--border`: `#303e50` — crisp micro-boundary
 - `--border-soft`: `#253242` — low-emphasis divider
 - `--border-hi`: `#4d627d` — emphasized boundary
-- `--text`: `#e6edf3` — primary text (soft luminous off-white)
-- `--text-muted`: `#9daab6` — readable secondary slate
-- `--text-faint`: `#6e7d8c` — metadata / tertiary text
+- `--text`: `#f0f6fc` — primary text (crisp luminous off-white)
+- `--text-muted`: `#cbd5e1` — readable secondary slate
+- `--text-faint`: `#94a3b8` — metadata / tertiary text
 - `--accent`: `#2dd4bf` — primary brand accent (luminous electric teal)
 - `--accent-strong`: `#5eead4` — accent on high-emphasis states
 - `--accent-dim`: `rgba(45,212,191,0.12)` — subtle accent surface
@@ -78,10 +78,10 @@ The palette intentionally separates canvas, surfaces, evidence panels, borders, 
 - `--signal`: `#fbbf24` — semantic evidence/warning signal only
 - `--signal-dim`: `rgba(251,191,36,0.14)`
 - `--code-bg`: `#121820` — code and lifecycle surface
-- `--code-fg`: `#e6edf3` — code/lifecycle foreground
+- `--code-fg`: `#f0f6fc` — code/lifecycle foreground
 - `--code-border`: `#283545` — code/lifecycle boundary
 - `--doc-panel-bg`: `#1a222d` — explanatory callout surface
-- `--doc-panel-fg`: `#e6edf3` — explanatory callout foreground
+- `--doc-panel-fg`: `#f0f6fc` — explanatory callout foreground
 - `--doc-panel-border`: `#303e50` — explanatory callout boundary
 - `--doc-panel-header`: `#222d3b` — table header surface
 

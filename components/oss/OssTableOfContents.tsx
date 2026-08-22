@@ -36,11 +36,21 @@ export default function OssTableOfContents({ contentId = 'oss-doc-content', titl
   return (
     <aside className="hidden lg:block" style={{ borderLeft: '1px solid var(--border)', backgroundColor: 'var(--bg-subtle)' }}>
       <div className="sticky top-[60px] max-h-[calc(100vh-60px)] overflow-y-auto px-5 py-10">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ color: 'var(--text-faint)' }}>{title}</div>
+        <div className="text-[11px] font-mono font-bold uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>{title}</div>
         <div className="mt-3 h-px" style={{ backgroundColor: 'var(--border)' }} />
         <nav className="mt-4 space-y-1" aria-label={title}>
           {items.map((item) => (
-            <Link key={item.id} href={`#${item.id}`} className="block border-l-2 py-1.5 text-xs leading-5 transition" style={{ marginLeft: item.level === 3 ? '0.75rem' : undefined, paddingLeft: '0.75rem', color: item.level === 3 ? 'var(--text-faint)' : 'var(--text-muted)', borderColor: 'transparent' }}>
+            <Link
+              key={item.id}
+              href={`#${item.id}`}
+              className="block rounded-md py-1.5 text-xs leading-5 transition hover:text-[var(--accent)] hover:bg-[var(--surface-hi)]"
+              style={{
+                marginLeft: item.level === 3 ? '0.75rem' : undefined,
+                paddingLeft: '0.6rem',
+                paddingRight: '0.6rem',
+                color: item.level === 3 ? 'var(--text-faint)' : 'var(--text-muted)',
+              }}
+            >
               {item.label}
             </Link>
           ))}

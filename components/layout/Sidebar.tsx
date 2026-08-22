@@ -48,7 +48,7 @@ export default function Sidebar({ docs, locale }: SidebarProps) {
                 type="button"
                 onClick={() => toggleGroup(project, isOpen)}
                 aria-expanded={isOpen}
-                className="w-full flex items-center justify-between px-4 pb-1 text-xs font-semibold uppercase tracking-wide"
+                className="w-full flex items-center justify-between px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-[0.14em] transition hover:text-[var(--text)]"
                 style={{ color: 'var(--text-faint)' }}
               >
                 <span>{project}</span>
@@ -63,9 +63,9 @@ export default function Sidebar({ docs, locale }: SidebarProps) {
                   <Link
                     key={doc.slug}
                     href={href}
-                    className="block px-4 py-2 text-sm rounded-lg transition-all"
+                    className={`block px-3.5 py-1.5 text-sm rounded-lg transition-all ${active ? 'bg-[var(--accent-dim)] font-semibold' : 'hover:bg-[var(--surface-hi)] hover:text-[var(--text)]'}`}
                     style={active
-                      ? { color: 'var(--accent)', fontWeight: 500, borderLeft: '2px solid var(--accent)', backgroundColor: 'var(--accent-dim)', borderRadius: '0 0.5rem 0.5rem 0' }
+                      ? { color: 'var(--accent)', borderLeft: '2px solid var(--accent)', borderRadius: '0 0.5rem 0.5rem 0' }
                       : { color: 'var(--text-muted)' }}
                   >
                     {doc.title}

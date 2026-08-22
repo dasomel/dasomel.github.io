@@ -37,16 +37,17 @@ export default function TOC() {
   return (
     <aside className="w-48 flex-shrink-0 hidden xl:block">
       <div className="sticky top-20">
-        <p className="font-mono text-xs mb-3 uppercase tracking-wider" style={{ color: 'var(--text-faint)' }}>목차</p>
+        <p className="font-mono text-[11px] font-bold mb-3 uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>목차</p>
         <nav className="space-y-1">
           {headings.map(h => (
             <a
               key={h.id}
               href={`#${h.id}`}
-              className={`block text-xs py-1 transition-colors ${h.level === 3 ? 'pl-3' : ''}`}
+              className={`block text-xs py-1.5 px-2 rounded-md transition-all hover:text-[var(--accent)] hover:bg-[var(--surface-hi)] ${h.level === 3 ? 'ml-2' : ''}`}
               style={{
                 color: active === h.id ? 'var(--accent)' : 'var(--text-muted)',
                 fontWeight: active === h.id ? 600 : 400,
+                backgroundColor: active === h.id ? 'var(--accent-dim)' : 'transparent',
               }}
             >
               {h.text}
