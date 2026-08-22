@@ -191,7 +191,7 @@ export function ProjectList({ projects, base, translations }: Props) {
           )}
         </div>
       ) : (
-        <div className="space-y-14 mt-8">
+        <div className="space-y-10 sm:space-y-12 mt-6 sm:mt-8">
           {featured.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">CORE OSS / SHOWCASE</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.core}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(core.length)}</span></div>{renderFeatured(featured)}{compactCore.length > 0 && <div className="mt-4">{renderCompact(compactCore)}</div>}</section>}
           {tools.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">TOOLS · EXPERIMENTS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.tools}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(tools.length)}</span></div>{renderCompact(tools)}</section>}
           {forks.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">FORKS · ADAPTATIONS</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.forks}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{sectionCount(forks.length)}</span></div>{renderCompact(forks)}</section>}
