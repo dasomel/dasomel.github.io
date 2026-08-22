@@ -28,6 +28,7 @@
   border: 1px solid var(--border);
   border-radius: 1.15rem;
   background: var(--surface);
+  box-shadow: 0 8px 24px -22px rgba(0, 0, 0, .28);
   transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
 }
 
@@ -47,7 +48,7 @@
 }
 
 .featureVisual {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-soft);
   background: var(--surface-hi);
 }
 
@@ -71,7 +72,7 @@
 
 .meta span {
   padding: .22rem .45rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-soft);
   border-radius: .45rem;
   background: var(--surface-hi);
   color: var(--text-faint);
@@ -86,7 +87,7 @@
 }
 
 .compactVisual {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-soft);
   background: var(--surface-hi);
 }
 
