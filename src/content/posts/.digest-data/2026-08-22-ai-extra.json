@@ -1,6 +1,7 @@
 {
   "date": "2026-08-22",
   "provider": "ChatGPT",
+  "updatedAt": "2026-08-22T09:40:00+09:00",
   "articles": {
     "https://www.datadoghq.com/blog/control-trace-volume-with-opentelemetry-tail-based-sampling/": {
       "summaryKo": "Datadog은 OpenTelemetry Collector의 tail-based sampling으로 noisy trace를 줄이고 중요한 trace를 보존해 관측 데이터 양과 APM 비용을 제어하는 방법을 설명합니다.",
