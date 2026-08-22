@@ -1,46 +1,70 @@
 ---
 title: OpenForge Documentation
-description: OSS Engineering Governance Standard, reusable implementation templates, and reference practices.
+description: OSS Project Blueprint, reusable engineering standards, templates, and reference practices.
 project: OpenForge
 path: openforge/overview
 order: 1000
-lastModified: 2026-08-21
+lastModified: 2026-08-22
 ---
 
 # OpenForge Documentation
 
-OpenForge is a reusable engineering foundation for the Dasomel OSS portfolio.
+**OpenForge** is a shared **Project Blueprint + Engineering Standards** for creating, evolving, and maintaining open-source projects.
 
-It combines engineering standards, security and supply-chain governance, reusable implementation templates, deployment baselines, and design patterns.
+It turns recurring OSS engineering foundations—repository structure, documentation, GitHub operations, CI/CD, security, supply chain, release, and operations—into reusable standards and implementation templates.
 
-## Documentation model
+## Engineering Loop
 
 ```text
-OpenForge repository
-    ↓
+Project Definition
+      ↓
+Repository Bootstrap
+      ↓
+Documentation / Architecture
+      ↓
 Standards + Templates
-    ↓
-Reference implementation in OSS projects
-    ↓
-cne.io.kr OSS Documentation Portal
-    ↓
-Evidence / lessons / reusable knowledge
+      ↓
+Implementation / CI / Security
+      ↓
+Release / Operations
+      ↓
+Evidence / Lessons / Metrics
+      ↓
+OpenForge Improvement
+      ↺
 ```
 
-## Source of truth
+OpenForge does not prescribe a programming language, cloud, runtime, or application architecture. Projects can adapt the baseline to their context and record important deviations through ADRs.
 
-Implementation assets live in the [OpenForge repository](https://github.com/dasomel/openforge). The `cne.io.kr/oss/` portal explains why and when to use them, the trade-offs, and how they are applied in real projects.
+## What This Portal Adds
 
-## Start here
+The OpenForge repository is the **source of truth for implementation assets**. The `/oss/en/openforge/` space focuses on engineering context:
 
-- [Concepts](/oss/en/openforge/concepts)
-- [Getting Started](/oss/en/openforge/getting-started)
-- [Standards](/oss/en/openforge/standards)
-- [Templates](/oss/en/openforge/templates)
-- [Blueprints](/oss/en/openforge/blueprints)
-- [Operations](/oss/en/openforge/operations)
-- [Reference](/oss/en/openforge/reference)
-- [Troubleshooting](/oss/en/openforge/troubleshooting)
-- [ADR](/oss/en/openforge/adr)
+- Why a standard is needed
+- When it should be applied
+- What trade-offs it introduces
+- How it is applied to real OSS projects
+- What changes, incidents, reviews, and metrics teach us
 
-> The Korean portal uses the same structure under `/oss/openforge/...`.
+The goal is to explain how to apply the baseline rather than duplicate the repository README.
+
+## Core Documents
+
+- [Concepts](/oss/en/openforge/concepts) — Standard / Template / Evidence and the Trust, Change, and Governance Models
+- [Getting Started](/oss/en/openforge/getting-started) — A practical starting path for existing OSS projects
+- [Standards](/oss/en/openforge/standards) — Standards grouped by engineering concern
+- [Templates](/oss/en/openforge/templates) — Reusable implementation starting points
+- [Blueprints](/oss/en/openforge/blueprints) — Project lifecycle and adoption sequence
+- [Operations](/oss/en/openforge/operations) — Operations, resilience, backup, and observability
+- [Reference](/oss/en/openforge/reference) — Source-of-truth and evidence mapping
+- [Troubleshooting](/oss/en/openforge/troubleshooting) — Problems encountered during adoption and their responses
+- [ADR](/oss/en/openforge/adr) — Important engineering decisions behind OpenForge
+
+## Source of Truth
+
+- **Implementation**: [dasomel/openforge](https://github.com/dasomel/openforge)
+- **Standards**: [docs/](https://github.com/dasomel/openforge/tree/main/docs)
+- **Templates**: [templates/](https://github.com/dasomel/openforge/tree/main/templates)
+- **Reference implementation**: the target OSS repository
+
+> Korean documentation uses the same structure under `/oss/openforge/...`.
