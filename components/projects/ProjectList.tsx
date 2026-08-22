@@ -18,6 +18,8 @@ interface Props {
     noResults: string;
     results: string;
     clearFilters: string;
+    all: string;
+    filter: string;
     core: string;
     tools: string;
     forks: string;
@@ -161,7 +163,7 @@ export function ProjectList({ projects, base, translations }: Props) {
           <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{translations.results.replace('{count}', String(filtered.length))}</div>
           {hasFilters && (
             <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
-              <span style={{ color: 'var(--text-muted)' }}>FILTER</span>
+              <span style={{ color: 'var(--text-muted)' }}>{translations.filter}</span>
               {query.trim() && <span className="rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{query.trim()}</span>}
               {selected !== 'all' && <span className="rounded-full border px-2 py-0.5" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>{selected}</span>}
             </div>
@@ -169,7 +171,7 @@ export function ProjectList({ projects, base, translations }: Props) {
         </div>
       </div>
 
-      <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={setSelected} />
+      <TagFilter tags={[...allTags, 'Fork']} selected={selected} onChange={setSelected} allLabel={translations.all} />
       {filtered.length === 0 ? <div className="rounded-2xl border p-10 text-center" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>{translations.noResults}</div> : (
         <div className="space-y-14 mt-8">
           {featured.length > 0 && <section><div className="flex items-baseline justify-between gap-4 mb-5"><div><div className="workbench-eyebrow mb-2">CORE OSS / SHOWCASE</div><h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--text)' }}>{translations.core}</h2></div><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{core.length} projects</span></div>{renderFeatured(featured)}{compactCore.length > 0 && <div className="mt-4">{renderCompact(compactCore)}</div>}</section>}
