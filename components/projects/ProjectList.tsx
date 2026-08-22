@@ -92,21 +92,21 @@ export function ProjectList({ projects, base, translations }: Props) {
       {items.map((project, index) => {
         const status = resolveStatus(project);
         return (
-          <article key={project.slug} className={styles.featureCard}>
-            <Link href={`${base}/projects/${project.slug}`} className="block" aria-label={`${project.title} project`}>
+          <article key={project.slug} className={`${styles.featureCard} group`}>
+            <Link href={`${base}/projects/${project.slug}`} className="block rounded-t-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-inset" aria-label={`${project.title} project`}>
               <div className={styles.featureVisual}>
-                <ProjectVisual src={safeImage(project.slug)} alt="" className="block w-full h-auto" loading="lazy" />
+                <ProjectVisual src={safeImage(project.slug)} alt="" className="block w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]" loading="lazy" />
               </div>
             </Link>
             <div className={styles.featureBody}>
               <div className={styles.index}>CORE / {String(index + 1).padStart(2, '0')}</div>
               <div className="flex items-start justify-between gap-3">
-                <Link href={`${base}/projects/${project.slug}`} className="min-w-0">
+                <Link href={`${base}/projects/${project.slug}`} className="min-w-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]">
                   <h3 className="text-xl sm:text-2xl font-semibold tracking-tight hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{project.title}</h3>
                 </Link>
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <StatusBadge status={status} />
-                  {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1 hover:opacity-60" style={{ color: 'var(--text-faint)' }} aria-label={`${project.title} GitHub`}><Github className="w-4 h-4" /></a>}
+                  {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-md hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" style={{ color: 'var(--text-faint)' }} aria-label={`${project.title} GitHub`}><Github className="w-4 h-4" /></a>}
                 </div>
               </div>
               {project.description && <p className="mt-3 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{project.description}</p>}
@@ -129,12 +129,12 @@ export function ProjectList({ projects, base, translations }: Props) {
       {items.map(project => {
         const status = resolveStatus(project);
         return (
-          <Link key={project.slug} href={`${base}/projects/${project.slug}`} className={styles.compactCard + ' group'}>
-            <div className={styles.compactVisual}><ProjectVisual src={safeImage(project.slug)} alt="" className="block w-full h-auto" loading="lazy" /></div>
+          <Link key={project.slug} href={`${base}/projects/${project.slug}`} className={`${styles.compactCard} group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]`}>
+            <div className={styles.compactVisual}><ProjectVisual src={safeImage(project.slug)} alt="" className="block w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]" loading="lazy" /></div>
             <div className={styles.compactBody}>
               <div className="flex items-center justify-between gap-2">
                 <div className="min-w-0"><div className={styles.kicker}>{status ?? 'PROJECT'}</div><div className="mt-1 text-sm font-semibold group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text)' }}>{project.title}</div></div>
-                <ArrowUpRight className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-faint)' }} aria-hidden="true" />
+                <ArrowUpRight className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ color: 'var(--text-faint)' }} aria-hidden="true" />
               </div>
               <p className="mt-2 text-xs leading-relaxed line-clamp-2" style={{ color: 'var(--text-muted)' }}>{project.description}</p>
             </div>
@@ -155,7 +155,7 @@ export function ProjectList({ projects, base, translations }: Props) {
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={translations.search} aria-label={translations.search} className="w-full rounded-xl border bg-transparent pl-9 pr-3 py-2.5 text-sm outline-none focus:ring-2" style={{ borderColor: 'var(--border)', color: 'var(--text)', ['--tw-ring-color' as string]: 'var(--accent-glow)' }} />
           </label>
           {hasFilters && (
-            <button type="button" onClick={resetFilters} className="inline-flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-xs font-mono transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+            <button type="button" onClick={resetFilters} className="inline-flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-xs font-mono transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
               <X className="w-3.5 h-3.5" aria-hidden="true" />
               {translations.clearFilters}
             </button>
