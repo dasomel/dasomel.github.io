@@ -1,36 +1,114 @@
 ---
 title: AI-Assisted Engineering Security
-description: Secure use of AI agents, skills, repository instructions, and generated changes.
+description: Trust boundaries for AI agents, prompt injection defense, and sandbox isolation.
 project: OpenForge
 path: openforge/standards/ai-engineering-security
-order: 1018
+order: 1028
 lastModified: 2026-08-22
 ---
 
-# AI-Assisted Engineering Security
+# AI-Assisted Engineering Security Standard
 
-OpenForge treats AI agents, repository-local instructions, plugins, and generated commands as potentially untrusted execution inputs.
+AI coding agents, LLM tools and generated instructions are engineering inputs with execution authority. They must not be treated as trusted merely because they originate from an issue, repository, document or model.
 
-## Trust model
+## 1. Untrusted AI input
 
-AI output is not trusted merely because it looks plausible or matches repository conventions. Repository policy, tests, review, and security controls remain authoritative.
+Treat the following as untrusted data by default:
 
-## Agent boundaries
+- issues, PR descriptions and comments
+- repository README and instruction files
+- generated documentation and test fixtures
+- external repositories and dependencies
+- tool output, logs and retrieved documents
 
-- minimize credentials available to agents
-- restrict filesystem and network access where practical
-- review commands that mutate repositories or infrastructure
-- separate planning from privileged execution
-- keep generated changes attributable and reviewable
+Instructions embedded in untrusted content MUST NOT override repository security, authorization or approval policy.
 
-## Repository instructions
+## 2. Agent permissions
 
-`AGENTS.md`, tool configuration, prompts, hooks, and scripts can influence execution. Treat them as code-adjacent control inputs and include them in change and supply-chain review.
+- Give agents the minimum filesystem, shell, network, Git and credential permissions required for the task.
+- Prefer ephemeral workspaces and isolated execution environments.
+- Do not expose production credentials, long-lived publish tokens or unrelated SSH keys to general coding agents.
+- Separate read-only analysis from mutation and release operations.
+- High-impact operations require explicit human approval.
 
-## Verification
+## 3. Shell and tool execution
 
-AI-assisted changes must pass the same build, test, security, supply-chain, and release gates as human-authored changes.
+- Validate commands structurally before execution where practical.
+- Prefer allowlisted commands and restricted argument schemas over unrestricted shell execution.
+- Do not allow natural-language output alone to authorize destructive operations.
+- Treat command output as untrusted context.
+- Network-enabled tools SHOULD use an allowlist and bounded timeouts.
+
+## 4. Repository and workflow changes
+
+AI-generated changes to the following require normal or elevated human review:
+
+```text
+.github/workflows/**
+.github/actions/**
+package manifests and lockfiles
+Dockerfile / container build files
+release and publishing scripts
+security / OIDC configuration
+RBAC / IAM configuration
+```
+
+AI agents MUST NOT bypass branch protection, required reviews or release approval.
+
+## 5. Dependency changes
+
+Dependency additions or upgrades proposed by agents follow the same dependency cooling, provenance, integrity and rollback rules as human-authored changes.
+
+An agent recommendation is not evidence of package trust.
+
+## 6. Prompt injection
+
+- External documents, issues, logs and tool results may contain prompt injection.
+- Separate policy/instructions from data/context.
+- Use explicit trust labels for retrieved content.
+- Never allow retrieved text to redefine permissions, approval requirements or execution targets.
+- Include prompt-injection scenarios in security regression suites.
+
+## 7. Release and publish boundary
+
+AI agents MUST NOT receive unrestricted package publish, production deployment or security-administration authority.
+
+Where agent-assisted release is supported:
+
+```text
+Agent proposal
+→ validation
+→ policy/security gates
+→ human approval
+→ isolated release job
+→ publish
+```
+
+## 8. Evidence and reproducibility
+
+Record, where practical:
+
+- agent/tool identity and version
+- model/provider identity when relevant
+- repository revision
+- prompt/instruction policy version
+- tool calls or execution summary
+- dependency changes
+- human approval
+- final artifact identity
+
+## 9. Negative tests
+
+Projects using AI-assisted engineering SHOULD maintain tests for:
+
+- prompt injection from issues and documents
+- malicious repository instructions
+- unauthorized shell/tool execution
+- secret access attempts
+- unsafe workflow modification
+- malicious dependency suggestion
+- cross-project or cross-environment access
 
 ## Canonical source
 
-[OpenForge AI-Assisted Engineering Security](https://github.com/dasomel/openforge/blob/main/docs/ai-engineering-security.md)
+- [AI-Assisted Engineering Security](https://github.com/dasomel/openforge/blob/main/docs/ai-engineering-security.md)

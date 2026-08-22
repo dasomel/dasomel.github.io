@@ -1,32 +1,50 @@
 ---
-title: Documentation Standard
-description: OpenForge 문서 품질과 정보 구조를 일관되게 유지하기 위한 기준.
+title: 문서화 표준
+description: 이중 언어 문서 모델, 단일 진실 공급원(SoT) 및 문서 구조 표준.
 project: OpenForge
 path: openforge/standards/documentation
-order: 1010
+order: 1012
 lastModified: 2026-08-22
 ---
 
-# Documentation Standard
+# 문서 표준
 
-OpenForge의 문서는 단순한 설명서가 아니라 사용자가 **이해하고, 적용하고, 검증할 수 있는 engineering evidence**를 제공해야 합니다.
+OpenForge는 사용자에게 제공하는 문서를 English와 Korean의 별도 파일로 표준화합니다.
 
-## 핵심 원칙
+## 파일명 규칙
 
-- English를 canonical language로 유지하고 Korean을 first-class translation으로 제공합니다.
-- 문서는 Concepts, Guides, Tutorials, Reference, Operations, Troubleshooting, ADR처럼 목적에 따라 분리합니다.
-- 구현 저장소와 설명 포털의 책임을 분리합니다.
-- 예제는 실제로 실행 가능한 수준을 목표로 하고 환경 의존성은 명시합니다.
-- 보안/운영 판단에는 가능한 경우 명시적인 evidence와 source link를 제공합니다.
+```text
+README.md
+README-ko.md
 
-## 문서 변경 기준
+docs/architecture.md
+docs/architecture-ko.md
+```
 
-의미가 바뀌는 구현 변경은 관련 문서, 예제, runbook, troubleshooting, ADR까지 함께 검토합니다. 문서가 구현보다 앞서거나 뒤처지지 않도록 CI에서 파일 구조와 naming convention을 검증합니다.
+English 파일명을 canonical name으로 사용하고 Korean은 `-ko.md` suffix를 사용합니다.
 
-## OSS Portal 적용
+## 규칙
 
-`cne.io.kr/oss/openforge`는 repository의 원문을 복제하지 않습니다. repository는 implementation source of truth이고, 포털은 적용 이유, trade-off, 사례와 engineering context를 설명합니다.
+- English와 Korean 문서는 의미와 구조를 일치시킵니다.
+- 두 언어 버전 간 상대 링크를 제공합니다.
+- 사용자용 문서는 Markdown으로 관리합니다.
+- README는 목적, 기능, 빠른 시작, 아키텍처, 상태, 문서, 라이선스에 집중합니다.
+- 상세 운영 문서는 `docs/`에 둡니다.
+- 아키텍처 결정은 ADR로 기록합니다.
+- 문서에 secret, private endpoint, credential을 기록하지 않습니다.
 
-## 권위 있는 원본
+## 권장 기본 문서
 
-[OpenForge Documentation Standard](https://github.com/dasomel/openforge/blob/main/docs/documentation.md)
+```text
+README.md / README-ko.md
+CONTRIBUTING.md / CONTRIBUTING-ko.md
+SECURITY.md / SECURITY-ko.md
+CODE_OF_CONDUCT.md / CODE_OF_CONDUCT-ko.md
+CHANGELOG.md / CHANGELOG-ko.md
+docs/architecture.md / docs/architecture-ko.md
+docs/development.md / docs/development-ko.md
+```
+
+## Canonical source
+
+- [Documentation Standard](https://github.com/dasomel/openforge/blob/main/docs/documentation.md)

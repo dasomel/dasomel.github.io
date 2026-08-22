@@ -1,32 +1,64 @@
 ---
 title: GitHub Standard
-description: GitHub Issues, pull requests, Actions, permissions, and change-management conventions.
+description: Issue, PR, branch protection, and collaborative maintainer workflow baseline.
 project: OpenForge
 path: openforge/standards/github
-order: 1012
+order: 1013
 lastModified: 2026-08-22
 ---
 
 # GitHub Standard
 
-GitHub is the primary change-management surface for OpenForge projects.
-
-## Pull requests
-
-Changes should be reviewable, scoped, and tied to a problem or decision. PRs should describe impact, validation, security implications, and rollback considerations when relevant.
+OpenForge projects use GitHub as the primary system for collaboration and change management.
 
 ## Issues
 
-Issues capture requirements, incidents, bugs, and engineering debt. Security-sensitive reports should use the repository's private reporting path.
+Recommended types:
 
-## Actions
+- Bug
+- Feature
+- Architecture
+- Documentation
+- Dependency
+- Security
 
-Workflow permissions follow least privilege. Forked PRs, caches, artifacts, external inputs, and release credentials are treated as explicit trust boundaries.
+Use issues to capture requirements, decisions and implementation scope before substantial changes.
 
-## Automation
+## Pull Requests
 
-Repository checks should fail early on invalid structure, naming conventions, unsafe supply-chain patterns, and required engineering contracts.
+Every meaningful change should be submitted through a pull request when collaboration or review is expected.
+
+PRs should:
+
+- explain the problem and solution
+- link relevant issues
+- describe tests
+- include documentation updates when needed
+- keep commits focused
+
+## Branches
+
+Prefer short-lived branches such as:
+
+```text
+feat/<name>
+fix/<name>
+refactor/<name>
+chore/<name>
+docs/<name>
+```
+
+## Commits
+
+Prefer Conventional Commits:
+
+```text
+feat: add unified service API
+fix: handle stale metadata
+chore: update dependencies
+docs: add architecture guide
+```
 
 ## Canonical source
 
-[OpenForge GitHub Standard](https://github.com/dasomel/openforge/blob/main/docs/github.md)
+- [GitHub Standard](https://github.com/dasomel/openforge/blob/main/docs/github.md)

@@ -1,32 +1,75 @@
 ---
 title: Documentation Standard
-description: OpenForge guidance for consistent OSS documentation quality and information architecture.
+description: Dual-language documentation model, source-of-truth invariants, and structure.
 project: OpenForge
 path: openforge/standards/documentation
-order: 1010
+order: 1012
 lastModified: 2026-08-22
 ---
 
 # Documentation Standard
 
-OpenForge documentation is an **engineering interface**: readers should be able to understand, apply, and verify what a project recommends.
+OpenForge standardizes **project-owned, user-facing** documentation as separate English and Korean files.
 
-## Principles
+## File naming
 
-- English is the canonical language; Korean is maintained as a first-class translation.
-- Documentation is separated by purpose: Concepts, Guides, Tutorials, Reference, Operations, Troubleshooting, and ADRs.
-- Implementation ownership and explanatory documentation ownership are kept separate.
-- Examples should be executable where practical, with environment assumptions stated explicitly.
-- Security and operational claims should be backed by evidence or source references where possible.
+```text
+README.md
+README-ko.md
 
-## Change management
+docs/architecture.md
+docs/architecture-ko.md
+```
 
-A behavior-changing implementation change should trigger review of related documentation, examples, runbooks, troubleshooting content, and ADRs. Repository CI should validate documentation structure and naming conventions.
+English is the canonical filename. Korean uses the `-ko.md` suffix.
 
-## OSS portal model
+## Rules
 
-`cne.io.kr/oss/openforge` does not mirror the repository verbatim. The repository is the implementation source of truth; the portal explains why and when to apply the standard, trade-offs, evidence, and project examples.
+- Keep English and Korean semantically synchronized.
+- Use relative links between language versions.
+- Put project-owned user-facing documentation in Markdown unless another format is required by the ecosystem.
+- Keep README focused on purpose, features, quick start, architecture, status, documentation and license.
+- Put detailed operational content under `docs/`.
+- Record architecture decisions as ADRs.
+- Record important operational failures as lessons/incidents/mistakes and connect them to tests when practical.
+- Do not put secrets, private endpoints or credentials in documentation.
+- Treat build, runtime, dependency and release contracts as documented engineering interfaces.
+- Update relevant documentation when a change modifies those contracts.
+
+## Documentation set
+
+Recommended minimum:
+
+```text
+README.md / README-ko.md
+CONTRIBUTING.md / CONTRIBUTING-ko.md
+SECURITY.md / SECURITY-ko.md
+CODE_OF_CONDUCT.md / CODE_OF_CONDUCT-ko.md
+CHANGELOG.md / CHANGELOG-ko.md
+docs/architecture.md / docs/architecture-ko.md
+docs/development.md / docs/development-ko.md
+docs/change-management.md
+```
+
+Add when applicable:
+
+```text
+RELEASING.md / RELEASING-ko.md
+VERSIONS.md / VERSIONS-ko.md
+docs/supply-chain.md / docs/supply-chain-ko.md
+NOTICE / THIRD-PARTY-LICENSES.md
+docs/common/
+docs/<deployment-target>/
+```
+
+Supply-chain and change-management standards are canonical portfolio guidance; repository-specific documents should link to them rather than define conflicting policies.
+
+## Filename exceptions
+
+The `-ko.md` convention does **not** require renaming third-party, vendored, generated, or upstream-contract documentation. Preserve upstream names when changing them would make updates harder or break the upstream distribution contract.
+
+For example, a project may keep a vendored chart's upstream `README.md` even when project-owned documentation uses the OpenForge bilingual naming convention.
 
 ## Canonical source
 
-[OpenForge Documentation Standard](https://github.com/dasomel/openforge/blob/main/docs/documentation.md)
+- [Documentation Standard](https://github.com/dasomel/openforge/blob/main/docs/documentation.md)

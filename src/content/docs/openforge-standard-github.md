@@ -1,32 +1,64 @@
 ---
-title: GitHub Standard
-description: GitHub Issue, PR, Actions, permissions, and change-management conventions.
+title: GitHub 운영 표준
+description: Issue, PR, 브랜치 보호 및 협업 메인테이너 워크플로 베이스라인.
 project: OpenForge
 path: openforge/standards/github
-order: 1012
+order: 1013
 lastModified: 2026-08-22
 ---
 
-# GitHub Standard
+# GitHub 표준
 
-GitHub is the primary change-management surface for OpenForge projects.
+OpenForge 기반 프로젝트는 협업과 변경 관리를 위한 기본 시스템으로 GitHub를 사용합니다.
 
-## Pull requests
+## Issue
 
-Changes should be reviewable, scoped, and linked to a problem or decision. PRs should explain impact, validation, security implications, and rollback considerations when relevant.
+권장 유형:
 
-## Issues
+- Bug
+- Feature
+- Architecture
+- Documentation
+- Dependency
+- Security
 
-Issues capture requirements, incidents, bugs, and engineering debt. Security-sensitive material should use the repository's private reporting path rather than public issues.
+큰 변경은 구현 전에 요구사항, 결정, 범위를 Issue로 기록합니다.
 
-## Actions
+## Pull Request
 
-Workflow permissions should be least-privilege. External inputs, forked PRs, caches, artifacts, and release credentials are treated as trust boundaries.
+협업이나 리뷰가 필요한 의미 있는 변경은 Pull Request를 통해 반영합니다.
 
-## Automation
+PR에는 다음을 포함합니다.
 
-Repository checks should fail early on invalid structure, naming conventions, unsafe supply-chain patterns, and required engineering contracts.
+- 문제와 해결 방법
+- 관련 Issue
+- 테스트 방법
+- 필요한 문서 변경
+- 집중된 commit 구성
+
+## Branch
+
+짧은 수명의 Branch를 권장합니다.
+
+```text
+feat/<name>
+fix/<name>
+refactor/<name>
+chore/<name>
+docs/<name>
+```
+
+## Commit
+
+Conventional Commits를 권장합니다.
+
+```text
+feat: add unified service API
+fix: handle stale metadata
+chore: update dependencies
+docs: add architecture guide
+```
 
 ## Canonical source
 
-[OpenForge GitHub Standard](https://github.com/dasomel/openforge/blob/main/docs/github.md)
+- [GitHub Standard](https://github.com/dasomel/openforge/blob/main/docs/github.md)
