@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import mermaid from 'mermaid';
 
 interface MermaidProps { chart: string; }
@@ -19,10 +19,51 @@ function themeToken(name: string, fallback: string) {
 }
 
 export function Mermaid({ chart }: MermaidProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const [themeRevision, setThemeRevision] = useState(0);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const root = document.documentElement;
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const notify = () => setThemeRevision((revision) => revision + 1);
+
+    const observer = new MutationObserver((mutations) => {
+      if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) notify();
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    media.addEventListener('change', notify);
+
+    return () => {
+      observer.disconnect();
+      media.removeEventListener('change', notify);
+    };
+  }, []);
+
+  useEffect(() => {
+    const ref = document.querySelectorAll<HTMLElement>('[data-mermaid-root]');
+    const targets = Array.from(ref).filter((element) => element.dataset.mermaidChart === chart);
+    void targets;
+  }, [chart, themeRevision]);
+
+  return <MermaidCanvas chart={chart} themeRevision={themeRevision} />;
+}
+
+function MermaidCanvas({ chart }: MermaidProps & { themeRevision: number }) {
+  const ref = useState<HTMLDivElement | null>(null)[0];
+  return <MermaidRenderer chart={chart} themeRevision={themeRevision} refValue={ref} />;
+}
+
+function MermaidRenderer({ chart, themeRevision }: MermaidProps & { themeRevision: number; refValue: HTMLDivElement | null }) {
+  // Theme changes are surfaced through the parent revision so the renderer effect reruns.
+  void themeRevision;
+  return <MermaidMarkup chart={chart} themeRevision={themeRevision} />;
+}
+
+function MermaidMarkup({ chart, themeRevision }: MermaidProps & { themeRevision: number }) {
+  const [element, setElement] = useState<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!element) return;
 
     const id = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
     const dark = isDarkMode();
@@ -74,10 +115,10 @@ export function Mermaid({ chart }: MermaidProps) {
     });
 
     mermaid.render(id, chart).then(({ svg }) => {
-      if (!ref.current) return;
-      ref.current.innerHTML = svg;
+      if (!element) return;
+      element.innerHTML = svg;
 
-      const rendered = ref.current.querySelector('svg');
+      const rendered = element.querySelector('svg');
       if (!rendered) return;
 
       rendered.querySelectorAll('.node:not(.bar):not(.xychart-bar) rect, .node:not(.bar):not(.xychart-bar) circle, .node:not(.bar):not(.xychart-bar) ellipse, .node:not(.bar):not(.xychart-bar) polygon, .node:not(.bar):not(.xychart-bar) path:not(.flowchart-link)').forEach((shape) => {
@@ -96,8 +137,8 @@ export function Mermaid({ chart }: MermaidProps) {
       });
 
       rendered.querySelectorAll('.nodeLabel, .nodeLabel p, .nodeLabel span').forEach((node) => {
-        const element = node as HTMLElement;
-        element.style.setProperty('color', text, 'important');
+        const elementNode = node as HTMLElement;
+        elementNode.style.setProperty('color', text, 'important');
       });
 
       rendered.querySelectorAll('text, tspan').forEach((node) => {
@@ -105,13 +146,11 @@ export function Mermaid({ chart }: MermaidProps) {
       });
 
       rendered.querySelectorAll('.edgeLabel, .edgeLabel p, .edgeLabel span').forEach((node) => {
-        const element = node as HTMLElement;
-        element.style.setProperty('color', textMuted, 'important');
+        const elementNode = node as HTMLElement;
+        elementNode.style.setProperty('color', textMuted, 'important');
       });
     });
-  }, [chart]);
+  }, [chart, themeRevision, element]);
 
-  // 다이어그램은 좁은 화면에서 축소하면 글자를 읽을 수 없다. 폭을 줄이는 대신
-  // 다이어그램만 가로 스크롤시키고, 화면보다 좁을 때는 가운데 정렬을 유지한다.
-  return <div ref={ref} className="my-6 overflow-x-auto [&>svg]:mx-auto" />;
+  return <div ref={setElement} data-mermaid-root data-mermaid-chart={chart} className="my-6 overflow-x-auto [&>svg]:mx-auto" />;
 }
