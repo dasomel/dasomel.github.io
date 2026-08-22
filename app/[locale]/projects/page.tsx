@@ -32,8 +32,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             <p className="text-base sm:text-lg mt-3 max-w-2xl leading-8" style={{ color: 'var(--text-muted)' }}>{t('subtitle')}</p>
           </div>
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--border)' }}>
-            <div className="px-5 py-4 text-center" style={{ backgroundColor: 'var(--surface)' }}><div className="text-2xl font-semibold" style={{ color: 'var(--text)' }}>{owned}</div><div className="text-[10px] mt-1 font-mono tracking-[.12em]" style={{ color: 'var(--text-faint)' }}>OWNED</div></div>
-            <div className="px-5 py-4 text-center" style={{ backgroundColor: 'var(--surface)' }}><div className="text-2xl font-semibold" style={{ color: 'var(--text)' }}>{forks}</div><div className="text-[10px] mt-1 font-mono tracking-[.12em]" style={{ color: 'var(--text-faint)' }}>FORKS</div></div>
+            <div className="px-5 py-4 text-center" style={{ backgroundColor: 'var(--surface)' }}><div className="text-2xl font-semibold" style={{ color: 'var(--text)' }}>{owned}</div><div className="text-[10px] mt-1 font-mono tracking-[.12em]" style={{ color: 'var(--text-faint)' }}>{t('owned')}</div></div>
+            <div className="px-5 py-4 text-center" style={{ backgroundColor: 'var(--surface)' }}><div className="text-2xl font-semibold" style={{ color: 'var(--text)' }}>{forks}</div><div className="text-[10px] mt-1 font-mono tracking-[.12em]" style={{ color: 'var(--text-faint)' }}>{t('forks_stat')}</div></div>
           </div>
         </div>
       </header>
@@ -45,6 +45,10 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           solution: t('solution'),
           search: t('search'),
           noResults: t('no_results'),
+          results: t('results'),
+          clearFilters: t('clear_filters'),
+          all: t('all'),
+          filter: t('filter'),
           core: t('core'),
           tools: t('tools'),
           forks: t('forks'),
