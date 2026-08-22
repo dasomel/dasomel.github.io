@@ -2,29 +2,5 @@ import { Github, Linkedin, Rss } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  return (
-    <footer className="mt-auto" style={{ borderTop: '1px solid var(--border)' }}>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between gap-4">
-        <p className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>
-          © {year} dasomel
-        </p>
-        <div className="flex items-center gap-4">
-          <a href="https://github.com/dasomel" target="_blank" rel="noopener noreferrer"
-             className="transition-opacity hover:opacity-60" aria-label="GitHub"
-             style={{ color: 'var(--text-faint)' }}>
-            <Github className="w-4 h-4" />
-          </a>
-          <a href="https://www.linkedin.com/in/ba909924" target="_blank" rel="noopener noreferrer"
-             className="transition-opacity hover:opacity-60" aria-label="LinkedIn"
-             style={{ color: 'var(--text-faint)' }}>
-            <Linkedin className="w-4 h-4" />
-          </a>
-          <a href="/rss.xml" className="transition-opacity hover:opacity-60" aria-label="RSS"
-             style={{ color: 'var(--text-faint)' }}>
-            <Rss className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer className="mt-auto" style={{ borderTop:'1px solid var(--border)', background:'linear-gradient(180deg,transparent,var(--bg-subtle))' }}><div className="max-w-6xl mx-auto px-4 sm:px-6 py-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"><div><div className="font-mono text-[0.65rem] uppercase tracking-[0.16em] mb-1" style={{ color:'var(--accent)' }}>OSS WORKBENCH</div><p className="font-mono text-xs" style={{ color:'var(--text-faint)' }}>© {year} dasomel</p></div><div className="flex items-center gap-2"><a href="https://github.com/dasomel" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg border transition-all hover:bg-[var(--surface-hi)]" aria-label="GitHub" style={{ color:'var(--text-faint)', borderColor:'var(--border)' }}><Github className="w-4 h-4" /></a><a href="https://www.linkedin.com/in/ba909924" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg border transition-all hover:bg-[var(--surface-hi)]" aria-label="LinkedIn" style={{ color:'var(--text-faint)', borderColor:'var(--border)' }}><Linkedin className="w-4 h-4" /></a><a href="/rss.xml" className="p-2 rounded-lg border transition-all hover:bg-[var(--surface-hi)]" aria-label="RSS" style={{ color:'var(--text-faint)', borderColor:'var(--border)' }}><Rss className="w-4 h-4" /></a></div></div></footer>;
 }
