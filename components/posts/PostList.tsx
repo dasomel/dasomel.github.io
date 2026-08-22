@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import { TagFilter } from '@/components/ui/tag-filter';
 import { FeaturedCard } from '@/components/ui/featured-card';
 
@@ -31,7 +32,6 @@ export function PostList({ posts, base, showTagFilter = true, translations }: Pr
   const filtered = selected === 'all' ? posts : posts.filter(p => p.tags.includes(selected));
   const featuredPost = filtered.find(p => p.featured);
   const regularPosts = filtered.filter(p => !p.featured);
-
   const formatDate = (date: string) => new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 
   return (
@@ -39,13 +39,11 @@ export function PostList({ posts, base, showTagFilter = true, translations }: Pr
       {showTagFilter && <TagFilter tags={allTags} selected={selected} onChange={setSelected} />}
       {featuredPost && (
         <FeaturedCard badge={translations.featured}>
-          <Link href={`${base}/posts/${featuredPost.slug}`}>
+          <Link href={`${base}/posts/${featuredPost.slug}`} className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] rounded-lg">
             <div className="flex items-center gap-2 mb-2"><span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{featuredPost.readTime}</span></div>
-            <h3 className="text-base font-semibold mb-1" style={{ color: 'var(--text)' }}>{featuredPost.title}</h3>
+            <div className="flex items-start justify-between gap-3"><h3 className="text-base font-semibold mb-1 min-w-0" style={{ color: 'var(--text)' }}>{featuredPost.title}</h3><ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 opacity-60 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-opacity" aria-hidden="true" /></div>
             {featuredPost.description && <p className="text-sm leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{featuredPost.description}</p>}
-            <div className="flex flex-wrap gap-1.5">
-              {featuredPost.tags.map(tag => <span key={tag} className="px-1.5 py-0.5 text-xs font-mono rounded" style={{ border: '1px solid var(--border)', color: 'var(--accent)', backgroundColor: 'var(--accent-dim)' }}>{tag}</span>)}
-            </div>
+            <div className="flex flex-wrap gap-1.5">{featuredPost.tags.slice(0, 5).map(tag => <span key={tag} className="px-1.5 py-0.5 text-xs font-mono rounded" style={{ border: '1px solid var(--border)', color: 'var(--accent)', backgroundColor: 'var(--accent-dim)' }}>{tag}</span>)}</div>
           </Link>
         </FeaturedCard>
       )}
@@ -53,18 +51,16 @@ export function PostList({ posts, base, showTagFilter = true, translations }: Pr
       <h2 className="text-xs font-mono uppercase tracking-widest mb-4" style={{ color: 'var(--text-faint)' }}>{translations.all_posts}</h2>
       <div className="space-y-2">
         {regularPosts.map(post => (
-          <Link key={post.slug} href={`${base}/posts/${post.slug}`} className="group block rounded-xl p-4 transition-all hover:bg-[var(--surface-hi)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
+          <Link key={post.slug} href={`${base}/posts/${post.slug}`} className="group block rounded-xl p-4 sm:p-4 transition-[background-color,border-color,box-shadow] hover:bg-[var(--surface-hi)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
-                <h3 className="text-base font-medium mb-1 transition-colors group-hover:text-[var(--accent)]" style={{ color: 'var(--text)' }}>{post.title}</h3>
-                {post.description && <p className="text-sm mb-2 line-clamp-1" style={{ color: 'var(--text-muted)' }}>{post.description}</p>}
-                <div className="flex items-center gap-2">
-                  {post.tags.slice(0, 2).map(tag => <span key={tag} className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{tag}</span>)}
-                  <span className="text-xs" style={{ color: 'var(--text-faint)' }}>·</span>
-                  <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{post.readTime}</span>
+                <div className="flex items-start justify-between gap-3"><h3 className="text-base font-medium mb-1 min-w-0 transition-colors group-hover:text-[var(--accent)]" style={{ color: 'var(--text)' }}>{post.title}</h3><ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-[var(--text-faint)] group-hover:text-[var(--accent)] transition-colors" aria-hidden="true" /></div>
+                {post.description && <p className="text-sm mb-2 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{post.description}</p>}
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
+                  <time>{formatDate(post.pubDate)}</time><span aria-hidden="true">·</span><span>{post.readTime}</span>
+                  {post.tags.slice(0, 2).map(tag => <span key={tag} className="rounded-full px-1.5 py-0.5" style={{ backgroundColor: 'var(--surface-hi)', border: '1px solid var(--border)', color: 'var(--text-faint)' }}>{tag}</span>)}
                 </div>
               </div>
-              <time className="text-xs font-mono flex-shrink-0 pt-0.5" style={{ color: 'var(--text-faint)' }}>{formatDate(post.pubDate)}</time>
             </div>
           </Link>
         ))}
