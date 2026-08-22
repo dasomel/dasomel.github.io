@@ -1,23 +1,22 @@
 ---
 title: App Setup & Installation
-description: Desktop app compilation, setup, and model catalog initialization.
+description: Tauri v2 desktop compilation, dependency setup, and model initialization.
 project: KubeMetal
 path: kubemetal/getting-started
-order: 1800
+order: 1803
 lastModified: 2026-08-23
 ---
 
 # App Setup & Installation
 
-Building and running KubeMetal desktop application.
+Step-by-step instructions for compiling and executing KubeMetal.
 
-## Steps
 ```bash
+# 1. Clone and install dependencies
+git clone https://github.com/dasomel/kubemetal.git
+cd kubemetal
 pnpm install
+
+# 2. Launch Tauri in dev mode
 pnpm tauri dev
 ```
-
-## Related Links
-
-- [KubeMetal Repository](https://github.com/dasomel/kubemetal)
-- [English Project Home](/oss/en/kubemetal/)

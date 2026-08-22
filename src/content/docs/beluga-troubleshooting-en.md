@@ -1,22 +1,23 @@
 ---
 title: Troubleshooting Guide
-description: Debugging Kafka consumer lag, Flink checkpoint failures, and Trino query bottlenecks.
+description: Root-cause analysis for Kafka lag, Flink checkpoint timeouts, and Trino OOMs.
 project: Beluga
 path: beluga/troubleshooting
-order: 1500
+order: 1504
 lastModified: 2026-08-23
 ---
 
 # Troubleshooting Guide
 
-Common data platform incidents and debugging procedures.
+Common operational failure modes and remediation runbooks for Beluga.
 
-## Common Issues
-- **Kafka Consumer Lag**: Increase partition count and Flink task parallelism
-- **Flink Checkpoint Timeouts**: Audit MinIO storage throughput and RocksDB state size
-- **Trino Out of Memory (OOM)**: Tune `query.max-memory` and partition filters
+## 1. High Kafka Consumer Lag
+- **Cause**: Flink operator bottleneck or partition skew
+- **Remediation**: Scale Flink task parallelism and increase topic partition counts
 
-## Related Links
+## 2. Flink Checkpoint Timeouts
+- **Cause**: MinIO storage I/O contention or large RocksDB state payloads
+- **Remediation**: Verify incremental checkpointing is enabled; audit MinIO disk latency
 
-- [Beluga Repository](https://github.com/dasomel/beluga)
-- [English Project Home](/oss/en/beluga/)
+## 3. Trino Query Memory Exhaustion
+- **Remediation**: Tune `query.max-memory-per-node` and enforce partition pruning in SQL queries

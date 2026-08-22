@@ -1,29 +1,41 @@
 ---
 title: Features & CRD Guide
-description: QuotaPolicy CRD, dynamic volume provisioning, and metrics.
+description: QuotaPolicy CRD, dynamic provisioning, Prometheus metrics, and REST APIs.
 project: NFS Quota Agent
 path: nfs-quota-agent/feature-guide
-order: 1300
+order: 1302
 lastModified: 2026-08-23
 ---
 
 # Features & CRD Guide
 
-Declarative storage quota management via Kubernetes CRDs.
+Comprehensive guide to declarative CRDs, APIs, and observability in NFS Quota Agent.
 
-## QuotaPolicy Manifest
+## QuotaPolicy CRD Specification
+
 ```yaml
 apiVersion: storage.dasomel.io/v1alpha1
 kind: QuotaPolicy
 metadata:
-  name: standard-pvc-quota
+  name: database-quota-policy
+  namespace: database
 spec:
-  hardLimit: 10Gi
-  softLimit: 8Gi
-  gracePeriod: 24h
+  pvcSelector:
+    matchLabels:
+      tier: production-db
+  hardLimit: "50Gi"
+  softLimit: "45Gi"
+  gracePeriod: "24h"
+  alertThresholdPercent: 85
 ```
 
-## Related Links
+## REST API Endpoints
 
-- [NFS Quota Agent Repository](https://github.com/dasomel/nfs-quota-agent)
-- [English Project Home](/oss/en/nfs-quota-agent/)
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/v1/quotas` | List all active quotas and utilization stats |
+| `POST` | `/api/v1/quotas` | Create quota and assign a new Project ID |
+| `GET` | `/api/v1/quotas/{id}` | Inspect specific quota metrics |
+| `PUT` | `/api/v1/quotas/{id}` | Update hard/soft thresholds (volume expansion) |
+| `DELETE`| `/api/v1/quotas/{id}` | Remove quota and recycle Project ID |
+| `GET` | `/metrics` | Prometheus metrics scrape endpoint |

@@ -1,22 +1,40 @@
 ---
 title: Portal Architecture
-description: Next.js 16 structure, gRPC clients, and OIDC auth flows.
+description: Next.js 16 App Router structure, gRPC communication, and OIDC session models.
 project: Narwhal Portal
 path: narwhal-portal/architecture
-order: 1200
+order: 1201
 lastModified: 2026-08-23
 ---
 
 # Portal Architecture
 
-Built on Next.js App Router, combining Server Components with responsive client states.
+Narwhal Portal utilizes a modern web architecture ensuring tight integration with cluster control planes.
 
-## Tech Stack
-- **Frontend**: Next.js 16, React 19, Tailwind CSS, Lucide Icons
-- **Auth**: NextAuth / Keycloak OIDC OpenID Connect Federation
-- **Backend Communication**: Compiled Protocol Buffers via gRPC-web and REST gateways
+## Technology Stack
 
-## Related Links
+- **Frontend Framework**: Next.js 16 (App Router), React 19, TypeScript
+- **Styling & Design System**: Tailwind CSS, Radix UI Primitives, Lucide Icons
+- **Authentication**: NextAuth.js with Keycloak OpenID Connect federation
+- **Backend Communication**: Protocol Buffers (`.proto`), gRPC-web, and Envoy gRPC-JSON transcoding
 
-- [Narwhal Portal Repository](https://github.com/dasomel/narwhal-portal)
-- [Portal English Home](/oss/en/narwhal-portal/)
+```text
+Browser (React 19 Client Components)
+             │
+             ▼ HTTPS / Cookie
+  ┌────────────────────────────────────────────────────────┐
+  │  Next.js 16 Server (App Router / SSR)                  │
+  │  - Keycloak JWT Session Verification                   │
+  │  - Server Component Data Fetching                      │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼ gRPC-web / HTTP2
+  ┌────────────────────────────────────────────────────────┐
+  │  Envoy Gateway / APISIX gRPC Transcoder                │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼ Native gRPC
+  ┌────────────────────────────────────────────────────────┐
+  │  Narwhal Control Plane Core Services (Go / K8s API)    │
+  └────────────────────────────────────────────────────────┘
+```

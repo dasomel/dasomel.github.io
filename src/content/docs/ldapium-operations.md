@@ -1,26 +1,22 @@
 ---
 title: 운영 및 백업/복구
-description: TLS 인증서 교체, `slapcat`/`slapadd` 백업.
+description: TLS 인증서 교체, slapcat/slapadd 데이터베이스 백업 및 복구 런북.
 project: ldapium
 path: ldapium/operations
-order: 1700
+order: 1704
 lastModified: 2026-08-23
 ---
 
 # 운영 및 백업/복구
 
-일일 운영, 인증서 교체 및 재해 복구 런북입니다.
+ldapium의 일일 운영, 인증서 교체 및 재해 복구 지침입니다.
 
-## 백업 및 복구 명령어
+## 데이터베이스 백업 및 복원
+
 ```bash
-# 백업 생성
+# 1. 백업 생성 (slapcat)
 slapcat -n 1 -l /backup/ldap-$(date +%Y%m%d).ldif
 
-# 백업 복구
+# 2. 백업 복구 (slapadd)
 slapadd -n 1 -l /backup/ldap-backup.ldif
 ```
-
-## 관련 링크
-
-- [ldapium 저장소](https://github.com/dasomel/ldapium)
-- [프로젝트 홈](/oss/ldapium/)

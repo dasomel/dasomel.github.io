@@ -1,22 +1,20 @@
 ---
-title: 오프라인 번들 가이드
-description: 폐쇄망 설치를 위한 아티팩트 번들링.
+title: 에어갭 배포 가이드
+description: 폐쇄망 오프라인 번들 패키징, 레지스트리 미러링 및 검증 절차.
 project: ldapium
 path: ldapium/air-gap
-order: 1700
+order: 1703
 lastModified: 2026-08-23
 ---
 
-# 오프라인 번들 가이드
+# 에어갭 배포 가이드
 
-인터넷이 없는 폐쇄망 환경을 위한 번들 생성 및 배포 지침입니다.
+인터넷이 차단된 엔터프라이즈 폐쇄망 환경을 위한 배포 가이드입니다.
 
-## 번들링 절차
-1. `scripts/bundle-images.sh`로 컨테이너 이미지 아카이브 생성
-2. 오프라인 미러 레지스트리에 이미지 푸시
-3. Helm values에서 오프라인 레지스트리 경로 지정
+```bash
+# 1. 온라인 환경에서 번들 생성
+./scripts/bundle-images.sh
 
-## 관련 링크
-
-- [ldapium 저장소](https://github.com/dasomel/ldapium)
-- [프로젝트 홈](/oss/ldapium/)
+# 2. 폐쇄망 레지스트리로 이미지 푸시
+./scripts/load-images.sh --registry internal-registry.local:5000
+```

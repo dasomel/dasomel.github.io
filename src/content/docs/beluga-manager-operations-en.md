@@ -1,22 +1,36 @@
 ---
 title: Deployment & Operations
-description: Container packaging, environment variables, and Kubernetes deployment.
+description: Multi-stage container packaging, runtime configuration, and K8s deployment.
 project: Beluga Manager
 path: beluga-manager/operations
-order: 1600
+order: 1603
 lastModified: 2026-08-23
 ---
 
 # Deployment & Operations
 
-Production deployment and configuration standards.
+Production deployment and configuration standards for Beluga Manager.
 
-## Guidelines
-- Multi-stage minimal container image deployment
-- Dynamic cluster endpoint injection via ConfigMaps
-- Pod health validation via `/health` endpoint
+## Kubernetes Deployment Manifest
 
-## Related Links
-
-- [Beluga Manager Repository](https://github.com/dasomel/beluga-manager)
-- [English Project Home](/oss/en/beluga-manager/)
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beluga-manager
+  namespace: beluga-system
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: manager
+        image: ghcr.io/dasomel/beluga-manager:v1.0.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: KAFKA_REST_URL
+          value: "http://kafka-rest:8082"
+        - name: FLINK_REST_URL
+          value: "http://flink-jobmanager:8081"
+```

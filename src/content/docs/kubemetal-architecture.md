@@ -1,23 +1,26 @@
 ---
 title: 시스템 아키텍처
-description: Tauri v2 브리지, 호스트 MLX 엔진 및 K3s 컨트롤러.
+description: Tauri v2 IPC 브리지, 호스트 MLX 가속 엔진 및 로컬 K8s 컨트롤 플레인 결합 구조.
 project: KubeMetal
 path: kubemetal/architecture
-order: 1800
+order: 1801
 lastModified: 2026-08-23
 ---
 
 # 시스템 아키텍처
 
-KubeMetal은 프론트엔드, Rust 백엔드, 호스트 연산 엔진 및 K8s 클러스터로 구성됩니다.
+KubeMetal의 하이브리드 아키텍처는 데스크톱 UI, 호스트 연산 엔진 및 K8s 제어 플레인을 유기적으로 결합합니다.
 
-## 아키텍처 계층
-- **UI Layer**: React 19 + Tailwind CSS + Lucide Icons
-- **Backend Bridge**: Tauri v2 IPC (Rust 기반 비동기 프로세스 관리)
-- **Host Compute**: Apple MLX 프레임워크 기반 Metal 가속 런타임
-- **Control Plane**: K3s / Colima 로컬 쿠버네티스
-
-## 관련 링크
-
-- [KubeMetal 저장소](https://github.com/dasomel/kubemetal)
-- [프로젝트 홈](/oss/kubemetal/)
+```text
+  ┌────────────────────────────────────────────────────────┐
+  │  KubeMetal Desktop UI (React 19 + Tailwind CSS)        │
+  └─────────────┬────────────────────────────┬─────────────┘
+                │ Tauri v2 IPC               │ K8s Client
+                ▼                            ▼
+  ┌───────────────────────────┐   ┌────────────────────────┐
+  │  macOS Host MLX Engine    │   │  Local K8s (Colima)    │
+  │  - Apple MLX Framework    │   │  - Control Plane (K3s) │
+  │  - GPU/NPU Metal Shaders  │   │  - MLOps CRD Operators │
+  │  - LoRA / MLX Inference   │   │  - Model Pipelines     │
+  └───────────────────────────┘   └────────────────────────┘
+```

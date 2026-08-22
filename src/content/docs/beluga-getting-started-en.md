@@ -1,23 +1,30 @@
 ---
 title: Cluster Setup Guide
-description: Vagrant + Helm local cluster bootstrapping guide.
+description: Vagrant + Helm + Argo CD local data platform 1-click bootstrap guide.
 project: Beluga
 path: beluga/getting-started
-order: 1500
+order: 1502
 lastModified: 2026-08-23
 ---
 
 # Cluster Setup Guide
 
-Step-by-step instructions for booting the local data cluster.
+Step-by-step guide to bootstrapping the Beluga data platform locally.
 
-## Bootstrap Commands
+## 1. Boot Cluster
+
 ```bash
+git clone https://github.com/dasomel/beluga.git
+cd beluga
 vagrant up
-vagrant ssh master -c 'kubectl get pods -A'
 ```
 
-## Related Links
+## 2. Run Demo Pipeline & Verify
 
-- [Beluga Repository](https://github.com/dasomel/beluga)
-- [English Project Home](/oss/en/beluga/)
+```bash
+# Launch sample database and CDC ingestion
+make demo-pipeline
+
+# Query Iceberg tables via Trino CLI
+vagrant ssh master -c "trino --server http://localhost:8080 --catalog iceberg --schema default --execute 'SELECT * FROM order_events LIMIT 10;'"
+```

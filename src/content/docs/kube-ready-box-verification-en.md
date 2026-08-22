@@ -1,22 +1,32 @@
 ---
 title: Node Verification
-description: Node Readiness Attestation and 30 automated integrity checks.
+description: Node Readiness Attestation and 30 kernel/storage integrity verification checks.
 project: Kube-Ready-Box
 path: kube-ready-box/verification
-order: 1400
+order: 1404
 lastModified: 2026-08-23
 ---
 
 # Node Verification
 
-System integrity attestation ensuring node readiness for Kubernetes.
+Integrity verification checklist ensuring node readiness for immediate cluster initialization.
 
-## Verification Checkpoints
-- Loaded `br_netfilter` and `overlay` modules
-- Verified XFS `pquota` active mount flags
-- Verified containerd execution and cgroup v2 hierarchy
+## Essential Verification Steps
 
-## Related Links
-
-- [Kube-Ready-Box Repository](https://github.com/dasomel/kube-ready-box)
-- [English Project Home](/oss/en/kube-ready-box/)
+1. **Kernel Modules**:
+   ```bash
+   lsmod | grep -E 'br_netfilter|overlay'
+   ```
+2. **XFS pquota Mount Flags**:
+   ```bash
+   mount | grep 'xfs' | grep 'pquota'
+   ```
+3. **IP Forwarding**:
+   ```bash
+   sysctl net.ipv4.ip_forward  # Output: 1
+   ```
+4. **containerd & cgroup v2**:
+   ```bash
+   systemctl is-active containerd
+   cat /sys/fs/cgroup/cgroup.controllers
+   ```

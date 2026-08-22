@@ -1,23 +1,41 @@
 ---
 title: Pipeline Architecture
-description: Kafka → Flink → Iceberg → Trino end-to-end data pipeline flow.
+description: Kafka → Flink → Iceberg → Trino → Airflow end-to-end data pipeline flow and integration.
 project: Beluga
 path: beluga/architecture
-order: 1500
+order: 1501
 lastModified: 2026-08-23
 ---
 
 # Pipeline Architecture
 
-End-to-end pipeline flow from data ingestion to BI visualization.
+Beluga seamlessly combines real-time event streaming with open lakehouse architectures.
 
-## Pipeline Stages
-1. PostgreSQL CDC captured by Debezium into Kafka topics
-2. Apache Flink transforms and aggregates streams in real time
-3. Records written to Iceberg tables stored on MinIO S3
-4. Trino queries Iceberg tables for Superset BI dashboards
-
-## Related Links
-
-- [Beluga Repository](https://github.com/dasomel/beluga)
-- [English Project Home](/oss/en/beluga/)
+```text
+[ PostgreSQL RDBMS ]
+         │
+         ▼ Debezium CDC Connector
+┌──────────────────────────────────────────────────────────┐
+│  Apache Kafka (Event Streaming & Partitioned Topics)     │
+└──────────────────────────┬───────────────────────────────┘
+                           │
+                           ▼ Real-time Stream Processing
+┌──────────────────────────────────────────────────────────┐
+│  Apache Flink (Exactly-Once Stream Transformation)       │
+└──────────────────────────┬───────────────────────────────┘
+                           │
+                           ▼ Lakehouse Table Sink (MinIO S3)
+┌──────────────────────────────────────────────────────────┐
+│  Apache Iceberg (ACID Tables · Time Travel · Parquet)    │
+└─────────────┬──────────────────────────────┬─────────────┘
+              │                              │
+              ▼ Distributed SQL              ▼ Orchestration
+┌─────────────────────────────┐   ┌────────────────────────┐
+│  Trino Query Coordinator    │   │  Apache Airflow DAGs   │
+└─────────────┬───────────────┘   └────────────────────────┘
+              │
+              ▼ Visualization
+┌─────────────────────────────┐
+│  Apache Superset Dashboards │
+└─────────────────────────────┘
+```

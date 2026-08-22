@@ -1,9 +1,9 @@
 ---
 title: Directory Architecture
-description: MDB backend engine, TLS encryption, and Helm chart architecture.
+description: MDB backend storage engine, TLS/mTLS encryption, and Helm chart architecture.
 project: ldapium
 path: ldapium/architecture
-order: 1700
+order: 1701
 lastModified: 2026-08-23
 ---
 
@@ -11,12 +11,8 @@ lastModified: 2026-08-23
 
 Engineered around the high-throughput MDB storage backend and TLS encryption.
 
-## Architecture Layers
-- **Storage Engine**: OpenLDAP LMDB (Lightning Memory-Mapped Database)
-- **Security**: TLS 1.3 / mTLS mutual certificate authentication
-- **Schemas**: Core, Cosine, InetOrgPerson, and RFC2307bis schemas
+## Architecture Highlights
 
-## Related Links
-
-- [ldapium Repository](https://github.com/dasomel/ldapium)
-- [English Project Home](/oss/en/ldapium/)
+- **Storage Engine**: OpenLDAP LMDB handling tens of thousands of read queries per second
+- **Secure Transports**: LDAPS (port 636) and StartTLS (port 389)
+- **Supported Schemas**: Core, Cosine, InetOrgPerson, and RFC2307bis

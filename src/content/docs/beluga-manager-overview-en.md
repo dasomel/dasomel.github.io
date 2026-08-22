@@ -1,6 +1,6 @@
 ---
 title: Manager Overview
-description: Beluga Manager control plane philosophy and inspection scope.
+description: Beluga Manager unified control plane and edge UI overview.
 project: Beluga Manager
 path: beluga-manager/overview
 order: 1600
@@ -9,14 +9,10 @@ lastModified: 2026-08-23
 
 # Manager Overview
 
-Beluga Manager unifies fragmented data pipeline dashboards into a single control plane.
+**Beluga Manager** is the unified control plane web application for inspecting and orchestrating the Beluga data platform.
 
-## Inspection Domains
-- Kafka topics and partition throughput
-- Flink streaming job execution states
-- Iceberg lakehouse metadata and capacity metrics
+## Core Capabilities
 
-## Related Links
-
-- [Beluga Manager Repository](https://github.com/dasomel/beluga-manager)
-- [English Project Home](/oss/en/beluga-manager/)
+- **Interactive Topology Visualization**: Real-time end-to-end data pipeline flow mapping
+- **Job Lifecycle Controls**: Trigger Flink savepoints, restart streaming jobs, and run Airflow DAGs
+- **Schema Management**: Explore Iceberg table schemas, partition evolution, and snapshots

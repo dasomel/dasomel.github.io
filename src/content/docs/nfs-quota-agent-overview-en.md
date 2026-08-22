@@ -1,6 +1,6 @@
 ---
 title: Quota Agent Overview
-description: NFS PV quota enforcement mechanisms and architectural principles.
+description: Physical storage quota enforcement mechanisms and design principles for NFS PVs.
 project: NFS Quota Agent
 path: nfs-quota-agent/overview
 order: 1300
@@ -9,14 +9,18 @@ lastModified: 2026-08-23
 
 # Quota Agent Overview
 
-NFS Quota Agent eliminates shared storage exhaustion in Kubernetes NFS environments.
+**NFS Quota Agent** is a high-performance storage enforcement daemon bringing strict filesystem-level quotas to Kubernetes NFS PersistentVolumes.
 
-## Core Challenge
-- Standard NFS does not enforce per-directory storage limits
-- Workloads can exceed requested storage without restriction
-- Solved via XFS Project Quotas enforced at the Linux kernel layer
+## Background & Motivation
 
-## Related Links
+- **Standard NFS Limitation**: Standard NFS provisioners track requested storage (`10Gi`) only as Kubernetes metadata without enforcing physical disk limits on the underlying storage host.
+- **Storage Exhaustion Risk**: A single rogue workload writing unbounded data can exhaust shared NFS disks, crashing co-located services.
+- **Solution**: Leverages Linux kernel **XFS Project Quotas (`xfs_quota`)** to enforce byte-accurate hard limits per NFS subdirectory.
 
-- [NFS Quota Agent Repository](https://github.com/dasomel/nfs-quota-agent)
-- [English Project Home](/oss/en/nfs-quota-agent/)
+## Key Features
+
+- **XFS Project Quota Engine**: Immutable Project IDs mapped to directories for kernel-enforced limits
+- **gRPC & HTTP APIs**: Low-latency RPC for CSI provisioners alongside REST management endpoints
+- **QuotaPolicy CRD**: Native Kubernetes declarative custom resource definitions
+- **Prometheus Metrics**: Real-time volume utilization, headroom, and quota violation alerts
+- **Built-in Web UI**: Responsive storage administration dashboard

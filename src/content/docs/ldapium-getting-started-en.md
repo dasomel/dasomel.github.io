@@ -1,23 +1,27 @@
 ---
 title: Installation Guide
-description: Docker Compose and Helm chart deployment workflows.
+description: Docker Compose local execution and Kubernetes Helm production deployment.
 project: ldapium
 path: ldapium/getting-started
-order: 1700
+order: 1702
 lastModified: 2026-08-23
 ---
 
 # Installation Guide
 
-Deploying ldapium across Docker Compose and Kubernetes.
+Deploying ldapium across Docker Compose and Kubernetes environments.
 
-## Deployment Steps
+## Docker Compose Quickstart
+
 ```bash
+git clone https://github.com/dasomel/ldapium.git
+cd ldapium
 cp .env.example .env
 docker compose up -d
 ```
 
-## Related Links
+## Kubernetes Helm Deployment
 
-- [ldapium Repository](https://github.com/dasomel/ldapium)
-- [English Project Home](/oss/en/ldapium/)
+```bash
+helm install ldapium ./charts/ldapium   --namespace identity   --create-namespace   --set admin.password="StrongRandomPassword123!"
+```

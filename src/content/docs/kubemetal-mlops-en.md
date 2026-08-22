@@ -1,22 +1,19 @@
 ---
 title: MLOps Pipelines
-description: Local LLM fine-tuning, LoRA adapters, and quantized inference.
+description: Local LLM fine-tuning (LoRA/QLoRA), MLX quantization, and low-latency inference.
 project: KubeMetal
 path: kubemetal/mlops
-order: 1800
+order: 1802
 lastModified: 2026-08-23
 ---
 
 # MLOps Pipelines
 
-Authoring and serving machine learning pipelines in KubeMetal.
+Guide to authoring fine-tuning and inference pipelines in KubeMetal.
 
-## Core Capabilities
-- 1-click model downloads from HuggingFace and Ollama
-- LoRA / QLoRA fine-tuning workflows
-- 4-bit / 8-bit MLX quantization and high-speed local inference
+## Supported Workflows
 
-## Related Links
-
-- [KubeMetal Repository](https://github.com/dasomel/kubemetal)
-- [English Project Home](/oss/en/kubemetal/)
+1. **One-Click Model Downloads**: HuggingFace and Ollama weight ingestion
+2. **LoRA / QLoRA Fine-Tuning**: Supervised fine-tuning on local custom datasets
+3. **4-bit / 8-bit Quantization**: 70% memory reduction via Apple MLX quantization
+4. **High-Speed Local Serving**: OpenAI-compatible `/v1/chat/completions` endpoints

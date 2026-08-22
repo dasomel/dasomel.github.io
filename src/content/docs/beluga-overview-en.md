@@ -1,6 +1,6 @@
 ---
 title: Platform Overview
-description: Beluga data platform architecture and core value proposition.
+description: All-in-one modern data stack platform architecture (Kafka, Flink, Iceberg, Trino, Airflow).
 project: Beluga
 path: beluga/overview
 order: 1500
@@ -9,14 +9,10 @@ lastModified: 2026-08-23
 
 # Platform Overview
 
-Beluga is an IaC solution providing an all-in-one modern data platform on local Kubernetes.
+**Beluga** is an open-source, all-in-one modern data platform deployed on local Kubernetes via Infrastructure as Code (IaC).
 
-## Core Capabilities
-- Real-time CDC ingestion and stateful stream processing
-- Apache Iceberg open lakehouse architecture
-- High-speed distributed SQL analytics with Trino and Superset
+## Core Value
 
-## Related Links
-
-- [Beluga Repository](https://github.com/dasomel/beluga)
-- [English Project Home](/oss/en/beluga/)
+- **End-to-End Data Pipeline**: Debezium CDC → Kafka streaming → Apache Flink transformations → Apache Iceberg lakehouse → Trino distributed SQL → Superset BI → Airflow orchestration
+- **Single-Command Bootstrap**: Deploys the complete platform via Vagrant and Argo CD GitOps
+- **Open Standards**: Built entirely on production-grade open-source data technologies

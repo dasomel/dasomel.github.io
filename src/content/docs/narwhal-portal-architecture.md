@@ -1,22 +1,40 @@
 ---
 title: 포털 아키텍처
-description: Next.js 16 구조, gRPC 클라이언트 및 OIDC 흐름.
+description: Next.js 16 App Router 구조, gRPC 클라이언트 통신 및 OIDC 인증 세션 모델.
 project: Narwhal Portal
 path: narwhal-portal/architecture
-order: 1200
+order: 1201
 lastModified: 2026-08-23
 ---
 
 # 포털 아키텍처
 
-Next.js App Router를 기반으로 서버 사이드 렌더링(SSR)과 클라이언트 상태 관리를 결합합니다.
+Narwhal Portal은 프론트엔드와 플랫폼 백엔드 간의 효율적인 데이터 교환을 위해 모던 웹 아키텍처를 채택했습니다.
 
-## 기술 계층
-- **Frontend**: Next.js 16, React 19, Tailwind CSS, Lucide Icons
-- **Auth**: NextAuth / Keycloak OIDC OpenID Connect Federation
-- **Backend Communication**: Protocol Buffers 컴파일된 gRPC-web 및 REST Gateway
+## 기술 스택 계층
 
-## 관련 링크
+- **프론트엔드 프레임워크**: Next.js 16 (App Router), React 19, TypeScript
+- **스타일링 & 컴포넌트**: Tailwind CSS, Radix UI Primitives, Lucide Icons
+- **인증 (Authentication)**: NextAuth.js + Keycloak OIDC OpenID Connect Federation
+- **백엔드 통신**: Protocol Buffers (`.proto`), gRPC-web, Envoy gRPC-JSON 트랜스코더
 
-- [Narwhal Portal 저장소](https://github.com/dasomel/narwhal-portal)
-- [포털 홈](/oss/narwhal-portal/)
+```text
+Browser (React 19 Client Components)
+             │
+             ▼ HTTPS / Cookie
+  ┌────────────────────────────────────────────────────────┐
+  │  Next.js 16 Server (App Router / SSR)                  │
+  │  - Keycloak JWT Session Verification                   │
+  │  - Server Component Data Fetching                      │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼ gRPC-web / HTTP2
+  ┌────────────────────────────────────────────────────────┐
+  │  Envoy Gateway / APISIX gRPC Transcoder                │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼ Native gRPC
+  ┌────────────────────────────────────────────────────────┐
+  │  Narwhal Control Plane Core Services (Go / K8s API)    │
+  └────────────────────────────────────────────────────────┘
+```

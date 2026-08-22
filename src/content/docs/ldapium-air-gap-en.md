@@ -1,22 +1,20 @@
 ---
 title: Air-Gap Deployment
-description: Offline artifact packaging and verification for disconnected networks.
+description: Air-gap bundle packaging, registry mirroring, and verification for disconnected networks.
 project: ldapium
 path: ldapium/air-gap
-order: 1700
+order: 1703
 lastModified: 2026-08-23
 ---
 
 # Air-Gap Deployment
 
-Air-gap bundle creation for disconnected enterprise environments.
+Air-gap deployment procedures for disconnected enterprise infrastructures.
 
-## Offline Workflow
-1. Execute `scripts/bundle-images.sh` to package container images
-2. Push images to internal offline mirror registry
-3. Configure internal registry paths in Helm values
+```bash
+# 1. Package bundles in connected environment
+./scripts/bundle-images.sh
 
-## Related Links
-
-- [ldapium Repository](https://github.com/dasomel/ldapium)
-- [English Project Home](/oss/en/ldapium/)
+# 2. Push to internal offline registry
+./scripts/load-images.sh --registry internal-registry.local:5000
+```

@@ -1,22 +1,27 @@
 ---
 title: Day-2 Operations & DR
-description: Velero backup, air-gap offline bundles, and maintenance runbooks.
+description: Velero backup automation, air-gap offline bundles, and maintenance runbooks.
 project: Narwhal
 path: narwhal/operations
-order: 1100
+order: 1107
 lastModified: 2026-08-23
 ---
 
 # Day-2 Operations & DR
 
-Day-2 operational runbooks and disaster recovery strategies.
+Narwhal provides comprehensive operational runbooks covering Day-2 lifecycle management and disaster recovery.
 
-## Operations Invariants
-- **Automated Backups**: Scheduled daily Velero backups across cluster manifests and persistent volumes
-- **Air-Gap Deployment**: Self-contained offline archive deployment without external network access
-- **Node Maintenance**: Zero-downtime rolling maintenance with `kubectl drain` and PodDisruptionBudgets
+## Scheduled Backups & Disaster Recovery (Velero)
 
-## Related Links
+- Automated daily snapshots of cluster manifests and PVC volumes stored in SeaweedFS S3
+- Full cluster restoration with a single command:
+  ```bash
+  velero restore create --from-backup narwhal-daily-backup-latest
+  ```
 
-- [Narwhal Repository](https://github.com/dasomel/narwhal)
-- [Narwhal English Portal](/oss/en/narwhal/)
+## Air-Gap Offline Deployment
+
+Self-contained distribution archives for disconnected environments:
+- `narwhal-bundle-arm64.tar.gz` and `narwhal-bundle-amd64.tar.gz`
+- Bundles 120 container images, 35 Helm charts, OS deb packages, and binaries
+- Automatically pushes images to local mirror registries during bootstrap

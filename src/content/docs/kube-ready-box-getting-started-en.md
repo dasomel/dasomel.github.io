@@ -1,23 +1,36 @@
 ---
 title: Vagrantfile Guide
-description: Multi-provider configuration and cluster provisioning guide.
+description: Multi-provider configuration, resource allocation, and provisioning guide.
 project: Kube-Ready-Box
 path: kube-ready-box/getting-started
-order: 1400
+order: 1402
 lastModified: 2026-08-23
 ---
 
 # Vagrantfile Guide
 
-Executing Kube-Ready-Box across VMware Desktop, VirtualBox, and Libvirt.
+Guide to defining multi-node Kubernetes clusters with Kube-Ready-Box.
 
-## Vagrantfile Snippet
+## Baseline Vagrantfile
+
 ```ruby
-config.vm.box = 'dasomel/ubuntu-26.04-xfs'
-config.vm.network 'private_network', ip: '192.168.56.10'
+Vagrant.configure("2") do |config|
+  config.vm.box = "dasomel/ubuntu-26.04-xfs"
+  config.vm.box_version = ">= 1.2.0"
+
+  # VMware Desktop Provider
+  config.vm.provider "vmware_desktop" do |v|
+    v.cpus = 4
+    v.memory = 8192
+    v.gui = false
+  end
+
+  # VirtualBox Provider
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = 4
+    vb.memory = 8192
+  end
+
+  config.vm.network "private_network", ip: "192.168.56.10"
+end
 ```
-
-## Related Links
-
-- [Kube-Ready-Box Repository](https://github.com/dasomel/kube-ready-box)
-- [English Project Home](/oss/en/kube-ready-box/)

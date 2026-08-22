@@ -1,23 +1,26 @@
 ---
 title: Regression & Chaos Testing
-description: 263 incident lessons codified into 51 CI checks and Chaos Mesh experiments.
+description: 263 incident lessons codified into 51 CI regression checks and Chaos Mesh.
 project: Narwhal
 path: narwhal/testing
-order: 1100
+order: 1108
 lastModified: 2026-08-23
 ---
 
 # Regression & Chaos Testing
 
-Narwhal's maintainability is powered by codifying incident post-mortems directly into automated test suites.
+Narwhal's core maintainability is driven by codifying real-world failure post-mortems into automated regression tests.
 
-## Testing Layers
-- **Cluster Verification**: 120+ node and component health checks
-- **SSO Verification**: 49 automated OIDC authentication flow checks
-- **CI Regression Suite**: 51 critical regression checks derived from 263 incident post-mortems
-- **Chaos Mesh**: Chaos engineering simulating network drops, node partitions, and latency spikes
+## Three-Tier Verification Suite
 
-## Related Links
+1. **Cluster Verification (120+ Checks)**:
+   - Node kernel parameters, VIP responsiveness, CNI forwarding, DNS, and storage mount validation
+2. **SSO & IAM Verification (49 Checks)**:
+   - Keycloak OIDC issuance, OAuth2 Proxy cookie validation, and RBAC boundary testing
+3. **CI Regression Suite (51 Checks)**:
+   - 51 specialized checks derived from 263 incident root causes and discriminators
 
-- [Narwhal Repository](https://github.com/dasomel/narwhal)
-- [Narwhal English Portal](/oss/en/narwhal/)
+## Chaos Engineering with Chaos Mesh
+
+- **Network Partition Injections**: Verifying etcd quorum resilience during master node drops
+- **Pod Failure Experiments**: Validating zero-downtime traffic ingress during APISIX pod crashes

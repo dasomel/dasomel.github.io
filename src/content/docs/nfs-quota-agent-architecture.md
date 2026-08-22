@@ -1,22 +1,48 @@
 ---
 title: 스토리지 아키텍처
-description: Linux XFS Project Quota 및 gRPC 데몬 내부 구조.
+description: Linux XFS Project Quota 커널 메커니즘, gRPC 데몬 내부 구조 및 프로비저닝 흐름.
 project: NFS Quota Agent
 path: nfs-quota-agent/architecture
-order: 1300
+order: 1301
 lastModified: 2026-08-23
 ---
 
 # 스토리지 아키텍처
 
-Go 언어로 작성된 경량 데몬이 XFS 마운트 경로를 직접 관리합니다.
+NFS Quota Agent는 Go 언어로 작성된 경량 단일 바이너리 데몬으로, NFS 호스트 서버에서 루트 권한으로 실행됩니다.
 
-## 내부 아키텍처
-- **Project ID 관리자**: `/etc/projects`, `/etc/projid` 매핑 관리
-- **gRPC Server**: CSI 볼륨 프로비저닝 시 쿼터 생성/수정/삭제 RPC 처리
-- **Prometheus Collector**: 15초 주기로 볼륨별 I/O 및 사용량 수집
+## 내부 아키텍처 구성
 
-## 관련 링크
+```text
+Kubernetes CSI Driver / Client
+             │
+             ▼ gRPC (:50051) / HTTP (:8080)
+┌──────────────────────────────────────────────────────────┐
+│  nfs-quota-agent Daemon (Go)                             │
+│  ├─ gRPC Server (CreateQuota, SetQuota, DeleteQuota)    │
+│  ├─ HTTP REST & Prometheus Metrics Exporter              │
+│  ├─ Project ID Allocator (/etc/projects, /etc/projid)    │
+│  └─ XFS Quota Controller (xfs_quota CLI / ioctl)         │
+└──────────────────────────┬───────────────────────────────┘
+                           │
+                           ▼ Linux Kernel VFS / XFS Engine
+┌──────────────────────────────────────────────────────────┐
+│  /srv/nfs Filesystem (Mounted with 'pquota')             │
+│  ├─ /srv/nfs/pvc-aaaa (Project ID 1001, Limit: 10 GiB)   │
+│  ├─ /srv/nfs/pvc-bbbb (Project ID 1002, Limit: 50 GiB)   │
+│  └─ /srv/nfs/pvc-cccc (Project ID 1003, Limit: 5 GiB)    │
+└──────────────────────────────────────────────────────────┘
+```
 
-- [NFS Quota Agent 저장소](https://github.com/dasomel/nfs-quota-agent)
-- [프로젝트 홈](/oss/nfs-quota-agent/)
+## XFS Project Quota 커널 동작 원리
+
+1. **마운트 옵션**: XFS 파일시스템이 `pquota` (또는 `prjquota`) 플래그로 마운트되어야 합니다.
+2. **디렉토리 매핑**: 새로운 PVC 생성 시 고유한 `Project ID`를 발급하고 디렉토리에 프로젝트 플래그를 설정합니다:
+   ```bash
+   xfs_quota -x -c 'project -s -p /srv/nfs/pvc-12345 101' /srv/nfs
+   ```
+3. **용량 한도 설정**: 하드 리밋(Hard Limit)과 소프트 리밋(Soft Limit)을 설정합니다:
+   ```bash
+   xfs_quota -x -c 'limit -p bhard=10g 101' /srv/nfs
+   ```
+4. **커널 강제 차단**: 워크로드가 10GiB를 초과하여 쓰기를 시도하면 커널이 즉시 `EDQUOT (Disk quota exceeded)` 에러를 반환합니다.

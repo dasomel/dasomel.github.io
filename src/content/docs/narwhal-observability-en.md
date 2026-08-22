@@ -1,23 +1,30 @@
 ---
 title: Observability Stack
-description: Prometheus, Grafana, Loki, Tempo, and Hubble telemetry.
+description: Prometheus, Grafana, Loki, Tempo, Alloy, and Hubble eBPF telemetry.
 project: Narwhal
 path: narwhal/observability
-order: 1100
+order: 1105
 lastModified: 2026-08-23
 ---
 
 # Observability Stack
 
-Full-stack observability integrating metrics, logs, distributed traces, and network flows.
+Narwhal provides full-stack telemetry integrating metrics, logs, distributed traces, and network flows into a single unified operational dashboard.
 
-## Telemetry Stack
-- **Metrics**: Prometheus Operator with pre-built Grafana dashboards
-- **Logs**: Grafana Loki with Grafana Alloy collection agents
-- **Traces**: Grafana Tempo (OpenTelemetry-compatible distributed tracing)
-- **Network Telemetry**: Cilium Hubble eBPF service flow mapping
+## Telemetry Pipeline
 
-## Related Links
+```text
+[ Kubernetes Pods & Nodes ]
+      │
+      ├─ Metrics (Prometheus Exporters) ──► Prometheus ──► Grafana
+      ├─ Logs (Alloy Agent) ──────────────► Loki ────────► Grafana
+      ├─ Traces (OpenTelemetry SDK) ─────► Tempo ───────► Grafana
+      └─ Network Flows (eBPF BPF Maps) ──► Hubble UI
+```
 
-- [Narwhal Repository](https://github.com/dasomel/narwhal)
-- [Narwhal English Portal](/oss/en/narwhal/)
+## 4 Observability Pillars
+
+1. **Metrics (Prometheus Operator)**: Node CPU/memory, XFS storage consumption, and APISIX latency alerts
+2. **Logs (Grafana Loki + Alloy)**: Label-indexed container log aggregation and streaming
+3. **Traces (Grafana Tempo)**: OpenTelemetry distributed trace correlation with logs via TraceIDs
+4. **Network Telemetry (Cilium Hubble)**: Real-time service topology, DNS latency, and packet drops via eBPF

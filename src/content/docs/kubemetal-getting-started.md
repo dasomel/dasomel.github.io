@@ -1,9 +1,9 @@
 ---
 title: 앱 설치 및 설정
-description: 데스크톱 앱 빌드, 모델 카탈로그 초기화.
+description: Tauri v2 데스크톱 앱 컴파일, 의존성 설치 및 모델 카탈로그 초기화.
 project: KubeMetal
 path: kubemetal/getting-started
-order: 1800
+order: 1803
 lastModified: 2026-08-23
 ---
 
@@ -11,13 +11,12 @@ lastModified: 2026-08-23
 
 KubeMetal 데스크톱 애플리케이션을 빌드하고 실행하는 방법입니다.
 
-## 실행 단계
 ```bash
+# 1. 저장소 클론 및 패키지 설치
+git clone https://github.com/dasomel/kubemetal.git
+cd kubemetal
 pnpm install
+
+# 2. Tauri 개발 모드 실행
 pnpm tauri dev
 ```
-
-## 관련 링크
-
-- [KubeMetal 저장소](https://github.com/dasomel/kubemetal)
-- [프로젝트 홈](/oss/kubemetal/)

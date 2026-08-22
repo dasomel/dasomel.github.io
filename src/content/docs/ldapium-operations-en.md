@@ -1,26 +1,22 @@
 ---
 title: Operations & Backup
-description: TLS certificate rotation, monitoring, and `slapcat`/`slapadd` DR.
+description: TLS certificate rotation, slapcat/slapadd database backups, and disaster recovery.
 project: ldapium
 path: ldapium/operations
-order: 1700
+order: 1704
 lastModified: 2026-08-23
 ---
 
 # Operations & Backup
 
-Operational maintenance, certificate renewal, and disaster recovery runbooks.
+Operational maintenance, certificate renewal, and disaster recovery procedures.
 
-## Backup & Restore Commands
+## Database Backup & Restore
+
 ```bash
-# Generate backup
+# 1. Export backup (slapcat)
 slapcat -n 1 -l /backup/ldap-$(date +%Y%m%d).ldif
 
-# Restore backup
+# 2. Restore database (slapadd)
 slapadd -n 1 -l /backup/ldap-backup.ldif
 ```
-
-## Related Links
-
-- [ldapium Repository](https://github.com/dasomel/ldapium)
-- [English Project Home](/oss/en/ldapium/)

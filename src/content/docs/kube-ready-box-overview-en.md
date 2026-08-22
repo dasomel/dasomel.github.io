@@ -1,6 +1,6 @@
 ---
 title: Box Overview
-description: Kube-Ready-Box optimization objectives and architecture support.
+description: Kubernetes-optimized Ubuntu Vagrant base box architecture and design principles.
 project: Kube-Ready-Box
 path: kube-ready-box/overview
 order: 1400
@@ -9,14 +9,10 @@ lastModified: 2026-08-23
 
 # Box Overview
 
-Kube-Ready-Box eliminates initial cluster bootstrap latency.
+**Kube-Ready-Box** provides pre-optimized Ubuntu 24.04 / 26.04 LTS Vagrant base boxes designed for instantaneous local Kubernetes cluster provisioning.
 
-## Core Objectives
-- Pre-enabled XFS Project Quotas on root mounts
-- Hardened kernel sysctl parameters and containerd v2
-- Native multi-arch support (ARM64 / AMD64)
+## Core Value
 
-## Related Links
-
-- [Kube-Ready-Box Repository](https://github.com/dasomel/kube-ready-box)
-- [English Project Home](/oss/en/kube-ready-box/)
+1. **Zero-Latency Bootstrap**: Eliminates repetitive OS package installations and kernel tuning cycles.
+2. **Pre-Enabled XFS Project Quotas**: Root and data mounts formatted with `pquota` mount options for directory-level storage quotas.
+3. **Multi-Arch & Multi-Provider**: Native support for Apple Silicon (ARM64) and Intel/AMD (AMD64) across VMware Desktop, VirtualBox, and Libvirt.

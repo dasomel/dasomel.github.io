@@ -1,23 +1,26 @@
 ---
 title: Security & SSO
-description: Keycloak OIDC, OpenBao secrets, and Kyverno policy governance.
+description: Keycloak OIDC, Istio Ambient ztunnel mTLS, OpenBao, and Kyverno governance.
 project: Narwhal
 path: narwhal/security
-order: 1100
+order: 1104
 lastModified: 2026-08-23
 ---
 
 # Security & SSO
 
-Zero-trust security principles are applied across all platform layers.
+Narwhal enforces zero-trust security principles across all layers of the platform stack.
 
-## Security Components
-- **IAM / SSO**: Keycloak centralized identity provider with OIDC federation
-- **Secrets Management**: OpenBao (Vault fork) managing short-lived dynamic credentials
-- **Policy Engine**: Kyverno enforcing Pod Security Standards (PSS) admission rules
-- **Certificates**: cert-manager managing automated internal CA certificate lifecycles
+## Core Security Pillars
 
-## Related Links
-
-- [Narwhal Repository](https://github.com/dasomel/narwhal)
-- [Narwhal English Portal](/oss/en/narwhal/)
+1. **Centralized IAM & SSO (Keycloak)**:
+   - Single Sign-On (SSO) across ArgoCD, Grafana, Gitea, and Narwhal Portal
+   - Standardized OpenID Connect (OIDC) token federation
+2. **Sidecar-Less mTLS (Istio Ambient)**:
+   - Transparent L4 mutual TLS encryption handled by node-level `ztunnel` without sidecar memory overhead
+   - 80% reduction in pod memory footprint
+3. **Secret Governance (OpenBao)**:
+   - Vault-compatible dynamic secret injection preventing hardcoded credentials
+4. **Policy Enforcement (Kyverno)**:
+   - Automated Pod Security Standards (PSS Baseline/Restricted) validation
+   - Mandating non-root execution and read-only root filesystems

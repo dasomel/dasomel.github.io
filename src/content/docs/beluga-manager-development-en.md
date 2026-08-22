@@ -1,24 +1,22 @@
 ---
 title: Development Guide
-description: pnpm setup, component hierarchy, and local mock servers.
+description: pnpm local development setup, mock API servers, and component guidelines.
 project: Beluga Manager
 path: beluga-manager/development
-order: 1600
+order: 1602
 lastModified: 2026-08-23
 ---
 
 # Development Guide
 
-Local setup and contribution guidelines.
+Local setup and contribution guidelines for Beluga Manager.
 
-## Execution
 ```bash
+# Clone and install dependencies
+git clone https://github.com/dasomel/beluga-manager.git
+cd beluga-manager
 pnpm install
-pnpm test
-pnpm dev
+
+# Start development server with mock backends
+pnpm dev:mock
 ```
-
-## Related Links
-
-- [Beluga Manager Repository](https://github.com/dasomel/beluga-manager)
-- [English Project Home](/oss/en/beluga-manager/)
