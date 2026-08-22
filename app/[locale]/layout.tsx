@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { VisualRefresh } from '@/components/ui/VisualRefresh';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cne.io.kr'),
@@ -27,6 +28,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <NextIntlClientProvider messages={messages}>
+      <VisualRefresh />
       <Header locale={locale as 'ko' | 'en'} />
       <main className="flex-1">{children}</main>
       <Footer />
