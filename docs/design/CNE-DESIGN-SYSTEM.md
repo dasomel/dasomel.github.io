@@ -141,6 +141,9 @@ The renderer must explicitly inherit CNE theme colors. Generic Typography theme 
 - Metadata: muted monospace or compact sans
 - Documentation prose: approximately 16px with 1.8 line-height for dense technical content
 - Box/code text should not be reduced merely to make containers look quieter
+- Article body content should target a comfortable reading measure around 65–75ch.
+- Mobile headings should reduce proportionally rather than forcing desktop headline sizes into narrow columns.
+- Heading rhythm is part of the system: H2/H3 spacing should separate sections without excessive card wrappers.
 
 ## Layout
 
@@ -148,6 +151,7 @@ The renderer must explicitly inherit CNE theme colors. Generic Typography theme 
 - Prefer generous horizontal whitespace.
 - Documentation uses three-column layout: navigation / content / on-page navigation.
 - Sidebar width should stay visually light; avoid heavy vertical chrome.
+- Mobile layouts collapse Bento/showcase grids to a single column while preserving hierarchy and metadata density.
 
 ## Components
 
@@ -157,6 +161,7 @@ The renderer must explicitly inherit CNE theme colors. Generic Typography theme 
 - One language switch and one theme switch.
 - Navigation uses `surface-hi` for active states.
 - Avoid transparent header states that reduce contrast against hero artwork.
+- Mobile navigation is presented as a grouped surface with explicit active state and adequate touch targets.
 
 ### Cards
 
@@ -164,6 +169,27 @@ The renderer must explicitly inherit CNE theme colors. Generic Typography theme 
 - Rounded corners are moderate, not excessive.
 - Shadows are subtle and primarily used on hover.
 - A card is for grouping meaningful information, not every small UI element.
+
+### Home / Hero
+
+- The home hero uses an editorial two-part composition: strong technical message plus one engineering/workbench visual.
+- Use Bento-like project hierarchy to distinguish featured OSS from secondary projects.
+- Notes use a timeline treatment; Digest uses a signal/editorial block; philosophy or open questions use restrained callouts.
+- Grid and glow effects are supporting layers only. They must never compete with the headline or evidence visual.
+- In Dark mode, never reintroduce page-specific near-black or near-white hard-coded surfaces; use the shared theme tokens.
+
+### Projects
+
+- Projects hub is a showcase, not a uniform card catalog.
+- Featured OSS can occupy a larger grid area; secondary projects use compact tiles.
+- Search, filtering, result state, and metadata belong to one coherent navigation surface.
+- Project detail is a case-study surface: Hero → Problem/Response → Source Snapshot → Signals → Docs/Notes/Digest → Engineering Content.
+
+### Content / Editorial pages
+
+- Post detail uses an editorial header with category/date/read-time metadata, cover visual, a content-focused article column, and related OSS evidence.
+- Notes, Tech Digest, Docs, and Seminars share the same typography and surface system but retain distinct information roles.
+- Code copy controls are touch-friendly on mobile and provide visible success/failure feedback.
 
 ### Code blocks
 
@@ -212,6 +238,7 @@ Use motion selectively:
 - reduced-motion support is mandatory
 - one major animated/interactive visual per page is enough
 - avoid constant floating, excessive parallax, and decorative cursor effects
+- The global reduced-motion policy disables transitions, animations, and smooth scrolling when the user requests reduced motion.
 
 ## AI design handoff
 
@@ -225,3 +252,5 @@ When asking an AI design or coding system to modify CNE:
 6. Verify both Light and Dark themes before merging.
 7. Keep copy controls restricted to code blocks.
 8. Check visual contrast for cards, sidebars, headers, buttons, tables, callouts, lifecycle blocks, and code surfaces in both themes.
+9. Treat page-specific `*Refresh.module.css` layers as implementation details; shared tokens remain the source of truth.
+10. When adding a new visual layer, document its intended role instead of introducing another independent color vocabulary.
