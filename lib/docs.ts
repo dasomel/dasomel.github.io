@@ -1,11 +1,13 @@
 import type { Doc } from './types';
+import { getProjects } from './content';
 
 /**
- * Groups docs by their `project` field, preserving the order they arrive in.
- * Callers pass the already order-sorted output of getDocs(), so both the group
- * sequence and each group's contents follow the frontmatter `order` bands
- * (K-PaaS Lite 1-99, Narwhal 101-108, Narwhal Portal 201-203,
- * Kube-Ready-Box 301-303, NFS Quota Agent 401-403, KubeMetal 501-503).
+ * Groups documentation by project and orders project groups using the same
+ * portfolio order as the OSS hub. Documents inside each project retain the
+ * frontmatter order supplied by getDocs().
+ *
+ * This keeps /docs and /oss aligned while allowing project documentation to
+ * evolve independently from the portfolio presentation.
  */
 export function groupDocsByProject(docs: Doc[]): [string, Doc[]][] {
   const groups = new Map<string, Doc[]>();
@@ -14,5 +16,18 @@ export function groupDocsByProject(docs: Doc[]): [string, Doc[]][] {
     if (group) group.push(doc);
     else groups.set(doc.project, [doc]);
   }
-  return [...groups];
+
+  const lang = docs[0]?.lang ?? 'ko';
+  const projectOrder = new Map(
+    getProjects(lang).map((project, index) => [project.title, index] as const),
+  );
+
+  return [...groups].sort(([a], [b]) => {
+    const aOrder = projectOrder.get(a);
+    const bOrder = projectOrder.get(b);
+    if (aOrder !== undefined && bOrder !== undefined) return aOrder - bOrder;
+    if (aOrder !== undefined) return -1;
+    if (bOrder !== undefined) return 1;
+    return a.localeCompare(b);
+  });
 }
