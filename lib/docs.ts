@@ -1,13 +1,11 @@
 import type { Doc } from './types';
-import { getProjects } from './content';
+import { OSS_PORTFOLIO_ORDER } from './oss';
 
 /**
- * Groups documentation by project and orders project groups using the same
- * portfolio order as the OSS hub. Documents inside each project retain the
- * frontmatter order supplied by getDocs().
- *
- * This keeps /docs and /oss aligned while allowing project documentation to
- * evolve independently from the portfolio presentation.
+ * Groups documentation by project and uses the same project order as the OSS
+ * portfolio. Documents within each project keep the order produced by
+ * getDocs(). Projects that are not part of the portfolio are appended
+ * alphabetically so the docs index remains complete.
  */
 export function groupDocsByProject(docs: Doc[]): [string, Doc[]][] {
   const groups = new Map<string, Doc[]>();
@@ -17,14 +15,13 @@ export function groupDocsByProject(docs: Doc[]): [string, Doc[]][] {
     else groups.set(doc.project, [doc]);
   }
 
-  const lang = docs[0]?.lang ?? 'ko';
-  const projectOrder = new Map(
-    getProjects(lang).map((project, index) => [project.title, index] as const),
-  );
+  const projectOrder = new Map(OSS_PORTFOLIO_ORDER.map((slug, index) => [slug, index] as const));
 
   return [...groups].sort(([a], [b]) => {
-    const aOrder = projectOrder.get(a);
-    const bOrder = projectOrder.get(b);
+    const aSlug = docs.find((doc) => doc.project === a)?.slug.split('/')[0];
+    const bSlug = docs.find((doc) => doc.project === b)?.slug.split('/')[0];
+    const aOrder = aSlug ? projectOrder.get(aSlug) : undefined;
+    const bOrder = bSlug ? projectOrder.get(bSlug) : undefined;
     if (aOrder !== undefined && bOrder !== undefined) return aOrder - bOrder;
     if (aOrder !== undefined) return -1;
     if (bOrder !== undefined) return 1;
