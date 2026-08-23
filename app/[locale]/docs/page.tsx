@@ -11,7 +11,7 @@ export default async function DocsIndexPage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   const lang = locale as 'ko' | 'en';
   const t = await getTranslations({ locale, namespace: 'nav' });
-  const groups = groupDocsByProject(getDocs(lang).filter((doc) => !doc.slug.includes('/')));
+  const groups = groupDocsByProject(getDocs(lang));
   const base = lang === 'en' ? '/en' : '/ko';
   const count = groups.reduce((total, [, docs]) => total + docs.length, 0);
   return (
