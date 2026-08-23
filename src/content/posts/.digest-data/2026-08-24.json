@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-24",
+  "generatedAt": "2026-08-23T20:43:51.980Z",
+  "count": 6,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why real-time AI at scale is so hard",
+      "link": "https://thenewstack.io/real-time-ai-scale/",
+      "date": "2026-08-23T16:00:00.000Z",
+      "excerpt": "Real-time AI at scale is harder than it looks. Pipelines that hum along in development routinely hit problems in production."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "One pull to wipe them all",
+      "link": "https://thenewstack.io/ai-coding-agent-security/",
+      "date": "2026-08-23T14:00:00.000Z",
+      "excerpt": "Q Developer is a free extension that lets a coding agent read a project, propose changes, and run commands on"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The open mainframe: the keystone of the end-to-end digital enterprise",
+      "link": "https://thenewstack.io/open-mainframe-keystone-enterprise/",
+      "date": "2026-08-22T17:00:00.000Z",
+      "excerpt": "In the first article in this series, I discussed how the Open Mainframe Project (OMP) and its open-source framework, Zowe,"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Say it once: introducing Bot Preference Sync",
+      "link": "https://blog.cloudflare.com/bot-preference-sync/",
+      "date": "2026-08-21T23:19:57.000Z",
+      "excerpt": "Cloudflare's new Bot Preference Sync automatically aligns your robots.txt file with your AI bot policies for Search, Agent, and Training."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-08-21T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — August 21, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-august-21-2026-red-hat",
+      "date": "2026-08-21T00:00:00.000Z",
+      "excerpt": "Why proprietary software isn’t a retrospective trend but a trap for failureThink proprietary software is more secure because its code is hidden? In the AI era, that assumption is dangerously outdated."
+    }
+  ]
+}
