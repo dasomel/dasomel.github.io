@@ -11,6 +11,10 @@ lastModified: 2026-08-23
 
 Narwhal adopts a resilient 6-node high-availability (HA) topology designed with zero single points of failure.
 
+> **Canonical documentation path:** `/en/docs/narwhal/architecture/` · Korean: `/ko/docs/narwhal/architecture/`
+>
+> Legacy flat documentation URLs such as `narwhal-architecture` remain compatible with the canonical nested documentation structure.
+
 ## Node Topology & IP Allocation
 
 | Node Name | Role | vCPU / RAM | IP Address | Core Running Services |
