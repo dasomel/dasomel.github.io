@@ -8,7 +8,9 @@ import TOC from '@/components/layout/TOC';
 export function generateStaticParams() {
   const params: { locale: string; slug: string[] }[] = [];
   routing.locales.forEach((locale) => {
-    getDocs(locale as 'ko' | 'en').filter((d) => !d.slug.includes('/')).forEach((d) => params.push({ locale, slug: d.slug.split('/') }));
+    getDocs(locale as 'ko' | 'en').forEach((doc) => {
+      params.push({ locale, slug: doc.slug.split('/') });
+    });
   });
   return params;
 }
@@ -16,11 +18,11 @@ export function generateStaticParams() {
 export default async function DocPage({ params }: { params: Promise<{ locale: string; slug: string[] }> }) {
   const { locale, slug: segments } = await params;
   const slug = segments.join('/');
-  if (slug.includes('/')) notFound();
   const lang = locale as 'ko' | 'en';
   const result = getDocBySlug(slug, lang);
   if (!result) notFound();
-  const docs = getDocs(lang).filter((doc) => !doc.slug.includes('/'));
+
+  const docs = getDocs(lang);
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
       <div className="flex flex-col lg:flex-row lg:gap-8">
