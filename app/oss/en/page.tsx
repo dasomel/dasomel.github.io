@@ -1,28 +1,8 @@
 import Link from 'next/link';
 import { getProjects, getDocs } from '@/lib/content';
+import { OSS_PORTFOLIO_GROUPS } from '@/lib/oss';
 
-const groups = [
-  {
-    label: 'Engineering Foundation',
-    description: 'Projects that standardize OSS engineering practice, local Kubernetes node readiness, and reusable foundations.',
-    projects: ['openforge', 'kube-ready-box'],
-  },
-  {
-    label: 'Cloud Native Platform',
-    description: 'Kubernetes platform, portal, storage enforcement, and directory infrastructure projects.',
-    projects: ['narwhal', 'narwhal-portal', 'nfs-quota-agent', 'ldapium'],
-  },
-  {
-    label: 'Data Platform',
-    description: 'Projects connecting CDC, streaming, lakehouse storage, query, BI, and orchestration into a coherent platform.',
-    projects: ['beluga', 'beluga-manager'],
-  },
-  {
-    label: 'Edge / Local AI',
-    description: 'A desktop MLOps project combining Apple Silicon native compute with a Kubernetes control plane.',
-    projects: ['kubemetal'],
-  },
-];
+const groups = OSS_PORTFOLIO_GROUPS;
 
 export default function OssHubEn() {
   const projects = getProjects('en');
