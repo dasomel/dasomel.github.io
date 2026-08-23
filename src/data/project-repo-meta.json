@@ -5,10 +5,140 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 98,
+    "openIssues": 100,
     "language": "Shell",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-20T00:39:52Z"
+    "pushedAt": "2026-08-23T15:34:48Z"
+  },
+  "dasomel/beluga-manager": {
+    "repo": "dasomel/beluga-manager",
+    "htmlUrl": "https://github.com/dasomel/beluga-manager",
+    "description": "Unified Control Plane for the Beluga Data Platform",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 39,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-20T05:03:20Z"
+  },
+  "dasomel/egovframe-launcher": {
+    "repo": "dasomel/egovframe-launcher",
+    "htmlUrl": "https://github.com/dasomel/egovframe-launcher",
+    "description": "Local GUI launcher + CLI scripts for building, running, and debugging eGovFrame Standard Framework sample projects in VSCode (community)",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 1,
+    "language": "Go",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-14T22:54:31Z",
+    "latestRelease": {
+      "tag": "v1.0.7",
+      "name": "Release v1.0.7",
+      "publishedAt": "2026-07-14T22:54:37Z",
+      "url": "https://github.com/dasomel/egovframe-launcher/releases/tag/v1.0.7"
+    },
+    "latestTag": {
+      "name": "v1.0.7",
+      "commitSha": "edf6cc3ab240953d752114dacc6dcc61400afb54",
+      "url": "https://api.github.com/repos/dasomel/egovframe-launcher/commits/edf6cc3ab240953d752114dacc6dcc61400afb54"
+    }
+  },
+  "dasomel/harbor": {
+    "repo": "dasomel/harbor",
+    "htmlUrl": "https://github.com/dasomel/harbor",
+    "description": "An open source trusted cloud native registry project that stores, signs, and scans content.",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 0,
+    "language": "Go",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-22T01:18:11Z",
+    "latestRelease": {
+      "tag": "v2.15.1",
+      "name": "v2.15.1 (linux/amd64, linux/arm64)",
+      "publishedAt": "2026-07-07T11:27:49Z",
+      "url": "https://github.com/dasomel/harbor/releases/tag/v2.15.1"
+    },
+    "latestTag": {
+      "name": "v2.15.2",
+      "commitSha": "080b0220574cc853ae1e2946ce7a5610ba855757",
+      "url": "https://api.github.com/repos/dasomel/harbor/commits/080b0220574cc853ae1e2946ce7a5610ba855757"
+    }
+  },
+  "dasomel/k-paas": {
+    "repo": "dasomel/k-paas",
+    "htmlUrl": "https://github.com/dasomel/k-paas",
+    "description": "K-PaaS를 Local(PC) 설치를 위한 SandBox 프로젝트",
+    "stars": 2,
+    "forks": 1,
+    "openIssues": 1,
+    "language": "Shell",
+    "pushedAt": "2026-02-01T15:33:14Z",
+    "latestRelease": {
+      "tag": "v2.2.0",
+      "name": "v2.2.0: K-PaaS 1.7.0 지원",
+      "publishedAt": "2026-02-01T15:26:59Z",
+      "url": "https://github.com/dasomel/k-paas/releases/tag/v2.2.0"
+    },
+    "latestTag": {
+      "name": "v2.2.0",
+      "commitSha": "821e9a2ada4ab4b17dc9cec69758aae636b49ab7",
+      "url": "https://api.github.com/repos/dasomel/k-paas/commits/821e9a2ada4ab4b17dc9cec69758aae636b49ab7"
+    }
+  },
+  "dasomel/kube-ready-box": {
+    "repo": "dasomel/kube-ready-box",
+    "htmlUrl": "https://github.com/dasomel/kube-ready-box",
+    "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 18,
+    "language": "Shell",
+    "license": "MIT",
+    "pushedAt": "2026-08-23T16:21:21Z",
+    "latestRelease": {
+      "tag": "v1.1.0",
+      "name": "v1.1.0 — Security hardening, chrony, K8s CSI prerequisites",
+      "publishedAt": "2026-07-19T05:36:03Z",
+      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v1.1.0"
+    },
+    "latestTag": {
+      "name": "v1.1.0",
+      "commitSha": "1be559a7885005708b66235684ab2dac3ed9e15e",
+      "url": "https://api.github.com/repos/dasomel/kube-ready-box/commits/1be559a7885005708b66235684ab2dac3ed9e15e"
+    }
+  },
+  "dasomel/kubemetal": {
+    "repo": "dasomel/kubemetal",
+    "htmlUrl": "https://github.com/dasomel/kubemetal",
+    "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 28,
+    "language": "TypeScript",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-21T15:39:00Z",
+    "latestRelease": {
+      "tag": "v0.2.0",
+      "name": "KubeMetal v0.2.0",
+      "publishedAt": "2026-08-09T01:21:05Z",
+      "url": "https://github.com/dasomel/kubemetal/releases/tag/v0.2.0"
+    },
+    "latestTag": {
+      "name": "v0.2.0",
+      "commitSha": "f67646d3260421fca8256e76517f3132d998bf1e",
+      "url": "https://api.github.com/repos/dasomel/kubemetal/commits/f67646d3260421fca8256e76517f3132d998bf1e"
+    }
+  },
+  "dasomel/ldapium": {
+    "repo": "dasomel/ldapium",
+    "htmlUrl": "https://github.com/dasomel/ldapium",
+    "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 19,
+    "language": "Go",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-23T16:22:24Z"
   },
   "dasomel/narwhal": {
     "repo": "dasomel/narwhal",
@@ -16,9 +146,108 @@
     "description": "Vagrant-based Kubernetes Internal Developer Platform (IDP)",
     "stars": 0,
     "forks": 1,
-    "openIssues": 161,
+    "openIssues": 157,
     "language": "Shell",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-20T04:00:52Z"
+    "pushedAt": "2026-08-23T15:51:23Z",
+    "latestRelease": {
+      "tag": "v1.2.0",
+      "name": "v1.2.0",
+      "publishedAt": "2026-08-09T01:23:50Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/v1.2.0"
+    },
+    "latestTag": {
+      "name": "v1.2.0",
+      "commitSha": "a8692ae73a949313fd921bad7c4f293f548d5524",
+      "url": "https://api.github.com/repos/dasomel/narwhal/commits/a8692ae73a949313fd921bad7c4f293f548d5524"
+    }
+  },
+  "dasomel/narwhal-portal": {
+    "repo": "dasomel/narwhal-portal",
+    "htmlUrl": "https://github.com/dasomel/narwhal-portal",
+    "description": "Narwhal IDP management portal (Next.js 16 + React 19)",
+    "stars": 2,
+    "forks": 0,
+    "openIssues": 53,
+    "language": "TypeScript",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-23T16:24:53Z",
+    "latestRelease": {
+      "tag": "v1.0.17",
+      "name": "v1.0.17",
+      "publishedAt": "2026-08-09T14:56:46Z",
+      "url": "https://github.com/dasomel/narwhal-portal/releases/tag/v1.0.17"
+    },
+    "latestTag": {
+      "name": "v1.0.17",
+      "commitSha": "d6a3250cacfa843fa46872b2d04f355ace8d5916",
+      "url": "https://api.github.com/repos/dasomel/narwhal-portal/commits/d6a3250cacfa843fa46872b2d04f355ace8d5916"
+    }
+  },
+  "dasomel/nfs-quota-agent": {
+    "repo": "dasomel/nfs-quota-agent",
+    "htmlUrl": "https://github.com/dasomel/nfs-quota-agent",
+    "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
+    "stars": 4,
+    "forks": 0,
+    "openIssues": 12,
+    "language": "Go",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-08-23T16:23:36Z",
+    "latestRelease": {
+      "tag": "v0.3.0",
+      "name": "v0.3.0",
+      "publishedAt": "2026-07-19T05:58:16Z",
+      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.3.0"
+    },
+    "latestTag": {
+      "name": "v0.3.0",
+      "commitSha": "fa79b6a9ea84644b5f9556a8f125fbcab6057094",
+      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/fa79b6a9ea84644b5f9556a8f125fbcab6057094"
+    }
+  },
+  "dasomel/oh-my-cursor": {
+    "repo": "dasomel/oh-my-cursor",
+    "htmlUrl": "https://github.com/dasomel/oh-my-cursor",
+    "description": "Multi-agent orchestration rules for Cursor IDE, inspired by oh-my-claudecode",
+    "stars": 2,
+    "forks": 1,
+    "openIssues": 0,
+    "language": "TypeScript",
+    "license": "MIT",
+    "pushedAt": "2026-03-10T02:03:11Z"
+  },
+  "dasomel/openforge": {
+    "repo": "dasomel/openforge",
+    "htmlUrl": "https://github.com/dasomel/openforge",
+    "description": "Open Source Project Blueprint & Engineering Standards",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "language": "CSS",
+    "license": "NOASSERTION",
+    "pushedAt": "2026-08-22T13:36:36Z"
+  },
+  "dasomel/terraboard": {
+    "repo": "dasomel/terraboard",
+    "htmlUrl": "https://github.com/dasomel/terraboard",
+    "description": ":earth_africa: :clipboard:  A web dashboard to inspect Terraform States ",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "language": "Go",
+    "license": "Apache-2.0",
+    "pushedAt": "2026-01-01T16:07:20Z",
+    "latestRelease": {
+      "tag": "v2.5.1",
+      "name": "v2.5.1",
+      "publishedAt": "2026-01-01T16:07:20Z",
+      "url": "https://github.com/dasomel/terraboard/releases/tag/v2.5.1"
+    },
+    "latestTag": {
+      "name": "v2.5.1",
+      "commitSha": "6b2fb8026e565544378f33cac8a275202ea69fbe",
+      "url": "https://api.github.com/repos/dasomel/terraboard/commits/6b2fb8026e565544378f33cac8a275202ea69fbe"
+    }
   }
 }
