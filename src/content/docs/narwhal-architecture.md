@@ -11,6 +11,10 @@ lastModified: 2026-08-23
 
 Narwhal은 단일 장애점(SPOF)이 없는 견고한 6노드 고가용성(HA) 클러스터 아키텍처를 기본 토폴로지로 채택합니다.
 
+> **정식 문서 경로:** `/ko/docs/narwhal/architecture/`  ·  English: `/en/docs/narwhal/architecture/`
+>
+> 기존 평면 문서 URL(`narwhal-architecture`)과 함께 사용할 수 있도록 문서 경로 호환성을 유지합니다.
+
 ## 노드 토폴로지 및 IP 할당표
 
 | 노드 이름 | 역할 | vCPU / RAM | IP 주소 | 주요 구동 서비스 |
