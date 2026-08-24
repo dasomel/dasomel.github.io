@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Menu, X, Github } from 'lucide-react';
@@ -35,8 +36,11 @@ export default function Header({ locale }: HeaderProps) {
   return <header className="sticky top-0 z-50 border-b transition-all duration-300" style={{ backgroundColor:'var(--header-bg)', backdropFilter:'blur(18px) saturate(180%)', borderBottomColor:scrolled ? 'var(--border)' : 'var(--border-soft)', boxShadow:scrolled ? '0 10px 30px -26px var(--accent-glow)' : 'none' }}>
     <div className="max-w-6xl mx-auto px-4 sm:px-6">
       <div className="flex items-center justify-between h-14 sm:h-16">
-        <Link href={base + '/'} className={`font-mono text-sm font-semibold tracking-tight ${focusRing}`} style={{ color:'var(--text)' }}>
-          <span style={{ color:'var(--accent)' }}>~/</span>dasomel
+        <Link href={base + '/'} className={`group inline-flex items-center gap-2.5 ${focusRing}`} aria-label="dasomel OSS Workbench">
+          <span className="relative h-7 w-7 shrink-0 overflow-hidden rounded-[9px] ring-1 ring-[var(--border)] transition-transform duration-200 group-hover:scale-105 sm:h-8 sm:w-8">
+            <Image src="/icon.svg" alt="" fill sizes="32px" className="object-cover" priority />
+          </span>
+          <span className="font-mono text-sm font-semibold tracking-tight" style={{ color:'var(--text)' }}><span style={{ color:'var(--accent)' }}>~/</span>dasomel</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
