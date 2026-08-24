@@ -23,6 +23,7 @@ export default function Header({ locale }: HeaderProps) {
   const base = locale === 'en' ? '/en' : '/ko';
   const langSwitch = locale === 'en' ? pathname.replace(/^\/en/, '/ko') || '/ko/' : pathname.replace(/^\/ko/, '/en') || '/en/';
   const navItems = [
+    { href: `${base}/oss`, label: 'OSS', emphasized: true },
     { href: `${base}/projects`, label: t('projects') },
     { href: `${base}/notes`, label: t('notes') },
     { href: `${base}/tech-digest`, label: t('tech_digest') },
@@ -39,7 +40,7 @@ export default function Header({ locale }: HeaderProps) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
-          {navItems.map(item => <Link key={item.href} href={item.href} className={`relative px-3 py-1.5 text-sm rounded-lg transition-colors ${focusRing}`} style={{ color:isActive(item.href) ? 'var(--text)' : 'var(--text-muted)', fontWeight:isActive(item.href) ? 600 : 400, backgroundColor:isActive(item.href) ? 'var(--surface-hi)' : 'transparent' }}>{item.label}{isActive(item.href) && <span className="absolute inset-x-3 -bottom-[0.35rem] h-px" style={{ backgroundColor:'var(--accent)' }} />}</Link>)}
+          {navItems.map(item => <Link key={item.href} href={item.href} className={`relative px-3 py-1.5 text-sm rounded-lg transition-colors ${focusRing}`} style={{ color:isActive(item.href) ? 'var(--text)' : item.emphasized ? 'var(--accent)' : 'var(--text-muted)', fontWeight:isActive(item.href) || item.emphasized ? 650 : 400, backgroundColor:isActive(item.href) ? 'var(--surface-hi)' : 'transparent' }}>{item.label}{isActive(item.href) && <span className="absolute inset-x-3 -bottom-[0.35rem] h-px" style={{ backgroundColor:'var(--accent)' }} />}</Link>)}
           <a href="https://github.com/dasomel" target="_blank" rel="noreferrer" aria-label="GitHub" className={`ml-2 p-2 rounded-lg transition-opacity hover:opacity-60 ${focusRing}`} style={{ color:'var(--text-muted)' }}><Github className="w-4 h-4" /></a>
           <div className="w-px h-4 mx-1" style={{ backgroundColor:'var(--border-hi)' }} />
           <ThemeToggle />
@@ -59,7 +60,7 @@ export default function Header({ locale }: HeaderProps) {
     {open && <div id="mobile-navigation" className="md:hidden border-t" style={{ backgroundColor:'color-mix(in srgb, var(--bg-subtle) 94%, var(--accent-dim))', borderTopColor:'var(--border)' }}>
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 py-3" aria-label="Mobile navigation">
         <div className="rounded-xl border overflow-hidden" style={{ borderColor:'var(--border)', backgroundColor:'var(--surface)' }}>
-          {navItems.map((item, index) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={`flex items-center justify-between px-4 py-3.5 text-sm transition-colors ${focusRing} ${index < navItems.length - 1 ? 'border-b' : ''}`} style={{ borderBottomColor:'var(--border-soft)', color:isActive(item.href) ? 'var(--text)' : 'var(--text-muted)', backgroundColor:isActive(item.href) ? 'var(--accent-dim)' : 'transparent', fontWeight:isActive(item.href) ? 600 : 400 }}><span className="flex items-center gap-2.5">{isActive(item.href) && <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor:'var(--accent)' }} />}{item.label}</span>{isActive(item.href) && <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color:'var(--accent)' }}>active</span>}</Link>)}
+          {navItems.map((item, index) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={`flex items-center justify-between px-4 py-3.5 text-sm transition-colors ${focusRing} ${index < navItems.length - 1 ? 'border-b' : ''}`} style={{ borderBottomColor:'var(--border-soft)', color:isActive(item.href) ? 'var(--text)' : item.emphasized ? 'var(--accent)' : 'var(--text-muted)', backgroundColor:isActive(item.href) ? 'var(--accent-dim)' : 'transparent', fontWeight:isActive(item.href) || item.emphasized ? 650 : 400 }}><span className="flex items-center gap-2.5">{isActive(item.href) && <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor:'var(--accent)' }} />}{item.label}</span>{isActive(item.href) && <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color:'var(--accent)' }}>active</span>}</Link>)}
           <a href="https://github.com/dasomel" target="_blank" rel="noreferrer" className={`flex items-center gap-2.5 px-4 py-3.5 text-sm ${focusRing}`} style={{ color:'var(--text-muted)', borderTop:'1px solid var(--border)' }}><Github className="w-4 h-4" />GitHub</a>
         </div>
       </nav>
