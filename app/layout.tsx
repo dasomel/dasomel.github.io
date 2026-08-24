@@ -9,7 +9,19 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://cne.io.kr'),
   title: { default: 'dasomel — OSS Workbench', template: '%s | dasomel' },
   description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록. Kubernetes, Platform Engineering, AI-assisted Development.',
-  icons: { icon: '/icon.svg', shortcut: '/icon.svg', apple: '/icon.svg' },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/icon.svg',
+    apple: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+  },
+  appleWebApp: {
+    capable: true,
+    title: 'dasomel OSS Workbench',
+    statusBarStyle: 'black-translucent',
+  },
+  applicationName: 'dasomel OSS Workbench',
   openGraph: {
     type: 'website',
     siteName: 'dasomel OSS Workbench',
@@ -55,6 +67,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <StructuredData data={schema} />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="apple-touch-startup-image" href="/icon.svg" />
+        <link rel="manifest" href="/manifest.json" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
@@ -65,8 +81,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0b1220" />
+        <meta name="theme-color" content="#0B1220" />
+        <meta name="application-name" content="dasomel OSS Workbench" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className="min-h-screen flex flex-col font-sans" style={{ backgroundColor: 'var(--bg)', color: 'var(--text)', minHeight: '100svh' }}>
         {children}
