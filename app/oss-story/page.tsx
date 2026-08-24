@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
-export default function OssDeckRedirect() {
+export default function LegacyOssStoryRedirect() {
   redirect('/oss/story/');
 }
