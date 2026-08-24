@@ -26,6 +26,9 @@ export default function OssHeader() {
             <Link href={home} className="rounded-md px-3 py-2 transition" style={{ color: 'var(--text-muted)' }}>
               {english ? 'Projects' : '프로젝트'}
             </Link>
+            <Link href="/oss-story/" className="rounded-md px-3 py-2 font-medium transition" style={{ color: 'var(--accent)' }}>
+              {english ? 'Why OSS?' : '왜 OSS인가?'}
+            </Link>
           </nav>
         </div>
         <nav className="flex items-center gap-2 text-sm">
