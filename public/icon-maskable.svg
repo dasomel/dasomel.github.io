@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">dasomel OSS Workbench</title>
+<desc id="desc">Maskable connected systems mark for open source and platform engineering.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1220"/><stop offset="1" stop-color="#15313A"/></linearGradient><linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#72E3C3"/><stop offset="1" stop-color="#3AA889"/></linearGradient></defs>
+<rect width="512" height="512" fill="url(#bg)"/>
+<circle cx="256" cy="256" r="144" fill="none" stroke="#29444A" stroke-width="18"/>
+<path d="M124 285a144 144 0 0 1 81-133" fill="none" stroke="url(#mint)" stroke-width="20" stroke-linecap="round"/>
+<path d="M307 367a144 144 0 0 0 81-133" fill="none" stroke="#55B8DB" stroke-width="20" stroke-linecap="round"/>
+<circle cx="120" cy="292" r="24" fill="#72E3C3"/><circle cx="392" cy="229" r="24" fill="#55B8DB"/><circle cx="256" cy="112" r="20" fill="#F0A35A"/>
+<rect x="158" y="170" width="196" height="158" rx="30" fill="#F4F7F6"/>
+<path d="M193 216h28v78h-28zM249 216h28v78h-28z" fill="#0B1220"/>
+<path d="M307 216h15c14 0 25 11 25 25s-11 25-25 25h-15" fill="none" stroke="#0B1220" stroke-width="15" stroke-linecap="round"/>
+<path d="M188 351h136" stroke="#72E3C3" stroke-width="17" stroke-linecap="round"/>
+</svg>
