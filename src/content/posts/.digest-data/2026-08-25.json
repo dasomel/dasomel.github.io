@@ -1,0 +1,151 @@
+{
+  "date": "2026-08-25",
+  "generatedAt": "2026-08-24T20:54:23.570Z",
+  "count": 18,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Ox Alpha’s real mystery isn’t who built it",
+      "link": "https://thenewstack.io/ox-alpha-privacy-terms/",
+      "date": "2026-08-24T19:55:47.000Z",
+      "excerpt": "Everybody wants to know who built Ox Alpha. But developers using the anonymous coding model with their own private code"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic’s Playground vs. OpenAI’s: The week-old tool beat the six-year incumbent",
+      "link": "https://thenewstack.io/anthropic-openai-playground-comparison/",
+      "date": "2026-08-24T19:30:57.000Z",
+      "excerpt": "On August 18, Anthropic replaced its Workbench, the prompt-testing tool in its developer Console, with Playground. Anthropic did more than"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The Cloudflare Blog – Brought to you by EmDash",
+      "link": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
+      "date": "2026-08-24T19:00:00.000Z",
+      "excerpt": "We migrated the Cloudflare Blog to EmDash to prove our stack at massive scale. Here is how we stress-tested performance, safely routed production traffic, and redesigned the frontend experience."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "MetaRoCE: A New RDMA Transport Built for AI-Scale Ethernet",
+      "link": "https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet/",
+      "date": "2026-08-24T18:02:29.000Z",
+      "excerpt": "Training and serving frontier AI models depends on fast, reliable networks that move data between GPUs without wasting compute cycles. To meet this challenge at scale, Meta designed MetaRoCE – a clean-sheet RDMA transport protocol purpose-built for AI workloads on commodity Ethernet."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "MTIA 300: Meta’s First Training Chip with Built-in NICs and Communication-Offloading Engines",
+      "link": "https://engineering.fb.com/2026/08/24/networking-traffic/mtia-300-meta-training-chip-built-in-nics/",
+      "date": "2026-08-24T17:45:52.000Z",
+      "excerpt": "MTIA 300 is the first of Meta’s family of in-house training and inference accelerators optimized for training ranking and recommendation models."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Grok Bot vs. Hermes: Where each draws the security boundary",
+      "link": "https://thenewstack.io/ai-agent-security-boundaries/",
+      "date": "2026-08-24T17:39:15.000Z",
+      "excerpt": "Put several AI bots to work, and a mistake by one may not stay within its assigned task. For example,"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "New AI-powered quick assessments in Migration Center turbocharge modernization",
+      "link": "https://cloud.google.com/blog/products/infrastructure-modernization/ai-powered-quick-assessments-in-migration-center/",
+      "date": "2026-08-24T16:00:00.000Z",
+      "excerpt": "Technology leaders are under mounting pressure to modernize infrastructure, control multi-cloud operational spend, and build data foundations for generative AI."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Empowering autonomous agents with advanced security governance",
+      "link": "https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security/",
+      "date": "2026-08-24T16:00:00.000Z",
+      "excerpt": "AI agents are the ultimate insiders. We grant them permission to read emails, query databases, and trigger API calls."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How a global payment processor preserved AWS RAM shares and Lake Formation permissions during an AWS Organizations migration",
+      "link": "https://aws.amazon.com/blogs/architecture/how-a-global-payment-processor-preserved-aws-ram-shares-and-lake-formation-permissions-during-an-aws-organizations-migration/",
+      "date": "2026-08-24T15:23:21.000Z",
+      "excerpt": "When AWS accounts move between organizations, organization-bound AWS RAM resource shares break and control-plane access is lost."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "MinIO End of Life: How to Stay Patched and Audit-Ready with Docker ELS",
+      "link": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+      "date": "2026-08-24T13:00:00.000Z",
+      "excerpt": "Supply-chain attacks have kept escalating while AI writes more of the code you ship."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+      "link": "https://openai.com/index/gpt-5-6-in-kiro",
+      "date": "2026-08-24T12:00:00.000Z",
+      "excerpt": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Automating root cause analysis at scale: Multi-signal correlation for cloud native incident response",
+      "link": "https://www.cncf.io/blog/2026/08/24/automating-root-cause-analysis-at-scale-multi-signal-correlation-for-cloud-native-incident-response/",
+      "date": "2026-08-24T11:00:00.000Z",
+      "excerpt": "The problem: Humans shouldn’t be correlation engines At Atlassian’s scale, hundreds of interconnected microservices distributed across multiple regions mean a production incident generates an overwhelming volume of telemetry. The problem is that finding the causal factor."
+    },
+    {
+      "source": "Istio",
+      "category": "k8s",
+      "title": "Istio Project Announces 2026 Technical Oversight Committee Election Results",
+      "link": "https://istio.io/latest/blog/2026/toc-election-results/",
+      "date": "2026-08-24T00:00:00.000Z",
+      "excerpt": "Under the governance system introduced in 2024 for the Technical Oversight Committee (TOC), the Istio project holds annual elections for three of the six seats. This ensures continuous technical leadership while maintaining community-driven momentum."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "We built an enterprise data agent—and you can too",
+      "link": "https://www.redhat.com/en/blog/we-built-enterprise-data-agent-and-you-can-too",
+      "date": "2026-08-24T00:00:00.000Z",
+      "excerpt": "Here's a scenario that plays out daily at most enterprises: someone needs a number. Maybe that number is the performance of a field marketing campaign, maybe it’s a regional sales figure, or maybe it’s expenses broken down by cost center."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat extends RHEL special offering to participants of Google for Startups Cloud Program",
+      "link": "https://www.redhat.com/en/blog/red-hat-extends-rhel-special-offering-participants-google-startups-cloud-program",
+      "date": "2026-08-24T00:00:00.000Z",
+      "excerpt": "Building infrastructure from the ground up requires critical architecture decisions that determine how easily your business can scale."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Passwordless workload identity on OpenShift",
+      "link": "https://www.redhat.com/en/blog/passwordless-workload-identity-openshift",
+      "date": "2026-08-24T00:00:00.000Z",
+      "excerpt": "Enterprise security used to draw a clean line: humans log in; machines use secrets. But that line is blurring, and interactions with databases are often where you’ll encounter that ambiguity."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor Azure Functions across every hosting plan with Datadog",
+      "link": "https://www.datadoghq.com/blog/monitor-azure-functions-hosting-plans/",
+      "date": "2026-08-24T00:00:00.000Z",
+      "excerpt": "Trace requests, get enhanced CPU metrics, and profile code across Azure Functions hosting plans with Datadog Serverless Monitoring."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "When code is abundant",
+      "link": "https://about.gitlab.com/blog/when-code-is-abundant/",
+      "date": "2026-08-24T00:00:00.000Z",
+      "excerpt": "I returned from the holiday break in January convinced that something fundamental had changed. Large language models had reached the point where they could produce useful code reliably enough, and cheaply enough, to change the economics of software development."
+    }
+  ]
+}
