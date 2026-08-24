@@ -41,3 +41,8 @@ jobs:
 
       - name: Lint
         run: bun run lint
+
+      # Keep CI aligned with the GitHub Pages deployment build. This catches
+      # production-only TypeScript/static-generation failures before merge.
+      - name: Production build
+        run: bun run build
