@@ -15,7 +15,11 @@ export function groupDocsByProject(docs: Doc[]): [string, Doc[]][] {
     else groups.set(doc.project, [doc]);
   }
 
-  const projectOrder = new Map(OSS_PORTFOLIO_ORDER.map((slug, index) => [slug, index] as const));
+  // Docs may contain project slugs outside the OSS portfolio. Keep the lookup
+  // map intentionally string-keyed so those additional projects sort safely.
+  const projectOrder = new Map<string, number>(
+    OSS_PORTFOLIO_ORDER.map((slug, index) => [slug, index]),
+  );
 
   return [...groups].sort(([a], [b]) => {
     const aSlug = docs.find((doc) => doc.project === a)?.slug.split('/')[0];
