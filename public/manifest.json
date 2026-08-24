@@ -3,18 +3,25 @@
   "short_name": "dasomel",
   "description": "Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록",
   "start_url": "/ko/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0b1220",
-  "theme_color": "#0b1220",
+  "background_color": "#0B1220",
+  "theme_color": "#0B1220",
   "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/icon.svg",
-      "sizes": "any",
+      "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ],
-  "categories": ["technology", "blog", "education"],
+  "categories": ["technology", "blog", "education", "developer-tools"],
   "lang": "ko-KR"
 }
