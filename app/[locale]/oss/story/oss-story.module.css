@@ -5,6 +5,10 @@
   --slide-focus: color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
+.scope {
+  display: contents;
+}
+
 :global(.oss-horizontal .deck-scroll) {
   overscroll-behavior-inline: contain;
   scroll-padding-inline: var(--slide-gutter);
@@ -38,8 +42,7 @@
   padding-block: clamp(28px, 5vh, 56px);
 }
 
-/* The deck used a staged opacity of .12 as its initial reveal state.
-   Keep motion as an enhancement, never as a readability requirement. */
+/* Motion is an enhancement; content stays readable without it. */
 :global(.oss-horizontal .reveal) {
   opacity: 1 !important;
   transform: none !important;
