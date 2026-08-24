@@ -5,16 +5,16 @@ import './content-typography.css';
 import './reduced-motion.css';
 import { StructuredData } from '@/components/seo/StructuredData';
 
+const APP_ICON = '/icon-v2.svg';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://cne.io.kr'),
   title: { default: 'dasomel — OSS Workbench', template: '%s | dasomel' },
   description: 'Cloud Native와 OSS를 직접 만들고 검증하며 배우는 엔지니어링 작업 기록. Kubernetes, Platform Engineering, AI-assisted Development.',
   icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    shortcut: '/icon.svg',
-    apple: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    icon: [{ url: APP_ICON, type: 'image/svg+xml' }],
+    shortcut: APP_ICON,
+    apple: [{ url: APP_ICON, type: 'image/svg+xml' }],
   },
   appleWebApp: {
     capable: true,
@@ -66,10 +66,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <StructuredData data={schema} />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icon.svg" />
-        <link rel="apple-touch-startup-image" href="/icon.svg" />
+        <link rel="icon" href={APP_ICON} type="image/svg+xml" />
+        <link rel="shortcut icon" href={APP_ICON} type="image/svg+xml" />
+        <link rel="apple-touch-icon" href={APP_ICON} />
+        <link rel="apple-touch-startup-image" href={APP_ICON} />
         <link rel="manifest" href="/manifest.json" />
         <link
           rel="stylesheet"
