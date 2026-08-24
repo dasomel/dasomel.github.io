@@ -3,11 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Digest Fallback Merge"]
+    types: [completed]
   workflow_dispatch:
   schedule:
     # 02:40 UTC (= 11:40 KST) 백스톱.
-    # 봇 커밋은 `on: push` 를 트리거하지 못하므로 다이제스트/행사 워크플로가
-    # 배포 dispatch 에 실패해도 하루 한 번은 main 최신 상태가 발행되게 한다.
+    # Digest merge 이후 workflow_run 트리거가 누락되더라도 하루 한 번은
+    # main 최신 상태를 발행한다.
     - cron: '40 2 * * *'
 
 permissions:
@@ -25,6 +28,7 @@ env:
 jobs:
   lock:
     name: cross-repo CI lock
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     outputs:
       acquired: ${{ steps.acquire.outputs.acquired }}
@@ -60,8 +64,10 @@ jobs:
     needs: lock
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -92,7 +98,7 @@ jobs:
           path: ./out
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     needs: build
     runs-on: ubuntu-latest
     environment:
