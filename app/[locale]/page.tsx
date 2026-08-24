@@ -40,7 +40,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </h1>
             <p className="mt-7 max-w-xl text-base sm:text-lg leading-8" style={{ color: 'var(--text-muted)' }}>{t('hero.description')}</p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href={`${base}/projects`} className="hero-primary-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all" style={{ backgroundColor: 'var(--accent)', color: 'var(--accent-fg)' }}>{t('hero.cta_projects')} <ArrowUpRight className="w-4 h-4" /></Link>
+              <Link href={`${base}/oss`} className="hero-primary-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all" style={{ backgroundColor: 'var(--accent)', color: 'var(--accent-fg)' }}>OSS Portfolio <ArrowUpRight className="w-4 h-4" /></Link>
+              <Link href={`${base}/oss/story`} className="hero-secondary-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)' }}>OSS Story <ArrowUpRight className="w-4 h-4" /></Link>
               <Link href={`${base}/notes`} className="hero-secondary-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all" style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)' }}>{t('hero.cta_notes')} <ArrowUpRight className="w-4 h-4" /></Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
