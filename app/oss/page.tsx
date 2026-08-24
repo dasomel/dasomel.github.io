@@ -30,6 +30,21 @@ export default function OssHubKo() {
         </p>
       </section>
 
+      <section className="mt-8 rounded-3xl p-7 sm:p-9" style={{ border: '1px solid var(--accent)', background: 'linear-gradient(135deg, color-mix(in srgb, var(--accent-dim) 80%, transparent), var(--surface))' }}>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: 'var(--accent)' }}>Start here</div>
+            <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">이 OSS들은 왜 만들어졌을까요?</h2>
+            <p className="mt-3 text-sm leading-7 sm:text-base" style={{ color: 'var(--text-muted)' }}>
+              시장 신호에서 시작해 Kubernetes 플랫폼의 문제, OSS 활용성, OpenForge를 통한 insight 표준화, Narwhal과 주변 프로젝트의 연결까지 한 번에 설명합니다.
+            </p>
+          </div>
+          <Link href="/oss/story/" className="inline-flex shrink-0 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition" style={{ backgroundColor: 'var(--accent)', color: 'var(--accent-fg)' }}>
+            OSS Story 보기 →
+          </Link>
+        </div>
+      </section>
+
       <section className="mt-10 grid gap-3 sm:grid-cols-4">
         <div className="rounded-2xl p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
           <div className="text-xs uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>Projects</div>
@@ -126,6 +141,7 @@ export default function OssHubKo() {
           각 프로젝트 페이지는 개요만 나열하지 않고 문제 정의, 설계 원칙, 아키텍처, 주요 기술, 운영 모델, 검증 방식, 현재 상태, 프로젝트 간 관계를 함께 설명합니다. 세부 문서는 Overview · Architecture · Getting Started · Operations · Troubleshooting · ADR 등 주제로 분리합니다.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/oss/story/" className="rounded-full px-4 py-2 text-sm font-medium" style={{ border: '1px solid var(--accent)', backgroundColor: 'var(--surface)', color: 'var(--accent)' }}>OSS Story →</Link>
           <Link href="/oss/openforge/" className="rounded-full px-4 py-2 text-sm font-medium" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)', color: 'var(--text)' }}>OpenForge 문서 기준 →</Link>
           <Link href="/projects/" className="rounded-full px-4 py-2 text-sm font-medium" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)', color: 'var(--text)' }}>전체 Projects →</Link>
         </div>
