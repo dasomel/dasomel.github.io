@@ -23,8 +23,6 @@ export default function Header({ locale }: HeaderProps) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
-
   const base = locale === 'en' ? '/en' : '/ko';
   const langSwitch = locale === 'en' ? pathname.replace(/^\/en/, '/ko') || '/ko/' : pathname.replace(/^\/ko/, '/en') || '/en/';
   const primary = [
@@ -86,7 +84,7 @@ export default function Header({ locale }: HeaderProps) {
           <nav className="mx-auto max-w-[1440px] px-5 py-4 sm:px-8" aria-label="Mobile navigation">
             <div className="grid gap-1">
               {[...primary, ...mobileExtra].map(item => (
-                <Link key={item.href} href={item.href} className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm ${focusRing}`} style={{ color: isActive(item.href) ? 'var(--accent)' : 'var(--text-muted)', backgroundColor: isActive(item.href) ? 'var(--accent-dim)' : 'transparent', fontWeight: isActive(item.href) ? 600 : 400 }}>
+                <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm ${focusRing}`} style={{ color: isActive(item.href) ? 'var(--accent)' : 'var(--text-muted)', backgroundColor: isActive(item.href) ? 'var(--accent-dim)' : 'transparent', fontWeight: isActive(item.href) ? 600 : 400 }}>
                   <span>{item.label}</span>
                   {isActive(item.href) && <span className="font-mono text-[9px] tracking-[0.12em]">ACTIVE</span>}
                 </Link>
