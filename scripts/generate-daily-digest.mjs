@@ -75,17 +75,25 @@ function frontmatter({ title, description, date, tags }) {
   ].join('\n');
 }
 
-// MDX parses a bare `{...}` as a JSX expression, so JSON/object-literal text
-// like {"mode": "EXPRESS"} in a summary breaks the build. Wrap any brace pair
-// in inline code, skipping spans that are already backtick-delimited so we
-// never double-wrap.
+// MDX parses a bare `{...}` as a JSX expression and a bare `<` as a tag, so
+// JSON/object-literal text like {"mode": "EXPRESS"} or a statistic like p<0.05
+// in a summary breaks the build. Wrap any brace pair in inline code and
+// backslash-escape a `<` that cannot start a tag, skipping spans that are
+// already backtick-delimited so we never double-wrap.
 function escapeMdxBraces(text) {
   if (!text) return text;
   const s = String(text);
-  if (!s.includes('{') && !s.includes('}')) return s;
+  if (!/[{}<]/.test(s)) return s;
   return s
     .split(/(`[^`]*`)/)
-    .map((part, i) => (i % 2 === 1 ? part : part.replace(/\{[^{}]*\}/g, (m) => `\`${m}\``)))
+    .map((part, i) => {
+      if (i % 2 === 1) return part;
+      return part
+        .replace(/\{[^{}]*\}/g, (m) => `\`${m}\``)
+        // A tag or autolink starts with a letter, `/`, `!`, `$` or `_`; anything
+        // else after `<` (a digit, a space, `=`) is literal text in prose.
+        .replace(/<(?![A-Za-z/!$_])/g, '\\<');
+    })
     .join('');
 }
 
