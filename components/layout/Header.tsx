@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { Github, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { BrandMark } from '@/components/visual/BrandMark';
 
 interface HeaderProps { locale: 'ko' | 'en'; }
 
@@ -52,7 +53,8 @@ export default function Header({ locale }: HeaderProps) {
     >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="flex h-14 items-center justify-between sm:h-16">
-          <Link href={`${base}/`} className={`inline-flex items-center gap-2 ${focusRing}`} aria-label="dasomel OSS Workbench">
+          <Link href={`${base}/`} className={`inline-flex items-center gap-2.5 ${focusRing}`} aria-label="dasomel OSS Workbench">
+            <BrandMark className="h-7 w-7 sm:h-8 sm:w-8" />
             <span className="font-mono text-sm font-semibold tracking-tight" style={{ color: 'var(--text)' }}>dasomel</span>
             <span className="hidden font-mono text-[10px] tracking-[0.12em] sm:inline" style={{ color: 'var(--text-faint)' }}>/ OSS WORKBENCH</span>
           </Link>
