@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return routing.locales.map(locale => ({ locale }));
 }
 
 export default async function LocaleLayout({
@@ -24,14 +24,16 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   if (!routing.locales.includes(locale as 'ko' | 'en')) notFound();
+  const currentLocale = locale as 'ko' | 'en';
   setRequestLocale(locale);
   const messages = await getMessages();
+
   return (
     <NextIntlClientProvider messages={messages}>
       <VisualRefresh />
-      <Header locale={locale as 'ko' | 'en'} />
+      <Header locale={currentLocale} />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer locale={currentLocale} />
     </NextIntlClientProvider>
   );
 }
