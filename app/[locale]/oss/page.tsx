@@ -41,10 +41,10 @@ export default async function LocalizedOssPage({ params }: { params: Promise<{ l
   const base = lang === 'en' ? '/en' : '/ko';
   const projects = getProjects(lang);
 
-  const items = featured.map(([slug, label]) => {
+  const items = featured.flatMap(([slug, label]) => {
     const project = projects.find(item => item.slug === slug);
-    return project ? { project, label } : null;
-  }).filter((item): item is { project: (typeof projects)[number]; label: string } => Boolean(item));
+    return project ? [{ project, label }] : [];
+  });
 
   return (
     <main>
