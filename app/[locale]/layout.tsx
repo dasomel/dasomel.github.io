@@ -32,7 +32,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <VisualRefresh />
       <Header locale={currentLocale} />
-      <main className="flex-1">{children}</main>
+      <div className="flex-1">{children}</div>
       <Footer locale={currentLocale} />
     </NextIntlClientProvider>
   );
