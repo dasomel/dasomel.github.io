@@ -1,0 +1,1 @@
+`platform-map.svg` is a simplified overview of Narwhal's documented architecture: developer portal and access, APISIX/Keycloak identity and gateway, Argo CD/Gitea GitOps, HA Kubernetes with Cilium/Istio/kube-vip, and integrated observability/storage/backup/policy services.
