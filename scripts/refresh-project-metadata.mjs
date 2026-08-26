@@ -140,3 +140,27 @@ for (const repo of [...repos].sort()) {
 await fs.mkdir(path.dirname(outputFile), { recursive: true });
 await fs.writeFile(outputFile, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
 console.log(`Refreshed ${Object.keys(metadata).length} project repositories.`);
+
+// A re-run of the same Pages workflow can leave multiple `github-pages` artifacts
+// attached to one run, which actions/deploy-pages rejects. When this collector is
+// executing inside a re-run, start one fresh workflow_dispatch run instead. GitHub
+// explicitly permits workflow_dispatch events initiated with GITHUB_TOKEN, and the
+// fresh run starts at attempt 1 so this branch cannot recurse.
+const runAttempt = Number(process.env.GITHUB_RUN_ATTEMPT || '1');
+const repository = process.env.GITHUB_REPOSITORY;
+if (token && repository && process.env.GITHUB_WORKFLOW === 'Deploy to GitHub Pages' && runAttempt > 1) {
+  const response = await fetch(`https://api.github.com/repos/${repository}/actions/workflows/deploy.yml/dispatches`, {
+    method: 'POST',
+    headers: {
+      ...headers,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ ref: 'main' }),
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    console.warn(`Could not start a fresh Pages run after rerun: ${response.status} ${text.slice(0, 200)}`);
+  } else {
+    console.log('Started a fresh Pages workflow run to avoid duplicate rerun artifacts.');
+  }
+}
