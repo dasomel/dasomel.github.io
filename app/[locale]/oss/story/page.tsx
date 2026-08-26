@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import OssStoryHorizontal from '@/components/oss/OssStoryHorizontal';
+import OssStoryInfographic from '@/components/oss/OssStoryInfographic';
 import OssStoryMobileNav from '@/components/oss/OssStoryMobileNav';
 import styles from './oss-story.module.css';
 import { routing } from '@/i18n/routing';
@@ -10,7 +10,7 @@ export default async function OssStoryPage({ params }: { params: Promise<{ local
   const currentLocale = locale as 'ko' | 'en';
   return (
     <div className={styles.scope}>
-      <OssStoryHorizontal locale={currentLocale} />
+      <OssStoryInfographic locale={currentLocale} />
       <OssStoryMobileNav locale={currentLocale} />
     </div>
   );
