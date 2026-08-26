@@ -5,10 +5,225 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 100,
+    "openIssues": 101,
     "language": "Shell",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-23T15:34:48Z"
+    "createdAt": "2026-08-19T13:22:36Z",
+    "pushedAt": "2026-08-26T15:23:44Z",
+    "firstCommitAt": "2026-08-09T14:44:19Z",
+    "commitCount": 216,
+    "releaseCount": 0,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 72
+      },
+      {
+        "week": 1786838400,
+        "total": 88
+      },
+      {
+        "week": 1787443200,
+        "total": 36
+      }
+    ]
   },
   "dasomel/beluga-manager": {
     "repo": "dasomel/beluga-manager",
@@ -18,7 +233,222 @@
     "forks": 0,
     "openIssues": 39,
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-20T05:03:20Z"
+    "createdAt": "2026-08-20T03:21:01Z",
+    "pushedAt": "2026-08-20T05:03:20Z",
+    "firstCommitAt": "2026-08-20T03:53:26Z",
+    "commitCount": 2,
+    "releaseCount": 0,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 2
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ]
   },
   "dasomel/egovframe-launcher": {
     "repo": "dasomel/egovframe-launcher",
@@ -29,7 +459,222 @@
     "openIssues": 1,
     "language": "Go",
     "license": "Apache-2.0",
+    "createdAt": "2026-07-14T15:01:24Z",
     "pushedAt": "2026-07-14T22:54:31Z",
+    "firstCommitAt": "2026-07-14T14:52:01Z",
+    "commitCount": 15,
+    "releaseCount": 8,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 15
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ],
     "latestRelease": {
       "tag": "v1.0.7",
       "name": "Release v1.0.7",
@@ -51,7 +696,222 @@
     "openIssues": 0,
     "language": "Go",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-22T01:18:11Z",
+    "createdAt": "2025-12-26T21:37:41Z",
+    "pushedAt": "2026-08-26T01:23:24Z",
+    "firstCommitAt": "2016-02-01T11:59:10Z",
+    "commitCount": 13023,
+    "releaseCount": 3,
+    "contributorCount": 344,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 0
+      },
+      {
+        "week": 1764460800,
+        "total": 0
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 0
+      },
+      {
+        "week": 1766880000,
+        "total": 0
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 0
+      },
+      {
+        "week": 1769299200,
+        "total": 0
+      },
+      {
+        "week": 1769904000,
+        "total": 0
+      },
+      {
+        "week": 1770508800,
+        "total": 0
+      },
+      {
+        "week": 1771113600,
+        "total": 0
+      },
+      {
+        "week": 1771718400,
+        "total": 0
+      },
+      {
+        "week": 1772323200,
+        "total": 0
+      },
+      {
+        "week": 1772928000,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ],
     "latestRelease": {
       "tag": "v2.15.1",
       "name": "v2.15.1 (linux/amd64, linux/arm64)",
@@ -72,7 +932,222 @@
     "forks": 1,
     "openIssues": 1,
     "language": "Shell",
+    "createdAt": "2024-05-18T09:27:28Z",
     "pushedAt": "2026-02-01T15:33:14Z",
+    "firstCommitAt": "2024-06-10T13:27:11Z",
+    "commitCount": 34,
+    "releaseCount": 5,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 2
+      },
+      {
+        "week": 1757808000,
+        "total": 2
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 1
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 3
+      },
+      {
+        "week": 1764460800,
+        "total": 1
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 0
+      },
+      {
+        "week": 1766880000,
+        "total": 0
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 0
+      },
+      {
+        "week": 1769299200,
+        "total": 0
+      },
+      {
+        "week": 1769904000,
+        "total": 1
+      },
+      {
+        "week": 1770508800,
+        "total": 0
+      },
+      {
+        "week": 1771113600,
+        "total": 0
+      },
+      {
+        "week": 1771718400,
+        "total": 0
+      },
+      {
+        "week": 1772323200,
+        "total": 0
+      },
+      {
+        "week": 1772928000,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ],
     "latestRelease": {
       "tag": "v2.2.0",
       "name": "v2.2.0: K-PaaS 1.7.0 지원",
@@ -91,10 +1166,225 @@
     "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
     "stars": 1,
     "forks": 0,
-    "openIssues": 18,
+    "openIssues": 17,
     "language": "Shell",
     "license": "MIT",
-    "pushedAt": "2026-08-23T16:21:21Z",
+    "createdAt": "2026-01-22T15:37:13Z",
+    "pushedAt": "2026-08-26T15:30:59Z",
+    "firstCommitAt": "2026-01-22T15:37:23Z",
+    "commitCount": 220,
+    "releaseCount": 6,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756594800,
+        "total": 0
+      },
+      {
+        "week": 1757199600,
+        "total": 0
+      },
+      {
+        "week": 1757804400,
+        "total": 0
+      },
+      {
+        "week": 1758409200,
+        "total": 0
+      },
+      {
+        "week": 1759014000,
+        "total": 0
+      },
+      {
+        "week": 1759618800,
+        "total": 0
+      },
+      {
+        "week": 1760223600,
+        "total": 0
+      },
+      {
+        "week": 1760828400,
+        "total": 0
+      },
+      {
+        "week": 1761433200,
+        "total": 0
+      },
+      {
+        "week": 1762038000,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 0
+      },
+      {
+        "week": 1764460800,
+        "total": 0
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 0
+      },
+      {
+        "week": 1766880000,
+        "total": 0
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 5
+      },
+      {
+        "week": 1769299200,
+        "total": 10
+      },
+      {
+        "week": 1769904000,
+        "total": 3
+      },
+      {
+        "week": 1770508800,
+        "total": 30
+      },
+      {
+        "week": 1771113600,
+        "total": 0
+      },
+      {
+        "week": 1771718400,
+        "total": 0
+      },
+      {
+        "week": 1772323200,
+        "total": 0
+      },
+      {
+        "week": 1772928000,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 2
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 6
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 2
+      },
+      {
+        "week": 1781395200,
+        "total": 2
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 6
+      },
+      {
+        "week": 1784419200,
+        "total": 5
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 4
+      },
+      {
+        "week": 1786838400,
+        "total": 115
+      },
+      {
+        "week": 1787443200,
+        "total": 29
+      }
+    ],
     "latestRelease": {
       "tag": "v1.1.0",
       "name": "v1.1.0 — Security hardening, chrony, K8s CSI prerequisites",
@@ -113,10 +1403,225 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 28,
+    "openIssues": 26,
     "language": "TypeScript",
     "license": "Apache-2.0",
+    "createdAt": "2026-07-30T09:34:58Z",
     "pushedAt": "2026-08-21T15:39:00Z",
+    "firstCommitAt": "2026-07-20T13:19:01Z",
+    "commitCount": 150,
+    "releaseCount": 2,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 81
+      },
+      {
+        "week": 1785024000,
+        "total": 22
+      },
+      {
+        "week": 1785628800,
+        "total": 16
+      },
+      {
+        "week": 1786233600,
+        "total": 3
+      },
+      {
+        "week": 1786838400,
+        "total": 28
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ],
     "latestRelease": {
       "tag": "v0.2.0",
       "name": "KubeMetal v0.2.0",
@@ -135,10 +1640,225 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 19,
+    "openIssues": 12,
     "language": "Go",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-23T16:22:24Z"
+    "createdAt": "2026-08-19T04:07:34Z",
+    "pushedAt": "2026-08-26T15:14:42Z",
+    "firstCommitAt": "2026-08-11T12:38:59Z",
+    "commitCount": 171,
+    "releaseCount": 0,
+    "contributorCount": 2,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 11
+      },
+      {
+        "week": 1786838400,
+        "total": 115
+      },
+      {
+        "week": 1787443200,
+        "total": 45
+      }
+    ]
   },
   "dasomel/narwhal": {
     "repo": "dasomel/narwhal",
@@ -146,10 +1866,225 @@
     "description": "Vagrant-based Kubernetes Internal Developer Platform (IDP)",
     "stars": 0,
     "forks": 1,
-    "openIssues": 157,
+    "openIssues": 158,
     "language": "Shell",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-23T15:51:23Z",
+    "createdAt": "2026-02-19T15:40:31Z",
+    "pushedAt": "2026-08-26T15:40:10Z",
+    "firstCommitAt": "2026-02-08T11:11:20Z",
+    "commitCount": 530,
+    "releaseCount": 4,
+    "contributorCount": 2,
+    "activity": [
+      {
+        "week": 1756594800,
+        "total": 0
+      },
+      {
+        "week": 1757199600,
+        "total": 0
+      },
+      {
+        "week": 1757804400,
+        "total": 0
+      },
+      {
+        "week": 1758409200,
+        "total": 0
+      },
+      {
+        "week": 1759014000,
+        "total": 0
+      },
+      {
+        "week": 1759618800,
+        "total": 0
+      },
+      {
+        "week": 1760223600,
+        "total": 0
+      },
+      {
+        "week": 1760828400,
+        "total": 0
+      },
+      {
+        "week": 1761433200,
+        "total": 0
+      },
+      {
+        "week": 1762038000,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 0
+      },
+      {
+        "week": 1764460800,
+        "total": 0
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 0
+      },
+      {
+        "week": 1766880000,
+        "total": 0
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 0
+      },
+      {
+        "week": 1769299200,
+        "total": 0
+      },
+      {
+        "week": 1769904000,
+        "total": 0
+      },
+      {
+        "week": 1770508800,
+        "total": 12
+      },
+      {
+        "week": 1771113600,
+        "total": 9
+      },
+      {
+        "week": 1771718400,
+        "total": 6
+      },
+      {
+        "week": 1772323200,
+        "total": 5
+      },
+      {
+        "week": 1772928000,
+        "total": 2
+      },
+      {
+        "week": 1773532800,
+        "total": 27
+      },
+      {
+        "week": 1774137600,
+        "total": 7
+      },
+      {
+        "week": 1774742400,
+        "total": 1
+      },
+      {
+        "week": 1775347200,
+        "total": 4
+      },
+      {
+        "week": 1775952000,
+        "total": 2
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 2
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 56
+      },
+      {
+        "week": 1781395200,
+        "total": 20
+      },
+      {
+        "week": 1782000000,
+        "total": 17
+      },
+      {
+        "week": 1782604800,
+        "total": 42
+      },
+      {
+        "week": 1783209600,
+        "total": 92
+      },
+      {
+        "week": 1783814400,
+        "total": 30
+      },
+      {
+        "week": 1784419200,
+        "total": 10
+      },
+      {
+        "week": 1785024000,
+        "total": 62
+      },
+      {
+        "week": 1785628800,
+        "total": 65
+      },
+      {
+        "week": 1786233600,
+        "total": 19
+      },
+      {
+        "week": 1786838400,
+        "total": 14
+      },
+      {
+        "week": 1787443200,
+        "total": 24
+      }
+    ],
     "latestRelease": {
       "tag": "v1.2.0",
       "name": "v1.2.0",
@@ -168,10 +2103,225 @@
     "description": "Narwhal IDP management portal (Next.js 16 + React 19)",
     "stars": 2,
     "forks": 0,
-    "openIssues": 53,
+    "openIssues": 52,
     "language": "TypeScript",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-23T16:24:53Z",
+    "createdAt": "2026-07-07T12:19:04Z",
+    "pushedAt": "2026-08-26T08:23:47Z",
+    "firstCommitAt": "2026-03-23T15:51:11Z",
+    "commitCount": 199,
+    "releaseCount": 6,
+    "contributorCount": 2,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 1
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 1
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 1
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 56
+      },
+      {
+        "week": 1781395200,
+        "total": 15
+      },
+      {
+        "week": 1782000000,
+        "total": 2
+      },
+      {
+        "week": 1782604800,
+        "total": 7
+      },
+      {
+        "week": 1783209600,
+        "total": 31
+      },
+      {
+        "week": 1783814400,
+        "total": 8
+      },
+      {
+        "week": 1784419200,
+        "total": 10
+      },
+      {
+        "week": 1785024000,
+        "total": 3
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 12
+      },
+      {
+        "week": 1786838400,
+        "total": 20
+      },
+      {
+        "week": 1787443200,
+        "total": 31
+      }
+    ],
     "latestRelease": {
       "tag": "v1.0.17",
       "name": "v1.0.17",
@@ -190,10 +2340,225 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 12,
+    "openIssues": 9,
     "language": "Go",
     "license": "Apache-2.0",
-    "pushedAt": "2026-08-23T16:23:36Z",
+    "createdAt": "2026-01-24T23:38:08Z",
+    "pushedAt": "2026-08-26T15:30:23Z",
+    "firstCommitAt": "2026-01-24T23:36:25Z",
+    "commitCount": 213,
+    "releaseCount": 8,
+    "contributorCount": 3,
+    "activity": [
+      {
+        "week": 1756594800,
+        "total": 0
+      },
+      {
+        "week": 1757199600,
+        "total": 0
+      },
+      {
+        "week": 1757804400,
+        "total": 0
+      },
+      {
+        "week": 1758409200,
+        "total": 0
+      },
+      {
+        "week": 1759014000,
+        "total": 0
+      },
+      {
+        "week": 1759618800,
+        "total": 0
+      },
+      {
+        "week": 1760223600,
+        "total": 0
+      },
+      {
+        "week": 1760828400,
+        "total": 0
+      },
+      {
+        "week": 1761433200,
+        "total": 0
+      },
+      {
+        "week": 1762038000,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 0
+      },
+      {
+        "week": 1764460800,
+        "total": 0
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 0
+      },
+      {
+        "week": 1766880000,
+        "total": 0
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 3
+      },
+      {
+        "week": 1769299200,
+        "total": 16
+      },
+      {
+        "week": 1769904000,
+        "total": 6
+      },
+      {
+        "week": 1770508800,
+        "total": 35
+      },
+      {
+        "week": 1771113600,
+        "total": 0
+      },
+      {
+        "week": 1771718400,
+        "total": 0
+      },
+      {
+        "week": 1772323200,
+        "total": 0
+      },
+      {
+        "week": 1772928000,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 14
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 3
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 25
+      },
+      {
+        "week": 1787443200,
+        "total": 57
+      }
+    ],
     "latestRelease": {
       "tag": "v0.3.0",
       "name": "v0.3.0",
@@ -215,7 +2580,222 @@
     "openIssues": 0,
     "language": "TypeScript",
     "license": "MIT",
-    "pushedAt": "2026-03-10T02:03:11Z"
+    "createdAt": "2026-03-09T15:56:02Z",
+    "pushedAt": "2026-03-10T02:03:11Z",
+    "firstCommitAt": "2026-03-09T15:55:19Z",
+    "commitCount": 13,
+    "releaseCount": 0,
+    "contributorCount": 1,
+    "activity": [
+      {
+        "week": 1756594800,
+        "total": 0
+      },
+      {
+        "week": 1757199600,
+        "total": 0
+      },
+      {
+        "week": 1757804400,
+        "total": 0
+      },
+      {
+        "week": 1758409200,
+        "total": 0
+      },
+      {
+        "week": 1759014000,
+        "total": 0
+      },
+      {
+        "week": 1759618800,
+        "total": 0
+      },
+      {
+        "week": 1760223600,
+        "total": 0
+      },
+      {
+        "week": 1760828400,
+        "total": 0
+      },
+      {
+        "week": 1761433200,
+        "total": 0
+      },
+      {
+        "week": 1762038000,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 0
+      },
+      {
+        "week": 1764460800,
+        "total": 0
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 0
+      },
+      {
+        "week": 1766880000,
+        "total": 0
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 0
+      },
+      {
+        "week": 1769299200,
+        "total": 0
+      },
+      {
+        "week": 1769904000,
+        "total": 0
+      },
+      {
+        "week": 1770508800,
+        "total": 0
+      },
+      {
+        "week": 1771113600,
+        "total": 0
+      },
+      {
+        "week": 1771718400,
+        "total": 0
+      },
+      {
+        "week": 1772323200,
+        "total": 0
+      },
+      {
+        "week": 1772928000,
+        "total": 13
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ]
   },
   "dasomel/openforge": {
     "repo": "dasomel/openforge",
@@ -223,10 +2803,225 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 0,
     "forks": 0,
-    "openIssues": 0,
+    "openIssues": 1,
     "language": "CSS",
     "license": "NOASSERTION",
-    "pushedAt": "2026-08-22T13:36:36Z"
+    "createdAt": "2026-08-20T04:09:52Z",
+    "pushedAt": "2026-08-22T13:36:36Z",
+    "firstCommitAt": "2026-08-20T04:10:19Z",
+    "commitCount": 74,
+    "releaseCount": 0,
+    "contributorCount": 2,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 74
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ]
   },
   "dasomel/terraboard": {
     "repo": "dasomel/terraboard",
@@ -237,7 +3032,222 @@
     "openIssues": 0,
     "language": "Go",
     "license": "Apache-2.0",
+    "createdAt": "2025-12-11T16:23:25Z",
     "pushedAt": "2026-01-01T16:07:20Z",
+    "firstCommitAt": "2017-07-19T08:31:38Z",
+    "commitCount": 612,
+    "releaseCount": 3,
+    "contributorCount": 35,
+    "activity": [
+      {
+        "week": 1756598400,
+        "total": 0
+      },
+      {
+        "week": 1757203200,
+        "total": 0
+      },
+      {
+        "week": 1757808000,
+        "total": 0
+      },
+      {
+        "week": 1758412800,
+        "total": 0
+      },
+      {
+        "week": 1759017600,
+        "total": 0
+      },
+      {
+        "week": 1759622400,
+        "total": 0
+      },
+      {
+        "week": 1760227200,
+        "total": 0
+      },
+      {
+        "week": 1760832000,
+        "total": 0
+      },
+      {
+        "week": 1761436800,
+        "total": 0
+      },
+      {
+        "week": 1762041600,
+        "total": 0
+      },
+      {
+        "week": 1762646400,
+        "total": 0
+      },
+      {
+        "week": 1763251200,
+        "total": 0
+      },
+      {
+        "week": 1763856000,
+        "total": 0
+      },
+      {
+        "week": 1764460800,
+        "total": 0
+      },
+      {
+        "week": 1765065600,
+        "total": 0
+      },
+      {
+        "week": 1765670400,
+        "total": 0
+      },
+      {
+        "week": 1766275200,
+        "total": 5
+      },
+      {
+        "week": 1766880000,
+        "total": 26
+      },
+      {
+        "week": 1767484800,
+        "total": 0
+      },
+      {
+        "week": 1768089600,
+        "total": 0
+      },
+      {
+        "week": 1768694400,
+        "total": 0
+      },
+      {
+        "week": 1769299200,
+        "total": 0
+      },
+      {
+        "week": 1769904000,
+        "total": 0
+      },
+      {
+        "week": 1770508800,
+        "total": 0
+      },
+      {
+        "week": 1771113600,
+        "total": 0
+      },
+      {
+        "week": 1771718400,
+        "total": 0
+      },
+      {
+        "week": 1772323200,
+        "total": 0
+      },
+      {
+        "week": 1772928000,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 0
+      }
+    ],
     "latestRelease": {
       "tag": "v2.5.1",
       "name": "v2.5.1",
