@@ -4,68 +4,15 @@ import { getDocs } from '@/lib/content';
 import { groupDocsByProject } from '@/lib/docs';
 import { routing } from '@/i18n/routing';
 
-export function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
-}
+export function generateStaticParams() { return routing.locales.map(locale => ({ locale })); }
 
 export default async function DocsIndexPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const lang = locale as 'ko' | 'en';
-  const base = lang === 'en' ? '/en' : '/ko';
-  const groups = groupDocsByProject(getDocs(lang));
-
-  return (
-    <main>
-      <section className="border-b" style={{ borderColor: 'var(--border)' }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-16 lg:py-16">
-          <div className="font-mono text-xs font-medium tracking-[0.12em]" style={{ color: 'var(--accent)' }}>DOCUMENTATION / WORKBENCH</div>
-          <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{ color: 'var(--text)' }}>
-            {lang === 'en' ? 'Documentation is part of the product.' : '문서도 제품의 일부입니다.'}
-          </h1>
-          <p className="mt-5 max-w-5xl text-base leading-7 sm:text-lg" style={{ color: 'var(--text-muted)' }}>
-            Project documentation is kept alongside source content and organized by project, not as detached marketing pages.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1440px] px-5 py-7 sm:px-8 lg:px-16">
-        <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>PROJECT INDEX</div>
-        <p className="mt-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{groups.map(([project]) => project).join(' · ')}</p>
-      </section>
-
-      <section className="border-y" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface-hi)' }}>
-        <div className="mx-auto max-w-[1440px] space-y-9 px-5 py-10 sm:px-8 lg:px-16">
-          {groups.map(([project, docs]) => (
-            <section key={project}>
-              <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>{project.toUpperCase()}</div>
-              <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                {docs.map(doc => (
-                  <Link key={doc.slug} href={`${base}/docs/${doc.slug}`} className="group rounded-2xl border p-4" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h2 className="font-semibold group-hover:text-[var(--accent)]" style={{ color: 'var(--text)' }}>{doc.title}</h2>
-                        <div className="mt-1 font-mono text-[10px]" style={{ color: 'var(--text-faint)' }}>{project}</div>
-                      </div>
-                      <ArrowUpRight className="h-4 w-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
-                    </div>
-                    {doc.description && <p className="mt-3 line-clamp-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{doc.description}</p>}
-                  </Link>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 lg:px-16">
-        <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>READING PATH</div>
-        <div className="mt-3 space-y-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>
-          <p>1. Start with architecture</p>
-          <p>2. Follow project-specific Getting Started</p>
-          <p>3. Use Operations docs for Day-2 work</p>
-          <p>4. Return to project detail for Notes / Source / Evidence</p>
-        </div>
-      </section>
-    </main>
-  );
+  const { locale } = await params; const lang = locale as 'ko' | 'en'; const base = lang === 'en' ? '/en' : '/ko'; const groups = groupDocsByProject(getDocs(lang)); const total=groups.reduce((sum,[,docs])=>sum+docs.length,0);
+  return <main>
+    <section className="border-b" style={{borderColor:'var(--border)'}}><div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16 lg:py-16"><div className="font-mono text-xs font-medium tracking-[0.12em]" style={{color:'var(--accent)'}}>KNOWLEDGE / OPERATING DOCUMENTATION</div><h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{color:'var(--text)'}}>{lang==='en'?'Documentation is operating evidence.':'문서는 운영 가능한 상태를 증명하는 evidence입니다.'}</h1><p className="mt-5 max-w-4xl text-base leading-7 sm:text-lg" style={{color:'var(--text-muted)'}}>{lang==='en'?'Architecture, getting started and Day-2 knowledge stay attached to the systems they describe.':'아키텍처, 시작 방법과 Day-2 운영 지식을 해당 시스템과 연결된 상태로 유지합니다.'}</p></div></section>
+    <section className="border-b" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-6 px-5 py-5 sm:px-8 md:grid-cols-3 lg:px-16"><Metric label={lang==='en'?'Project groups':'프로젝트 그룹'} value={String(groups.length)}/><Metric label={lang==='en'?'Documents':'문서'} value={String(total)}/><Metric label={lang==='en'?'Reading model':'읽기 구조'} value="Architecture → Day-2"/></div></section>
+    <section className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--accent)'}}>PROJECT DOCUMENT STREAM</div><div className="mt-7 space-y-10">{groups.map(([project,docs])=><section key={project} className="grid gap-5 lg:grid-cols-[220px_1fr]"><div><div className="font-mono text-[10px] tracking-[0.1em]" style={{color:'var(--accent)'}}>{project.toUpperCase()}</div><div className="mt-2 text-sm" style={{color:'var(--text-muted)'}}>{docs.length} docs</div></div><div className="divide-y" style={{borderColor:'var(--border)'}}>{docs.map((doc,i)=><Link key={doc.slug} href={`${base}/docs/${doc.slug}`} className="group grid gap-3 py-5 first:pt-0 md:grid-cols-[44px_1fr_1.2fr_auto]" style={{borderColor:'var(--border)'}}><div className="font-mono text-[9px]" style={{color:'var(--text-faint)'}}>{String(i+1).padStart(2,'0')}</div><h2 className="font-semibold group-hover:text-[var(--accent)]" style={{color:'var(--text)'}}>{doc.title}</h2><p className="text-sm leading-6" style={{color:'var(--text-muted)'}}>{doc.description||'Operating documentation'}</p><ArrowUpRight className="hidden h-4 w-4 md:block" style={{color:'var(--text-faint)'}}/></Link>)}</div></section>)}</div></section>
+    <section className="border-t" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto max-w-[1440px] px-5 py-9 sm:px-8 lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--signal)'}}>READING PATH</div><div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm" style={{color:'var(--text-muted)'}}><span>01 Architecture</span><span>→</span><span>02 Getting Started</span><span>→</span><span>03 Operations / Day-2</span><span>→</span><span>04 Project evidence</span></div></div></section>
+  </main>
 }
+function Metric({label,value}:{label:string;value:string}){return <div><div className="font-mono text-[9px] uppercase tracking-[0.1em]" style={{color:'var(--text-faint)'}}>{label}</div><div className="mt-1 text-sm font-semibold" style={{color:'var(--text)'}}>{value}</div></div>}
