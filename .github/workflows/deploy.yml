@@ -67,6 +67,18 @@ jobs:
         uses: actions/configure-pages@v6
       - name: Install dependencies
         run: bun install --frozen-lockfile --no-progress
+
+      - name: Refresh OSS development pulse for this build
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if bun scripts/refresh-project-metadata.mjs; then
+            echo "Development Pulse refreshed for Pages artifact."
+          else
+            echo "::warning::Development Pulse refresh failed; building with last checked-in metadata."
+          fi
+
       - name: Test
         run: bun test
       - name: Lint
