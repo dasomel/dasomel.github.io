@@ -44,21 +44,25 @@ function activeDuration(start: string | undefined, end: string | undefined, lang
 
 function ActivityBars({ points, label }: { points: ActivityPoint[]; label: string }) {
   const recent = points.slice(-20);
-  if (recent.length === 0) return null;
+  if (recent.length === 0) return <div className="mt-6 border-t pt-5 text-xs" style={{borderColor:'var(--border)',color:'var(--text-faint)'}}>Activity data will appear after the next metadata refresh.</div>;
   const max = Math.max(...recent.map(point => point.total), 1);
+  const total = recent.reduce((sum, point) => sum + point.total, 0);
   return (
-    <div className="mt-5 border-t pt-5" style={{ borderColor: 'var(--border)' }}>
-      <div className="mb-3 flex items-center justify-between gap-4">
-        <div className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em]" style={{ color: 'var(--text-faint)' }}>{label}</div>
-        <div className="font-mono text-[9px]" style={{ color: 'var(--text-faint)' }}>20 WEEKS</div>
+    <div className="mt-7 border-t pt-5" style={{ borderColor: 'var(--border)' }}>
+      <div className="mb-4 flex items-end justify-between gap-4">
+        <div>
+          <div className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em]" style={{ color: 'var(--text-faint)' }}>{label}</div>
+          <div className="mt-1 text-sm font-semibold" style={{color:'var(--text)'}}>{total.toLocaleString()} commits / 20 weeks</div>
+        </div>
+        <div className="font-mono text-[9px]" style={{ color: 'var(--text-faint)' }}>PAST → NOW</div>
       </div>
-      <div className="flex h-12 items-end gap-1" aria-label={label}>
+      <div className="flex h-16 items-end gap-1" aria-label={label}>
         {recent.map((point, index) => (
           <span
             key={`${point.week}-${index}`}
             title={`${point.total} commits`}
             className="min-w-0 flex-1 rounded-t-sm"
-            style={{ height: `${Math.max(8, Math.round((point.total / max) * 100))}%`, backgroundColor: point.total > 0 ? 'var(--accent)' : 'var(--border-strong)', opacity: point.total > 0 ? 0.9 : 0.45 }}
+            style={{ height: `${Math.max(7, Math.round((point.total / max) * 100))}%`, backgroundColor: point.total > 0 ? 'var(--accent)' : 'var(--border-strong)', opacity: point.total > 0 ? 0.88 : 0.32 }}
           />
         ))}
       </div>
@@ -72,8 +76,8 @@ export function ProjectSourceSnapshot({ github, lang }: { github: string; lang: 
   if (!source) return null;
 
   const copy = lang === 'ko'
-    ? { kicker: 'DEVELOPMENT PULSE', started: '첫 commit', commits: '누적 commits', releases: 'Releases', latest: '최신 release', pushed: '최근 push', active: '개발 기간', contributors: 'Contributors', activity: '최근 개발 활동', language: '언어', license: '라이선스', stars: 'Stars', forks: 'Forks', issues: 'Open issues' }
-    : { kicker: 'DEVELOPMENT PULSE', started: 'First commit', commits: 'Commits', releases: 'Releases', latest: 'Latest release', pushed: 'Last push', active: 'Active for', contributors: 'Contributors', activity: 'Recent development activity', language: 'Language', license: 'License', stars: 'Stars', forks: 'Forks', issues: 'Open issues' };
+    ? { kicker: 'DEVELOPMENT OBSERVATORY', started: '첫 commit', commits: '누적 commits', releases: 'Releases', latest: '최신 release', pushed: '최근 push', active: '개발 기간', contributors: 'Contributors', activity: '최근 개발 활동', language: '언어', license: '라이선스', stars: 'Stars', forks: 'Forks', issues: 'Open issues', thesis:'한 번 만든 결과가 아니라, 시간에 따라 계속 발전하는 시스템을 봅니다.' }
+    : { kicker: 'DEVELOPMENT OBSERVATORY', started: 'First commit', commits: 'Commits', releases: 'Releases', latest: 'Latest release', pushed: 'Last push', active: 'Active for', contributors: 'Contributors', activity: 'Recent development activity', language: 'Language', license: 'License', stars: 'Stars', forks: 'Forks', issues: 'Open issues', thesis:'Observe a system evolving over time, not a repository frozen at one release.' };
 
   const primary = [
     { label: copy.started, value: formatDate(source.firstCommitAt || source.createdAt, lang), icon: CalendarRange },
@@ -85,22 +89,23 @@ export function ProjectSourceSnapshot({ github, lang }: { github: string; lang: 
   ];
 
   return (
-    <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }} aria-label={copy.kicker}>
-      <div className="flex flex-wrap items-end justify-between gap-3">
+    <section className="mb-10 border-y py-7" style={{ borderColor: 'var(--border)' }} aria-label={copy.kicker}>
+      <div className="grid gap-7 lg:grid-cols-[260px_1fr]">
         <div>
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--accent)' }}><Activity className="h-3.5 w-3.5" aria-hidden="true" />{copy.kicker}</div>
-          <div className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>{key}</div>
+          <div className="flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.13em]" style={{ color: 'var(--signal)' }}><Activity className="h-3.5 w-3.5" aria-hidden="true" />{copy.kicker}</div>
+          <div className="mt-3 text-lg font-semibold tracking-[-0.025em]" style={{color:'var(--text)'}}>{key}</div>
+          <p className="mt-3 text-xs leading-5" style={{color:'var(--text-muted)'}}>{copy.thesis}</p>
+          {source.contributorCount !== undefined && <div className="mt-4 inline-flex items-center gap-1.5 font-mono text-[9px]" style={{ color: 'var(--text-faint)' }}><Users className="h-3.5 w-3.5" />{copy.contributors}: {source.contributorCount}</div>}
         </div>
-        {source.contributorCount !== undefined && <div className="inline-flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-muted)' }}><Users className="h-3.5 w-3.5" />{copy.contributors}: {source.contributorCount}</div>}
+        <div>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-6 md:grid-cols-3 xl:grid-cols-6">
+            {primary.map((item,index) => <div key={item.label} className="min-w-0 border-l pl-3" style={{borderColor:index===0?'var(--signal)':'var(--border)'}}><div className="flex items-center gap-1.5 text-[10px]" style={{ color: 'var(--text-faint)' }}><item.icon className="h-3 w-3" />{item.label}</div><div className="mt-1.5 truncate text-lg font-semibold tracking-[-0.025em]" style={{ color: 'var(--text)' }} title={item.value}>{item.value}</div></div>)}
+          </div>
+          <ActivityBars points={source.activity ?? []} label={copy.activity} />
+        </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-6 md:grid-cols-3 lg:grid-cols-6">
-        {primary.map(item => <div key={item.label} className="min-w-0"><div className="flex items-center gap-1.5 text-[10px]" style={{ color: 'var(--text-faint)' }}><item.icon className="h-3 w-3" />{item.label}</div><div className="mt-1.5 truncate text-lg font-semibold tracking-[-0.025em]" style={{ color: 'var(--text)' }} title={item.value}>{item.value}</div></div>)}
-      </div>
-
-      <ActivityBars points={source.activity ?? []} label={copy.activity} />
-
-      <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t pt-4" style={{ borderColor: 'var(--border)' }}>
+      <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t pt-4" style={{ borderColor: 'var(--border)' }}>
         <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{copy.language}: {source.language || '—'}</span>
         <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{copy.license}: {source.license || '—'}</span>
         <span className="inline-flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-muted)' }}><Star className="h-3.5 w-3.5" />{copy.stars}: {source.stars}</span>
