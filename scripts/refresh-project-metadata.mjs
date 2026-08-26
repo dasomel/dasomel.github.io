@@ -12,14 +12,64 @@ const headers = {
   ...(token ? { Authorization: `Bearer ${token}` } : {}),
 };
 
-async function githubJson(url, allowNotFound = false) {
+async function githubResponse(url, allowNotFound = false) {
   const response = await fetch(url, { headers });
   if (response.status === 404 && allowNotFound) return null;
   if (!response.ok) {
     const text = await response.text();
     throw new Error(`GitHub API ${response.status} for ${url}: ${text.slice(0, 300)}`);
   }
-  return response.json();
+  return response;
+}
+
+async function githubJson(url, allowNotFound = false) {
+  const response = await githubResponse(url, allowNotFound);
+  return response ? response.json() : null;
+}
+
+function lastPageFromLink(link) {
+  if (!link) return null;
+  const match = link.match(/<([^>]+)>; rel="last"/);
+  if (!match) return null;
+  const url = new URL(match[1]);
+  const page = Number(url.searchParams.get('page'));
+  return Number.isFinite(page) && page > 0 ? { page, url: match[1] } : null;
+}
+
+async function paginatedCountAndOldest(repo, resource) {
+  const firstResponse = await githubResponse(`https://api.github.com/repos/${repo}/${resource}?per_page=1`);
+  const firstItems = await firstResponse.json();
+  if (!Array.isArray(firstItems) || firstItems.length === 0) return { count: 0, oldest: null };
+
+  const last = lastPageFromLink(firstResponse.headers.get('link'));
+  if (!last) return { count: firstItems.length, oldest: firstItems[0] };
+
+  const oldestItems = await githubJson(last.url);
+  return { count: last.page, oldest: Array.isArray(oldestItems) ? oldestItems[0] ?? null : null };
+}
+
+async function paginatedCount(repo, resource) {
+  const response = await githubResponse(`https://api.github.com/repos/${repo}/${resource}?per_page=1`);
+  const items = await response.json();
+  if (!Array.isArray(items) || items.length === 0) return 0;
+  return lastPageFromLink(response.headers.get('link'))?.page ?? items.length;
+}
+
+async function commitActivity(repo) {
+  const url = `https://api.github.com/repos/${repo}/stats/commit_activity`;
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const response = await fetch(url, { headers });
+    if (response.status === 202) {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      continue;
+    }
+    if (!response.ok) return [];
+    const weeks = await response.json();
+    return Array.isArray(weeks)
+      ? weeks.map(week => ({ week: week.week, total: week.total })).slice(-52)
+      : [];
+  }
+  return [];
 }
 
 function repoFromMarkdown(source) {
@@ -40,10 +90,16 @@ for (const file of files) {
 
 const metadata = {};
 for (const repo of [...repos].sort()) {
+  console.log(`Refreshing ${repo}...`);
   const project = await githubJson(`https://api.github.com/repos/${repo}`);
   const release = await githubJson(`https://api.github.com/repos/${repo}/releases/latest`, true);
   const tags = await githubJson(`https://api.github.com/repos/${repo}/tags?per_page=1`);
   const latestTag = tags?.[0];
+  const commits = await paginatedCountAndOldest(repo, 'commits');
+  const releaseCount = await paginatedCount(repo, 'releases');
+  const contributorCount = await paginatedCount(repo, 'contributors?anon=1&');
+  const activity = await commitActivity(repo);
+  const oldestCommit = commits.oldest;
 
   metadata[repo] = {
     repo,
@@ -54,7 +110,13 @@ for (const repo of [...repos].sort()) {
     openIssues: project.open_issues_count,
     language: project.language ?? undefined,
     license: project.license?.spdx_id || project.license?.name || undefined,
+    createdAt: project.created_at ?? undefined,
     pushedAt: project.pushed_at ?? undefined,
+    firstCommitAt: oldestCommit?.commit?.author?.date || oldestCommit?.commit?.committer?.date || undefined,
+    commitCount: commits.count,
+    releaseCount,
+    contributorCount,
+    activity,
     ...(release ? {
       latestRelease: {
         tag: release.tag_name,
