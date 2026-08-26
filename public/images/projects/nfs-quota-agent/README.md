@@ -1,0 +1,1 @@
+`quota-flow.svg` summarizes the documented NFS Quota Agent flow from Kubernetes PVC/PV capacity through the DaemonSet and filesystem-specific quota adapters to enforced quotas and observable metrics/UI signals.
