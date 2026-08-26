@@ -1,9 +1,7 @@
 name: Update Seoul Events
 
 on:
-  schedule:
-    - cron: '30 23 * * *'   # 08:30 KST (UTC+9) 매일 — 주 스케줄러
-  workflow_dispatch:        # 수동 실행도 가능
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,30 +18,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.4.0
-
       - name: Verify Bun version
         run: bun --version
-
       - name: Install dependencies
         run: bun install --frozen-lockfile --no-progress
-
       - name: Fetch Seoul events
         env:
           SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
         run: bun scripts/fetch-seoul-events.mjs
-
       - name: Fetch nationwide festivals
         id: festivals
         continue-on-error: true
         env:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
         run: bun scripts/fetch-festivals.mjs
-
       - name: Preserve previous festivals when fetch failed
         if: steps.festivals.outcome == 'failure'
         run: |
@@ -59,16 +51,9 @@ jobs:
             const seoul = (cur.events || []).filter((e) => !isTour(e));
             const merged = new Map();
             for (const e of [...seoul, ...festivals]) merged.set(e.id, e);
-            const upcoming = [...merged.values()]
-              .filter((e) => !e.endDate || e.endDate >= today)
-              .sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
-            fs.writeFileSync(
-              OUT,
-              JSON.stringify({ updatedAt: new Date().toISOString(), events: upcoming }, null, 2) + "\n"
-            );
-            console.log(`축제 수집 실패 — 직전 축제 ${festivals.length}건 복원, 서울 ${seoul.length}건과 병합해 총 ${upcoming.length}건`);
+            const upcoming = [...merged.values()].filter((e) => !e.endDate || e.endDate >= today).sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
+            fs.writeFileSync(OUT, JSON.stringify({ updatedAt: new Date().toISOString(), events: upcoming }, null, 2) + "\n");
           '
-
       - name: Check for changes
         id: changes
         run: |
@@ -79,7 +64,6 @@ jobs:
             COUNT=$(bun -e "const d=JSON.parse(await Bun.file('./src/content/events/data.json').text()); console.log(d.events.length)")
             echo "count=${COUNT}" >> "$GITHUB_OUTPUT"
           fi
-
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
         env:
@@ -90,20 +74,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/content/events/data.json
           SUFFIX=""
-          if [ "$FESTIVALS_OUTCOME" = "failure" ]; then
-            SUFFIX=" [축제 수집 실패 — 직전 축제 데이터 유지]"
-          fi
+          if [ "$FESTIVALS_OUTCOME" = "failure" ]; then SUFFIX=" [축제 수집 실패 — 직전 축제 데이터 유지]"; fi
           git commit -m "chore(events): 서울 행사 데이터 업데이트 — ${COUNT}건 ($(TZ=Asia/Seoul date +%F))${SUFFIX}"
           git push
-
       - name: Trigger Pages deploy
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
-
       - name: Surface festivals fetch failure
         if: steps.festivals.outcome == 'failure'
         run: |
-          echo "::error::전국 축제 데이터 수집 실패 — 서울 행사분과 직전 축제 데이터는 반영했지만 축제 목록은 갱신되지 않았다. 위 'Fetch nationwide festivals' 로그를 확인하라."
-          exit 1
+          echo "::warning::전국 축제 데이터 수집 실패 — 서울 행사와 직전 축제 데이터는 유지했다."
