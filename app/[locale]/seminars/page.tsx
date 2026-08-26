@@ -3,82 +3,16 @@ import { ArrowUpRight } from 'lucide-react';
 import { getSeminars } from '@/lib/content';
 import { routing } from '@/i18n/routing';
 
-export function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
+export function generateStaticParams(){return routing.locales.map(locale=>({locale}))}
+
+export default async function SeminarsPage({params}:{params:Promise<{locale:string}>}){
+  const{locale}=await params;const lang=locale as 'ko'|'en';const seminars=getSeminars(lang);const base=lang==='en'?'/en':'/ko';const featured=seminars.filter(item=>item.featured).slice(0,2);const fallbackFeatured=featured.length>=2?featured:seminars.slice(0,2);const grouped=seminars.reduce((acc,seminar)=>{const year=seminar.date.slice(0,4);(acc[year]??=[]).push(seminar);return acc},{} as Record<string,typeof seminars>);const years=Object.keys(grouped).sort((a,b)=>Number(b)-Number(a));const topics=[...new Set(seminars.flatMap(item=>item.tags))].slice(0,12);
+  return <main>
+    <section className="border-b" style={{borderColor:'var(--border)'}}><div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16 lg:py-16"><div className="font-mono text-xs font-medium tracking-[0.12em]" style={{color:'var(--accent)'}}>KNOWLEDGE / SHARED PRACTICE</div><h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{color:'var(--text)'}}>{lang==='en'?'Share what survived practice.':'현장에서 검증된 것을 공유합니다.'}</h1><p className="mt-5 max-w-4xl text-base leading-7 sm:text-lg" style={{color:'var(--text-muted)'}}>{lang==='en'?'Talks are treated as another form of evidence: what was learned, structured and shared back to the community over time.':'발표도 evidence의 한 형태로 봅니다. 현장에서 배운 것을 구조화하고 시간에 따라 커뮤니티에 다시 공유한 기록입니다.'}</p></div></section>
+    <section className="border-b" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-6 px-5 py-5 sm:px-8 md:grid-cols-3 lg:px-16"><Metric label={lang==='en'?'Talk records':'발표 기록'} value={String(seminars.length)}/><Metric label={lang==='en'?'Years represented':'연도'} value={String(years.length)}/><Metric label={lang==='en'?'Topic signals':'주제 신호'} value={String(topics.length)}/></div></section>
+    {fallbackFeatured.length>0&&<section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--signal)'}}>FEATURED / CURRENT SIGNALS</div><div className="mt-6 divide-y" style={{borderColor:'var(--border)'}}>{fallbackFeatured.map((seminar,i)=><Link key={seminar.slug} href={`${base}/seminars/${seminar.slug}`} className="group grid gap-3 py-6 first:pt-0 md:grid-cols-[44px_1fr_1fr_auto]" style={{borderColor:'var(--border)'}}><div className="font-mono text-[9px]" style={{color:'var(--text-faint)'}}>{String(i+1).padStart(2,'0')}</div><div><div className="font-mono text-[9px]" style={{color:'var(--accent)'}}>{seminar.date} · {seminar.event}</div><h2 className="mt-2 text-xl font-semibold group-hover:text-[var(--accent)]" style={{color:'var(--text)'}}>{seminar.title}</h2></div><p className="text-sm leading-6" style={{color:'var(--text-muted)'}}>{seminar.tags.slice(0,6).join(' · ')}</p><ArrowUpRight className="hidden h-4 w-4 md:block" style={{color:'var(--text-faint)'}}/></Link>)}</div></section>}
+    <section className="border-y" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto max-w-[1440px] px-5 py-11 sm:px-8 lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--accent)'}}>TIMELINE / PRACTICE OVER TIME</div><div className="mt-7 space-y-10">{years.map(year=><div key={year} className="grid gap-5 lg:grid-cols-[120px_1fr]"><div className="text-3xl font-semibold tracking-[-0.04em]" style={{color:'var(--text)'}}>{year}</div><div className="divide-y" style={{borderColor:'var(--border)'}}>{grouped[year].map(seminar=><Link key={seminar.slug} href={`${base}/seminars/${seminar.slug}`} className="group grid gap-2 py-4 first:pt-0 md:grid-cols-[1fr_.7fr_auto]"><div className="font-semibold group-hover:text-[var(--accent)]" style={{color:'var(--text)'}}>{seminar.title}</div><div className="text-sm" style={{color:'var(--text-muted)'}}>{seminar.event} · {seminar.date.slice(5)}</div><ArrowUpRight className="hidden h-3.5 w-3.5 md:block" style={{color:'var(--text-faint)'}}/></Link>)}</div></div>)}</div></div></section>
+    <section className="mx-auto max-w-[1440px] px-5 py-9 sm:px-8 lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--accent)'}}>TOPIC THREADS</div><p className="mt-3 max-w-5xl text-sm leading-7" style={{color:'var(--text-muted)'}}>{topics.join(' · ')}</p></section>
+  </main>
 }
-
-export default async function SeminarsPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const lang = locale as 'ko' | 'en';
-  const seminars = getSeminars(lang);
-  const base = lang === 'en' ? '/en' : '/ko';
-  const featured = seminars.filter(item => item.featured).slice(0, 2);
-  const fallbackFeatured = featured.length >= 2 ? featured : seminars.slice(0, 2);
-  const grouped = seminars.reduce((acc, seminar) => {
-    const year = seminar.date.slice(0, 4);
-    (acc[year] ??= []).push(seminar);
-    return acc;
-  }, {} as Record<string, typeof seminars>);
-  const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
-  const topics = [...new Set(seminars.flatMap(item => item.tags))].slice(0, 10);
-
-  return (
-    <main>
-      <section className="border-b" style={{ borderColor: 'var(--border)' }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-16 lg:py-16">
-          <div className="font-mono text-xs font-medium tracking-[0.12em]" style={{ color: 'var(--accent)' }}>OSS WORKBENCH / SPEAKING</div>
-          <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{ color: 'var(--text)' }}>
-            {lang === 'en' ? 'Share what survived practice.' : '현장에서 검증된 것을 공유합니다.'}
-          </h1>
-          <p className="mt-5 max-w-5xl text-base leading-7 sm:text-lg" style={{ color: 'var(--text-muted)' }}>
-            Cloud Native, Platform Engineering, K-PaaS, networking, service mesh and OSS lessons shared through seminars and communities.
-          </p>
-        </div>
-      </section>
-
-      {fallbackFeatured.length > 0 && (
-        <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-16">
-          <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>FEATURED TALKS</div>
-          <div className="mt-4 space-y-3">
-            {fallbackFeatured.map(seminar => (
-              <Link key={seminar.slug} href={`${base}/seminars/${seminar.slug}`} className="group flex items-start justify-between gap-4 rounded-2xl border p-5" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
-                <div className="min-w-0">
-                  <div className="font-mono text-[10px]" style={{ color: 'var(--text-faint)' }}>{seminar.date} · {seminar.event}</div>
-                  <h2 className="mt-2 text-lg font-semibold group-hover:text-[var(--accent)]" style={{ color: 'var(--text)' }}>{seminar.title}</h2>
-                  <p className="mt-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{seminar.tags.slice(0, 5).join(' · ')}</p>
-                </div>
-                <ArrowUpRight className="mt-1 h-4 w-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <section className="border-y" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface-hi)' }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-16">
-          <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>TIMELINE / ARCHIVE</div>
-          <div className="mt-4 space-y-3">
-            {years.map(year => (
-              <div key={year} className="rounded-2xl border p-4 sm:p-5" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}>
-                <div className="font-mono text-[11px]" style={{ color: 'var(--accent)' }}>{year}</div>
-                <div className="mt-3 space-y-2">
-                  {grouped[year].map(seminar => (
-                    <Link key={seminar.slug} href={`${base}/seminars/${seminar.slug}`} className="block rounded-xl px-2 py-2 transition-colors hover:bg-[var(--surface-hi)]">
-                      <div className="text-sm font-semibold" style={{ color: 'var(--text)' }}>{seminar.title}</div>
-                      <div className="mt-1 text-xs" style={{ color: 'var(--text-muted)' }}>{seminar.event} · {seminar.date.slice(5)}</div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 lg:px-16">
-        <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>TOPICS</div>
-        <p className="mt-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>{topics.join(' · ')}</p>
-      </section>
-    </main>
-  );
-}
+function Metric({label,value}:{label:string;value:string}){return <div><div className="font-mono text-[9px] uppercase tracking-[0.1em]" style={{color:'var(--text-faint)'}}>{label}</div><div className="mt-1 text-lg font-semibold" style={{color:'var(--text)'}}>{value}</div></div>}
