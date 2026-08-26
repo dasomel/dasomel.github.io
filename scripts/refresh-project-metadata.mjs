@@ -97,7 +97,7 @@ for (const repo of [...repos].sort()) {
   const latestTag = tags?.[0];
   const commits = await paginatedCountAndOldest(repo, 'commits');
   const releaseCount = await paginatedCount(repo, 'releases');
-  const contributorCount = await paginatedCount(repo, 'contributors?anon=1&');
+  const contributorCount = await paginatedCount(repo, 'contributors');
   const activity = await commitActivity(repo);
   const oldestCommit = commits.oldest;
 
