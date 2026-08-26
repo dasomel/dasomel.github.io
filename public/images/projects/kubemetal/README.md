@@ -1,0 +1,1 @@
+`control-compute.svg` represents KubeMetal's documented hybrid architecture: Tauri/K3s for the control plane, MLflow/SeaweedFS for MLOps state and artifacts, and macOS MLX for Metal-accelerated LoRA training and serving.
