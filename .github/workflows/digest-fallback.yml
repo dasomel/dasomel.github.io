@@ -1,13 +1,7 @@
 name: Digest Fallback Merge
 
-# RSS 수집만 된 draft PR은 자동 발행하지 않는다.
-# AI enrichment가 100% 완료된 경우에만 자동 merge한다.
-# Pages 배포는 merge 완료 후 deploy.yml의 workflow_run 트리거가 담당한다.
-
+# Scheduled by scheduler.yml. This workflow remains independently dispatchable.
 on:
-  schedule:
-    - cron: '15 21 * * *'
-    - cron: '05 1 * * *'
   workflow_dispatch:
 
 permissions:
@@ -35,18 +29,12 @@ jobs:
         run: bun --version
 
       - name: Find pending digest PRs
-        id: prs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          if ! gh pr list \
-            --repo "$REPO" \
-            --state open \
-            --draft \
-            --json number,headRefName \
-            --jq '[.[] | select(.headRefName | startswith("daily-digest/"))]
-                  | sort_by(.headRefName)[] | "\(.number)\t\(.headRefName)"' > /tmp/digest-prs.txt; then
+          if ! gh pr list --repo "$REPO" --state open --draft --json number,headRefName \
+            --jq '[.[] | select(.headRefName | startswith("daily-digest/"))] | sort_by(.headRefName)[] | "\(.number)\t\(.headRefName)"' > /tmp/digest-prs.txt; then
             echo "::error::gh pr list 실패 — 자동 발행을 중단한다."
             exit 1
           fi
@@ -63,39 +51,26 @@ jobs:
           while IFS=$'\t' read -r NUM BRANCH; do
             [ -z "$NUM" ] && continue
             DATE="${BRANCH#daily-digest/}"
-
-            # PR branch를 checkout하여 merge 대상 자체를 검사한다.
             git fetch origin "$BRANCH" --quiet
             git checkout --detach "origin/$BRANCH"
-
             if ! bun scripts/check-enrichment.mjs --strict --date "$DATE"; then
-              echo "::warning::PR #${NUM} (${DATE}) — AI enrichment 미완료. 자동 머지하지 않는다."
+              echo "::warning::PR #${NUM} (${DATE}) — AI enrichment 미완료."
               BLOCKED=$((BLOCKED + 1))
               continue
             fi
-
             git checkout --detach origin/main
             if [ -f "src/content/posts/daily-digest-${DATE}.md" ]; then
-              echo "::warning::PR #${NUM} (${DATE}) — 이미 main에 발행됨. 자동 머지하지 않는다."
+              echo "::warning::PR #${NUM} (${DATE}) — 이미 main에 발행됨."
               BLOCKED=$((BLOCKED + 1))
               continue
             fi
-
-            echo "PR #${NUM} (${DATE}) — AI enrichment 100% 확인. merge..."
             gh pr ready "$NUM" --repo "$REPO"
-            gh pr merge "$NUM" \
-              --repo "$REPO" \
-              --squash \
-              --delete-branch \
-              --subject "📰 데일리 테크 다이제스트 ${DATE}"
+            gh pr merge "$NUM" --repo "$REPO" --squash --delete-branch --subject "📰 데일리 테크 다이제스트 ${DATE}"
             COUNT=$((COUNT + 1))
           done < /tmp/digest-prs.txt
-
           echo "merged=$COUNT blocked=$BLOCKED"
           echo "merged=$COUNT" >> "$GITHUB_OUTPUT"
 
       - name: Record deployment handoff
         if: steps.merge.outputs.merged != '0'
-        run: |
-          echo "Digest merge complete: ${{ steps.merge.outputs.merged }} PR(s)"
-          echo "deploy.yml will be triggered by workflow_run after this workflow completes successfully."
+        run: echo "Digest merge complete; deploy.yml is triggered by workflow_run."
