@@ -2,7 +2,7 @@ name: Refresh OSS project metadata
 
 on:
   schedule:
-    - cron: '0 18 * * 0'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -52,6 +52,6 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add src/data/project-repo-meta.json
-          git commit -m "chore: refresh OSS project metadata"
+          git commit -m "chore: refresh OSS project development pulse"
           git push --set-upstream origin "$BRANCH"
-          gh pr create --base main --head "$BRANCH" --title "chore: refresh OSS project metadata" --body "Automated GitHub source metadata refresh. Curated project content is intentionally untouched."
+          gh pr create --base main --head "$BRANCH" --title "chore: refresh OSS project metadata" --body "Automated daily GitHub source metadata refresh, including first commit, commit/release/contributor counts and recent commit activity. Curated project content is intentionally untouched."
