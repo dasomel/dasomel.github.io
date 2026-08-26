@@ -2,59 +2,17 @@ import { getTranslations } from 'next-intl/server';
 import { getProjects } from '@/lib/content';
 import { routing } from '@/i18n/routing';
 import { ProjectList } from '@/components/projects/ProjectList';
+import { EngineeringLabMap } from '@/components/visual/EngineeringLabMap';
 
-export function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
-}
+export function generateStaticParams(){return routing.locales.map(locale=>({locale}))}
+export async function generateMetadata({params}:{params:Promise<{locale:string}>}){const{locale}=await params;const t=await getTranslations({locale,namespace:'work'});return{title:t('title')}}
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'work' });
-  return { title: t('title') };
-}
-
-export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const lang = locale as 'ko' | 'en';
-  const t = await getTranslations({ locale, namespace: 'work' });
-  const projects = getProjects(lang);
-  const base = lang === 'en' ? '/en' : '/ko';
-
-  return (
-    <main>
-      <section className="border-b" style={{ borderColor: 'var(--border)' }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-16 lg:py-16">
-          <div className="font-mono text-xs font-medium tracking-[0.12em]" style={{ color: 'var(--accent)' }}>OSS ENGINEERING PORTFOLIO</div>
-          <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{ color: 'var(--text)' }}>
-            {lang === 'en' ? 'Projects are decision records, not screenshots.' : '프로젝트는 결과가 아니라 의사결정 기록입니다.'}
-          </h1>
-          <p className="mt-5 max-w-5xl text-base leading-7 sm:text-lg" style={{ color: 'var(--text-muted)' }}>
-            {lang === 'en'
-              ? 'Each project is organized so it can be read as Problem → Response → Evidence → Notes.'
-              : '각 프로젝트를 Problem → Response → Evidence → Notes 구조로 읽을 수 있도록 정리합니다.'}
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-12 lg:px-16">
-        <ProjectList
-          projects={projects}
-          base={base}
-          translations={{
-            problem: t('problem'),
-            solution: t('solution'),
-            search: t('search'),
-            noResults: t('no_results'),
-            results: t('results'),
-            clearFilters: t('clear_filters'),
-            all: t('all'),
-            filter: t('filter'),
-            core: t('core'),
-            tools: t('tools'),
-            forks: t('forks'),
-          }}
-        />
-      </section>
-    </main>
-  );
+export default async function WorkPage({params}:{params:Promise<{locale:string}>}){
+  const {locale}=await params; const lang=locale as 'ko'|'en'; const t=await getTranslations({locale,namespace:'work'}); const projects=getProjects(lang); const base=lang==='en'?'/en':'/ko';
+  return <main>
+    <section className="border-b" style={{borderColor:'var(--border)'}}><div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 lg:px-16 lg:py-20"><div className="font-mono text-xs font-semibold tracking-[0.14em]" style={{color:'var(--accent)'}}>WORK / OPEN SOURCE SYSTEMS</div><h1 className="mt-5 max-w-5xl text-4xl font-semibold tracking-[-0.055em] sm:text-6xl" style={{color:'var(--text)'}}>{lang==='en'?<>A system of systems,<br/>not a grid of repositories.</>:<>저장소 목록이 아니라,<br/>서로 연결된 시스템으로 봅니다.</>}</h1><p className="mt-6 max-w-4xl text-base leading-8 sm:text-lg" style={{color:'var(--text-muted)'}}>{lang==='en'?'OpenForge sets engineering rules, kube-ready-box makes foundations reproducible, Narwhal integrates a platform, focused OSS fills capability gaps, and Beluga/KubeMetal exercise the platform with real workloads.':'OpenForge는 engineering rules를 만들고, kube-ready-box는 기반 환경을 재현 가능하게 만들며, Narwhal은 플랫폼을 통합합니다. ldapium과 nfs-quota-agent는 capability gap을 채우고, Beluga와 KubeMetal은 실제 workload 관점에서 플랫폼을 검증합니다.'}</p></div></section>
+    <section className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16"><EngineeringLabMap base={base}/></section>
+    <section className="border-y" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--signal)'}}>HOW TO READ A PROJECT</div><div className="mt-6 grid gap-4 md:grid-cols-4">{[['01','Problem','What constraint made the project necessary?'],['02','Architecture','How are boundaries and responsibilities arranged?'],['03','Decisions','Which trade-offs shaped the implementation?'],['04','Evidence','What can be inspected, repeated or verified?']].map(([n,a,b])=><div key={n} className="border-l pl-4" style={{borderColor:'var(--border-strong)'}}><div className="font-mono text-[9px]" style={{color:'var(--accent)'}}>{n}</div><div className="mt-2 text-lg font-semibold" style={{color:'var(--text)'}}>{a}</div><p className="mt-2 text-xs leading-5" style={{color:'var(--text-muted)'}}>{b}</p></div>)}</div></div></section>
+    <section className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16"><div className="mb-8"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--accent)'}}>PROJECT INDEX</div><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]" style={{color:'var(--text)'}}>{lang==='en'?'Explore every system':'전체 시스템 탐색'}</h2></div><ProjectList projects={projects} base={base} translations={{problem:t('problem'),solution:t('solution'),search:t('search'),noResults:t('no_results'),results:t('results'),clearFilters:t('clear_filters'),all:t('all'),filter:t('filter'),core:t('core'),tools:t('tools'),forks:t('forks')}}/></section>
+  </main>
 }
