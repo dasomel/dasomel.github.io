@@ -5,22 +5,12 @@
   "start_url": "/ko/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0B1220",
-  "theme_color": "#0B1220",
+  "background_color": "#111C2E",
+  "theme_color": "#111C2E",
   "orientation": "portrait-primary",
   "icons": [
-    {
-      "src": "/icon-v2.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-maskable.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
-    }
+    {"src":"/icon-v2.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any"},
+    {"src":"/icon-maskable.svg","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}
   ],
   "categories": ["technology", "blog", "education", "developer-tools"],
   "lang": "ko-KR"
