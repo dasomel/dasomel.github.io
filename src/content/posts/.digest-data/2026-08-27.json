@@ -1,0 +1,287 @@
+{
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-26T23:45:45.250Z",
+  "count": 35,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic’s Claude now has a browser of its own",
+      "link": "https://thenewstack.io/claude-built-in-browser-cowork/",
+      "date": "2026-08-26T22:05:58.000Z",
+      "excerpt": "Anthropic is giving Claude its own browser. As the company announced on Wednesday, Claude on the desktop (Mac, Windows, and"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "X sent Nitter a cease-and-desist. Then it went after the source code.",
+      "link": "https://thenewstack.io/x-nitter-open-source-takedown/",
+      "date": "2026-08-26T21:04:31.000Z",
+      "excerpt": "When Elon Musk’s X sent cease-and-desist letters demanding that Nitter — an open-source alternative front end for the social media"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI’s Astra can do a researcher’s week of work. That’s the problem.",
+      "link": "https://thenewstack.io/openai-astra-persistent-agents/",
+      "date": "2026-08-26T20:24:20.000Z",
+      "excerpt": "OpenAI’s unreleased foundation model, codenamed Astra, is already working directly inside the company’s internal codebase, taking on experimental work that"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage/",
+      "date": "2026-08-26T20:12:53.000Z",
+      "excerpt": "Managing library updates can be tedious at times. Learn how the GitHub Copilot app can handle this type of repetitive task."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "7 Best Datadog Alternatives for AI and Agent Observability",
+      "link": "https://www.honeycomb.io/blog/datadog-alternatives",
+      "date": "2026-08-26T20:01:00.000Z",
+      "excerpt": "Comparing Datadog alternatives for AI and agent observability? See how Honeycomb, New Relic, Dynatrace, Grafana Cloud, Phoenix, Langfuse, and SigNoz stack up on cost, investigation, and OpenTelemetry support."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "GlucoFM: Foundation model for continuous glucose monitoring",
+      "link": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring/",
+      "date": "2026-08-26T18:42:43.000Z",
+      "excerpt": "Health & Bioscience"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Gallup scales real-time coaching for thousands with Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/architecture/gallup-delivers-real-time-workplace-coaching-to-thousands-of-leaders-with-amazon-bedrock/",
+      "date": "2026-08-26T17:36:23.000Z",
+      "excerpt": "Gallup transformed 90 years of workplace science into Gallup AI, a generative AI assistant powered by Amazon Bedrock that delivers real-time, personalized coaching to leaders directly within the Gallup Access application."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Closing the AI agent trust gap with graduated autonomy",
+      "link": "https://aws.amazon.com/blogs/architecture/closing-the-ai-agent-trust-gap-with-graduated-autonomy/",
+      "date": "2026-08-26T17:33:03.000Z",
+      "excerpt": "Most teams give AI agents either full access or read-only, leaving value unused or risk unmanaged."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Break-glass access for Amazon EKS when federated identity fails",
+      "link": "https://aws.amazon.com/blogs/containers/break-glass-access-for-amazon-eks-when-federated-identity-fails/",
+      "date": "2026-08-26T16:20:28.000Z",
+      "excerpt": "Implementing break-glass access for Amazon EKS clusters removes the circular dependency where a federated identity provider outage locks you out of the clusters you need to reach to fix it."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Uber improves network reliability while unblocking cloud migration",
+      "link": "https://cloud.google.com/blog/products/networking/uber-de-risks-hybrid-ai-with-cloud-interconnect/",
+      "date": "2026-08-26T16:00:00.000Z",
+      "excerpt": "Uber has a lot in common with the cities it serves. Both are always changing and growing, both must carefully manage the resulting traffic to prevent congestion and sprawl."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Simplify your resilience testing strategy with Fault Injection Testing",
+      "link": "https://cloud.google.com/blog/products/networking/introducing-google-cloud-fault-injection-testing-in-preview/",
+      "date": "2026-08-26T16:00:00.000Z",
+      "excerpt": "When databases fail and network paths falter, you still need your mission-critical cloud services to stay online. Yet guaranteeing high availability has become increasingly difficult because of the complexity of modern distributed systems."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Using OKF with Knowledge Catalog to serve context for agents",
+      "link": "https://cloud.google.com/blog/products/data-analytics/scale-okf-bundles-across-an-organization-with-knowledge-catalog/",
+      "date": "2026-08-26T16:00:00.000Z",
+      "excerpt": "We continue to iterate on the Open Knowledge Format (OKF), an open specification that formalizes the LLM-wiki pattern into a portable, interoperable format. But a big question remains: How can you share and govern access to an OKF bundle across an organization?"
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "The Economics of Agent Optimization: Four ways to lower the cost",
+      "link": "https://azure.microsoft.com/en-us/blog/the-economics-of-agent-optimization-four-ways-to-lower-the-cost/",
+      "date": "2026-08-26T16:00:00.000Z",
+      "excerpt": "Microsoft Foundry gives you four levers that act on every request, before a single line of agent logic changes."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Streamline identity lifecycle management on HCP with SCIM provisioning",
+      "link": "https://www.hashicorp.com/blog/streamline-identity-lifecycle-management-on-hcp-with-scim-provisioning",
+      "date": "2026-08-26T15:00:00.000Z",
+      "excerpt": "Organizations rely on identity providers (IdPs) such as Microsoft Entra ID and Okta to manage access across applications. Without automated provisioning, user lifecycle management can become fragmented, time-consuming, and prone to inconsistencies."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "AI-driven software delivery with Kiro, AWS DevOps Agent and Bluebox by Dynatrace",
+      "link": "https://aws.amazon.com/blogs/devops/ai-driven-software-delivery-with-kiro-aws-devops-agent-and-bluebox-by-dynatrace/",
+      "date": "2026-08-26T12:59:33.000Z",
+      "excerpt": "This post was co-written with Michael Stephan, Senior Principal Product Manager, and Christian Kreuzberger, Principal Software Engineer, at Dynatrace. AI-driven software delivery changes how code gets written, but not what production demands of it."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Governance guidance for CNCF projects: Choosing the right structure for your project’s size and stage",
+      "link": "https://www.cncf.io/blog/2026/08/26/governance-guidance-for-cncf-projects-choosing-the-right-structure-for-your-projects-size-and-stage/",
+      "date": "2026-08-26T11:30:00.000Z",
+      "excerpt": "Clear patterns have emerged from governance reviews across 72 CNCF projects, distinguishing between what the CNCF requires at each maturity level versus what the data recommends for long-term project health. This post captures those patterns as."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+      "link": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "date": "2026-08-26T10:00:00.000Z",
+      "excerpt": "ChatGPT for Teachers is expanding to 55 U.S."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Learning never stops: How AI makes learning continuous",
+      "link": "https://openai.com/index/learning-never-stops",
+      "date": "2026-08-26T10:00:00.000Z",
+      "excerpt": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Why Your AI Application Is Exposed Snyk",
+      "link": "https://snyk.io/blog/why-your-ai-application-is-exposed/",
+      "date": "2026-08-26T04:00:00.000Z",
+      "excerpt": "AI applications can pass security scans yet remain exploitable through chained attacks across models, tools, data, and business workflows. Learn how DAST, AI pentesting, and red teaming work together to expose end-to-end risk."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "토스증권 추천과 검색은 어떻게 진화하고 있을까?",
+      "link": "https://toss.tech/article/tech_talk_talk_3",
+      "date": "2026-08-26T01:00:00.000Z",
+      "excerpt": "추천, RAG, 그래프 검색을 만들며 마주한 문제와 선택"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Garhwal",
+      "link": "https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "Editors: Arsh Sharma, Christopher Tineo, Kirti Goyal, Sophia Ugochukwu, Swathi Rao, Troy Connor Similar to previous releases, the release of Kubernetes v1.37 introduces new Stable, Beta, and Alpha features."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Kubernetes 1.37 - New security features",
+      "link": "https://webflow.sysdig.com/blog/kubernetes-1-37-new-security-features",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "Here are the security implications of Kubernetes 1.37, including new security features to mount volumes, authentication by default on webhooks, and more."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The Hugging Face incident and the road ahead",
+      "link": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers",
+      "link": "https://huggingface.co/blog/train-multi-vector-encoder",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Taming the agent beast: From monolithic prompt to modular agentic workflow",
+      "link": "https://www.redhat.com/en/blog/taming-agent-beast-monolithic-prompt-modular-agentic-workflow",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "What happens when you stop thinking of AI agents as chatbots and start treating them as workers in a pipeline? This is the story of turning a sprawling Jira backlog into a self-orchestrating system, and the lessons learned along the way."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Open telco AI: Training a model for an industry",
+      "link": "https://www.redhat.com/en/blog/open-telco-ai-training-model-industry",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "Domain-specific artificial intelligence (AI) is becoming a practical priority for the telecommunications industry. At AMD Advancing AI, ATT Chief Technology Officer Jeremy Legg joined AMD’s Dan McNamara, Senior Vice President and General Manager of Compute and Enterprise AI, to introduce OTel 2."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Modernizing database workloads on Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/modernizing-database-workloads-red-hat-openshift",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "As organizations continue to modernize their workloads, one of the most important questions is how to support the full range of database workloads, including SQL, NoSQL, vector, and in-memory databases."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How Datadog saves over $1 million each month by optimizing AI usage",
+      "link": "https://www.datadoghq.com/blog/how-datadog-saves-money-by-optimizing-ai-usage/",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "Learn how Datadog uses agent evaluations, spending guardrails, and context optimization to save over $1 million each month while balancing cost and performance."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Beyond the $1 AI era: How federal agencies can build the evidence for FY27 renewals",
+      "link": "https://www.datadoghq.com/blog/federal-agencies-ai-spend-cloud-cost-management/",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "Learn how federal agencies can use Datadog Cloud Cost Management to build the cost, usage, and value evidence needed for FY27 AI renewals as OneGov promotions expire."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Making room for what's next in the GitLab UI",
+      "link": "https://about.gitlab.com/blog/making-room-for-whats-next-in-the-gitlab-ui/",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "Throughout this year, the product interface has been in a season of reduction. On the heels of dark mode, the tide has been moving out with a quieter application chrome, overall color reduction, and neutral controls."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Git was built for humans — agents need an upgrade",
+      "link": "https://about.gitlab.com/blog/gitlab-next-gen-scm/",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": "The industry is now racing to rebuild source code management for agents. We showed our answer at GitLab Transcend, but let’s reiterate why rebuilding the Git backend is only half the problem."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Patch Release: 19.3.1, 19.2.5, 19.1.7",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-1-released/",
+      "date": "2026-08-26T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Moving from Minimus to Docker Hardened Images",
+      "link": "https://www.docker.com/blog/moving-from-minimus-to-docker-hardened-images/",
+      "date": "2026-08-25T22:27:06.000Z",
+      "excerpt": "The Minimus registry goes offline on October 22. Here is the migration path, the free help Docker is offering, and where to start."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How to evaluate LLMs before production",
+      "link": "https://github.blog/ai-and-ml/llms/how-to-evaluate-llms-before-production/",
+      "date": "2026-08-25T21:35:11.000Z",
+      "excerpt": "These are the lessons we learned evaluating LLMs for real-world secret scanning."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "The patch window is collapsing: Why security needs a new control plane",
+      "link": "https://azure.microsoft.com/en-us/blog/the-patch-window-is-collapsing-why-security-needs-a-new-control-plane/",
+      "date": "2026-08-25T16:00:00.000Z",
+      "excerpt": "Organizations need protection that operates in the gap between discovery and remediation."
+    }
+  ]
+}
