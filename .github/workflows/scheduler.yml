@@ -1,0 +1,98 @@
+name: Unified Maintenance Scheduler
+
+# Single cron entry point for all periodic maintenance.
+# Each dispatch is isolated: one task failure must not block unrelated tasks.
+on:
+  schedule:
+    - cron: '0 18 * * *'    # OSS project metadata / development pulse
+    - cron: '20 20 * * *'   # Daily digest primary collection
+    - cron: '15 21 * * *'   # Digest merge gate primary
+    - cron: '55 22 * * *'   # Daily digest collection backstop
+    - cron: '30 23 * * *'   # Seoul / nationwide events
+    - cron: '35 0 * * *'    # Digest health
+    - cron: '05 1 * * *'    # Digest merge gate backstop
+    - cron: '40 2 * * *'    # Pages deploy backstop
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Task to dispatch'
+        required: true
+        type: choice
+        default: all
+        options:
+          - all
+          - project-metadata
+          - daily-digest
+          - digest-fallback
+          - digest-health
+          - update-events
+          - deploy
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: unified-maintenance-scheduler
+  cancel-in-progress: false
+
+jobs:
+  project-metadata:
+    if: github.event.schedule == '0 18 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.task == 'project-metadata' || inputs.task == 'all'))
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch project metadata refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run project-metadata.yml --repo "${{ github.repository }}" --ref main
+
+  daily-digest:
+    if: github.event.schedule == '20 20 * * *' || github.event.schedule == '55 22 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.task == 'daily-digest' || inputs.task == 'all'))
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch daily digest collection
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run daily-digest.yml --repo "${{ github.repository }}" --ref main
+
+  digest-fallback:
+    if: github.event.schedule == '15 21 * * *' || github.event.schedule == '05 1 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.task == 'digest-fallback' || inputs.task == 'all'))
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch digest merge gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run digest-fallback.yml --repo "${{ github.repository }}" --ref main
+
+  digest-health:
+    if: github.event.schedule == '35 0 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.task == 'digest-health' || inputs.task == 'all'))
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch digest health check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run digest-health.yml --repo "${{ github.repository }}" --ref main
+
+  update-events:
+    if: github.event.schedule == '30 23 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.task == 'update-events' || inputs.task == 'all'))
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch event refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-events.yml --repo "${{ github.repository }}" --ref main
+
+  deploy-backstop:
+    if: github.event.schedule == '40 2 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.task == 'deploy' || inputs.task == 'all'))
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Pages deploy backstop
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
