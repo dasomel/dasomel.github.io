@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+// This collector is intentionally checked in and push-triggered so schema changes
+// can bootstrap generated pulse data immediately after landing on main.
 const ROOT = process.cwd();
 const projectsDir = path.join(ROOT, 'src', 'content', 'projects');
 const outputFile = path.join(ROOT, 'src', 'data', 'project-repo-meta.json');
