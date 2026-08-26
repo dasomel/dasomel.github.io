@@ -1,0 +1,1 @@
+`lifecycle.svg` summarizes the public OpenForge blueprint lifecycle: project definition/bootstrap, repository and documentation standards, CI/security verification, release, and a learning loop that feeds operational lessons back into the baseline.
