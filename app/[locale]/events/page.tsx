@@ -3,60 +3,16 @@ import { getSeoulEvents } from '@/lib/content';
 import { routing } from '@/i18n/routing';
 import EventsBrowser from './EventsBrowser';
 
-export function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
+export function generateStaticParams(){return routing.locales.map(locale=>({locale}))}
+export async function generateMetadata({params}:{params:Promise<{locale:string}>}){const{locale}=await params;const t=await getTranslations({locale,namespace:'events'});return{title:t('title')}}
+
+export default async function EventsPage({params}:{params:Promise<{locale:string}>}){
+  const{locale}=await params;const t=await getTranslations({locale,namespace:'events'});const{updatedAt,events}=getSeoulEvents();const today=new Date().toISOString().slice(0,10);const upcoming=events.filter(event=>!event.endDate||event.endDate>=today);const ongoing=upcoming.filter(event=>event.startDate<=today&&(!event.endDate||event.endDate>=today));const scheduled=upcoming.filter(event=>event.startDate>today);const snapshot=updatedAt?new Date(updatedAt).toISOString().slice(0,10):null;
+  return <main>
+    <section className="border-b" style={{borderColor:'var(--border)'}}><div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16 lg:py-16"><div className="font-mono text-xs font-medium tracking-[0.12em]" style={{color:'var(--accent)'}}>DATA SURFACE / EVENTS OBSERVATORY</div><h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{color:'var(--text)'}}>{locale==='en'?'A small automated data surface.':'자동화로 유지되는 작은 데이터 관측면.'}</h1><p className="mt-5 max-w-4xl text-base leading-7 sm:text-lg" style={{color:'var(--text-muted)'}}>{locale==='en'?'The event browser is generated from repository data and refreshed by scheduled automation. It demonstrates the same build → refresh → verify pattern used elsewhere in the lab.':'행사 브라우저는 저장소 데이터에서 생성되고 통합 스케줄러가 갱신합니다. 이 페이지도 사이트의 build → refresh → verify 패턴을 그대로 따릅니다.'}</p></div></section>
+    <section className="border-b" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-6 px-5 py-5 sm:px-8 md:grid-cols-4 lg:px-16"><Metric label={locale==='en'?'Visible events':'노출 행사'} value={String(upcoming.length)}/><Metric label={locale==='en'?'Ongoing':'진행 중'} value={String(ongoing.length)}/><Metric label={locale==='en'?'Upcoming':'예정'} value={String(scheduled.length)}/><Metric label={locale==='en'?'Data snapshot':'데이터 시점'} value={snapshot||'—'}/></div></section>
+    <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-16"><div className="flex flex-wrap items-end justify-between gap-4"><div><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--accent)'}}>ONGOING / UPCOMING</div><h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em]" style={{color:'var(--text)'}}>{locale==='en'?'Current event stream':'현재 행사 스트림'}</h2></div><div className="font-mono text-[9px] tracking-[0.09em]" style={{color:'var(--text-faint)'}}>ENDED ITEMS EXCLUDED</div></div><div className="mt-6">{upcoming.length===0?<div className="border-y px-5 py-16 text-center" style={{borderColor:'var(--border)',color:'var(--text-muted)'}}><p className="text-lg">{t('no_events')}</p><p className="mt-2 text-sm">{t('no_events_desc')}</p></div>:<EventsBrowser events={upcoming}/>}</div></section>
+    <section className="border-t" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto grid max-w-[1440px] gap-5 px-5 py-8 sm:px-8 lg:grid-cols-[220px_1fr] lg:px-16"><div className="font-mono text-[10px] font-semibold tracking-[0.13em]" style={{color:'var(--signal)'}}>AUTOMATION NOTE</div><p className="text-sm leading-6" style={{color:'var(--text-muted)'}}>{locale==='en'?'Ended events are filtered at render time. The underlying dataset is refreshed independently so a collection failure does not need to break the rest of the site.':'종료된 행사는 렌더링 시 제외합니다. 데이터 수집은 독립적으로 갱신되어 하나의 수집 실패가 사이트 전체에 영향을 주지 않도록 구성합니다.'}</p></div></section>
+  </main>
 }
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'events' });
-  return { title: t('title') };
-}
-
-export default async function EventsPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'events' });
-  const { updatedAt, events } = getSeoulEvents();
-  const today = new Date().toISOString().slice(0, 10);
-  const upcoming = events.filter(event => !event.endDate || event.endDate >= today);
-  const snapshot = updatedAt ? new Date(updatedAt).toISOString().slice(0, 10) : null;
-
-  return (
-    <main>
-      <section className="border-b" style={{ borderColor: 'var(--border)' }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-16 lg:py-16">
-          <div className="font-mono text-xs font-medium tracking-[0.12em]" style={{ color: 'var(--accent)' }}>EVENTS / CURATED DATA</div>
-          <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{ color: 'var(--text)' }}>
-            {locale === 'en' ? 'Events and schedules available now.' : '지금 볼 수 있는 행사와 일정.'}
-          </h1>
-          <p className="mt-5 max-w-5xl text-base leading-7 sm:text-lg" style={{ color: 'var(--text-muted)' }}>
-            Repository-generated events data is refreshed by automation.{snapshot ? ` Current data snapshot: ${snapshot}.` : ''}
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-16">
-        <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>ONGOING / UPCOMING</div>
-        <div className="mt-5">
-          {upcoming.length === 0 ? (
-            <div className="rounded-2xl border px-5 py-16 text-center" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)', color: 'var(--text-muted)' }}>
-              <p className="text-lg">{t('no_events')}</p>
-              <p className="mt-2 text-sm">{t('no_events_desc')}</p>
-            </div>
-          ) : (
-            <EventsBrowser events={upcoming} />
-          )}
-        </div>
-      </section>
-
-      <section className="border-t" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface-hi)' }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 lg:px-16">
-          <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>DATA NOTE</div>
-          <p className="mt-2 text-sm leading-6" style={{ color: 'var(--text-muted)' }}>
-            {locale === 'en' ? 'Ended events are excluded; only ongoing and upcoming schedules are shown.' : '화면에서는 종료된 행사를 제외하고 진행 중·예정 일정만 노출합니다.'}
-          </p>
-        </div>
-      </section>
-    </main>
-  );
-}
+function Metric({label,value}:{label:string;value:string}){return <div><div className="font-mono text-[9px] uppercase tracking-[0.1em]" style={{color:'var(--text-faint)'}}>{label}</div><div className="mt-1 text-sm font-semibold" style={{color:'var(--text)'}}>{value}</div></div>}

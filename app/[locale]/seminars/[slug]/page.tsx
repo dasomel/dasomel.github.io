@@ -2,67 +2,20 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { getSeminarBySlug, getSeminars } from '@/lib/content';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MDXContent } from '@/components/MDXContent';
 import { routing } from '@/i18n/routing';
 import { ArrowLeft, ExternalLink, Video, Calendar, MapPin } from 'lucide-react';
 
-export function generateStaticParams() {
-  const params: { locale: string; slug: string }[] = [];
-  routing.locales.forEach(locale => {
-    getSeminars(locale as 'ko' | 'en').forEach(s => params.push({ locale, slug: s.slug }));
-  });
-  return params;
-}
+export function generateStaticParams(){const params:{locale:string;slug:string}[]=[];routing.locales.forEach(locale=>getSeminars(locale as 'ko'|'en').forEach(s=>params.push({locale,slug:s.slug})));return params}
 
-export default async function SeminarPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-  const { locale, slug } = await params;
-  const lang = locale as 'ko' | 'en';
-  const result = getSeminarBySlug(slug, lang);
-  if (!result) notFound();
-  const { meta, content } = result;
-  const ts = await getTranslations({ locale, namespace: 'seminars' });
-  const tc = await getTranslations({ locale, namespace: 'common' });
-  const base = lang === 'en' ? '/en' : '/ko';
-
-  return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <Link href={`${base}/seminars`} className="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style={{ color: 'var(--text-muted)' }}>
-        <ArrowLeft className="w-4 h-4" />{tc('back')}
-      </Link>
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold mb-3" style={{ color: 'var(--text)' }}>{meta.title}</h1>
-        <div className="flex flex-wrap gap-3 mb-4 text-sm font-mono" style={{ color: 'var(--text-faint)' }}>
-          <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{meta.date.slice(0, 10)}</span>
-          <span>{meta.event}</span>
-          {meta.location && <span className="flex items-center gap-1"><MapPin className="w-4 h-4" />{meta.location}</span>}
-        </div>
-        <div className="flex gap-3 flex-wrap">
-          {meta.slides && (
-            <Button asChild size="sm" variant="outline">
-              <a href={meta.slides} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                <ExternalLink className="w-4 h-4" />{ts('slides')}
-              </a>
-            </Button>
-          )}
-          {meta.video && (
-            <Button asChild size="sm" variant="outline">
-              <a href={meta.video} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                <Video className="w-4 h-4" />{ts('video')}
-              </a>
-            </Button>
-          )}
-        </div>
-        {meta.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-4">
-            {meta.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}
-          </div>
-        )}
-      </header>
-      <article className="prose cne-doc-prose max-w-none">
-        <MDXContent source={content} />
-      </article>
-    </div>
-  );
+export default async function SeminarPage({params}:{params:Promise<{locale:string;slug:string}>}){
+  const{locale,slug}=await params;const lang=locale as 'ko'|'en';const result=getSeminarBySlug(slug,lang);if(!result)notFound();const{meta,content}=result;const ts=await getTranslations({locale,namespace:'seminars'});const tc=await getTranslations({locale,namespace:'common'});const base=lang==='en'?'/en':'/ko';
+  return <main>
+    <div className="mx-auto max-w-[1080px] px-5 pt-8 sm:px-8"><Link href={`${base}/seminars`} className="inline-flex items-center gap-2 text-sm" style={{color:'var(--text-muted)'}}><ArrowLeft className="h-4 w-4"/>{tc('back')}</Link></div>
+    <header className="mx-auto max-w-[1080px] px-5 pb-9 pt-10 sm:px-8"><div className="font-mono text-[10px] font-semibold tracking-[0.12em]" style={{color:'var(--accent)'}}>SHARED PRACTICE / TALK RECORD</div><h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl" style={{color:'var(--text)'}}>{meta.title}</h1><div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-mono" style={{color:'var(--text-faint)'}}><span className="flex items-center gap-1"><Calendar className="h-4 w-4"/>{meta.date.slice(0,10)}</span><span>{meta.event}</span>{meta.location&&<span className="flex items-center gap-1"><MapPin className="h-4 w-4"/>{meta.location}</span>}</div><div className="mt-6 flex flex-wrap gap-3">{meta.slides&&<Button asChild size="sm" variant="outline"><a href={meta.slides} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><ExternalLink className="h-4 w-4"/>{ts('slides')}</a></Button>}{meta.video&&<Button asChild size="sm" variant="outline"><a href={meta.video} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2"><Video className="h-4 w-4"/>{ts('video')}</a></Button>}</div>{meta.tags.length>0&&<div className="mt-6 font-mono text-[9px] uppercase leading-6 tracking-[0.09em]" style={{color:'var(--text-faint)'}}>{meta.tags.join(' · ')}</div>}</header>
+    <section className="border-y" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto max-w-[1080px] px-5 py-5 sm:px-8"><div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[9px] uppercase tracking-[0.09em]" style={{color:'var(--text-faint)'}}><span style={{color:'var(--accent)'}}>01 / Context</span><span>02 / Practice</span><span>03 / Lessons</span><span>04 / Shared evidence</span></div></div></section>
+    <section className="mx-auto grid max-w-[1080px] gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[180px_1fr]"><aside className="hidden lg:block"><div className="sticky top-24"><div className="font-mono text-[9px] font-semibold tracking-[0.12em]" style={{color:'var(--signal)'}}>WHY THIS MATTERS</div><p className="mt-3 text-xs leading-5" style={{color:'var(--text-muted)'}}>{lang==='en'?'A talk records what was stable enough to explain, defend and share after practice.':'발표는 실천 이후 설명하고 공유할 만큼 정리된 판단과 경험을 남기는 기록입니다.'}</p></div></aside><article className="prose cne-doc-prose min-w-0 max-w-[820px] prose-headings:font-semibold"><MDXContent source={content}/></article></section>
+    <section className="border-t" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}><div className="mx-auto max-w-[1080px] px-5 py-9 sm:px-8"><div className="font-mono text-[10px] font-semibold tracking-[0.12em]" style={{color:'var(--accent)'}}>TRACE / SHARED PRACTICE</div><p className="mt-2 max-w-3xl text-sm leading-6" style={{color:'var(--text-muted)'}}>{lang==='en'?'Use the topic threads and project records to follow the talk back to implementation, architecture and later field notes.':'주제 흐름과 프로젝트 상세를 따라가면 발표 내용을 실제 구현·아키텍처·후속 Field Note와 다시 연결할 수 있습니다.'}</p></div></section>
+  </main>
 }
