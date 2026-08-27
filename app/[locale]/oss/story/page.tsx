@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import OssStoryInfographic from '@/components/oss/OssStoryInfographic';
 import OssStoryMobileInfographic from '@/components/oss/OssStoryMobileInfographic';
+import { OssSubnav } from '@/components/oss/OssSubnav';
 import styles from './oss-story.module.css';
 import { routing } from '@/i18n/routing';
 
@@ -12,6 +13,7 @@ export default async function OssStoryPage({ params }: { params: Promise<{ local
   const eras = ['Framework', 'DevOps', 'Cloud Native', 'Platform', 'OSS', 'AI-assisted Engineering'];
   return (
     <main>
+      <OssSubnav locale={currentLocale} active="story" />
       <section className="border-b" style={{borderColor:'var(--border)'}}>
         <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-16 lg:py-16">
           <div className="font-mono text-xs font-semibold tracking-[0.14em]" style={{color:'var(--accent)'}}>STORY / ENGINEERING EVOLUTION</div>
