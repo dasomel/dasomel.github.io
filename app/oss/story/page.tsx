@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function LegacyStoryPage() {
-  redirect('/ko/oss/story/');
+  redirect('/ko/oss/why/');
 }
