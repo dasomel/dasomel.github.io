@@ -16,23 +16,14 @@ solution: "A reproducible k3s-based reference platform using Vagrant, Helm, and 
 
 It intentionally focuses on **integration evidence**, not production-scale infrastructure. The platform demonstrates how CDC, streaming, stream processing, lakehouse storage, SQL analytics, BI, and orchestration can work together under one GitOps-managed environment.
 
-```text
-Source / PostgreSQL
-        │
-        ├── Debezium CDC
-        ▼
-      Kafka
-        │
-        ▼
-      Flink
-        │
-        ▼
- Iceberg Lakehouse
-        │        │
-        │        └── Trino → Superset
-        │
-        └── Airflow orchestration
-```
+<Mermaid chart={`flowchart TB
+  SRC["Source / PostgreSQL"] -->|"Debezium CDC"| KAFKA["Kafka"]
+  KAFKA --> FLINK["Flink"]
+  FLINK --> ICEBERG["Iceberg Lakehouse"]
+  ICEBERG --> TRINO["Trino"]
+  TRINO --> SUPERSET["Superset"]
+  AIRFLOW["Airflow orchestration"] -.-> FLINK
+  AIRFLOW -.-> TRINO`} />
 
 ## Platform Components
 
@@ -63,6 +54,29 @@ Two real data demonstrations provide validation:
 - **Synthetic clickstream** — generated events through streaming and lakehouse processing
 - **PostgreSQL CDC** — source DB changes captured by Debezium and processed into the lakehouse
 
+## Architecture
+
+<Mermaid chart={`flowchart TB
+  subgraph CLUSTER["Beluga local cluster"]
+    EDGE["Gateway · Identity · Policy"]
+    KAFKA["Kafka / CDC"]
+    PLATFORM["Platform Services"]
+    FLINK["Flink"]
+    LAKE["Lakekeeper + SeaweedFS"]
+    TRINO["Trino"]
+    SUPERSET["Superset"]
+    AIRFLOW["Airflow"]
+    EDGE --> KAFKA
+    EDGE --> PLATFORM
+    KAFKA --> FLINK
+    FLINK --> LAKE
+    LAKE --> TRINO
+    TRINO --> SUPERSET
+    AIRFLOW -.-> FLINK
+    AIRFLOW -.-> TRINO
+    PLATFORM -.-> TRINO
+  end`} />
+
 ## Local Resource Profile
 
 Beluga is not a tiny demo. It provisions four VMs and a full data stack.
@@ -79,21 +93,13 @@ This makes Beluga a reference environment for studying the **integration cost of
 
 The repository deliberately separates rendering from real runtime verification:
 
-```text
-make test
-   ↓
-cluster health
-   ↓
-Kafka + CDC
-   ↓
-Flink + Iceberg
-   ↓
-Trino query
-   ↓
-Airflow / Superset
-   ↓
-authorization regression
-```
+<Mermaid chart={`flowchart TB
+  TEST["make test"] --> H["01 · cluster health"]
+  H --> CDC["02 · Kafka + CDC"]
+  CDC --> STREAM["03 · Flink + Iceberg"]
+  STREAM --> QUERY["04 · Trino query"]
+  QUERY --> DAG["05 · Airflow / Superset"]
+  DAG --> AUTH["06 · authorization regression"]`} />
 
 The scripts inspect real cluster/API state instead of treating successful Helm rendering as proof of a working platform.
 
@@ -133,12 +139,7 @@ make test
 
 ## Project Relationship
 
-```text
-kube-ready-box
-      ↓
-Beluga local Kubernetes
-      ↓
-Kafka → Flink → Iceberg → Trino → Superset
-      ↓
-Beluga Manager (unified control plane, early stage)
-```
+<Mermaid chart={`flowchart TB
+  READY["kube-ready-box"] --> K8S["Beluga local Kubernetes"]
+  K8S --> FLOW["Kafka → Flink → Iceberg → Trino → Superset"]
+  FLOW --> MANAGER["Beluga Manager\nunified control plane · early stage"]`} />

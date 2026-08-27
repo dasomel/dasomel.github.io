@@ -4,7 +4,7 @@ description: Narwhal IDP architectural philosophy, three-tier integration model,
 project: Narwhal
 path: narwhal/overview
 order: 1100
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # Platform Overview
@@ -19,26 +19,14 @@ lastModified: 2026-08-23
 
 ## Three-Tier Architecture Model
 
-```text
-┌──────────────────────────────────────────────────────────┐
-│  [L3 Management & Developer Experience]                  │
-│  - Narwhal Portal (Next.js 16 + React 19)                │
-│  - Self-Service Workbenches & Release Tracking           │
-├──────────────────────────────────────────────────────────┤
-│  [L2 Platform Services & Governance]                     │
-│  - GitOps: Argo CD + Gitea (App-of-Apps)                 │
-│  - IAM & SSO: Keycloak OIDC + APISIX Gateway             │
-│  - Observability: Prometheus + Grafana + Loki + Tempo    │
-│  - Storage: NFS CSI + nfs-quota-agent + SeaweedFS S3     │
-│  - Security: OpenBao Secrets + Kyverno Policies          │
-├──────────────────────────────────────────────────────────┤
-│  [L1 Infrastructure & Core Networking]                   │
-│  - Kubernetes v1.35 HA (3 Master + 3 Worker)             │
-│  - kube-vip Virtual IP (192.168.56.100)                  │
-│  - Cilium eBPF Host Routing & Istio Ambient Mesh         │
-│  - Kube-Ready-Box (Ubuntu 26.04 LTS + XFS Quotas)        │
-└──────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  L3["L3 · Management & Developer Experience\nNarwhal Portal · Self-Service Workbenches · Release Tracking"]
+  L2["L2 · Platform Services & Governance\nArgo CD + Gitea · Keycloak + APISIX · Prometheus/Grafana/Loki/Tempo · NFS/SeaweedFS · OpenBao/Kyverno"]
+  L1["L1 · Infrastructure & Core Networking\nKubernetes v1.35 HA · kube-vip · Cilium · Istio Ambient · Kube-Ready-Box"]
+  L3 -->|"platform APIs / identity / telemetry"| L2
+  L2 -->|"cluster services / policy / storage / networking"| L1`} />
+
+This is not just a stack inventory. It separates responsibilities into **experience → platform services → infrastructure**, so higher layers consume stable platform contracts instead of exposing every implementation detail.
 
 ## Baseline Specifications
 

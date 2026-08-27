@@ -20,21 +20,13 @@ This makes it a **Kubernetes + Linux filesystem enforcement component**, not mer
 
 ## Core Flow
 
-```text
-PVC
- ↓
-PersistentVolume
- ↓
-NFS CSI / provisioner
- ↓
-NFS export + subdirectory
- ↓
-NFS Quota Agent
- ↓
-Filesystem Project Quota
- ↓
-Actual storage enforcement
-```
+<Mermaid chart={`flowchart TB
+  PVC["PVC"] --> PV["PersistentVolume"]
+  PV --> NFS["NFS CSI / provisioner"]
+  NFS --> EXPORT["NFS export + subdirectory"]
+  EXPORT --> AGENT["NFS Quota Agent"]
+  AGENT --> QUOTA["Filesystem Project Quota"]
+  QUOTA --> LIMIT["Actual storage enforcement"]`} />
 
 The agent supports native NFS PVs and CSI NFS PVs, including path mapping based on NFS share/subdirectory metadata.
 
@@ -50,22 +42,16 @@ The agent supports native NFS PVs and CSI NFS PVs, including path mapping based 
 
 The agent runs as a **DaemonSet on the NFS server node** because quota operations must target the local filesystem rather than an NFS client mount.
 
-```text
-Kubernetes Node
-┌─────────────────────────────────────┐
-│ NFS Server Node                     │
-│                                     │
-│  nfs-quota-agent                    │
-│       │                             │
-│       ├── Kubernetes API            │
-│       ├── hostPath:/data            │
-│       ├── /dev                       │
-│       └── /etc/projects / /etc/projid│
-│               │                     │
-│               ▼                     │
-│        Local XFS/ext4/Btrfs         │
-└─────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  subgraph NODE["NFS Server Node"]
+    AGENT["nfs-quota-agent DaemonSet"]
+    API["Kubernetes API"]
+    HOST["hostPath:/data · /dev · /etc/projects · /etc/projid"]
+    FS["Local XFS / ext4 / Btrfs"]
+    AGENT --> API
+    AGENT --> HOST
+    HOST --> FS
+  end`} />
 
 This creates a larger privilege boundary than a normal Kubernetes controller, so node placement and hostPath scope are part of the security design.
 
@@ -127,14 +113,8 @@ helm install nfs-quota-agent ./charts/nfs-quota-agent \
 
 ## Project Relationship
 
-```text
-kube-ready-box / Linux filesystem
-              ↓
-         NFS Server
-              ↓
-      nfs-quota-agent
-              ↓
-      Kubernetes PV/PVC
-              ↓
-           Narwhal
-```
+<Mermaid chart={`flowchart TB
+  READY["kube-ready-box / Linux filesystem"] --> SERVER["NFS Server"]
+  SERVER --> AGENT["nfs-quota-agent"]
+  AGENT --> PV["Kubernetes PV / PVC"]
+  PV --> NARWHAL["Narwhal"]`} />

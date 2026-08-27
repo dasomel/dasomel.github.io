@@ -4,7 +4,7 @@ description: Narwhal IDP의 아키텍처 철학, 3계층 통합 모델 및 35개
 project: Narwhal
 path: narwhal/overview
 order: 1100
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # 플랫폼 개요
@@ -19,26 +19,14 @@ lastModified: 2026-08-23
 
 ## 3계층 아키텍처 모델
 
-```text
-┌──────────────────────────────────────────────────────────┐
-│  [L3 Management & Developer Experience]                  │
-│  - Narwhal Portal (Next.js 16 + React 19)                │
-│  - Self-Service Workbenches & Release Tracking           │
-├──────────────────────────────────────────────────────────┤
-│  [L2 Platform Services & Governance]                     │
-│  - GitOps: Argo CD + Gitea (App-of-Apps)                 │
-│  - IAM & SSO: Keycloak OIDC + APISIX Gateway             │
-│  - Observability: Prometheus + Grafana + Loki + Tempo    │
-│  - Storage: NFS CSI + nfs-quota-agent + SeaweedFS S3     │
-│  - Security: OpenBao Secrets + Kyverno Policies          │
-├──────────────────────────────────────────────────────────┤
-│  [L1 Infrastructure & Core Networking]                   │
-│  - Kubernetes v1.35 HA (3 Master + 3 Worker)             │
-│  - kube-vip Virtual IP (192.168.56.100)                  │
-│  - Cilium eBPF Host Routing & Istio Ambient Mesh         │
-│  - Kube-Ready-Box (Ubuntu 26.04 LTS + XFS Quotas)        │
-└──────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  L3["L3 · Management & Developer Experience\nNarwhal Portal · Self-Service Workbenches · Release Tracking"]
+  L2["L2 · Platform Services & Governance\nArgo CD + Gitea · Keycloak + APISIX · Prometheus/Grafana/Loki/Tempo · NFS/SeaweedFS · OpenBao/Kyverno"]
+  L1["L1 · Infrastructure & Core Networking\nKubernetes v1.35 HA · kube-vip · Cilium · Istio Ambient · Kube-Ready-Box"]
+  L3 -->|"platform APIs / identity / telemetry"| L2
+  L2 -->|"cluster services / policy / storage / networking"| L1`} />
+
+이 모델은 단순 기술 스택 목록이 아니라 **사용자 경험 → 플랫폼 서비스 → 인프라 기반**으로 책임 경계를 분리합니다. 상위 계층은 하위 계층의 세부 구현을 직접 노출하기보다 안정적인 플랫폼 계약을 소비합니다.
 
 ## 주요 스펙 및 베이스라인
 
