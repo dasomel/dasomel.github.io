@@ -4,7 +4,7 @@ description: Argo CD + Gitea App-of-Apps 선언적 배포 및 Sync Waves 의존�
 project: Narwhal
 path: narwhal/gitops
 order: 1102
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # GitOps 워크플로
@@ -15,16 +15,45 @@ Narwhal의 모든 인프라와 35개 플랫폼 애플리케이션은 **Argo CD**
 
 루트 애플리케이션(`root-app`) 하나가 `gitops/applications/` 디렉토리의 모든 자식 애플리케이션 매니페스트를 재귀적으로 추적하고 동기화합니다.
 
-```text
-                      [ root-application ]
-                               │
-       ┌───────────────────────┼───────────────────────┐
-       ▼ (Wave 1: Core)        ▼ (Wave 2: Infra)       ▼ (Wave 3: Apps)
-  - cilium                - keycloak              - narwhal-portal
-  - kube-vip              - apisix                - demo-apps
-  - cert-manager          - prometheus-stack      - user-workloads
-  - nfs-csi-driver        - seaweedfs             - chaos-mesh
-```
+<Mermaid chart={`flowchart TB
+  ROOT["root-application\nApp-of-Apps"]
+  ROOT --> CORE["Wave 1 · Core"]
+  ROOT --> INFRA["Wave 2 · Infrastructure"]
+  ROOT --> APPS["Wave 3 · Applications"]
+
+  subgraph CORE_SET["Core foundation"]
+    CILIUM["Cilium"]
+    KVIP["kube-vip"]
+    CERT["cert-manager"]
+    NFS["NFS CSI driver"]
+  end
+
+  subgraph INFRA_SET["Platform infrastructure"]
+    KEYCLOAK["Keycloak"]
+    APISIX["APISIX"]
+    OBS["Prometheus stack"]
+    SEAWEED["SeaweedFS"]
+  end
+
+  subgraph APP_SET["Workloads"]
+    PORTAL["Narwhal Portal"]
+    DEMO["Demo apps"]
+    USER["User workloads"]
+    CHAOS["Chaos Mesh"]
+  end
+
+  CORE --> CILIUM
+  CORE --> KVIP
+  CORE --> CERT
+  CORE --> NFS
+  INFRA --> KEYCLOAK
+  INFRA --> APISIX
+  INFRA --> OBS
+  INFRA --> SEAWEED
+  APPS --> PORTAL
+  APPS --> DEMO
+  APPS --> USER
+  APPS --> CHAOS`} />
 
 ## Sync Waves 단계별 의존성 제어
 

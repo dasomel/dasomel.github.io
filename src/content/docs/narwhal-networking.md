@@ -4,7 +4,7 @@ description: Cilium eBPF CNI, MetalLB L2 로드밸런싱, APISIX API Gateway 및
 project: Narwhal
 path: narwhal/networking
 order: 1103
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # 네트워크 및 Ingress
@@ -23,17 +23,11 @@ Narwhal은 iptables 오버헤드를 완전히 제거한 eBPF 기반 초고속 �
 2. **Apache APISIX**: SSL/TLS 종단, Keycloak OIDC 토큰 검증, Rate Limiting 및 업스트림 서비스 동적 라우팅
 3. **dnsmasq 로컬 DNS**: `*.local.narwhal.internal` 와일드카드 도메인을 `192.168.56.200`으로 자동 확인
 
-```text
-클라이언트 브라우저 (https://argocd.local.narwhal.internal)
-                         │
-                         ▼ (DNS: 192.168.56.200)
-             MetalLB LoadBalancer Pool
-                         │
-                         ▼
-             Apache APISIX Gateway (Port 443)
-                         │
-       ┌─────────────────┴─────────────────┐
-       │ (OIDC Auth Header Check)          │ (Internal Service Route)
-       ▼                                   ▼
-  Keycloak IdP (Verify Token)         Argo CD Server (Port 8080)
-```
+<Mermaid chart={`flowchart TB
+  CLIENT["Client browser\nhttps://argocd.local.narwhal.internal"] -->|"DNS resolves to 192.168.56.200"| LB["MetalLB LoadBalancer\n192.168.56.200"]
+  LB -->|"HTTPS :443"| APISIX["Apache APISIX Gateway\nTLS termination · routing · rate limiting"]
+  APISIX -->|"OIDC token verification"| KEYCLOAK["Keycloak IdP"]
+  APISIX -->|"authenticated upstream route"| ARGO["Argo CD Server\n:8080"]
+  KEYCLOAK -.->|"identity result"| APISIX`} />
+
+이 흐름에서 **MetalLB는 외부 진입점**, **APISIX는 TLS·인증·라우팅 경계**, **Keycloak은 신원 검증**, **Argo CD는 실제 업스트림 서비스** 역할을 맡습니다.
