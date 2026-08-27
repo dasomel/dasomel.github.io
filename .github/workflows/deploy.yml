@@ -13,12 +13,11 @@ permissions:
   pages: write
   id-token: write
 
-# Do not let a rerun of an older Pages workflow cancel a newer main deployment.
-# Runs are already serialized by the shared lock below; queueing is safer than
-# cancelling because GitHub Pages reruns can retain duplicate artifacts.
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
+# Do not add workflow-level concurrency here. GitHub keeps at most one pending
+# run per concurrency group, so a newer push replaces the older pending run
+# even when cancel-in-progress is false. The explicit lock job below already
+# serializes Pages builds without turning normal rapid commits into cancelled
+# workflow runs.
 
 env:
   NEXT_TELEMETRY_DISABLED: '1'
@@ -28,6 +27,7 @@ jobs:
     name: cross-repo CI lock
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     outputs:
       acquired: ${{ steps.acquire.outputs.acquired }}
     steps:
@@ -40,15 +40,36 @@ jobs:
           LOCK_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
+          stale_after_seconds=1200
+
           for attempt in $(seq 1 90); do
             if ! gh api "repos/${LOCK_REPO}/git/ref/heads/${LOCK_BRANCH}" >/dev/null 2>&1; then
-              if gh api --method POST "repos/${LOCK_REPO}/git/refs" -f "ref=refs/heads/${LOCK_BRANCH}" -f "sha=${LOCK_SHA}" >/dev/null 2>&1; then
+              if gh api --method POST "repos/${LOCK_REPO}/git/refs" \
+                -f "ref=refs/heads/${LOCK_BRANCH}" \
+                -f "sha=${LOCK_SHA}" >/dev/null 2>&1; then
                 echo "acquired=true" >> "$GITHUB_OUTPUT"
                 exit 0
               fi
+            else
+              lock_sha="$(gh api "repos/${LOCK_REPO}/git/ref/heads/${LOCK_BRANCH}" --jq '.object.sha' 2>/dev/null || true)"
+              lock_date="$(gh api "repos/${LOCK_REPO}/commits/${lock_sha}" --jq '.commit.committer.date' 2>/dev/null || true)"
+
+              if [[ -n "$lock_date" ]]; then
+                lock_epoch="$(date -d "$lock_date" +%s)"
+                now_epoch="$(date +%s)"
+                age=$((now_epoch - lock_epoch))
+
+                if (( age > stale_after_seconds )); then
+                  echo "::warning::Removing stale CI lock (${age}s old)"
+                  gh api --method DELETE "repos/${LOCK_REPO}/git/refs/heads/${LOCK_BRANCH}" >/dev/null 2>&1 || true
+                  continue
+                fi
+              fi
             fi
+
             sleep 10
           done
+
           echo "::error::Timed out waiting for cross-repo execution lock"
           exit 1
 
