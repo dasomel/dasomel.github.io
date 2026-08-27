@@ -1,12 +1,13 @@
 import Link from 'next/link';
 
-type Props = { locale: 'ko' | 'en'; active?: 'hub' | 'why' | 'story' | 'standards' };
+type Props = { locale: 'ko' | 'en'; active?: 'hub' | 'why' | 'evidence' | 'story' | 'standards' };
 
 export function OssSubnav({ locale, active }: Props) {
   const en = locale === 'en';
   const items = [
     { key: 'hub', href: en ? '/oss/en/' : '/oss/', label: en ? 'OSS Home' : 'OSS 홈' },
     { key: 'why', href: `/${locale}/oss/why/`, label: en ? 'Why OSS' : '왜 OSS인가' },
+    { key: 'evidence', href: `/${locale}/oss/evidence/`, label: en ? 'Evidence' : 'Evidence' },
     { key: 'standards', href: en ? '/oss/en/openforge/' : '/oss/openforge/', label: en ? 'Standards' : '표준 / OpenForge' },
     { key: 'story', href: `/${locale}/oss/story/`, label: en ? 'Engineering Story' : 'Engineering Story' },
   ] as const;
