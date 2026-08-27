@@ -20,25 +20,11 @@ solution: "K3s/Colima는 MLOps control plane으로 사용하고 실제 GPU-bound
 
 ## Control / Compute Separation
 
-```text
-                    KubeMetal Desktop
-             ┌──────────────────────────┐
-             │ Tauri v2 + React UI      │
-             │ Dashboard / Pipeline     │
-             │ Model Hub / MLX Studio   │
-             └────────────┬─────────────┘
-                          │
-               ┌──────────┴───────────┐
-               │                      │
-               ▼                      ▼
-      Kubernetes Control Plane     macOS Host Compute
-      ┌──────────────────────┐     ┌──────────────────────┐
-      │ K3s / Colima         │     │ MLX / Metal          │
-      │ MLflow               │     │ LoRA Fine-tuning     │
-      │ SeaweedFS            │     │ Model Serving        │
-      │ manifests / services │     │ Host resources       │
-      └──────────────────────┘     └──────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  UI["KubeMetal Desktop\nTauri v2 + React UI\nDashboard · Pipeline · Model Hub · MLX Studio"]
+  UI -->|"Kubernetes client"| K8S["Kubernetes Control Plane\nK3s / Colima\nMLflow · SeaweedFS · manifests/services"]
+  UI -->|"Tauri IPC"| HOST["macOS Host Compute\nMLX / Metal\nLoRA fine-tuning · model serving · host resources"]
+  HOST -.->|"model artifacts / runtime state"| K8S`} />
 
 Kubernetes가 실험 추적과 artifact storage를 담당하고, 모델 계산량이 큰 작업은 host에서 수행합니다.
 
@@ -61,18 +47,11 @@ KubeMetal은 기존 Kubernetes cluster를 모두 로컬 stack으로 가져오려
 
 기본 D30 경로는 **agent-only integration**입니다.
 
-```text
-Existing Kubernetes Cluster
-        │
-        │ kagent agent
-        ▼
-  KubeMetal kagent Ops
-        │
-        └── diagnostics / security / PromQL / observability
-
-KubeMetal local k3s
-        └── MLflow / SeaweedFS / local MLOps control plane
-```
+<Mermaid chart={`flowchart TB
+  EXT["Existing Kubernetes Cluster"] -->|"kagent agent"| OPS["KubeMetal kagent Ops"]
+  OPS --> DIAG["diagnostics · security · PromQL · observability"]
+  LOCAL["KubeMetal local k3s"] --> MLOPS["MLflow · SeaweedFS · local MLOps control plane"]
+  EXT -.->|"observe / diagnose, do not re-provision"| LOCAL`} />
 
 실제 테스트에서는 6-node K3s HA cluster에서 diagnostics/preflight 경로를 확인했고, 앱의 기본 통합 모델을 “기존 cluster를 다시 배포하는 것”이 아니라 “관찰·진단 대상으로 연결하는 것”으로 정리했습니다.
 
@@ -149,16 +128,10 @@ README 기준으로 Phase 1~3의 핵심 기능이 구현된 상태이며, 이후
 
 ## 프로젝트 관계
 
-```text
-Kube-Ready-Box / Kubernetes experience
-                ↓
-         Narwhal / cloud-native IDP
-
-Apple Silicon Mac
-        ↓
-    KubeMetal
-     ├── Kubernetes control plane
-     └── native MLX compute
-                ↓
-      local / edge MLOps
-```
+<Mermaid chart={`flowchart TB
+  READY["Kube-Ready-Box / Kubernetes experience"] --> NARWHAL["Narwhal · cloud-native IDP"]
+  MAC["Apple Silicon Mac"] --> KUBE["KubeMetal"]
+  KUBE --> CTRL["Kubernetes control plane"]
+  KUBE --> MLX["native MLX compute"]
+  CTRL --> EDGE["local / edge MLOps"]
+  MLX --> EDGE`} />

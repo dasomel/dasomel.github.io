@@ -4,7 +4,7 @@ description: Next.js 16 App Router 구조, gRPC 클라이언트 통신 및 OIDC 
 project: Narwhal Portal
 path: narwhal-portal/architecture
 order: 1201
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # 포털 아키텍처
@@ -18,23 +18,11 @@ Narwhal Portal은 프론트엔드와 플랫폼 백엔드 간의 효율적인 데
 - **인증 (Authentication)**: NextAuth.js + Keycloak OIDC OpenID Connect Federation
 - **백엔드 통신**: Protocol Buffers (`.proto`), gRPC-web, Envoy gRPC-JSON 트랜스코더
 
-```text
-Browser (React 19 Client Components)
-             │
-             ▼ HTTPS / Cookie
-  ┌────────────────────────────────────────────────────────┐
-  │  Next.js 16 Server (App Router / SSR)                  │
-  │  - Keycloak JWT Session Verification                   │
-  │  - Server Component Data Fetching                      │
-  └──────────────────────────┬─────────────────────────────┘
-                             │
-                             ▼ gRPC-web / HTTP2
-  ┌────────────────────────────────────────────────────────┐
-  │  Envoy Gateway / APISIX gRPC Transcoder                │
-  └──────────────────────────┬─────────────────────────────┘
-                             │
-                             ▼ Native gRPC
-  ┌────────────────────────────────────────────────────────┐
-  │  Narwhal Control Plane Core Services (Go / K8s API)    │
-  └────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  BROWSER["Browser\nReact 19 Client Components"] -->|"HTTPS · session cookie"| NEXT["Next.js 16 Server\nApp Router · SSR"]
+  KEYCLOAK["Keycloak OIDC"] -.->|"JWT / session verification"| NEXT
+  NEXT -->|"gRPC-web / HTTP2"| GATEWAY["Envoy Gateway / APISIX\ngRPC transcoder"]
+  GATEWAY -->|"native gRPC"| CORE["Narwhal Control Plane\nGo services · Kubernetes API"]
+  CORE -.->|"platform state / operations"| NEXT`} />
+
+이 구조에서 **Browser–Next.js 경계는 사용자 세션**, **Next.js–Gateway 경계는 웹 친화적 gRPC 통신**, **Gateway–Control Plane 경계는 native gRPC** 역할을 담당합니다. Keycloak은 데이터 경로가 아니라 인증 신뢰를 제공하는 identity plane으로 분리됩니다.

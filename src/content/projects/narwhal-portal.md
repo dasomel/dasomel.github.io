@@ -33,28 +33,15 @@ solution: "Narwhal 클러스터의 상태·애플리케이션·노드·카탈로
 
 ## 플랫폼 내 위치
 
-```text
-                    Narwhal IDP
-┌───────────────────────────────────────────────────────┐
-│ Kubernetes                                             │
-│ GitOps · SSO · Observability · Storage · Security      │
-└─────────────────────────┬─────────────────────────────┘
-                          │ platform APIs / cluster state
-                          ▼
-                ┌──────────────────────┐
-                │   Narwhal Portal     │
-                │   Next.js + React    │
-                ├──────────────────────┤
-                │ Dashboard            │
-                │ Catalog / My Apps     │
-                │ Nodes / Cost          │
-                │ Security / Governance│
-                │ Architecture / Tools │
-                └──────────┬───────────┘
-                           │
-                           ▼
-                 Developer / Operator
-```
+<Mermaid chart={`flowchart TB
+  IDP["Narwhal IDP\nKubernetes · GitOps · SSO · Observability · Storage · Security"]
+  IDP -->|"platform APIs / cluster state"| PORTAL["Narwhal Portal\nNext.js + React"]
+  PORTAL --> DASH["Dashboard"]
+  PORTAL --> APPS["Catalog / My Apps"]
+  PORTAL --> OPS["Nodes / Cost"]
+  PORTAL --> SEC["Security / Governance"]
+  PORTAL --> TOOLS["Architecture / Tools"]
+  PORTAL -->|"day-2 experience"| USER["Developer / Operator"]`} />
 
 Portal은 Narwhal 클러스터와 분리된 별도 제품이 아니라 **Narwhal 플랫폼의 day-2 운영 및 개발자 경험 계층**입니다. 따라서 Narwhal과 함께 사용할 때 가장 큰 가치가 발생합니다.
 
@@ -111,13 +98,8 @@ Portal은 단순 관리자 Dashboard가 아니라 Onboarding, Catalog, Templates
 
 ## 프로젝트 관계
 
-```text
-kube-ready-box
-       ↓
-   Narwhal Cluster
-       ├── GitOps / SSO / Observability / Storage / Security
-       │
-       └── Narwhal Portal
-              ↓
-       Developer / Operator UX
-```
+<Mermaid chart={`flowchart TB
+  READY["kube-ready-box"] --> CLUSTER["Narwhal Cluster"]
+  CLUSTER --> PLATFORM["GitOps · SSO · Observability · Storage · Security"]
+  CLUSTER --> PORTAL["Narwhal Portal"]
+  PORTAL --> UX["Developer / Operator UX"]`} />

@@ -4,7 +4,7 @@ description: Linux XFS Project Quotas, gRPC daemon internals, and provisioning f
 project: NFS Quota Agent
 path: nfs-quota-agent/architecture
 order: 1301
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # Storage Architecture
@@ -13,26 +13,26 @@ NFS Quota Agent runs as a lightweight, single-binary Go daemon on the NFS host s
 
 ## Architecture Diagram
 
-```text
-Kubernetes CSI Driver / Client
-             │
-             ▼ gRPC (:50051) / HTTP (:8080)
-┌──────────────────────────────────────────────────────────┐
-│  nfs-quota-agent Daemon (Go)                             │
-│  ├─ gRPC Server (CreateQuota, SetQuota, DeleteQuota)    │
-│  ├─ HTTP REST & Prometheus Metrics Exporter              │
-│  ├─ Project ID Allocator (/etc/projects, /etc/projid)    │
-│  └─ XFS Quota Controller (xfs_quota CLI / ioctl)         │
-└──────────────────────────┬───────────────────────────────┘
-                           │
-                           ▼ Linux Kernel VFS / XFS Engine
-┌──────────────────────────────────────────────────────────┐
-│  /srv/nfs Filesystem (Mounted with 'pquota')             │
-│  ├─ /srv/nfs/pvc-aaaa (Project ID 1001, Limit: 10 GiB)   │
-│  ├─ /srv/nfs/pvc-bbbb (Project ID 1002, Limit: 50 GiB)   │
-│  └─ /srv/nfs/pvc-cccc (Project ID 1003, Limit: 5 GiB)    │
-└──────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  CSI["Kubernetes CSI Driver / Client"] -->|"gRPC :50051 / HTTP :8080"| AGENT["nfs-quota-agent Daemon · Go"]
+
+  subgraph CAP["Agent capabilities"]
+    GRPC["gRPC Server\nCreateQuota · SetQuota · DeleteQuota"]
+    HTTP["HTTP REST + Prometheus metrics"]
+    PID["Project ID Allocator\n/etc/projects · /etc/projid"]
+    CTRL["XFS Quota Controller\nxfs_quota CLI / ioctl"]
+  end
+
+  AGENT --> GRPC
+  AGENT --> HTTP
+  AGENT --> PID
+  AGENT --> CTRL
+  CTRL -->|"Linux VFS / XFS enforcement"| FS["/srv/nfs filesystem\nmounted with pquota"]
+  FS --> P1["pvc-aaaa · Project 1001 · 10 GiB"]
+  FS --> P2["pvc-bbbb · Project 1002 · 50 GiB"]
+  FS --> P3["pvc-cccc · Project 1003 · 5 GiB"]`} />
+
+The diagram separates **Kubernetes requests → agent control logic → Linux/XFS kernel enforcement**. Capacity limits are ultimately enforced by XFS Project Quotas in the kernel rather than by application-level checks.
 
 ## XFS Project Quota Kernel Mechanics
 

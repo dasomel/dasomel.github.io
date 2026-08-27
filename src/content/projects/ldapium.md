@@ -57,23 +57,10 @@ TLS 활성화 시 LDAPS listener를 제공하고 certificate hostname/CA를 엄�
 
 ## Kubernetes 아키텍처
 
-```text
-             Keycloak / Applications / LDAP Clients
-                            │
-                    LDAP / LDAPS 389/636
-                            │
-                            ▼
-                ┌───────────────────────┐
-                │    ldapium Server     │
-                │  OpenLDAP 2.6.14      │
-                │  MDB + TLS + overlays │
-                └──────────┬────────────┘
-                           │
-                  Persistent Storage
-                           │
-                           ▼
-                    LDAP data / cn=config
-```
+<Mermaid chart={`flowchart TB
+  CLIENTS["Keycloak · Applications · LDAP Clients"] -->|"LDAP / LDAPS · 389 / 636"| SERVER["ldapium Server\nOpenLDAP 2.6.14\nMDB · TLS · overlays"]
+  UI["Optional Management UI"] -.->|"LDAP service"| SERVER
+  SERVER -->|"persistent storage"| DATA["LDAP data · cn=config"]`} />
 
 선택적으로 Web UI가 LDAP service를 통해 사용자와 그룹을 관리하며, Keycloak SSO를 사용할 때는 dedicated service account에 역할을 제한하는 구조를 사용할 수 있습니다.
 
@@ -105,19 +92,12 @@ LDAP 데이터와 `cn=config`를 모두 백업하는 경로를 제공합니다. 
 
 ldapium은 image, Helm chart, SBOM, checksum을 하나의 offline bundle로 묶고, offline installer가 필요한 파일이 없거나 verification에 실패하면 외부 registry로 fallback하지 않도록 하는 방향을 취합니다.
 
-```text
-release tag
-   ↓
-images + chart
-   ↓
-SBOM + checksums + provenance
-   ↓
-offline bundle
-   ↓
-verify
-   ↓
-imagePullPolicy=Never install
-```
+<Mermaid chart={`flowchart TB
+  TAG["release tag"] --> ART["images + Helm chart"]
+  ART --> EVIDENCE["SBOM + checksums + provenance"]
+  EVIDENCE --> BUNDLE["offline bundle"]
+  BUNDLE --> VERIFY["verify"]
+  VERIFY --> INSTALL["imagePullPolicy=Never install"]`} />
 
 이는 Narwhal의 air-gapped 운영 모델과 연결하기 좋은 특성입니다.
 
@@ -143,16 +123,14 @@ imagePullPolicy=Never install
 
 ## 프로젝트 관계
 
-```text
-OpenLDAP upstream
-       ↓
-     ldapium
-       ├── server image
-       ├── management UI
-       ├── Helm chart
-       └── offline bundle
-              ↓
-       Narwhal / Kubernetes IDP
-              ↓
-        Keycloak / SSO / Apps
-```
+<Mermaid chart={`flowchart TB
+  UP["OpenLDAP upstream"] --> LDAP["ldapium"]
+  LDAP --> IMG["server image"]
+  LDAP --> UI["management UI"]
+  LDAP --> HELM["Helm chart"]
+  LDAP --> OFFLINE["offline bundle"]
+  IMG --> IDP["Narwhal / Kubernetes IDP"]
+  UI --> IDP
+  HELM --> IDP
+  OFFLINE --> IDP
+  IDP --> SSO["Keycloak / SSO / Apps"]`} />
