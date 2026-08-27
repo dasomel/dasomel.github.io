@@ -17,6 +17,9 @@ export default async function WhyOssPage({ params }: { params: Promise<{ locale:
   const currentLocale = locale as 'ko' | 'en';
   const en = currentLocale === 'en';
   const base = en ? '/en' : '/ko';
+  const principles = en
+    ? [['Reproducible','Someone else should be able to rebuild it.'],['Observable','Success and failure need visible signals.'],['Evolvable','Commits and releases should show change over time.'],['Reusable','Lessons should survive beyond one repository.']]
+    : [['Reproducible','다른 사람도 같은 환경을 다시 만들 수 있어야 합니다.'],['Observable','성공과 실패를 확인할 수 있는 신호가 있어야 합니다.'],['Evolvable','Commit과 Release로 변화가 시간축에 남아야 합니다.'],['Reusable','한 저장소의 교훈이 다른 프로젝트에서도 재사용되어야 합니다.']];
 
   return (
     <main style={{ color: 'var(--text)' }}>
@@ -38,6 +41,13 @@ export default async function WhyOssPage({ params }: { params: Promise<{ locale:
         <section className="mt-14">
           <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: 'var(--accent)' }}>ENGINEERING LOOP</div>
           <div className="mt-6 divide-y" style={{ borderColor: 'var(--border-soft)' }}>{steps.map(([no,title,ko,english]) => <div key={no} className="grid gap-3 py-6 sm:grid-cols-[70px_170px_1fr] sm:items-baseline"><div className="font-mono text-xs" style={{ color: 'var(--text-faint)' }}>{no}</div><div className="text-lg font-semibold">{title}</div><p className="text-sm leading-7" style={{ color: 'var(--text-muted)' }}>{en ? english : ko}</p></div>)}</div>
+        </section>
+
+        <section className="mt-16 border-y py-10" style={{ borderColor:'var(--border)' }}>
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--signal)' }}>{en?'DESIGN PRINCIPLES':'설계 원칙'}</div><h2 className="mt-3 text-3xl font-semibold">{en?'What the work optimizes for':'무엇을 최적화하는가'}</h2><p className="mt-4 text-sm leading-7" style={{ color:'var(--text-muted)' }}>{en?'Not stars, repository count, or technology breadth. The target is durable engineering evidence.':'Star 수, 저장소 수, 기술 개수보다 오래 남는 engineering evidence를 우선합니다.'}</p></div>
+            <div className="grid gap-4 sm:grid-cols-2">{principles.map(([title,body]) => <div key={title} className="rounded-2xl p-5" style={{ backgroundColor:'var(--surface-hi)', border:'1px solid var(--border)' }}><div className="text-lg font-semibold">{title}</div><p className="mt-2 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{body}</p></div>)}</div>
+          </div>
         </section>
 
         <section className="mt-16 grid gap-5 md:grid-cols-3">
