@@ -25,6 +25,30 @@ const EVIDENCE: Record<string, Evidence[]> = {
     { label: 'Operating model', value: '3 tiers', detail: 'Separates policy (Standards), implementation (Templates), and evidence (Reference Implementation).' },
     { label: 'Feedback loop', value: 'Closed loop', detail: 'Standard → Apply → Measure → Learn → Improve → Standardize.' },
   ],
+  ldapium: [
+    { label: 'Upstream', value: 'OpenLDAP 2.6.14', detail: 'Builds the server image directly from the upstream source tarball instead of relying on an opaque legacy image.' },
+    { label: 'Security default', value: 'No defaults', detail: 'Ships with no default admin password and no sample directory data.' },
+    { label: 'Delivery', value: 'Image + UI + Helm', detail: 'Packages the server, optional management UI, Helm chart, Compose path, backup tooling, and offline bundle.' },
+    { label: 'Supply chain', value: 'SBOM + provenance', detail: 'Release boundary includes checksums, SBOM, provenance, pinned actions/tools, and verification-oriented offline assets.' },
+  ],
+  'kube-ready-box': [
+    { label: 'Ubuntu', value: '24.04 / 26.04', detail: 'Maintains conservative and latest-LTS node baselines for local Kubernetes environments.' },
+    { label: 'Architecture', value: 'ARM64 / AMD64', detail: 'Targets Apple Silicon and x86 local development environments.' },
+    { label: 'Filesystem', value: 'ext4 / XFS', detail: 'Separates general-purpose and quota/storage-oriented filesystem variants.' },
+    { label: 'Boundary', value: 'OS readiness', detail: 'Prepares kernel, networking, storage prerequisites, time sync, and diagnostics without bundling Kubernetes itself.' },
+  ],
+  beluga: [
+    { label: 'Data flow', value: 'CDC → BI', detail: 'Connects Kafka/Debezium, Flink, Iceberg, Trino, Superset, and Airflow across one reproducible environment.' },
+    { label: 'Validation', value: '2 E2E paths', detail: 'Uses synthetic clickstream and PostgreSQL CDC scenarios to verify actual data movement across system boundaries.' },
+    { label: 'Deployment', value: 'GitOps', detail: 'Uses Helm and Argo CD App-of-Apps as the deployment contract rather than one-off local installation steps.' },
+    { label: 'Scale', value: '32GB+ host', detail: 'Documents realistic local resource requirements instead of presenting the full stack as a lightweight demo.' },
+  ],
+  'beluga-manager': [
+    { label: 'Domain model', value: '4 domains', detail: 'Pipeline, Data Asset, Service, and Operations provide cross-system platform context.' },
+    { label: 'Integration', value: 'Adapter-based', detail: 'Keeps Kafka, Flink, Iceberg, Trino, and Airflow authoritative while normalizing access behind adapters.' },
+    { label: 'State model', value: '4 classes', detail: 'Separates authoritative state, short-lived cache, correlation index, and Beluga-owned metadata.' },
+    { label: 'Maturity', value: 'Early / read-first', detail: 'Prioritizes discovery, correlation, health, and drill-down before broad destructive operations.' },
+  ],
 };
 
 export function OssProjectEvidence({ slug }: { slug: string }) {
