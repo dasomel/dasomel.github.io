@@ -6,6 +6,7 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const projectsDir = path.join(ROOT, 'src', 'content', 'projects');
 const outputFile = path.join(ROOT, 'src', 'data', 'project-repo-meta.json');
+const stateFile = path.join(ROOT, 'src', 'data', 'project-repo-meta-state.json');
 const token = process.env.GITHUB_TOKEN;
 const headers = {
   Accept: 'application/vnd.github+json',
@@ -139,6 +140,11 @@ for (const repo of [...repos].sort()) {
 
 await fs.mkdir(path.dirname(outputFile), { recursive: true });
 await fs.writeFile(outputFile, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
+await fs.writeFile(stateFile, `${JSON.stringify({
+  generatedAt: new Date().toISOString(),
+  source: 'GitHub REST API',
+  repoCount: Object.keys(metadata).length,
+}, null, 2)}\n`, 'utf8');
 console.log(`Refreshed ${Object.keys(metadata).length} project repositories.`);
 
 // A re-run of the same Pages workflow can leave multiple `github-pages` artifacts
