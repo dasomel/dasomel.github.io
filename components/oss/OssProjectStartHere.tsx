@@ -8,6 +8,11 @@ const PATHS: Record<string, Path[]> = {
     { label:'VERIFY', title:'Testing', href:'/oss/narwhal/testing/', detail:'Regression, live cluster verification, SSO verification이 어떻게 분리되는지 확인합니다.' },
     { label:'OPERATE', title:'Operations', href:'/oss/narwhal/operations/', detail:'Backup, restore, upgrade, air-gap을 포함한 day-2 운영 경로입니다.' },
   ],
+  'narwhal-portal': [
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/narwhal-portal/architecture/', detail:'Portal이 Narwhal platform APIs와 source systems를 어떻게 연결하는지 봅니다.' },
+    { label:'START', title:'Getting Started', href:'/oss/narwhal-portal/getting-started/', detail:'Next.js 개발 환경과 Skaffold/Kaniko 기반 cluster development 경로를 확인합니다.' },
+    { label:'OPERATE', title:'Operations', href:'/oss/narwhal-portal/operations/', detail:'배포, image build, secrets, runtime 상태 확인 경계를 봅니다.' },
+  ],
   'nfs-quota-agent': [
     { label:'UNDERSTAND', title:'Architecture', href:'/oss/nfs-quota-agent/architecture/', detail:'PV → NFS path mapping → filesystem quota enforcement 경계를 봅니다.' },
     { label:'START', title:'Getting Started', href:'/oss/nfs-quota-agent/getting-started/', detail:'NFS server node 준비와 Helm 설치 흐름을 확인합니다.' },
@@ -22,6 +27,11 @@ const PATHS: Record<string, Path[]> = {
     { label:'POLICY', title:'Standards', href:'/oss/openforge/standards/', detail:'프로젝트가 달성해야 할 engineering outcome과 원칙을 확인합니다.' },
     { label:'IMPLEMENT', title:'Templates', href:'/oss/openforge/templates/', detail:'CI/CD, security, repository 운영에 재사용할 구현 자산을 봅니다.' },
     { label:'EVIDENCE', title:'Reference', href:'/oss/openforge/reference/', detail:'실제 OSS 적용 사례와 trade-off를 확인합니다.' },
+  ],
+  clusterdeck: [
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/clusterdeck/architecture/', detail:'Tauri UI → Rust core → OpenSSH/kubectl/filesystem 경계를 먼저 봅니다.' },
+    { label:'START', title:'Getting Started', href:'/oss/clusterdeck/getting-started/', detail:'macOS 개발 환경과 Profile 기반 SSH·kubeconfig 연결 흐름을 확인합니다.' },
+    { label:'SCOPE', title:'Overview', href:'/oss/clusterdeck/overview/', detail:'Kubernetes console이 아니라 workstation access layer라는 제품 경계를 확인합니다.' },
   ],
   ldapium: [
     { label:'UNDERSTAND', title:'Architecture', href:'/oss/ldapium/architecture/', detail:'OpenLDAP server, optional UI, Helm chart와 persistent data 경계를 먼저 봅니다.' },
