@@ -63,8 +63,9 @@ const EVIDENCE: Record<string, Evidence[]> = {
   ],
 };
 
-export function OssProjectEvidence({ slug }: { slug: string }) {
-  const items = EVIDENCE[slug];
+export function OssProjectEvidence({ slug, locale='ko' }: { slug:string; locale?:'ko'|'en' }) {
+  const items=EVIDENCE[slug];
   if (!items) return null;
-  return <section className="mb-10"><div className="flex items-end justify-between gap-4"><div><div className="font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}>ENGINEERING EVIDENCE</div><h3 className="mt-2 text-2xl font-semibold tracking-tight">숫자보다 검증 가능한 근거를 보여줍니다.</h3></div></div><div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">{items.map((item)=><div key={item.label} className="rounded-2xl p-5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--text-faint)' }}>{item.label}</div><div className="mt-2 text-2xl font-semibold tracking-tight">{item.value}</div><p className="mt-3 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{item.detail}</p></div>)}</div></section>;
+  const en=locale==='en';
+  return <section className="mb-10"><div className="flex items-end justify-between gap-4"><div><div className="font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}>ENGINEERING EVIDENCE</div><h3 className="mt-2 text-2xl font-semibold tracking-tight">{en?'Show reviewable engineering evidence instead of relying on headline numbers.':'숫자보다 검증 가능한 근거를 보여줍니다.'}</h3></div></div><div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">{items.map((item)=><div key={item.label} className="rounded-2xl p-5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--text-faint)' }}>{item.label}</div><div className="mt-2 text-2xl font-semibold tracking-tight">{item.value}</div><p className="mt-3 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{item.detail}</p></div>)}</div></section>;
 }
