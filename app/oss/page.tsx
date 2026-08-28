@@ -11,6 +11,7 @@ import { OssDocsCoverage } from '@/components/oss/OssDocsCoverage';
 import { OssPortfolioMatrix } from '@/components/oss/OssPortfolioMatrix';
 import { OssPortfolioHealth } from '@/components/oss/OssPortfolioHealth';
 import { OssPortfolioReadiness } from '@/components/oss/OssPortfolioReadiness';
+import { OssAdoptionIntake } from '@/components/oss/OssAdoptionIntake';
 
 const groups = OSS_PORTFOLIO_GROUPS;
 
@@ -43,6 +44,7 @@ export default function OssHubKo() {
       <OssEvidenceStrip locale="ko" />
       <OssPortfolioHealth locale="ko" docs={coverage} />
       <OssPortfolioReadiness locale="ko" docs={coverage} />
+      <OssAdoptionIntake locale="ko" />
       <OssSystemPulse locale="ko" />
 
       <section className="mt-14"><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--accent)' }}>ONE ECOSYSTEM, INDEPENDENT PROJECTS</div><h2 className="mt-3 text-3xl font-semibold">Standards에서 Workload까지 한 흐름으로 읽습니다.</h2><p className="mt-3 max-w-4xl text-sm leading-7" style={{ color:'var(--text-muted)' }}>OpenForge의 공통 practice를 공유하지만 각 프로젝트는 독립 설치·검증·릴리스를 지향합니다. 아래 지도는 런타임 의존성이 아니라 engineering practice와 실제 사용 시나리오의 연결입니다.</p><OssArchitectureFlow locale="ko" /></section>
