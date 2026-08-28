@@ -6,6 +6,7 @@ import { OssProjectPositioning } from '@/components/oss/OssProjectPositioning';
 import { OssProjectPrinciples } from '@/components/oss/OssProjectPrinciples';
 import { OssProjectEvidence } from '@/components/oss/OssProjectEvidence';
 import { OssProjectStartHere } from '@/components/oss/OssProjectStartHere';
+import { OssProjectConformance } from '@/components/oss/OssProjectConformance';
 
 export function generateStaticParams() {
   const docs = getDocs('ko').filter((d) => d.slug.includes('/'));
@@ -29,6 +30,7 @@ export default async function OssProjectHome({ params }: { params: Promise<{ pro
       <div className="mt-7 grid gap-3 sm:grid-cols-3"><a href={project.meta.github} target="_blank" rel="noreferrer" className="rounded-xl px-4 py-3 text-sm font-semibold transition hover:border-[var(--accent)]" style={{ color:'var(--text)', backgroundColor:'var(--bg)', border:'1px solid var(--border)' }}><span className="block text-[10px] font-mono uppercase tracking-[0.12em]" style={{ color:'var(--text-faint)' }}>Repository</span><span className="mt-1 block truncate">GitHub ↗</span></a><div className="rounded-xl px-4 py-3" style={{ color:'var(--text)', backgroundColor:'var(--bg)', border:'1px solid var(--border)' }}><span className="block text-[10px] font-mono uppercase tracking-[0.12em]" style={{ color:'var(--text-faint)' }}>Documentation</span><span className="mt-1 block font-semibold">{docs.length} sections</span></div><div className="rounded-xl px-4 py-3" style={{ color:'var(--text)', backgroundColor:'var(--bg)', border:'1px solid var(--border)' }}><span className="block text-[10px] font-mono uppercase tracking-[0.12em]" style={{ color:'var(--text-faint)' }}>Updated</span><span className="mt-1 block font-semibold">{latestDocDate??'Current'}</span></div></div>
     </div>
     <OssProjectPositioning slug={projectSlug} />
+    <OssProjectConformance slug={projectSlug} repo={project.meta.github} docsCount={docs.length} locale="ko" />
     {(project.meta.problem||project.meta.solution)&&<section className="mb-10 grid gap-4 md:grid-cols-2">{project.meta.problem&&<div className="rounded-2xl p-6" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color:'var(--text-faint)' }}>Problem</div><p className="text-[15px] leading-7" style={{ color:'var(--text-muted)' }}>{project.meta.problem}</p></div>}{project.meta.solution&&<div className="rounded-2xl p-6" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}>Approach</div><p className="text-[15px] leading-7" style={{ color:'var(--text-muted)' }}>{project.meta.solution}</p></div>}</section>}
     <OssProjectEvidence slug={projectSlug} />
     <OssProjectStartHere slug={projectSlug} />
