@@ -54,8 +54,8 @@
     "autoprefixer": "^10.5.4",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.1",
-    "postcss": "^10.5.4",
-    "rss-parser": "^3.13.0",
+    "postcss": "^8.5.26",
+    "rss-parser": "^13.0.0",
     "typescript": "^5.9.3"
   },
   "trustedDependencies": [
