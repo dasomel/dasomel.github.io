@@ -8,6 +8,7 @@ import { OssArchitectureFlow } from '@/components/oss/OssArchitectureFlow';
 import { OssActivityFreshness } from '@/components/oss/OssActivityFreshness';
 import { OssSystemPulse } from '@/components/oss/OssSystemPulse';
 import { OssDocsCoverage } from '@/components/oss/OssDocsCoverage';
+import { OssPortfolioMatrix } from '@/components/oss/OssPortfolioMatrix';
 
 const groups = OSS_PORTFOLIO_GROUPS;
 
@@ -41,6 +42,8 @@ export default function OssHubKo() {
       <OssSystemPulse locale="ko" />
 
       <section className="mt-14"><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--accent)' }}>ONE ECOSYSTEM, INDEPENDENT PROJECTS</div><h2 className="mt-3 text-3xl font-semibold">Standards에서 Workload까지 한 흐름으로 읽습니다.</h2><p className="mt-3 max-w-4xl text-sm leading-7" style={{ color:'var(--text-muted)' }}>OpenForge의 공통 practice를 공유하지만 각 프로젝트는 독립 설치·검증·릴리스를 지향합니다. 아래 지도는 런타임 의존성이 아니라 engineering practice와 실제 사용 시나리오의 연결입니다.</p><OssArchitectureFlow locale="ko" /></section>
+
+      <OssPortfolioMatrix />
 
       <div className="mt-16 space-y-14">{groups.map((group) => <section key={group.label}><div className="max-w-3xl"><div className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}>{group.label}</div><p className="mt-2 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{group.description}</p></div><div className="mt-5 grid gap-5 md:grid-cols-2">{group.projects.map((slug) => { const project=bySlug.get(slug); if(!project) return null; const pageCount=docsByProject.get(slug)??0; return <Link key={slug} href={`/oss/${slug}/`} className="group rounded-2xl p-7 transition hover:-translate-y-0.5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="flex items-start justify-between gap-5"><div><div className="text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ color:'var(--text-faint)' }}>Open Source System</div><h3 className="mt-2 text-2xl font-semibold tracking-tight">{project.title}</h3><p className="mt-3 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{project.description}</p></div><div className="shrink-0 rounded-full px-3 py-1.5 text-[11px]" style={{ border:'1px solid var(--border)', color:'var(--text-faint)' }}>{pageCount} docs</div></div>{project.problem&&<div className="mt-6 border-l-2 pl-4" style={{ borderColor:'var(--signal)' }}><div className="text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--text-faint)' }}>Problem</div><p className="mt-2 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{project.problem}</p></div>}<div className="mt-6 flex flex-wrap gap-2">{project.tags.slice(0,6).map(tag=><span key={tag} className="rounded-md px-2.5 py-1.5 text-[11px]" style={{ backgroundColor:'var(--surface-hi)', color:'var(--text-faint)' }}>{tag}</span>)}</div><div className="mt-7 text-sm font-semibold" style={{ color:'var(--accent)' }}>Architecture · Evidence · Docs 보기 →</div></Link>; })}</div></section>)}</div>
 
