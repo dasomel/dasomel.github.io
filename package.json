@@ -15,7 +15,7 @@
     "festivals:fetch": "bun scripts/fetch-festivals.mjs",
     "start": "bun run next start",
     "lint": "bun run eslint .",
-    "projects:refresh": "bun scripts/refresh-project-metadata.mjs && bun scripts/refresh-project-audit.mjs && bun scripts/refresh-oss-issues.mjs && bun scripts/refresh-oss-adoption-discovery.mjs",
+    "projects:refresh": "bun scripts/refresh-project-metadata.mjs && bun scripts/refresh-project-audit.mjs && bun scripts/refresh-oss-issues.mjs && bun scripts/refresh-oss-open-issues.mjs && bun scripts/refresh-oss-adoption-discovery.mjs",
     "digest:collect": "bun scripts/collect-feeds.mjs",
     "digest": "bun scripts/generate-daily-digest.mjs",
     "digest:enrich-publish": "bun scripts/publish-enrichment.mjs",
@@ -54,7 +54,7 @@
     "autoprefixer": "^10.5.4",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.1",
-    "postcss": "^8.5.26",
+    "postcss": "^10.5.4",
     "rss-parser": "^3.13.0",
     "typescript": "^5.9.3"
   },
