@@ -11,6 +11,7 @@ import { OssDocsCoverage } from '@/components/oss/OssDocsCoverage';
 import { OssPortfolioMatrix } from '@/components/oss/OssPortfolioMatrix';
 import { OssPortfolioHealth } from '@/components/oss/OssPortfolioHealth';
 import { OssPortfolioReadiness } from '@/components/oss/OssPortfolioReadiness';
+import { OssAdoptionIntake } from '@/components/oss/OssAdoptionIntake';
 
 const groups = OSS_PORTFOLIO_GROUPS;
 
@@ -31,6 +32,7 @@ export default function OssHubEn() {
       <OssEvidenceStrip locale="en" />
       <OssPortfolioHealth locale="en" docs={coverage} />
       <OssPortfolioReadiness locale="en" docs={coverage} />
+      <OssAdoptionIntake locale="en" />
       <OssSystemPulse locale="en" />
 
       <section className="mt-14"><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--accent)' }}>SYSTEM OF SYSTEMS</div><h2 className="mt-3 text-3xl font-semibold">Read the work from standards to workloads.</h2><p className="mt-3 max-w-4xl text-sm leading-7" style={{ color:'var(--text-muted)' }}>This is not a runtime dependency graph. It shows recurring engineering practice and real usage paths across independent OSS projects.</p><OssArchitectureFlow locale="en" /></section>
