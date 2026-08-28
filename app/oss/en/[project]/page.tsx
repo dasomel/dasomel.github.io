@@ -3,6 +3,10 @@ import { getDocs, getProjectBySlug } from '@/lib/content';
 import { MDXContent } from '@/components/MDXContent';
 import OssProjectShell from '@/components/oss/OssProjectShell';
 import { OssProjectConformance } from '@/components/oss/OssProjectConformance';
+import { OssProjectPositioning } from '@/components/oss/OssProjectPositioning';
+import { OssProjectEvidence } from '@/components/oss/OssProjectEvidence';
+import { OssProjectStartHere } from '@/components/oss/OssProjectStartHere';
+import { OssProjectPrinciples } from '@/components/oss/OssProjectPrinciples';
 
 export function generateStaticParams() {
   const docs = getDocs('en').filter((d) => d.slug.includes('/'));
@@ -36,6 +40,7 @@ export default async function OssProjectHomeEn({ params }: { params: Promise<{ p
         </div>
       </div>
 
+      <OssProjectPositioning slug={projectSlug} locale="en" />
       <OssProjectConformance slug={projectSlug} repo={project.meta.github} docsCount={docs.length} locale="en" />
 
       {(project.meta.problem || project.meta.solution) && <section className="mb-10 grid gap-4 md:grid-cols-2">
@@ -43,6 +48,9 @@ export default async function OssProjectHomeEn({ params }: { params: Promise<{ p
         {project.meta.solution && <div className="rounded-2xl p-6" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}><div className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: 'var(--accent)' }}>Approach</div><p className="text-[15px] leading-7" style={{ color: 'var(--text-muted)' }}>{project.meta.solution}</p></div>}
       </section>}
 
+      <OssProjectEvidence slug={projectSlug} locale="en" />
+      <OssProjectStartHere slug={projectSlug} locale="en" />
+      <OssProjectPrinciples locale="en" />
       <article id="oss-doc-content" className="prose cne-doc-prose max-w-3xl prose-headings:scroll-mt-24"><MDXContent source={project.content} /></article>
     </OssProjectShell>
   );
