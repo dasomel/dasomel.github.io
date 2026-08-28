@@ -2,26 +2,18 @@ import Link from 'next/link';
 
 export function OssArchitectureFlow({ locale }: { locale: 'ko' | 'en' }) {
   const en = locale === 'en';
-  const nodes = [
-    { role: 'Standards', name: 'OpenForge', href: en ? '/oss/en/openforge/' : '/oss/openforge/', note: en ? 'engineering rules · supply chain · docs' : 'engineering 규칙 · supply chain · 문서' },
-    { role: 'Baseline', name: 'kube-ready-box', href: en ? '/oss/en/kube-ready-box/' : '/oss/kube-ready-box/', note: en ? 'reproducible Kubernetes node baseline' : '재현 가능한 Kubernetes node baseline' },
-    { role: 'Platform', name: 'Narwhal', href: en ? '/oss/en/narwhal/' : '/oss/narwhal/', note: en ? 'identity · delivery · network · observability' : 'identity · delivery · network · observability' },
-    { role: 'Capabilities', name: 'ldapium · nfs-quota-agent', href: en ? '/oss/en/ldapium/' : '/oss/ldapium/', note: en ? 'identity and storage building blocks' : 'identity와 storage building block' },
-    { role: 'Workloads', name: 'Beluga · KubeMetal', href: en ? '/oss/en/beluga/' : '/oss/beluga/', note: en ? 'data and AI/edge constraints' : 'data와 AI/edge workload 제약' },
+  const prefix = en ? '/oss/en' : '/oss';
+  const layers = [
+    { role:'Engineering', name:'OpenForge', href:`${prefix}/openforge/`, note:en?'standards · supply chain · documentation':'standards · supply chain · documentation' },
+    { role:'Node & Access', name:'Kube-Ready-Box · ClusterDeck', href:`${prefix}/kube-ready-box/`, note:en?'reproducible nodes + workstation access':'재현 가능한 node + workstation access' },
+    { role:'Platform', name:'Narwhal · Narwhal Portal', href:`${prefix}/narwhal/`, note:en?'platform runtime + developer/operator experience':'platform runtime + developer/operator experience' },
+    { role:'Reusable Infra', name:'NFS Quota Agent · ldapium', href:`${prefix}/nfs-quota-agent/`, note:en?'storage enforcement + identity infrastructure':'storage enforcement + identity infrastructure' },
+    { role:'Data', name:'Beluga · Beluga Manager', href:`${prefix}/beluga/`, note:en?'reference data platform + control plane':'reference data platform + control plane' },
+    { role:'AI / Edge', name:'KubeMetal', href:`${prefix}/kubemetal/`, note:en?'Apple Silicon compute + Kubernetes control':'Apple Silicon compute + Kubernetes control' },
   ];
 
-  return (
-    <div className="mt-8 grid gap-3 lg:grid-cols-5">
-      {nodes.map((node, index) => (
-        <div key={node.role} className="relative">
-          <Link href={node.href} className="block h-full rounded-2xl p-5 transition hover:-translate-y-0.5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface-hi)' }}>
-            <div className="font-mono text-[9px] font-semibold uppercase tracking-[0.14em]" style={{ color: index === 2 ? 'var(--accent)' : 'var(--text-faint)' }}>{String(index + 1).padStart(2, '0')} / {node.role}</div>
-            <div className="mt-3 text-lg font-semibold">{node.name}</div>
-            <div className="mt-2 text-xs leading-5" style={{ color: 'var(--text-muted)' }}>{node.note}</div>
-          </Link>
-          {index < nodes.length - 1 && <div aria-hidden="true" className="py-1 text-center font-mono text-xs lg:absolute lg:-right-3 lg:top-1/2 lg:z-10 lg:-translate-y-1/2 lg:py-0" style={{ color: 'var(--accent)' }}>→</div>}
-        </div>
-      ))}
-    </div>
-  );
+  return <div className="mt-8">
+    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">{layers.map((node,index)=><Link key={node.role} href={node.href} className="group relative rounded-2xl p-5 transition hover:-translate-y-0.5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface-hi)' }}><div className="flex items-center justify-between gap-3"><div className="font-mono text-[9px] font-semibold uppercase tracking-[0.14em]" style={{ color:index===2?'var(--accent)':'var(--text-faint)' }}>{String(index+1).padStart(2,'0')} / {node.role}</div><span className="text-xs" style={{ color:'var(--text-faint)' }}>↗</span></div><div className="mt-3 text-lg font-semibold">{node.name}</div><div className="mt-2 text-xs leading-5" style={{ color:'var(--text-muted)' }}>{node.note}</div></Link>)}</div>
+    <div className="mt-4 rounded-xl px-4 py-3 text-xs leading-5" style={{ border:'1px dashed var(--border-hi)', color:'var(--text-faint)', backgroundColor:'var(--bg-subtle)' }}>{en?'Relationship lines describe engineering and usage context, not mandatory runtime dependency. Independent projects can be adopted without Narwhal when their own architecture allows it.':'이 지도는 필수 런타임 의존성이 아니라 engineering practice와 사용 맥락을 나타냅니다. 독립 프로젝트는 자체 아키텍처가 허용하는 범위에서 Narwhal 없이도 사용할 수 있습니다.'}</div>
+  </div>;
 }
