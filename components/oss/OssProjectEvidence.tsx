@@ -7,6 +7,12 @@ const EVIDENCE: Record<string, Evidence[]> = {
     { label: 'Live verification', value: '120+ / 49', detail: 'Cluster checks and SSO end-to-end checks are maintained separately.' },
     { label: 'Incident knowledge', value: '263', detail: 'Documented incidents are converted into discriminators and future upgrade gates.' },
   ],
+  'narwhal-portal': [
+    { label: 'Experience', value: 'Day-0 → Day-2', detail: 'Combines onboarding, catalog, platform operations, security, governance, and tools in one workbench.' },
+    { label: 'Platform views', value: '10+ areas', detail: 'Dashboard, onboarding, catalog/apps, nodes, cost, security/compliance, governance, architecture, tools, and settings.' },
+    { label: 'Delivery', value: 'Kaniko + Skaffold', detail: 'Supports in-cluster image builds and live development without requiring a local Docker daemon for the normal cluster workflow.' },
+    { label: 'State boundary', value: 'Authoritative sources', detail: 'Reads platform state from Kubernetes, Argo CD, Keycloak, and other source systems instead of replacing them.' },
+  ],
   'nfs-quota-agent': [
     { label: 'Storage boundary', value: 'PV → FS', detail: 'Maps Kubernetes PersistentVolumes to the actual NFS server filesystem quota boundary.' },
     { label: 'Filesystem', value: '3 types', detail: 'Supports XFS project quota, ext4 project quota, and Btrfs qgroup-based enforcement.' },
@@ -24,6 +30,12 @@ const EVIDENCE: Record<string, Evidence[]> = {
     { label: 'Reusable scope', value: '15 areas', detail: 'Implementation templates cover recurring OSS engineering and delivery concerns.' },
     { label: 'Operating model', value: '3 tiers', detail: 'Separates policy (Standards), implementation (Templates), and evidence (Reference Implementation).' },
     { label: 'Feedback loop', value: 'Closed loop', detail: 'Standard → Apply → Measure → Learn → Improve → Standardize.' },
+  ],
+  clusterdeck: [
+    { label: 'User model', value: 'Profile-first', detail: 'Keeps a stable environment identity while VM or cluster IP addresses change.' },
+    { label: 'Access path', value: 'SSH + Bastion', detail: 'Orchestrates connectivity, public-key bootstrap, aliases, and ProxyJump with native OpenSSH behavior.' },
+    { label: 'Kubernetes', value: 'kubeconfig sync', detail: 'Fetches remote kubeconfig, normalizes endpoint/context names, and stores per-Profile local configuration.' },
+    { label: 'Verification', value: '3 layers', detail: 'Separates SSH, kubeconfig, and Kubernetes API connectivity so failures are visible at the correct boundary.' },
   ],
   ldapium: [
     { label: 'Upstream', value: 'OpenLDAP 2.6.14', detail: 'Builds the server image directly from the upstream source tarball instead of relying on an opaque legacy image.' },
