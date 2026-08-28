@@ -1,18 +1,6 @@
 import { getOssRepoMeta, OSS_REPO_SNAPSHOT, repoFreshness } from '@/lib/oss-repo-meta';
+import { OSS_PORTFOLIO_REPOS } from '@/lib/oss-portfolio';
 import { OssPortfolioAttention } from '@/components/oss/OssPortfolioAttention';
-
-const repos = [
-  'dasomel/openforge',
-  'dasomel/kube-ready-box',
-  'dasomel/clusterdeck',
-  'dasomel/narwhal',
-  'dasomel/narwhal-portal',
-  'dasomel/nfs-quota-agent',
-  'dasomel/ldapium',
-  'dasomel/beluga',
-  'dasomel/beluga-manager',
-  'dasomel/kubemetal',
-] as const;
 
 function projectAgeDays(createdAt?: string) {
   if (!createdAt) return null;
@@ -29,7 +17,7 @@ type Props = {
 
 export function OssPortfolioHealth({ locale, docs }: Props) {
   const en = locale === 'en';
-  const items = repos.map((repo) => ({ repo, meta: getOssRepoMeta(repo) }));
+  const items = OSS_PORTFOLIO_REPOS.map((repo) => ({ repo, meta: getOssRepoMeta(repo) }));
   const active = items.filter(({ meta }) => repoFreshness(meta?.pushedAt).label === 'active').length;
   const released = items.filter(({ meta }) => (meta?.releaseCount ?? 0) > 0).length;
   const externalSignal = items.filter(({ meta }) => (meta?.contributorCount ?? 0) > 1).length;
@@ -38,16 +26,16 @@ export function OssPortfolioHealth({ locale, docs }: Props) {
   const docSections = docs.reduce((sum, item) => sum + item.docs, 0);
 
   const cards = en ? [
-    ['Active ≤7d', `${active}/${repos.length}`, 'repositories pushed within seven days of the metadata snapshot'],
-    ['Released', `${released}/${repos.length}`, 'projects with at least one GitHub release'],
-    ['Contributor signal', `${externalSignal}/${repos.length}`, 'repositories reporting more than one contributor'],
-    ['Sustained ≥6mo', `${sustained}/${repos.length}`, 'projects whose repository age is at least 180 days'],
+    ['Active ≤7d', `${active}/${OSS_PORTFOLIO_REPOS.length}`, 'repositories pushed within seven days of the metadata snapshot'],
+    ['Released', `${released}/${OSS_PORTFOLIO_REPOS.length}`, 'projects with at least one GitHub release'],
+    ['Contributor signal', `${externalSignal}/${OSS_PORTFOLIO_REPOS.length}`, 'repositories reporting more than one contributor'],
+    ['Sustained ≥6mo', `${sustained}/${OSS_PORTFOLIO_REPOS.length}`, 'projects whose repository age is at least 180 days'],
     ['Docs coverage', `${documented}/${docs.length}`, `${docSections} project documentation sections are indexed`],
   ] : [
-    ['최근 7일 Active', `${active}/${repos.length}`, 'metadata snapshot 기준 7일 이내 push가 있는 저장소'],
-    ['Release 보유', `${released}/${repos.length}`, 'GitHub Release가 1개 이상 존재하는 프로젝트'],
-    ['기여자 확장 신호', `${externalSignal}/${repos.length}`, 'GitHub contributor가 2명 이상 집계된 저장소'],
-    ['6개월 이상 지속', `${sustained}/${repos.length}`, '저장소 생성 후 180일 이상 유지된 프로젝트'],
+    ['최근 7일 Active', `${active}/${OSS_PORTFOLIO_REPOS.length}`, 'metadata snapshot 기준 7일 이내 push가 있는 저장소'],
+    ['Release 보유', `${released}/${OSS_PORTFOLIO_REPOS.length}`, 'GitHub Release가 1개 이상 존재하는 프로젝트'],
+    ['기여자 확장 신호', `${externalSignal}/${OSS_PORTFOLIO_REPOS.length}`, 'GitHub contributor가 2명 이상 집계된 저장소'],
+    ['6개월 이상 지속', `${sustained}/${OSS_PORTFOLIO_REPOS.length}`, '저장소 생성 후 180일 이상 유지된 프로젝트'],
     ['Docs Coverage', `${documented}/${docs.length}`, `프로젝트 상세 문서 ${docSections}개 section을 인덱싱`],
   ];
 
