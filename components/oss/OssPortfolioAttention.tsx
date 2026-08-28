@@ -1,79 +1,18 @@
 import Link from 'next/link';
 import { getOssRepoMeta, OSS_REPO_SNAPSHOT, repoFreshness } from '@/lib/oss-repo-meta';
+import { OSS_PORTFOLIO_PROJECTS } from '@/lib/oss-portfolio';
+import { getAttentionTracker, OSS_ATTENTION_OWNERS, OSS_PORTFOLIO_SOURCES, type AttentionSignalKind } from '@/lib/oss-actionability';
 
-const projects = [
-  ['openforge','dasomel/openforge','OpenForge'],
-  ['kube-ready-box','dasomel/kube-ready-box','Kube-Ready-Box'],
-  ['clusterdeck','dasomel/clusterdeck','ClusterDeck'],
-  ['narwhal','dasomel/narwhal','Narwhal'],
-  ['narwhal-portal','dasomel/narwhal-portal','Narwhal Portal'],
-  ['nfs-quota-agent','dasomel/nfs-quota-agent','NFS Quota Agent'],
-  ['ldapium','dasomel/ldapium','ldapium'],
-  ['beluga','dasomel/beluga','Beluga'],
-  ['beluga-manager','dasomel/beluga-manager','Beluga Manager'],
-  ['kubemetal','dasomel/kubemetal','KubeMetal'],
-] as const;
-
-type SignalKind = 'release'|'activity'|'contributors'|'docs';
 type Props = { locale:'ko'|'en'; docs:Array<{ name:string; docs:number }> };
-type Signal = { slug:string; name:string; kind:SignalKind; label:string; detail:string };
-type Tracker = { url:string; label:string; source:'project'|'portfolio'|'strategy' };
-type OwnerCandidate = { url:string; ref:string; labelKo:string; labelEn:string; rationaleKo:string; rationaleEn:string };
-
-const tracking:Record<string,Tracker> = {
-  'narwhal:release': { url:'https://github.com/dasomel/narwhal/issues/161', label:'Narwhal #161', source:'portfolio' },
-  'kube-ready-box:release': { url:'https://github.com/dasomel/kube-ready-box/issues/28', label:'kube-ready-box #28', source:'project' },
-  'nfs-quota-agent:release': { url:'https://github.com/dasomel/nfs-quota-agent/issues/16', label:'nfs-quota-agent #16', source:'project' },
-  'ldapium:release': { url:'https://github.com/dasomel/ldapium/issues/36', label:'ldapium #36', source:'project' },
-  'beluga:release': { url:'https://github.com/dasomel/beluga/issues/100', label:'Beluga #100', source:'project' },
-  'kubemetal:release': { url:'https://github.com/dasomel/kubemetal/issues/35', label:'KubeMetal #35', source:'project' },
-  'narwhal:contributors': { url:'https://github.com/dasomel/narwhal/issues/169', label:'Narwhal #169', source:'strategy' },
-  'nfs-quota-agent:contributors': { url:'https://github.com/dasomel/nfs-quota-agent/issues/81', label:'NFS Quota Agent #81', source:'strategy' },
-};
-
-const portfolioSources = [
-  { label:'Taxonomy / execution waves', ref:'Narwhal #41', url:'https://github.com/dasomel/narwhal/issues/41' },
-  { label:'Engineering conformance', ref:'Narwhal #162', url:'https://github.com/dasomel/narwhal/issues/162' },
-  { label:'Community growth strategy', ref:'Narwhal #169', url:'https://github.com/dasomel/narwhal/issues/169' },
-] as const;
-
-const ownerCandidates:Record<SignalKind,OwnerCandidate> = {
-  activity: {
-    url:'https://github.com/dasomel/narwhal/issues/41', ref:'Narwhal #41',
-    labelKo:'Taxonomy / execution waves', labelEn:'Taxonomy / execution waves',
-    rationaleKo:'비활성 프로젝트의 우선순위·execution wave 재검토에 가장 가까운 portfolio owner입니다.',
-    rationaleEn:'Closest portfolio owner for reconsidering priority and execution waves of inactive projects.',
-  },
-  release: {
-    url:'https://github.com/dasomel/narwhal/issues/162', ref:'Narwhal #162',
-    labelKo:'Engineering conformance', labelEn:'Engineering conformance',
-    rationaleKo:'릴리스·SBOM·provenance·release evidence 공통 기준을 다루는 canonical checklist입니다.',
-    rationaleEn:'Canonical checklist for release, SBOM, provenance and release-evidence gaps.',
-  },
-  docs: {
-    url:'https://github.com/dasomel/narwhal/issues/162', ref:'Narwhal #162',
-    labelKo:'Engineering conformance', labelEn:'Engineering conformance',
-    rationaleKo:'Repository governance와 문서 baseline을 함께 검증하는 portfolio checklist입니다.',
-    rationaleEn:'Portfolio checklist that also covers repository governance and documentation baseline.',
-  },
-  contributors: {
-    url:'https://github.com/dasomel/narwhal/issues/169', ref:'Narwhal #169',
-    labelKo:'Community growth strategy', labelEn:'Community growth strategy',
-    rationaleKo:'외부 contributor·maintainer 확대와 community growth 방향을 다루는 전략 owner입니다.',
-    rationaleEn:'Strategy owner for external contributor, maintainer and community growth.',
-  },
-};
-
-function trackerFor(slug:string, kind:SignalKind) {
-  return tracking[`${slug}:${kind}`];
-}
+type Signal = { slug:string; name:string; kind:AttentionSignalKind; label:string; detail:string };
 
 export function OssPortfolioAttention({ locale, docs }: Props) {
   const en=locale==='en';
   const docsBySlug=new Map(docs.map((item)=>[item.name,item.docs]));
   const signals:Signal[]=[];
 
-  for (const [slug,repo,name] of projects) {
+  for (const project of OSS_PORTFOLIO_PROJECTS) {
+    const { slug,repo,name }=project;
     const meta=getOssRepoMeta(repo);
     const freshness=repoFreshness(meta?.pushedAt);
     if ((meta?.releaseCount??0)===0) signals.push({ slug,name,kind:'release',label:en?'No GitHub release':'GitHub Release 없음',detail:en?'Repository snapshot reports zero releases.':'현재 snapshot 기준 GitHub Release가 0개입니다.' });
@@ -85,16 +24,16 @@ export function OssPortfolioAttention({ locale, docs }: Props) {
   const priority={ activity:0, release:1, docs:2, contributors:3 } as const;
   signals.sort((a,b)=>priority[a.kind]-priority[b.kind]||a.name.localeCompare(b.name));
   const visible=signals.slice(0,8);
-  const trackedAll=signals.filter((item)=>trackerFor(item.slug,item.kind));
-  const untrackedAll=signals.filter((item)=>!trackerFor(item.slug,item.kind));
-  const trackedVisible=visible.filter((item)=>trackerFor(item.slug,item.kind)).length;
-  const projectTracked=trackedAll.filter((item)=>trackerFor(item.slug,item.kind)?.source==='project').length;
-  const portfolioTracked=trackedAll.filter((item)=>trackerFor(item.slug,item.kind)?.source==='portfolio').length;
-  const strategyTracked=trackedAll.filter((item)=>trackerFor(item.slug,item.kind)?.source==='strategy').length;
-  const coverageGaps=(Object.keys(ownerCandidates) as SignalKind[]).map((kind)=>({
+  const trackedAll=signals.filter((item)=>getAttentionTracker(item.slug,item.kind));
+  const untrackedAll=signals.filter((item)=>!getAttentionTracker(item.slug,item.kind));
+  const trackedVisible=visible.filter((item)=>getAttentionTracker(item.slug,item.kind)).length;
+  const projectTracked=trackedAll.filter((item)=>getAttentionTracker(item.slug,item.kind)?.source==='project').length;
+  const portfolioTracked=trackedAll.filter((item)=>getAttentionTracker(item.slug,item.kind)?.source==='portfolio').length;
+  const strategyTracked=trackedAll.filter((item)=>getAttentionTracker(item.slug,item.kind)?.source==='strategy').length;
+  const coverageGaps=(Object.keys(OSS_ATTENTION_OWNERS) as AttentionSignalKind[]).map((kind)=>({
     kind,
     items:untrackedAll.filter((item)=>item.kind===kind),
-    owner:ownerCandidates[kind],
+    owner:OSS_ATTENTION_OWNERS[kind],
   })).filter((group)=>group.items.length>0);
   const prefix=en?'/oss/en':'/oss';
 
@@ -111,7 +50,7 @@ export function OssPortfolioAttention({ locale, docs }: Props) {
       ].map(([label,value,detail])=><div key={label} className="rounded-2xl p-4" style={{ border:'1px solid var(--border)', backgroundColor:'var(--bg-subtle)' }}><div className="font-mono text-[10px] uppercase tracking-[0.12em]" style={{ color:'var(--text-faint)' }}>{label}</div><div className="mt-2 text-2xl font-semibold">{value}</div><div className="mt-2 text-xs leading-5" style={{ color:'var(--text-muted)' }}>{detail}</div></div>)}
     </div>
 
-    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs" style={{ color:'var(--text-muted)' }}><span className="font-semibold">{en?'Portfolio sources of truth:':'Portfolio source of truth:'}</span>{portfolioSources.map((source)=><a key={source.ref} href={source.url} target="_blank" rel="noreferrer" className="rounded-full px-2.5 py-1" style={{ border:'1px solid var(--border)' }}>{source.ref} · {source.label} ↗</a>)}</div>
+    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs" style={{ color:'var(--text-muted)' }}><span className="font-semibold">{en?'Portfolio sources of truth:':'Portfolio source of truth:'}</span>{OSS_PORTFOLIO_SOURCES.map((source)=><a key={source.ref} href={source.url} target="_blank" rel="noreferrer" className="rounded-full px-2.5 py-1" style={{ border:'1px solid var(--border)' }}>{source.ref} · {source.label} ↗</a>)}</div>
 
     {coverageGaps.length>0 && <div className="mt-6 rounded-2xl p-5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--bg-subtle)' }}>
       <div className="flex flex-wrap items-end justify-between gap-3"><div><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em]" style={{ color:'var(--signal)' }}>COVERAGE GAP</div><h3 className="mt-2 text-xl font-semibold">{en?'Group untracked signals before creating new backlog.':'Untracked 신호를 새 이슈 생성 전에 영역별로 묶습니다.'}</h3></div><div className="font-mono text-[10px]" style={{ color:'var(--text-faint)' }}>{untrackedAll.length} {en?'untracked signals':'untracked signals'} · {coverageGaps.length} {en?'gap groups':'gap groups'}</div></div>
@@ -119,6 +58,6 @@ export function OssPortfolioAttention({ locale, docs }: Props) {
       <div className="mt-4 grid gap-3 lg:grid-cols-2">{coverageGaps.map(({kind,items,owner})=><div key={kind} className="rounded-xl p-4" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="flex items-center justify-between gap-3"><span className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em]" style={{ color:'var(--signal)' }}>{kind}</span><span className="rounded-full px-2.5 py-1 font-mono text-[10px]" style={{ border:'1px solid var(--border)', color:'var(--text-faint)' }}>{items.length} {en?'untracked':'untracked'}</span></div><div className="mt-3 flex flex-wrap gap-1.5">{items.slice(0,6).map((item)=><Link key={`${item.slug}-${item.kind}`} href={`${prefix}/${item.slug}/`} className="rounded-full px-2.5 py-1 text-[11px]" style={{ border:'1px solid var(--border)', color:'var(--text-muted)' }}>{item.name}</Link>)}</div><div className="mt-4 border-t pt-3" style={{ borderColor:'var(--border)' }}><div className="text-[10px] font-semibold uppercase tracking-[0.12em]" style={{ color:'var(--text-faint)' }}>{en?'Nearest canonical owner':'가장 가까운 canonical owner'}</div><a href={owner.url} target="_blank" rel="noreferrer" className="mt-1 inline-block text-sm font-semibold" style={{ color:'var(--accent)' }}>{owner.ref} · {en?owner.labelEn:owner.labelKo} ↗</a><p className="mt-2 text-xs leading-5" style={{ color:'var(--text-muted)' }}>{en?owner.rationaleEn:owner.rationaleKo}</p></div></div>)}</div>
     </div>}
 
-    {visible.length===0 ? <div className="mt-6 rounded-2xl p-6 text-sm" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)', color:'var(--text-muted)' }}>{en?'No attention signals matched the current rules.':'현재 규칙에 해당하는 attention signal이 없습니다.'}</div> : <div className="mt-6 grid gap-3 md:grid-cols-2">{visible.map((item)=>{const tracker=trackerFor(item.slug,item.kind);return <div key={`${item.slug}-${item.kind}`} className="rounded-2xl p-5 transition hover:-translate-y-0.5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="flex items-start justify-between gap-4"><div><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em]" style={{ color:'var(--signal)' }}>{item.label}</div><div className="mt-2 text-lg font-semibold">{item.name}</div></div><span className="rounded-full px-2.5 py-1 font-mono text-[10px]" style={{ border:'1px solid var(--border)', color:'var(--text-faint)' }}>{item.kind}</span></div><p className="mt-3 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{item.detail}</p><div className="mt-4 flex flex-wrap items-center gap-2"><Link href={`${prefix}/${item.slug}/`} className="text-xs font-semibold" style={{ color:'var(--accent)' }}>{en?'Project context →':'프로젝트 맥락 →'}</Link>{tracker?<a href={tracker.url} target="_blank" rel="noreferrer" className="rounded-full px-2.5 py-1 font-mono text-[10px] font-semibold" style={{ border:'1px solid var(--accent)', color:'var(--accent)' }}>Tracked · {tracker.label} · {tracker.source} ↗</a>:<span className="rounded-full px-2.5 py-1 font-mono text-[10px]" style={{ border:'1px solid var(--border)', color:'var(--text-faint)' }}>{en?'Untracked':'Untracked'}</span>}</div></div>})}</div>}
+    {visible.length===0 ? <div className="mt-6 rounded-2xl p-6 text-sm" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)', color:'var(--text-muted)' }}>{en?'No attention signals matched the current rules.':'현재 규칙에 해당하는 attention signal이 없습니다.'}</div> : <div className="mt-6 grid gap-3 md:grid-cols-2">{visible.map((item)=>{const tracker=getAttentionTracker(item.slug,item.kind);return <div key={`${item.slug}-${item.kind}`} className="rounded-2xl p-5 transition hover:-translate-y-0.5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="flex items-start justify-between gap-4"><div><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em]" style={{ color:'var(--signal)' }}>{item.label}</div><div className="mt-2 text-lg font-semibold">{item.name}</div></div><span className="rounded-full px-2.5 py-1 font-mono text-[10px]" style={{ border:'1px solid var(--border)', color:'var(--text-faint)' }}>{item.kind}</span></div><p className="mt-3 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{item.detail}</p><div className="mt-4 flex flex-wrap items-center gap-2"><Link href={`${prefix}/${item.slug}/`} className="text-xs font-semibold" style={{ color:'var(--accent)' }}>{en?'Project context →':'프로젝트 맥락 →'}</Link>{tracker?<a href={tracker.url} target="_blank" rel="noreferrer" className="rounded-full px-2.5 py-1 font-mono text-[10px] font-semibold" style={{ border:'1px solid var(--accent)', color:'var(--accent)' }}>Tracked · {tracker.label} · {tracker.source} ↗</a>:<span className="rounded-full px-2.5 py-1 font-mono text-[10px]" style={{ border:'1px solid var(--border)', color:'var(--text-faint)' }}>{en?'Untracked':'Untracked'}</span>}</div></div>})}</div>}
   </section>;
 }
