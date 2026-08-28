@@ -5,6 +5,7 @@ import OssProjectShell from '@/components/oss/OssProjectShell';
 import { OssProjectPositioning } from '@/components/oss/OssProjectPositioning';
 import { OssProjectPrinciples } from '@/components/oss/OssProjectPrinciples';
 import { OssProjectEvidence } from '@/components/oss/OssProjectEvidence';
+import { OssProjectStartHere } from '@/components/oss/OssProjectStartHere';
 
 export function generateStaticParams() {
   const docs = getDocs('ko').filter((d) => d.slug.includes('/'));
@@ -30,6 +31,7 @@ export default async function OssProjectHome({ params }: { params: Promise<{ pro
     <OssProjectPositioning slug={projectSlug} />
     {(project.meta.problem||project.meta.solution)&&<section className="mb-10 grid gap-4 md:grid-cols-2">{project.meta.problem&&<div className="rounded-2xl p-6" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color:'var(--text-faint)' }}>Problem</div><p className="text-[15px] leading-7" style={{ color:'var(--text-muted)' }}>{project.meta.problem}</p></div>}{project.meta.solution&&<div className="rounded-2xl p-6" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}>Approach</div><p className="text-[15px] leading-7" style={{ color:'var(--text-muted)' }}>{project.meta.solution}</p></div>}</section>}
     <OssProjectEvidence slug={projectSlug} />
+    <OssProjectStartHere slug={projectSlug} />
     <OssProjectPrinciples />
     <article id="oss-doc-content" className="prose cne-doc-prose max-w-3xl prose-headings:scroll-mt-24"><MDXContent source={project.content} /></article>
   </OssProjectShell>;
