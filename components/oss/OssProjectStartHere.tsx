@@ -23,6 +23,26 @@ const PATHS: Record<string, Path[]> = {
     { label:'IMPLEMENT', title:'Templates', href:'/oss/openforge/templates/', detail:'CI/CD, security, repository 운영에 재사용할 구현 자산을 봅니다.' },
     { label:'EVIDENCE', title:'Reference', href:'/oss/openforge/reference/', detail:'실제 OSS 적용 사례와 trade-off를 확인합니다.' },
   ],
+  ldapium: [
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/ldapium/architecture/', detail:'OpenLDAP server, optional UI, Helm chart와 persistent data 경계를 먼저 봅니다.' },
+    { label:'START', title:'Getting Started', href:'/oss/ldapium/getting-started/', detail:'Docker Compose와 Kubernetes Helm 배포의 기본 경로를 확인합니다.' },
+    { label:'OPERATE', title:'Operations', href:'/oss/ldapium/operations/', detail:'TLS, backup/restore, replication과 운영 주의점을 확인합니다.' },
+  ],
+  'kube-ready-box': [
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/kube-ready-box/architecture/', detail:'Ubuntu image → Packer → Vagrant Box → local Kubernetes node baseline 흐름을 봅니다.' },
+    { label:'START', title:'Getting Started', href:'/oss/kube-ready-box/getting-started/', detail:'Ubuntu, filesystem, provider 조합을 선택해 로컬 VM을 시작합니다.' },
+    { label:'VERIFY', title:'Verification', href:'/oss/kube-ready-box/verification/', detail:'Boot 성공이 아니라 kernel, network, filesystem, prerequisite baseline을 검증합니다.' },
+  ],
+  beluga: [
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/beluga/architecture/', detail:'CDC → streaming → lakehouse → query → BI 전체 데이터 흐름을 먼저 봅니다.' },
+    { label:'START', title:'Getting Started', href:'/oss/beluga/getting-started/', detail:'VM, k3s, GitOps bootstrap과 local resource profile을 확인합니다.' },
+    { label:'OPERATE', title:'Operations', href:'/oss/beluga/operations/', detail:'플랫폼 상태, upgrade와 data lifecycle 운영 경계를 확인합니다.' },
+  ],
+  'beluga-manager': [
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/beluga-manager/architecture/', detail:'Adapter → correlation → domain API → UI 구조와 authoritative state 경계를 봅니다.' },
+    { label:'BUILD', title:'Development', href:'/oss/beluga-manager/development/', detail:'Unified API와 frontend가 upstream OSS API와 어떻게 분리되는지 확인합니다.' },
+    { label:'OPERATE', title:'Operations', href:'/oss/beluga-manager/operations/', detail:'Early-stage control plane의 배포 및 운영 기준을 확인합니다.' },
+  ],
 };
 
 export function OssProjectStartHere({ slug }: { slug:string }) {
