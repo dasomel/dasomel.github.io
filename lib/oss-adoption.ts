@@ -1,3 +1,5 @@
+import discoveredCandidates from '@/src/data/oss-adoption-discovery.json';
+
 export type OssAdoptionEvidenceKind =
   | 'external-adopter'
   | 'external-contributor'
@@ -26,17 +28,27 @@ export type OssAdoptionCandidate = {
   sourceUrl: string;
   discoveredAt: string;
   note?: string;
+  discovery?: 'manual' | 'github-code-search';
 };
 
-// Intentionally starts empty. Add entries only when there is an explicit,
-// reviewable source that demonstrates external use or downstream adoption.
-// Stars, forks, clone counts, and contributor totals are not adoption evidence.
+// Add entries only when there is an explicit, reviewable source that demonstrates
+// external use or downstream adoption. Stars/forks/clone counts are not evidence.
 export const OSS_ADOPTION_EVIDENCE: readonly OssAdoptionEvidence[] = [];
 
-// Intake is deliberately separate from evidence. A candidate may be a useful
-// lead but MUST NOT affect readiness until it is promoted to reported/verified
-// evidence after source review. Rejected items remain useful as audit history.
-export const OSS_ADOPTION_CANDIDATES: readonly OssAdoptionCandidate[] = [];
+// Manual intake doubles as review history. A manual record overrides an automated
+// candidate with the same source URL, allowing rejected/reported/verified decisions
+// to persist even if the discovery collector sees the same reference again.
+export const OSS_ADOPTION_MANUAL_CANDIDATES: readonly OssAdoptionCandidate[] = [];
+
+const generated=(discoveredCandidates as OssAdoptionCandidate[]).map((item)=>({
+  ...item,
+  discovery:item.discovery??'github-code-search' as const,
+}));
+const manualByUrl=new Map(OSS_ADOPTION_MANUAL_CANDIDATES.map((item)=>[item.sourceUrl,item]));
+export const OSS_ADOPTION_CANDIDATES: readonly OssAdoptionCandidate[] = [
+  ...generated.filter((item)=>!manualByUrl.has(item.sourceUrl)),
+  ...OSS_ADOPTION_MANUAL_CANDIDATES,
+];
 
 export function getOssAdoptionEvidence(project: string) {
   return OSS_ADOPTION_EVIDENCE.filter((item) => item.project === project);
@@ -55,6 +67,7 @@ export function adoptionIntakeState() {
     reported: OSS_ADOPTION_CANDIDATES.filter((item) => item.status === 'reported').length,
     verified: OSS_ADOPTION_CANDIDATES.filter((item) => item.status === 'verified').length,
     rejected: OSS_ADOPTION_CANDIDATES.filter((item) => item.status === 'rejected').length,
+    automated: OSS_ADOPTION_CANDIDATES.filter((item) => item.discovery === 'github-code-search').length,
   } as const;
 }
 
