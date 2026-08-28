@@ -3,6 +3,10 @@ const POSITIONING: Record<string, { role: string; statement: string; evidence: s
   'nfs-quota-agent': { role: 'Reusable Component', statement: 'Narwhal에 종속되지 않고 Kubernetes shared storage 환경에서 독립 설치·검증·재사용할 수 있는 filesystem quota component를 지향합니다.', evidence: ['Shared NFS quota', 'Filesystem enforcement', 'Independent lifecycle'] },
   kubemetal: { role: 'Emerging / Cloud-native AI', statement: 'Apple Silicon의 native ML compute와 Kubernetes control plane을 연결해 local AI infrastructure의 실용적인 경계를 검증합니다.', evidence: ['Apple Silicon', 'Kubernetes control plane', 'Native ML compute'] },
   openforge: { role: 'Engineering Foundation', statement: '각 OSS가 같은 저장소 모양만 갖추는 것이 아니라 documentation, CI/CD, security, release, governance 원칙을 반복 적용하도록 만드는 공통 engineering blueprint입니다.', evidence: ['OSS standards', 'Supply chain', 'Governance & docs'] },
+  ldapium: { role: 'Identity Infrastructure', statement: '새 LDAP 구현이 아니라 upstream OpenLDAP을 Kubernetes 환경에서 안전하고 반복 가능하게 빌드·패키징·배포·운영하는 identity infrastructure boundary를 제공합니다.', evidence: ['Upstream packaging', 'Zero-default-password', 'Helm & air-gap'] },
+  'kube-ready-box': { role: 'Node Foundation', statement: 'Kubernetes 설치기 대신, ARM64/AMD64와 여러 provider에서 반복 사용할 수 있는 OS readiness baseline을 Packer와 Vagrant image로 제공합니다.', evidence: ['OS readiness', 'Multi-arch', 'Filesystem variants'] },
+  beluga: { role: 'Data Platform Reference', statement: 'Kafka·CDC·Flink·Iceberg·Trino·Superset·Airflow의 데이터 lifecycle을 로컬 Kubernetes에서 end-to-end로 연결하고 검증하는 reference platform입니다.', evidence: ['CDC & streaming', 'Lakehouse lifecycle', 'E2E validation'] },
+  'beluga-manager': { role: 'Data Control Plane', statement: '개별 OSS UI를 복제하지 않고 authoritative API를 adapter로 연결해 Pipeline, Data Asset, Service, Operations 관점의 cross-system context를 제공합니다.', evidence: ['Unified domain API', 'Correlation layer', 'Read-first control plane'] },
 };
 
 export function OssProjectPositioning({ slug }: { slug: string }) {
