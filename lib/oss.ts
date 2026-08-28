@@ -1,8 +1,8 @@
 export const OSS_PORTFOLIO_GROUPS = [
   {
     label: 'Engineering Foundation',
-    description: 'OSS 프로젝트를 반복 가능하게 만들고, 로컬 Kubernetes 노드와 공급망 기준을 표준화하는 기반 프로젝트',
-    projects: ['openforge', 'kube-ready-box'],
+    description: 'OSS 프로젝트를 반복 가능하게 만들고, 로컬 Kubernetes 노드·접속 경로·공급망 기준을 표준화하는 기반 프로젝트',
+    projects: ['openforge', 'kube-ready-box', 'clusterdeck'],
   },
   {
     label: 'Cloud Native Platform',
