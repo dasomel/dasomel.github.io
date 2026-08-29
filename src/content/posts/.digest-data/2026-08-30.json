@@ -1,0 +1,287 @@
+{
+  "date": "2026-08-30",
+  "generatedAt": "2026-08-29T22:41:56.577Z",
+  "count": 35,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your container runs. Everything around it shouldn’t be your problem.",
+      "link": "https://thenewstack.io/amazon-ecs-express-mode/",
+      "date": "2026-08-29T15:00:00.000Z",
+      "excerpt": "The promise with containers was simple: if it runs on your local machine, it will run in production. And this"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Commits on GitHub have doubled in four months. Verification capacity has not.",
+      "link": "https://thenewstack.io/scaling-ai-code-verification/",
+      "date": "2026-08-29T14:00:00.000Z",
+      "excerpt": "I have been waiting for agent-generated code to show up in public infrastructure data rather than in vendor benchmarks. In"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The 3 roles AI agents play in your developer platform",
+      "link": "https://thenewstack.io/ai-agent-platform-roles/",
+      "date": "2026-08-29T13:00:00.000Z",
+      "excerpt": "Engineering organizations are trying to deliver as fast as technology allows, bringing agentic AI into their developer platforms and working"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Pod Certificates and Cluster Trust Bundles",
+      "link": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles/",
+      "date": "2026-08-28T18:30:00.000Z",
+      "excerpt": "Pod Certificate / Cluster Trust Bundles Blog Post Kubernetes brings a wealth of features that make it easy to run your production workloads securely and reliably."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "MAPS: Netflix’s Multimodal Asset Personalization at Scale",
+      "link": "https://netflixtechblog.com/maps-netflixs-multimodal-asset-personalization-at-scale-32f96320785e?source=rss----2615bd06b42e---4",
+      "date": "2026-08-28T16:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Relaunching HashiCorp Validated Designs with improved usability",
+      "link": "https://www.hashicorp.com/blog/relaunching-hashicorp-validated-designs-with-improved-usability",
+      "date": "2026-08-28T16:00:00.000Z",
+      "excerpt": "HashiCorp Validated Designs (HVDs) provide prescriptive, enterprise-focused guidance for deploying, operating, and using HashiCorp products in production. They are designed to go beyond feature documentation and general best practices by giving customers an opinionated, end-to-end path for achieving specific outcomes."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Build your own continuous modernization pipeline with AWS Transform custom",
+      "link": "https://aws.amazon.com/blogs/devops/build-your-own-continuous-modernization-pipeline-with-aws-transform-custom/",
+      "date": "2026-08-28T13:27:12.000Z",
+      "excerpt": "Introduction Development velocity has reached new heights with AI-driven development tools and practices. Organizations are generating code faster than ever before."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "BotBase for Operators: A clearer path to joining Cloudflare's directory of bots and agents",
+      "link": "https://blog.cloudflare.com/botbase-for-operators/",
+      "date": "2026-08-28T12:59:44.000Z",
+      "excerpt": "Bot operators now have a home in the Cloudflare dashboard to manage submissions. This update adds submission status tracking, submission editing, and a behavior model so operators can accurately declare how their bots use content."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Scale before the spike: Predictive autoscaling for GPU workloads on Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/08/28/scale-before-the-spike-predictive-autoscaling-for-gpu-workloads-on-kubernetes/",
+      "date": "2026-08-28T11:30:00.000Z",
+      "excerpt": "The 3 AM Call We got paged one Tuesday morning. A critical production service had crashed under traffic—not gradually degraded, but crashed."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Your Kubernetes platform is ready for containers. Is it ready for AI?",
+      "link": "https://www.cncf.io/blog/2026/08/28/your-kubernetes-platform-is-ready-for-containers-is-it-ready-for-ai/",
+      "date": "2026-08-28T11:00:00.000Z",
+      "excerpt": "Kubernetes has given platform teams a consistent way to deploy, scale, and operate containerized applications. Now, many of those same teams are being asked to support AI."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "1%가 겪은 버그 고쳐야할까요?",
+      "link": "https://toss.tech/article/qa_hotfix",
+      "date": "2026-08-28T08:46:00.000Z",
+      "excerpt": "점진 배포와 핫픽스의 모순 속에서, 판단을 만든 이야기"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "date": "2026-08-28T06:00:00.000Z",
+      "excerpt": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Supporting Thailand’s next generation of AI startups",
+      "link": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+      "date": "2026-08-28T02:00:00.000Z",
+      "excerpt": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "LLM Wiki: 코드 기준으로 자동 최신화되는 도메인 지식 SSOT 만들기",
+      "link": "https://techblog.lycorp.co.jp/ko/llm-wiki-code-driven-knowledge-ssot",
+      "date": "2026-08-28T02:00:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 Global E-Commerce Platform 개발을 맡고 있는 윤석범입니다."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "The Open ASR Leaderboard Adds Its First Global South Language",
+      "link": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Managing enterprise AI at scale: Hosting, deployment patterns, and Day 2 operations",
+      "link": "https://www.redhat.com/en/blog/managing-enterprise-ai-scale-hosting-deployment-patterns-and-day-2-operations",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "In our previous article, Enterprise AI model selection: Balancing performance, privacy, and operational fit, we described the 4 layers that make up an effective enterprise AI architecture."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Learning while building: How Red Hat Training accelerates technical growth",
+      "link": "https://www.redhat.com/en/blog/learning-while-building-how-red-hat-training-accelerates-technical-growth",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "Managing complex data systems and learning new software platforms can feel like navigating a maze in the dark."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — August 28, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-august-28-2026-red-hat",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "Streamlining container security: Red Hat Hardened Images now supported in AWS InspectorScan API and ECR Basic scanningAWS InspectorScan API and ECR Basic scanning now support Red Hat Hardened Images."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Reduce sensitive data exposure with build-time allowlists",
+      "link": "https://www.datadoghq.com/blog/rum-build-time-privacy-allowlist/",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "Learn how build-time allowlists preserve useful RUM action names while reducing the risk of exposing runtime-generated sensitive data."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Metrics API graduates to stable",
+      "link": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
+      "date": "2026-08-27T18:30:00.000Z",
+      "excerpt": "Kubernetes v1.37 promotes the metrics."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Planetary prediction engine: Automating global models via Earth AI",
+      "link": "https://research.google/blog/planetary-prediction-engine-automating-global-models-via-earth-ai/",
+      "date": "2026-08-27T17:37:20.000Z",
+      "excerpt": "Earth AI"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How we saved 100 terabytes of memory by optimizing 1.1.1.1’s DNS cache",
+      "link": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/",
+      "date": "2026-08-27T17:02:35.000Z",
+      "excerpt": "Five Rust-level memory optimizations to the DNS cache layout of Big Pineapple cut per-entry memory by 56%, freeing approximately 100 TB of memory across Cloudflare's fleet."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Managed PostgreSQL vs. self-hosted PostgreSQL: Key benefits and trade-offs",
+      "link": "https://azure.microsoft.com/en-us/blog/managed-postgresql-vs-self-hosted-postgresql-key-benefits-and-trade-offs/",
+      "date": "2026-08-27T17:00:00.000Z",
+      "excerpt": "Compare managed PostgreSQL vs. self-hosted PostgreSQL across cost, control, security, resilience, scalability, and operational effort."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "3 new ways to plan and book travel in Search",
+      "link": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "date": "2026-08-27T16:00:00.000Z",
+      "excerpt": "Book hotels and track airfares, plus view miles and rewards with AI Mode in Google Search."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Reimagining work: How Pythian’s internal AI playbook delivers customer ROI",
+      "link": "https://cloud.google.com/blog/topics/startups/how-pythians-internal-ai-playbook-delivers-customer-roi/",
+      "date": "2026-08-27T16:00:00.000Z",
+      "excerpt": "When Pythian rolled out Google Cloud’s Gemini Enterprise across our 500-person company in 27 countries, the goal was simple: use our own company as a proving ground to discover how enterprise AI actually delivers ROI. What we found changed our strategy entirely."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Deploy personal AI agents with Cloud Run instances",
+      "link": "https://cloud.google.com/blog/products/serverless/introducing-cloud-run-instances/",
+      "date": "2026-08-27T16:00:00.000Z",
+      "excerpt": "Need a low-cost, high-performance way to run long-lived, stateful workloads such as AI agents? Today, we introduced Cloud Run instances, which let you do just that."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Stream HCP Vault Dedicated audit logs to Microsoft Sentinel",
+      "link": "https://www.hashicorp.com/blog/hcp-vault-dedicated-audit-logs-microsoft-sentinel",
+      "date": "2026-08-27T16:00:00.000Z",
+      "excerpt": "HashiCorp Vault sits at the center of your organization's secrets, which makes its audit log some of the most valuable security telemetry you have. With a small set of documented exceptions, Vault audit devices record API requests and responses."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "OpenClaw went viral. Meet the maintainers building and securing it.",
+      "link": "https://github.blog/open-source/maintainers/openclaw-went-viral-meet-the-maintainers-building-and-securing-it/",
+      "date": "2026-08-27T16:00:00.000Z",
+      "excerpt": "OpenClaw is the fastest-growing project in GitHub history. Peter Steinberger and several maintainers share what they learned in the project's first six months."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "How to measure and improve instrumentation quality for better full-stack observability",
+      "link": "https://grafana.com/blog/how-to-measure-and-improve-instrumentation-quality-for-better-full-stack-observability/",
+      "date": "2026-08-27T13:03:49.000Z",
+      "excerpt": "Modern engineering teams instrument everything, with metrics, logs, traces, and profiles flowing from hundreds of services at once."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Building an AI factory on Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/08/27/building-an-ai-factory-on-kubernetes/",
+      "date": "2026-08-27T11:30:00.000Z",
+      "excerpt": "An AI factory is not just a model or a cluster. It is a pool of GPUs that many teams draw from at once: one team fine-tuning, another serving inference, a third running evaluations, all on."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+      "link": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "date": "2026-08-27T09:00:00.000Z",
+      "excerpt": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Debug live production code without redeploying with Datadog Live Debugger",
+      "link": "https://www.datadoghq.com/blog/live-debugger/",
+      "date": "2026-08-27T00:00:00.000Z",
+      "excerpt": "Learn how Live Debugger helps you investigate production code and debug faster using Bits AI."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "What we learned about AI agent security by monitoring our agents",
+      "link": "https://www.datadoghq.com/blog/ai-agent-security-lessons/",
+      "date": "2026-08-27T00:00:00.000Z",
+      "excerpt": "Learn what we discovered about AI agent security by monitoring our agents, from creating an inventory of agent components to tracing sensitive data and tool calls."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab compliance frameworks: Adhere to SOC 2 in minutes",
+      "link": "https://about.gitlab.com/blog/quick-compliance-with-compliance-framework-templates/",
+      "date": "2026-08-27T00:00:00.000Z",
+      "excerpt": "Compliance is the part of software delivery that everyone agrees is important, yet nobody enjoys. It often lives in spreadsheets, screenshots, and the quiet dread of an upcoming audit."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How to recognize your team with GitLab Achievements",
+      "link": "https://about.gitlab.com/blog/how-to-recognize-your-team-with-gitlab-achievements/",
+      "date": "2026-08-27T00:00:00.000Z",
+      "excerpt": "Every team runs on people who go above and beyond. The engineer who fixes the flaky test nobody else will touch."
+    }
+  ]
+}
