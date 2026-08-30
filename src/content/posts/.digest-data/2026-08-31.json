@@ -1,0 +1,159 @@
+{
+  "date": "2026-08-31",
+  "generatedAt": "2026-08-30T22:49:45.882Z",
+  "count": 19,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI leaving Cursor: “Developers have to be prepared to adapt when it happens.”",
+      "link": "https://thenewstack.io/openai-cuts-cursor-spacex/",
+      "date": "2026-08-30T17:03:49.000Z",
+      "excerpt": "OpenAI stated on Friday that it has notified SpaceX that it intends to wind down its contract providing OpenAI models"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI agents are making retrieval engineering a core engineering discipline",
+      "link": "https://thenewstack.io/ai-agents-retrieval-engineering/",
+      "date": "2026-08-30T16:00:00.000Z",
+      "excerpt": "AI agents are changing retrieval requirements. As organizations move from chatbots to AI systems that investigate, reason, and act on"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI agent is only as good as the harness around it",
+      "link": "https://thenewstack.io/building-ai-agent-harness/",
+      "date": "2026-08-30T15:00:00.000Z",
+      "excerpt": "An agent can give a convincing answer in a demo. Especially when the question is clear, the documents are up"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Pod Certificates and Cluster Trust Bundles",
+      "link": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles/",
+      "date": "2026-08-28T18:30:00.000Z",
+      "excerpt": "Pod Certificate / Cluster Trust Bundles Blog Post Kubernetes brings a wealth of features that make it easy to run your production workloads securely and reliably."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "MAPS: Netflix’s Multimodal Asset Personalization at Scale",
+      "link": "https://netflixtechblog.com/maps-netflixs-multimodal-asset-personalization-at-scale-32f96320785e?source=rss----2615bd06b42e---4",
+      "date": "2026-08-28T16:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Relaunching HashiCorp Validated Designs with improved usability",
+      "link": "https://www.hashicorp.com/blog/relaunching-hashicorp-validated-designs-with-improved-usability",
+      "date": "2026-08-28T16:00:00.000Z",
+      "excerpt": "HashiCorp Validated Designs (HVDs) provide prescriptive, enterprise-focused guidance for deploying, operating, and using HashiCorp products in production. They are designed to go beyond feature documentation and general best practices by giving customers an opinionated, end-to-end path for achieving specific outcomes."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Build your own continuous modernization pipeline with AWS Transform custom",
+      "link": "https://aws.amazon.com/blogs/devops/build-your-own-continuous-modernization-pipeline-with-aws-transform-custom/",
+      "date": "2026-08-28T13:27:12.000Z",
+      "excerpt": "Introduction Development velocity has reached new heights with AI-driven development tools and practices. Organizations are generating code faster than ever before."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "BotBase for Operators: A clearer path to joining Cloudflare's directory of bots and agents",
+      "link": "https://blog.cloudflare.com/botbase-for-operators/",
+      "date": "2026-08-28T12:59:44.000Z",
+      "excerpt": "Bot operators now have a home in the Cloudflare dashboard to manage submissions. This update adds submission status tracking, submission editing, and a behavior model so operators can accurately declare how their bots use content."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Scale before the spike: Predictive autoscaling for GPU workloads on Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/08/28/scale-before-the-spike-predictive-autoscaling-for-gpu-workloads-on-kubernetes/",
+      "date": "2026-08-28T11:30:00.000Z",
+      "excerpt": "The 3 AM Call We got paged one Tuesday morning. A critical production service had crashed under traffic—not gradually degraded, but crashed."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Your Kubernetes platform is ready for containers. Is it ready for AI?",
+      "link": "https://www.cncf.io/blog/2026/08/28/your-kubernetes-platform-is-ready-for-containers-is-it-ready-for-ai/",
+      "date": "2026-08-28T11:00:00.000Z",
+      "excerpt": "Kubernetes has given platform teams a consistent way to deploy, scale, and operate containerized applications. Now, many of those same teams are being asked to support AI."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "1%가 겪은 버그 고쳐야할까요?",
+      "link": "https://toss.tech/article/qa_hotfix",
+      "date": "2026-08-28T08:46:00.000Z",
+      "excerpt": "점진 배포와 핫픽스의 모순 속에서, 판단을 만든 이야기"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "date": "2026-08-28T06:00:00.000Z",
+      "excerpt": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Supporting Thailand’s next generation of AI startups",
+      "link": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+      "date": "2026-08-28T02:00:00.000Z",
+      "excerpt": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "LLM Wiki: 코드 기준으로 자동 최신화되는 도메인 지식 SSOT 만들기",
+      "link": "https://techblog.lycorp.co.jp/ko/llm-wiki-code-driven-knowledge-ssot",
+      "date": "2026-08-28T02:00:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 Global E-Commerce Platform 개발을 맡고 있는 윤석범입니다."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "The Open ASR Leaderboard Adds Its First Global South Language",
+      "link": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Managing enterprise AI at scale: Hosting, deployment patterns, and Day 2 operations",
+      "link": "https://www.redhat.com/en/blog/managing-enterprise-ai-scale-hosting-deployment-patterns-and-day-2-operations",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "In our previous article, Enterprise AI model selection: Balancing performance, privacy, and operational fit, we described the 4 layers that make up an effective enterprise AI architecture."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Learning while building: How Red Hat Training accelerates technical growth",
+      "link": "https://www.redhat.com/en/blog/learning-while-building-how-red-hat-training-accelerates-technical-growth",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "Managing complex data systems and learning new software platforms can feel like navigating a maze in the dark."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — August 28, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-august-28-2026-red-hat",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "Streamlining container security: Red Hat Hardened Images now supported in AWS InspectorScan API and ECR Basic scanningAWS InspectorScan API and ECR Basic scanning now support Red Hat Hardened Images."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Reduce sensitive data exposure with build-time allowlists",
+      "link": "https://www.datadoghq.com/blog/rum-build-time-privacy-allowlist/",
+      "date": "2026-08-28T00:00:00.000Z",
+      "excerpt": "Learn how build-time allowlists preserve useful RUM action names while reducing the risk of exposing runtime-generated sensitive data."
+    }
+  ]
+}
