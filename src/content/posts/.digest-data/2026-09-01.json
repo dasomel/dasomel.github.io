@@ -1,0 +1,175 @@
+{
+  "date": "2026-09-01",
+  "generatedAt": "2026-08-31T23:55:41.594Z",
+  "count": 21,
+  "articles": [
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "BigQuery Graph is now GA: the knowledge foundation for the agentic era",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-graph-connecting-data-and-ai-at-scale/",
+      "date": "2026-08-31T23:00:00.000Z",
+      "excerpt": "Many of the questions that matter in enterprise data aren't just about individual rows — they're about how things connect: how two accounts are linked, what path a payment took, what context grounds an AI agent's answer. That’s what a graph is built to solve."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "SpaceX is in an “enviable position”: why Anthropic is sticking with Cursor as OpenAI cuts access",
+      "link": "https://thenewstack.io/anthropic-spacex-cursor-compute-openai/",
+      "date": "2026-08-31T21:47:04.000Z",
+      "excerpt": "OpenAI caused something of a stir over the weekend when it announced plans to cut Cursor’s direct access to OpenAI"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "MCP was supposed to solve the agent tooling problem. It missed a step.",
+      "link": "https://thenewstack.io/ard-agent-discovery-specification/",
+      "date": "2026-08-31T20:04:20.000Z",
+      "excerpt": "Connecting an AI agent to a tool is relatively straightforward. Things get more complicated once an organization has hundreds or"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google’s new forecasting model beats everyone. You can’t use it at work (yet).",
+      "link": "https://thenewstack.io/google-timesfm-3-multivariate-forecasting/",
+      "date": "2026-08-31T19:41:54.000Z",
+      "excerpt": "On Monday, Google launched TimesFM-3, a 330-million-parameter time-series forecasting model trained on over a trillion real-world and synthetic data time"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Storage Version Migration Enabled by Default",
+      "link": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga/",
+      "date": "2026-08-31T18:30:00.000Z",
+      "excerpt": "I am excited that storage version migration (SVM) has graduated to General Availability (GA) in Kubernetes v1.37!"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "TimesFM-3: A zero-shot foundation model for multivariate forecasting",
+      "link": "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/",
+      "date": "2026-08-31T17:19:40.000Z",
+      "excerpt": "Data Management"
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "Testing cookie behavior across hundreds of web surfaces with our in-house auditor",
+      "link": "https://dropbox.tech/security/how-our-inhouse-auditor-tests-cookie-behavior-across-hundreds-of-web-surfaces",
+      "date": "2026-08-31T17:00:00.000Z",
+      "excerpt": "Our cookie auditor acts like a privacy-conscious user by visiting web pages and checking that they only load cookies consistent with that user’s preferences."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cloud CISO Perspectives: Tips on securing the water sector in the AI era",
+      "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-tips-on-securing-water-sector-ai-era/",
+      "date": "2026-08-31T16:00:00.000Z",
+      "excerpt": "Welcome to the second Cloud CISO Perspectives for August 2026. Today, Chris Sistrunk and Stephanie Kiel detail the critical issues facing the water sector, and actionable steps that OT operators can take to secure their infrastructure."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "From weeks to minutes: The new agentic era of data pipelines",
+      "link": "https://cloud.google.com/blog/products/data-analytics/build-data-pipelines-in-less-time-with-data-agent-kit/",
+      "date": "2026-08-31T16:00:00.000Z",
+      "excerpt": "Data pipelines are the backbone of the modern enterprise, yet a barrier to entry exists for orchestrating them, making this critical capability unavailable to many data professionals."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Secure by default is your only way forward",
+      "link": "https://www.docker.com/blog/secure-by-default-is-your-only-way-forward/",
+      "date": "2026-08-31T13:00:00.000Z",
+      "excerpt": "The newest worker on your team builds with whatever it finds and never asks what deserves your trust. Our answer is a hardened foundation and a boundary built for agents."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Fin's CTO on Building Great Engineering Organizations in the AI Era",
+      "link": "https://www.honeycomb.io/blog/fin-cto-building-great-engineering-organizations-ai-era",
+      "date": "2026-08-31T13:00:00.000Z",
+      "excerpt": "Fin (formerly Intercom) CTO Darragh Curran set a public goal to double engineering productivity—and nearly tripled it."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Adaptive Intelligence: Undermining the economics of every bot attack",
+      "link": "https://blog.cloudflare.com/introducing-adaptive-intelligence/",
+      "date": "2026-08-31T12:59:00.000Z",
+      "excerpt": "Bot operators have historically had the economic advantage, bypassing static, deterministic detection rules with cheap proxies and retooling."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "OpenTelemetry has graduated… now what?",
+      "link": "https://www.cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2/",
+      "date": "2026-08-31T11:30:00.000Z",
+      "excerpt": "In case you missed it: OpenTelemetry (OTel) has officially achieved CNCF graduated status! It now stands proudly alongside amazing open source projects such as Kubernetes and Prometheus, to name just a few."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Optimize EKS operations with agents: Reduce MTTR with AWS DevOps Agent and a Kubernetes Operator",
+      "link": "https://aws.amazon.com/blogs/devops/optimize-eks-operations-with-agents-reduce-mttr-with-aws-devops-agent-and-a-kubernetes-operator/",
+      "date": "2026-08-31T09:28:02.000Z",
+      "excerpt": "Introduction Running workloads on Amazon Elastic Kubernetes Service (Amazon EKS) can involve managing failures like OOMKilled or IP exhaustion."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Polimill builds Japan's next-generation public AI infrastructure",
+      "link": "https://openai.com/index/polimill",
+      "date": "2026-08-31T07:00:00.000Z",
+      "excerpt": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "A milestone in expanding access to AI",
+      "link": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+      "date": "2026-08-31T04:00:00.000Z",
+      "excerpt": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Defending the battlefield: Stateful detections for an agentic threat landscape",
+      "link": "https://webflow.sysdig.com/blog/defending-the-battlefield-stateful-detections-for-an-agentic-threat-landscape",
+      "date": "2026-08-31T00:00:00.000Z",
+      "excerpt": "Defenses built for human speed won’t hold against AI-driven threats. That’s why stateful detections are becoming an essential tool for runtime security."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How Bits Database Optimization proves a query rewrite is faster",
+      "link": "https://www.datadoghq.com/blog/how-bits-database-optimization-proves-a-query-rewrite-is-faster/",
+      "date": "2026-08-31T00:00:00.000Z",
+      "excerpt": "Learn how Bits generates synthetic data, measures simulation fidelity, and uses execution time and database work to determine whether an optimization is truly faster."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Respond to security threats faster with Tines and Observability Pipelines",
+      "link": "https://www.datadoghq.com/blog/tines-observability-pipelines-security-automation/",
+      "date": "2026-08-31T00:00:00.000Z",
+      "excerpt": "Learn how Tines workflows can update Datadog Observability Pipelines to prioritize threats, reduce alert noise, and accelerate investigations."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Troubleshoot and secure your code faster with Datadog’s Bitbucket Cloud Source Code integration",
+      "link": "https://www.datadoghq.com/blog/bitbucket-cloud-source-code-integration/",
+      "date": "2026-08-31T00:00:00.000Z",
+      "excerpt": "Connect Bitbucket Cloud to Datadog to troubleshoot with source code in context and surface test, quality, and security feedback in pull requests."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "같은 장애를 두 번 겪지 않기 위해, 배포 전에 리뷰합니다 — KRIS 개발기",
+      "link": "https://tech.kakao.com/posts/831",
+      "date": "2026-08-30T15:00:00.000Z",
+      "excerpt": "들어가며 지난 글 LLM as a Judge를 활용한 CodeBuddy 성능 평가에서는 사내 AI 코드 리뷰 서비스 코드버디(CodeBuddy)의 응답 품질을 어떻게 측정할 것인지를 다뤘습니다. 평가 체계를 세우고 나니 다음 질문이 따라왔습니다."
+    }
+  ]
+}
