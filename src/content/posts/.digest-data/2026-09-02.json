@@ -1,0 +1,359 @@
+{
+  "date": "2026-09-02",
+  "generatedAt": "2026-09-01T22:39:37.350Z",
+  "count": 44,
+  "articles": [
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "BenchMIRT: What are LLM benchmarks actually measuring?",
+      "link": "https://huggingface.co/blog/allenai/benchmirt",
+      "date": "2026-09-01T21:39:07.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Claude Fable 5.1 watermark: It has a blind spot developers can’t ignore",
+      "link": "https://thenewstack.io/fable-5-1-watermark/",
+      "date": "2026-09-01T20:59:09.000Z",
+      "excerpt": "Anthropic launched Claude Fable 5.1 on Tuesday with a statistical signature embedded in its generated text, but developers shouldn’t expect"
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The latest AI news we announced in August 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
+      "date": "2026-09-01T20:45:00.000Z",
+      "excerpt": "Here are Google’s latest AI updates from August 2026"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Runway wants to generate software as you use it. Solaris is its first step.",
+      "link": "https://thenewstack.io/runway-solaris-generated-interfaces/",
+      "date": "2026-09-01T19:44:41.000Z",
+      "excerpt": "Runway introduced Solaris on Monday, the first model of a new class of AI systems it calls Interface World Models,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic’s Fable 5.1 is a bit cheaper, a bit smarter, and refuses a lot less",
+      "link": "https://thenewstack.io/anthropic-fable-5-1-launch/",
+      "date": "2026-09-01T19:38:32.000Z",
+      "excerpt": "On Tuesday, Anthropic launched the latest versions of its flagship Fable and Mythos models. Anthropic promises that the updated models"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Mapping global methane emissions from space with deep learning",
+      "link": "https://research.google/blog/mapping-global-methane-emissions-from-space-with-deep-learning/",
+      "date": "2026-09-01T18:40:06.000Z",
+      "excerpt": "Climate & Sustainability"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How AI-native companies turn workflows into operating capability",
+      "link": "https://openai.com/index/ai-native-company-workflows",
+      "date": "2026-09-01T17:00:00.000Z",
+      "excerpt": "Basis, Clay, and Exa Labs use AI agents to improve onboarding, account management, and developer integrations. See what enterprise leaders can apply."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Try Google Pics: Easy image creation and editing in Google Workspace",
+      "link": "https://blog.google/products-and-platforms/products/workspace/google-pics/",
+      "date": "2026-09-01T16:00:00.000Z",
+      "excerpt": "Built on our latest Nano Banana model, Google Pics — our image creation and editing tool — is now available."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What Google Cloud announced in AI this month",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month/",
+      "date": "2026-09-01T16:00:00.000Z",
+      "excerpt": "Editor’s note: Want to keep up with the latest from Google Cloud? Check back here for a monthly recap of our latest updates, announcements, resources, events, learning opportunities, and more."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Blackline simplifies perimeter policy intelligence with VPC Service Controls",
+      "link": "https://cloud.google.com/blog/topics/customers/how-blackline-prevents-data-exfiltration-with-vpc-service-controls/",
+      "date": "2026-09-01T16:00:00.000Z",
+      "excerpt": "Establishing network-level perimeters with VPC Service Controls (VPC-SC) is a critical step that can help you protect your cloud environment against data exfiltration, compromised accounts, and insider threats."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing TabFM in BigQuery: Predictive analytics reimagined",
+      "link": "https://cloud.google.com/blog/products/data-analytics/tabfm-adds-predictive-ml-to-bigquery/",
+      "date": "2026-09-01T16:00:00.000Z",
+      "excerpt": "Historically, enterprise predictive analytics tasks such as predicting churn, purchase intent, or fraud scoring have meant building custom models using libraries like XGBoost, Random Forest, or Deep Neural Networks (DNNs)."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Secure mainframe access with HashiCorp Boundary",
+      "link": "https://www.hashicorp.com/blog/secure-mainframe-access-with-hashicorp-boundary",
+      "date": "2026-09-01T16:00:00.000Z",
+      "excerpt": "Mainframes remain the backbone of many of the world’s critical systems, processing millions of transactions per second while delivering near-continuous availability. From powering Wall Street transactions to travel bookings, mainframes are ubiquitous."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "HashiCorp Vault agentic IAM is now generally available",
+      "link": "https://www.hashicorp.com/blog/hashicorp-vault-agentic-iam-is-now-generally-available",
+      "date": "2026-09-01T16:00:00.000Z",
+      "excerpt": "In June, we announced the public preview of native AI agent support in HashiCorp Vault. We are excited to make these new native agentic IAM capabilities generally available in Vault Enterprise 2."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Automate proxy injection for Amazon EKS on AWS Fargate using Kyverno",
+      "link": "https://aws.amazon.com/blogs/containers/automate-proxy-injection-for-amazon-eks-on-aws-fargate-using-kyverno/",
+      "date": "2026-09-01T15:59:57.000Z",
+      "excerpt": "Learn how to use a Kyverno mutating admission policy to automatically inject corporate proxy environment variables into Amazon EKS on AWS Fargate pods at admission time, delivering consistent egress compliance without modifying application deployment manifests."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Fast model loading for AI inference on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/containers/fast-model-loading-for-ai-inference-on-amazon-eks/",
+      "date": "2026-09-01T15:48:15.000Z",
+      "excerpt": "When you scale AI inference on Amazon EKS, every new pod must load model weights into GPU memory before serving traffic. We investigated where cold-start time goes and found two configuration-only changes to Run:ai Model Streamer that cut model startup time by 80-93% on subsequent launches, with no code changes."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Hybrid cloud orchestration: Modernizing on-premises infrastructure management with AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/hybrid-cloud-orchestration-modernizing-on-premises-infrastructure-management-with-aws/",
+      "date": "2026-09-01T14:01:10.000Z",
+      "excerpt": "Learn how to build a hybrid cloud orchestration solution that manages distributed on-premises infrastructure at scale using AWS serverless technologies and Amazon EKS Anywhere. Part 1 covers the core event-driven architecture patterns for automating server lifecycle and cluster management across hundreds of sites."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "MCP went stateless: Is your AWS MCP server deployment well-architected?",
+      "link": "https://aws.amazon.com/blogs/architecture/mcp-went-stateless-is-your-aws-mcp-server-deployment-well-architected/",
+      "date": "2026-09-01T13:09:19.000Z",
+      "excerpt": "On July 28, 2026, MCP made its protocol core stateless, removing the initialize handshake and session header."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Path to Astra: critical capabilities and frontier safeguards",
+      "link": "https://openai.com/index/path-to-astra",
+      "date": "2026-09-01T13:00:00.000Z",
+      "excerpt": "Astra is the first OpenAI model to meet the Critical cybersecurity capability threshold under the Preparedness Framework, with stronger safeguards for release."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Bringing the Most Advanced Sampling to the OpenTelemetry Collector",
+      "link": "https://www.honeycomb.io/blog/bringing-most-advanced-sampling-opentelemetry-collector",
+      "date": "2026-09-01T13:00:00.000Z",
+      "excerpt": "Honeycomb is donating its adaptive tail sampling processor, built on years of Refinery experience, to the OpenTelemetry Collector. See how adaptive sampling, trace fingerprinting, and sample rate attribution work, and how to try it today with the Honeycomb Collector Distribution."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How we could save petabytes of cache storage with Zstandard and Pingora",
+      "link": "https://blog.cloudflare.com/cache-transcoding/",
+      "date": "2026-09-01T12:59:00.000Z",
+      "excerpt": "Could we get more cache space with the same hardware? We prototyped compression inside Cloudflare's cache to find out."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT",
+      "link": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
+      "date": "2026-09-01T12:00:00.000Z",
+      "excerpt": "ChatGPT can now connect to trusted healthcare data, helping clinicians securely access patient context, medical research, and more."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Platform engineering maturity: From toolchain to self-service",
+      "link": "https://www.cncf.io/blog/2026/09/01/platform-engineering-maturity-from-toolchain-to-self-service/",
+      "date": "2026-09-01T11:35:00.000Z",
+      "excerpt": "Most platform engineering conversations tend to split into two rooms pretty quickly. The first room is full of teams who don’t have a platform yet."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Security briefing: August 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-august-2026",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "link": "https://huggingface.co/blog/webgpu-kernels",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "5 ways to augment security risk management in the AI era",
+      "link": "https://www.redhat.com/en/blog/5-ways-augment-security-risk-management-ai-era",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": "IT operations and security teams receive thousands of alerts every day from threat intelligence sources, such as vulnerability scanners, observability tools, Red Hat Lightspeed, and more."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why the virtualization decision keeps getting deferred",
+      "link": "https://www.redhat.com/en/blog/why-virtualization-decision-keeps-getting-deferred",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": "If double-paying during a platform transition is stalling your virtualization migration, removing that first-year cost overlap can get your project moving again.Most infrastructure teams I speak with have spent the best part of 2 years working out what to do about their virtualization platform."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How Ask Red Hat earns trust in enterprise AI troubleshooting",
+      "link": "https://www.redhat.com/en/blog/how-ask-red-hat-earns-trust-enterprise-ai-troubleshooting",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": "A recent review of 562 empirical studies on human trust in AI found that capability, explainability, transparency, and individual user factors consistently predict whether people will rely on an AI-generated answer. In production, the question is narrower and harder: Will I stake my environment on this?"
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Making Rust observability reliable at scale with OpenTelemetry",
+      "link": "https://www.datadoghq.com/blog/engineering/rust-tracing-opentelemetry/",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": "Learn how Datadog improved Rust tracing by building an opinionated OpenTelemetry-based library to help ensure consistent sampling, propagation, and trace quality at scale."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "From traces to experiments: A loop for improving AI agents",
+      "link": "https://www.datadoghq.com/blog/from-traces-to-experiments-a-loop-for-improving-ai-agents/",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": "Learn how to read AI agent traces as a roadmap and how to run production experiments that measure whether improvements hold in production."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Visualize how CUPED adjusts experiment results with Datadog",
+      "link": "https://www.datadoghq.com/blog/cuped-adjustments-visualization/",
+      "date": "2026-09-01T00:00:00.000Z",
+      "excerpt": "Learn how Datadog visualizes CUPED adjustments so you can trace which covariates change experiment lift estimates and improve precision."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Storage Version Migration Enabled by Default",
+      "link": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga/",
+      "date": "2026-08-31T18:30:00.000Z",
+      "excerpt": "I am excited that storage version migration (SVM) has graduated to General Availability (GA) in Kubernetes v1.37!"
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Introducing Azure Multicloud Interconnect for AWS",
+      "link": "https://azure.microsoft.com/en-us/blog/introducing-azure-multicloud-interconnect-for-aws/",
+      "date": "2026-08-31T18:00:00.000Z",
+      "excerpt": "Azure Multicloud Interconnect helps simplify private connectivity between Microsoft Azure and AWS, enabling organizations to support multicloud and AI workloads with a more streamlined, cloud-native networking experience."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "TimesFM-3: A zero-shot foundation model for multivariate forecasting",
+      "link": "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/",
+      "date": "2026-08-31T17:19:40.000Z",
+      "excerpt": "Data Management"
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "Testing cookie behavior across hundreds of web surfaces with our in-house auditor",
+      "link": "https://dropbox.tech/security/how-our-inhouse-auditor-tests-cookie-behavior-across-hundreds-of-web-surfaces",
+      "date": "2026-08-31T17:00:00.000Z",
+      "excerpt": "Our cookie auditor acts like a privacy-conscious user by visiting web pages and checking that they only load cookies consistent with that user’s preferences."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Inside Microsoft’s marketing team: Scaling expertise with AI",
+      "link": "https://azure.microsoft.com/en-us/blog/inside-microsofts-marketing-team-scaling-expertise-with-ai/",
+      "date": "2026-08-31T16:00:00.000Z",
+      "excerpt": "AI is helping organizations meet high expectations as markets change quickly and technology advances at a rapid pace."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Secure by default is your only way forward",
+      "link": "https://www.docker.com/blog/secure-by-default-is-your-only-way-forward/",
+      "date": "2026-08-31T13:00:00.000Z",
+      "excerpt": "The newest worker on your team builds with whatever it finds and never asks what deserves your trust. Our answer is a hardened foundation and a boundary built for agents."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Fin's CTO on Building Great Engineering Organizations in the AI Era",
+      "link": "https://www.honeycomb.io/blog/fin-cto-building-great-engineering-organizations-ai-era",
+      "date": "2026-08-31T13:00:00.000Z",
+      "excerpt": "Fin (formerly Intercom) CTO Darragh Curran set a public goal to double engineering productivity—and nearly tripled it."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Adaptive Intelligence: Undermining the economics of every bot attack",
+      "link": "https://blog.cloudflare.com/introducing-adaptive-intelligence/",
+      "date": "2026-08-31T12:59:00.000Z",
+      "excerpt": "Bot operators have historically had the economic advantage, bypassing static, deterministic detection rules with cheap proxies and retooling."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "OpenTelemetry has graduated… now what?",
+      "link": "https://www.cncf.io/blog/2026/08/31/opentelemetry-has-graduated-now-what-2/",
+      "date": "2026-08-31T11:30:00.000Z",
+      "excerpt": "In case you missed it: OpenTelemetry (OTel) has officially achieved CNCF graduated status! It now stands proudly alongside amazing open source projects such as Kubernetes and Prometheus, to name just a few."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Observability in Kubernetes: From metrics to meaning",
+      "link": "https://www.cncf.io/blog/2026/08/31/observability-in-kubernetes-from-metrics-to-meaning/",
+      "date": "2026-08-31T11:00:00.000Z",
+      "excerpt": "Kubernetes made infrastructure more programmable, scalable, and resilient. It also made production systems harder to reason about."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Optimize EKS operations with agents: Reduce MTTR with AWS DevOps Agent and a Kubernetes Operator",
+      "link": "https://aws.amazon.com/blogs/devops/optimize-eks-operations-with-agents-reduce-mttr-with-aws-devops-agent-and-a-kubernetes-operator/",
+      "date": "2026-08-31T09:28:02.000Z",
+      "excerpt": "Introduction Running workloads on Amazon Elastic Kubernetes Service (Amazon EKS) can involve managing failures like OOMKilled or IP exhaustion."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Defending the battlefield: Stateful detections for an agentic threat landscape",
+      "link": "https://webflow.sysdig.com/blog/defending-the-battlefield-stateful-detections-for-an-agentic-threat-landscape",
+      "date": "2026-08-31T00:00:00.000Z",
+      "excerpt": "Defenses built for human speed won’t hold against AI-driven threats. That’s why stateful detections are becoming an essential tool for runtime security."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "곧, if(kakao)26의 이야기가 시작됩니다.",
+      "link": "https://tech.kakao.com/posts/832",
+      "date": "2026-08-30T15:00:00.000Z",
+      "excerpt": "“모든 연결에 지능을” if(kakao)26은 이 한 문장에서 시작합니다. 카카오가 기술을 만들며 마주한 고민과 질문, 그 과정에서 얻은 경험과 발견을 나누는 if(kakao)26!"
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "같은 장애를 두 번 겪지 않기 위해, 배포 전에 리뷰합니다 — KRIS 개발기",
+      "link": "https://tech.kakao.com/posts/831",
+      "date": "2026-08-30T15:00:00.000Z",
+      "excerpt": "들어가며 지난 글 LLM as a Judge를 활용한 CodeBuddy 성능 평가에서는 사내 AI 코드 리뷰 서비스 코드버디(CodeBuddy)의 응답 품질을 어떻게 측정할 것인지를 다뤘습니다. 평가 체계를 세우고 나니 다음 질문이 따라왔습니다."
+    }
+  ]
+}
