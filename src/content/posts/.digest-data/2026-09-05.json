@@ -1,0 +1,399 @@
+{
+  "date": "2026-09-05",
+  "generatedAt": "2026-09-04T22:25:13.574Z",
+  "count": 49,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft built a prompt injection detector. Then it caught a phishing campaign instead.",
+      "link": "https://thenewstack.io/unicode-ascii-smuggling-ai-pipelines/",
+      "date": "2026-09-04T21:08:36.000Z",
+      "excerpt": "Microsoft flagged a phishing campaign last week that exploits a gap in how machines read text. Attackers are slipping invisible"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Investigate DMS migration issues with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+      "date": "2026-09-04T18:13:04.000Z",
+      "excerpt": "Migrating a production database is a high-risk operational event. AWS DMS is a cloud service that migrates relational databases, data warehouses, and other data stores into the AWS Cloud or between environments."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Sorry for the messy rollout”: OpenAI launched GPT-6 Astra, but developers are locked out",
+      "link": "https://thenewstack.io/gpt6-astra-developer-access-delayed/",
+      "date": "2026-09-04T16:04:42.000Z",
+      "excerpt": "OpenAI launched GPT-6 Astra on Thursday, but many developers hoping to give it a test drive are still waiting for"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Project HydraFusion: Frontier quality via multi-model orchestration",
+      "link": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
+      "date": "2026-09-04T16:04:14.000Z",
+      "excerpt": "In controlled offline evaluations, HydraFusion’s selective coding workflows matched or exceeded the evaluated Opus 5 baseline while reducing estimated workflow cost. Now available as a research preview in GitHub Copilot."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Yahoo optimizes resources with flexible VMs in Managed Service for Apache Spark",
+      "link": "https://cloud.google.com/blog/products/data-analytics/how-yahoo-optimizes-apache-spark-with-flexible-vms/",
+      "date": "2026-09-04T16:00:00.000Z",
+      "excerpt": "As a global media and technology company connecting hundreds of millions of users to finance, sports, and entertainment platforms, Yahoo operates a massive data infrastructure where analytics workloads must run continuously at high speed."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Spanner migrations: Automating dual-write with Antigravity CLI for minimal disruption",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/using-antigravity-cli-to-streamline-dual-write-database-migration/",
+      "date": "2026-09-04T16:00:00.000Z",
+      "excerpt": "When Google's Finance Engineering team needed to modernize their legacy data layer, they chose Spanner, a globally distributed, strongly consistent, multi-model database with high availability capabilities."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Not All LLM Workloads Are Equal: Benchmarking TPU Performance on Classification vs. Generation",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/not-all-llm-workloads-are-equal-benchmarking-tpu-performance-on-classification-vs-generation/",
+      "date": "2026-09-04T15:36:00.000Z",
+      "excerpt": "Moving Large Language Models (LLMs) from experimental prototypes into enterprise production exposes a critical truth: your infrastructure dictates both your performance ceilings and your unit economics."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI will sell you Astra, but not the system that scored 98.6% on ARC-AGI-3",
+      "link": "https://thenewstack.io/openai-astra-harness-arc-agi-3/",
+      "date": "2026-09-04T15:25:17.000Z",
+      "excerpt": "Investor Matt Turck, whose fantastic podcast has hosted the people who built ARC-AGI, summed up Astra’s blockbuster benchmarks with three"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "CPU + GPU: Why AI platform engineering is a heterogeneous infrastructure problem",
+      "link": "https://www.cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem/",
+      "date": "2026-09-04T11:00:00.000Z",
+      "excerpt": "AI infrastructure conversations often start with GPUs. Accelerators provide much of the compute behind model training and inference, so the focus is understandable."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubernetes isn’t new, but AI makes It scary again",
+      "link": "https://www.cncf.io/blog/2026/09/04/kubernetes-isnt-new-but-ai-makes-it-scary-again/",
+      "date": "2026-09-04T11:00:00.000Z",
+      "excerpt": "Kubernetes isn’t brand new anymore. Yet, for many teams, adopting it still feels intimidating."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "AI가 만든 코드가 어드민이 되기까지",
+      "link": "https://toss.tech/article/52885",
+      "date": "2026-09-04T08:47:00.000Z",
+      "excerpt": "실시간으로 생성되는 코드를 어드민 화면으로 보여 주기 위해, 개발 환경을 브라우저 안으로 옮긴 이야기를 소개해요."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "장애 Alert의 원인을 스스로 찾다: SRE Observer 개발기",
+      "link": "https://techblog.lycorp.co.jp/ko/building-sre-observer-for-alert-root-cause-analysis",
+      "date": "2026-09-04T01:50:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 Home 서비스의 안정성을 책임지고 있는 Home SRE(Site Reliability Engineering) 팀입니다."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Runtime is the real defense, not just posture",
+      "link": "https://webflow.sysdig.com/blog/runtime-is-the-real-defense-not-just-posture",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "Instead of trying to build a forward-looking defense with backward-facing tools, it's time to flip the script: Start with runtime security."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Cloud security and the power of runtime insights",
+      "link": "https://webflow.sysdig.com/blog/cloud-security-and-the-power-of-runtime-insights",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "As organizations move to the cloud, the adoption of a CNAPP with runtime insights becomes a pivotal strategy for securing cloud environments."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Modernizing virtualization in higher education: How automated node recovery protects data integrity",
+      "link": "https://www.redhat.com/en/blog/modernizing-virtualization-higher-education-how-automated-node-recovery-protects-data-integrity",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "Organizations across higher education and enterprise sectors face rising virtualization costs, shifting licensing structures, and architectural decisions that can no longer be deferred."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 4, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-4-2026-red-hat",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "CRN - AI Has Changed Open Source Security, Says Red Hat CEO Matt HicksRed Hat CEO Matt Hicks discusses how AI has transformed open source security, emphasizing the need for better patching and transparency."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Stop runtime threats with Workload Protection response actions",
+      "link": "https://www.datadoghq.com/blog/stop-runtime-threats-with-workload-protection-response-actions/",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "When a runtime threat appears, every step costs time. Datadog Workload Protection can now kill processes and isolate workloads with automated and manual response actions."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing context-aware vulnerability discovery and remediation with Cloudflare Managed Defense and OpenAI Daybreak models",
+      "link": "https://blog.cloudflare.com/vulnerability-discovery-remediation/",
+      "date": "2026-09-03T21:03:02.000Z",
+      "excerpt": "Use production traffic and security signals to prioritize findings, prepare edge mitigations when safe, and propose code patches. By combining WAF data with OpenAI Daybreak models, Vulnerability Discovery and Remediation helps teams identify and patch the most critical threats first."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Enterprise AI transformation relies on the end-to-end platform: Azure was built for this moment",
+      "link": "https://azure.microsoft.com/en-us/blog/enterprise-ai-transformation-relies-on-the-end-to-end-platform-azure-was-built-for-this-moment/",
+      "date": "2026-09-03T19:00:00.000Z",
+      "excerpt": "The recognition for Microsoft over the past couple of weeks comes down to models, infrastructure, data, applications, and developer tools working as one system when AI moves into production."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: DRA Updates",
+      "link": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/",
+      "date": "2026-09-03T18:30:00.000Z",
+      "excerpt": "Kubernetes 1.37 is here and Dynamic Resource Allocation (DRA) keeps pushing past where it started!"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Transfer learning for genomic prediction in underrepresented populations",
+      "link": "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/",
+      "date": "2026-09-03T18:20:31.000Z",
+      "excerpt": "General Science"
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "GPT-6 Astra: Frontier intelligence for work, now generally available in Microsoft Foundry",
+      "link": "https://azure.microsoft.com/en-us/blog/gpt-6-astra-frontier-intelligence-for-work-now-available-in-microsoft-foundry/",
+      "date": "2026-09-03T18:15:00.000Z",
+      "excerpt": "GPT-6 Astra, OpenAI's newest frontier model, begins rolling out today through the Microsoft Foundry Limited Access Program, with availability expanding to participating customers over the coming days."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "YOLO Mode: Agent Autonomy Without the Guardrails",
+      "link": "https://www.docker.com/blog/what-is-yolo-mode/",
+      "date": "2026-09-03T18:00:00.000Z",
+      "excerpt": "YOLO mode lets an AI agent run without asking permission. Learn what it is, why it's risky, and how to run it safely."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "ZGateway: Learnings from Putting a Proxy in Front of ZippyDB",
+      "link": "https://engineering.fb.com/2026/09/03/core-infra/zgateway-proxy-zippydb-meta/",
+      "date": "2026-09-03T16:00:20.000Z",
+      "excerpt": "We’re introducing ZGateway, the proxy we are using to unify traffic through ZippyDB, Meta’s most widely-used key value store. As a bonus, it also enables admission control, load balancing, cross-region resilience, and richer operations."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "A connectomics milestone: Mapping the complete male fruit fly brain",
+      "link": "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/",
+      "date": "2026-09-03T16:00:03.000Z",
+      "excerpt": "General Science"
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "The common security controls behind India's regulatory wave",
+      "link": "https://www.hashicorp.com/blog/the-common-security-controls-behind-indias-regulatory-wave",
+      "date": "2026-09-03T16:00:00.000Z",
+      "excerpt": "India’s security and privacy rulebook has changed quickly. But beneath the new layers of requirements, a common control set is emerging: encryption, tokenization and masking, least-privilege access, audit logging and retention, and controls for keeping regulated data inside India."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: Run several agents at once",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-run-several-agents-at-once/",
+      "date": "2026-09-03T16:00:00.000Z",
+      "excerpt": "Learn how to run parallel agents in the GitHub Copilot app, and experience the moment it stops feeling scary and starts feeling powerful."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "How Microsoft’s Physical Security Engineering Team scaled hybrid operations with Azure Arc and Azure Virtual Desktop",
+      "link": "https://azure.microsoft.com/en-us/blog/how-microsofts-physical-security-engineering-team-scaled-hybrid-operations-with-azure-arc-and-azure-virtual-desktop/",
+      "date": "2026-09-03T15:00:00.000Z",
+      "excerpt": "Learn how Microsoft used Azure Arc and Azure Virtual Desktop to simplify hybrid security operations, improve visibility, and scale globally."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
+      "link": "https://openai.com/index/daybreak-for-frontline-defenders",
+      "date": "2026-09-03T13:15:00.000Z",
+      "excerpt": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, training, and support for essential services."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
+      "link": "https://huggingface.co/blog/Hcompany/neomme",
+      "date": "2026-09-03T13:13:48.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Join OSPOlogy + OSPO Summit China 2026 in Shanghai",
+      "link": "https://www.cncf.io/blog/2026/09/03/join-ospology-ospo-summit-china-2026-in-shanghai/",
+      "date": "2026-09-03T12:32:33.000Z",
+      "excerpt": "There’s still time to join OSPOlogy + OSPO Summit China 2026, taking place on September 7, 2026, in Shanghai, China as part of KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China. This event will."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
+      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "date": "2026-09-03T12:00:00.000Z",
+      "excerpt": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
+      "link": "https://openai.com/index/legora-financial-statement-review-with-astra",
+      "date": "2026-09-03T12:00:00.000Z",
+      "excerpt": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Automating the Experimentation Lifecycle with Kiro, AWS DevOps Agent, and LaunchDarkly",
+      "link": "https://aws.amazon.com/blogs/devops/automating-the-experimentation-lifecycle-with-kiro-aws-devops-agent-and-launchdarkly/",
+      "date": "2026-09-03T02:11:19.000Z",
+      "excerpt": "Introduction Continuous improvement depends on experimentation. Teams know that the fastest path to better outcomes is to test changes against real user behavior, measure results, and iterate."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
+      "link": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+      "date": "2026-09-03T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Give Your Coding Agents a Memory You Own",
+      "link": "https://huggingface.co/blog/funes",
+      "date": "2026-09-03T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The last mile problem in agentic AI: Why tool calling reliability is harder than it looks",
+      "link": "https://www.redhat.com/en/blog/last-mile-problem-agentic-ai-why-tool-calling-reliability-harder-it-looks",
+      "date": "2026-09-03T00:00:00.000Z",
+      "excerpt": "Most of the attention in agentic AI goes to the agent's reasoning capabilities. The model can figure out the right plan, break a goal into steps, and decide what to do next."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Build and run Datadog workflows from Bits Chat or AI agents",
+      "link": "https://www.datadoghq.com/blog/build-datadog-workflows-ai-agents/",
+      "date": "2026-09-03T00:00:00.000Z",
+      "excerpt": "Build, debug, and run Datadog workflows from Bits Chat and AI coding agents using the operational and development context where you’re working."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Decoding the new AI lingo: Loops, harnesses, squads, hill climbing… oh my!",
+      "link": "https://github.blog/ai-and-ml/decoding-the-new-ai-lingo-loops-harnesses-squads-hill-climbing-oh-my/",
+      "date": "2026-09-02T21:00:00.000Z",
+      "excerpt": "From loop engineering to harnesses, squads, and open weights, the GitHub Podcast breaks down the AI terms showing up in developer conversations."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Automate planned lifecycle upgrades with AWS DevOps Agent and Kiro",
+      "link": "https://aws.amazon.com/blogs/devops/automate-planned-lifecycle-upgrades-with-aws-devops-agent-and-kiro/",
+      "date": "2026-09-02T18:55:52.000Z",
+      "excerpt": "AWS Health Planned Lifecycle Events signal when a managed service version is nearing end of standard support. Learn how to automate these upgrades end to end with AWS DevOps Agent and Kiro: detect the event, investigate the upgrade path, apply validated code changes, and open a pull request for human review."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Scale Workloads to Zero with HorizontalPodAutoscaler",
+      "link": "https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/",
+      "date": "2026-09-02T18:30:00.000Z",
+      "excerpt": "Kubernetes v1.37 includes API support for horizontal autoscaling of workloads down to zero replicas."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "link": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+      "date": "2026-09-02T15:40:00.000Z",
+      "excerpt": "The Fairwind Program is a limited access program for governments and trusted partners to use our cyber defense tools."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Building Reproducible AI Evaluation Workflows with Docker Sandboxes",
+      "link": "https://www.docker.com/blog/building-reproducible-ai-evaluation-workflows-with-docker-sandboxes/",
+      "date": "2026-09-02T13:00:00.000Z",
+      "excerpt": "Learn how Docker Sandboxes can make AI evaluation workflows more reproducible with consistent execution, structured artifacts, and runtime evidence."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Below the Harness: Governing a Multi-Model, Multi-Harness World",
+      "link": "https://www.docker.com/blog/below-the-harness-governing-a-multi-model-multi-harness-world/",
+      "date": "2026-09-02T13:00:00.000Z",
+      "excerpt": "We believe the future is a multi-model, multi-harness world. And we think it needs a new trust model."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "AI Norms & Values, Part 2 of 3: AI for Honeycomb Engineering",
+      "link": "https://www.honeycomb.io/blog/ai-norms-values-part-2-ai-honeycomb-engineering",
+      "date": "2026-09-02T13:00:00.000Z",
+      "excerpt": "Charity Majors shares a note from Emily Nakashima, SVP of Engineering, on why Honeycomb's engineering org is going all in on AI, the north star it's aiming for, and an honest FAQ about what that means day to day."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "An Organizational Second Brain: Building an AI That Learns From Experts",
+      "link": "https://engineering.fb.com/2026/09/02/ml-applications/organizational-second-brain-ai-learns-from-experts/",
+      "date": "2026-09-02T09:00:29.000Z",
+      "excerpt": "We’ve built an AI agent that acts as a secondary expert for a given domain, making deep specialist knowledge readily available and preserved for anyone in an organization to access, share, and build upon. This is not a typical domain-specific agent."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor prompt caching to optimize your token usage",
+      "link": "https://www.datadoghq.com/blog/monitor-prompt-caching-optimize-token-usage/",
+      "date": "2026-09-02T00:00:00.000Z",
+      "excerpt": "Learn how to use prompt caching effectively and monitor your models and agents to troubleshoot cache invalidations."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab’s internal playbook to foster AI-fluent technical teams",
+      "link": "https://about.gitlab.com/blog/how-gitlab-fosters-ai-fluent-teams/",
+      "date": "2026-09-02T00:00:00.000Z",
+      "excerpt": "Give two engineering teams the same AI tool and you can end up with two very different outcomes. One team ships faster with fewer bugs, while the other gets burned by an agent that confidently generates the wrong output."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Critical remote code execution in vm2, a widely used Node.js sandbox library",
+      "link": "https://about.gitlab.com/blog/critical-remote-code-execution-in-vm2/",
+      "date": "2026-09-02T00:00:00.000Z",
+      "excerpt": "GitLab's Threat Research Group found a critical sandbox escape vulnerability in vm2, one of the most widely adopted Node.js sandboxing libraries."
+    }
+  ]
+}
