@@ -1,0 +1,167 @@
+{
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-06T22:10:31.022Z",
+  "count": 20,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Polars 2.0 pre-release comes with a 5x speed boost — but it could change row order",
+      "link": "https://thenewstack.io/polars-streaming-row-order/",
+      "date": "2026-09-06T13:30:00.000Z",
+      "excerpt": "Working with large datasets can lead to slow queries and out-of-memory errors. Polars, an open-source library that developers and data"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "An Alien Mind",
+      "link": "https://openai.com/index/an-alien-mind",
+      "date": "2026-09-06T09:00:00.000Z",
+      "excerpt": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Research acceleration: The view inside OpenAI",
+      "link": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "date": "2026-09-06T08:00:00.000Z",
+      "excerpt": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Claude Fable 5.1 vs. Fable 5: On real work, I couldn’t tell them apart.",
+      "link": "https://thenewstack.io/claude-fable-upgrade-tested/",
+      "date": "2026-09-05T15:00:00.000Z",
+      "excerpt": "Anthropic launched Claude Fable 5.1 this week, calling it “our most advanced model for coding and knowledge work."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Building trust in agentic RAG starts with evidence",
+      "link": "https://thenewstack.io/building-trust-agentic-rag/",
+      "date": "2026-09-05T15:00:00.000Z",
+      "excerpt": "Basic retrieval-augmented generation (RAG) follows a straightforward pattern. A user asks a question, the system finds relevant content in a"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: KubeletInUserNamespace (aka Rootless mode) Graduates to Beta",
+      "link": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
+      "date": "2026-09-04T18:30:00.000Z",
+      "excerpt": "Kubernetes v1.37 promotes the KubeletInUserNamespace feature gate to beta."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Investigate DMS migration issues with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+      "date": "2026-09-04T18:13:04.000Z",
+      "excerpt": "Migrating a production database is a high-risk operational event. AWS DMS is a cloud service that migrates relational databases, data warehouses, and other data stores into the AWS Cloud or between environments."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Project HydraFusion: Frontier quality via multi-model orchestration",
+      "link": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
+      "date": "2026-09-04T16:04:14.000Z",
+      "excerpt": "In controlled offline evaluations, HydraFusion’s selective coding workflows matched or exceeded the evaluated Opus 5 baseline while reducing estimated workflow cost. Now available as a research preview in GitHub Copilot."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How Yahoo optimizes resources with flexible VMs in Managed Service for Apache Spark",
+      "link": "https://cloud.google.com/blog/products/data-analytics/how-yahoo-optimizes-apache-spark-with-flexible-vms/",
+      "date": "2026-09-04T16:00:00.000Z",
+      "excerpt": "As a global media and technology company connecting hundreds of millions of users to finance, sports, and entertainment platforms, Yahoo operates a massive data infrastructure where analytics workloads must run continuously at high speed."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Spanner migrations: Automating dual-write with Antigravity CLI for minimal disruption",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/using-antigravity-cli-to-streamline-dual-write-database-migration/",
+      "date": "2026-09-04T16:00:00.000Z",
+      "excerpt": "When Google's Finance Engineering team needed to modernize their legacy data layer, they chose Spanner, a globally distributed, strongly consistent, multi-model database with high availability capabilities."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Not All LLM Workloads Are Equal: Benchmarking TPU Performance on Classification vs. Generation",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/not-all-llm-workloads-are-equal-benchmarking-tpu-performance-on-classification-vs-generation/",
+      "date": "2026-09-04T15:36:00.000Z",
+      "excerpt": "Moving Large Language Models (LLMs) from experimental prototypes into enterprise production exposes a critical truth: your infrastructure dictates both your performance ceilings and your unit economics."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "CPU + GPU: Why AI platform engineering is a heterogeneous infrastructure problem",
+      "link": "https://www.cncf.io/blog/2026/09/04/cpu-gpu-why-ai-platform-engineering-is-a-heterogeneous-infrastructure-problem/",
+      "date": "2026-09-04T11:00:00.000Z",
+      "excerpt": "AI infrastructure conversations often start with GPUs. Accelerators provide much of the compute behind model training and inference, so the focus is understandable."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubernetes isn’t new, but AI makes It scary again",
+      "link": "https://www.cncf.io/blog/2026/09/04/kubernetes-isnt-new-but-ai-makes-it-scary-again/",
+      "date": "2026-09-04T11:00:00.000Z",
+      "excerpt": "Kubernetes isn’t brand new anymore. Yet, for many teams, adopting it still feels intimidating."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "AI가 만든 코드가 어드민이 되기까지",
+      "link": "https://toss.tech/article/52885",
+      "date": "2026-09-04T08:47:00.000Z",
+      "excerpt": "실시간으로 생성되는 코드를 어드민 화면으로 보여 주기 위해, 개발 환경을 브라우저 안으로 옮긴 이야기를 소개해요."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "장애 Alert의 원인을 스스로 찾다: SRE Observer 개발기",
+      "link": "https://techblog.lycorp.co.jp/ko/building-sre-observer-for-alert-root-cause-analysis",
+      "date": "2026-09-04T01:50:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 Home 서비스의 안정성을 책임지고 있는 Home SRE(Site Reliability Engineering) 팀입니다."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Runtime is the real defense, not just posture",
+      "link": "https://webflow.sysdig.com/blog/runtime-is-the-real-defense-not-just-posture",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "Instead of trying to build a forward-looking defense with backward-facing tools, it's time to flip the script: Start with runtime security."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Cloud security and the power of runtime insights",
+      "link": "https://webflow.sysdig.com/blog/cloud-security-and-the-power-of-runtime-insights",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "As organizations move to the cloud, the adoption of a CNAPP with runtime insights becomes a pivotal strategy for securing cloud environments."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Modernizing virtualization in higher education: How automated node recovery protects data integrity",
+      "link": "https://www.redhat.com/en/blog/modernizing-virtualization-higher-education-how-automated-node-recovery-protects-data-integrity",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "Organizations across higher education and enterprise sectors face rising virtualization costs, shifting licensing structures, and architectural decisions that can no longer be deferred."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 4, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-4-2026-red-hat",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "CRN - AI Has Changed Open Source Security, Says Red Hat CEO Matt HicksRed Hat CEO Matt Hicks discusses how AI has transformed open source security, emphasizing the need for better patching and transparency."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Stop runtime threats with Workload Protection response actions",
+      "link": "https://www.datadoghq.com/blog/stop-runtime-threats-with-workload-protection-response-actions/",
+      "date": "2026-09-04T00:00:00.000Z",
+      "excerpt": "When a runtime threat appears, every step costs time. Datadog Workload Protection can now kill processes and isolate workloads with automated and manual response actions."
+    }
+  ]
+}
