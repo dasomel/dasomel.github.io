@@ -1,6 +1,7 @@
 import { getOssRepoMeta, OSS_REPO_SNAPSHOT, repoFreshness } from '@/lib/oss-repo-meta';
 import { OSS_PORTFOLIO_REPOS } from '@/lib/oss-portfolio';
 import { OssPortfolioAttention } from '@/components/oss/OssPortfolioAttention';
+import { OssPortfolioControlPlane } from '@/components/oss/OssPortfolioControlPlane';
 
 function projectAgeDays(createdAt?: string) {
   if (!createdAt) return null;
@@ -40,6 +41,7 @@ export function OssPortfolioHealth({ locale, docs }: Props) {
   ];
 
   return <>
+    <OssPortfolioControlPlane locale={locale} />
     <section className="mt-12">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
