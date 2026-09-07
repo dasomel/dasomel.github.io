@@ -39,8 +39,10 @@ jobs:
             -o "${RUNNER_TEMP}/openforge-portfolio.json"
           python3 - <<'PY'
           import json
+          import os
           from pathlib import Path
-          source = Path(__import__('os').environ['RUNNER_TEMP']) / 'openforge-portfolio.json'
+
+          source = Path(os.environ['RUNNER_TEMP']) / 'openforge-portfolio.json'
           data = json.loads(source.read_text(encoding='utf-8'))
           if data.get('version') != 'openforge-dashboard/v1':
               raise SystemExit(f"unsupported OpenForge dashboard version: {data.get('version')!r}")
@@ -55,10 +57,10 @@ jobs:
         id: changes
         shell: bash
         run: |
-          if git diff --quiet -- src/data/openforge-portfolio.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
+          if [ -n "$(git status --porcelain -- src/data/openforge-portfolio.json)" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Commit and push snapshot
