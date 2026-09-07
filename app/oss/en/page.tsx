@@ -12,6 +12,7 @@ import { OssPortfolioMatrix } from '@/components/oss/OssPortfolioMatrix';
 import { OssPortfolioHealth } from '@/components/oss/OssPortfolioHealth';
 import { OssPortfolioReadiness } from '@/components/oss/OssPortfolioReadiness';
 import { OssAdoptionIntake } from '@/components/oss/OssAdoptionIntake';
+import { OssOpenForgePortfolio } from '@/components/oss/OssOpenForgePortfolio';
 
 const groups = OSS_PORTFOLIO_GROUPS;
 
@@ -32,6 +33,7 @@ export default function OssHubEn() {
       <OssEvidenceStrip locale="en" />
       <OssPortfolioHealth locale="en" docs={coverage} />
       <OssPortfolioReadiness locale="en" docs={coverage} />
+      <OssOpenForgePortfolio locale="en" />
       <OssAdoptionIntake locale="en" />
       <OssSystemPulse locale="en" />
 
