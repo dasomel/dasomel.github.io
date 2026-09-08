@@ -1,6 +1,15 @@
-import portfolio from '@/src/data/openforge-portfolio.json';
+import portfolioData from '@/src/data/openforge-portfolio.json';
 
 type Locale = 'ko' | 'en';
+
+type Maintenance = {
+  maintenance_owner: string;
+  maintenance_status: string;
+  strategic_role: string;
+  blast_radius: string;
+  exit_path_status: string;
+  review_cadence: string;
+};
 
 type Project = {
   id: string;
@@ -10,6 +19,7 @@ type Project = {
   adoption_percent: number | null;
   role: string;
   impact_score: number;
+  maintenance?: Maintenance | null;
 };
 
 type Milestone = {
@@ -21,6 +31,29 @@ type Milestone = {
   unit?: string;
 };
 
+type Dashboard = {
+  updated_at: string;
+  portfolio: {
+    adoption_percent: number;
+    standard_maturity_percent: number;
+    adr_count: number;
+  };
+  projects: Project[];
+  milestones: Milestone[];
+  relationships: unknown[];
+  maintenance?: {
+    summary: {
+      owned_projects: number;
+      unowned_projects: number;
+      high_blast_radius_projects: number;
+      exit_path_review_required: number;
+      review_cadence_default: string | null;
+    };
+  };
+};
+
+const portfolio = portfolioData as unknown as Dashboard;
+
 const copy = {
   ko: {
     eyebrow: 'OPENFORGE PORTFOLIO CONTROL PLANE',
@@ -30,6 +63,12 @@ const copy = {
     adoption: 'Portfolio Adoption',
     maturity: 'Standard Maturity',
     adrs: 'ADRs',
+    maintenance: 'Maintenance Intelligence',
+    owned: 'Maintenance Owned',
+    highBlast: 'High Blast Radius',
+    exitReview: 'Exit Path Review',
+    unowned: 'Unowned',
+    cadence: 'Review cadence',
     milestones: '현재 Milestone',
     impact: '영향도 상위 프로젝트',
     status: 'Development',
@@ -44,6 +83,12 @@ const copy = {
     adoption: 'Portfolio Adoption',
     maturity: 'Standard Maturity',
     adrs: 'ADRs',
+    maintenance: 'Maintenance Intelligence',
+    owned: 'Maintenance Owned',
+    highBlast: 'High Blast Radius',
+    exitReview: 'Exit Path Review',
+    unowned: 'Unowned',
+    cadence: 'Review cadence',
     milestones: 'Current milestones',
     impact: 'Highest-impact projects',
     status: 'Development',
@@ -58,8 +103,9 @@ function statusLabel(value: string) {
 
 export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
   const t = copy[locale];
-  const projects = (portfolio.projects as Project[]).slice();
-  const milestones = portfolio.milestones as Milestone[];
+  const projects = portfolio.projects.slice();
+  const milestones = portfolio.milestones;
+  const maintenance = portfolio.maintenance?.summary;
   const topImpact = projects.sort((a, b) => b.impact_score - a.impact_score).slice(0, 6);
   const maxImpact = Math.max(...topImpact.map((project) => project.impact_score), 1);
 
@@ -87,6 +133,28 @@ export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
           </div>
         ))}
       </div>
+
+      {maintenance && (
+        <div className="mt-7 rounded-2xl p-4 sm:p-5" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-subtle)' }}>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="text-xs font-semibold uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>{t.maintenance}</div>
+            {maintenance.review_cadence_default && <div className="text-[10px] font-mono" style={{ color: 'var(--text-faint)' }}>{t.cadence}: {maintenance.review_cadence_default}</div>}
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              [t.owned, String(maintenance.owned_projects)],
+              [t.highBlast, String(maintenance.high_blast_radius_projects)],
+              [t.exitReview, String(maintenance.exit_path_review_required)],
+              [t.unowned, String(maintenance.unowned_projects)],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-xl p-3" style={{ border: '1px solid var(--border)' }}>
+                <div className="text-[10px] font-semibold uppercase tracking-[0.1em]" style={{ color: 'var(--text-faint)' }}>{label}</div>
+                <div className="mt-1.5 text-xl font-semibold">{value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div>
@@ -119,7 +187,10 @@ export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
                   <span style={{ color: 'var(--text-faint)' }}>{project.impact_score}</span>
                 </div>
                 <div className="mt-1.5 h-1.5 overflow-hidden rounded-full" style={{ backgroundColor: 'var(--surface-hi)' }}><div className="h-full rounded-full" style={{ width: `${(project.impact_score / maxImpact) * 100}%`, backgroundColor: 'var(--signal)' }} /></div>
-                <div className="mt-1 text-[10px]" style={{ color: 'var(--text-faint)' }}>{t.status}: {statusLabel(project.development_status)} · {project.role}</div>
+                <div className="mt-1 text-[10px]" style={{ color: 'var(--text-faint)' }}>
+                  {t.status}: {statusLabel(project.development_status)} · {project.role}
+                  {project.maintenance && ` · ${project.maintenance.strategic_role} · blast ${project.maintenance.blast_radius} · exit ${statusLabel(project.maintenance.exit_path_status)}`}
+                </div>
               </div>
             ))}
           </div>
