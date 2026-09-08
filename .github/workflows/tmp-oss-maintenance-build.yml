@@ -1,0 +1,51 @@
+name: Temporary OSS Maintenance Build
+
+on:
+  push:
+    branches: [feat/oss-maintenance-intelligence]
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/oss-maintenance-intelligence
+      - uses: oven-sh/setup-bun@v2
+      - name: Sync canonical OpenForge snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/dasomel/openforge/main/portfolio/dashboard.json \
+            -o src/data/openforge-portfolio.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('src/data/openforge-portfolio.json').read_text())
+          assert data['version']=='openforge-dashboard/v1'
+          assert data['maintenance']['summary']['owned_projects'] == 14
+          assert data['maintenance']['summary']['high_blast_radius_projects'] == 3
+          PY
+      - name: Install and verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          bun install --frozen-lockfile --no-progress
+          bun test
+          bun run lint
+          bun run build
+      - name: Commit synced snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/data/openforge-portfolio.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore(oss): sync maintenance portfolio snapshot'
+          git push origin HEAD:feat/oss-maintenance-intelligence
