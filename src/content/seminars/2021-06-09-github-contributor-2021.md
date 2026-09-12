@@ -30,3 +30,9 @@ tags: ["eGovFrame", "GitHub", "Contributor", "오픈소스", "OPDC"]
 - Pull Request 작성법
 - 코드 리뷰 프로세스
 - 기여 경험 공유
+
+## 후속 기여 사례
+
+- [표준프레임워크 기여를 시작하며: 실제 PR과 리뷰에서 배운 점](/ko/posts/egovframe-contribution-starter-2026/)
+- [처음 시작하는 eGovFrame 기여 발표자료](https://cne.io.kr/slides/egovframe-contribution/#1)
+

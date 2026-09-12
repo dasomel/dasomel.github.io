@@ -36,3 +36,9 @@ A step-by-step walkthrough of the entire process for contributing to the Standar
 - Developers who want to contribute to the Standard Framework open source
 - Developers interested in the eGovFrame ecosystem
 - Those starting out with open source contributions for the first time
+
+## Follow-up contribution story
+
+- [Getting Started with eGovFrame Contribution: Lessons from Real PRs and Reviews](/en/posts/egovframe-contribution-starter-2026/)
+- [eGovFrame Contribution Starter Slides](https://cne.io.kr/slides/egovframe-contribution/#1)
+

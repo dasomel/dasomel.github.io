@@ -82,3 +82,9 @@ Settings are stored in `~/.egov-launcher.json` and can be edited directly from t
 Go 1.26 · JavaScript · SSE · Docker · Maven · Tomcat 10.1+
 
 It cross-builds for macOS (arm64/amd64) and Windows (arm64/amd64), and is released under Apache 2.0.
+
+## Related posts
+
+- [Getting Started with eGovFrame Contribution: Lessons from Real PRs and Reviews](/en/posts/egovframe-contribution-starter-2026/)
+- [eGovFrame Contribution Starter Slides](https://cne.io.kr/slides/egovframe-contribution/#1)
+
