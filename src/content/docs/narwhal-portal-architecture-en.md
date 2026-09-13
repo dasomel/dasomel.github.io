@@ -4,7 +4,7 @@ description: Next.js 16 App Router structure, gRPC communication, and OIDC sessi
 project: Narwhal Portal
 path: narwhal-portal/architecture
 order: 1201
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # Portal Architecture
@@ -18,23 +18,11 @@ Narwhal Portal utilizes a modern web architecture ensuring tight integration wit
 - **Authentication**: NextAuth.js with Keycloak OpenID Connect federation
 - **Backend Communication**: Protocol Buffers (`.proto`), gRPC-web, and Envoy gRPC-JSON transcoding
 
-```text
-Browser (React 19 Client Components)
-             │
-             ▼ HTTPS / Cookie
-  ┌────────────────────────────────────────────────────────┐
-  │  Next.js 16 Server (App Router / SSR)                  │
-  │  - Keycloak JWT Session Verification                   │
-  │  - Server Component Data Fetching                      │
-  └──────────────────────────┬─────────────────────────────┘
-                             │
-                             ▼ gRPC-web / HTTP2
-  ┌────────────────────────────────────────────────────────┐
-  │  Envoy Gateway / APISIX gRPC Transcoder                │
-  └──────────────────────────┬─────────────────────────────┘
-                             │
-                             ▼ Native gRPC
-  ┌────────────────────────────────────────────────────────┐
-  │  Narwhal Control Plane Core Services (Go / K8s API)    │
-  └────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  BROWSER["Browser\nReact 19 Client Components"] -->|"HTTPS · session cookie"| NEXT["Next.js 16 Server\nApp Router · SSR"]
+  KEYCLOAK["Keycloak OIDC"] -.->|"JWT / session verification"| NEXT
+  NEXT -->|"gRPC-web / HTTP2"| GATEWAY["Envoy Gateway / APISIX\ngRPC transcoder"]
+  GATEWAY -->|"native gRPC"| CORE["Narwhal Control Plane\nGo services · Kubernetes API"]
+  CORE -.->|"platform state / operations"| NEXT`} />
+
+In this design the **Browser–Next.js boundary owns the user session**, **Next.js–Gateway carries web-friendly gRPC traffic**, and **Gateway–Control Plane uses native gRPC**. Keycloak is modeled separately as the identity plane rather than as part of the primary data path.

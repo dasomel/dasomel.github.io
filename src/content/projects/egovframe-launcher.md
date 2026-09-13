@@ -86,3 +86,9 @@ bash scripts/10-run-boot-sample.sh
 Go 1.26 · JavaScript · SSE · Docker · Maven · Tomcat 10.1+
 
 macOS(arm64/amd64)와 Windows(arm64/amd64) 크로스 빌드를 지원하며, Apache 2.0 라이선스로 공개돼 있습니다.
+
+## 관련 글
+
+- [표준프레임워크 기여를 시작하며: 실제 PR과 리뷰에서 배운 점](/ko/posts/egovframe-contribution-starter-2026/)
+- [처음 시작하는 eGovFrame 기여 발표자료](https://cne.io.kr/slides/egovframe-contribution/#1)
+

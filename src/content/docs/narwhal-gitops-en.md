@@ -4,7 +4,7 @@ description: Argo CD + Gitea App-of-Apps declarative delivery and Sync Waves ord
 project: Narwhal
 path: narwhal/gitops
 order: 1102
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # GitOps Workflow
@@ -15,16 +15,45 @@ All infrastructure and 35 platform applications in Narwhal are managed declarati
 
 A single root application (`root-app`) recursively synchronizes all child application manifests under `gitops/applications/`.
 
-```text
-                      [ root-application ]
-                               │
-       ┌───────────────────────┼───────────────────────┐
-       ▼ (Wave 1: Core)        ▼ (Wave 2: Infra)       ▼ (Wave 3: Apps)
-  - cilium                - keycloak              - narwhal-portal
-  - kube-vip              - apisix                - demo-apps
-  - cert-manager          - prometheus-stack      - user-workloads
-  - nfs-csi-driver        - seaweedfs             - chaos-mesh
-```
+<Mermaid chart={`flowchart TB
+  ROOT["root-application\nApp-of-Apps"]
+  ROOT --> CORE["Wave 1 · Core"]
+  ROOT --> INFRA["Wave 2 · Infrastructure"]
+  ROOT --> APPS["Wave 3 · Applications"]
+
+  subgraph CORE_SET["Core foundation"]
+    CILIUM["Cilium"]
+    KVIP["kube-vip"]
+    CERT["cert-manager"]
+    NFS["NFS CSI driver"]
+  end
+
+  subgraph INFRA_SET["Platform infrastructure"]
+    KEYCLOAK["Keycloak"]
+    APISIX["APISIX"]
+    OBS["Prometheus stack"]
+    SEAWEED["SeaweedFS"]
+  end
+
+  subgraph APP_SET["Workloads"]
+    PORTAL["Narwhal Portal"]
+    DEMO["Demo apps"]
+    USER["User workloads"]
+    CHAOS["Chaos Mesh"]
+  end
+
+  CORE --> CILIUM
+  CORE --> KVIP
+  CORE --> CERT
+  CORE --> NFS
+  INFRA --> KEYCLOAK
+  INFRA --> APISIX
+  INFRA --> OBS
+  INFRA --> SEAWEED
+  APPS --> PORTAL
+  APPS --> DEMO
+  APPS --> USER
+  APPS --> CHAOS`} />
 
 ## Sync Waves Dependency Ordering
 

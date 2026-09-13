@@ -24,14 +24,16 @@ export default function Header({ locale }: HeaderProps) {
   }, []);
 
   const base = locale === 'en' ? '/en' : '/ko';
+  const ossHref = locale === 'en' ? '/oss/en/' : '/oss/';
   const langSwitch = locale === 'en' ? pathname.replace(/^\/en/, '/ko') || '/ko/' : pathname.replace(/^\/ko/, '/en') || '/en/';
   const primary = [
-    { href: `${base}/projects`, label: 'Work', aliases: [`${base}/projects`, `${base}/oss`] },
-    { href: `${base}/oss/story`, label: 'Story', aliases: [`${base}/oss/story`] },
+    { href: `${base}/projects`, label: 'Work', aliases: [`${base}/projects`] },
+    { href: ossHref, label: 'OSS', aliases: ['/oss', `${base}/oss`] },
     { href: `${base}/knowledge`, label: 'Knowledge', aliases: [`${base}/knowledge`, `${base}/notes`, `${base}/posts`, `${base}/tech-digest`, `${base}/seminars`, `${base}/docs`, `${base}/events`] },
     { href: `${base}/about`, label: t('about'), aliases: [`${base}/about`] },
   ];
   const mobileExtra = [
+    { href: `${base}/oss/story`, label: locale === 'en' ? 'Engineering Story' : '엔지니어링 스토리' },
     { href: `${base}/notes`, label: locale === 'en' ? 'Field Notes' : '필드 노트' },
     { href: `${base}/tech-digest`, label: t('tech_digest') },
     { href: `${base}/seminars`, label: t('talks') },

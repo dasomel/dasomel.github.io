@@ -57,20 +57,10 @@ TLS-enabled replication and LDAP access verify CA and certificate names rather t
 
 ## Kubernetes Architecture
 
-```text
-        Keycloak / Applications / LDAP Clients
-                       │
-                 LDAP / LDAPS
-                       │
-                       ▼
-              ┌───────────────────┐
-              │ ldapium server    │
-              │ OpenLDAP 2.6.14   │
-              │ MDB + TLS + overlays
-              └─────────┬─────────┘
-                        │
-                   persistent data
-```
+<Mermaid chart={`flowchart TB
+  CLIENTS["Keycloak · Applications · LDAP Clients"] -->|"LDAP / LDAPS · 389 / 636"| SERVER["ldapium Server\nOpenLDAP 2.6.14\nMDB · TLS · overlays"]
+  UI["Optional Management UI"] -.->|"LDAP service"| SERVER
+  SERVER -->|"persistent storage"| DATA["LDAP data · cn=config"]`} />
 
 The optional UI accesses the directory through the LDAP service and can use Keycloak SSO with a dedicated role-limited service account.
 
@@ -100,19 +90,12 @@ The project provides scheduled Kubernetes backups and a standalone `scripts/back
 
 Offline bundles combine images, the Helm chart, SBOMs, and checksums. The offline installer verifies the contents and uses `imagePullPolicy=Never` so missing artifacts fail rather than silently pulling from an external registry.
 
-```text
-release tag
-   ↓
-images + chart
-   ↓
-SBOM + checksums + provenance
-   ↓
-offline bundle
-   ↓
-verify
-   ↓
-install without live registry access
-```
+<Mermaid chart={`flowchart TB
+  TAG["release tag"] --> ART["images + Helm chart"]
+  ART --> EVIDENCE["SBOM + checksums + provenance"]
+  EVIDENCE --> BUNDLE["offline bundle"]
+  BUNDLE --> VERIFY["verify"]
+  VERIFY --> INSTALL["install without live registry access"]`} />
 
 ## Supply Chain and Compliance
 
@@ -136,16 +119,14 @@ License handling separates the project's Apache-2.0 work from OpenLDAP's own lic
 
 ## Project Relationship
 
-```text
-OpenLDAP upstream
-       ↓
-     ldapium
-       ├── server image
-       ├── management UI
-       ├── Helm chart
-       └── offline bundle
-              ↓
-       Kubernetes IDP / Narwhal
-              ↓
-        Keycloak / SSO / Apps
-```
+<Mermaid chart={`flowchart TB
+  UP["OpenLDAP upstream"] --> LDAP["ldapium"]
+  LDAP --> IMG["server image"]
+  LDAP --> UI["management UI"]
+  LDAP --> HELM["Helm chart"]
+  LDAP --> OFFLINE["offline bundle"]
+  IMG --> IDP["Kubernetes IDP / Narwhal"]
+  UI --> IDP
+  HELM --> IDP
+  OFFLINE --> IDP
+  IDP --> SSO["Keycloak / SSO / Apps"]`} />

@@ -35,28 +35,15 @@ The portal does not try to replace every upstream UI. Kubernetes, Argo CD, Keycl
 
 ## Position in Narwhal
 
-```text
-                    Narwhal IDP
-┌───────────────────────────────────────────────────────┐
-│ Kubernetes                                             │
-│ GitOps · SSO · Observability · Storage · Security      │
-└─────────────────────────┬─────────────────────────────┘
-                          │ platform state / APIs
-                          ▼
-                ┌──────────────────────┐
-                │   Narwhal Portal     │
-                │   Next.js + React    │
-                ├──────────────────────┤
-                │ Dashboard            │
-                │ Catalog / My Apps     │
-                │ Nodes / Cost          │
-                │ Security / Governance│
-                │ Architecture / Tools │
-                └──────────┬───────────┘
-                           │
-                           ▼
-                  Developer / Operator
-```
+<Mermaid chart={`flowchart TB
+  IDP["Narwhal IDP\nKubernetes · GitOps · SSO · Observability · Storage · Security"]
+  IDP -->|"platform APIs / cluster state"| PORTAL["Narwhal Portal\nNext.js + React"]
+  PORTAL --> DASH["Dashboard"]
+  PORTAL --> APPS["Catalog / My Apps"]
+  PORTAL --> OPS["Nodes / Cost"]
+  PORTAL --> SEC["Security / Governance"]
+  PORTAL --> TOOLS["Architecture / Tools"]
+  PORTAL -->|"day-2 experience"| USER["Developer / Operator"]`} />
 
 ## Technology Stack
 
@@ -114,13 +101,8 @@ Onboarding, Catalog, Templates, Tools, and operational dashboards are part of th
 
 ## Project Relationship
 
-```text
-kube-ready-box
-       ↓
-   Narwhal Cluster
-       ├── GitOps / SSO / Observability / Storage / Security
-       │
-       └── Narwhal Portal
-              ↓
-       Developer / Operator UX
-```
+<Mermaid chart={`flowchart TB
+  READY["kube-ready-box"] --> CLUSTER["Narwhal Cluster"]
+  CLUSTER --> PLATFORM["GitOps · SSO · Observability · Storage · Security"]
+  CLUSTER --> PORTAL["Narwhal Portal"]
+  PORTAL --> UX["Developer / Operator UX"]`} />

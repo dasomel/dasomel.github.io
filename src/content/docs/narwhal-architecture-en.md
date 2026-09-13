@@ -4,16 +4,12 @@ description: Narwhal 3M+3W node topology, HA control plane, and integration seam
 project: Narwhal
 path: narwhal/architecture
 order: 1101
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # Cluster Architecture
 
-Narwhal adopts a resilient 6-node high-availability (HA) topology designed with zero single points of failure.
-
-> **Canonical documentation path:** `/en/docs/narwhal/architecture/` · Korean: `/ko/docs/narwhal/architecture/`
->
-> Legacy flat documentation URLs such as `narwhal-architecture` remain compatible with the canonical nested documentation structure.
+Narwhal uses a six-node high-availability (HA) topology with three Control Plane nodes and three Worker nodes to reduce single points of failure.
 
 ## Node Topology & IP Allocation
 
@@ -28,20 +24,20 @@ Narwhal adopts a resilient 6-node high-availability (HA) topology designed with 
 
 ## HA Control Plane (kube-vip + etcd)
 
-kube-vip manages a virtual IP (`192.168.56.100`) floating across the three master nodes. In the event of a master node failure, the VIP transitions within 1 second to ensure uninterrupted API operations.
+Clients use the kube-vip virtual IP at `192.168.56.100` as the Kubernetes API endpoint instead of targeting an individual master address. At any point in time, one Control Plane node owns the VIP. If that node fails, another Control Plane node takes ownership. The three masters also run independent etcd members that form the cluster quorum.
 
-```text
-               kubectl / Argo CD / CI Workflows
-                              │
-                              ▼
-                 192.168.56.100 (kube-vip VIP)
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        ▼ (Active)            ▼ (Standby)           ▼ (Standby)
-   [ master-1 ]          [ master-2 ]          [ master-3 ]
-   - kube-apiserver      - kube-apiserver      - kube-apiserver
-   - etcd member 1       - etcd member 2       - etcd member 3
-```
+The diagram below shows an **example state where master-1 currently owns the VIP**. `master-2` and `master-3` are failover candidates for the API endpoint, while all three nodes run both kube-apiserver and an etcd member.
+
+<Mermaid chart={`flowchart TB
+  CLIENT["kubectl · Argo CD · CI workflow"] --> VIP["Kubernetes API endpoint\n192.168.56.100 · kube-vip VIP"]
+  VIP -->|"current VIP owner"| M1["master-1\nControl Plane\nkube-apiserver · etcd member 1"]
+  VIP -.->|"failover candidate"| M2["master-2\nControl Plane\nkube-apiserver · etcd member 2"]
+  VIP -.->|"failover candidate"| M3["master-3\nControl Plane\nkube-apiserver · etcd member 3"]
+  M1 --- QUORUM["etcd quorum"]
+  M2 --- QUORUM
+  M3 --- QUORUM`} />
+
+The two HA mechanisms serve different purposes. kube-vip provides **continuity of the API endpoint**, while the three-member etcd cluster provides **quorum and fault tolerance for Control Plane state**.
 
 ## XFS Project Quota Node Storage
 

@@ -20,21 +20,13 @@ solution: "NFS 서버 노드에서 PV를 감시하고 파일시스템 Project Qu
 
 ## 핵심 동작
 
-```text
-PVC
- ↓
-PersistentVolume
- ↓
-NFS CSI / NFS Provisioner
- ↓
-NFS export + subdirectory
- ↓
-NFS Quota Agent
- ↓
-Filesystem Project Quota
- ↓
-실제 저장공간 사용량 제한
-```
+<Mermaid chart={`flowchart TB
+  PVC["PVC"] --> PV["PersistentVolume"]
+  PV --> NFS["NFS CSI / NFS Provisioner"]
+  NFS --> EXPORT["NFS export + subdirectory"]
+  EXPORT --> AGENT["NFS Quota Agent"]
+  AGENT --> QUOTA["Filesystem Project Quota"]
+  QUOTA --> LIMIT["실제 저장공간 사용량 제한"]`} />
 
 ### PV 감시
 
@@ -66,22 +58,16 @@ PV annotation을 통해 quota가 `pending`, `applied`, `failed` 중 어떤 상�
 
 에이전트는 일반 Deployment가 아니라 NFS 서버가 위치한 노드에 실행되는 **DaemonSet 모델**을 사용합니다.
 
-```text
-Kubernetes Node
-┌─────────────────────────────────────┐
-│ NFS Server Node                     │
-│                                     │
-│  nfs-quota-agent                    │
-│       │                             │
-│       ├── Kubernetes API            │
-│       ├── hostPath:/data            │
-│       ├── /dev                       │
-│       └── /etc/projects / /etc/projid│
-│               │                     │
-│               ▼                     │
-│        Local XFS/ext4/Btrfs         │
-└─────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  subgraph NODE["NFS Server Node"]
+    AGENT["nfs-quota-agent DaemonSet"]
+    API["Kubernetes API"]
+    HOST["hostPath:/data · /dev · /etc/projects · /etc/projid"]
+    FS["Local XFS / ext4 / Btrfs"]
+    AGENT --> API
+    AGENT --> HOST
+    HOST --> FS
+  end`} />
 
 이 배포 방식은 호스트 파일시스템 접근이 필요하기 때문에 일반적인 cluster-wide controller보다 보안 경계가 큽니다. 따라서 `nodeSelector`, hostPath, hostPID 등 privileged access를 실제 NFS 서버 노드로 좁히는 것이 핵심입니다.
 
@@ -143,16 +129,10 @@ helm install nfs-quota-agent ./charts/nfs-quota-agent \
 
 ## 프로젝트 관계
 
-```text
-kube-ready-box / Linux Filesystem
-              ↓
-         NFS Server
-              ↓
-      nfs-quota-agent
-              ↓
-      Kubernetes PV/PVC
-              ↓
-           Narwhal
-```
+<Mermaid chart={`flowchart TB
+  READY["kube-ready-box / Linux Filesystem"] --> SERVER["NFS Server"]
+  SERVER --> AGENT["nfs-quota-agent"]
+  AGENT --> PV["Kubernetes PV / PVC"]
+  PV --> NARWHAL["Narwhal"]`} />
 
 Narwhal에서는 NFS CSI 기반 스토리지와 함께 사용할 수 있으며, Kube-Ready-Box의 XFS Project Quota 튜닝과도 직접 연결되는 **스토리지 enforcement 계층**입니다.

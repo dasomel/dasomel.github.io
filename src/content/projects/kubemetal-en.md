@@ -16,25 +16,11 @@ solution: "Run the MLOps control plane on K3s/Colima while executing GPU-bound M
 
 Its defining architecture is **control/compute separation**: Kubernetes remains the control-plane environment for services such as MLflow and SeaweedFS, while GPU-bound MLX workloads execute directly on the macOS host where Apple Silicon Metal and Unified Memory are available.
 
-```text
-                    KubeMetal Desktop
-             ┌──────────────────────────┐
-             │ Tauri v2 + React UI      │
-             │ Dashboard / Pipeline     │
-             │ Model Hub / MLX Studio   │
-             └────────────┬─────────────┘
-                          │
-               ┌──────────┴───────────┐
-               │                      │
-               ▼                      ▼
-      Kubernetes Control Plane     macOS Host Compute
-      ┌──────────────────────┐     ┌──────────────────────┐
-      │ K3s / Colima         │     │ MLX / Metal          │
-      │ MLflow               │     │ LoRA Fine-tuning     │
-      │ SeaweedFS            │     │ Model Serving        │
-      │ manifests / services │     │ Host resources       │
-      └──────────────────────┘     └──────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  UI["KubeMetal Desktop\nTauri v2 + React UI\nDashboard · Pipeline · Model Hub · MLX Studio"]
+  UI -->|"Kubernetes client"| K8S["Kubernetes Control Plane\nK3s / Colima\nMLflow · SeaweedFS · manifests/services"]
+  UI -->|"Tauri IPC"| HOST["macOS Host Compute\nMLX / Metal\nLoRA fine-tuning · model serving · host resources"]
+  HOST -.->|"model artifacts / runtime state"| K8S`} />
 
 ## User Workspaces
 
@@ -53,18 +39,11 @@ Its defining architecture is **control/compute separation**: Kubernetes remains 
 
 The default D30 path is **agent-only**. The external Kubernetes cluster remains separate from KubeMetal's local MLOps stack and is connected for diagnostics and operations rather than being re-provisioned.
 
-```text
-Existing Kubernetes Cluster
-        │
-        │ kagent agent
-        ▼
-  KubeMetal kagent Ops
-        │
-        └── diagnostics / security / PromQL / observability
-
-KubeMetal local k3s
-        └── MLflow / SeaweedFS / local control plane
-```
+<Mermaid chart={`flowchart TB
+  EXT["Existing Kubernetes Cluster"] -->|"kagent agent"| OPS["KubeMetal kagent Ops"]
+  OPS --> DIAG["diagnostics · security · PromQL · observability"]
+  LOCAL["KubeMetal local k3s"] --> MLOPS["MLflow · SeaweedFS · local MLOps control plane"]
+  EXT -.->|"observe / diagnose, do not re-provision"| LOCAL`} />
 
 A full-stack D26 external deployment path is opt-in and performs preflight checks for kubeconfig context, storage class, Kyverno enforcement, Argo CD ownership, and verified host-bridge reachability before applying manifests.
 
@@ -125,12 +104,9 @@ Subsequent work continues around external-cluster integration, signing, GitOps b
 
 ## Project Relationship
 
-```text
-Apple Silicon Mac
-        ↓
-    KubeMetal
-     ├── Kubernetes control plane
-     └── native MLX compute
-                ↓
-       local / edge MLOps
-```
+<Mermaid chart={`flowchart TB
+  MAC["Apple Silicon Mac"] --> KUBE["KubeMetal"]
+  KUBE --> CTRL["Kubernetes control plane"]
+  KUBE --> MLX["native MLX compute"]
+  CTRL --> EDGE["local / edge MLOps"]
+  MLX --> EDGE`} />

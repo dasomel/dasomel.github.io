@@ -29,17 +29,11 @@ Beluga Manager의 제품 가치는 바로 **경계 사이의 context**에 있습
 
 ### Pipeline
 
-```text
-Source / CDC
-    ↓
-Kafka Topic
-    ↓
-Flink Job
-    ↓
-Iceberg Table
-    ↓
-Trino / Query
-```
+<Mermaid chart={`flowchart TB
+  SRC["Source / CDC"] --> KAFKA["Kafka Topic"]
+  KAFKA --> FLINK["Flink Job"]
+  FLINK --> ICEBERG["Iceberg Table"]
+  ICEBERG --> TRINO["Trino / Query"]`} />
 
 Pipeline은 여러 OSS 리소스를 하나의 운영 단위로 묶습니다.
 
@@ -61,37 +55,28 @@ Health, event, log, dependency와 같은 서로 다른 운영 신호를 하나�
 
 ## 통합 아키텍처
 
-```text
-                    Beluga Manager
-                          │
-                 Unified Domain API
-                          │
-       ┌──────────┬───────┼────────┬───────────┐
-       ↓          ↓       ↓        ↓           ↓
-     Kafka      Flink  Iceberg   Trino      Airflow
-       │          │       │        │           │
-       └──────────┴───────┴────────┴───────────┘
-                          │
-                  Beluga Data Platform
-```
+<Mermaid chart={`flowchart TB
+  UI["Beluga Manager UI"] --> DOMAIN["Unified Domain API"]
+  DOMAIN --> CORR["Discovery / Correlation"]
+  CORR --> KAFKA["Kafka Adapter"]
+  CORR --> FLINK["Flink Adapter"]
+  CORR --> ICEBERG["Iceberg Adapter"]
+  CORR --> TRINO["Trino Adapter"]
+  CORR --> AIRFLOW["Airflow Adapter"]
+  KAFKA --> PLATFORM["Beluga Data Platform"]
+  FLINK --> PLATFORM
+  ICEBERG --> PLATFORM
+  TRINO --> PLATFORM
+  AIRFLOW --> PLATFORM`} />
 
-각 integration은 adapter/capability boundary 뒤에 존재합니다.
+각 integration은 adapter/capability boundary 뒤에 존재합니다. 이 구조로 OSS API 버전과 제품별 구현 차이가 frontend에 직접 새지 않도록 합니다.
 
-```text
-OSS API
-   ↓
-Integration Adapter
-   ↓
-Discovery / Correlation
-   ↓
-Beluga Domain
-   ↓
-Unified API
-   ↓
-Manager UI
-```
-
-이 구조로 OSS API 버전과 제품별 구현 차이가 frontend에 직접 새지 않도록 합니다.
+<Mermaid chart={`flowchart TB
+  OSS["OSS API"] --> ADAPTER["Integration Adapter"]
+  ADAPTER --> CORR["Discovery / Correlation"]
+  CORR --> DOMAIN["Beluga Domain"]
+  DOMAIN --> API["Unified API"]
+  API --> UI["Manager UI"]`} />
 
 ## State 모델
 
@@ -110,17 +95,11 @@ Beluga Manager는 네 종류의 상태를 구분합니다.
 
 현재 프로젝트는 **Early development** 단계입니다. 먼저 read-first vertical slice를 만들고, 이후 mutation 범위를 확대하는 순서입니다.
 
-```text
-API Contract
-    ↓
-Unified Service API
-    ↓
-Discovery / Correlation
-    ↓
-Kafka → Flink → Iceberg → Trino
-    ↓
-Data Asset / Query / Operations
-```
+<Mermaid chart={`flowchart TB
+  CONTRACT["API Contract"] --> API["Unified Service API"]
+  API --> CORR["Discovery / Correlation"]
+  CORR --> PIPE["Kafka → Flink → Iceberg → Trino"]
+  PIPE --> DOMAIN["Data Asset · Query · Operations"]`} />
 
 초기 범위:
 
@@ -180,15 +159,15 @@ pnpm dev
 
 ## 프로젝트 관계
 
-```text
-Beluga
-  ├── Kafka
-  ├── Flink
-  ├── Iceberg
-  ├── Trino
-  └── Airflow
-          ↓
-    Beluga Manager
-          ↓
- Pipeline / Data Asset / Service / Operations
-```
+<Mermaid chart={`flowchart TB
+  BELUGA["Beluga Data Platform"] --> KAFKA["Kafka"]
+  BELUGA --> FLINK["Flink"]
+  BELUGA --> ICEBERG["Iceberg"]
+  BELUGA --> TRINO["Trino"]
+  BELUGA --> AIRFLOW["Airflow"]
+  KAFKA --> MANAGER["Beluga Manager"]
+  FLINK --> MANAGER
+  ICEBERG --> MANAGER
+  TRINO --> MANAGER
+  AIRFLOW --> MANAGER
+  MANAGER --> DOMAINS["Pipeline · Data Asset · Service · Operations"]`} />

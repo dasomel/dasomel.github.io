@@ -4,7 +4,7 @@ description: Linux XFS Project Quota 커널 메커니즘, gRPC 데몬 내부 구
 project: NFS Quota Agent
 path: nfs-quota-agent/architecture
 order: 1301
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # 스토리지 아키텍처
@@ -13,26 +13,26 @@ NFS Quota Agent는 Go 언어로 작성된 경량 단일 바이너리 데몬으�
 
 ## 내부 아키텍처 구성
 
-```text
-Kubernetes CSI Driver / Client
-             │
-             ▼ gRPC (:50051) / HTTP (:8080)
-┌──────────────────────────────────────────────────────────┐
-│  nfs-quota-agent Daemon (Go)                             │
-│  ├─ gRPC Server (CreateQuota, SetQuota, DeleteQuota)    │
-│  ├─ HTTP REST & Prometheus Metrics Exporter              │
-│  ├─ Project ID Allocator (/etc/projects, /etc/projid)    │
-│  └─ XFS Quota Controller (xfs_quota CLI / ioctl)         │
-└──────────────────────────┬───────────────────────────────┘
-                           │
-                           ▼ Linux Kernel VFS / XFS Engine
-┌──────────────────────────────────────────────────────────┐
-│  /srv/nfs Filesystem (Mounted with 'pquota')             │
-│  ├─ /srv/nfs/pvc-aaaa (Project ID 1001, Limit: 10 GiB)   │
-│  ├─ /srv/nfs/pvc-bbbb (Project ID 1002, Limit: 50 GiB)   │
-│  └─ /srv/nfs/pvc-cccc (Project ID 1003, Limit: 5 GiB)    │
-└──────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  CSI["Kubernetes CSI Driver / Client"] -->|"gRPC :50051 / HTTP :8080"| AGENT["nfs-quota-agent Daemon · Go"]
+
+  subgraph CAP["Agent capabilities"]
+    GRPC["gRPC Server\nCreateQuota · SetQuota · DeleteQuota"]
+    HTTP["HTTP REST + Prometheus metrics"]
+    PID["Project ID Allocator\n/etc/projects · /etc/projid"]
+    CTRL["XFS Quota Controller\nxfs_quota CLI / ioctl"]
+  end
+
+  AGENT --> GRPC
+  AGENT --> HTTP
+  AGENT --> PID
+  AGENT --> CTRL
+  CTRL -->|"Linux VFS / XFS enforcement"| FS["/srv/nfs filesystem\nmounted with pquota"]
+  FS --> P1["pvc-aaaa · Project 1001 · 10 GiB"]
+  FS --> P2["pvc-bbbb · Project 1002 · 50 GiB"]
+  FS --> P3["pvc-cccc · Project 1003 · 5 GiB"]`} />
+
+이 구조는 **Kubernetes 요청 → Agent 제어 로직 → Linux/XFS 커널 강제**의 세 계층을 분리해서 보여줍니다. 실제 용량 제한은 애플리케이션 레벨이 아니라 XFS Project Quota가 커널에서 강제합니다.
 
 ## XFS Project Quota 커널 동작 원리
 

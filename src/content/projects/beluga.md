@@ -16,24 +16,14 @@ solution: "Vagrant와 k3s 위에 Helm·Argo CD GitOps로 전체 데이터 플랫
 
 핵심은 개별 OSS를 모아 놓는 것이 아니라 다음과 같은 **데이터 lifecycle을 하나의 재현 가능한 환경에서 검증하는 것**입니다.
 
-```text
-Source / PostgreSQL
-        │
-        ├── CDC (Debezium)
-        │
-        ▼
-      Kafka
-        │
-        ▼
-      Flink
-        │
-        ▼
- Iceberg Lakehouse
-        │        │
-        │        └── Trino ──→ Superset
-        │
-        └── Airflow orchestration
-```
+<Mermaid chart={`flowchart TB
+  SRC["Source / PostgreSQL"] -->|"Debezium CDC"| KAFKA["Kafka"]
+  KAFKA --> FLINK["Flink"]
+  FLINK --> ICEBERG["Iceberg Lakehouse"]
+  ICEBERG --> TRINO["Trino"]
+  TRINO --> SUPERSET["Superset"]
+  AIRFLOW["Airflow orchestration"] -.-> FLINK
+  AIRFLOW -.-> TRINO`} />
 
 Beluga는 “프로덕션 규모 데이터 플랫폼”을 표방하지 않습니다. 로컬에서 데이터 플랫폼의 통합 동작, 권한 모델, storage/query 경계와 GitOps 운영 패턴을 실험하기 위한 **개인/학습 스케일 reference platform**입니다.
 
@@ -76,28 +66,26 @@ Argo CD App-of-Apps를 통해 플랫폼과 데이터 레이어를 선언적으�
 
 ## 아키텍처
 
-```text
-                Beluga local cluster
-┌─────────────────────────────────────────────────────────┐
-│                                                         │
-│  Gateway / Identity / Policy                            │
-│       │                                                 │
-│       ├───────────────┐                                 │
-│       ▼               ▼                                 │
-│  Kafka / CDC      Platform Services                     │
-│       │               │                                 │
-│       ▼               │                                 │
-│     Flink             │                                 │
-│       │               │                                 │
-│       ▼               │                                 │
-│ Lakekeeper + SeaweedFS│                                 │
-│       │               │                                 │
-│       ├──────→ Trino ─┴────→ Superset                  │
-│       │                                                 │
-│       └──────→ Airflow                                  │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
+<Mermaid chart={`flowchart TB
+  subgraph CLUSTER["Beluga local cluster"]
+    EDGE["Gateway · Identity · Policy"]
+    KAFKA["Kafka / CDC"]
+    PLATFORM["Platform Services"]
+    FLINK["Flink"]
+    LAKE["Lakekeeper + SeaweedFS"]
+    TRINO["Trino"]
+    SUPERSET["Superset"]
+    AIRFLOW["Airflow"]
+    EDGE --> KAFKA
+    EDGE --> PLATFORM
+    KAFKA --> FLINK
+    FLINK --> LAKE
+    LAKE --> TRINO
+    TRINO --> SUPERSET
+    AIRFLOW -.-> FLINK
+    AIRFLOW -.-> TRINO
+    PLATFORM -.-> TRINO
+  end`} />
 
 ## 로컬 리소스 모델
 
@@ -115,21 +103,13 @@ Beluga는 VM 4대와 전체 데이터 스택을 함께 구동하므로 가벼운
 
 Beluga는 렌더링 성공과 실제 동작을 구분합니다.
 
-```text
-make test
-   ↓
-tests/01-cluster-health.sh
-   ↓
-tests/02-ingest-cdc.sh
-   ↓
-tests/03-stream-iceberg.sh
-   ↓
-tests/04-trino-query.sh
-   ↓
-tests/05-airflow-dag.sh
-   ↓
-tests/06-authz-defaults.sh (별도 권한 회귀 검증)
-```
+<Mermaid chart={`flowchart TB
+  TEST["make test"] --> H["01 · cluster health"]
+  H --> CDC["02 · Kafka + CDC"]
+  CDC --> STREAM["03 · Flink + Iceberg"]
+  STREAM --> QUERY["04 · Trino query"]
+  QUERY --> DAG["05 · Airflow DAG"]
+  DAG --> AUTH["06 · authorization regression"]`} />
 
 각 단계는 “서비스가 설치되었는가”가 아니라 실제 API와 데이터 흐름이 기대한 상태인지 확인합니다.
 
@@ -169,12 +149,7 @@ make test
 
 ## 프로젝트 관계
 
-```text
-kube-ready-box
-      ↓
-Beluga local Kubernetes
-      ↓
-Kafka → Flink → Iceberg → Trino → Superset
-      ↓
-Beluga Manager (unified control plane, early stage)
-```
+<Mermaid chart={`flowchart TB
+  READY["kube-ready-box"] --> K8S["Beluga local Kubernetes"]
+  K8S --> FLOW["Kafka → Flink → Iceberg → Trino → Superset"]
+  FLOW --> MANAGER["Beluga Manager\nunified control plane · early stage"]`} />

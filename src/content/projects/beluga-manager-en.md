@@ -29,17 +29,11 @@ The product focus is **integration context**, not UI duplication.
 
 ### Pipeline
 
-```text
-Source / CDC
-    ↓
-Kafka Topic
-    ↓
-Flink Job
-    ↓
-Iceberg Table
-    ↓
-Trino / Query
-```
+<Mermaid chart={`flowchart TB
+  SRC["Source / CDC"] --> KAFKA["Kafka Topic"]
+  KAFKA --> FLINK["Flink Job"]
+  FLINK --> ICEBERG["Iceberg Table"]
+  ICEBERG --> TRINO["Trino / Query"]`} />
 
 A Pipeline correlates resources across the data platform into one operational unit.
 
@@ -57,21 +51,28 @@ Combines health, events, logs, resources, and dependencies for cross-service inv
 
 ## Integration Architecture
 
-```text
-OSS API
-   ↓
-Integration Adapter
-   ↓
-Discovery / Correlation
-   ↓
-Beluga Domain
-   ↓
-Unified API
-   ↓
-Manager UI
-```
+<Mermaid chart={`flowchart TB
+  UI["Beluga Manager UI"] --> DOMAIN["Unified Domain API"]
+  DOMAIN --> CORR["Discovery / Correlation"]
+  CORR --> KAFKA["Kafka Adapter"]
+  CORR --> FLINK["Flink Adapter"]
+  CORR --> ICEBERG["Iceberg Adapter"]
+  CORR --> TRINO["Trino Adapter"]
+  CORR --> AIRFLOW["Airflow Adapter"]
+  KAFKA --> PLATFORM["Beluga Data Platform"]
+  FLINK --> PLATFORM
+  ICEBERG --> PLATFORM
+  TRINO --> PLATFORM
+  AIRFLOW --> PLATFORM`} />
 
 This isolates OSS API versions and implementation differences from the frontend.
+
+<Mermaid chart={`flowchart TB
+  OSS["OSS API"] --> ADAPTER["Integration Adapter"]
+  ADAPTER --> CORR["Discovery / Correlation"]
+  CORR --> DOMAIN["Beluga Domain"]
+  DOMAIN --> API["Unified API"]
+  API --> UI["Manager UI"]`} />
 
 ## State Model
 
@@ -90,17 +91,11 @@ Uncertain relationships should not be presented as authoritative facts.
 
 The repository is currently **early development / architecture-first**. The planned order is:
 
-```text
-API Contract
-    ↓
-Unified Service API
-    ↓
-Discovery / Correlation
-    ↓
-Kafka → Flink → Iceberg → Trino
-    ↓
-Data Asset / Query / Operations
-```
+<Mermaid chart={`flowchart TB
+  CONTRACT["API Contract"] --> API["Unified Service API"]
+  API --> CORR["Discovery / Correlation"]
+  CORR --> PIPE["Kafka → Flink → Iceberg → Trino"]
+  PIPE --> DOMAIN["Data Asset · Query · Operations"]`} />
 
 Initial scope focuses on read-first capabilities: service discovery, pipeline topology, health/status, degraded/stale states, resource/event/log drill-down, and English/Korean foundations. Broad destructive management actions remain out of scope for the first slice.
 
@@ -146,15 +141,15 @@ pnpm dev
 
 ## Project Relationship
 
-```text
-Beluga
-  ├── Kafka
-  ├── Flink
-  ├── Iceberg
-  ├── Trino
-  └── Airflow
-          ↓
-    Beluga Manager
-          ↓
- Pipeline / Data Asset / Service / Operations
-```
+<Mermaid chart={`flowchart TB
+  BELUGA["Beluga Data Platform"] --> KAFKA["Kafka"]
+  BELUGA --> FLINK["Flink"]
+  BELUGA --> ICEBERG["Iceberg"]
+  BELUGA --> TRINO["Trino"]
+  BELUGA --> AIRFLOW["Airflow"]
+  KAFKA --> MANAGER["Beluga Manager"]
+  FLINK --> MANAGER
+  ICEBERG --> MANAGER
+  TRINO --> MANAGER
+  AIRFLOW --> MANAGER
+  MANAGER --> DOMAINS["Pipeline · Data Asset · Service · Operations"]`} />

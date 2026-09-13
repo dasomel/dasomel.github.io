@@ -1,13 +1,28 @@
 'use client';
 
-import type { HTMLAttributes } from 'react';
-import { useRef, useState } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
+import { isValidElement, useRef, useState } from 'react';
 import { Check, Copy } from 'lucide-react';
+import { ResponsiveTextDiagram } from '@/components/ui/ResponsiveTextDiagram';
+
+const BOX_DRAWING = /[┌┐└┘├┤┬┴┼│─╔╗╚╝╠╣╦╩╬║═]/u;
+
+function nodeText(node: ReactNode): string {
+  if (node == null || typeof node === 'boolean') return '';
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(nodeText).join('');
+  if (isValidElement(node)) return nodeText((node.props as { children?: ReactNode }).children);
+  return '';
+}
 
 export function CodeBlock({ children, ...props }: HTMLAttributes<HTMLPreElement>) {
+  const source = nodeText(children);
+  const isDiagram = BOX_DRAWING.test(source) && source.includes('\n');
   const ref = useRef<HTMLPreElement>(null);
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
+
+  if (isDiagram) return <ResponsiveTextDiagram source={source} />;
 
   const copy = async () => {
     const text = ref.current?.querySelector('code')?.textContent ?? ref.current?.textContent ?? '';

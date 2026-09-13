@@ -4,16 +4,12 @@ description: Narwhal 3M+3W 노드 토폴로지, HA 컨트롤 플레인 및 결�
 project: Narwhal
 path: narwhal/architecture
 order: 1101
-lastModified: 2026-08-23
+lastModified: 2026-08-27
 ---
 
 # 클러스터 아키텍처
 
-Narwhal은 단일 장애점(SPOF)이 없는 견고한 6노드 고가용성(HA) 클러스터 아키텍처를 기본 토폴로지로 채택합니다.
-
-> **정식 문서 경로:** `/ko/docs/narwhal/architecture/`  ·  English: `/en/docs/narwhal/architecture/`
->
-> 기존 평면 문서 URL(`narwhal-architecture`)과 함께 사용할 수 있도록 문서 경로 호환성을 유지합니다.
+Narwhal은 단일 장애점(SPOF)을 줄이기 위해 3개의 Control Plane과 3개의 Worker로 구성된 6노드 고가용성(HA) 토폴로지를 사용합니다.
 
 ## 노드 토폴로지 및 IP 할당표
 
@@ -28,20 +24,20 @@ Narwhal은 단일 장애점(SPOF)이 없는 견고한 6노드 고가용성(HA) �
 
 ## HA Control Plane (kube-vip + etcd)
 
-kube-vip을 통해 가상 IP(`192.168.56.100`)를 3개의 마스터 노드 간에 부동(Floating) IP로 관리합니다. 마스터 노드 1대가 장애로 중단되더라도 1초 이내에 다른 마스터 노드가 VIP를 인수하여 무중단 API 요청을 보장합니다.
+클라이언트는 개별 master IP가 아니라 `192.168.56.100`의 kube-vip Virtual IP를 Kubernetes API endpoint로 사용합니다. VIP는 한 시점에 하나의 Control Plane 노드가 소유하며, 해당 노드에 장애가 발생하면 다른 Control Plane 노드가 VIP를 인계합니다. 세 master의 etcd는 각각 독립 member로 quorum을 구성합니다.
 
-```text
-               kubectl / Argo CD / CI 워크플로
-                              │
-                              ▼
-                 192.168.56.100 (kube-vip VIP)
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        ▼ (Active)            ▼ (Standby)           ▼ (Standby)
-   [ master-1 ]          [ master-2 ]          [ master-3 ]
-   - kube-apiserver      - kube-apiserver      - kube-apiserver
-   - etcd member 1       - etcd member 2       - etcd member 3
-```
+아래 그림은 **master-1이 현재 VIP를 소유하고 있는 예시 상태**입니다. `master-2`, `master-3`은 API endpoint의 failover 후보이며, 세 노드 모두 kube-apiserver와 etcd member를 실행합니다.
+
+<Mermaid chart={`flowchart TB
+  CLIENT["kubectl · Argo CD · CI workflow"] --> VIP["Kubernetes API endpoint\n192.168.56.100 · kube-vip VIP"]
+  VIP -->|"current VIP owner"| M1["master-1\nControl Plane\nkube-apiserver · etcd member 1"]
+  VIP -.->|"failover candidate"| M2["master-2\nControl Plane\nkube-apiserver · etcd member 2"]
+  VIP -.->|"failover candidate"| M3["master-3\nControl Plane\nkube-apiserver · etcd member 3"]
+  M1 --- QUORUM["etcd quorum"]
+  M2 --- QUORUM
+  M3 --- QUORUM`} />
+
+이 구조에서 API endpoint와 etcd quorum은 서로 다른 역할을 담당합니다. kube-vip은 **API endpoint의 연속성**을 제공하고, 3-member etcd는 **Control Plane 상태 저장소의 quorum과 내결함성**을 제공합니다.
 
 ## XFS Project Quota 기반 노드 스토리지
 
