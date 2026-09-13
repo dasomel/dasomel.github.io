@@ -1,0 +1,399 @@
+{
+  "date": "2026-09-12",
+  "generatedAt": "2026-09-11T22:40:32.969Z",
+  "count": 49,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI’s researchers burned $7,000 a day on AI agents — now it’s opening the floodgates",
+      "link": "https://thenewstack.io/openai-agents-api-compute/",
+      "date": "2026-09-11T21:27:42.000Z",
+      "excerpt": "OpenAI rolled out its Agents API in public beta Thursday, opening the backend behind Codex to developers looking to run"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Marketing ops as code: Automating events from planning to follow-up on GitHub",
+      "link": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/",
+      "date": "2026-09-11T18:26:10.000Z",
+      "excerpt": "If you can write down how you do your work, you can automate it. Here's what I did to support GitHub's APAC marketing team."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI’s safety system is already cutting off API responses mid-task",
+      "link": "https://thenewstack.io/openai-slowing-ai-development/",
+      "date": "2026-09-11T17:52:56.000Z",
+      "excerpt": "AI companies have spent the last few years competing to build the best models, faster than the other, with each"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cohere’s new translation model is open weights — but not for commercial use",
+      "link": "https://thenewstack.io/cohere-translation-commercial-licensing/",
+      "date": "2026-09-11T17:50:11.000Z",
+      "excerpt": "This week, Cohere released North Small Translate 1.0 under a CC BY-NC 4."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "From zero-shot forecast to purchase order with Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/architecture/from-zero-shot-forecast-to-purchase-order-with-amazon-bedrock-agentcore/",
+      "date": "2026-09-11T14:08:01.000Z",
+      "excerpt": "Combine zero-shot forecasting with Amazon Chronos2 and multi-agent orchestration on Amazon Bedrock AgentCore to turn demand forecasts into validated purchase orders. No per-product model training, with business rules, auditability, and cost that scales to zero."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing automatic remediation policies with Cloudflare CASB",
+      "link": "https://blog.cloudflare.com/casb-policies/",
+      "date": "2026-09-11T13:00:00.000Z",
+      "excerpt": "Cloudflare CASB policies introduce a native automation engine built directly on the Cloudflare developer platform to remediate SaaS risks automatically. Security teams can now design event-driven logic to revoke risky file shares and send webhooks without manual intervention."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Building a reliable cloud native foundation for distributed AI training",
+      "link": "https://www.cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training/",
+      "date": "2026-09-11T11:00:00.000Z",
+      "excerpt": "AI workloads are changing what platform teams need from infrastructure. Provisioning GPUs and standing up a cluster no longer makes a platform “AI-ready."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "date": "2026-09-11T10:00:00.000Z",
+      "excerpt": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "3 Highlights from Thomas Kurian’s Keynote at the Goldman Sachs Communicopia & Technology Conference",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/highlights-from-the-goldman-sachs-communicopia-and-technology-conference/",
+      "date": "2026-09-11T09:00:00.000Z",
+      "excerpt": "On Tuesday, September 8, Thomas Kurian participated in the Goldman Sachs Tech Conference, providing an update on Google Cloud’s business and strategy."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "AI를 전제로 다시 설계하다, Tech-Verse 2026 참관기",
+      "link": "https://techblog.lycorp.co.jp/ko/tech-verse-2026-ai-driven-development-review",
+      "date": "2026-09-11T01:50:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus의 LINE VoIP Service Dev 팀에서 서버 개발을 하고 있는 한규범, ABC Studio에서 서버를 개발하고 있는 황건구입니다."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Machine speed, hold the AI: Hand-rolled marimo CVE-2026-39987 exploit",
+      "link": "https://webflow.sysdig.com/blog/machine-speed-hold-the-ai-hand-rolled-marimo-cve-2026-39987-exploit",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Sysdig TRT details a hand-rolled attack against marimo's CVE-2026-39987 without AI, building custom Python tools to breach a cloud bastion host."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 11, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-11-2026-red-hat",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Red Hat Positioned as a Leader in the 2026 Gartner® Magic Quadrant™ for Container ManagementRed Hat is recognized as a Leader in the 2026 Gartner® Magic Quadrant™ for Container Management."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Closing the AIOps loop with Splunk Observability Cloud and Red Hat Ansible Automation Platform",
+      "link": "https://www.redhat.com/en/blog/closing-aiops-loop-splunk-observability-cloud-and-red-hat-ansible-automation-platform",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Detection is only half the process. Swift remediation is what keeps operations smooth."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "blog | 5 reasons why your Lightwell strategy needs more than just patches",
+      "link": "https://www.redhat.com/en/blog/5-reasons-why-your-lightwell-strategy-needs-more-just-patches",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Lightwell empowers organizations to respond to vulnerabilities with greater speed. However, receiving a patch is only part of the equation; your teams require validated skills to deploy those fixes into production quickly, safely, and with confidence."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Analyze your experiments in ChatGPT with the Datadog Experiments plugin",
+      "link": "https://www.datadoghq.com/blog/chatgpt-datadog-experiments/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Learn how the Datadog Experiments OpenAI Data plugin lets your team read, question, and act on experiment results directly in ChatGPT."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Understanding NetFlow duplication: Why it happens, and how to deduplicate",
+      "link": "https://www.datadoghq.com/blog/understanding-netflow-duplication/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Learn about the underlying factors that cause duplication of NetFlow traffic flow data, how to prevent the issue, and how Datadog can help."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How to calculate DevOps platform total cost of ownership",
+      "link": "https://about.gitlab.com/blog/how-to-calculate-devops-platform-total-cost-of-ownership/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "There’s nothing like budget pressure to put your DevOps platform under a microscope. But subscription fees and license costs only tell one part of the story."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Critical Patch Release: 19.3.2, 19.2.6, 19.1.8",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
+      "link": "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
+      "date": "2026-09-10T22:50:22.000Z",
+      "excerpt": "Machine Intelligence"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: Using the diff, terminal, and browser",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/",
+      "date": "2026-09-10T21:31:19.000Z",
+      "excerpt": "Checking agent-generated code usually means hopping between tabs. Learn how to view diffs, run terminal commands, and preview web apps side by side in the GitHub Copilot app."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Container Management",
+      "link": "https://azure.microsoft.com/en-us/blog/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-container-management/",
+      "date": "2026-09-10T21:00:00.000Z",
+      "excerpt": "Microsoft was named a Leader in the 2026 Gartner® Magic Quadrant™ for Container Management. Discover how AKS, Azure Arc, and Azure Container Apps help organizations run AI and hybrid workloads at scale."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing the Google Cloud Developer Plugin for AI Coding Agents",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents/",
+      "date": "2026-09-10T19:53:00.000Z",
+      "excerpt": "Agent skills fit well alongside documentation and remote MCP servers as ways of enabling the success of your AI workflows. They reduce context window usage for certain use cases, and they're straightforward to install."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Scheduler Preemption for In-Place Pod Resize (Alpha)",
+      "link": "https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/",
+      "date": "2026-09-10T18:30:00.000Z",
+      "excerpt": "In Kubernetes, resource allocation has historically been a static decision made during a Pod's initial scheduling and placement. With the graduation of the core in-Place Pod resize feature to General Availability in v1."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "The Economics of Agent Optimization: How AI agent governance controls cost and proves ROI",
+      "link": "https://azure.microsoft.com/en-us/blog/the-economics-of-agent-optimization-how-ai-agent-governance-controls-cost-and-proves-roi/",
+      "date": "2026-09-10T17:00:00.000Z",
+      "excerpt": "This blog post is the fourth and final installment of The Economics of Agent Optimization, which shares the strategies, capabilities, and proof points that can help you optimize agent costs and run AI as a managed investment system on Microsoft Foundry."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Building resilient real-time streaming workers with Amazon DynamoDB leases",
+      "link": "https://aws.amazon.com/blogs/architecture/building-resilient-real-time-streaming-workers-with-amazon-dynamodb-leases/",
+      "date": "2026-09-10T16:14:22.000Z",
+      "excerpt": "Real-time streaming workers that hold hundreds of persistent WebSocket connections lose data when a worker fails."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Custom labels in Grafana Cloud Synthetic Monitoring: New updates for consistency and ease-of-use",
+      "link": "https://grafana.com/blog/synthetic-monitoring-labels-update/",
+      "date": "2026-09-10T16:11:53.000Z",
+      "excerpt": "Labels are a powerful way to organize telemetry and define policies across Grafana Cloud, helping to streamline alerting, attribution, access control, and more."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "date": "2026-09-10T16:00:00.000Z",
+      "excerpt": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "3 ways to prep for your next big race with Search",
+      "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "date": "2026-09-10T16:00:00.000Z",
+      "excerpt": "Search can help runners get race-day ready with registration alerts, tailored training plans, and more."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-09-10T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "The future of infrastructure resiliency starts with modernization",
+      "link": "https://azure.microsoft.com/en-us/blog/the-future-of-infrastructure-resiliency-starts-with-modernization/",
+      "date": "2026-09-10T16:00:00.000Z",
+      "excerpt": "Modernization only succeeds when organizations have confidence that their infrastructure can withstand disruption and continue supporting critical operations."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Now everyone can put data to work",
+      "link": "https://openai.com/index/put-data-to-work",
+      "date": "2026-09-10T15:00:00.000Z",
+      "excerpt": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "1.1.1.1 now supports post-quantum DNSSEC, all 2,420 bytes of it",
+      "link": "https://blog.cloudflare.com/post-quantum-dnssec-1111/",
+      "date": "2026-09-10T13:00:00.000Z",
+      "excerpt": "1.1."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubernetes disaster recovery: Guidance from three reproducible failure scenarios",
+      "link": "https://www.cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios/",
+      "date": "2026-09-10T11:37:00.000Z",
+      "excerpt": "Scope This document describes three failure scenarios that separate having backups from being able to recover, and the guidance that follows from each. Every scenario is reproducible on a laptop from the lab repository above, and."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Is prevention essentially a solved problem?",
+      "link": "https://snyk.io/blog/is-prevention-solved/",
+      "date": "2026-09-10T04:00:00.000Z",
+      "excerpt": "Prevention in agent-generated code is architecturally solved—but choosing controls that protect security without slowing development remains the challenge."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub availability report: August 2026",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-august-2026/",
+      "date": "2026-09-10T02:05:17.000Z",
+      "excerpt": "In August, we experienced five incidents that resulted in degraded performance across GitHub services."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
+      "link": "https://huggingface.co/blog/gradio-workflow-1111",
+      "date": "2026-09-10T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we built Datadog Experiments",
+      "link": "https://www.datadoghq.com/blog/how-we-built-datadog-experiments/",
+      "date": "2026-09-10T00:00:00.000Z",
+      "excerpt": "Datadog Experiments shortens the time from result to decision with CUPED on percentiles, verifiable warehouse results, and near real-time RUM metrics."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Prepare for the Cyber Resilience Act's 24-hour reporting deadline",
+      "link": "https://about.gitlab.com/blog/cyber-resilience-act-reporting-deadline/",
+      "date": "2026-09-10T00:00:00.000Z",
+      "excerpt": "Starting on September 11, 2026, many businesses that place software on the European Union (EU) market will have 24 hours to file a report once they learn that a vulnerability in one of their products is being actively exploited."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Testing application resilience with Amazon SQS and AWS Fault Injection Service",
+      "link": "https://aws.amazon.com/blogs/architecture/testing-application-resilience-with-amazon-sqs-and-aws-fault-injection-service/",
+      "date": "2026-09-09T21:33:59.000Z",
+      "excerpt": "Learn how to use AWS Fault Injection Service and AWS Systems Manager Automation to run progressive chaos experiments against Amazon SQS queues. Validate that your retry logic, circuit breakers, and dead-letter queues actually work under failure before a real outage hits production."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Introducing Node Lifecycle Conditions",
+      "link": "https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions/",
+      "date": "2026-09-09T18:30:00.000Z",
+      "excerpt": "Kubernetes has many ways to describe what is happening on a Node. Readiness, taints, Pod state, labels, annotations, and provider-specific APIs each expose part of the picture."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Get ready for the game with new football features in Search",
+      "link": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
+      "date": "2026-09-09T16:00:00.000Z",
+      "excerpt": "Track live game feeds, explore detailed stats, and get custom fantasy recommendations directly in Search this season."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Recreating a 70-year love story frame by frame",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "date": "2026-09-09T16:00:00.000Z",
+      "excerpt": "Discover how filmmakers and Google DeepMind used AI to recreate a couple's unrecorded past in the short film \"Love, Rendered.\""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+      "link": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "date": "2026-09-09T15:36:24.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "How to monitor Cypress tests with Grafana Cloud",
+      "link": "https://grafana.com/blog/how-to-monitor-cypress-tests-with-grafana-cloud/",
+      "date": "2026-09-09T13:35:09.000Z",
+      "excerpt": "If your Cypress suite has tests that fail more often or run slower, you know it can be hard to figure out the pattern from a single job. It could be one spec that slowed down, or a single test that fails, or maybe the entire suite is trending slower."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How we rebuilt Cloudflare Workers’ module registry for Node.js compatibility",
+      "link": "https://blog.cloudflare.com/workers-module-registry-nodejs/",
+      "date": "2026-09-09T13:00:00.000Z",
+      "excerpt": "Workers now enables Node.js compatibility by default, supports applications up to 64 mebibytes, and adds a URL-based module registry with import."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "AI Norms & Values, Part 3 of 3: Things We Hold True",
+      "link": "https://www.honeycomb.io/blog/ai-norms-values-part-3-things-we-hold-true",
+      "date": "2026-09-09T13:00:00.000Z",
+      "excerpt": "The final part of Honeycomb's AI Norms & Values series: the principles the company holds true about AI as a tool, ownership of work, and rising standards; how it actually uses AI day to day; usage patterns for respecting each other's time; and where it stands on AI's ethical externalities like energy use, IP, bias, and…"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Whose GPUs are these, anyway? Secure, self-service metrics for multi-tenant Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/09/09/whose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes/",
+      "date": "2026-09-09T11:27:00.000Z",
+      "excerpt": "The question that stopped the meeting It was a routine cost review. The slide showed the month’s GPU spend, the biggest line on the whole infrastructure bill, and someone asked a five-word question: “Are we using."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "App Router의 장점은 우리에게도 장점일까요?",
+      "link": "https://toss.tech/article/52999",
+      "date": "2026-09-09T06:45:00.000Z",
+      "excerpt": "App Router가 토스뱅크에도 좋은 선택일지, 직접 측정한 결과와 도입 여부를 판단한 기준을 공유해요."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "6 Benefits of Sandbox Environments (and How Docker Sandboxes Delivers Them)",
+      "link": "https://www.docker.com/blog/benefits-of-sandbox-environments/",
+      "date": "2026-09-08T23:05:55.000Z",
+      "excerpt": "Learn about the key benefits of sandbox environments with Docker including isolation, definable controls, secrets credential handling, and more."
+    }
+  ]
+}
