@@ -1,0 +1,295 @@
+{
+  "date": "2026-09-13",
+  "generatedAt": "2026-09-12T22:24:06.216Z",
+  "count": 36,
+  "articles": [
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "date": "2026-09-14T00:00:00.000Z",
+      "excerpt": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why MCP security is about permissions overhaul",
+      "link": "https://thenewstack.io/mcp-security-permissions-overhaul/",
+      "date": "2026-09-12T15:00:00.000Z",
+      "excerpt": "Anthropic’s Model Context Protocol (MCP) went into production in late 2024. It spread rapidly after that."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Same mission, bigger stage”: OpenAI hires Git AI founders to help Codex prove its ROI",
+      "link": "https://thenewstack.io/openai-hires-git-ai/",
+      "date": "2026-09-12T14:46:53.000Z",
+      "excerpt": "OpenAI has hired the founders of Git AI, an open-source tool that tracks how much code AI writes and measures"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The AI-native SDLC won’t be one process",
+      "link": "https://thenewstack.io/spec-driven-sdlc-gates/",
+      "date": "2026-09-12T14:00:00.000Z",
+      "excerpt": "Anthropic recently published its AI-Native SDLC Playbook. Its central claim is that “code is no longer the bottleneck."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Native Histograms Graduates to Beta",
+      "link": "https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta/",
+      "date": "2026-09-11T18:30:00.000Z",
+      "excerpt": "I'm excited to announce that native histogram support for Kubernetes metrics is graduating to Beta and is enabled by default in Kubernetes v1.37!"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Marketing ops as code: Automating events from planning to follow-up on GitHub",
+      "link": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/",
+      "date": "2026-09-11T18:26:10.000Z",
+      "excerpt": "If you can write down how you do your work, you can automate it. Here's what I did to support GitHub's APAC marketing team."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "link": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "date": "2026-09-11T16:00:00.000Z",
+      "excerpt": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "From zero-shot forecast to purchase order with Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/architecture/from-zero-shot-forecast-to-purchase-order-with-amazon-bedrock-agentcore/",
+      "date": "2026-09-11T14:08:01.000Z",
+      "excerpt": "Combine zero-shot forecasting with Amazon Chronos2 and multi-agent orchestration on Amazon Bedrock AgentCore to turn demand forecasts into validated purchase orders. No per-product model training, with business rules, auditability, and cost that scales to zero."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing automatic remediation policies with Cloudflare CASB",
+      "link": "https://blog.cloudflare.com/casb-policies/",
+      "date": "2026-09-11T13:00:00.000Z",
+      "excerpt": "Cloudflare CASB policies introduce a native automation engine built directly on the Cloudflare developer platform to remediate SaaS risks automatically. Security teams can now design event-driven logic to revoke risky file shares and send webhooks without manual intervention."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Building a reliable cloud native foundation for distributed AI training",
+      "link": "https://www.cncf.io/blog/2026/09/11/building-a-reliable-cloud-native-foundation-for-distributed-ai-training/",
+      "date": "2026-09-11T11:00:00.000Z",
+      "excerpt": "AI workloads are changing what platform teams need from infrastructure. Provisioning GPUs and standing up a cluster no longer makes a platform “AI-ready."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "date": "2026-09-11T10:00:00.000Z",
+      "excerpt": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "3 Highlights from Thomas Kurian’s Keynote at the Goldman Sachs Communicopia & Technology Conference",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/highlights-from-the-goldman-sachs-communicopia-and-technology-conference/",
+      "date": "2026-09-11T09:00:00.000Z",
+      "excerpt": "On Tuesday, September 8, Thomas Kurian participated in the Goldman Sachs Tech Conference, providing an update on Google Cloud’s business and strategy."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "AI를 전제로 다시 설계하다, Tech-Verse 2026 참관기",
+      "link": "https://techblog.lycorp.co.jp/ko/tech-verse-2026-ai-driven-development-review",
+      "date": "2026-09-11T01:50:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus의 LINE VoIP Service Dev 팀에서 서버 개발을 하고 있는 한규범, ABC Studio에서 서버를 개발하고 있는 황건구입니다."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Machine speed, hold the AI: Hand-rolled marimo CVE-2026-39987 exploit",
+      "link": "https://webflow.sysdig.com/blog/machine-speed-hold-the-ai-hand-rolled-marimo-cve-2026-39987-exploit",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Sysdig TRT details a hand-rolled attack against marimo's CVE-2026-39987 without AI, building custom Python tools to breach a cloud bastion host."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 11, 2026",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-11-2026-red-hat",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Red Hat Positioned as a Leader in the 2026 Gartner® Magic Quadrant™ for Container ManagementRed Hat is recognized as a Leader in the 2026 Gartner® Magic Quadrant™ for Container Management."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Closing the AIOps loop with Splunk Observability Cloud and Red Hat Ansible Automation Platform",
+      "link": "https://www.redhat.com/en/blog/closing-aiops-loop-splunk-observability-cloud-and-red-hat-ansible-automation-platform",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Detection is only half the process. Swift remediation is what keeps operations smooth."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "blog | 5 reasons why your Lightwell strategy needs more than just patches",
+      "link": "https://www.redhat.com/en/blog/5-reasons-why-your-lightwell-strategy-needs-more-just-patches",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Lightwell empowers organizations to respond to vulnerabilities with greater speed. However, receiving a patch is only part of the equation; your teams require validated skills to deploy those fixes into production quickly, safely, and with confidence."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Analyze your experiments in ChatGPT with the Datadog Experiments plugin",
+      "link": "https://www.datadoghq.com/blog/chatgpt-datadog-experiments/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Learn how the Datadog Experiments OpenAI Data plugin lets your team read, question, and act on experiment results directly in ChatGPT."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Understanding NetFlow duplication: Why it happens, and how to deduplicate",
+      "link": "https://www.datadoghq.com/blog/understanding-netflow-duplication/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "Learn about the underlying factors that cause duplication of NetFlow traffic flow data, how to prevent the issue, and how Datadog can help."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How to calculate DevOps platform total cost of ownership",
+      "link": "https://about.gitlab.com/blog/how-to-calculate-devops-platform-total-cost-of-ownership/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": "There’s nothing like budget pressure to put your DevOps platform under a microscope. But subscription fees and license costs only tell one part of the story."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Critical Patch Release: 19.3.2, 19.2.6, 19.1.8",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/",
+      "date": "2026-09-11T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
+      "link": "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
+      "date": "2026-09-10T22:50:22.000Z",
+      "excerpt": "Machine Intelligence"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: Using the diff, terminal, and browser",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/",
+      "date": "2026-09-10T21:31:19.000Z",
+      "excerpt": "Checking agent-generated code usually means hopping between tabs. Learn how to view diffs, run terminal commands, and preview web apps side by side in the GitHub Copilot app."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing the Google Cloud Developer Plugin for AI Coding Agents",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents/",
+      "date": "2026-09-10T19:53:00.000Z",
+      "excerpt": "Agent skills fit well alongside documentation and remote MCP servers as ways of enabling the success of your AI workflows. They reduce context window usage for certain use cases, and they're straightforward to install."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Scheduler Preemption for In-Place Pod Resize (Alpha)",
+      "link": "https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/",
+      "date": "2026-09-10T18:30:00.000Z",
+      "excerpt": "In Kubernetes, resource allocation has historically been a static decision made during a Pod's initial scheduling and placement. With the graduation of the core in-Place Pod resize feature to General Availability in v1."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Building resilient real-time streaming workers with Amazon DynamoDB leases",
+      "link": "https://aws.amazon.com/blogs/architecture/building-resilient-real-time-streaming-workers-with-amazon-dynamodb-leases/",
+      "date": "2026-09-10T16:14:22.000Z",
+      "excerpt": "Real-time streaming workers that hold hundreds of persistent WebSocket connections lose data when a worker fails."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Custom labels in Grafana Cloud Synthetic Monitoring: New updates for consistency and ease-of-use",
+      "link": "https://grafana.com/blog/synthetic-monitoring-labels-update/",
+      "date": "2026-09-10T16:11:53.000Z",
+      "excerpt": "Labels are a powerful way to organize telemetry and define policies across Grafana Cloud, helping to streamline alerting, attribution, access control, and more."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "3 ways to prep for your next big race with Search",
+      "link": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "date": "2026-09-10T16:00:00.000Z",
+      "excerpt": "Search can help runners get race-day ready with registration alerts, tailored training plans, and more."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-09-10T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "1.1.1.1 now supports post-quantum DNSSEC, all 2,420 bytes of it",
+      "link": "https://blog.cloudflare.com/post-quantum-dnssec-1111/",
+      "date": "2026-09-10T13:00:00.000Z",
+      "excerpt": "1.1."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubernetes disaster recovery: Guidance from three reproducible failure scenarios",
+      "link": "https://www.cncf.io/blog/2026/09/10/kubernetes-disaster-recovery-guidance-from-three-reproducible-failure-scenarios/",
+      "date": "2026-09-10T11:37:00.000Z",
+      "excerpt": "Scope This document describes three failure scenarios that separate having backups from being able to recover, and the guidance that follows from each. Every scenario is reproducible on a laptop from the lab repository above, and."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Is prevention essentially a solved problem?",
+      "link": "https://snyk.io/blog/is-prevention-solved/",
+      "date": "2026-09-10T04:00:00.000Z",
+      "excerpt": "Prevention in agent-generated code is architecturally solved—but choosing controls that protect security without slowing development remains the challenge."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub availability report: August 2026",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-august-2026/",
+      "date": "2026-09-10T02:05:17.000Z",
+      "excerpt": "In August, we experienced five incidents that resulted in degraded performance across GitHub services."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
+      "link": "https://huggingface.co/blog/gradio-workflow-1111",
+      "date": "2026-09-10T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we built Datadog Experiments",
+      "link": "https://www.datadoghq.com/blog/how-we-built-datadog-experiments/",
+      "date": "2026-09-10T00:00:00.000Z",
+      "excerpt": "Datadog Experiments shortens the time from result to decision with CUPED on percentiles, verifiable warehouse results, and near real-time RUM metrics."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Prepare for the Cyber Resilience Act's 24-hour reporting deadline",
+      "link": "https://about.gitlab.com/blog/cyber-resilience-act-reporting-deadline/",
+      "date": "2026-09-10T00:00:00.000Z",
+      "excerpt": "Starting on September 11, 2026, many businesses that place software on the European Union (EU) market will have 24 hours to file a report once they learn that a vulnerability in one of their products is being actively exploited."
+    }
+  ]
+}
