@@ -90,9 +90,10 @@ function escapeMdxBraces(text) {
       if (i % 2 === 1) return part;
       return part
         .replace(/\{[^{}]*\}/g, (m) => `\`${m}\``)
-        // A tag or autolink starts with a letter, `/`, `!`, `$` or `_`; anything
-        // else after `<` (a digit, a space, `=`) is literal text in prose.
-        .replace(/<(?![A-Za-z/!$_])/g, '\\<');
+        // Summaries are prose, never markup: escape every `<`. The earlier
+        // "only when it cannot start a tag" rule let `Box<str>` through and
+        // MDX then failed on the unclosed <str> (2026-09-13 deploy failure).
+        .replace(/</g, '\\<');
     })
     .join('');
 }

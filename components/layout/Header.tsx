@@ -26,16 +26,23 @@ export default function Header({ locale }: HeaderProps) {
   const base = locale === 'en' ? '/en' : '/ko';
   const ossHref = locale === 'en' ? '/oss/en/' : '/oss/';
   const langSwitch = locale === 'en' ? pathname.replace(/^\/en/, '/ko') || '/ko/' : pathname.replace(/^\/ko/, '/en') || '/en/';
+  const work = { href: `${base}/projects`, label: 'Work', aliases: [`${base}/projects`] };
+  const oss = { href: ossHref, label: 'OSS', aliases: ['/oss', `${base}/oss`] };
+  const knowledge = { href: `${base}/knowledge`, label: 'Knowledge', aliases: [`${base}/knowledge`, `${base}/notes`, `${base}/posts`, `${base}/seminars`, `${base}/docs`, `${base}/events`] };
+  // D1: Keep Tech Digest first-level for PC discoverability; cost: one nav slot; escape hatch: move it under Knowledge if widths regress.
+  const techDigest = { href: `${base}/tech-digest`, label: t('tech_digest'), aliases: [`${base}/tech-digest`] };
+  const about = { href: `${base}/about`, label: t('about'), aliases: [`${base}/about`] };
   const primary = [
-    { href: `${base}/projects`, label: 'Work', aliases: [`${base}/projects`] },
-    { href: ossHref, label: 'OSS', aliases: ['/oss', `${base}/oss`] },
-    { href: `${base}/knowledge`, label: 'Knowledge', aliases: [`${base}/knowledge`, `${base}/notes`, `${base}/posts`, `${base}/tech-digest`, `${base}/seminars`, `${base}/docs`, `${base}/events`] },
-    { href: `${base}/about`, label: t('about'), aliases: [`${base}/about`] },
+    work,
+    oss,
+    knowledge,
+    about,
   ];
+  const desktopPrimary = [work, oss, knowledge, techDigest, about];
   const mobileExtra = [
     { href: `${base}/oss/story`, label: locale === 'en' ? 'Engineering Story' : '엔지니어링 스토리' },
     { href: `${base}/notes`, label: locale === 'en' ? 'Field Notes' : '필드 노트' },
-    { href: `${base}/tech-digest`, label: t('tech_digest') },
+    techDigest,
     { href: `${base}/seminars`, label: t('talks') },
     { href: `${base}/docs`, label: t('docs') },
     { href: `${base}/events`, label: 'Events' },
@@ -50,10 +57,11 @@ export default function Header({ locale }: HeaderProps) {
           <Link href={`${base}/`} className={`inline-flex items-center gap-2.5 ${focusRing}`} aria-label="dasomel Open Engineering Lab">
             <BrandMark className="h-7 w-7 sm:h-8 sm:w-8" />
             <span className="font-mono text-sm font-semibold tracking-tight" style={{color:'var(--text)'}}>dasomel</span>
-            <span className="hidden font-mono text-[10px] tracking-[0.12em] sm:inline" style={{color:'var(--text-faint)'}}>/ OPEN ENGINEERING LAB</span>
+            {/* D2: Hide the long tagline at medium widths to keep the expanded desktop nav on one row; cost: less brand detail at 768–1279px; escape hatch: restore it if the nav is shortened. */}
+            <span className="hidden font-mono text-[10px] tracking-[0.12em] sm:inline md:hidden xl:inline" style={{color:'var(--text-faint)'}}>/ OPEN ENGINEERING LAB</span>
           </Link>
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
-            {primary.map(item => { const active=itemActive(item); return <Link key={item.href} href={item.href} className={`rounded-lg px-3 py-1.5 text-sm transition-colors ${focusRing}`} style={{color:active?'var(--accent)':'var(--text-muted)',fontWeight:active?600:400}}>{item.label}</Link>; })}
+            {desktopPrimary.map(item => { const active=itemActive(item); return <Link key={item.href} href={item.href} className={`rounded-lg px-3 py-1.5 text-sm transition-colors ${focusRing}`} style={{color:active?'var(--accent)':'var(--text-muted)',fontWeight:active?600:400}}>{item.label}</Link>; })}
             <a href="https://github.com/dasomel" target="_blank" rel="noreferrer" aria-label="GitHub" className={`ml-2 rounded-lg p-2 transition-opacity hover:opacity-60 ${focusRing}`} style={{color:'var(--text-muted)'}}><Github className="h-4 w-4" /></a>
             <div className="mx-1 h-4 w-px" style={{backgroundColor:'var(--border-hi)'}} /><ThemeToggle />
             <Link href={langSwitch} className={`rounded-lg border px-2.5 py-1 font-mono text-xs ${focusRing}`} style={{color:'var(--text-muted)',borderColor:'var(--border)'}}>{t('lang')}</Link>
@@ -61,7 +69,7 @@ export default function Header({ locale }: HeaderProps) {
           <div className="flex items-center gap-2 md:hidden"><ThemeToggle /><Link href={langSwitch} className={`rounded-md border px-2.5 py-1.5 font-mono text-xs ${focusRing}`} style={{color:'var(--text-muted)',borderColor:'var(--border)'}}>{t('lang')}</Link><button type="button" onClick={()=>setOpen(v=>!v)} className={`rounded-lg p-2 ${focusRing}`} style={{color:'var(--text-muted)',backgroundColor:open?'var(--surface-hi)':'transparent'}} aria-label={open?'Close menu':'Open menu'} aria-expanded={open} aria-controls="mobile-navigation">{open?<X className="h-4 w-4"/>:<Menu className="h-4 w-4"/>}</button></div>
         </div>
       </div>
-      {open&&<div id="mobile-navigation" className="border-t md:hidden" style={{borderTopColor:'var(--border)',backgroundColor:'var(--bg)'}}><nav className="mx-auto max-w-[1440px] px-5 py-4 sm:px-8" aria-label="Mobile navigation"><div className="grid gap-1">{primary.map(item=>{const active=itemActive(item);return <Link key={item.href} href={item.href} onClick={()=>setOpen(false)} className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm ${focusRing}`} style={{color:active?'var(--accent)':'var(--text-muted)',backgroundColor:active?'var(--accent-dim)':'transparent',fontWeight:active?600:400}}><span>{item.label}</span>{active&&<span className="font-mono text-[9px] tracking-[0.12em]">ACTIVE</span>}</Link>})}<div className="my-2 h-px" style={{backgroundColor:'var(--border)'}}/>{mobileExtra.map(item=><Link key={item.href} href={item.href} onClick={()=>setOpen(false)} className={`rounded-xl px-4 py-2.5 text-sm ${focusRing}`} style={{color:'var(--text-muted)'}}>{item.label}</Link>)}<a href="https://github.com/dasomel" target="_blank" rel="noreferrer" className={`mt-2 flex items-center gap-2 rounded-xl border px-4 py-3 text-sm ${focusRing}`} style={{borderColor:'var(--border)',color:'var(--text-muted)'}}><Github className="h-4 w-4"/> GitHub</a></div></nav></div>}
+      {open&&<div id="mobile-navigation" className="border-t md:hidden" style={{borderTopColor:'var(--border)',backgroundColor:'var(--bg)'}}><nav className="mx-auto max-w-[1440px] px-5 py-4 sm:px-8" aria-label="Mobile navigation"><div className="grid gap-1">{primary.map(item=>{const active=itemActive(item);return <Link key={item.href} href={item.href} onClick={()=>setOpen(false)} className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm ${focusRing}`} style={{color:active?'var(--accent)':'var(--text-muted)',backgroundColor:active?'var(--accent-dim)':'transparent',fontWeight:active?600:400}}><span>{item.label}</span>{active&&<span className="font-mono text-[9px] tracking-[0.12em]">ACTIVE</span>}</Link>})}<div className="my-2 h-px" style={{backgroundColor:'var(--border)'}}/>{mobileExtra.map(item=>{const active=pathActive(item.href);return <Link key={item.href} href={item.href} onClick={()=>setOpen(false)} className={`rounded-xl px-4 py-2.5 text-sm ${focusRing}`} style={{color:active?'var(--accent)':'var(--text-muted)',backgroundColor:active?'var(--accent-dim)':'transparent',fontWeight:active?600:400}}>{item.label}</Link>})}<a href="https://github.com/dasomel" target="_blank" rel="noreferrer" className={`mt-2 flex items-center gap-2 rounded-xl border px-4 py-3 text-sm ${focusRing}`} style={{borderColor:'var(--border)',color:'var(--text-muted)'}}><Github className="h-4 w-4"/> GitHub</a></div></nav></div>}
     </header>
   );
 }
