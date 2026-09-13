@@ -1,0 +1,76 @@
+name: Sync OpenForge Portfolio
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-openforge-portfolio
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Fetch canonical OpenForge dashboard
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/data
+          curl --fail --silent --show-error --location \
+            --retry 3 --retry-delay 2 \
+            https://raw.githubusercontent.com/dasomel/openforge/main/portfolio/dashboard.json \
+            -o "${RUNNER_TEMP}/openforge-portfolio.json"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          source = Path(os.environ['RUNNER_TEMP']) / 'openforge-portfolio.json'
+          data = json.loads(source.read_text(encoding='utf-8'))
+          if data.get('version') != 'openforge-dashboard/v1':
+              raise SystemExit(f"unsupported OpenForge dashboard version: {data.get('version')!r}")
+          if not isinstance(data.get('projects'), list) or not data['projects']:
+              raise SystemExit('OpenForge dashboard has no projects')
+          Path('src/data/openforge-portfolio.json').write_text(
+              json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Check for changes
+        id: changes
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain -- src/data/openforge-portfolio.json)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push snapshot
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/openforge-portfolio.json
+          git commit -m "chore(oss): sync OpenForge portfolio dashboard"
+          git push origin HEAD:main
+
+      - name: Trigger Pages deploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
