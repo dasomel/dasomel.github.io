@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-14",
+  "generatedAt": "2026-09-13T22:28:55.001Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Chip Huyen explains how to cut inference costs without new hardware",
+      "link": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+      "date": "2026-09-13T15:00:00.000Z",
+      "excerpt": "Last October, the P99 conference — the online gathering for developers focused on high-performance, low-latency applications — featured a cracking"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Machine translation is still broken for most of the world’s languages”: Cohere builds non-reasoning for a reason",
+      "link": "https://thenewstack.io/cohere-north-translate-sovereignty/",
+      "date": "2026-09-13T14:21:46.000Z",
+      "excerpt": "Enterprise AI company Cohere announced North Small Translate last week, a mixture-of-experts (MOE) open-weight machine translation model that works across"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "It passed CI. It passed your evals. The customer still got the wrong answer.",
+      "link": "https://thenewstack.io/ai-agent-trace-debugging/",
+      "date": "2026-09-13T14:00:00.000Z",
+      "excerpt": "A diff is not evidence. It’s a statement of intent."
+    }
+  ]
+}
