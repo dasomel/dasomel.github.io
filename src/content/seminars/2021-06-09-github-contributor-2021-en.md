@@ -30,3 +30,9 @@ A practical seminar introducing open source contribution culture through the 202
 - How to write Pull Requests
 - Code review process
 - Sharing contribution experience
+
+## Follow-up contribution story
+
+- [Getting Started with eGovFrame Contribution: Lessons from Real PRs and Reviews](/en/posts/egovframe-contribution-starter-2026/)
+- [eGovFrame Contribution Starter Slides](https://cne.io.kr/slides/egovframe-contribution/#1)
+
