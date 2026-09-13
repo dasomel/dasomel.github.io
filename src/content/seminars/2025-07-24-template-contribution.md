@@ -36,3 +36,9 @@ tags: ["eGovFrame", "Contribution"]
 - 표준프레임워크 오픈소스에 기여하고 싶은 개발자
 - eGovFrame 생태계에 관심 있는 개발자
 - 오픈소스 컨트리뷰션을 처음 시작하는 분
+
+## 후속 기여 사례
+
+- [표준프레임워크 기여를 시작하며: 실제 PR과 리뷰에서 배운 점](/ko/posts/egovframe-contribution-starter-2026/)
+- [처음 시작하는 eGovFrame 기여 발표자료](https://cne.io.kr/slides/egovframe-contribution/#1)
+
