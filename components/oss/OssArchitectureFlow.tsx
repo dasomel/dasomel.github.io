@@ -9,7 +9,7 @@ export function OssArchitectureFlow({ locale }: { locale: 'ko' | 'en' }) {
     { role:'Platform', name:'Narwhal · Narwhal Portal', href:`${prefix}/narwhal/`, note:en?'platform runtime + developer/operator experience':'platform runtime + developer/operator experience' },
     { role:'Reusable Infra', name:'NFS Quota Agent · ldapium', href:`${prefix}/nfs-quota-agent/`, note:en?'storage enforcement + identity infrastructure':'storage enforcement + identity infrastructure' },
     { role:'Data', name:'Beluga · Beluga Manager', href:`${prefix}/beluga/`, note:en?'reference data platform + control plane':'reference data platform + control plane' },
-    { role:'AI / Edge', name:'KubeMetal', href:`${prefix}/kubemetal/`, note:en?'Apple Silicon compute + Kubernetes control':'Apple Silicon compute + Kubernetes control' },
+    { role:'AI / Edge', name:'KubeMetal · Siqoq', href:`${prefix}/siqoq/`, note:en?'local AI control/compute + simulation-to-edge contracts':'local AI control/compute + simulation-to-edge contract' },
   ];
 
   return <div className="mt-8">
