@@ -61,6 +61,12 @@ const EVIDENCE: Record<string, Evidence[]> = {
     { label: 'State model', value: '4 classes', detail: 'Separates authoritative state, short-lived cache, correlation index, and Beluga-owned metadata.' },
     { label: 'Maturity', value: 'Early / read-first', detail: 'Prioritizes discovery, correlation, health, and drill-down before broad destructive operations.' },
   ],
+  siqoq: [
+    { label: 'Maturity', value: 'Bootstrap', detail: 'Separates the current Python/CLI/event-model core from target architecture claims.' },
+    { label: 'Stable boundary', value: 'Event / Action', detail: 'Keeps semantic events and validated actions stable while runtimes and devices change.' },
+    { label: 'Runtime path', value: 'CPU first', detail: 'Establishes an OpenCV/ONNX Runtime baseline before accelerator-specific paths.' },
+    { label: 'Safety', value: 'Adapter gated', detail: 'Separates policy decisions, safety validation, and hardware actuation.' },
+  ],
 };
 
 export function OssProjectEvidence({ slug, locale='ko' }: { slug:string; locale?:'ko'|'en' }) {
