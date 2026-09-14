@@ -26,6 +26,12 @@ jobs:
         run: |
           set -euo pipefail
 
+          HEAD_REF=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefName --jq '.headRefName')
+          if [[ "$HEAD_REF" == daily-digest/* ]]; then
+            echo "Daily digest PRs are gated by digest-fallback.yml; skipping generic auto-merge."
+            exit 0
+          fi
+
           IS_DRAFT=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json isDraft --jq '.isDraft')
           if [ "$IS_DRAFT" = "true" ]; then
             gh pr ready "$PR_NUMBER" --repo "$REPO"
@@ -37,9 +43,18 @@ jobs:
             --delete-branch
 
       - name: Deploy merged main to GitHub Pages
+        if: success()
         env:
           GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
+
+          HEAD_REF=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefName --jq '.headRefName' 2>/dev/null || true)
+          if [[ "$HEAD_REF" == daily-digest/* ]]; then
+            echo "Daily digest deployment is handled by its dedicated merge flow."
+            exit 0
+          fi
+
           gh workflow run deploy.yml --repo "$REPO" --ref main
