@@ -1,29 +1,36 @@
 ---
 title: System Architecture
-description: XFS partitioning, kernel sysctl tuning, containerd v2, and cgroupv2 baselines.
+description: Build architecture and product boundary from Ubuntu cloud images to verified Kubernetes-ready Vagrant boxes.
 project: Kube-Ready-Box
 path: kube-ready-box/architecture
 order: 1401
-lastModified: 2026-08-23
+lastModified: 2026-09-14
 ---
 
 # System Architecture
 
-System and kernel optimization specifications configured during automated Packer builds.
+<Mermaid chart={`flowchart LR
+  SOURCE["Ubuntu Cloud Image"] --> PACKER["Packer Templates"]
+  PACKER --> MODULES["OS Provisioning Modules"]
+  MODULES --> BOX["Provider Vagrant Box"]
+  BOX --> VM["Verified VM Baseline"]
+  VM --> CONSUMER["Kubernetes Installer / Cluster Project"]`} />
 
-## Kernel & Network Parameters (`/etc/sysctl.d/99-kubernetes-cri.conf`)
+The Kube Ready Box product boundary is a **verified OS image**. A container runtime, Kubernetes, kubeadm/kubelet/kubectl, and a CNI are not bundled; the consuming cluster project installs them.
 
-```ini
-net.bridge.bridge-nf-call-iptables  = 1
-net.bridge.bridge-nf-call-ip6tables = 1
-net.ipv4.ip_forward                 = 1
-fs.inotify.max_user_watches         = 524288
-fs.inotify.max_user_instances       = 8192
-vm.max_map_count                    = 262144
-```
+## Repository layers
 
-## Storage & Container Runtime
+| Layer | Responsibility |
+|---|---|
+| Packer definition | Ubuntu release, AMD64/ARM64, VirtualBox/VMware, and ext4/XFS matrix |
+| OS contract | kernel modules, sysctl, limits, packages, and boot-time disk expansion |
+| Capability modules | network, storage, security, time-sync, and observability readiness |
+| Verification | provider boot tests and machine-readable tuning evidence |
+| Release evidence | trace validated provider artifacts and their build inputs |
 
-- **XFS Mount Flags**: `pquota,prjquota,noatime` applied in `/etc/fstab`
-- **containerd v2**: Configured with `SystemdCgroup = true`
-- **cgroup v2**: Enforced via `systemd.unified_cgroup_hierarchy=1`
+## Invariants
+
+- Kubernetes-ready is distinct from Kubernetes-preinstalled.
+- ext4 and XFS remain separate artifacts because their behavior differs.
+- AMD64 and ARM64 follow one OS contract with documented provider exceptions.
+- Template validation does not replace real VM runtime evidence.
