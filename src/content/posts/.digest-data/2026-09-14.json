@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-14",
+  "generatedAt": "2026-09-13T22:28:55.001Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Chip Huyen explains how to cut inference costs without new hardware",
+      "link": "https://thenewstack.io/pg-99-conf-2026-inference-costs/",
+      "date": "2026-09-13T15:00:00.000Z",
+      "excerpt": "Last October, the P99 conference — the online gathering for developers focused on high-performance, low-latency applications — featured a cracking",
+      "summaryKo": "The New Stack은 고성능·저지연 애플리케이션 개발자를 위한 온라인 행사 P99에서 Chip Huyen이 AI 추론 비용을 낮추는 방법을 다룬 내용을 소개한다. 핵심 관점은 더 비싼 하드웨어를 추가하는 것만이 추론 비용 문제의 해법은 아니라는 점이다. 실제 운영에서는 모델 선택, 요청 처리 방식, 배치와 캐싱, 토큰 사용량 같은 소프트웨어 계층의 결정이 비용과 지연시간에 큰 영향을 준다. 따라서 동일한 GPU 자원을 사용하더라도 워크로드 특성에 맞춰 추론 경로를 최적화하면 비용 효율을 높일 여지가 있다. 구체적인 기법과 수치는 원문 발표 및 기사에서 확인할 필요가 있다.",
+      "summaryEn": "The New Stack highlights a P99 conference session in which Chip Huyen discusses ways to reduce AI inference costs for high-performance, low-latency applications. The central point is that adding newer or more expensive hardware is not the only way to improve inference economics. In production systems, software-layer choices such as model selection, request handling, batching, caching, and token usage can materially affect both cost and latency. That means teams may be able to improve efficiency on the same GPU capacity by optimizing the inference path for their workload. The specific techniques and quantitative results should be verified against the original article and conference session.",
+      "insightKo": "AI 플랫폼 비용 최적화는 GPU 증설 전에 요청 패턴·배치·캐시·모델 크기·토큰 사용량을 계측하는 것부터 시작해야 한다. 같은 인프라에서도 추론 경로를 조정해 비용 대비 처리량을 높일 수 있기 때문이다.",
+      "insightEn": "AI platform cost optimization should start by measuring request patterns, batching, caching, model size, and token usage before adding GPUs. The same infrastructure can often deliver better cost-per-request through inference-path optimization."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Machine translation is still broken for most of the world’s languages”: Cohere builds non-reasoning for a reason",
+      "link": "https://thenewstack.io/cohere-north-translate-sovereignty/",
+      "date": "2026-09-13T14:21:46.000Z",
+      "excerpt": "Enterprise AI company Cohere announced North Small Translate last week, a mixture-of-experts (MOE) open-weight machine translation model that works across",
+      "summaryKo": "Cohere는 다국어 기계번역을 겨냥한 오픈웨이트 Mixture-of-Experts 모델 North Small Translate를 공개했다. The New Stack은 여전히 세계의 많은 언어에서 기계번역 품질과 접근성이 충분하지 않다는 문제의식에서 이 모델을 설명한다. 범용 추론 모델이 모든 작업의 정답이라는 접근 대신 번역이라는 명확한 목적에 맞춘 비추론형 모델을 선택한 점이 특징이다. 이런 설계는 지연시간과 운영 비용, 데이터 주권과 배포 선택지를 중요하게 보는 조직에 실용적인 대안이 될 수 있다. 다만 사용 가능한 언어 범위와 라이선스, 실제 품질 및 상용 이용 조건은 배포 전에 원문과 모델 문서를 확인해야 한다.",
+      "summaryEn": "Cohere has introduced North Small Translate, an open-weight mixture-of-experts model focused specifically on multilingual machine translation. The New Stack frames the release around the continuing gap in translation quality and access for many of the world's languages. Rather than treating a general-purpose reasoning model as the answer to every task, Cohere chose a non-reasoning model optimized for a clearly bounded translation workload. That design can be attractive to organizations that care about latency, operating cost, deployment flexibility, and data sovereignty. Teams should still verify supported languages, licensing terms, measured quality, and commercial-use conditions in the original model documentation before deployment.",
+      "insightKo": "번역처럼 작업 경계가 명확한 서비스에서는 대형 추론 모델보다 목적 특화 모델이 비용·지연·주권 측면에서 더 나은 선택일 수 있다. 모델 선정 시 벤치마크뿐 아니라 라이선스와 자체 호스팅 가능성까지 같이 평가하는 편이 좋다.",
+      "insightEn": "For bounded workloads such as translation, a task-specific model may beat a large reasoning model on cost, latency, and sovereignty. Model selection should therefore include licensing and self-hosting options alongside benchmark quality."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "It passed CI. It passed your evals. The customer still got the wrong answer.",
+      "link": "https://thenewstack.io/ai-agent-trace-debugging/",
+      "date": "2026-09-13T14:00:00.000Z",
+      "excerpt": "A diff is not evidence. It’s a statement of intent.",
+      "summaryKo": "이 글은 AI 에이전트가 만든 변경이 CI와 사전 평가를 모두 통과했더라도 실제 사용자에게는 잘못된 결과를 줄 수 있다는 운영상의 간극을 다룬다. 코드 diff는 무엇을 바꾸려 했는지를 보여줄 뿐, 실행 과정에서 실제로 어떤 판단과 도구 호출이 일어났는지를 증명하지 못한다는 것이 핵심 주장이다. 에이전트 시스템은 프롬프트, 컨텍스트, 모델 응답, 도구 호출, 외부 시스템 상태가 함께 결과를 만들기 때문에 전통적인 코드 리뷰만으로 원인을 재현하기 어렵다. 따라서 운영 단계에서는 요청 단위의 트레이스와 중간 의사결정, 도구 입출력을 연결해 관찰할 수 있어야 한다. CI·평가와 함께 실제 실행 증거를 남기는 추적 체계를 갖춰야 고객 오류를 재현하고 개선 루프를 만들 수 있다.",
+      "summaryEn": "This article examines the operational gap where an AI-agent change can pass CI and offline evaluations yet still produce the wrong result for a customer. Its central argument is that a code diff shows intended change, not evidence of what actually happened during execution. Agent systems combine prompts, context, model outputs, tool calls, and external-system state, which makes failures difficult to reproduce through traditional code review alone. Production debugging therefore needs request-level traces that connect intermediate decisions with tool inputs and outputs. Teams need execution evidence alongside CI and evaluations if they want to reproduce customer failures and build a reliable improvement loop.",
+      "insightKo": "에이전트 운영에서는 로그를 단순 저장하는 수준을 넘어 요청→모델 판단→도구 호출→결과를 하나의 trace로 연결해야 한다. 그래야 CI가 통과한 뒤 발생하는 의미적 오류도 재현 가능한 장애로 바꿀 수 있다.",
+      "insightEn": "Agent operations need more than stored logs: request, model decision, tool call, and result should be linked in one trace. That turns semantic failures that appear after CI into reproducible incidents."
+    }
+  ]
+}
