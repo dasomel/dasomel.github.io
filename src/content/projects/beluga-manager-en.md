@@ -1,6 +1,6 @@
 ---
 title: "Beluga Manager"
-description: "Unified control plane that correlates Beluga data-platform services into Pipeline, Data Asset, Service, and Operations domains"
+description: "An early control-plane project establishing architecture and contracts for connecting Beluga services through common domains"
 github: "https://github.com/dasomel/beluga-manager"
 tags: ["Data Platform", "Control Plane", "Kafka", "Flink", "Iceberg", "Trino", "Airflow", "API"]
 order: 11
@@ -12,7 +12,7 @@ solution: "Use adapters and correlation to expose stable platform domains withou
 
 ## Project Overview
 
-**Beluga Manager** is the unified control plane and management console for the Beluga Data Platform.
+**Beluga Manager** is an early project establishing the architecture and contracts for a unified Beluga control plane. It is not yet an executable management console.
 
 The project does not try to reimplement Kafka, Flink, Iceberg, Trino, or Airflow UIs. Each upstream system remains authoritative for its own resources. Beluga Manager adds value by answering questions that cross those service boundaries.
 
@@ -119,15 +119,14 @@ The project is designed around `en-US` and `ko-KR`, browser detection, manual se
 
 ## Current Status
 
-**Early development.** Beluga Manager is being established as a reference implementation for the problem of cross-OSS data-platform context rather than as a finished production management console.
+**Architecture-first / repository foundation.** No frontend, backend, API route, or integration adapter has been implemented yet. Current executable assets are limited to repository verification and CI.
 
 ## Getting Started
 
 ```bash
 git clone https://github.com/dasomel/beluga-manager.git
 cd beluga-manager
-pnpm install
-pnpm dev
+make verify
 ```
 
 ## Documentation Index
