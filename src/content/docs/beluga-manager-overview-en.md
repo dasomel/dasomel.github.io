@@ -1,18 +1,27 @@
 ---
 title: Manager Overview
-description: Beluga Manager unified control plane and edge UI overview.
+description: Target and current documentation/design boundary of the Beluga unified control plane.
 project: Beluga Manager
 path: beluga-manager/overview
 order: 1600
-lastModified: 2026-08-23
+lastModified: 2026-09-14
 ---
 
 # Manager Overview
 
-**Beluga Manager** is the unified control plane web application for inspecting and orchestrating the Beluga data platform.
+**Beluga Manager** is a design project for connecting Beluga's OSS components through one domain model. The repository currently contains no frontend, backend, Tauri application, or working integration adapter and cannot be deployed as an operational console.
 
-## Core Capabilities
+## Target domains
 
-- **Interactive Topology Visualization**: Real-time end-to-end data pipeline flow mapping
-- **Job Lifecycle Controls**: Trigger Flink savepoints, restart streaming jobs, and run Airflow DAGs
-- **Schema Management**: Explore Iceberg table schemas, partition evolution, and snapshots
+- **Pipeline**: represent Kafka → Flink → Iceberg → Trino relationships
+- **Data Asset**: connect catalog, schema, table, and query context
+- **Service**: describe individual OSS products as platform capabilities
+- **Operations**: correlate health, events, logs, and dependencies
+
+## Implemented today
+
+- English/Korean product, architecture, development, and security documentation
+- repository verification script and tests
+- CI and OpenForge portfolio-status publication integration
+
+APIs, UI, topology visualization, job controls, and schema management remain target scope rather than current features.
