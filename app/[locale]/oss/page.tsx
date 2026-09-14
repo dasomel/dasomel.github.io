@@ -11,7 +11,7 @@ const layers = [
   ['BASELINE', 'kube-ready-box · ldapium · nfs-quota-agent'],
   ['PLATFORM', 'Narwhal · Narwhal Portal'],
   ['DATA', 'Beluga · Beluga Manager'],
-  ['AI / EDGE', 'KubeMetal'],
+  ['AI / EDGE', 'KubeMetal · Siqoq'],
   ['STANDARDS', 'OpenForge'],
 ] as const;
 
@@ -24,6 +24,7 @@ const featured = [
   ['ldapium', 'IDENTITY'],
   ['nfs-quota-agent', 'STORAGE'],
   ['openforge', 'STANDARDS'],
+  ['siqoq', 'PHYSICAL AI'],
 ] as const;
 
 const principles = [
