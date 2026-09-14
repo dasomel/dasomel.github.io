@@ -2,7 +2,7 @@ import data from '../../src/data/project-repo-meta.json';
 
 type RepoMeta = { commitCount?: number; releaseCount?: number; pushedAt?: string; firstCommitAt?: string; createdAt?: string };
 const metadata = data as Record<string, RepoMeta>;
-const repos = ['dasomel/openforge','dasomel/kube-ready-box','dasomel/narwhal','dasomel/nfs-quota-agent','dasomel/ldapium','dasomel/beluga','dasomel/kubemetal'];
+const repos = ['dasomel/openforge','dasomel/kube-ready-box','dasomel/narwhal','dasomel/narwhal-portal','dasomel/nfs-quota-agent','dasomel/ldapium','dasomel/beluga','dasomel/beluga-manager','dasomel/kubemetal','dasomel/siqoq'];
 
 function total(key: 'commitCount' | 'releaseCount') { return repos.reduce((sum, repo) => sum + (metadata[repo]?.[key] ?? 0), 0); }
 function date(value?: string, locale: 'ko' | 'en' = 'ko') { return value ? new Intl.DateTimeFormat(locale === 'ko' ? 'ko-KR' : 'en-US', { year:'numeric', month:'short' }).format(new Date(value)) : '—'; }
