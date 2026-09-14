@@ -1,22 +1,21 @@
 ---
 title: Development Guide
-description: pnpm local development setup, mock API servers, and component guidelines.
+description: Current repository verification and the boundary for selecting a future application stack.
 project: Beluga Manager
 path: beluga-manager/development
 order: 1602
-lastModified: 2026-08-23
+lastModified: 2026-09-14
 ---
 
 # Development Guide
 
-Local setup and contribution guidelines for Beluga Manager.
+Beluga Manager has not selected a frontend or backend stack. The documentation does not present a nonexistent `pnpm` development server or mock API as executable behavior.
 
 ```bash
-# Clone and install dependencies
+# Clone and verify the current foundation
 git clone https://github.com/dasomel/beluga-manager.git
 cd beluga-manager
-pnpm install
-
-# Start development server with mock backends
-pnpm dev:mock
+make verify
 ```
+
+Current checks cover documentation frontmatter, required repository files, English/Korean document pairs, and the CI foundation. A future application stack must be selected through an ADR before runtime, package-manager, API-framework, or UI commands are added here.
