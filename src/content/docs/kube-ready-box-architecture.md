@@ -1,29 +1,36 @@
 ---
 title: 시스템 구조
-description: XFS 파티셔닝, 커널 파라미터(sysctl.d), containerd v2 및 cgroupv2 베이스라인.
+description: Ubuntu cloud image에서 검증된 Kubernetes-ready Vagrant Box까지의 빌드 구조와 제품 경계.
 project: Kube-Ready-Box
 path: kube-ready-box/architecture
 order: 1401
-lastModified: 2026-08-23
+lastModified: 2026-09-14
 ---
 
 # 시스템 구조
 
-Packer 빌드 파이프라인에서 구성되는 시스템 및 커널 최적화 명세입니다.
+<Mermaid chart={`flowchart LR
+  SOURCE["Ubuntu Cloud Image"] --> PACKER["Packer Templates"]
+  PACKER --> MODULES["OS Provisioning Modules"]
+  MODULES --> BOX["Provider Vagrant Box"]
+  BOX --> VM["Verified VM Baseline"]
+  VM --> CONSUMER["Kubernetes Installer / Cluster Project"]`} />
 
-## 커널 및 네트워크 파라미터 (`/etc/sysctl.d/99-kubernetes-cri.conf`)
+Kube Ready Box의 제품 경계는 **검증된 OS 이미지**입니다. Container runtime, Kubernetes, kubeadm/kubelet/kubectl과 CNI는 기본 Box에 포함되지 않으며 사용하는 Cluster Project가 설치합니다.
 
-```ini
-net.bridge.bridge-nf-call-iptables  = 1
-net.bridge.bridge-nf-call-ip6tables = 1
-net.ipv4.ip_forward                 = 1
-fs.inotify.max_user_watches         = 524288
-fs.inotify.max_user_instances       = 8192
-vm.max_map_count                    = 262144
-```
+## 저장소 계층
 
-## 스토리지 및 컨테이너 런타임
+| 계층 | 책임 |
+|---|---|
+| Packer definition | Ubuntu release, AMD64/ARM64, VirtualBox/VMware, ext4/XFS 조합 |
+| OS contract | Kernel module, sysctl, limits, package, boot-time disk 확장 |
+| Capability modules | Network, storage, security, time sync, observability 준비 |
+| Verification | Provider boot와 machine-readable tuning evidence |
+| Release evidence | 검증을 통과한 provider artifact와 build input 추적 |
 
-- **XFS Mount Flags**: `/etc/fstab`에 `pquota,prjquota,noatime` 옵션 적용
-- **containerd v2**: `SystemdCgroup = true`가 활성화된 `/etc/containerd/config.toml` 베이스라인
-- **cgroup v2**: 커널 부트 파라미터에 `systemd.unified_cgroup_hierarchy=1` 강제 적용
+## 불변 조건
+
+- Kubernetes-ready와 Kubernetes-preinstalled를 구분합니다.
+- ext4와 XFS는 동작 차이가 있으므로 별도 artifact로 유지합니다.
+- AMD64와 ARM64는 같은 OS contract를 따르고 provider 예외를 문서화합니다.
+- Template validation만으로 실제 VM runtime 검증을 대체하지 않습니다.
