@@ -1,8 +1,8 @@
 ---
 title: "Beluga Manager"
-description: "Beluga Data Platform의 여러 OSS를 Pipeline·Data Asset·Service·Operations 도메인으로 연결하는 통합 Control Plane"
+description: "Beluga Data Platform의 여러 OSS를 공통 Domain으로 연결하기 위해 아키텍처와 계약을 정립하는 초기 Control Plane 프로젝트"
 github: "https://github.com/dasomel/beluga-manager"
-tags: ["Data Platform", "Control Plane", "Kafka", "Flink", "Iceberg", "Trino", "Airflow", "Next.js", "API"]
+tags: ["Data Platform", "Control Plane", "Architecture", "Kafka", "Flink", "Iceberg", "Trino", "Airflow"]
 order: 11
 type: "own"
 featured: true
@@ -12,7 +12,7 @@ solution: "각 OSS를 새로운 source of truth로 복제하지 않고 authorita
 
 ## 프로젝트 소개
 
-**Beluga Manager**는 Beluga Data Platform을 위한 **통합 Control Plane 및 Management Console**입니다.
+**Beluga Manager**는 Beluga Data Platform을 위한 통합 Control Plane의 **아키텍처와 계약을 정립하는 초기 프로젝트**입니다. 아직 실행 가능한 Management Console은 없습니다.
 
 중요한 설계 원칙은 Kafka, Flink, Iceberg, Trino, Airflow 등의 UI를 다시 만드는 것이 아닙니다. 각 OSS는 자신의 리소스에 대한 authoritative system으로 남고, Beluga Manager는 서로 다른 API를 연결해 플랫폼 수준의 질문에 답합니다.
 
@@ -137,15 +137,14 @@ Kafka Topic, table, job, namespace 같은 실제 리소스 식별자는 번역�
 
 ## 현재 상태
 
-Beluga Manager는 **architecture-first / early implementation** 프로젝트입니다. 즉시 완성된 운영 콘솔이 아니라, Beluga 플랫폼에서 반복적으로 발생하는 “여러 OSS의 관계를 어떻게 하나의 domain으로 표현할 것인가”를 먼저 해결하기 위한 reference implementation입니다.
+Beluga Manager는 **architecture-first / repository foundation** 단계입니다. Frontend, Backend, API Route와 Integration Adapter는 아직 구현되지 않았으며, 현재 구현된 자산은 문서·CI·저장소 검증 기반입니다.
 
 ## 개발 시작
 
 ```bash
 git clone https://github.com/dasomel/beluga-manager.git
 cd beluga-manager
-pnpm install
-pnpm dev
+make verify
 ```
 
 ## 상세 기술 문서
