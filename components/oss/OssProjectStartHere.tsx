@@ -53,6 +53,11 @@ const PATHS: Record<string, Path[]> = {
     { label:'BUILD', title:'Development', href:'/oss/beluga-manager/development/', detailKo:'Unified API와 frontend가 upstream OSS API와 어떻게 분리되는지 확인합니다.', detailEn:'See how the unified API and frontend remain separated from upstream OSS APIs.' },
     { label:'OPERATE', title:'Operations', href:'/oss/beluga-manager/operations/', detailKo:'Early-stage control plane의 배포 및 운영 기준을 확인합니다.', detailEn:'Review deployment and operations criteria for the early-stage control plane.' },
   ],
+  siqoq: [
+    { label:'SCOPE', title:'Overview', href:'/oss/siqoq/overview/', detailKo:'현재 executable core와 target architecture의 경계를 먼저 확인합니다.', detailEn:'Start with the boundary between the executable core and target architecture.' },
+    { label:'UNDERSTAND', title:'Architecture', href:'/oss/siqoq/architecture/', detailKo:'Sensor → semantic event → policy → safety → action contract를 확인합니다.', detailEn:'Follow the sensor → semantic event → policy → safety → action contracts.' },
+    { label:'VERIFY', title:'Development', href:'/oss/siqoq/development/', detailKo:'Adapter 추가와 simulation-to-reality 검증에 필요한 evidence를 봅니다.', detailEn:'Review adapter development and simulation-to-reality evidence requirements.' },
+  ],
 };
 
 export function OssProjectStartHere({ slug, locale='ko' }: { slug:string; locale?:'ko'|'en' }) {
