@@ -6,7 +6,7 @@ Luna is a continuity/fallback layer. It does not replace the project's existing 
 
 ## Project invariants
 
-- Next.js 15 + next-intl static site.
+- Next.js 16 + next-intl static site.
 - `output: export` and GitHub Pages deployment for `cne.io.kr`.
 - Build: `npm run build`.
 - Lint: `npm run lint` (`eslint .`); the expected baseline is 0 errors and 3 known warnings. Do not suppress the known warnings or silently accept new warnings.
