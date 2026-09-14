@@ -1,36 +1,24 @@
 ---
 title: 배포 및 운영
-description: Multi-stage 컨테이너 빌드, 환경변수 주입 및 쿠버네티스 배포 가이드.
+description: 아직 배포 산출물이 없는 초기 Control Plane의 운영 및 배포 준비 기준.
 project: Beluga Manager
 path: beluga-manager/operations
 order: 1603
-lastModified: 2026-08-23
+lastModified: 2026-09-14
 ---
 
 # 배포 및 운영
 
-Beluga Manager의 프로덕션 배포 및 설정 기준입니다.
+현재 Beluga Manager에는 container image, Helm chart 또는 Kubernetes manifest가 없습니다. `ghcr.io/dasomel/beluga-manager:v1.0.0`과 같은 배포 예시는 실제 발행 산출물이 아니므로 사용해서는 안 됩니다.
 
-## 쿠버네티스 매니페스트 예시
+## 배포 가능 상태의 조건
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: beluga-manager
-  namespace: beluga-system
-spec:
-  replicas: 1
-  template:
-    spec:
-      containers:
-      - name: manager
-        image: ghcr.io/dasomel/beluga-manager:v1.0.0
-        ports:
-        - containerPort: 3000
-        env:
-        - name: KAFKA_REST_URL
-          value: "http://kafka-rest:8082"
-        - name: FLINK_REST_URL
-          value: "http://flink-jobmanager:8081"
-```
+- 선택된 application architecture와 승인된 ADR
+- 실제 build/test가 통과한 versioned image
+- SBOM, provenance와 공개 digest
+- read-only service account와 adapter별 최소 권한
+- health/readiness probe 및 dependency failure 표현
+- air-gap용 image와 manifest inventory
+- 실제 Beluga 환경을 대상으로 한 integration evidence
+
+그 전까지 이 저장소에서 운영 가능한 대상은 문서와 CI/검증 workflow뿐입니다.
