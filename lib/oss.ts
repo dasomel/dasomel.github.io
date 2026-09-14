@@ -16,8 +16,8 @@ export const OSS_PORTFOLIO_GROUPS = [
   },
   {
     label: 'Edge / Local AI',
-    description: 'Apple Silicon의 native compute와 Kubernetes control plane을 결합하는 로컬 MLOps 프로젝트',
-    projects: ['kubemetal'],
+    description: 'Apple Silicon 기반 local MLOps와 simulation-to-edge Physical AI infrastructure를 검증하는 프로젝트',
+    projects: ['kubemetal', 'siqoq'],
   },
 ] as const;
 
