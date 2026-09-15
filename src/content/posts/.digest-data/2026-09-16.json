@@ -1,0 +1,255 @@
+{
+  "date": "2026-09-16",
+  "generatedAt": "2026-09-15T22:58:29.569Z",
+  "count": 31,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Meta lets Claude and Codex configure WhatsApp Business via MCP",
+      "link": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/",
+      "date": "2026-09-15T22:08:56.000Z",
+      "excerpt": "Any business worth its salt in 2026 needs to be embracing the right tools to reach its customers, and few"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI’s voice model doesn’t think. That’s the point.",
+      "link": "https://thenewstack.io/voice-agent-latency-architectures/",
+      "date": "2026-09-15T21:50:15.000Z",
+      "excerpt": "Voice agents have a latency problem that shows up as soon as they have to do real work. Within five"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AWS agents will suggest your new flights. Code decides what gets booked.",
+      "link": "https://thenewstack.io/aws-agents-deterministic-validation/",
+      "date": "2026-09-15T21:27:21.000Z",
+      "excerpt": "AWS published a new Step Functions pattern this week that gives AI agents a role in airline rebooking while keeping"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
+      "link": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+      "date": "2026-09-15T20:00:35.000Z",
+      "excerpt": "Algorithms & Theory"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing new session management tools with native, granular controls",
+      "link": "https://cloud.google.com/blog/products/identity-security/introducing-new-session-management-tools-with-native-granular-controls/",
+      "date": "2026-09-15T17:30:00.000Z",
+      "excerpt": "Google Cloud session management provides flexible options for setting up session controls based on your organization’s security policy needs."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "What I learned organizing KCD Lima 2026",
+      "link": "https://www.cncf.io/blog/2026/09/15/what-i-learned-organizing-kcd-lima-2026/",
+      "date": "2026-09-15T16:24:05.000Z",
+      "excerpt": "On July 18, 2026, we held the third edition of Kubernetes Community Days Lima at UTEC in Barranco. By now, we have already sent the Transparency Report to the CNCF, thanked our sponsors, and processed the."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Your Agent Aced the Task. Will It Do It Again?",
+      "link": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+      "date": "2026-09-15T16:00:44.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "AI for Societal Impact",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share the opportunity of AI."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Building AI to accelerate science and improve lives",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "The true measure of AI is who it helps. Here’s how it’s impacting lives today."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "AI for everyone in every language",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "We’re moving beyond traditional text translation to build models that understand the world’s rich, living languages exactly as they are expressed."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Best practices for handling cloud reliability incidents",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/cloud-reliability-incident-handling-best-practices/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "Cloud outages can range from global service disruptions to issues isolated to a specific region, zone, or even just your project, workload or application."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Agent Substrate brings high-density, scalable, trusted infrastructure to GKE",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/agent-substrate-available-on-gke/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "Today, we are announcing the availability of Agent Substrate on Google Kubernetes Engine (GKE). Agent Substrate is an open-source, secure-by-default agent execution runtime engineered to run millions of sandboxes with 10x higher density than standard container runtimes."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Simplifying Terraform for IBM Z with intent-driven workflows",
+      "link": "https://www.hashicorp.com/blog/simplifying-terraform-for-ibm-z-with-intent-driven-workflows",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "Today, we're introducing intent-driven workflows for IBM Terraform Self-Managed for Z and LinuxONE (Terraform for Z), bringing a new way to interact with infrastructure through trusted, agentic workflows."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Have it both ways: stay discoverable in search while disallowing AI training",
+      "link": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+      "date": "2026-09-15T13:00:00.000Z",
+      "excerpt": "Cloudflare is giving site owners a way to stay discoverable while disallowing AI training. New controls and an Accountable designation establish a shared model with Apple, Google, and Microsoft."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Give every teammate and agent the right level of access to your Workers",
+      "link": "https://blog.cloudflare.com/workers-granular-authorization/",
+      "date": "2026-09-15T13:00:00.000Z",
+      "excerpt": "You can now scope access to individual Workers and assign narrower Developer Platform roles, so teammates, CI tokens, and agents get only the access they need to debug, deploy, or monitor safely."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "The AI Hurricane Is Here",
+      "link": "https://snyk.io/blog/ai-hurricane-is-here/",
+      "date": "2026-09-15T04:00:00.000Z",
+      "excerpt": "AI is accelerating software creation and cyberattacks alike. Leaders must secure agents and code at inception, enforce controls at runtime, and validate defenses independently."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "토스증권이 GPU-aware를 넘어 GPU-native 클러스터를 구축한 방법",
+      "link": "https://toss.tech/article/gpu-native-cluster",
+      "date": "2026-09-15T01:42:00.000Z",
+      "excerpt": "토스증권이 Kubernetes GPU 클러스터의 운영 한계를 해결한 방법"
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The datacenter myth: Why sovereign AI demands a tenancy model, not just geography",
+      "link": "https://www.redhat.com/en/blog/datacenter-myth-why-sovereign-ai-demands-tenancy-model-not-just-geography",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "There’s a version of the digital sovereignty conversation that stops at geography: Put the servers in-country, keep the data inside the border, tick the box. It was never quite enough for cloud, and in a regulatory era that has shifted from “trust us” to “show us,” it’s definitively not enough for AI."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Opening the black box: Profiling a secured agentic pipeline on Red Hat OpenShift AI",
+      "link": "https://www.redhat.com/en/blog/opening-black-box-profiling-secured-agentic-pipeline-red-hat-openshift-ai",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "As enterprises move to autonomous agentic pipelines, 2 critical questions emerge: Can I add security to my agents without killing performance? And, Where should I focus optimization effort to get the most out of my agentic system?"
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Fedora 45 Beta now available",
+      "link": "https://www.redhat.com/en/blog/fedora-45-beta-now-available",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "Today, the Fedora Project is excited to announce that the beta version of Fedora Linux 45—the latest release of the free and open source operating system—is now available."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor TAS and gang scheduling for AI training in Kubernetes",
+      "link": "https://www.datadoghq.com/blog/monitor-tas-and-gang-scheduling-for-ai-training-in-kubernetes/",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "Learn how Datadog helps you correlate Kueue, Coscheduling, GPU, and training framework signals to validate gang scheduling and topology-aware scheduling."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How to operate shared platforms safely at agent scale",
+      "link": "https://www.datadoghq.com/blog/operating-shared-platforms-agent-scale/",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "Learn how Datadog models agent demand, allocates capacity under contention, and preserves control as AI agent workloads scale across shared platforms."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Manage Cursor costs with Datadog Cloud Cost Management",
+      "link": "https://www.datadoghq.com/blog/cursor-cloud-cost-management/",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "Analyze Cursor spend by user and model, catch unexpected cost changes, and manage AI coding costs alongside your cloud and SaaS spend."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "What Stripe data shows about fraud at AI startups",
+      "link": "https://stripe.com/blog/what-stripe-data-shows-about-fraud-at-ai-startups",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "We analyzed attempted fraud rates and customer abuse patterns on Stripe over the past year and found that AI companies faced 4.3x more fraud attempts than startups overall in Q3 2025."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes Changed Block Tracking API - Beta Differences",
+      "link": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/",
+      "date": "2026-09-14T18:30:00.000Z",
+      "excerpt": "Changed Block Tracking (CBT) support for CSI drivers shipped as Alpha in September 2025. With the March 2026 v1."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Memory QoS Graduates to Beta",
+      "link": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/",
+      "date": "2026-09-14T18:30:00.000Z",
+      "excerpt": "Memory QoS has graduated to Beta in Kubernetes v1.37 and is now enabled by default."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Digital Experience Monitoring with Grafana Cloud: Session Replay, synthetic checks, and faster investigations",
+      "link": "https://grafana.com/blog/digital-experience-monitoring-with-grafana-cloud-session-replay-synthetic-checks-and-faster-investigations/",
+      "date": "2026-09-14T18:02:58.000Z",
+      "excerpt": "When something breaks in production, the questions that matter most are also the toughest to answer from metrics alone: who was affected, what did they actually see, and is this worth waking someone up for? Answering those questions requires a fuller picture of the issue and its impact on your users."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "How Canvas Powers the AI Agent Development Feedback Loop",
+      "link": "https://www.honeycomb.io/blog/how-canvas-powers-ai-agent-development-feedback-loop",
+      "date": "2026-09-14T13:00:00.000Z",
+      "excerpt": "AI agents need a real feedback loop, not just reactive debugging. This post walks through how Honeycomb's Canvas powers each stage—instrumenting agents with OpenTelemetry, understanding a single run, finding the problems worth fixing, shipping the fix, and proving it worked—plus tips for getting the most out of Canvas."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "link": "https://openai.com/index/fyxer",
+      "date": "2026-09-14T12:00:00.000Z",
+      "excerpt": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Cilium 1.20: Gateway API ExternalAuth, TCPRoute/UDPRoute, ENI IPAM for IPv6, and more",
+      "link": "https://www.cncf.io/blog/2026/09/14/cilium-1-20-gateway-api-externalauth-tcproute-udproute-eni-ipam-for-ipv6-and-more/",
+      "date": "2026-09-14T10:45:49.000Z",
+      "excerpt": "Cilium 1.20, the second major open source Cilium release of 2026 after Cilium 1."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Dedicated: Compliance for a new regulatory era",
+      "link": "https://about.gitlab.com/blog/gitlab-dedicated-compliance/",
+      "date": "2026-09-14T00:00:00.000Z",
+      "excerpt": "Enforcements such as NIS2 are no longer a future planning consideration. The European Union Agency for Cybersecurity's (ENISA) NIS360 report confirms that supervisory authorities are actively assessing cybersecurity maturity across critical sectors."
+    }
+  ]
+}
