@@ -136,3 +136,25 @@ helm install nfs-quota-agent ./charts/nfs-quota-agent \
   PV --> NARWHAL["Narwhal"]`} />
 
 Narwhal에서는 NFS CSI 기반 스토리지와 함께 사용할 수 있으며, Kube-Ready-Box의 XFS Project Quota 튜닝과도 직접 연결되는 **스토리지 enforcement 계층**입니다.
+
+## 현재 상태와 검증 범위
+
+현재 최신 릴리스는 **v0.4.3**이며 프로젝트 상태는 Beta입니다. XFS, ext4, Btrfs의 핵심 quota 적용 경로는 실제 Linux 커널을 사용하는 CI 시나리오에서 검증되고, 일반적인 기능 회귀는 Go 단위 테스트와 air-gapped E2E 테스트로 확인합니다. 다만 단위 테스트는 외부 quota 명령을 stub 처리하므로 실제 호스트 커널의 quota 강제를 대신 증명하지 않습니다.
+
+파일시스템별 운영 전제도 다릅니다.
+
+| 파일시스템 | 적용 방식 | 운영 전제 및 주의점 |
+|---|---|---|
+| XFS | project quota와 `xfs_quota` | `pquota`/`prjquota`로 마운트된 export 필요 |
+| ext4 | project quota와 `setquota` | `project,quota` 기능 및 `prjquota` 필요; 일부 최소 커널에서는 `quota_tree`와 `quota_v2` 모듈이 추가로 필요 |
+| Btrfs | qgroup quota와 `btrfs` | `btrfs quota enable`이 선행되어야 하며 quota 대상은 subvolume이어야 함 |
+
+XFS와 ext4는 `setquota`/`xfs_quota`의 KB 단위 한계 때문에 요청 바이트를 1KiB 단위로 내림하여 실제 hard limit을 설정합니다. 따라서 PV 용량과 디스크 보고값을 비교할 때는 이 filesystem semantics를 반영해야 합니다. 또한 ext4는 `CAP_SYS_RESOURCE`를 가진 root writer가 hard limit을 우회할 수 있으므로, NFS export에서는 기본값인 `root_squash`와 비root workload 사용을 권장합니다.
+
+## 운영 전 체크리스트
+
+1. NFS export가 실제로 quota를 지원하는 XFS, ext4, Btrfs 파일시스템 위에 있는지 확인합니다.
+2. `nfs-server=true` 라벨이 붙은 NFS 서버 노드에만 DaemonSet이 배치되는지 확인합니다.
+3. 컨테이너의 hostPath가 export, `/dev`, `/etc/projects`, `/etc/projid` 등 필요한 범위로 제한되어 있는지 검토합니다.
+4. Btrfs는 각 PV 경로가 subvolume인지, ext4는 커널 quota 모듈과 `root_squash` 설정이 준비됐는지 확인합니다.
+5. 처음에는 cleanup을 비활성화하거나 `dryRun=true`로 운영하고, metrics와 audit log를 먼저 관찰합니다.
