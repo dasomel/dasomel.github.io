@@ -1,0 +1,335 @@
+{
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-16T23:02:18.048Z",
+  "count": 41,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Perplexity’s AI agents helped build a database. They weren’t allowed to run it.",
+      "link": "https://thenewstack.io/perplexity-cobbledb-ai-database/",
+      "date": "2026-09-16T21:51:15.000Z",
+      "excerpt": "Perplexity decided it was paying too much for DynamoDB and wasn’t getting the control it wanted over read performance. So"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Automattic says CEO Mullenweg was gone and back inside 33 hours. What happened between?",
+      "link": "https://thenewstack.io/automattic-mullenweg-boardroom-reversal/",
+      "date": "2026-09-16T20:39:42.000Z",
+      "excerpt": "There were unusual goings-on this month at Automattic, a company known for its free and open-source app for building WordPress"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "When scanners miss the attack: how Cloudflare Client-Side Security protects storefronts",
+      "link": "https://blog.cloudflare.com/client-side-security-finds-4-malicious-campaigns/",
+      "date": "2026-09-16T20:06:17.000Z",
+      "excerpt": "A modern storefront can look healthy while malicious JavaScript quietly siphons revenue, hijacks clicks, or rewrites analytics. See how Cloudflare's machine learning models surface evasive client-side attacks for analyst investigation."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Everyone’s in a race to replace GitHub”: Zed launches Delta because agents made pull requests obsolete",
+      "link": "https://thenewstack.io/zed-delta-github-alternative/",
+      "date": "2026-09-16T19:45:30.000Z",
+      "excerpt": "Something of a consensus has emerged from the developer fraternity in 2026 — GitHub, a platform built substantively for human"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Our framework for reporting model misalignment",
+      "link": "https://openai.com/index/model-misalignment-reporting-framework",
+      "date": "2026-09-16T17:00:00.000Z",
+      "excerpt": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Helping older adults use AI in everyday life",
+      "link": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "date": "2026-09-16T16:00:00.000Z",
+      "excerpt": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cloud CISO Perspectives: How Google monitors AI threats and advances AI defenses",
+      "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-how-google-monitors-ai-threats-advances-ai-defenses/",
+      "date": "2026-09-16T16:00:00.000Z",
+      "excerpt": "Welcome to the first Cloud CISO Perspectives for September 2026. Today, Sandra Joyce shares the latest details on Google’s visibility into how attackers are using AI, and how we’re using AI to stop them."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "For SeaVerse, GKE Agent Sandbox reduces infrastructure costs by 60%",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/seaverse-chooses-gke-agent-sandbox/",
+      "date": "2026-09-16T16:00:00.000Z",
+      "excerpt": "Editor’s note: Today we hear from SeaVerse, a gaming startup from SeaArt that is building a platform for playable AI experiences, where users can open lightweight games, character chats, and interactive apps, or create their own experiences from a prompt."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "M4N VM family, now GA: Highest per-core IOPS and throughput for I/O and memory-bound workloads",
+      "link": "https://cloud.google.com/blog/products/compute/compute-engine-m4n-vms/",
+      "date": "2026-09-16T16:00:00.000Z",
+      "excerpt": "As enterprise organizations scale mission-critical applications, storage I/O and memory access can become severe operational bottlenecks."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Reimagining advertising with AI",
+      "link": "https://openai.com/index/reimagining-advertising-with-ai",
+      "date": "2026-09-16T13:00:00.000Z",
+      "excerpt": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Running OpenBao on Kubernetes with a CloudNativePG PostgreSQL backend",
+      "link": "https://www.cncf.io/blog/2026/09/16/running-openbao-on-kubernetes-with-a-cloudnativepg-postgresql-backend/",
+      "date": "2026-09-16T11:30:00.000Z",
+      "excerpt": "Managing infrastructure secrets on Kubernetes needs a backend that is self-healing and free of vendor lock-in, and that is exactly what OpenBao (the Linux Foundation’s open-source fork of HashiCorp Vault) and CloudNativePG give you: an entirely."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "리더보드 1등 LLM, 토스에서도 1등일까? - Toss Benchmark 구축기",
+      "link": "https://toss.tech/article/toss-benchmark",
+      "date": "2026-09-16T05:37:00.000Z",
+      "excerpt": "Toss의 AI 기반 서비스에 적합한 LLM이 무엇인지 평가하는 Toss Benchmark 구축기"
+    },
+    {
+      "source": "Istio",
+      "category": "k8s",
+      "title": "Retirement of Kubernetes integration jobs for unsupported Kubernetes versions",
+      "link": "https://istio.io/latest/blog/2026/retirement-of-k8s-integration-jobs/",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "The Istio Test and Release Working Group is retiring CI integration tests for older Kubernetes versions from the master branch, affecting Istio versions 1.32 and newer."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Closing the cloud security gap with runtime security",
+      "link": "https://webflow.sysdig.com/blog/closing-the-cloud-security-gap-with-runtime-security",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "Security posture management isn't enough in 2026. Implement runtime security to enable deep visibility into zero days and other hidden threats."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Why runtime security should be a top priority for CISOs",
+      "link": "https://webflow.sysdig.com/blog/why-runtime-security-should-be-a-top-priority-for-cisos",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "By reducing actual, material risks with runtime security, CISOs help their organizations become more resilient and secure."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Stop rewriting stable code: How Lightwell protects your bottom line and developer velocity",
+      "link": "https://www.redhat.com/en/blog/stop-rewriting-stable-code-how-lightwell-protects-your-bottom-line-and-developer-velocity",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "How Lightwell breaks the forced-upgrade cycle to keep your systems protected and your developers focused on innovation.The Monday morning CISO nightmarePicture this: It’s Monday morning."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Sovereign AI and data services with Duality and Red Hat",
+      "link": "https://www.redhat.com/en/blog/sovereign-ai-and-data-services-with-duality-and-red-hat",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "Enterprise AI adoption is hitting a regulatory wall. Organizations in highly regulated sectors—from global banking to defense and life sciences—possess petabytes of valuable data."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift: Where strategic vision meets enterprise execution",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-where-strategic-vision-meets-enterprise-execution",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "Enterprise technology leaders face a defining operational challenge: rapid digital transformation isn’t enough on its own. Teams are under relentless pressure to maintain a continuous, highly secure infrastructure while simultaneously driving AI-infused modernization across the entire business."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "From alert to resolution: Manage incidents with Bits Chat in Slack",
+      "link": "https://www.datadoghq.com/blog/bits-chat-slack-incident-response/",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "Use Bits Chat in Slack to investigate incidents, collaborate with responders, make code fixes, and capture follow-up work where your team communicates."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Transform and route security logs to Microsoft Sentinel tables using Observability Pipelines",
+      "link": "https://www.datadoghq.com/blog/observability-pipelines-microsoft-sentinel-packs/",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "Learn how Observability Pipelines Packs map security logs to Microsoft Sentinel schemas and help control downstream ingest volume."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "When to use SAST versus an LLM security scanner",
+      "link": "https://about.gitlab.com/blog/sast-vs-llm-security-scanner/",
+      "date": "2026-09-16T00:00:00.000Z",
+      "excerpt": "You're probably running some version of this experiment already: Point a frontier model at a merge request and ask it to double as a vulnerability scanner. On a single merge request, it often works well."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
+      "link": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+      "date": "2026-09-15T20:00:35.000Z",
+      "excerpt": "Algorithms & Theory"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta",
+      "link": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/",
+      "date": "2026-09-15T18:30:00.000Z",
+      "excerpt": "With the release of Kubernetes v1.37, the Pod-Level Resource Managers feature has graduated to Beta status (disabled by default)!"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "What I learned organizing KCD Lima 2026",
+      "link": "https://www.cncf.io/blog/2026/09/15/what-i-learned-organizing-kcd-lima-2026/",
+      "date": "2026-09-15T16:24:05.000Z",
+      "excerpt": "On July 18, 2026, we held the third edition of Kubernetes Community Days Lima at UTEC in Barranco. By now, we have already sent the Transparency Report to the CNCF, thanked our sponsors, and processed the."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Your Agent Aced the Task. Will It Do It Again?",
+      "link": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+      "date": "2026-09-15T16:00:44.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "AI for Societal Impact",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share the opportunity of AI."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Building AI to accelerate science and improve lives",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "The true measure of AI is who it helps. Here’s how it’s impacting lives today."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "AI for everyone in every language",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "We’re moving beyond traditional text translation to build models that understand the world’s rich, living languages exactly as they are expressed."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Simplifying Terraform for IBM Z with intent-driven workflows",
+      "link": "https://www.hashicorp.com/blog/simplifying-terraform-for-ibm-z-with-intent-driven-workflows",
+      "date": "2026-09-15T16:00:00.000Z",
+      "excerpt": "Today, we're introducing intent-driven workflows for IBM Terraform Self-Managed for Z and LinuxONE (Terraform for Z), bringing a new way to interact with infrastructure through trusted, agentic workflows."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Have it both ways: stay discoverable in search while disallowing AI training",
+      "link": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+      "date": "2026-09-15T13:00:00.000Z",
+      "excerpt": "Cloudflare is giving site owners a way to stay discoverable while disallowing AI training. New controls and an Accountable designation establish a shared model with Apple, Google, and Microsoft."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Give every teammate and agent the right level of access to your Workers",
+      "link": "https://blog.cloudflare.com/workers-granular-authorization/",
+      "date": "2026-09-15T13:00:00.000Z",
+      "excerpt": "You can now scope access to individual Workers and assign narrower Developer Platform roles, so teammates, CI tokens, and agents get only the access they need to debug, deploy, or monitor safely."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "The AI Hurricane Is Here",
+      "link": "https://snyk.io/blog/ai-hurricane-is-here/",
+      "date": "2026-09-15T04:00:00.000Z",
+      "excerpt": "AI is accelerating software creation and cyberattacks alike. Leaders must secure agents and code at inception, enforce controls at runtime, and validate defenses independently."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "토스증권이 GPU-aware를 넘어 GPU-native 클러스터를 구축한 방법",
+      "link": "https://toss.tech/article/gpu-native-cluster",
+      "date": "2026-09-15T01:42:00.000Z",
+      "excerpt": "토스증권이 Kubernetes GPU 클러스터의 운영 한계를 해결한 방법"
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor TAS and gang scheduling for AI training in Kubernetes",
+      "link": "https://www.datadoghq.com/blog/monitor-tas-and-gang-scheduling-for-ai-training-in-kubernetes/",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "Learn how Datadog helps you correlate Kueue, Coscheduling, GPU, and training framework signals to validate gang scheduling and topology-aware scheduling."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "What Stripe data shows about fraud at AI startups",
+      "link": "https://stripe.com/blog/what-stripe-data-shows-about-fraud-at-ai-startups",
+      "date": "2026-09-15T00:00:00.000Z",
+      "excerpt": "We analyzed attempted fraud rates and customer abuse patterns on Stripe over the past year and found that AI companies faced 4.3x more fraud attempts than startups overall in Q3 2025."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes Changed Block Tracking API - Beta Differences",
+      "link": "https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/",
+      "date": "2026-09-14T18:30:00.000Z",
+      "excerpt": "Changed Block Tracking (CBT) support for CSI drivers shipped as Alpha in September 2025. With the March 2026 v1."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Memory QoS Graduates to Beta",
+      "link": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/",
+      "date": "2026-09-14T18:30:00.000Z",
+      "excerpt": "Memory QoS has graduated to Beta in Kubernetes v1.37 and is now enabled by default."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Digital Experience Monitoring with Grafana Cloud: Session Replay, synthetic checks, and faster investigations",
+      "link": "https://grafana.com/blog/digital-experience-monitoring-with-grafana-cloud-session-replay-synthetic-checks-and-faster-investigations/",
+      "date": "2026-09-14T18:02:58.000Z",
+      "excerpt": "When something breaks in production, the questions that matter most are also the toughest to answer from metrics alone: who was affected, what did they actually see, and is this worth waking someone up for? Answering those questions requires a fuller picture of the issue and its impact on your users."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "How Canvas Powers the AI Agent Development Feedback Loop",
+      "link": "https://www.honeycomb.io/blog/how-canvas-powers-ai-agent-development-feedback-loop",
+      "date": "2026-09-14T13:00:00.000Z",
+      "excerpt": "AI agents need a real feedback loop, not just reactive debugging. This post walks through how Honeycomb's Canvas powers each stage—instrumenting agents with OpenTelemetry, understanding a single run, finding the problems worth fixing, shipping the fix, and proving it worked—plus tips for getting the most out of Canvas."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Cilium 1.20: Gateway API ExternalAuth, TCPRoute/UDPRoute, ENI IPAM for IPv6, and more",
+      "link": "https://www.cncf.io/blog/2026/09/14/cilium-1-20-gateway-api-externalauth-tcproute-udproute-eni-ipam-for-ipv6-and-more/",
+      "date": "2026-09-14T10:45:49.000Z",
+      "excerpt": "Cilium 1.20, the second major open source Cilium release of 2026 after Cilium 1."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Dedicated: Compliance for a new regulatory era",
+      "link": "https://about.gitlab.com/blog/gitlab-dedicated-compliance/",
+      "date": "2026-09-14T00:00:00.000Z",
+      "excerpt": "Enforcements such as NIS2 are no longer a future planning consideration. The European Union Agency for Cybersecurity's (ENISA) NIS360 report confirms that supervisory authorities are actively assessing cybersecurity maturity across critical sectors."
+    }
+  ]
+}
