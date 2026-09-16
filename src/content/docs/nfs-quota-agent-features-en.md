@@ -2,6 +2,7 @@
 title: "Feature Guide"
 description: "Guide to the automatic quota management, cleanup, trends, policies, and audit features provided by the NFS Quota Agent"
 project: "NFS Quota Agent"
+path: nfs-quota-agent/features
 order: 402
 lastModified: 2026-07-17
 ---

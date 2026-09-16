@@ -2,6 +2,7 @@
 title: "기능 가이드"
 description: "NFS Quota Agent에서 제공하는 자동 쿼터 관리, 정리, 추이, 정책 및 감사 기능 가이드"
 project: "NFS Quota Agent"
+path: nfs-quota-agent/features
 order: 402
 lastModified: 2026-07-17
 ---

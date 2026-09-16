@@ -2,6 +2,7 @@
 title: "웹 UI"
 description: "NFS Quota Agent에 내장된 대시보드의 사용 방법, 탭 구성 및 API 정보"
 project: "NFS Quota Agent"
+path: nfs-quota-agent/web-ui
 order: 403
 lastModified: 2026-07-17
 ---
