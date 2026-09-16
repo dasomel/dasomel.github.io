@@ -2,6 +2,7 @@
 title: "Web UI"
 description: "Guide to the built-in dashboard of the NFS Quota Agent, including its tab layout and API endpoints"
 project: "NFS Quota Agent"
+path: nfs-quota-agent/web-ui
 order: 403
 lastModified: 2026-07-17
 ---
