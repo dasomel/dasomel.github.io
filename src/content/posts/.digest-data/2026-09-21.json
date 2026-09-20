@@ -1,0 +1,191 @@
+{
+  "date": "2026-09-21",
+  "generatedAt": "2026-09-20T22:33:02.762Z",
+  "count": 23,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI agent failed. The model might not be the problem.",
+      "link": "https://thenewstack.io/nvidia-agent-debugging-safe/",
+      "date": "2026-09-20T14:04:00.000Z",
+      "excerpt": "As AI agents move into production, the path between a request and its result is becoming less predictable. An agent"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "One engineer shipped 2,000 PRs a month to production. Verification is the key.",
+      "link": "https://thenewstack.io/agentic-verification-distributed-systems/",
+      "date": "2026-09-19T14:00:00.000Z",
+      "excerpt": "Lauren Tan, an engineer on the Grok team at SpaceXAI, who previously worked at Cursor and Meta, recently published a"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Dormant deployments were quietly consuming storage”: Why Vercel tightened its free-tier rules",
+      "link": "https://thenewstack.io/vercel-hobby-deployment-retention/",
+      "date": "2026-09-19T13:00:00.000Z",
+      "excerpt": "Vercel announced this week that teams on its free Hobby plan will now have older, unprotected deployments deleted immediately if"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "ReadyOn’s Four Walls of tenant isolation on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/architecture/readyons-four-walls-of-tenant-isolation-on-amazon-eks/",
+      "date": "2026-09-18T21:33:13.000Z",
+      "excerpt": "ReadyOn runs a multi-tenant platform on Amazon EKS that handles highly sensitive enterprise data."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
+      "link": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
+      "date": "2026-09-18T17:46:09.000Z",
+      "excerpt": "Algorithms & Theory"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Saving another 100TB of RAM with math (and Rust)",
+      "link": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
+      "date": "2026-09-18T17:23:58.000Z",
+      "excerpt": "Cloudflare's global network is immense but not limitless. As we look for small ways to trim our resource usage, we sometimes get lucky and we can cut significantly more."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Announcing Native BM25 Ranking in AlloyDB and Cloud SQL",
+      "link": "https://cloud.google.com/blog/products/databases/native-bm25-search-in-alloydb-and-cloud-sql/",
+      "date": "2026-09-18T16:30:00.000Z",
+      "excerpt": "Vector search is a critical component of generative AI, retrieval-augmented generation (RAG), and data agent architectures, but sometimes vector search alone isn't enough. While vector embeddings are incredible at understanding conceptual meaning, they stumble on specific alphanumeric IDs and exact product SKU numbers."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Leave the Class Path in the Rearview Mirror",
+      "link": "https://netflixtechblog.com/leave-the-class-path-in-the-rearview-mirror-67a85b15b6be?source=rss----2615bd06b42e---4",
+      "date": "2026-09-18T16:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Reimagining service delivery in the agentic era with Google Public Sector",
+      "link": "https://cloud.google.com/blog/topics/public-sector/reimagining-service-delivery-in-the-agentic-era-with-google-public-sector/",
+      "date": "2026-09-18T16:00:00.000Z",
+      "excerpt": "State and local governments are driven by a shared mission to provide responsive, equitable, and accessible services. However, achieving this goal is often hindered by legacy technical debt, disconnected data, and heavy administrative burdens that slow down mission delivery."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The DevFest Community Workshop Experience: Building Real Agents Together",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/the-devfest-community-workshop-experience-building-real-agents-together/",
+      "date": "2026-09-18T16:00:00.000Z",
+      "excerpt": "This week we kicked off the DevFest season in North America at Google Hudson Square in New York City with 80 engineers packed into the room. Typical technical workshops hand you a finished repo, tell you to blindly paste blocks of code into your terminal, and hope nothing crashes."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Should you read the code, is RAG dead, and did Skills kill MCP?",
+      "link": "https://github.blog/ai-and-ml/should-you-read-the-code-is-rag-dead-and-did-skills-kill-mcp/",
+      "date": "2026-09-18T15:00:00.000Z",
+      "excerpt": "We dive into these questions and other AI hot takes on the latest episode of the GitHub Podcast."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How CSIRO built scalable, cost-optimized genomic variant querying on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/how-csiro-built-scalable-cost-optimized-genomic-variant-querying-on-aws/",
+      "date": "2026-09-18T14:35:42.000Z",
+      "excerpt": "Learn how researchers at CSIRO, Australia's national science agency, built Serverless Beacon (sBeacon), a scalable serverless solution for securely querying genomic variant data on AWS."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "New experts join Google’s AI & Economy team",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "date": "2026-09-18T14:00:00.000Z",
+      "excerpt": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and core internal researchers."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Co-creating the future of fashion with Google",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
+      "date": "2026-09-18T13:00:00.000Z",
+      "excerpt": "Google worked side-by-side with designers Jane Wade and Sergio Hudson to custom-design Google Flow tools to prep for NYFW."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing the Australian Youth Safety Blueprint",
+      "link": "https://openai.com/index/australian-youth-safety-blueprint",
+      "date": "2026-09-18T12:00:00.000Z",
+      "excerpt": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "사용자를 위해 일부러 어렵게 만드는 경험, 어디까지 괜찮을까?",
+      "link": "https://toss.tech/article/lockbank",
+      "date": "2026-09-18T03:41:00.000Z",
+      "excerpt": "10대를 위한 잠금 저금통을 만들며 찾은 ‘좋은 불편함’의 기준을 공유합니다."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "LLM에게 어디까지 맡길 것인가: AI 에이전트 기반 광고 분석 리포트 자동화",
+      "link": "https://techblog.lycorp.co.jp/ko/ai-agent-ad-report-automation",
+      "date": "2026-09-18T01:50:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Ads에서 데이터 분석 플랫폼을 개발하고 있는 이종우, 이운열입니다."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Every regulatory disclosure rule asks the same question. Each calls it something else",
+      "link": "https://webflow.sysdig.com/blog/every-regulatory-disclosure-rule-asks-the-same-question-each-calls-it-something-else",
+      "date": "2026-09-18T00:00:00.000Z",
+      "excerpt": "EU orgs must juggle reporting obligations and timelines for CRA, GDPR, NIS2, and more. But the most important step is judging what needs reporting."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 18, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-18-2026",
+      "date": "2026-09-18T00:00:00.000Z",
+      "excerpt": "Red Hat Recognized as a Leader in the 2026 Gartner® Magic Quadrant™ for Server Virtualization PlatformsRed Hat is recognized as a Leader in the 2026 Gartner® Magic Quadrant™ for Server Virtualization Platforms."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Beyond OCR: Achieving 98% billing accuracy with GroundX and Red Hat OpenShift AI",
+      "link": "https://www.redhat.com/en/blog/beyond-ocr-achieving-98-billing-accuracy-groundx-and-openshift-ai",
+      "date": "2026-09-18T00:00:00.000Z",
+      "excerpt": "In the enterprise world, document extraction has been stuck in a 20-year rut. For decades, companies have relied on a fragile assembly line: OCR to convert pixels to text, templates to find fields, and a team of human reviewers to fix the inevitable 30% error rate."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Enforce custom rules in Datadog IaC Security scanning",
+      "link": "https://www.datadoghq.com/blog/custom-iac-security-rules/",
+      "date": "2026-09-18T00:00:00.000Z",
+      "excerpt": "Create, test, and publish custom IaC Security rules in Datadog to detect organization-specific policy violations before deployment."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Securing the software factory at machine speed",
+      "link": "https://about.gitlab.com/blog/securing-the-software-factory-at-machine-speed/",
+      "date": "2026-09-18T00:00:00.000Z",
+      "excerpt": "I joined GitLab at a moment when the way teams build and secure software has been changing rapidly. GitLab CEO Bill Staples recently framed that shift in When Code Is Abundant."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Analyzing rising fraud attempts among travel and leisure businesses on Stripe",
+      "link": "https://stripe.com/blog/analyzing-rising-fraud-attempts-among-travel-and-leisure-businesses-on-stripe",
+      "date": "2026-09-18T00:00:00.000Z",
+      "excerpt": "Last year, Stripe data shows fraud attempts against travel and leisure businesses hit a four-year high. We analyzed payment activity from more than 200,000 active travel and leisure businesses on Stripe to understand where fraud is rising, how effectively it’s being blocked, and what businesses can do in response."
+    }
+  ]
+}
