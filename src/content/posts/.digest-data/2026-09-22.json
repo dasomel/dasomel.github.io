@@ -1,0 +1,183 @@
+{
+  "date": "2026-09-22",
+  "generatedAt": "2026-09-21T23:22:50.160Z",
+  "count": 22,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Grok Build vs. Claude Code: I tested which one has the better memory",
+      "link": "https://thenewstack.io/grok-build-vs-claude-code-memory/",
+      "date": "2026-09-21T20:04:18.000Z",
+      "excerpt": "On September 16, xAI announced memory in Grok Build, its terminal coding agent. The pitch was that Grok “keeps notes"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "TypeSafe launched Jev because sequential LLMs are “totally useless for computers”",
+      "link": "https://thenewstack.io/typesafe-jev-system-one/",
+      "date": "2026-09-21T19:36:29.000Z",
+      "excerpt": "When TypeSafe emerged last week after two years in stealth, backed by $40 million in seed funding led by DCVC,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI agent is burning tokens on choices that don’t need words",
+      "link": "https://thenewstack.io/kev-skips-text-generation/",
+      "date": "2026-09-21T19:13:46.000Z",
+      "excerpt": "AI agents spend a ridiculous amount of compute generating text nobody actually needs. The decisions an agent makes along the"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "How Ramp runs GPU AI workloads at scale with ECS Managed Instances",
+      "link": "https://aws.amazon.com/blogs/containers/how-ramp-runs-gpu-ai-workloads-at-scale-with-ecs-managed-instances/",
+      "date": "2026-09-21T18:41:27.000Z",
+      "excerpt": "Ramp runs GPU-powered AI inference continuously on Amazon ECS. This post walks through how Ramp's infrastructure team moved those GPU workloads onto Amazon ECS Managed Instances: the architecture pattern, Terraform implementation, and the lessons learned migrating 50 to 60 EC2 instances."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)",
+      "link": "https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/",
+      "date": "2026-09-21T18:30:00.000Z",
+      "excerpt": "Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default)."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Open-Sourcing Rebalancer: A Generic, High-Performance Library for Solving Assignment Problems",
+      "link": "https://engineering.fb.com/2026/09/21/open-source/rebalancer-generic-high-performance-library-assignment-problems/",
+      "date": "2026-09-21T16:00:37.000Z",
+      "excerpt": "We’re open-sourcing Rebalancer, the assignment-problem solver that has been used to solve resource allocation problems throughout Meta for over nine years. Rebalancer separates several related concerns: how to specify an assignment problem, how to store it efficiently in memory, how to solve it, and how to debug it."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Global AI routing with <1% overhead on multi-cluster GKE Inference Gateway",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/",
+      "date": "2026-09-21T16:00:00.000Z",
+      "excerpt": "Demand for AI infrastructure is at an all-time high. Global accelerator shortages mean engineering teams can rarely get all the compute they need from just one data center — capacity comes a cluster here, a cluster there, often an ocean apart."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Maximizing Apache Spark availability: Mitigating compute stockouts with flexible VMs and other best practices",
+      "link": "https://cloud.google.com/blog/products/data-analytics/maximize-apache-spark-availability-with-flexible-vms/",
+      "date": "2026-09-21T16:00:00.000Z",
+      "excerpt": "The surge in AI development has created unprecedented demand for compute capacity around the globe. This can have negative implications for data processing and pipelines with Apache Spark."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Scale your AI workloads faster and more efficiently with GKE Pod snapshots",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/gke-pod-snapshots/",
+      "date": "2026-09-21T16:00:00.000Z",
+      "excerpt": "When running modern AI workloads, there’s often a conflict between performance and cost. Workloads like large language models (LLMs) load massive files, and may serve thousands of AI agents that need to execute code instantly."
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "Introducing Our New Dropbox API Documentation",
+      "link": "https://dropbox.tech/developers/new-dropbox-api-documentation",
+      "date": "2026-09-21T14:30:00.000Z",
+      "excerpt": "Learn about the newly launched version of the Dropbox API documentation and its modern design and features."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+      "date": "2026-09-21T13:44:34.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Python Workers are now generally available",
+      "link": "https://blog.cloudflare.com/python-workers-ga/",
+      "date": "2026-09-21T13:00:00.000Z",
+      "excerpt": "Python Workers allow developers to run Python web frameworks and AI orchestration libraries natively in the Cloudflare Workers runtime. You can seamlessly integrate with Cloudflare's ecosystem including D1, R2, and Workers AI without writing any JavaScript glue code."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "How Adaptive Tail Sampling Works in the OpenTelemetry Collector",
+      "link": "https://www.honeycomb.io/blog/how-adaptive-tail-sampling-works",
+      "date": "2026-09-21T13:00:00.000Z",
+      "excerpt": "A technical deep dive into Honeycomb's adaptive tail sampling processor for the OpenTelemetry Collector: how decisions get made, the samplers available, how thresholds compose with the rest of a sampling pipeline, performance benchmarks, deployment limitations, and how it compares to Refinery."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "date": "2026-09-21T12:00:00.000Z",
+      "excerpt": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+      "link": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "date": "2026-09-21T12:00:00.000Z",
+      "excerpt": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Inside Petal: Building the World’s First Petabit-Class Transoceanic Subsea Cable",
+      "link": "https://engineering.fb.com/2026/09/21/connectivity/petal-petabit-transoceanic-subsea-cable/",
+      "date": "2026-09-21T12:00:00.000Z",
+      "excerpt": "Petal, the next step in Meta’s subsea innovation, will be the first subsea cable to deliver petabit capacity at transoceanic distances, connecting France and the United States over approximately 7,000 km (4,300 mi)."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "도메인 지식 없는 디자이너가 팀의 기준을 바꾼 방법",
+      "link": "https://toss.tech/article/remittance_transfer",
+      "date": "2026-09-21T10:15:00.000Z",
+      "excerpt": "은행 지식이 없던 디자이너가 규제가 가득한 도메인에서 어떻게 팀의 기준을 바꿨는지 이야기해 보려고 해요."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Building standards for the next phase of AI",
+      "link": "https://openai.com/index/building-standards-next-phase-ai",
+      "date": "2026-09-21T10:00:00.000Z",
+      "excerpt": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "tokenizers v1: encode, decode and scaling, measured",
+      "link": "https://huggingface.co/blog/tokenizers-v1",
+      "date": "2026-09-21T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Turning security complexity into useful intelligence: What’s new in Red Hat Lightspeed",
+      "link": "https://www.redhat.com/en/blog/turning-security-complexity-useful-intelligence-whats-new-red-hat-lightspeed",
+      "date": "2026-09-21T00:00:00.000Z",
+      "excerpt": "In a post-Mythos world, IT teams face a mounting crisis. Many are doing more with the same staff, and security work hasn’t gotten simpler."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "2026 update: The road to quantum-safe cryptography in Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/road-to-quantum-safe-cryptography-red-hat-openshift",
+      "date": "2026-09-21T00:00:00.000Z",
+      "excerpt": "A year ago, I wrote about the road to quantum-safe cryptography in Red Hat OpenShift. At the time, much of that road was forward-looking: TLS 1."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Understand the top paths users take to convert or drop off with Journey Paths",
+      "link": "https://www.datadoghq.com/blog/product-analytics-journey-paths/",
+      "date": "2026-09-21T00:00:00.000Z",
+      "excerpt": "Use Journey Paths in Datadog Product Analytics to quantify how users convert, investigate drop-offs, and find friction between funnel steps."
+    }
+  ]
+}
