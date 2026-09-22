@@ -44,7 +44,17 @@ Kubernetes Connectivity Check
 
 ## Security boundary
 
-Bootstrap passwords are one-time inputs and should not be stored or logged. Generated kubeconfigs use restrictive permissions, destructive merges should be reversible, and persistent credentials should use a secure local store such as macOS Keychain.
+Bootstrap passwords are one-time inputs and should not be stored or logged. Generated kubeconfigs use restrictive permissions, and destructive merges to user-managed SSH/Kubernetes configuration are avoided.
+
+Outside `~/.clusterdeck/`, ClusterDeck touches exactly three things, each opt-in or confined to its own marked block:
+
+- **Login Keychain** — trusting a cluster's CA (opt-in per discovered endpoint, or from Settings → Trusted CAs) adds it to your **login keychain** (never System), scoped to the SSL/TLS trust policy only. Inspect or remove it in Keychain Access.app or from ClusterDeck itself.
+- **`/etc/hosts`** — off by default, opt-in per Profile. When enabled, writes stay inside one marked block per profile (`# >>> ClusterDeck BEGIN (profile: <id>) >>>`) via an admin-privileged prompt.
+- **`~/.ssh/config`** — gets a single `Include ~/.clusterdeck/ssh/*.conf` line; per-profile SSH options live in that included directory, not in your own config.
+
+## Download
+
+[v0.1.0](https://github.com/dasomel/clusterdeck/releases/tag/v0.1.0) ships as a macOS (Apple Silicon) `.dmg`. There is no Apple Developer ID certificate yet, so macOS shows an "unidentified developer" warning on first launch — right-click the app and choose Open to run it anyway.
 
 ## MVP
 
@@ -67,6 +77,8 @@ pnpm tauri dev
 pnpm build
 cargo check --manifest-path src-tauri/Cargo.toml
 ```
+
+Running from source remains the recommended path; the `.dmg` is a secondary distribution channel, not a replacement for it.
 
 ## Documentation
 

@@ -44,7 +44,17 @@ Kubernetes Connectivity Check
 
 ## 보안 경계
 
-초기 비밀번호는 bootstrap용으로만 사용하고 저장하거나 로그에 남기지 않는 것을 원칙으로 합니다. 생성 kubeconfig는 제한된 파일 권한을 사용하고, 사용자 관리 SSH/Kubernetes 설정을 파괴적으로 덮어쓰지 않습니다. 지속 저장이 필요한 credential은 macOS Keychain 같은 안전한 로컬 secret store를 사용하는 방향입니다.
+초기 비밀번호는 bootstrap용으로만 사용하고 저장하거나 로그에 남기지 않는 것을 원칙으로 합니다. 생성 kubeconfig는 제한된 파일 권한을 사용하고, 사용자 관리 SSH/Kubernetes 설정을 파괴적으로 덮어쓰지 않습니다.
+
+ClusterDeck이 `~/.clusterdeck/` 바깥에서 실제로 건드리는 것은 세 가지뿐이며, 전부 opt-in이거나 자기 소유 블록만 씁니다.
+
+- **로그인 키체인** — 클러스터 내부 CA를 신뢰하도록 선택하면(엔드포인트별 opt-in, 또는 Settings → Trusted CAs) System이 아닌 **로그인 키체인**에 SSL/TLS 신뢰 정책 범위로만 추가합니다. Keychain Access.app에서 확인하거나 ClusterDeck에서 직접 해지할 수 있습니다.
+- **`/etc/hosts`** — 기본 off, Profile별 opt-in. 켜면 `# >>> ClusterDeck BEGIN (profile: <id>) >>>` 마커로 감싼 자기 블록만 admin 권한 프롬프트로 씁니다.
+- **`~/.ssh/config`** — `Include ~/.clusterdeck/ssh/*.conf` 한 줄만 추가하고, 실제 per-profile SSH 옵션은 그 include 디렉터리 안에 둡니다.
+
+## 다운로드
+
+[v0.1.0](https://github.com/dasomel/clusterdeck/releases/tag/v0.1.0)이 macOS(Apple Silicon) `.dmg`로 배포됩니다. Apple Developer ID 서명이 아직 없어 최초 실행 시 "확인되지 않은 개발자" 경고가 뜨며, 앱을 우클릭 후 열기로 실행해야 합니다.
 
 ## MVP 범위
 
@@ -68,6 +78,8 @@ pnpm tauri dev
 pnpm build
 cargo check --manifest-path src-tauri/Cargo.toml
 ```
+
+소스 실행이 여전히 권장 경로이며, `.dmg` 배포는 개발용 실행을 대체하지 않는 보조 경로입니다.
 
 ## 상세 문서
 
