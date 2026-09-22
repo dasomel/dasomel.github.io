@@ -4,7 +4,7 @@ description: Tauri UI, Rust core, OpenSSH, kubeconfig가 나뉘는 로컬 시스
 project: ClusterDeck
 path: clusterdeck/architecture
 order: 1451
-lastModified: 2026-08-28
+lastModified: 2026-09-22
 ---
 
 # ClusterDeck 아키텍처
@@ -38,6 +38,10 @@ MVP는 자체 SSH client를 다시 구현하지 않고 native OpenSSH를 우선 
 ## kubeconfig 경계
 
 remote control-plane host에서 kubeconfig를 가져와 parse/validation 후 endpoint 및 cluster/user/context 이름을 Profile 기준으로 normalize합니다. 생성 파일은 `~/.clusterdeck/kubeconfigs/`에 별도로 유지해 기존 사용자 kubeconfig를 함부로 덮어쓰지 않습니다.
+
+## 신뢰 경계 (Keychain / `/etc/hosts`)
+
+kubeconfig·SSH 외에 사용자 시스템을 건드리는 지점은 두 곳뿐이며 둘 다 opt-in입니다. 클러스터 내부 CA를 신뢰하면 System이 아닌 **로그인 키체인**에 SSL/TLS 신뢰 정책 범위로만 추가되고, `/etc/hosts`는 Profile별 opt-in일 때만 `# >>> ClusterDeck BEGIN (profile: <id>) >>>` 마커로 감싼 자기 블록에 한해 admin 프롬프트로 씁니다.
 
 ## 검증
 
