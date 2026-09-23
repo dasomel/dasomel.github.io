@@ -1,0 +1,359 @@
+{
+  "date": "2026-09-24",
+  "generatedAt": "2026-09-23T23:00:06.219Z",
+  "count": 44,
+  "articles": [
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Secure AI agents with HashiCorp Boundary",
+      "link": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
+      "date": "2026-09-29T07:00:00.000Z",
+      "excerpt": "AI agents are evolving from passive assistants into active participants in enterprise IT operations -analyzing logs, investigating incidents, assessing system health, and recommending next steps."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Q.ANT gives away the software for its light-powered AI chips in a CUDA-style bet on developers",
+      "link": "https://thenewstack.io/q-ant-open-sources-cuda/",
+      "date": "2026-09-23T22:23:45.000Z",
+      "excerpt": "Q.ANT, a startup out of Stuttgart, Germany, builds processors that use light instead of electricity to do some of the"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6",
+      "link": "https://thenewstack.io/xiaomi-mimo-vs-6-open-source/",
+      "date": "2026-09-23T20:00:12.000Z",
+      "excerpt": "New models are coming out thick and fast, almost on a weekly cadence, ranging from the powerful proprietary systems coming"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "A third option is emerging in the fight over AI and your data",
+      "link": "https://thenewstack.io/vast-dataenclave-confidential-computing/",
+      "date": "2026-09-23T19:31:42.000Z",
+      "excerpt": "Not your keys, not your coins. Not your model, not your data?"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows",
+      "link": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
+      "date": "2026-09-23T18:41:40.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Building a single-pane NOC dashboard for Amazon EKS with Amazon CloudWatch",
+      "link": "https://aws.amazon.com/blogs/containers/building-a-single-pane-noc-dashboard-for-amazon-eks-with-amazon-cloudwatch/",
+      "date": "2026-09-23T18:30:21.000Z",
+      "excerpt": "An incident is the worst moment to discover you cannot trust your Amazon EKS dashboard. This post shows what a trustworthy single-pane NOC for Amazon EKS on Amazon CloudWatch looks like, why each design choice matters, and how to get one running in your account in about 15 minutes."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Rendering huge pull requests in the GitHub Copilot app",
+      "link": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
+      "date": "2026-09-23T18:29:49.000Z",
+      "excerpt": "How we rebuilt the diff surface in the GitHub Copilot app to open a million-line pull request with hundreds of inline review comments."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Google Beam expands with new regions, partners, and customers",
+      "link": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/",
+      "date": "2026-09-23T18:00:00.000Z",
+      "excerpt": "We’re expanding Google Beam to five new countries, and partnering with Industrious for an extended network."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Two years of OpenAI Academy",
+      "link": "https://openai.com/index/two-years-of-openai-academy",
+      "date": "2026-09-23T16:00:00.000Z",
+      "excerpt": "Marking two years of OpenAI Academy and bringing AI skills to even more communities."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "A guide to speeding up your video processing with AlphaEvolve",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/how-to-speed-up-your-video-processing-with-alphaevolve/",
+      "date": "2026-09-23T16:00:00.000Z",
+      "excerpt": "In real-time streaming, every millisecond counts. For example, at 30 frames per second (fps), developers have a strict frame budget of just 33."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "GKE becomes more elastic: Scale to zero, save costs, and keep workloads responsive",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/gke-adds-native-scale-to-zero-capabilities/",
+      "date": "2026-09-23T16:00:00.000Z",
+      "excerpt": "True elasticity has long been the holy grail of cloud-native engineering. And while Kubernetes has revolutionized resource management, workloads that run sporadically (e."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Scale your own way, using HPA with built-in support for PromQL metrics queries in GKE",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/native-support-for-prometheus-metrics-in-gke/",
+      "date": "2026-09-23T16:00:00.000Z",
+      "excerpt": "Earlier this year, we announced native support for Google Kubernetes Engine (GKE) custom metrics. This milestone allowed you to scrap external adapters and instead collect autoscaling metrics directly from your pods."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Which hat am I wearing right now?",
+      "link": "https://www.cncf.io/blog/2026/09/23/which-hat-am-i-wearing-right-now/",
+      "date": "2026-09-23T14:47:15.000Z",
+      "excerpt": "Neutrality is quietly the hardest part of open source. It gets tricky the moment someone pays your salary — and staying honest about it takes more effort than anyone admits."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+      "link": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "date": "2026-09-23T13:00:00.000Z",
+      "excerpt": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Developers want more efficient software. Here’s what over 1000 GitHub users told us they need.",
+      "link": "https://github.blog/news-insights/research/developers-want-more-efficient-software-heres-what-over-1000-github-users-told-us-they-need/",
+      "date": "2026-09-23T13:00:00.000Z",
+      "excerpt": "New research from GitHub and Yale Program on Climate Change Communication finds strong demand for tools, measurement, and practical guidance that can help developers reduce wasted compute."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Sam Altman’s remarks at the United Nations Security Council",
+      "link": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "date": "2026-09-23T12:00:00.000Z",
+      "excerpt": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council."
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "Dropbox CTO Ali Dasdan on moving from AI adoption to transformation",
+      "link": "https://dropbox.tech/culture/learnings-from-deploying-ai-at-company-scale",
+      "date": "2026-09-23T07:00:00.000Z",
+      "excerpt": "Meaningful AI gains depend on rethinking workflows, measuring real outcomes, and keeping human judgment at the center of how work gets done."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "연 300시간을 아낀 AI 상담 서비스",
+      "link": "https://toss.tech/article/AI_chatbot",
+      "date": "2026-09-23T06:39:00.000Z",
+      "excerpt": "전화 문의를 줄이려다 사용자의 경험에서 답을 찾은 이야기예요."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Terraform provider for Google Cloud 8.0 now generally available",
+      "link": "https://www.hashicorp.com/blog/terraform-provider-for-google-cloud-80-now-generally-available",
+      "date": "2026-09-23T04:00:00.000Z",
+      "excerpt": "The Terraform provider for Google Cloud connects Terraform configurations to Google Cloud, giving teams a consistent way to provision and manage Google Cloud infrastructure as code. Today, we are announcing the general availability of version 8."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Bringing enterprise Linux to the robotics frontier: ROS2 adds Red Hat Enterprise Linux as a tier-1 supported platform",
+      "link": "https://www.redhat.com/en/blog/bringing-enterprise-linux-robotics-frontier-ros2-adds-red-hat-enterprise-linux-tier-1-supported-platform",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": "The convergence of enterprise IT and physical computing is accelerating. As artificial intelligence transitions from purely digital environments into autonomous systems, industrial automation, and smart edge devices, the software foundation behind these systems must be as resilient as the physical machines themselves."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Unify VMs and containers with Everpure Cloud on Azure Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/unify-vms-and-containers-everpure-cloud-azure-red-hat-openshift",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": "As organizations accelerate their cloud transformations, IT teams often find themselves trapped between 2 worlds—managing mission-critical legacy virtual machines (VMs) in isolated silos while simultaneously attempting to build cloud-native applications on modern platforms."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "The playbook behind Red Hat’s most successful OpenShift deployments",
+      "link": "https://www.redhat.com/en/blog/playbook-behind-red-hats-most-successful-openshift-deployments",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": "The cluster is up. The team celebrated."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Teaching a 9B model to investigate production alerts",
+      "link": "https://www.datadoghq.com/blog/ai/investigate-production-alerts/",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": "Learn how we fine-tuned Qwen3.5-9B into a specialized agent for change attribution that achieved 87% of GLM-5."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Find answers in your logs faster with Datadog’s Tap to Parse",
+      "link": "https://www.datadoghq.com/blog/tap-to-parse-logs/",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": "Use Datadog’s Tap to Parse feature to extract searchable fields from unstructured logs across Log Explorer, Log Pipelines, and Observability Pipelines."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Configure RUM SDKs remotely from Datadog",
+      "link": "https://www.datadoghq.com/blog/rum-remote-configuration/",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": "Use RUM Remote Configuration to change SDK sampling rates, privacy settings, and data collection independently of your release cycle."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Critical Patch Release: 19.4.1, 19.3.3, 19.2.7",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/",
+      "date": "2026-09-23T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "The operations gap between deploying an application and running it forever",
+      "link": "https://aws.amazon.com/blogs/containers/the-operations-gap-between-deploying-an-application-and-running-it-forever/",
+      "date": "2026-09-22T20:38:09.000Z",
+      "excerpt": "This post features the new Cluster Mode deployment model in AWS Elastic Beanstalk that extends the operational promise of the service to containerized application portfolios."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Spotlight on SIG Apps",
+      "link": "https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/",
+      "date": "2026-09-22T18:00:00.000Z",
+      "excerpt": "As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Implement per-pod image pull permissions with ECR repository policies on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/containers/implement-per-pod-image-pull-permissions-with-ecr-repository-policies-on-amazon-eks/",
+      "date": "2026-09-22T16:58:07.000Z",
+      "excerpt": "Learn how to scope Amazon ECR image pull permissions to individual Kubernetes pods on a multi-tenant Amazon EKS cluster using KEP 4412 credential providers and ECR repository deny policies, so teams sharing the same nodes can pull only their own container images."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Meet the Ecosystem: Partners and Customers at WeAreDevelopers with Docker",
+      "link": "https://www.docker.com/blog/wearedevelopers-partner-customer-sessions-2026/",
+      "date": "2026-09-22T15:06:15.000Z",
+      "excerpt": "Meet the partners and customers bringing practical AI, security, and development sessions to the Docker Pavilion at WeAreDevelopers. The post explains why a strong ecosystem matters to developers, announces the sessions and speakers, and invites attendees to connect with the teams building and using these technologies."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "개인화 추천을 위한 랭킹 모델 개발기",
+      "link": "https://tech.kakao.com/posts/837",
+      "date": "2026-09-22T15:00:00.000Z",
+      "excerpt": "안녕하세요! 카카오에서 유저 편의성을 높이는 데 관심이 많은 토리입니다."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "We just shipped support for the ugliest part of HTTP: Vary",
+      "link": "https://blog.cloudflare.com/vary-support/",
+      "date": "2026-09-22T14:04:31.000Z",
+      "excerpt": "Vary support is now available in Cache Rules on every plan. You can normalize known negotiation headers, pass exact values through to the origin when those small differences matter, or bypass cache when the variation is too unpredictable."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "From attendee badge to speaker badge: My first KubeCon at KubeCon + CloudNativeCon India 2026",
+      "link": "https://www.cncf.io/blog/2026/09/22/from-attendee-badge-to-speaker-badge-my-first-kubecon-at-kubecon-cloudnativecon-india-2026/",
+      "date": "2026-09-22T13:34:05.000Z",
+      "excerpt": "There is something surreal about your first KubeCon being one where you walk onto the stage as a speaker. Most people ease into this community by attending a few conferences, lurking in hallway tracks, and working."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Worker Previews: Isolated preview environments for every change your agent makes",
+      "link": "https://blog.cloudflare.com/worker-previews/",
+      "date": "2026-09-22T13:00:00.000Z",
+      "excerpt": "Worker Previews gives every branch its own URL, configuration, state, and observability, so you and your agents can test changes in parallel without affecting production."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "방해하지 않고, 눈에 띌 수 있을까",
+      "link": "https://toss.tech/article/asset_management",
+      "date": "2026-09-22T08:20:00.000Z",
+      "excerpt": "CVR을 3배 높이면서도 사용자 경험을 놓치지 않기 위해 고민한 과정을 들려드려요."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "So I asked my agent instead…",
+      "link": "https://snyk.io/blog/so-i-asked-my-agent-instead/",
+      "date": "2026-09-22T04:00:00.000Z",
+      "excerpt": "Ask your Evo tenant about models, MCP servers, and skills across your AI estate, from the client you already work in."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "쉼 없이 도는 테스트, 사람이 어디까지 돌봐야 할까요? - 토스닥터(Toss Doctor)",
+      "link": "https://toss.tech/article/toss-doctor",
+      "date": "2026-09-22T03:42:00.000Z",
+      "excerpt": "스스로 만들고 고치는 자동화, 토스닥터 V2를 다시 만든 이야기"
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Risky identities continue to plague cloud infrastructures",
+      "link": "https://webflow.sysdig.com/blog/risky-identities-continue-to-plague-cloud-infrastructures",
+      "date": "2026-09-22T00:00:00.000Z",
+      "excerpt": "Our research finds cloud-native IAM remains one of the most persistently misconfigured and poorly governed areas of security. Here’s what you can do."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
+      "link": "https://huggingface.co/blog/evaleval-aisi",
+      "date": "2026-09-22T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Transformers now runs llama.cpp quants",
+      "link": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+      "date": "2026-09-22T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How to design GitLab for enterprise scale",
+      "link": "https://about.gitlab.com/blog/how-to-design-gitlab-for-enterprise-scale/",
+      "date": "2026-09-22T00:00:00.000Z",
+      "excerpt": "At enterprise scale, even small architecture choices can have outsized consequences. A deployment that works for a handful of teams can become a constraint once thousands of developers, repositories, and pipelines depend on it."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How GitLab reduced code-per-agentic-flow ratio by 45%",
+      "link": "https://about.gitlab.com/blog/how-gitlab-reduced-code-per-agentic-flow-ratio/",
+      "date": "2026-09-22T00:00:00.000Z",
+      "excerpt": "GitLab Duo Agent Platform orchestrates and automates complex tasks through agentic flows. A key part of the platform is the Flow Registry, a declarative configuration framework, built from reusable components, that compiles YAML into fully functional LangGraph flows."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "New trends in global card fraud: How 3D Secure and regional mandates are affecting risk",
+      "link": "https://stripe.com/blog/new-trends-in-global-card-fraud-how-3d-secure-and-regional-mandates-are-affecting-risk",
+      "date": "2026-09-22T00:00:00.000Z",
+      "excerpt": "We analyzed billions of transactions on Stripe from January 2022 to March 2026 to understand how card fraud patterns differ by region and country, what's driving those differences, and how businesses can respond."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Grafana Alerting: Scale alert routing without scaling complexity using multiple notification policies",
+      "link": "https://grafana.com/blog/grafana-alerting-scale-alert-routing-without-scaling-complexity-using-multiple-notification-policies/",
+      "date": "2026-09-21T18:45:23.000Z",
+      "excerpt": "Alert routing often starts simple. A team creates a few contact points, adds some label matchers, and builds a notification policy tree that sends each alert to the right destination."
+    }
+  ]
+}
