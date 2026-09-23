@@ -61,15 +61,15 @@ dasomel/ubuntu-26.04-xfs
 The boxes include OS-level preparation such as:
 
 - disabled swap
-- Kubernetes kernel modules
+- Kubernetes kernel modules (`br_netfilter`, `overlay`, `iscsi_tcp`)
 - IP forwarding and bridge networking
 - conntrack and network buffer tuning
-- `/sys/fs/bpf` and CNI-related prerequisites
-- `open-iscsi`, `cryptsetup`, `dmsetup`, `nfs-common`
-- `chrony` time synchronization
-- audit and diagnostics tooling
+- persistent `/sys/fs/bpf` mount (keeps Cilium eBPF resources across reboots)
+- `open-iscsi` (with `iscsid` enabled), `cryptsetup`, `dmsetup` for Longhorn V1 · `nfs-common`
+- `chrony` time synchronization — replaces the `systemd-timesyncd` default on Ubuntu 25.10+/26.04, with Korean NTP servers preconfigured (`/etc/chrony/sources.d/kr-ntp.sources`) for etcd's clock-skew sensitivity
+- security hardening: `needrestart` removed (addresses 5 Qualys local-privilege-escalation CVEs), `unattended-upgrades` fully purged (avoids conflicting with kubelet Graceful Node Shutdown), `auditd` installed but disabled by default (CIS-ready, bounded I/O), `apparmor-utils` added
 - Kubernetes/network/performance CLI utilities
-- automatic disk/partition/LVM/filesystem expansion
+- automatic disk/partition/LVM/filesystem expansion (1TB thin-provisioned disk; box size is ~2.2GB for ext4 and ~3.4GB for XFS)
 
 Container runtimes and Kubernetes packages are intentionally left to the consumer project.
 
@@ -138,6 +138,18 @@ vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 ```
 
 The goal is to verify OS readiness, not merely whether the VM starts.
+
+## Current Status
+
+The latest release is **v1.1.0** (2026-07-19). It is the first tagged release to ship Ubuntu 26.04 LTS (Resolute Raccoon, kernel 7.0) alongside 24.04 LTS (Noble Numbat, the default), and it introduced the security hardening, chrony migration, CSI/Longhorn prerequisites, and persistent bpffs mount described above.
+
+| Provider | AMD64 | ARM64 | Notes |
+|---|---|---|---|
+| VirtualBox | ✅ | ✅ | VirtualBox 7.1+ required for ARM64 |
+| VMware Fusion | ✅* | ✅ | Apple Silicon supported; *AMD64 is local-build only — Vagrant Cloud publishes ARM64 only due to CI runner limitations |
+
+- A declarative NixOS variant, `dasomel/nixos-kube-ready`, is published separately (libvirt/arm64; usable on Apple Silicon via `vagrant-qemu`).
+- Building from source requires Packer 1.10+ (CI pins 1.15.4); build timeouts are `ssh_timeout` 1h (2h for `vmware-arm64`), with a 90-minute CI job timeout.
 
 ## Documentation Index
 

@@ -93,29 +93,28 @@ Beluga Manager는 네 종류의 상태를 구분합니다.
 
 ## MVP 방향
 
-현재 프로젝트는 **Early development** 단계입니다. 먼저 read-first vertical slice를 만들고, 이후 mutation 범위를 확대하는 순서입니다.
-
 <Mermaid chart={`flowchart TB
   CONTRACT["API Contract"] --> API["Unified Service API"]
   API --> CORR["Discovery / Correlation"]
   CORR --> PIPE["Kafka → Flink → Iceberg → Trino"]
   PIPE --> DOMAIN["Data Asset · Query · Operations"]`} />
 
-초기 범위:
+초기 범위와 실제 구현 상태(2026-09-21 기준, `main` 코드 확인):
 
-- Unified Service API
-- Service discovery
-- Cross-service correlation
-- Pipeline Domain API
-- Pipeline topology
-- Service health/status
-- degraded / stale state
-- resource / event / log drill-down
-- English / Korean UI foundation
+| 항목 | 상태 |
+|---|---|
+| Unified Service API / Pipeline Domain API | **구현됨** — `packages/domain-api`(Hono + `@hono/zod-openapi`)가 `/api/v1/services`, `/pipelines`, `/data-assets`, `/health`, `/events`를 제공 |
+| Pipeline topology view | **구현됨** — Architecture 화면이 `@xyflow/react`로 그래프 렌더 |
+| Service health/status, degraded/stale state | **구현됨** — 서비스별 `staleAfterMs` 기준 경고 배지 |
+| resource/event/log drill-down | **부분 구현** — Operations 화면이 event timeline만 제공, resource/log drill-down은 아직 없음 |
+| English/Korean UI foundation | **구현됨** |
+| Service discovery / Cross-service correlation(실제 어댑터) | **미구현** — 위 API들은 모두 손으로 작성한 stub data(`stub-data/*.ts`)로 응답하며, Kafka/Flink/Iceberg/Trino/Airflow/Kubernetes에 대한 실제 호출은 아직 없음(#41/#42 범위) |
 
 초기에는 전문 OSS UI를 재구현하거나 광범위한 destructive operation을 제공하지 않습니다.
 
 ## API 방향
+
+`packages/domain-api`가 OpenAPI 계약(issue #43)으로 아래 엔드포인트를 실제로 구현하고 있습니다 — 단, 응답은 아직 stub data이며 "STUB DATA, NOT LIVE UPSTREAM INTEGRATION"이라고 코드에 명시되어 있습니다.
 
 ```text
 GET /api/v1/services
@@ -127,7 +126,19 @@ GET /api/v1/health
 GET /api/v1/events
 ```
 
-Frontend는 가능하면 Kafka, Flink, Iceberg, Trino, Airflow의 API를 직접 호출하지 않고 Beluga Domain API만 사용하도록 설계합니다.
+Frontend는 가능하면 Kafka, Flink, Iceberg, Trino, Airflow의 API를 직접 호출하지 않고 Beluga Domain API만 사용하도록 설계합니다. `packages/web`의 Overview·Services·Pipelines·Architecture·Operations 다섯 화면은 TanStack Query 훅(`useServices`/`usePipelines`/`useEvents`/`useDomainApiHealth`)으로 이미 이 API에 연결되어 있고, Data Catalog·Query Workspace·Policy 세 화면은 아직 `mockData.ts` 정적 데이터/데모 내용에 머물러 있습니다.
+
+## Policy Compiler
+
+`packages/policy-compiler`는 별도 companion 개념이 아니라 이 저장소의 npm workspace 일부로 편입되어 있습니다. `policies/`류 YAML 정책 선언(Zod 스키마로 검증)을 Keycloak realm 설정, Trino OPA Rego 정책, PostgreSQL DDL/role로 컴파일하고, 현재 상태와 목표 상태를 비교하는 drift 감지(`src/drift.ts`, `src/compare.ts`)와 `policyctl` CLI(`bin/policyctl.ts`)를 제공합니다. compiler, keycloak/pgddl/rego 각 백엔드, drift, schema, validate 전부에 vitest 테스트가 있습니다.
+
+## 결정 기록 (ADR)
+
+ADR-0001(React 19 + Vite 8 + Tailwind 4 프런트엔드), ADR-0002(TypeScript/Node npm workspace, Hono 백엔드), ADR-0003(shadcn/ui + Radix 디자인 시스템, WCAG 2.2 AA 목표)이 모두 Accepted 상태입니다. 다만 현재 `packages/web`은 Tailwind만으로 만든 화면이고, ADR-0003이 선택한 shadcn/ui 컴포넌트(데이터 그리드, DAG 그래프, SQL 에디터 전용 컴포넌트 등)는 아직 도입되지 않았습니다.
+
+## System-1 Decision Provider (issue #69)
+
+`packages/domain-api/src/decision/`에 provider-neutral하고 Zod로 검증되는 decision 인터페이스와, 원격 telemetry가 없거나 stale하면 fail-closed하는 결정론적 rule-based provider가 스캐폴딩되어 있습니다. 로컬 모델이나 외부 provider 연동은 아직 없습니다.
 
 ## 국제화
 
@@ -137,14 +148,21 @@ Kafka Topic, table, job, namespace 같은 실제 리소스 식별자는 번역�
 
 ## 현재 상태
 
-Beluga Manager는 **architecture-first / repository foundation** 단계입니다. Frontend, Backend, API Route와 Integration Adapter는 아직 구현되지 않았으며, 현재 구현된 자산은 문서·CI·저장소 검증 기반입니다.
+Beluga Manager는 더 이상 문서/아키텍처만 있는 단계가 아닙니다. npm workspace(`packages/domain-api`, `packages/web`, `packages/policy-compiler`)로 재구성되었고, Domain API 계약과 8개 UI 화면 중 5개(Overview·Services·Pipelines·Architecture·Operations)가 실제로 연결되어 있으며, Policy Compiler는 구현·테스트가 끝난 상태입니다. 다만 Domain API는 여전히 stub data 기반이라 **실제 Kafka/Flink/Iceberg/Trino/Airflow/Kubernetes 어댑터 연동은 아직 없고**(#41/#42), 완성된 운영 콘솔이 아니라 "여러 OSS의 관계를 어떻게 하나의 domain으로 표현할 것인가"를 먼저 검증하는 reference implementation이라는 원래 성격은 유지됩니다.
 
 ## 개발 시작
+
+이 저장소는 pnpm이 아니라 **npm workspace**(루트 `package.json`의 `workspaces: ["packages/*"]`)입니다.
 
 ```bash
 git clone https://github.com/dasomel/beluga-manager.git
 cd beluga-manager
-make verify
+npm install
+make verify          # lint + test
+npm run dev          # packages/web Vite dev 서버
+npm test             # 전체 workspace vitest
+npm run typecheck
+npm run policyctl    # policy-compiler CLI
 ```
 
 ## 상세 기술 문서

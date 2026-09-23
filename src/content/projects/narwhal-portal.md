@@ -47,14 +47,30 @@ Portal은 Narwhal 클러스터와 분리된 별도 제품이 아니라 **Narwhal
 
 ## 기술 스택
 
-- **Next.js 16 / React 19** — App Router 기반 포털 애플리케이션
-- **TypeScript** — UI와 API 경계의 타입 안전성
-- **Tailwind CSS 4 / shadcn/ui** — 재사용 가능한 관리 화면 구성
+- **Next.js `^16.3.1` / React `19.2.8`** — App Router 기반 포털 애플리케이션
+- **TypeScript `^6.0.3`** — UI와 API 경계의 타입 안전성
+- **Tailwind CSS `4.3.3` / shadcn/ui** — 재사용 가능한 관리 화면 구성
 - **TanStack Query / Zustand** — 서버 상태와 클라이언트 상태 관리
-- **Keycloak OIDC** — 인증 및 플랫폼 사용자 세션 통합
-- **Valkey** — 애플리케이션 캐시 계층
+- **NextAuth `5.0.0-beta.30` + Keycloak OIDC** — 인증 및 플랫폼 사용자 세션 통합
+- **Valkey** — 애플리케이션 캐시 계층 (전용 pub/sub 클라이언트로 fail-fast 캐시 클라이언트의 timeout/retry 제약을 분리)
 - **OpenBao Agent Injector** — 런타임 Secret 주입
 - **Skaffold / Kaniko** — Kubernetes 기반 inner-loop 개발과 클러스터 내부 이미지 빌드
+- **Vitest** — CI에 연결된 unit/regression suite. Playwright 기반 browser-level e2e는 아직 계획 단계로, main 구현으로 주장하지 않음(`docs/IMPLEMENTATION-STATUS-ko.md`, 2026-09-14 기준)
+- **pnpm `10.27.0`** (`packageManager`로 고정)
+
+## 현재 상태
+
+최신 릴리스는 **v1.0.17**(2026-08-09)이며, `CLUSTER_BASE_DOMAIN` 환경변수로 platform tool 타일의 base domain을 설정 가능하게 하고, node role을 Prometheus `kube_node_role` 메트릭과 K8s label(`control-plane`/legacy `master`)로 정확히 판별하며, compliance framework pass rate를 0-1 비율에서 퍼센트로 올바르게 스케일링하고, cluster-scoped `clusterinfraassessmentreports`까지 함께 조회해 trivy-operator node 보안 감사 결과를 반영하도록 고쳤습니다. 이 릴리스부터 태그 push 시 `CHANGELOG.md`로 GitHub Release 노트를 자동 발행합니다.
+
+v1.0.17 이후 main에서는 릴리스 태그 없이 대규모 보안 하드닝이 진행 중입니다(2026-09-23 기준, 저장소 총 300 commits):
+
+- `requireRole`/`requireAdmin`으로 role 문자열 검사를 중앙화하고, cost/security 상세·트렌드 API에 resource-scope 강제
+- OpenBao 인증을 정적 토큰에서 Kubernetes auth login으로 전환, K8s Service Account 토큰도 projected short-lived 토큰으로 교체
+- federated logout redirect allowlist를 앵커링해 open-redirect 우회를 차단
+- Keycloak/Gitea 연동에 production TLS를 강제하고, health endpoint 인증을 cluster-admin으로 제한
+- Node-tuning 권한 작업에 exact-invocation 승인·서버 측 재계산·replay 방지를 포함한 Agent Execution Security Contract 적용(PR #90)
+
+이 구간은 아직 발행된 릴리스가 아니라 다음 버전을 위해 main에서 검증 중인 상태입니다.
 
 ## 개발 및 배포 모델
 

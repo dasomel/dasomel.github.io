@@ -47,6 +47,8 @@ Beluga는 “프로덕션 규모 데이터 플랫폼”을 표방하지 않습�
 | Optional Governance | OpenMetadata + OpenSearch | metadata / lineage |
 | Observability | Prometheus Stack | platform metrics |
 
+정확한 버전/이미지/라이선스의 단일 원천은 저장소의 [`VERSIONS.md`](https://github.com/dasomel/beluga/blob/main/VERSIONS.md)이다. 주요 핀 예시: Kubernetes v1.36(k3s 채널), Strimzi Kafka Operator 1.1.0(KRaft, Kafka 4.3.0), Debezium 3.6.1.Final, Flink Kubernetes Operator 1.15.0(런타임 Flink 1.20.0), Lakekeeper v0.13.1, Trino 483, Airflow 3.3.0, Superset 6.1.0, Keycloak 26.7.1, CloudNativePG(PostgreSQL 17.6).
+
 ## 핵심 설계 포인트
 
 ### 1. Kubernetes가 데이터 플랫폼의 공통 운영 경계
@@ -119,13 +121,25 @@ Beluga는 repository에 비밀번호를 커밋하지 않고 bootstrap 시점에 
 
 또한 `policies/`를 별도 source of truth로 두어 Keycloak, Rego, PostgreSQL 권한 산출물 사이의 일관성을 관리하려는 방향을 취합니다.
 
+## Operations Agent (읽기 전용 PoC)
+
+이슈 #108의 첫 안전 실행 슬라이스로, `scripts/agent/operations_agent.py`가 클러스터를 관찰하고 장애 신호를 수집해 **mutation 없이 remediation 제안만** 만드는 read-only PoC입니다.
+
+- 실행 경로는 OpenForge Agent Execution Security 원칙을 따릅니다: 요청 → 고정 tool/target 해석 → canonical invocation digest → risk 분류 → 요청측 인가 → 고정 argv executor(읽기 전용만) → 결과 해싱/findings → evidence 기록.
+- `configs/operations-agent-policy.json`이 tool별 risk class를 선언합니다 — `cluster.nodes`/`cluster.pods`/`cluster.events`/`gitops.applications`는 `read-only-diagnostic`으로 실행 가능하고, `data.mutate`/`external.http`/`platform.privileged`는 `approvalRequired: true`이면서 PoC 단계에서는 `executable: false`로 원천 차단됩니다. approval 플래그가 비활성 class를 실행 가능하게 만들지는 않습니다.
+- 안전 불변식: model이 생성한 자유 형식 shell/kubectl 인자를 실행하지 않고 code-owned argv만 subprocess에 도달, 공유 `~/.kube/config` 대신 격리된 kubeconfig 강제, Kubernetes context는 항상 `beluga`, evidence에는 원본 출력 대신 해시/바이트 수/상태만 저장.
+- cluster-inspector·data-service-inspector·identity-inspector·storage-inspector·observability-inspector·hypothesis-agent·verifier로 역할이 설계되어 있으나, 현재 구현은 공용 read-only 검사 경계뿐이고 role별 그래프 오케스트레이션은 아직 future work입니다.
+- `make test-agent`로 라이브 클러스터 없이 정책/보안 스위트를 검증하며, 이 계약을 지키는 CI(`operations-agent-security.yml`)가 상시 구동됩니다.
+
 ## 현재 상태
 
 Beluga는 개인/학습 스케일의 reference implementation입니다.
 
-- 핵심 Kafka/CDC → Flink → Iceberg → Trino/Superset/Airflow 흐름은 clean-install E2E를 목표로 구현
-- 라이브 클러스터가 항상 실행 중인 것은 아니므로 모든 최신 변경이 상시 live validation되는 것은 아님
+- 핵심 Kafka/CDC → Flink → Iceberg → Trino/Superset/Airflow 흐름은 clean-install E2E를 목표로 구현되었고 완료로 표시됨(`docs/IMPLEMENTATION-STATUS.md`, 2026-09-14 검증)
+- 라이브 클러스터가 항상 실행 중인 것은 아니므로(`vagrant status` 기준 VM 4대 모두 중지) 모든 최신 변경이 상시 live validation되는 것은 아님
 - 정책 컴파일러 통합과 거버넌스 영역은 별도 범위로 계속 진화
+- Operations Agent는 read-only 진단 프로파일만 실행 가능하며, data mutation/외부 egress/privileged 작업 실행은 계약상 비활성화된 상태
+- 2026-08-28 이후에도 MetalLB L2Advertisement를 사설 네트워크 인터페이스로 제한, ArgoCD·OpenMetadata UI를 APISIX 뒤에서 언블록, 인증서 key usage 명시, VMware Fusion 프로바이더를 `vagrant-vmware-desktop`(vmware_desktop)으로 교체, 64GB 호스트용 VM RAM 프로파일 튜닝 등 클러스터 안정화 커밋이 계속 들어가고 있음
 
 ## 시작하기
 

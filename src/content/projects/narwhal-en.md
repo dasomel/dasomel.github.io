@@ -20,15 +20,30 @@ Narwhal is not primarily a Kubernetes installer. Its product boundary is the **i
 
 | Metric | Current state |
 |---|---|
-| Activity | 483 commits since 2026-02-08, 4 releases, latest v1.2.0 |
+| Activity | 612 commits since 2026-02-08 (as of 2026-09-23), 4 releases, latest v1.2.0 |
 | Integration | 35 GitOps-managed applications |
-| CI regression | 51 checks |
+| CI regression | 192 checks |
 | Live verification | 120+ cluster checks, 49 SSO checks |
-| Integration knowledge | 263 documented incidents |
+| Integration knowledge | 318 documented incidents |
 | Deployment | Vagrant ARM64, Kakao Cloud AMD64, air-gapped |
 | Offline bundle | 104 images, 27 Helm charts, binaries, manifests, and OS packages per architecture |
 
 These numbers are engineering evidence of repeated integration and verification, not simply activity metrics.
+
+## Current Status
+
+The latest tagged release is **v1.2.0** (2026-08-09), which turned air-gapped installation from "images only" into an install that genuinely completes with no route to the internet. It promoted Kakao Cloud to a first-class OpenTofu-provisioned provider and added a Chaos Mesh 2.8.3 + k6 load-test suite plus a 36-check clean-install regression suite in CI.
+
+Since v1.2.0, main has accumulated further security hardening that is not yet in a tagged release (verified against the commit history as of 2026-09-23):
+
+- Enforced Keycloak OIDC TLS verification and internal CA trust; removed ArgoCD/APISIX OIDC TLS bypasses
+- Restricted the APISIX Admin API allowlist to the cluster pod CIDR
+- Enforced SSH host-key verification on Kakao bastion/node paths and split the bastion security group from the node security group
+- Switched the default NFS export to root_squash with a non-world-writable root
+- Added a default-deny NetworkPolicy for the database namespace and a Kyverno admission gate for the node-tuning job service account
+- Narrowed the portal's OpenBao access to least privilege, removing unnecessary `secret/data/*` grants
+
+This work is release-candidate material still under verification on main, not yet part of a published tag.
 
 ## Platform Components
 
@@ -100,7 +115,7 @@ Regression Check
 Upgrade Gate
 ```
 
-The incident log records not only what fixed an incident, but also how to distinguish it from similar failures and which tempting fixes do not work. This knowledge base is connected to the regression suite, producing 263 documented incidents and 51 CI checks.
+The incident log records not only what fixed an incident, but also how to distinguish it from similar failures and which tempting fixes do not work. This knowledge base is connected to the regression suite, producing 318 documented incidents and 192 CI checks.
 
 ## Verification Model
 
@@ -110,7 +125,7 @@ Narwhal validates different layers for different questions.
 |---|---:|---|
 | Cluster verification | 120+ | Is the cluster and platform actually healthy? |
 | SSO verification | 49 | Does identity work end to end across integrated apps? |
-| CI regression | 51 | Have known integration failures returned? |
+| CI regression | 192 | Have known integration failures returned? |
 
 This separation keeps fast CI regression checks independent from deeper live-cluster validation.
 
