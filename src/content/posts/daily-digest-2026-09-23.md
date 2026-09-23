@@ -172,7 +172,7 @@ _Red Hat_
 
 > 💡 데모 수준의 RAG 파이프라인은 실제 프로덕션 데이터 다양성에서 성능이 저하되기 쉬우므로, 배포 전 파이프라인 자동 튜닝/평가 단계를 인프라에 포함시키는 것이 중요하다.
 
-### [Global AI routing with <1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
+### [Global AI routing with \<1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
 
 _Google Cloud_
 
