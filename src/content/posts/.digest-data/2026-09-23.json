@@ -9,7 +9,11 @@
       "title": "Secure AI agents with HashiCorp Boundary",
       "link": "https://www.hashicorp.com/blog/secure-ai-agents-with-hashicorp-boundary",
       "date": "2026-09-29T07:00:00.000Z",
-      "excerpt": "AI agents are evolving from passive assistants into active participants in enterprise IT operations -analyzing logs, investigating incidents, assessing system health, and recommending next steps."
+      "excerpt": "AI agents are evolving from passive assistants into active participants in enterprise IT operations -analyzing logs, investigating incidents, assessing system health, and recommending next steps.",
+      "summaryKo": "이 글은 HashiCorp Boundary를 이용해 AI 에이전트의 인프라 접근을 안전하게 통제하는 방법을 다룬다. AI 에이전트가 로그 분석, 인시던트 조사, 시스템 상태 점검 등 인프라 운영에 직접 개입하는 사례가 늘면서, 에이전트에게 자격 증명을 직접 노출하지 않고도 접근을 허용해야 하는 문제를 지적한다. Boundary는 OIDC를 통해 외부 IdP(예: IBM Verify)로 신원을 위임하고, 제로 트러스트 모델에 따라 모든 대상 접근에 활성 세션을 요구한다. Vault와 연동해 단기(short-lived) 동적 자격 증명을 발급하고, 세션 수립 시점에 에이전트나 엔지니어에게 자격 증명이 노출되지 않도록 주입(credential injection)한다. 모든 세션은 녹화되고 인증 요청·세션 활동·관리자 작업에 대한 감사 로그가 남으며, 관리자가 즉시 세션을 종료할 수 있는 '킬 스위치'도 제공한다. 예시로 IBM watsonx.ai, Granite 모델, IBM Bob 에이전트, IBM Verify를 결합한 구성이 소개된다. 이 글은 2026년 9월 29일 Krishnan Ramachandran이 작성했다.",
+      "summaryEn": "This post explains how HashiCorp Boundary can secure infrastructure access for AI agents that are increasingly taking active roles in operations tasks like log analysis, incident investigation, and health checks. It highlights the risk of granting agents direct infrastructure credentials and describes Boundary's approach: identity is delegated via OIDC to an external identity provider (the example uses IBM Verify), and a zero-trust model requires an active Boundary session for every target access. Boundary integrates with Vault to issue short-lived dynamic credentials that are injected at session establishment, so neither the agent nor the operator ever sees the raw credential. Every session can be recorded, and audit events log authentication, session activity, and administrative actions, with an admin 'kill switch' to terminate sessions immediately. The post walks through an example stack combining IBM watsonx.ai, Granite models, and the IBM Bob agent with IBM Verify and Boundary. It was published September 29, 2026 by Krishnan Ramachandran.",
+      "insightKo": "AI 에이전트에게 정적 자격 증명을 넘기지 않고 Vault의 단기 동적 크리덴셜과 Boundary의 세션 녹화·킬 스위치를 결합하면, 에이전트발 인프라 접근에서도 사람 운영자와 동등한 감사 추적성과 즉시 차단 능력을 확보할 수 있다.",
+      "insightEn": "Combining Vault's short-lived dynamic credentials with Boundary's session recording and kill switch means AI-agent infrastructure access can get the same audit trail and instant revocation as human operators, without ever handing the agent a static credential."
     },
     {
       "source": "OpenAI",
@@ -17,7 +21,11 @@
       "title": "Better prompt caching for GPT-6",
       "link": "https://openai.com/index/better-prompt-caching-for-gpt-6",
       "date": "2026-09-22T21:00:00.000Z",
-      "excerpt": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
+      "excerpt": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
+      "summaryKo": "이 글의 제목과 요약만 보면, OpenAI가 GPT-6의 프롬프트 캐싱 기능을 개선했다는 내용이다. 캐시 히트율(cache hit rate)을 높이고, 캐싱 동작을 확인할 수 있는 새로운 진단(diagnostics) 도구를 제공하며, 캐시 경계를 명시적으로 지정할 수 있는 explicit breakpoints 기능을 추가했다고 소개한다. 이런 변경들은 지연 시간(latency)과 비용을 줄이는 것을 목표로 한다고 되어 있다. 다만 구체적인 캐시 히트율 수치, 지연 시간 개선 폭, 비용 절감률, API 파라미터명 등은 제목과 요약에 나와 있지 않다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "Based on the title and excerpt alone, OpenAI has improved prompt caching for GPT-6. The changes reportedly include higher cache hit rates, new diagnostics to inspect caching behavior, and explicit breakpoints that let developers control where cache boundaries fall. OpenAI frames all of this as aimed at cutting latency and cost. No specific hit-rate numbers, latency improvement percentages, cost savings, or API parameter names are given in the title or excerpt. This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "명시적 캐시 브레이크포인트와 진단 도구가 실제로 제공된다면, 반복 호출이 많은 파이프라인에서 캐시 적중률을 직접 튜닝해 지연 시간과 토큰 비용을 낮출 여지가 생긴다.",
+      "insightEn": "If explicit cache breakpoints and diagnostics are indeed available, teams running high-repetition GPT-6 pipelines gain a direct lever to tune cache hit rates and lower both latency and token costs."
     },
     {
       "source": "AWS Containers",
@@ -25,7 +33,11 @@
       "title": "The operations gap between deploying an application and running it forever",
       "link": "https://aws.amazon.com/blogs/containers/the-operations-gap-between-deploying-an-application-and-running-it-forever/",
       "date": "2026-09-22T20:38:09.000Z",
-      "excerpt": "This post features the new Cluster Mode deployment model in AWS Elastic Beanstalk that extends the operational promise of the service to containerized application portfolios."
+      "excerpt": "This post features the new Cluster Mode deployment model in AWS Elastic Beanstalk that extends the operational promise of the service to containerized application portfolios.",
+      "summaryKo": "이 글의 제목과 요약에 따르면, AWS Elastic Beanstalk에 새로운 배포 모델인 'Cluster Mode'가 추가되었다. 이 기능은 기존 Elastic Beanstalk이 제공하던 운영상의 이점(operational promise)을 컨테이너화된 애플리케이션 포트폴리오까지 확장하는 것을 목표로 한다고 소개된다. 제목은 애플리케이션을 '배포하는 것'과 '계속 운영하는 것' 사이의 운영 격차(operations gap)를 다룬다고 언급한다. 다만 Cluster Mode의 구체적인 아키텍처, 지원 오케스트레이터(ECS/EKS 여부), 가격, 출시일, 리전 등 세부 정보는 제목과 요약에 나와 있지 않다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "According to the title and excerpt, AWS has introduced a new 'Cluster Mode' deployment model for Elastic Beanstalk. It's described as extending Elastic Beanstalk's existing operational promise to portfolios of containerized applications, and the piece frames its theme as the gap between deploying an application once and operating it indefinitely. No architectural details, supported orchestrators (ECS vs. EKS), pricing, launch date, or region availability are given in the title or excerpt. This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "Cluster Mode가 실제로 컨테이너 포트폴리오까지 Elastic Beanstalk의 관리형 운영 모델을 확장한다면, ECS/EKS를 직접 운영하기 부담스러운 팀에게 컨테이너 클러스터 관리 부담을 낮추는 대안이 될 수 있다.",
+      "insightEn": "If Cluster Mode genuinely extends Elastic Beanstalk's managed-operations model to container portfolios, it could offer teams a lower-overhead alternative to running ECS or EKS directly for cluster management."
     },
     {
       "source": "The New Stack",
@@ -33,7 +45,11 @@
       "title": "Claude Opus 5.5 wants to finish your coding tasks, not just start them",
       "link": "https://thenewstack.io/claude-opus-5-5-lifecycle/",
       "date": "2026-09-22T19:49:55.000Z",
-      "excerpt": "Anthropic wants developers to use Claude and its family of tools to handle complete coding tasks. The company introduced Claude"
+      "excerpt": "Anthropic wants developers to use Claude and its family of tools to handle complete coding tasks. The company introduced Claude",
+      "summaryKo": "제목과 요약만 보면, 이 글은 Anthropic이 Claude Opus 5.5를 소개하며 개발자들이 코딩 작업을 처음부터 끝까지 Claude와 관련 도구군에 맡기도록 유도하는 방향을 다룬다. 제목은 Opus 5.5가 코딩 작업을 '시작'만 하는 것이 아니라 '끝까지 완료'하는 데 초점을 맞췄다고 언급한다. 요약 문장이 중간에 잘려 있어 Anthropic이 구체적으로 어떤 신규 기능이나 도구를 함께 소개했는지는 알 수 없다. 벤치마크 수치, 가격, 출시일, 기존 Opus 버전과의 구체적 비교 등의 세부 정보는 제목과 요약에 없다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "Based on the title and excerpt alone, this piece covers Anthropic's introduction of Claude Opus 5.5. The framing centers on getting developers to hand off complete coding tasks -- not just the initial steps -- to Claude and its surrounding tool family. The excerpt is cut off mid-sentence, so it's unclear exactly which new features or tools Anthropic paired with the release. No benchmark numbers, pricing, release date, or specific comparison to prior Opus versions are given in the title or excerpt. This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "Claude가 코딩 작업을 시작뿐 아니라 끝까지 완결하는 방향으로 발전한다면, CI/CD 파이프라인에 에이전트를 통합할 때 사람의 중간 개입 지점을 줄이는 설계를 검토할 필요가 생긴다.",
+      "insightEn": "If Claude is indeed moving toward completing coding tasks end-to-end rather than just starting them, teams integrating it into CI/CD pipelines may need to reconsider how many manual checkpoints remain in the loop."
     },
     {
       "source": "The New Stack",
@@ -41,7 +57,11 @@
       "title": "GPT-6 Sol closes most of the alignment gap with Astra. It’s one-fifth the price.",
       "link": "https://thenewstack.io/gpt-sol-alignment-gaps/",
       "date": "2026-09-22T19:28:42.000Z",
-      "excerpt": "On Tuesday, OpenAI released GPT-6 Sol and Luna, an expansion of the GPT-6 line-up that aims to make GPT-6 Astra’s"
+      "excerpt": "On Tuesday, OpenAI released GPT-6 Sol and Luna, an expansion of the GPT-6 line-up that aims to make GPT-6 Astra’s",
+      "summaryKo": "제목과 요약에 따르면, OpenAI는 화요일에 GPT-6 라인업을 확장하는 GPT-6 Sol과 Luna를 출시했다. 제목은 Sol이 상위 모델인 GPT-6 Astra와의 정렬(alignment) 격차 대부분을 좁혔으면서도 가격은 Astra의 5분의 1 수준이라고 명시한다. 요약 문장이 중간에 끊겨 Astra의 어떤 능력을 목표로 했는지 구체적으로는 알 수 없다. 정확한 가격, 정렬 평가 지표, 벤치마크 점수, 출시 요일 외의 정확한 날짜 등은 제목과 요약에 나와 있지 않다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "Per the title and excerpt, OpenAI released GPT-6 Sol and Luna on a Tuesday, expanding the GPT-6 lineup. The title states that Sol closes most of the alignment gap with the flagship GPT-6 Astra model while costing one-fifth as much. The excerpt cuts off before explaining exactly which of Astra's capabilities Sol was designed to match. No exact pricing, alignment benchmark figures, or a specific calendar date beyond 'Tuesday' are given in the title or excerpt. This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "Sol이 실제로 Astra 대비 정렬 성능은 대부분 유지하면서 가격이 5분의 1이라면, 비용에 민감한 운영 워크로드는 Astra 대신 Sol로 전환해 API 비용을 크게 낮출 여지가 있다.",
+      "insightEn": "If Sol truly retains most of Astra's alignment performance at one-fifth the price, cost-sensitive production workloads have a real opening to switch from Astra to Sol and cut API spend significantly."
     },
     {
       "source": "The New Stack",
@@ -49,7 +69,11 @@
       "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
       "link": "https://thenewstack.io/jetbrains-air-agents-ide/",
       "date": "2026-09-22T18:27:37.000Z",
-      "excerpt": "There’s little question that AI coding agents have changed where software development work happens. Developers can increasingly delegate work from"
+      "excerpt": "There’s little question that AI coding agents have changed where software development work happens. Developers can increasingly delegate work from",
+      "summaryKo": "제목과 요약만 보면, JetBrains가 에이전트 기반(agentic) 개발에 본격적으로 투자하는 발표를 했고, 이를 회사 26년 역사에서 '가장 중요한 조치 중 하나'라고 표현한 인용구가 제목에 담겨 있다. 제목은 JetBrains가 이 변화 속에서도 IDE 자체의 가치를 여전히 믿고 있다는 입장을 취한다고 밝힌다. 요약은 AI 코딩 에이전트가 소프트웨어 개발 작업이 이루어지는 위치를 바꾸고 있으며, 개발자들이 점점 더 많은 작업을 위임할 수 있게 되었다는 일반적 설명에서 끊긴다. 구체적으로 어떤 제품이나 기능이 발표되었는지, 누가 인용문을 말했는지 등은 제목과 요약에 나와 있지 않다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "Based on the title and excerpt, JetBrains has made a major push into agentic development, with a quoted line in the title calling it 'one of the most significant steps' in the company's 26-year history. The title frames this as JetBrains betting that the IDE itself still matters even as AI agents reshape where development work happens. The excerpt trails off while making the general point that AI coding agents let developers increasingly delegate work. Neither the specific product or feature announced, nor who is quoted, is stated in the title or excerpt. This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "JetBrains가 에이전트 기능을 IDE에 깊게 통합하는 방향으로 간다면, 개발팀은 별도 에이전트 툴체인 대신 기존 IDE 워크플로 안에서 에이전트 위임 범위를 재점검할 필요가 있다.",
+      "insightEn": "If JetBrains is deeply integrating agentic capabilities into its IDEs rather than ceding that layer to separate tools, dev teams may want to reassess how much agent delegation they route through their existing IDE workflow versus standalone agent toolchains."
     },
     {
       "source": "Kubernetes",
@@ -57,7 +81,11 @@
       "title": "Spotlight on SIG Apps",
       "link": "https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/",
       "date": "2026-09-22T18:00:00.000Z",
-      "excerpt": "As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services."
+      "excerpt": "As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services.",
+      "summaryKo": "제목과 요약에 따르면, 이 글은 Kubernetes 프로젝트의 SIG Apps(애플리케이션 라이프사이클 담당 특별 관심 그룹)를 조명하는 스포트라이트 게시물이다. 요약은 Kubernetes 채택이 늘면서 논의의 초점이 단순 컨테이너 실행을 넘어 점점 더 복잡해지는 애플리케이션 라이프사이클 관리로 옮겨갔다고 설명한다. 현대 플랫폼이 상태 없는(stateless) 웹 서비스, 상태 저장(stateful) 데이터베이스, 배치 처리, AI 워크로드, 플랫폼 서비스까지 지원한다는 점이 언급된다. 다만 SIG Apps가 실제로 소유·관리하는 구체적인 API(Deployment, StatefulSet, Job, HPA 등) 목록, 인터뷰 대상자 이름, 현재 진행 중인 KEP(Kubernetes Enhancement Proposal) 등은 제목과 요약에 나와 있지 않다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "According to the title and excerpt, this is a spotlight post from the Kubernetes blog featuring SIG Apps, the special interest group responsible for application lifecycle concerns. The excerpt notes that as Kubernetes adoption has grown, the conversation has moved beyond simply running containers to managing increasingly complex application lifecycles. Modern platforms now support stateless web services, stateful databases, batch processing, AI workloads, and platform services, per the excerpt. It does not name the specific APIs SIG Apps owns (e.g., Deployments, StatefulSets, Jobs, HPA), who was interviewed, or any active KEPs (Kubernetes Enhancement Proposals). This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "SIG Apps가 다루는 범위가 상태 저장 워크로드와 AI 워크로드까지 넓어지고 있다는 점은, 클러스터 운영자가 스테이트풀셋·배치 잡 운영 패턴을 최신 SIG 논의에 맞춰 재검토할 필요가 있음을 시사한다.",
+      "insightEn": "SIG Apps' scope expanding to cover stateful and AI workloads suggests cluster operators should keep revisiting their StatefulSet and batch-job operating patterns against the group's latest discussions."
     },
     {
       "source": "OpenAI",
@@ -65,7 +93,11 @@
       "title": "Introducing GPT-6 Sol and Luna",
       "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
       "date": "2026-09-22T18:00:00.000Z",
-      "excerpt": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
+      "excerpt": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
+      "summaryKo": "제목과 요약에 따르면, OpenAI는 GPT-6 Sol과 Luna 두 모델을 공식 발표했다. 두 모델은 '프런티어급 지능(frontier intelligence)'을 일상 업무에 적용하는 것을 목표로 하며, 서로 다른 능력-비용(capability-cost) 균형점을 제공한다고 소개된다. 즉 Sol과 Luna는 같은 GPT-6 계열 안에서 용도와 예산에 따라 선택할 수 있는 별도 티어로 포지셔닝된 것으로 보인다. 다만 각 모델의 정확한 가격, 컨텍스트 윈도우 크기, 벤치마크 점수, API 출시일 등 구체적 스펙은 제목과 요약에 나와 있지 않다. 이 요약은 원문 기사를 가져오지 못해 제목과 요약만으로 작성되었다.",
+      "summaryEn": "Based on the title and excerpt, OpenAI has officially introduced two new models, GPT-6 Sol and Luna. Both are positioned as bringing 'frontier intelligence' to everyday work, differentiated by capability-to-cost tradeoffs. This suggests Sol and Luna sit as separate tiers within the GPT-6 family that customers can pick based on their budget and use case. No exact pricing, context window size, benchmark scores, or API availability date are given in the title or excerpt. This summary is based on title/excerpt only, as the original article could not be fetched.",
+      "insightKo": "Sol과 Luna가 서로 다른 능력-비용 균형을 제공한다면, 운영팀은 워크로드별로 모델을 나눠 배치해 정확도가 필요한 구간과 비용 최적화가 필요한 구간을 구분하는 라우팅 전략을 검토할 수 있다.",
+      "insightEn": "If Sol and Luna genuinely offer different capability-cost tradeoffs, ops teams can consider a routing strategy that assigns workloads to each tier based on whether accuracy or cost efficiency matters more for that call."
     },
     {
       "source": "AWS Containers",
@@ -73,7 +105,11 @@
       "title": "Implement per-pod image pull permissions with ECR repository policies on Amazon EKS",
       "link": "https://aws.amazon.com/blogs/containers/implement-per-pod-image-pull-permissions-with-ecr-repository-policies-on-amazon-eks/",
       "date": "2026-09-22T16:58:07.000Z",
-      "excerpt": "Learn how to scope Amazon ECR image pull permissions to individual Kubernetes pods on a multi-tenant Amazon EKS cluster using KEP 4412 credential providers and ECR repository deny policies, so teams sharing the same nodes can pull only their own container images."
+      "excerpt": "Learn how to scope Amazon ECR image pull permissions to individual Kubernetes pods on a multi-tenant Amazon EKS cluster using KEP 4412 credential providers and ECR repository deny policies, so teams sharing the same nodes can pull only their own container images.",
+      "summaryKo": "EKS는 기본적으로 노드 레벨에서 ECR 이미지 풀 권한을 부여하기 때문에 같은 노드에 뜨는 여러 팀의 파드들이 노드 자격 증명과 ECR 저장소 접근 권한을 그대로 공유하는 문제가 있다. 이 글은 Kubernetes 1.34에 추가된 KEP 4412(파드별 kubelet 이미지 자격 증명)를 활용해 파드의 ServiceAccount 토큰을 kubelet 자격 증명 공급자 플러그인에 전달하는 방식을 소개한다. Amazon ECR 자격 증명 공급자가 이 토큰을 STS AssumeRoleWithWebIdentity로 교환해 특정 IAM 역할로 스코프된 ECR 자격 증명을 발급하며, AWS는 Amazon EKS 1.35 이상에서 이 기능을 지원한다. 여기에 ECR 저장소 거부(deny) 정책을 결합하면 멀티테넌트 클러스터에서 팀별 이미지 접근을 격리할 수 있고, 시스템 파드와 기존 워크로드는 노드 역할 폴백 덕분에 변경 없이 계속 동작한다. 구현 예제는 aws-samples/sample-ecr-per-pod-permission GitHub 저장소에서 확인할 수 있다.",
+      "summaryEn": "By default, Amazon EKS grants ECR image pull permissions at the node level, so every pod scheduled on a shared node inherits the same node credentials and the same access to ECR repositories, even across tenants. This post shows how to use KEP 4412, added in Kubernetes 1.34, to pass a pod's ServiceAccount token through the kubelet's credential provider plugin instead. The Amazon ECR credential provider exchanges that token via STS AssumeRoleWithWebIdentity for ECR credentials scoped to a specific IAM role, and AWS supports this on Amazon EKS 1.35 and later. Combined with ECR repository deny policies, this enforces per-team isolation on shared multi-tenant nodes while system pods and existing workloads keep working unchanged thanks to a node-role fallback. A working example is published in the aws-samples/sample-ecr-per-pod-permission GitHub repository.",
+      "insightKo": "멀티테넌트 EKS 클러스터를 운영하는 팀은 커스텀 어드미션 정책이나 서드파티 정책 엔진 없이도 KEP 4412와 ECR 저장소 정책만으로 파드 단위 이미지 접근 통제를 구현해 노드 공유로 인한 이미지 노출 위험을 줄일 수 있다.",
+      "insightEn": "For platform teams running multi-tenant EKS clusters, this enables per-pod ECR access control using only KEP 4412 and repository policies — no custom admission webhooks or third-party policy engines needed — reducing the risk of image exposure across tenants sharing the same nodes."
     },
     {
       "source": "Docker",
@@ -81,7 +117,11 @@
       "title": "Meet the Ecosystem: Partners and Customers at WeAreDevelopers with Docker",
       "link": "https://www.docker.com/blog/wearedevelopers-partner-customer-sessions-2026/",
       "date": "2026-09-22T15:06:15.000Z",
-      "excerpt": "Meet the partners and customers bringing practical AI, security, and development sessions to the Docker Pavilion at WeAreDevelopers. The post explains why a strong ecosystem matters to developers, announces the sessions and speakers, and invites attendees to connect with the teams building and using these technologies."
+      "excerpt": "Meet the partners and customers bringing practical AI, security, and development sessions to the Docker Pavilion at WeAreDevelopers. The post explains why a strong ecosystem matters to developers, announces the sessions and speakers, and invites attendees to connect with the teams building and using these technologies.",
+      "summaryKo": "Docker는 2026년 9월 23일부터 25일까지 미국 산호세에서 열리는 WeAreDevelopers World Congress North America에 Docker Pavilion을 마련해 파트너·고객 세션을 진행한다고 밝혔다. 9월 24일 Spectro Cloud의 Colton Shaw는 \"Repeatable Agentic Workloads on Palette\" 세션에서 하드닝된 이미지, 로컬 추론, 에이전트 워크로드를 결합한 버전 관리 클러스터 프로파일을 오프라인 포함 엣지 환경에 배포하는 방법을 소개한다. 같은 날 Docker의 Per Krogslund가 진행하는 패널 \"From TokenMaxxing to True AI Ownership\"에 Spectro Cloud와 J.P. Morgan Payments 임원이 참여하고, J.P. Morgan Payments의 Alan Torrance는 \"Insert Coin\" 세션에서 오픈소스 Docker Compose 설정과 목 서버·실제 OpenAPI 스펙으로 Unicorn Finance를 명령 한 줄로 구동하는 데모를 선보인다. 파트너 세션에는 Palo Alto Networks(Cameron Hyde, Cortex XSIAM 감사 로그), Datadog(Amrita Lakhanpal, AI Guard 기반 보안 사고 대응), ClickHouse(Zoe Steinkamp, Docker Hardened Images 위 ClickHouse 최적화), Snyk(Javier Garza, Evo Agentic Development Security Sandbox Kit) 등이 포함된다. 9월 25일에는 GitGuardian(Dwayne McDaniel, 파일 읽기·코드 편집·명령 실행에 대한 시크릿 보호 훅), Sonar(Manish Kapur, Sonar Vortex로 에이전트 생성 코드 검증) 등을 포함해 총 9개 이상의 추가 파트너 세션이 이어진다.",
+      "summaryEn": "Docker announced its partner and customer session lineup for the Docker Pavilion at WeAreDevelopers World Congress North America, running September 23-25, 2026 in San Jose. On September 24, Spectro Cloud's Colton Shaw presents \"Repeatable Agentic Workloads on Palette,\" covering versioned cluster profiles that combine hardened images, local inference, and agent workloads for edge deployments, including offline environments. The same day, Docker's Per Krogslund moderates a panel, \"From TokenMaxxing to True AI Ownership,\" with Spectro Cloud and J.P. Morgan Payments executives, and J.P. Morgan Payments' Alan Torrance demos running Unicorn Finance with a single \"docker compose up\" command using an open-source setup with mock servers and real OpenAPI specs. Partner sessions include Palo Alto Networks (Cameron Hyde, Cortex XSIAM audit records), Datadog (Amrita Lakhanpal, AI Guard-based security incident response), ClickHouse (Zoe Steinkamp, running ClickHouse on Docker Hardened Images), and Snyk (Javier Garza, the Evo Agentic Development Security Sandbox Kit). September 25 adds over nine more partner sessions, including GitGuardian (Dwayne McDaniel, hooks for file reads, code edits, and command execution) and Sonar (Manish Kapur, Sonar Vortex for verifying agent-generated code changes).",
+      "insightKo": "DevOps·보안 엔지니어 입장에서는 Docker Hardened Images, Cortex XSIAM 감사, Datadog AI Guard, Snyk Evo 샌드박스 킷처럼 에이전트 워크로드를 격리·감사·검증하는 실무 패턴들이 한자리에 모인 셈이라 도입 전 벤치마킹할 만하다.",
+      "insightEn": "For DevOps and security engineers, this lineup is a useful benchmark of emerging patterns for containing, auditing, and verifying agentic workloads (Docker Hardened Images, Cortex XSIAM audit logs, Datadog AI Guard, Snyk's Evo sandbox kit) worth evaluating before adoption."
     },
     {
       "source": "Cloudflare",
@@ -89,7 +129,11 @@
       "title": "We just shipped support for the ugliest part of HTTP: Vary",
       "link": "https://blog.cloudflare.com/vary-support/",
       "date": "2026-09-22T14:04:31.000Z",
-      "excerpt": "Vary support is now available in Cache Rules on every plan. You can normalize known negotiation headers, pass exact values through to the origin when those small differences matter, or bypass cache when the variation is too unpredictable."
+      "excerpt": "Vary support is now available in Cache Rules on every plan. You can normalize known negotiation headers, pass exact values through to the origin when those small differences matter, or bypass cache when the variation is too unpredictable.",
+      "summaryKo": "Cloudflare가 Cache Rules에 HTTP Vary 헤더 지원을 추가해 모든 요금제에서 사용할 수 있게 됐다. 기존에는 오리진이 Vary 헤더로 어떤 요청 필드가 응답에 영향을 주는지는 알려주지만 그 차이가 실제로 캐시를 나눌 만큼 중요한지는 알려주지 않아서, 캐시가 원시 헤더 값을 그대로 구분자로 쓰면 비슷한 요청들이 수천 개의 재사용 불가능한 캐시 엔트리로 흩어지는 문제가 있었다. 새 기능은 오리진의 Vary 응답에 나열된 헤더마다 동작 방식을 선택할 수 있게 한다. normalize 모드는 동등한 값들을 하나로 합쳐 불필요한 캐시 파편화를 줄인다. passthrough 모드는 정확한 값을 그대로 유지해 세밀한 캐시 매칭이 필요한 경우에 쓰고, bypass 모드는 변동이 예측 불가능할 때 캐싱 자체를 건너뛴다.",
+      "summaryEn": "Cloudflare shipped Vary header support in Cache Rules, now available on every plan. Previously, an origin's Vary header told the cache which request fields could affect the response, but not which differences actually mattered — so treating every raw header value as distinct could fragment similar requests into thousands of barely reusable cache entries. The new feature lets customers choose a handling mode per header named in the origin's Vary response. Normalize mode collapses equivalent values into one, cutting unnecessary cache fragmentation. Passthrough mode preserves exact values for cases needing precise cache matching, while bypass mode skips caching entirely when variation is too unpredictable.",
+      "insightKo": "캐시 히트율과 오리진 부하에 민감한 운영자는 Vary 헤더 처리를 세밀하게 제어해 불필요한 캐시 파편화를 줄이면서도 콘텐츠 협상이 필요한 응답은 정확히 구분할 수 있다.",
+      "insightEn": "For teams tuning cache hit ratio and origin load, fine-grained Vary handling reduces cache fragmentation from raw header variance while still correctly differentiating responses that genuinely need content negotiation."
     },
     {
       "source": "CNCF",
@@ -97,7 +141,11 @@
       "title": "From attendee badge to speaker badge: My first KubeCon at KubeCon + CloudNativeCon India 2026",
       "link": "https://www.cncf.io/blog/2026/09/22/from-attendee-badge-to-speaker-badge-my-first-kubecon-at-kubecon-cloudnativecon-india-2026/",
       "date": "2026-09-22T13:34:05.000Z",
-      "excerpt": "There is something surreal about your first KubeCon being one where you walk onto the stage as a speaker. Most people ease into this community by attending a few conferences, lurking in hallway tracks, and working."
+      "excerpt": "There is something surreal about your first KubeCon being one where you walk onto the stage as a speaker. Most people ease into this community by attending a few conferences, lurking in hallway tracks, and working.",
+      "summaryKo": "이 글은 필자가 KubeCon + CloudNativeCon India 2026에서 참가자가 아닌 발표자로 처음 무대에 선 경험을 다룬다. 필자는 아버지인 Janakiram MSV와 함께 \"Run Your Own AI Cluster on a DGX Spark: Kubernetes, GPUs, and DRA\"라는 세션을 공동 발표했다. 이 세션은 NVIDIA DGX Spark를 기반으로 한다. Kubernetes, GPU, DRA(Dynamic Resource Allocation)를 활용해 개인용 AI 클러스터를 구축하는 방법을 다룬다. 글은 수천 명 규모의 대형 행사임에도 발표자·메인테이너·창립자가 같은 복도를 오가는 클라우드 네이티브 커뮤니티의 접근성을 강조한다.",
+      "summaryEn": "This post recounts the author's first KubeCon being one where they walked onto the stage as a speaker rather than easing in as an attendee, at KubeCon + CloudNativeCon India 2026. The author co-presented a session titled \"Run Your Own AI Cluster on a DGX Spark: Kubernetes, GPUs, and DRA\" together with their father, Janakiram MSV. The talk is built around an NVIDIA DGX Spark. It covers building a personal AI cluster using Kubernetes, GPUs, and Dynamic Resource Allocation (DRA). The piece highlights how, despite the event's massive scale with thousands of attendees, speakers, maintainers, and founders remain unusually approachable, walking the same hallways as everyone else.",
+      "insightKo": "DRA(Dynamic Resource Allocation)를 활용한 DGX Spark 기반 개인 AI 클러스터 구성은 GPU 자원을 세밀하게 스케줄링해야 하는 온프레미스·엣지 AI 인프라 운영자에게 참고할 만한 실전 패턴이다.",
+      "insightEn": "The DGX Spark plus Kubernetes DRA setup described is a concrete reference pattern for operators who need fine-grained GPU scheduling on small-scale, on-prem or edge AI infrastructure."
     },
     {
       "source": "Cloudflare",
@@ -105,7 +153,11 @@
       "title": "Introducing Worker Previews: Isolated preview environments for every change your agent makes",
       "link": "https://blog.cloudflare.com/worker-previews/",
       "date": "2026-09-22T13:00:00.000Z",
-      "excerpt": "Worker Previews gives every branch its own URL, configuration, state, and observability, so you and your agents can test changes in parallel without affecting production."
+      "excerpt": "Worker Previews gives every branch its own URL, configuration, state, and observability, so you and your agents can test changes in parallel without affecting production.",
+      "summaryKo": "Cloudflare가 Worker Previews를 출시해 깃 브랜치마다 프로덕션과 동일한 환경에서 동작하는 독립된 미리보기 환경을 제공한다. 각 브랜치는 고유한 URL, 설정, 상태(state), 옵저버빌리티를 가지며 수백 개의 Preview를 동시에 실행해도 서로 및 프로덕션에 영향을 주지 않는다. npx wrangler preview 명령으로 격리된 Preview를 배포할 수 있고, Wrangler 설정 파일의 previews 블록에서 새 Preview가 시작할 때 사용할 변수·바인딩·시크릿을 프로덕션과 분리해 정의한다. Durable Objects와 Containers의 경우 Cloudflare가 Preview마다 별도의 네임스페이스, 스토리지, 앱, 인스턴스를 자동 프로비저닝해 상태 변화·세션·메모리·마이그레이션·동시 테스트가 해당 Preview로 격리된다. 이를 통해 변경 사항을 브랜치에 푸시해 검증한 뒤 머지하는 에이전트 개발 생명주기(ADLC)를 지원하며, 각 변경은 원자적으로 독립 배포·관찰·수정이 가능하다.",
+      "summaryEn": "Cloudflare launched Worker Previews, giving every Git branch its own production-like, isolated environment to run in. Each branch gets its own URL, configuration, state, and observability, and you can run hundreds of Previews concurrently without them affecting each other or production. You deploy an isolated Preview with the command npx wrangler preview, defining the variables, bindings, and secrets a new Preview starts with in the previews block of the Wrangler configuration file, separate from production. For Durable Objects and Containers, Cloudflare automatically provisions separate namespaces, storage, apps, and instances per Preview, so state changes, sessions, memory, migrations, and concurrent tests stay scoped to that Preview. This supports an Agent Development Lifecycle (ADLC) where you push a change to a branch, test its behavior and performance, and merge only afterward, with each change deployable, observable, and revisable independently.",
+      "insightKo": "AI 코딩 에이전트가 여러 브랜치를 동시에 만들고 배포하는 워크플로에서, Durable Objects·Containers까지 브랜치별로 완전히 격리되는 Preview 환경은 상태 오염이나 프로덕션 영향 없이 병렬 검증을 가능하게 한다.",
+      "insightEn": "For teams whose AI coding agents spin up many branches in parallel, per-branch isolation that extends to Durable Objects and Containers state enables concurrent verification without state leakage into production."
     },
     {
       "source": "OpenAI",
@@ -113,7 +165,11 @@
       "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
       "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
       "date": "2026-09-22T12:00:00.000Z",
-      "excerpt": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models."
+      "excerpt": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+      "summaryKo": "OpenAI는 리서치 스타트업 Parallel이 GPT-6 Astra를 도입해 노동시장 데이터 리서치의 시간과 비용을 이전 모델 대비 절반으로 줄였다고 밝혔다. 테스트 사례에서 Parallel은 에이전트에게 4개 주(state)의 노동시장 통계 6개 항목을 6개월치 범위로 조사하도록 요청했고, 에이전트는 여러 웹사이트를 검색해 정보를 수집하고 보고서로 종합했다. GPT-6 Astra는 이전 모델과 동일한 품질의 결과를 절반의 시간과 약 50% 낮은 비용으로 완료했다. Parallel은 GPT-6 Astra가 더 목표에 집중된 검색을 수행하며 결과에 도달하기까지 더 적은 단계를 거쳤다고 관찰했다. Parallel의 Technical Staff는 \"Astra를 통해 더 적은 리서치 호출과 더 적은 토큰으로 동일한 고품질 리서치를 훨씬 더 빠르게 얻을 수 있음을 입증했다\"고 말했다.",
+      "summaryEn": "OpenAI reported that research startup Parallel adopted GPT-6 Astra and cut both the time and cost of labor-market data research in half compared to prior models. In a test case, Parallel asked its agent to research six labor-market statistics across four states over a six-month span, requiring searches across multiple websites and synthesis into a report. GPT-6 Astra completed the work in half the time of prior models, at roughly half the cost, while delivering the same quality of research. Parallel also observed that GPT-6 Astra made more focused searches and took fewer steps to reach a useful result. According to Parallel's Technical Staff, \"With Astra, we've demonstrated that you can get the same high-quality research much, much faster with fewer research calls and less tokens.\"",
+      "insightKo": "대량의 에이전트 리서치 파이프라인을 운영하는 팀이라면 모델 교체만으로 API 호출 수와 토큰 사용량이 줄어 비용과 지연시간을 동시에 낮출 수 있다는 실측 사례로 참고할 만하다.",
+      "insightEn": "For teams running large agentic research pipelines, this is concrete evidence that a model upgrade alone can cut both API call volume/token usage and latency, lowering cost and turnaround time together."
     },
     {
       "source": "토스",
@@ -121,7 +177,11 @@
       "title": "방해하지 않고, 눈에 띌 수 있을까",
       "link": "https://toss.tech/article/asset_management",
       "date": "2026-09-22T08:20:00.000Z",
-      "excerpt": "CVR을 3배 높이면서도 사용자 경험을 놓치지 않기 위해 고민한 과정을 들려드려요."
+      "excerpt": "CVR을 3배 높이면서도 사용자 경험을 놓치지 않기 위해 고민한 과정을 들려드려요.",
+      "summaryKo": "이 글은 토스 팀이 특정 UI 요소의 전환율(CVR)을 3배 끌어올리는 과정을 다룬다. 동시에 사용자 경험을 해치지 않는 것을 중요한 제약 조건으로 삼았다고 밝힌다. 제목이 시사하듯 핵심 화두는 사용자를 \"방해하지 않으면서도\" \"눈에 띄게\" 만드는 균형점을 찾는 디자인 접근으로 보인다. 다만 실제로 어떤 UI 요소를 어떻게 바꿨는지, 어떤 실험 설계와 기간을 거쳤는지는 발췌문에 나와 있지 않다. 이 요약은 원문 기사를 직접 가져오지 못해 제목과 발췌문(excerpt)만을 근거로 작성되었다.",
+      "summaryEn": "This Toss engineering blog post describes the team's process for lifting the conversion rate (CVR) of a UI element threefold. It frames not compromising the user experience as an important constraint throughout that work. As the title suggests (\"Can we stand out without getting in the way?\"), the core challenge appears to be finding the right balance between non-intrusive design and visual noticeability. However, the excerpt does not specify which UI element was changed, how, or what experiment design and timeframe were used. This summary is based only on the article's title and excerpt, as the original article could not be fetched.",
+      "insightKo": "원문을 직접 확인하지 못해 구체적인 UX 패턴이나 실험 설계는 판단할 수 없지만, CVR 3배 개선이라는 수치는 프로덕트 운영팀이 벤치마크로 참고할 만하다.",
+      "insightEn": "Without access to the full article, the specific UX pattern or experiment design can't be assessed, but a reported 3x CVR improvement is a notable benchmark figure for product teams to keep in mind."
     },
     {
       "source": "Snyk",
@@ -129,7 +189,11 @@
       "title": "So I asked my agent instead…",
       "link": "https://snyk.io/blog/so-i-asked-my-agent-instead/",
       "date": "2026-09-22T04:00:00.000Z",
-      "excerpt": "Ask your Evo tenant about models, MCP servers, and skills across your AI estate, from the client you already work in."
+      "excerpt": "Ask your Evo tenant about models, MCP servers, and skills across your AI estate, from the client you already work in.",
+      "summaryKo": "Snyk는 Evo MCP 서버를 소개하며, 사용자가 이미 쓰고 있는 AI 클라이언트(에이전트)에서 바로 자사 Evo 테넌트에 질문해 조직 전체의 모델, MCP 서버, 스킬 현황을 조회할 수 있게 됐다고 밝혔다. 예를 들어 \"이번 주에 개발자들이 어떤 MCP 서버를 실행했는지\", \"어떤 모델이 사용 중이고 얼마나 위험한지\", \"지금 어떤 정책이 위반되고 있는지\" 같은 질문을 던질 수 있다. 이런 질문은 에이전트·모델·MCP 서버·스킬 계층 전체를 아우르는 한 단계 위 레벨에서 이루어진다. 사용 방법은 MCP 클라이언트를 테넌트의 Evo URL에 /mcp를 붙인 엔드포인트로 지정한 뒤 OAuth 인가를 승인하는 방식이다. 테넌트 관리자(Tenant Admin) 또는 전체 Evo 접근 권한을 가진 Tenant 역할 사용자는 테넌트 전체를 읽고 쓸 수 있다.",
+      "summaryEn": "Snyk introduced the Evo MCP Server, which lets users query their Evo tenant about models, MCP servers, and skills across their AI estate directly from the AI client they already work in. Example questions include which MCP servers developers ran this week, which models are in use and how risky they are, or which policies are being violated right now. The server operates one layer up, covering agents, models, MCP servers, skills, the machines they run on, and the policies governing them. To use it, you point your MCP client at your tenant's Evo URL with /mcp appended and approve OAuth authorization. Tenant Admins, or users holding a Tenant role with full Evo access, can read and write across the entire tenant.",
+      "insightKo": "AI 에이전트·MCP 서버가 조직 전반에 퍼지면서 커지는 거버넌스 부담을, 기존 클라이언트에서 바로 조회 가능한 MCP 인터페이스로 낮춰 보안팀의 AI 자산 가시성을 높일 수 있다.",
+      "insightEn": "As agents and MCP servers proliferate across an organization, exposing that inventory through a queryable MCP interface from the client teams already use lowers governance overhead and improves security teams' visibility into AI asset sprawl."
     },
     {
       "source": "토스",
@@ -137,7 +201,11 @@
       "title": "쉼 없이 도는 테스트, 사람이 어디까지 돌봐야 할까요? - 토스닥터(Toss Doctor)",
       "link": "https://toss.tech/article/toss-doctor",
       "date": "2026-09-22T03:42:00.000Z",
-      "excerpt": "스스로 만들고 고치는 자동화, 토스닥터 V2를 다시 만든 이야기"
+      "excerpt": "스스로 만들고 고치는 자동화, 토스닥터 V2를 다시 만든 이야기",
+      "summaryKo": "토스가 자사 블로그에 \"토스닥터(Toss Doctor)\"라는 테스트 자동화 시스템을 재구축한 경험을 공개했다. 제목에서 알 수 있듯 지속적으로 실행되는 테스트를 사람이 어디까지 관리해야 하는지에 대한 고민을 다룬다. 부제는 \"스스로 만들고 고치는 자동화\"로, 토스닥터 V2가 자가 생성 및 자가 수정 능력을 갖춘 자동화 도구임을 시사한다. 이는 테스트 인프라를 사람이 일일이 개입하지 않고 자동으로 유지보수하는 방향을 지향하는 것으로 보인다. 본 요약은 원문 기사를 가져오지 못해 제목과 발췌문만을 근거로 작성되었다.",
+      "summaryEn": "Toss published an engineering blog post about rebuilding its test automation system called \"Toss Doctor\" into a V2. The title asks how far humans should still be involved in babysitting tests that run continuously. The subtitle, \"automation that builds and fixes itself,\" suggests Toss Doctor V2 gained self-generating and self-healing capabilities. This points toward reducing manual maintenance burden for test infrastructure. This summary is based only on the title and excerpt, as the original article could not be fetched.",
+      "insightKo": "자가 치유형 테스트 자동화는 CI 파이프라인의 유지보수 부담과 플레이키 테스트로 인한 온콜 부담을 줄일 잠재력이 있다.",
+      "insightEn": "Self-healing test automation like this has the potential to reduce CI pipeline maintenance overhead and on-call burden caused by flaky tests."
     },
     {
       "source": "Sysdig",
@@ -145,7 +213,11 @@
       "title": "Risky identities continue to plague cloud infrastructures",
       "link": "https://webflow.sysdig.com/blog/risky-identities-continue-to-plague-cloud-infrastructures",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "Our research finds cloud-native IAM remains one of the most persistently misconfigured and poorly governed areas of security. Here’s what you can do."
+      "excerpt": "Our research finds cloud-native IAM remains one of the most persistently misconfigured and poorly governed areas of security. Here’s what you can do.",
+      "summaryKo": "Sysdig가 발표한 보고서에 따르면 클라우드 네이티브 IAM(자격 증명 및 접근 관리)은 여전히 가장 지속적으로 잘못 설정되고 제대로 거버넌스되지 않는 보안 영역 중 하나로 나타났다. 이 글은 위험한 아이덴티티(risky identities)가 클라우드 인프라를 계속 괴롭히고 있다는 자체 리서치 결과를 소개한다. 구체적인 수치나 사례는 발췌문에 포함되어 있지 않지만, IAM misconfiguration이 지속적인 문제로 지적된다. 글은 이에 대한 대응 방안도 함께 제시한다고 밝히고 있다. 본 요약은 원문 기사를 가져오지 못해 제목과 발췌문만을 근거로 작성되었다.",
+      "summaryEn": "Sysdig published research findings showing that cloud-native IAM remains one of the most persistently misconfigured and poorly governed areas of cloud security. The post focuses on how \"risky identities\" continue to plague cloud infrastructures. No specific statistics or case numbers are given in the excerpt itself. The piece also states it offers guidance on what organizations can do about this. This summary is based only on the title and excerpt, as the original article could not be fetched.",
+      "insightKo": "IAM 설정 오류가 만성적인 문제로 지적된 만큼, 클러스터/클라우드 운영팀은 최소 권한 원칙과 정기적인 자격 증명 감사를 강화할 필요가 있다.",
+      "insightEn": "Since IAM misconfiguration is flagged as a chronic issue, cloud/cluster operations teams should strengthen least-privilege enforcement and regular credential audits."
     },
     {
       "source": "Hugging Face",
@@ -153,7 +225,11 @@
       "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
       "link": "https://huggingface.co/blog/evaleval-aisi",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": ""
+      "excerpt": "",
+      "summaryKo": "Hugging Face 블로그 글은 영국 AI 안전 연구소(UK AISI)와 EvalEval이 벤치마크 결과의 재현성을 높이기 위해 진행하는 작업을 다룬다. 제목만으로는 구체적인 방법론이나 수치는 확인할 수 없다. AI 모델 평가(evaluation) 벤치마크의 재현 가능성 문제를 협업으로 해결하려는 시도로 보인다. 발췌문이 제공되지 않아 세부 내용은 알 수 없다. 본 요약은 원문 기사를 가져오지 못해 제목만을 근거로 작성되었다.",
+      "summaryEn": "This Hugging Face blog post covers work by the UK AI Safety Institute (UK AISI) and EvalEval aimed at making AI benchmark results reproducible. The title alone doesn't reveal the specific methodology or numbers involved. It appears to be a collaborative effort to address reproducibility problems in model evaluation benchmarks. No excerpt was provided, so further detail is unavailable. This summary is based only on the title, as the original article could not be fetched and no excerpt was available.",
+      "insightKo": "벤치마크 재현성 문제는 모델 선택과 배포 의사결정의 신뢰도에 직결되므로, 운영팀은 벤치마크 수치를 그대로 신뢰하기보다 재현 가능한 평가 절차를 요구해야 한다.",
+      "insightEn": "Since benchmark reproducibility directly affects the reliability of model selection and deployment decisions, operations teams should demand reproducible evaluation procedures rather than trusting benchmark numbers at face value."
     },
     {
       "source": "Hugging Face",
@@ -161,7 +237,11 @@
       "title": "Transformers now runs llama.cpp quants",
       "link": "https://huggingface.co/blog/transformers-llama-cpp-quants",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": ""
+      "excerpt": "",
+      "summaryKo": "Hugging Face 블로그는 Transformers 라이브러리가 이제 llama.cpp의 양자화(quantization) 포맷을 직접 실행할 수 있게 되었다고 소개한다. 제목에서 확인되는 핵심은 GGUF 계열로 대표되는 llama.cpp의 quant 포맷을 Transformers 파이프라인에서 바로 사용할 수 있다는 점이다. 구체적인 지원 양자화 비트수, 성능 수치, 코드 예시 등은 발췌문이 없어 확인할 수 없다. 이는 경량화된 모델을 Hugging Face 생태계와 통합하려는 흐름의 일환으로 보인다. 본 요약은 원문 기사를 가져오지 못해 제목만을 근거로 작성되었다.",
+      "summaryEn": "This Hugging Face post announces that the Transformers library can now run llama.cpp quantization formats. The headline detail is that llama.cpp-style quant formats (commonly GGUF) can now be used directly within Transformers pipelines. Specific supported quant bit-widths, performance numbers, or code examples cannot be confirmed since no excerpt was provided. This appears to be part of a broader effort to integrate lightweight quantized models into the Hugging Face ecosystem. This summary is based only on the title, as the original article could not be fetched and no excerpt was available.",
+      "insightKo": "이 기능이 맞다면, GGUF 양자화 모델을 별도 런타임 없이 Transformers 파이프라인에서 바로 서빙할 수 있어 추론 인프라 구성이 단순해질 수 있다.",
+      "insightEn": "If accurate, this could simplify inference infrastructure by allowing GGUF-quantized models to be served directly within Transformers pipelines without a separate runtime."
     },
     {
       "source": "Hugging Face",
@@ -169,7 +249,11 @@
       "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
       "link": "https://huggingface.co/blog/omlx",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": ""
+      "excerpt": "",
+      "summaryKo": "Hugging Face는 oMLX의 제작자이자 메인테이너인 Jun Kim이 합류해 MLX 커뮤니티를 지원한다고 밝혔다. oMLX는 애플의 MLX 프레임워크와 관련된 프로젝트로 추정되나 구체적인 역할이나 기능은 제목만으로는 확인되지 않는다. Jun Kim의 합류 배경, 구체적인 업무 범위, 날짜 등의 세부 정보는 발췌문이 없어 알 수 없다. 이는 Hugging Face가 애플 실리콘 기반 온디바이스/로컬 추론 생태계에 대한 투자를 확대하는 신호로 해석될 수 있다. 본 요약은 원문 기사를 가져오지 못해 제목만을 근거로 작성되었다.",
+      "summaryEn": "Hugging Face announced that Jun Kim, creator and maintainer of oMLX, has joined the company to support the MLX community. oMLX appears to be a project related to Apple's MLX framework, though its specific role or functionality cannot be confirmed from the title alone. Details about the background of the hire, exact responsibilities, or dates are unavailable since no excerpt was provided. This could signal Hugging Face expanding its investment in the Apple Silicon on-device/local inference ecosystem. This summary is based only on the title, as the original article could not be fetched and no excerpt was available.",
+      "insightKo": "이 채용이 사실이라면 Apple Silicon 기반 로컬 추론 도구 체인에 대한 Hugging Face의 지원이 강화되어, 엣지/온디바이스 배포를 고려하는 팀에 도움이 될 수 있다.",
+      "insightEn": "If accurate, this hire suggests strengthened Hugging Face support for the Apple Silicon local-inference toolchain, which could benefit teams considering edge/on-device deployment."
     },
     {
       "source": "Red Hat",
@@ -177,7 +261,11 @@
       "title": "Evolving your automation (Pt. 2): Architectural decisions for upgrading to Red Hat Ansible Automation Platform 2.7",
       "link": "https://www.redhat.com/en/blog/evolving-your-automation-pt-2-architectural-decisions-upgrading-red-hat-ansible-automation-platform-27",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "Red Hat Ansible Automation Platform 2.7 introduces many new enhancements designed to scale enterprise automation, improve platform engineering productivity, and bridge the gap with AI-driven operations."
+      "excerpt": "Red Hat Ansible Automation Platform 2.7 introduces many new enhancements designed to scale enterprise automation, improve platform engineering productivity, and bridge the gap with AI-driven operations.",
+      "summaryKo": "Red Hat 블로그의 이 글은 \"Evolving your automation\" 시리즈의 2편으로, Red Hat Ansible Automation Platform(AAP) 2.7로 업그레이드할 때 고려해야 할 아키텍처 관련 결정들을 다룬다. 발췌문에 따르면 AAP 2.7은 엔터프라이즈 자동화를 확장하고, 플랫폼 엔지니어링 생산성을 높이며, AI 기반 운영(AI-driven operations)과의 격차를 메우기 위한 다수의 신규 기능을 도입한다. 구체적인 기능명이나 수치, 버전별 세부 변경 사항은 발췌문만으로는 확인되지 않는다. 시리즈 형식(Pt. 2)인 것으로 보아 앞선 1편에서 다룬 내용을 이어받아 아키텍처 설계 관점을 다루는 것으로 추정된다. 본 요약은 원문 기사를 가져오지 못해 제목과 발췌문만을 근거로 작성되었다.",
+      "summaryEn": "This Red Hat blog post is part 2 of the \"Evolving your automation\" series, covering architectural decisions to weigh when upgrading to Red Hat Ansible Automation Platform (AAP) 2.7. Per the excerpt, AAP 2.7 introduces multiple enhancements aimed at scaling enterprise automation, improving platform engineering productivity, and closing the gap with AI-driven operations. Specific feature names, numbers, or version-by-version details are not confirmed by the excerpt alone. Being part 2 of a series suggests it builds on architectural groundwork laid in part 1. This summary is based only on the title and excerpt, as the original article could not be fetched.",
+      "insightKo": "AAP 업그레이드는 단순 버전 교체가 아니라 아키텍처 재설계가 필요할 수 있으므로, 운영팀은 실행 환경(execution environment)과 컨트롤러 구성을 사전에 점검해야 한다.",
+      "insightEn": "Since upgrading AAP may require architectural redesign rather than a simple version bump, operations teams should review their execution environment and controller configuration ahead of time."
     },
     {
       "source": "Red Hat",
@@ -185,7 +273,11 @@
       "title": "AutoRAG pipeline optimization in Red Hat OpenShift AI",
       "link": "https://www.redhat.com/en/blog/autorag-pipeline-optimization-red-hat-openshift-ai",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "If you're an AI or machine learning engineer, you've seen the classic demo: ingest a clean PDF into a prototype, build a vector database index using standard tutorial code, and submit a simple question. The model returns a pristine answer, everyone nods, and the project gets greenlit."
+      "excerpt": "If you're an AI or machine learning engineer, you've seen the classic demo: ingest a clean PDF into a prototype, build a vector database index using standard tutorial code, and submit a simple question. The model returns a pristine answer, everyone nods, and the project gets greenlit.",
+      "summaryKo": "이 Red Hat 블로그 글은 \"AutoRAG\"라는 파이프라인 최적화 기법을 Red Hat OpenShift AI 환경에서 다룬다. 발췌문은 AI/ML 엔지니어들에게 익숙한 전형적인 RAG(검색 증강 생성) 데모 시나리오를 언급한다 — 깨끗한 PDF를 프로토타입에 인입시키고, 튜토리얼 수준의 코드로 벡터 데이터베이스 인덱스를 구축한 뒤 간단한 질문을 던지면 모델이 깔끔한 답변을 내놓아 프로젝트가 승인되는 흐름이다. 글은 이런 데모가 실제 프로덕션 환경과 괴리가 있다는 문제의식에서 출발하는 것으로 보이며, AutoRAG가 이 파이프라인을 자동으로 최적화하는 접근으로 소개된다. 구체적인 벡터 DB 제품명, 임베딩 모델, 성능 수치는 발췌문에 포함되어 있지 않다. 본 요약은 원문 기사를 가져오지 못해 제목과 발췌문만을 근거로 작성되었다.",
+      "summaryEn": "This Red Hat blog post discusses \"AutoRAG,\" a pipeline optimization approach within Red Hat OpenShift AI. The excerpt opens with a scenario familiar to AI/ML engineers: ingesting a clean PDF into a prototype, building a vector database index with standard tutorial code, asking a simple question, and getting a pristine answer that gets the project greenlit. The piece appears to be setting up a contrast between that clean demo and real production RAG pipelines, with AutoRAG introduced as a way to automatically optimize the pipeline. Specific vector database products, embedding models, or performance numbers are not included in the excerpt. This summary is based only on the title and excerpt, as the original article could not be fetched.",
+      "insightKo": "데모 수준의 RAG 파이프라인은 실제 프로덕션 데이터 다양성에서 성능이 저하되기 쉬우므로, 배포 전 파이프라인 자동 튜닝/평가 단계를 인프라에 포함시키는 것이 중요하다.",
+      "insightEn": "Since demo-level RAG pipelines often degrade against real production data diversity, it's important to build automated pipeline tuning/evaluation into the infrastructure before deployment."
     },
     {
       "source": "Datadog",
@@ -193,7 +285,11 @@
       "title": "Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server",
       "link": "https://www.datadoghq.com/blog/datadog-code-execution/",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "Use the Code Execution toolset in the Datadog MCP Server to help AI agents run multisignal investigations with fewer tool calls and less model context."
+      "excerpt": "Use the Code Execution toolset in the Datadog MCP Server to help AI agents run multisignal investigations with fewer tool calls and less model context.",
+      "summaryKo": "Datadog MCP 서버의 \"Code Execution\" 기능은 AI 에이전트가 샌드박스 처리된 JavaScript 코드를 실행해 옵저버빌리티 데이터를 조사할 수 있게 해주는 도구셋으로, execute_code와 search_datadog_sdk라는 두 개의 MCP 도구를 결합한다. 이를 통해 에이전트는 여러 Datadog API를 순차적인 개별 도구 호출 대신 프로그래밍 방식으로 한 번에 질의할 수 있다. 아키텍처상 생성된 코드는 호출자의 자격 증명에 접근할 수 없는 격리된 샌드박스에서 실행되며, dd.* 메서드를 호출하면 신뢰된 MCP 서비스가 호출자 권한과 Code Execution 정책을 적용해 대신 요청을 수행하고 응답을 정제해 반환한다. 코드는 다른 Datadog 통합과 동일한 클라이언트/요청 구조를 쓰는 Datadog TypeScript 클라이언트 SDK를 활용한다. GPT-5.6 Terra, GPT-5.6 Sol, Claude Sonnet 5, Claude Opus 4.8 등 4개 모델로 25개 옵저버빌리티 과제를 테스트한 결과, 정답 정확도가 7.7~21.8%포인트 향상되었고, 입력 토큰은 159.4k에서 42.8k로 73.2% 줄었으며, 툴 호출 횟수는 평균 4.08회에서 2.47회로 39.6% 감소했다. 전체 모델 평균 정확도는 15.6%포인트 상승해 89.6%에 도달했다.",
+      "summaryEn": "The Code Execution feature in the Datadog MCP Server is a toolset that lets AI agents run sandboxed JavaScript code to investigate observability data, combining two MCP tools: execute_code and search_datadog_sdk. This lets agents query multiple Datadog APIs programmatically in a single pass instead of making sequential individual tool calls. Architecturally, generated code runs in an isolated sandbox with no access to the caller's credentials; when the code invokes a dd.* method, the trusted MCP service makes the request on the caller's behalf, enforcing the caller's Datadog permissions and Code Execution policies before sanitizing and returning the response. The code relies on the Datadog TypeScript client SDK, using the same clients and request shapes as other Datadog integrations. Testing across 25 observability tasks with four models — GPT-5.6 Terra, GPT-5.6 Sol, Claude Sonnet 5, and Claude Opus 4.8 — showed answer correctness improving by 7.7 to 21.8 percentage points, input tokens dropping 73.2% (from 159.4k to 42.8k), and tool calls dropping 39.6% (from an average of 4.08 to 2.47). Averaged across all four models, correctness rose 15.6 percentage points to 89.6%.",
+      "insightKo": "이 방식이 검증된 대로라면 대규모 인시던트 대응이나 관측 파이프라인에서 MCP 기반 AI 에이전트를 쓸 때 토큰 비용과 지연을 크게 줄이면서 진단 정확도까지 높일 수 있다.",
+      "insightEn": "If these results hold, using MCP-based AI agents for large-scale incident response or observability pipelines could significantly cut token costs and latency while also improving diagnostic accuracy."
     },
     {
       "source": "Datadog",
@@ -201,7 +297,11 @@
       "title": "When users don’t click thumbs up: Inferring agent feedback from Datadog telemetry",
       "link": "https://www.datadoghq.com/blog/agent-feedback-classification-skill/",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "Learn how we used weak labeling to infer user satisfaction from Datadog telemetry when agent users don’t click thumbs up."
+      "excerpt": "Learn how we used weak labeling to infer user satisfaction from Datadog telemetry when agent users don’t click thumbs up.",
+      "summaryKo": "Datadog는 AI 에이전트 사용자가 명시적으로 좋아요/싫어요 버튼을 누르지 않는 문제를 해결하기 위해 약한 라벨링(weak labeling) 기법을 도입했다. Agent Observability 트레이스(채팅 전사 및 세션 정보), RUM(사용자 클릭·참여 시간), Audit Trail(대시보드·메트릭 변경 이력) 세 가지 원격 측정 데이터를 결합해 사용자 만족도를 추론한다. Bits Chat 세션을 수작업으로 라벨링한 골드 데이터셋으로 검증한 결과, 트레이스만 사용했을 때 정확도 78%, RUM을 더하면 80%, Audit Trail까지 더하면 82%까지 올랐다. 완벽하진 않지만 수동 검토가 필요한 트레이스를 찾아내는 첫 필터로 유용하다고 밝혔다. Datadog는 이 세션 분류 스킬을 오픈소스로 Datadog Labs GitHub 저장소에 공개했으며, 애플리케이션 전체·개별 트레이스·특정 세션 단위로 입력받을 수 있다. 저자는 Michael Bevilacqua-Linn과 Tanguy Renaudie이며 2026년 9월 22일 The Monitor 블로그에 게재됐다.",
+      "summaryEn": "Datadog tackled the problem that AI agent users rarely click explicit thumbs up/down feedback, using a weak-labeling approach to infer satisfaction instead. They combined three telemetry sources: Agent Observability traces (chat transcripts and session details), Real User Monitoring/RUM (clicks and engagement time), and Audit Trail (dashboard/metric changes made during a session). Validated against a hand-labeled golden dataset of Bits Chat sessions, accuracy rose from 78% with traces alone, to 80% adding RUM, to 82% adding Audit Trail. The authors call it imperfect but a useful first-pass filter that narrows down which traces are worth manual inspection. Datadog open-sourced the resulting session classification skill in its Datadog Labs GitHub repo, accepting whole applications, individual traces, or specific sessions as input. The post, by Michael Bevilacqua-Linn and Tanguy Renaudie, was published September 22, 2026 on Datadog's The Monitor blog.",
+      "insightKo": "명시적 피드백 없이도 기존 관측 데이터(트레이스, RUM, 감사 로그)를 조합해 82% 정확도로 에이전트 만족도를 추정할 수 있다는 점은, 운영팀이 별도 피드백 UI 없이도 AI 에이전트 품질 저하를 조기에 탐지할 수 있는 관측 가능성 확장 방법을 제시한다.",
+      "insightEn": "Reaching 82% inference accuracy on agent satisfaction from existing traces, RUM, and audit logs alone gives ops teams a way to surface AI agent quality regressions without building a separate feedback UI."
     },
     {
       "source": "GitLab",
@@ -209,7 +309,11 @@
       "title": "How to design GitLab for enterprise scale",
       "link": "https://about.gitlab.com/blog/how-to-design-gitlab-for-enterprise-scale/",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "At enterprise scale, even small architecture choices can have outsized consequences. A deployment that works for a handful of teams can become a constraint once thousands of developers, repositories, and pipelines depend on it."
+      "excerpt": "At enterprise scale, even small architecture choices can have outsized consequences. A deployment that works for a handful of teams can become a constraint once thousands of developers, repositories, and pipelines depend on it.",
+      "summaryKo": "이 글은 GitLab을 대규모 엔터프라이즈 환경에 맞게 설계할 때 고려해야 할 아키텍처 선택을 다룬다. 소수 팀에서는 문제없이 동작하던 배포 구성이 있다고 전제한다. 그러나 수천 명의 개발자, 저장소, 파이프라인이 의존하는 규모가 되면 그 구성이 병목이나 제약으로 작용할 수 있다는 문제의식에서 출발한다. 즉, 초기에는 사소해 보이는 아키텍처 결정이 조직이 커질수록 되돌리기 어려운 영향을 미친다는 점을 강조하는 내용이다. (이 요약은 원문 기사를 직접 확인하지 못하고 제목과 요약문(excerpt)만을 근거로 작성되었다.)",
+      "summaryEn": "This post discusses architectural choices for scaling GitLab in enterprise environments. It presumes a deployment setup that works fine for a handful of teams. Once thousands of developers, repositories, and pipelines depend on that same setup, though, the piece frames it as becoming a constraint. It emphasizes that seemingly small architecture decisions made early can have outsized, hard-to-reverse consequences as an organization grows. (This summary is based on the title and excerpt only, as the original article could not be fetched.)",
+      "insightKo": "엔터프라이즈 규모로 성장하기 전에 배포 아키텍처를 재검토하지 않으면, 이후 대규모 마이그레이션 없이는 되돌리기 어려운 구조적 제약이 쌓일 수 있다.",
+      "insightEn": "Without revisiting deployment architecture before scaling, teams risk locking in structural constraints that later require costly re-platforming to fix."
     },
     {
       "source": "GitLab",
@@ -217,7 +321,11 @@
       "title": "How GitLab reduced code-per-agentic-flow ratio by 45%",
       "link": "https://about.gitlab.com/blog/how-gitlab-reduced-code-per-agentic-flow-ratio/",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "GitLab Duo Agent Platform orchestrates and automates complex tasks through agentic flows. A key part of the platform is the Flow Registry, a declarative configuration framework, built from reusable components, that compiles YAML into fully functional LangGraph flows."
+      "excerpt": "GitLab Duo Agent Platform orchestrates and automates complex tasks through agentic flows. A key part of the platform is the Flow Registry, a declarative configuration framework, built from reusable components, that compiles YAML into fully functional LangGraph flows.",
+      "summaryKo": "GitLab은 Duo Agent Platform에서 에이전틱 플로우 하나를 만드는 데 필요한 코드량(code-per-agentic-flow ratio)을 Flow Registry 도입으로 45% 줄였다. 기존에는 개발자가 LangGraph 기반 Python 그래프를 직접 작성했는데, 플로우당 450줄 이상이 필요했고 테스트와 재사용이 어려웠다. Flow Registry는 선언적 YAML 설정을 컴파일해 완전한 LangGraph 플로우로 변환하는 프레임워크다. 재사용 가능한 에이전트 구성요소인 Components, 멀티 에이전트 오케스트레이션을 담당하는 Routers, 공유 상태/컨텍스트 구조라는 세 축으로 구성된다. 이를 통해 AI 엔지니어링 관심사와 플랫폼 구현을 분리했고, 약 7,000명이 참가한 해커톤에서 참가자들이 LangGraph 저수준 코드를 건드리지 않고도 600개 이상의 에이전트·플로우를 만들 수 있었다.",
+      "summaryEn": "GitLab cut the amount of code needed per agentic flow on its Duo Agent Platform by 45% by introducing Flow Registry. Previously, engineers hand-wrote LangGraph-based Python graphs that required 450+ lines per flow and were hard to test or reuse. Flow Registry is a declarative framework that compiles YAML configuration into fully functional LangGraph flows. It is built on three pillars: Components (reusable agent primitives), Routers (multi-agent orchestration), and a shared state/context structure. This decoupled AI engineering concerns from platform implementation, and let nearly 7,000 hackathon participants build over 600 agents and flows without touching low-level LangGraph code.",
+      "insightKo": "선언적 YAML로 에이전트 플로우를 컴파일하는 구조는 LangGraph 기반 에이전트 개발의 진입 장벽을 낮춰, 플랫폼 팀이 아닌 일반 엔지니어도 빠르게 자동화 플로우를 만들고 유지보수할 수 있게 한다.",
+      "insightEn": "Compiling agent flows from declarative YAML lowers the barrier to LangGraph-based agent development, letting non-platform engineers build and maintain automation flows without deep framework expertise."
     },
     {
       "source": "Stripe",
@@ -225,7 +333,11 @@
       "title": "New trends in global card fraud: How 3D Secure and regional mandates are affecting risk",
       "link": "https://stripe.com/blog/new-trends-in-global-card-fraud-how-3d-secure-and-regional-mandates-are-affecting-risk",
       "date": "2026-09-22T00:00:00.000Z",
-      "excerpt": "We analyzed billions of transactions on Stripe from January 2022 to March 2026 to understand how card fraud patterns differ by region and country, what's driving those differences, and how businesses can respond."
+      "excerpt": "We analyzed billions of transactions on Stripe from January 2022 to March 2026 to understand how card fraud patterns differ by region and country, what's driving those differences, and how businesses can respond.",
+      "summaryKo": "Stripe는 2022년 1월부터 2026년 3월까지 자사 플랫폼의 수십억 건 거래를 분석해 지역별 카드 사기 추세를 조사했다. 아시아태평양(APAC) 지역은 다수 국가가 온라인 카드 결제에 3D Secure(3DS) 인증을 의무화하면서 2022~2025년 가장 꾸준한 사기율 감소를 보였고, 2026년 처음으로 전 지역 중 가장 낮은 카드 사기율을 기록했다. 말레이시아는 2022~2025년 사기율이 74% 감소해 APAC 내 최대 감소폭을 보였고, 일본은 2025년 4월 3DS 의무화 이후 2025년 분쟁(디스퓨트)율이 전년 동기 대비 30% 이상 낮아졌다. 유럽은 2022~2025년 사기율이 21% 감소했는데, 프랑스는 40%, 영국은 27% 줄었다. 반면 라틴아메리카는 2025년 기준 카드 사기율이 EMEA(유럽·중동·아프리카)보다 160% 높았으며, 현금 중심 경제로 사기 탐지 데이터가 부족하고 소비자에게 유리한 분쟁 처리 규정이 원인으로 지목됐다.",
+      "summaryEn": "Stripe analyzed billions of transactions on its platform from January 2022 to March 2026 to study regional card fraud trends. Asia-Pacific saw the most consistent decline in fraud rates from 2022 to 2025 as multiple markets mandated 3D Secure (3DS) for online card payments, and by 2026 it had the lowest card fraud rate of any region for the first time. Malaysia posted the region's biggest drop, a 74% decrease in fraud rates from 2022 to 2025, while Japan's April 2025 3DS mandate cut 2025 dispute rates by more than 30% year-over-year. Europe's fraud rates fell 21% over 2022-2025, with France down 40% and Great Britain down 27%. Latin America, by contrast, had card fraud rates 160% higher than EMEA in 2025, which Stripe attributes to a cash-heavy economy that limits fraud-detection data and to dispute rules that favor cardholders.",
+      "insightKo": "3D Secure 의무화가 실제로 사기율과 분쟁율을 30~70%대까지 낮춘 사례는, 결제 인프라를 운영하는 팀이 지역별 규제 요구사항에 맞춰 3DS 적용 전략을 선제적으로 조정할 근거를 제공한다.",
+      "insightEn": "The measured 30-70%+ drops in fraud and dispute rates tied to 3DS mandates give payments infrastructure teams concrete evidence to prioritize region-specific 3DS rollout ahead of regulatory deadlines."
     },
     {
       "source": "Grafana",
@@ -233,7 +345,11 @@
       "title": "Grafana Alerting: Scale alert routing without scaling complexity using multiple notification policies",
       "link": "https://grafana.com/blog/grafana-alerting-scale-alert-routing-without-scaling-complexity-using-multiple-notification-policies/",
       "date": "2026-09-21T18:45:23.000Z",
-      "excerpt": "Alert routing often starts simple. A team creates a few contact points, adds some label matchers, and builds a notification policy tree that sends each alert to the right destination."
+      "excerpt": "Alert routing often starts simple. A team creates a few contact points, adds some label matchers, and builds a notification policy tree that sends each alert to the right destination.",
+      "summaryKo": "Grafana는 알림 라우팅이 커지면서 발생하는 복잡성 문제를 해결하기 위해 다중 알림 정책(multiple notification policies) 기능을 내놨다. 기존에는 팀이 늘어날수록 모든 라우팅 로직이 하나의 정책 트리 안에 들어가야 했고, 정책을 수정하려면 트리 전체를 건드려야 했으며 공유 설정에 대한 광범위한 접근 권한이 필요했다. 새 기능은 전역 라우팅 구성을 이름이 붙은 여러 개의 작은 정책 트리로 분리하며, 각 정책 트리는 자체 루트 정책과 하위 라우트를 가진다. 이 기능은 Grafana 13.1에서 alertingMultiplePolicies 기능 토글로 처음 도입됐고, Grafana 13.2에서 정식 출시(GA)됐다. 팀은 이제 알림 규칙을 특정 정책에 직접 연결하고, UI·API·Terraform을 통해 각 정책을 독립적으로 관리할 수 있으며, 정책 단위로 역할 기반 접근 제어(RBAC)를 적용할 수 있다.",
+      "summaryEn": "Grafana addressed the growing complexity of alert routing as organizations scale by introducing multiple notification policies. Previously, every team's routing logic had to live inside a single shared policy tree, so any change touched the whole tree and required broad access to shared configuration. The new feature splits a global routing configuration into several smaller, named policy trees, each with its own root policy and child routes. It shipped behind the alertingMultiplePolicies feature toggle in Grafana 13.1 and became generally available in Grafana 13.2. Teams can now assign alert rules directly to a specific policy and manage each policy tree independently through the UI, API, or Terraform, with policy-level role-based access control.",
+      "insightKo": "정책 트리를 팀 단위로 분리하고 Terraform으로 관리할 수 있게 되면서, 대규모 조직에서도 공유 알림 설정 하나가 실수로 망가지는 위험 없이 팀별 온콜 라우팅을 독립적으로 운영할 수 있다.",
+      "insightEn": "Splitting policy trees per team and managing them via Terraform lets large organizations run independent on-call routing without one shared alerting config becoming a single point of accidental breakage."
     },
     {
       "source": "AWS Containers",
@@ -241,7 +357,11 @@
       "title": "How Ramp runs GPU AI workloads at scale with ECS Managed Instances",
       "link": "https://aws.amazon.com/blogs/containers/how-ramp-runs-gpu-ai-workloads-at-scale-with-ecs-managed-instances/",
       "date": "2026-09-21T18:41:27.000Z",
-      "excerpt": "Ramp runs GPU-powered AI inference continuously on Amazon ECS. This post walks through how Ramp's infrastructure team moved those GPU workloads onto Amazon ECS Managed Instances: the architecture pattern, Terraform implementation, and the lessons learned migrating 50 to 60 EC2 instances."
+      "excerpt": "Ramp runs GPU-powered AI inference continuously on Amazon ECS. This post walks through how Ramp's infrastructure team moved those GPU workloads onto Amazon ECS Managed Instances: the architecture pattern, Terraform implementation, and the lessons learned migrating 50 to 60 EC2 instances.",
+      "summaryKo": "핀테크 기업 Ramp는 거의 모든 서비스를 Amazon ECS에서 운영하며, 대부분의 워크로드는 AWS Fargate로 상태 없는(stateless) API 서비스와 워커를 처리하고 Terraform 기반 IaC와도 깔끔하게 통합돼 있었다. 그러나 GPU 기반 AI 추론 서비스를 처음 구축할 당시 Fargate가 GPU 인스턴스를 지원하지 않아, 직접 EC2 플릿을 프로비저닝·관리해야 하는 전통적인 'ECS on EC2' 방식을 택할 수밖에 없었다. 이 구성을 위해 Terraform 코드는 EC2 오토스케일링 그룹(ASG)과 인스턴스 타입·AMI·유저 데이터를 지정한 런치 템플릿을 생성했다. 또한 해당 ASG를 기반으로 한 ECS 용량 공급자(capacity provider), 적절한 IAM 권한을 가진 EC2 인스턴스 프로파일, GPU 메트릭 수집을 위해 CloudWatch 에이전트(NVIDIA SMI 기반)를 구성하는 유저 데이터 스크립트도 함께 만들었다. 이 글은 Ramp가 이 구조를 Amazon ECS Managed Instances로 전환하며 겪은 아키텍처 변화와 Terraform 구현, 그리고 50~60대 규모의 EC2 인스턴스를 마이그레이션하며 얻은 교훈을 다룬다.",
+      "summaryEn": "Fintech company Ramp runs nearly all of its services on Amazon ECS, relying mostly on AWS Fargate to handle stateless API services and workers, which integrates cleanly with their Terraform-based infrastructure as code. But when Ramp first built its GPU-backed AI inference services, Fargate didn't support GPU instances, forcing them into the classic 'ECS on EC2' pattern where they had to provision and manage their own EC2 fleet. For each GPU workload, their Terraform code created an EC2 Auto Scaling group and a launch template specifying instance type, AMI, and user data. They also built an ECS capacity provider backed by that ASG, an EC2 instance profile with the needed IAM permissions, and user data scripts configuring the CloudWatch agent for GPU metrics via NVIDIA SMI. The post covers how Ramp's infrastructure team migrated that setup to Amazon ECS Managed Instances, including the architecture pattern, Terraform implementation, and lessons learned moving roughly 50 to 60 EC2 instances.",
+      "insightKo": "ECS Managed Instances로 전환하면 GPU 워크로드에서도 EC2 플릿을 직접 관리하지 않고 Fargate 수준의 운영 편의성을 얻을 수 있어, GPU 인프라 운영 부담과 IaC 복잡도를 동시에 줄일 수 있다.",
+      "insightEn": "Moving to ECS Managed Instances lets teams get Fargate-like operational simplicity for GPU workloads without hand-managing an EC2 fleet, cutting both operational burden and IaC complexity for GPU infrastructure."
     },
     {
       "source": "Kubernetes",
@@ -249,7 +369,11 @@
       "title": "Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)",
       "link": "https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/",
       "date": "2026-09-21T18:30:00.000Z",
-      "excerpt": "Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default)."
+      "excerpt": "Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default).",
+      "summaryKo": "쿠버네티스 v1.37에서 PersistentVolumeClaimUnusedSinceTime 기능 게이트가 베타로 승격되며 기본으로 활성화됐다(KEP-5541). 이 기능은 PVC Protection 컨트롤러가 각 PersistentVolumeClaim에 Unused 컨디션을 추가해, 별도의 커스텀 툴링이나 상호 참조 작업 없이도 현재 실행 중인 파드가 해당 PVC를 참조하고 있는지 바로 확인할 수 있게 해준다. 이 컨디션의 lastTransitionTime 필드는 PVC가 유휴 상태가 된 정확한 시점을 기록해, '30일 이상 사용되지 않은 PVC 찾기' 같은 질의를 가능하게 한다. 대규모 클러스터에서는 사용자가 PVC를 만든 뒤 연결된 파드만 삭제하고 스토리지는 정리하지 않는 경우가 흔한데, 쿠버네티스는 데이터 유실 방지를 위해 파드가 삭제돼도 PVC를 자동으로 지우지 않기 때문에 이런 미사용 PVC가 쌓여 스토리지 용량과 클라우드 비용을 조용히 갉아먹는 문제가 있었다. 이 기능은 v1.36에서 알파로 도입돼 기능 게이트를 수동으로 켜야 했지만, v1.37 베타부터는 기본 활성화라 별도 작업 없이 바로 쓸 수 있다.",
+      "summaryEn": "Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate (KEP-5541) to Beta, enabled by default. With it, the PVC protection controller adds an Unused condition to every PersistentVolumeClaim, so you can tell whether any running pod currently references it without custom tooling or manual cross-referencing. The condition's lastTransitionTime field records exactly when a PVC became idle, enabling queries like finding PVCs that have gone unused for more than 30 days. The feature targets a common large-cluster problem: users create a PVC, later delete the pod that used it, but never clean up the storage, because Kubernetes deliberately doesn't auto-delete PVCs when their pods go away (to avoid accidental data loss) — so orphaned PVCs silently accumulate and drive up storage and cloud costs. The feature debuted as Alpha in v1.36, requiring the gate to be enabled explicitly; as of the v1.37 Beta it's on by default with no action needed.",
+      "insightKo": "PVC별 미사용 시작 시점이 API로 노출되면서, 클러스터 운영자는 별도 스크립트 없이도 오래 방치된 스토리지를 자동으로 찾아 정리하는 비용 절감 파이프라인을 표준 API 위에 구축할 수 있다.",
+      "insightEn": "With per-PVC idle-since timestamps now exposed via the API, cluster operators can build standardized cost-cleanup automation for abandoned storage without maintaining custom cross-referencing scripts."
     },
     {
       "source": "Meta Engineering",
@@ -257,7 +381,11 @@
       "title": "Open-Sourcing Rebalancer: A Generic, High-Performance Library for Solving Assignment Problems",
       "link": "https://engineering.fb.com/2026/09/21/open-source/rebalancer-generic-high-performance-library-assignment-problems/",
       "date": "2026-09-21T16:00:37.000Z",
-      "excerpt": "We’re open-sourcing Rebalancer, the assignment-problem solver that has been used to solve resource allocation problems throughout Meta for over nine years. Rebalancer separates several related concerns: how to specify an assignment problem, how to store it efficiently in memory, how to solve it, and how to debug it."
+      "excerpt": "We’re open-sourcing Rebalancer, the assignment-problem solver that has been used to solve resource allocation problems throughout Meta for over nine years. Rebalancer separates several related concerns: how to specify an assignment problem, how to store it efficiently in memory, how to solve it, and how to debug it.",
+      "summaryKo": "Meta는 사내에서 9년 넘게 자원 할당 문제를 풀어온 배정 문제(assignment problem) 솔버 Rebalancer를 Apache 2.0 라이선스로 오픈소스화했다. Rebalancer는 N개의 객체를 M개의 컨테이너에 복잡한 제약 조건을 만족시키면서 배치하는 문제를 위한 도메인 특화 언어(DSL)로, 문제를 어떻게 명시할지, 메모리에 어떻게 효율적으로 저장할지, 어떻게 풀지, 어떻게 디버깅할지를 서로 분리해 설계했다. C++/Python 라이브러리로 제공되며 객체·컨테이너·차원·목표·제약을 이름 붙여 정의하는 명세형 DSL과 대규모 인스턴스까지 확장 가능한 로컬 서치 엔진을 갖추고 있고, 동일한 모델을 HiGHS·Gurobi·FICO Xpress 같은 MIP(혼합 정수 계획법) 백엔드로도 그대로 풀 수 있다. Meta 내부에서는 회의실 배정 시 이동 거리를 최소화하거나, 지원 티켓을 엔지니어에게 배정하거나, 자리 배치를 최적화하는 등 인프라 외적인 문제에도 폭넓게 쓰여 왔다. 소스는 GitHub의 facebook/rebalancer 저장소에서 공개됐다.",
+      "summaryEn": "Meta open-sourced Rebalancer, its assignment-problem solver that has been running internal resource-allocation workloads for more than nine years, under the Apache 2.0 license. Rebalancer is a domain-specific language for assignment problems — placing N objects into M containers while satisfying hard constraints and optimizing an objective — and it deliberately separates how a problem is specified, how it's stored efficiently in memory, how it's solved, and how it's debugged. It's a C++/Python library with a named-spec DSL (objects, containers, dimensions, goals, constraints) plus a local-search engine that scales to large instances, and the same model can be re-solved with a MIP backend such as HiGHS, Gurobi, or FICO Xpress. Inside Meta it's been applied well beyond infrastructure, including assigning meetings to rooms to minimize travel time, routing support tickets to engineers, and optimizing desk placements. The code is available on GitHub under facebook/rebalancer.",
+      "insightKo": "같은 명세를 로컬 서치와 MIP 솔버(HiGHS/Gurobi 등) 양쪽으로 풀 수 있는 구조는, 운영팀이 노드-파드 배치나 작업 스케줄링처럼 클러스터 운영에서 흔한 배정 문제를 자체 최적화 로직을 새로 짜지 않고도 검증된 솔버 위에 얹어 풀 수 있게 해준다.",
+      "insightEn": "Being able to solve the same spec with either a local-search engine or MIP backends like HiGHS/Gurobi means ops teams can offload common cluster-operations assignment problems, such as node-to-pod placement or job scheduling, onto a proven solver instead of writing bespoke optimization logic."
     },
     {
       "source": "Google Cloud",
@@ -265,7 +393,11 @@
       "title": "Global AI routing with <1% overhead on multi-cluster GKE Inference Gateway",
       "link": "https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/",
       "date": "2026-09-21T16:00:00.000Z",
-      "excerpt": "Demand for AI infrastructure is at an all-time high. Global accelerator shortages mean engineering teams can rarely get all the compute they need from just one data center — capacity comes a cluster here, a cluster there, often an ocean apart."
+      "excerpt": "Demand for AI infrastructure is at an all-time high. Global accelerator shortages mean engineering teams can rarely get all the compute they need from just one data center — capacity comes a cluster here, a cluster there, often an ocean apart.",
+      "summaryKo": "구글 클라우드가 지리적으로 분산된 GPU/TPU 용량을 하나의 엔드포인트로 묶는 멀티 클러스터 GKE Inference Gateway를 공개했다. us-east5, us-west8, europe-west4 세 개 클러스터에 단일 글로벌 가상 IP로 진입하며, 각 클러스터의 Endpoint Picker Proxy(EPP)가 KV 캐시 사용률을 측정해 LLM-d Router에 전달하고 이 값이 40%를 넘으면 다른 클러스터로 트래픽을 넘기는 방식이다. SGLang으로 서빙되는 MoE(전문가 혼합) 모델과 10만~80만 토큰 이상의 긴 컨텍스트 에이전트 워크로드를 대상으로 1만 7천 개 노드 규모에서 벤치마크한 결과, 클러스터를 1개에서 3개로 늘리자 요청 처리량이 초당 0.72건에서 2.10건으로, 토큰 처리량이 초당 2,898개에서 8,457개로 거의 선형으로 늘었고 성공률은 99.87~99.95% 범위를 유지했다. 라우팅에 따른 오버헤드는 1% 미만으로, 로컬 클러스터에 직접 호출할 때 처리량의 99.5% 수준을 유지한다. Kubernetes LeaderWorkerSet(LWS)와 연동해 분산 LLM 엔진의 마스터-워커 토폴로지에서 rank-0 파드만 API를 서빙하는 구조도 그대로 존중한다.",
+      "summaryEn": "Google Cloud unveiled a multi-cluster GKE Inference Gateway that pools geographically dispersed GPU/TPU capacity behind a single global virtual IP, spanning three clusters (us-east5, us-west8, europe-west4). Each cluster's Endpoint Picker Proxy (EPP) reports KV-cache utilization to the LLM-d Router, and traffic spills over to another cluster once a cluster's KV-cache usage crosses 40%. In a benchmark on roughly 17,000 nodes serving an SGLang-based MoE model with agentic workloads using 100k-800k+ token contexts, scaling from one to three clusters raised request throughput from 0.72 to 2.10 req/s and token throughput from 2,898 to 8,457 tok/s, with success rates holding between 99.87% and 99.95%. Routing overhead stayed under 1%, delivering 99.5% of the throughput of a direct call to a local cluster. The gateway also integrates with Kubernetes LeaderWorkerSet (LWS) to respect the master-worker topology of distributed LLM serving engines, where only rank-0 pods serve the API.",
+      "insightKo": "KV 캐시 사용률 기반의 글로벌 라우팅으로 GPU/TPU 확보 경쟁이 심한 상황에서도 여러 리전의 파편화된 가속기 용량을 1% 미만 오버헤드로 통합해 활용할 수 있게 됐다.",
+      "insightEn": "KV-cache-aware global routing lets teams pool fragmented, multi-region accelerator capacity with under 1% overhead, which matters when GPU/TPU availability is scarce."
     },
     {
       "source": "Google Cloud",
@@ -273,7 +405,11 @@
       "title": "Maximizing Apache Spark availability: Mitigating compute stockouts with flexible VMs and other best practices",
       "link": "https://cloud.google.com/blog/products/data-analytics/maximize-apache-spark-availability-with-flexible-vms/",
       "date": "2026-09-21T16:00:00.000Z",
-      "excerpt": "The surge in AI development has created unprecedented demand for compute capacity around the globe. This can have negative implications for data processing and pipelines with Apache Spark."
+      "excerpt": "The surge in AI development has created unprecedented demand for compute capacity around the globe. This can have negative implications for data processing and pipelines with Apache Spark.",
+      "summaryKo": "구글 클라우드가 Apache Spark용 관리형 서비스(Dataproc)에서 GPU/AI 수요 급증으로 인한 컴퓨트 재고 부족(stockout) 문제를 완화하는 방법으로 flexible VM을 소개했다. `gcloud dataproc clusters create`에 `--worker-instance-selection`과 `--master-instance-selection` 플래그로 머신 패밀리를 순위(rank)별로 나열할 수 있는데, 예시 명령에서는 rank 0에 n2d-standard-16/n2-standard-16, rank 1에 n4-standard-16/n4d-standard-16, rank 2에 c4-standard-16/c3-standard-22, rank 3에 e2-standard-16을 지정하고 각 랭크마다 pd-standard, hyperdisk-balanced, pd-ssd 등 서로 다른 디스크 타입을 매칭한다. 권장 사항은 rank 0에 최소 2개 이상의 머신 패밀리를 넣어 특정 세대가 품절돼도 클러스터 생성이 막히지 않게 하는 것이며, N4/C4 같은 신세대 인스턴스에는 Hyperdisk Balanced 스토리지를 쓰라고 안내한다. 추가로 AutoZone을 통한 자동 영역 선택, 4/8/16코어 같은 작은 머신 셰이프 사용, 오토스케일링, 최소 프라이머리 워커 수만 지정해 부분적으로라도 클러스터를 띄우는 전략, us-central1 같은 고수요 리전 회피 등을 베스트 프랙티스로 제시한다. 비용 측면에서는 리소스 기반 확약 사용 할인(CUD) 대신 여러 VM 패밀리·리전에 걸쳐 적용되는 지출 기반(compute flexible) CUD를 쓰라고 권고하며, flexible VM 목록에 있는 모든 머신·디스크 타입에 대해 충분한 쿼터를 확보해야 한다는 점도 주의사항으로 언급된다.",
+      "summaryEn": "Google Cloud introduced flexible VMs for its Managed Service for Apache Spark (Dataproc) to mitigate compute stockouts caused by surging AI-driven demand. Using the `--worker-instance-selection` and `--master-instance-selection` flags on `gcloud dataproc clusters create`, operators can list ranked machine-family fallbacks — the sample config sets rank 0 to n2d-standard-16/n2-standard-16, rank 1 to n4-standard-16/n4d-standard-16, rank 2 to c4-standard-16/c3-standard-22, and rank 3 to e2-standard-16, each paired with a matching disk type (pd-standard, hyperdisk-balanced, or pd-ssd). Google recommends putting at least two machine families at rank 0 so a single generation's shortage doesn't block cluster creation, and pairs newer N4/C4 instances with Hyperdisk Balanced storage for predictable performance. Complementary best practices include AutoZone for automatic zone selection, using smaller 4/8/16-core shapes, autoscaling for bursty workloads, starting with a minimal primary-worker count so clusters can still launch under constrained capacity, and steering clear of high-demand regions like us-central1. On the cost side, the post advises using spend-based 'compute flexible' CUDs instead of resource-based ones since they apply across multiple VM families and regions, and warns that sufficient quota must exist for every machine and disk type listed in the flexible VM configuration.",
+      "insightKo": "특정 머신 세대에 하드코딩된 클러스터 설정은 GPU/AI 붐으로 인한 재고 부족의 단일 장애점이 되므로, 랭크 기반 flexible VM과 지출 기반 CUD로 전환해두는 것이 배치 파이프라인의 가용성과 비용 예측성을 동시에 지키는 길이다.",
+      "insightEn": "Hardcoding a Dataproc cluster to one machine generation is a single point of failure during AI-driven stockouts, so switching to ranked flexible VM fallbacks plus spend-based CUDs protects both pipeline availability and cost predictability."
     },
     {
       "source": "Google Cloud",
@@ -281,7 +417,11 @@
       "title": "Scale your AI workloads faster and more efficiently with GKE Pod snapshots",
       "link": "https://cloud.google.com/blog/products/containers-kubernetes/gke-pod-snapshots/",
       "date": "2026-09-21T16:00:00.000Z",
-      "excerpt": "When running modern AI workloads, there’s often a conflict between performance and cost. Workloads like large language models (LLMs) load massive files, and may serve thousands of AI agents that need to execute code instantly."
+      "excerpt": "When running modern AI workloads, there’s often a conflict between performance and cost. Workloads like large language models (LLMs) load massive files, and may serve thousands of AI agents that need to execute code instantly.",
+      "summaryKo": "구글 클라우드가 GKE에서 워크로드의 실행 상태(CPU·GPU 메모리 포함)를 스냅샷으로 저장했다가 그대로 복원하는 GKE Pod snapshots 기능을 소개했다. 모델 로딩과 초기화를 한 번만 수행한 뒤 그 상태를 고성능 Cloud Storage에 저장해두면, 새 레플리카는 초기화 과정을 건너뛰고 스냅샷에서 바로 복원돼 시작 지연이 최대 89%까지 줄어든다고 밝혔다. 구체적으로 700억(70B) 파라미터 모델은 37초, 80억(8B) 파라미터 모델은 15초 만에 로드되며, 고객 사례인 Retake의 경우 시작 지연이 8초까지 단축됐다. 이 기능은 Pod snapshot CRD로 정의하며 어떤 파드를 스냅샷할지, 저장 위치, 보존 기간, 복원 시 기본 동작(최신 스냅샷 또는 특정 스냅샷 지정) 등을 정책으로 제어한다. AI 추론에서 레플리카마다 모델 가중치를 개별 다운로드해야 하는 선형 확장 페널티를 없애 온디맨드 오토스케일링을 가능케 하고, LLM이 생성한 신뢰할 수 없는 코드를 실행하는 에이전틱 샌드박스에서도 유휴 시 스냅샷 후 일시 중단하고 필요 시 거의 즉시 재개하는 용도로 쓸 수 있다.",
+      "summaryEn": "Google Cloud introduced GKE Pod snapshots, which capture a workload's running state — including both CPU and GPU memory — and restore it on demand instead of re-running full initialization. After model loading happens once and the fully loaded state is persisted to high-throughput Cloud Storage, new replicas restore directly from the snapshot, cutting startup latency by up to 89% according to the post. Concretely, a 70B-parameter model loads in 37 seconds and an 8B-parameter model in 15 seconds from a snapshot, and customer Retake reportedly achieved an 8-second startup. The feature is configured through Pod snapshot CRDs that control which Pods get snapshotted, where the data is stored, retention/lifecycle, and restore behavior (defaulting to the latest snapshot or an explicitly chosen one). It removes the linear-scaling penalty where every new AI-inference replica must independently download model weights, enabling on-demand autoscaling instead of overprovisioning, and it also lets agentic sandboxes running untrusted LLM-generated code suspend when idle and resume almost instantly.",
+      "insightKo": "모델 가중치 로딩이 GPU 오토스케일링의 병목이었던 만큼, CPU·GPU 메모리 상태를 통째로 스냅샷·복원하는 이 기능은 유휴 GPU 과잉 프로비저닝을 줄이면서도 콜드 스타트 지연(최대 89%, 70B 모델 37초)을 크게 낮춰 추론 비용과 응답성을 동시에 개선할 수 있다.",
+      "insightEn": "Since model-weight loading has been the bottleneck for GPU autoscaling, snapshotting and restoring full CPU/GPU memory state cuts cold-start latency by up to 89% (37s for a 70B model) while reducing the need to overprovision idle GPUs for inference."
     },
     {
       "source": "Dropbox",
@@ -289,7 +429,11 @@
       "title": "Introducing Our New Dropbox API Documentation",
       "link": "https://dropbox.tech/developers/new-dropbox-api-documentation",
       "date": "2026-09-21T14:30:00.000Z",
-      "excerpt": "Learn about the newly launched version of the Dropbox API documentation and its modern design and features."
+      "excerpt": "Learn about the newly launched version of the Dropbox API documentation and its modern design and features.",
+      "summaryKo": "드롭박스가 2026년 9월 21일 새로 개편한 API 문서를 docs.dropboxapi.com에 공개했다. 새 문서는 브라우저에서 파라미터를 설정하고 실제 API를 호출해 응답을 바로 확인할 수 있는 인터랙티브 테스트 기능을 제공한다. 또한 엔드포인트·트러블슈팅·코드 예제에 대한 질문에 즉시 답해주는 내장 AI 어시스턴트도 포함한다. 아울러 MCP(Model Context Protocol)를 지원해 호환되는 AI 도구가 최신 Dropbox API 문서를 직접 참조할 수 있도록 했다. 이 발표는 Dropbox Developer Support Team 명의로 dropbox.tech 블로그에 게시됐다.",
+      "summaryEn": "Dropbox published a modernized API documentation site at docs.dropboxapi.com on September 21, 2026, announced by the Dropbox Developer Support Team on the dropbox.tech blog. The new docs let developers test endpoints interactively right in the browser — setting parameters, firing real API calls, and viewing live responses. They also embed an AI assistant that answers questions about endpoints, troubleshooting, and code examples on the spot. Additionally, the documentation supports MCP (Model Context Protocol), letting compatible AI tools connect and pull up-to-date Dropbox API reference material directly. The revamp touches both the interactive tooling and the underlying reference content itself.",
+      "insightKo": "인터랙티브 테스트와 MCP 연동을 갖춘 새 API 문서 덕분에 Dropbox 연동을 다루는 개발자와 AI 코딩 어시스턴트 모두 별도 Postman 설정이나 문서 재확인 없이 실제 응답을 즉시 검증할 수 있게 됐다.",
+      "insightEn": "With interactive testing and MCP support, both human developers and AI coding assistants integrating with Dropbox can verify real API responses on the spot without separate Postman setups or manual doc lookups."
     },
     {
       "source": "Cloudflare",
@@ -297,7 +441,11 @@
       "title": "Python Workers are now generally available",
       "link": "https://blog.cloudflare.com/python-workers-ga/",
       "date": "2026-09-21T13:00:00.000Z",
-      "excerpt": "Python Workers allow developers to run Python web frameworks and AI orchestration libraries natively in the Cloudflare Workers runtime. You can seamlessly integrate with Cloudflare's ecosystem including D1, R2, and Workers AI without writing any JavaScript glue code."
+      "excerpt": "Python Workers allow developers to run Python web frameworks and AI orchestration libraries natively in the Cloudflare Workers runtime. You can seamlessly integrate with Cloudflare's ecosystem including D1, R2, and Workers AI without writing any JavaScript glue code.",
+      "summaryKo": "클라우드플레어가 Python Workers를 정식 출시(GA)했다고 발표했다. Pyodide와 WebAssembly를 기반으로 Cloudflare Workers 런타임에서 Python 웹 프레임워크와 AI 오케스트레이션 라이브러리를 네이티브로 실행할 수 있게 한 것으로, 베타 기간 동안 이미 많은 개발자가 이를 활용해 애플리케이션을 구축해왔다고 밝혔다. GA 버전에서는 Python Workers가 D1, R2, Workers AI 등 Cloudflare Developer Platform 바인딩을 네이티브로 지원해 JavaScript 글루 코드 없이 이들 서비스와 바로 연동할 수 있다. 클라우드플레어는 TypeScript 예제가 있는 거의 모든 곳에 Python 코드 예제를 추가하는 등 제품 전반의 문서를 갱신했다. 앞으로는 성능과 메모리 효율을 개선하고 지원 패키지 범위를 더 넓힐 계획이라고 덧붙였다.",
+      "summaryEn": "Cloudflare announced that Python Workers are now generally available. The runtime is built on Pyodide and WebAssembly to run Python web frameworks and AI orchestration libraries natively inside Workers, and many developers were already building on it during the beta. With GA, Python Workers natively support Cloudflare Developer Platform bindings such as D1, R2, and Workers AI, so they integrate directly without JavaScript glue code. Cloudflare also updated documentation across its products to add Python code examples nearly everywhere a TypeScript example already existed. Looking ahead, Cloudflare says it plans to make Python Workers more performant and memory-efficient and to support a broader range of packages.",
+      "insightKo": "Python Workers GA로 데이터·AI 파이프라인을 이미 Python으로 짜둔 DevOps/데이터 엔지니어링 팀이 JS 변환 계층 없이 Cloudflare 엣지에서 D1·R2·Workers AI를 바로 오케스트레이션할 수 있게 됐지만, 성능·메모리 효율과 패키지 지원이 아직 개선 중이라는 점은 프로덕션 채택 전 검토가 필요하다.",
+      "insightEn": "Python Workers GA lets teams that already write data/AI pipelines in Python orchestrate D1, R2, and Workers AI directly at Cloudflare's edge without a JS translation layer, though ongoing work on performance, memory efficiency, and package support is worth checking before committing production workloads."
     },
     {
       "source": "Honeycomb",
@@ -305,7 +453,11 @@
       "title": "How Adaptive Tail Sampling Works in the OpenTelemetry Collector",
       "link": "https://www.honeycomb.io/blog/how-adaptive-tail-sampling-works",
       "date": "2026-09-21T13:00:00.000Z",
-      "excerpt": "A technical deep dive into Honeycomb's adaptive tail sampling processor for the OpenTelemetry Collector: how decisions get made, the samplers available, how thresholds compose with the rest of a sampling pipeline, performance benchmarks, deployment limitations, and how it compares to Refinery."
+      "excerpt": "A technical deep dive into Honeycomb's adaptive tail sampling processor for the OpenTelemetry Collector: how decisions get made, the samplers available, how thresholds compose with the rest of a sampling pipeline, performance benchmarks, deployment limitations, and how it compares to Refinery.",
+      "summaryKo": "허니컴이 자사의 데이터 기반 tail sampler인 Refinery에서 쌓은 수년간의 경험을 바탕으로 만든 adaptive tail sampling(적응형 테일 샘플링) 프로세서를 OpenTelemetry Collector에 기고했다고 소개하는 기술 블로그다. 이 프로세서는 트레이스의 완전한 컨텍스트를 확보하기 위해 스팬을 일정 시간 버퍼링하되, 루트 스팬 수신 직후 짧은 지연(기본값 2초, decision_delay)이 지나면 샘플링 여부를 결정하고, 결정이 끝내 나지 않은 트레이스에 대해서는 기본 30초의 trace_timeout을 안전망으로 둔다. 샘플링 전략으로는 특정 필드 조합(예: HTTP 상태 코드)의 발생 빈도에 따라 비율을 자동 조정하는 동적 샘플링, 에러 트레이스는 100% 샘플링하는 식의 규칙 기반 샘플링, 초당 스팬 수 상한을 두는 처리량 기반 샘플링을 지원한다고 알려져 있다. Collector의 기존 정적 규칙 기반 tail sampler나 확률적 샘플러가 갖던 경직성을 완화하는 것이 목표이며, 정식 Collector 배포판에 포함되기 전까지는 Honeycomb Collector Distribution을 통해 먼저 사용해볼 수 있다. 이 요약은 원문 페이지에 직접 접근하지 못해 제목·요약과 동일 주제를 다루는 Honeycomb의 관련 문서를 바탕으로 작성됐다.",
+      "summaryEn": "This Honeycomb engineering post explains an adaptive tail sampling processor the company contributed to the OpenTelemetry Collector, built on years of experience running its own tail sampler, Refinery. The processor buffers spans briefly to preserve full trace context, but makes its sampling decision shortly after the root span arrives (a default 2-second decision_delay), with a default 30-second trace_timeout acting as a safety net for traces that never get a decision. It reportedly supports three sampling strategies: dynamic sampling that auto-adjusts rates based on how often specific field combinations (e.g., HTTP status code) occur, rules-based sampling (e.g., keeping 100% of error traces), and throughput-based sampling that caps spans per second. The goal is to move past the rigidity of the Collector's existing static tail sampler and probabilistic sampler, and the processor is available now via the Honeycomb Collector Distribution ahead of landing in official Collector distributions. This summary is based on related Honeycomb documentation on the same feature since the original article page could not be directly accessed.",
+      "insightKo": "정적 규칙 대신 동적·규칙·처리량 기반 샘플링을 조합하고 루트 스팬 수신 후 2초 만에 결정을 내리는 구조라, 기존 OTel Collector의 고정 샘플링보다 데이터 볼륨과 비용을 낮추면서도 에러·이상 트레이스의 관측 가능성을 더 잘 지킬 수 있을 것으로 보인다.",
+      "insightEn": "By combining dynamic, rules-based, and throughput-based sampling with decisions made roughly 2 seconds after the root span arrives, this approach should cut trace volume and cost more intelligently than the Collector's static sampling while still preserving visibility into error and anomalous traces."
     },
     {
       "source": "Meta Engineering",
@@ -313,7 +465,11 @@
       "title": "Inside Petal: Building the World’s First Petabit-Class Transoceanic Subsea Cable",
       "link": "https://engineering.fb.com/2026/09/21/connectivity/petal-petabit-transoceanic-subsea-cable/",
       "date": "2026-09-21T12:00:00.000Z",
-      "excerpt": "Petal, the next step in Meta’s subsea innovation, will be the first subsea cable to deliver petabit capacity at transoceanic distances, connecting France and the United States over approximately 7,000 km (4,300 mi)."
+      "excerpt": "Petal, the next step in Meta’s subsea innovation, will be the first subsea cable to deliver petabit capacity at transoceanic distances, connecting France and the United States over approximately 7,000 km (4,300 mi).",
+      "summaryKo": "메타가 프랑스와 미국을 약 7,000km 거리로 잇는 세계 최초의 페타비트급 대양횡단 해저케이블 'Petal'을 공개했다. 완공 시 1페타비트/초(Pbps)의 용량을 제공하며, 이는 현재 최고 수준의 대양횡단 케이블 대비 두 배에 달하는 용량으로, 전력이나 물리적 인프라를 비례해서 늘리지 않고도 이를 달성한다는 점에서 대양횡단 해저케이블 역사상 세대당 최대 용량 증가라고 소개됐다. 기술적으로는 대양횡단 거리에 멀티코어 광섬유를 적용한 최초의 시스템으로, 48개 섬유쌍을 두 개의 코어(각각 24쌍)로 나눠 배치하는 2코어 광섬유 방식을 통해 1Pbps를 구현한다. 메타는 해저케이블 전문업체 NEC 및 스미토모전기공업(Sumitomo Electric Industries)과 파트너십을 맺어 케이블을 개발하며, 프랑스 대서양 연안 상륙 구간은 오렌지(Orange)가 지원한다. 서비스 개시 목표 시점은 2029년으로 알려졌다.",
+      "summaryEn": "Meta unveiled Petal, billed as the world's first petabit-class transoceanic subsea cable, connecting France and the United States over roughly 7,000 km (4,300 miles). Once complete it will deliver 1 petabit per second of capacity — twice that of today's best transoceanic cables — without a proportional increase in power or physical infrastructure, which Meta calls the largest single-generation capacity jump in transoceanic subsea cable history. Technically, Petal is the first system to deploy multi-core fiber at transoceanic distance, using 48 fiber pairs split across two cores (24 pairs each) to reach 1 Pbps. Meta is building the cable with subsea specialist NEC and Sumitomo Electric Industries, while Orange will support the landing on France's Atlantic coast. The cable is expected to enter service around 2029.",
+      "insightKo": "대양횡단 케이블에 처음 적용되는 멀티코어 광섬유로 전력·설비 증설 없이 용량을 두 배로 늘린다는 것은, 대규모 AI 트래픽 증가로 대륙 간 백본 용량이 병목이 되는 상황에서 향후 CDN·클라우드 리전 간 지연과 비용 구조에 영향을 줄 인프라 변화다.",
+      "insightEn": "Doubling transoceanic capacity via multi-core fiber without proportional power or infrastructure growth is a backbone-level shift that will matter for intercontinental latency and cost as AI-driven traffic keeps straining transatlantic bandwidth."
     },
     {
       "source": "토스",
@@ -321,7 +477,11 @@
       "title": "도메인 지식 없는 디자이너가 팀의 기준을 바꾼 방법",
       "link": "https://toss.tech/article/remittance_transfer",
       "date": "2026-09-21T10:15:00.000Z",
-      "excerpt": "은행 지식이 없던 디자이너가 규제가 가득한 도메인에서 어떻게 팀의 기준을 바꿨는지 이야기해 보려고 해요."
+      "excerpt": "은행 지식이 없던 디자이너가 규제가 가득한 도메인에서 어떻게 팀의 기준을 바꿨는지 이야기해 보려고 해요.",
+      "summaryKo": "이 글은 은행 관련 도메인 지식이 없던 디자이너가 토스의 규제가 많은 금융 도메인에 합류하며 겪은 경험을 다룬다. 발췌문에 따르면 이 디자이너는 도메인 전문성이 부족한 상태에서 팀의 의사결정 기준 자체를 바꾸는 데까지 이르렀다고 소개된다. 구체적인 프로젝트명이나 수치보다는 도메인 전문성이 부족한 상태에서 업무 기준을 세워나간 과정 자체에 초점을 맞춘 것으로 보인다. 다만 어떤 프로젝트에서 어떤 기준을 어떻게 바꿨는지에 대한 구체적 사례는 발췌문에 나와 있지 않다. 이 요약은 원문 페이지에 접근할 수 없어 제목과 발췌문만을 근거로 작성됐다.",
+      "summaryEn": "This Toss Tech blog post is a first-person account of a designer with no banking background joining Toss's heavily regulated financial domain. According to the excerpt, that designer went on to reshape the team's decision-making standards despite starting without domain expertise. Based on the title and excerpt, it appears to focus on the process of building domain judgment and team norms from scratch rather than reporting specific project names or figures. However, the excerpt does not specify which project or which standards were changed, or how. This summary is based only on the title and excerpt because the original article could not be fetched.",
+      "insightKo": "규제가 많은 금융 도메인에서는 기술 숙련도만큼 도메인 판단 기준을 조직에 내재화하는 과정이 중요하다는 점을 시사하지만, 구체적 사례를 확인하지 못해 클러스터 운영·비용·보안 측면에 대한 직접적 해석은 제한적이다.",
+      "insightEn": "The piece suggests that in a highly regulated financial domain, internalizing domain judgment across a team matters as much as raw technical skill, though without the original article's specifics, any direct implication for cluster operations, cost, or security is limited."
     },
     {
       "source": "Red Hat",
@@ -329,7 +489,11 @@
       "title": "Turning security complexity into useful intelligence: What’s new in Red Hat Lightspeed",
       "link": "https://www.redhat.com/en/blog/turning-security-complexity-useful-intelligence-whats-new-red-hat-lightspeed",
       "date": "2026-09-21T00:00:00.000Z",
-      "excerpt": "In a post-Mythos world, IT teams face a mounting crisis. Many are doing more with the same staff, and security work hasn’t gotten simpler."
+      "excerpt": "In a post-Mythos world, IT teams face a mounting crisis. Many are doing more with the same staff, and security work hasn’t gotten simpler.",
+      "summaryKo": "이 글은 Red Hat의 AI 어시스턴트 제품군인 Lightspeed에 새로 추가된 기능을 다룬다. 제목에서 언급하듯 핵심 문제의식은 보안 업무의 복잡성을 실행 가능한 인텔리전스로 바꾸는 것이다. 배경으로는 'post-Mythos' 시대에 IT 팀이 인력 증원 없이 더 많은 업무를 처리해야 하는 상황이 제시된다. 그럼에도 보안 작업의 난이도는 줄어들지 않았다고 지적한다. 이 요약은 원문을 직접 가져오지 못해 제목과 발췌문만을 근거로 작성되었다.",
+      "summaryEn": "This post covers new capabilities added to Red Hat Lightspeed, the company's AI assistant product line. As the title indicates, the framing is about turning security complexity into useful, actionable intelligence. It sets the scene with what it calls a 'post-Mythos' era in which IT teams are doing more work without added headcount. Even so, it says, security tasks have not become any simpler. Note: this summary is based on the title and excerpt only, as the original article could not be fetched.",
+      "insightKo": "인력 증가 없이 보안 업무 부담이 커지는 상황에서 AI 기반 어시스턴트가 운영·보안 팀의 대응 속도와 가시성을 개선하는 방향으로 활용될 수 있음을 시사한다.",
+      "insightEn": "As security workloads grow without matching headcount, AI-assisted tooling like Lightspeed points toward improving response speed and visibility for ops and security teams."
     },
     {
       "source": "Datadog",
@@ -337,7 +501,11 @@
       "title": "Understand the top paths users take to convert or drop off with Journey Paths",
       "link": "https://www.datadoghq.com/blog/product-analytics-journey-paths/",
       "date": "2026-09-21T00:00:00.000Z",
-      "excerpt": "Use Journey Paths in Datadog Product Analytics to quantify how users convert, investigate drop-offs, and find friction between funnel steps."
+      "excerpt": "Use Journey Paths in Datadog Product Analytics to quantify how users convert, investigate drop-offs, and find friction between funnel steps.",
+      "summaryKo": "Datadog Product Analytics에 새로 추가된 Journey Paths는 사용자가 정의된 플로우 안에서 거치는 페이지·액션 시퀀스를 빈도순으로 시각화하는 차트 타입이다. 전환에 성공한 경로와 이탈한 경로를 나란히 비교할 수 있어, 기존 퍼널 분석으로는 보이지 않던 중간 단계의 행동 패턴을 드러낸다. 예를 들어 결제 완료 전 폼 필드를 반복해서 오가는 등 전환은 되지만 비효율적인 경로를 찾아낼 수 있다. 글에서 제시된 사례로는, 체크아웃 플로우에 지원(support) 링크가 있을 때 퍼널 분석 상으로는 결제 전 40%가 이탈하는 것으로만 보이지만, Journey Paths로 보면 상당수 사용자가 그 지원 링크를 클릭한 뒤 돌아오지 않는 패턴이 드러난다. Journey Paths는 Conversion Analysis Panel, Session Replay, Real User Monitoring(RUM)과 연동되어 특정 속성·세그먼트의 통계적 상관관계 확인, 개별 세션 리플레이, 에러·지연·레이지 클릭 같은 기술적 조건 확인까지 이어진다. 별도의 계측 없이 RUM과 동일한 Browser·Mobile SDK를 공유하며, 독립된 차트로 저장하거나 대시보드에 추가할 수 있다.",
+      "summaryEn": "Datadog Product Analytics has added a new chart type called Journey Paths, which visualizes the sequences of pages and actions users take through a defined flow, ranked by frequency, and lets teams compare converted paths against dropped-off ones. This surfaces intermediate behavior that traditional funnel analysis misses, such as 'dead ends' where a path stops short of the expected next step, or 'detours' where users leave the intended flow and never return. One example in the post: a checkout flow with a support link, where funnel analysis shows a 40% drop-off before payment, but Journey Paths reveals that many of those users clicked the support link and simply didn't come back. The feature also exposes inefficient-but-still-converting paths, like users repeatedly bouncing between form fields before finishing checkout. Journey Paths connects to the Conversion Analysis Panel for statistical ranking of correlated user attributes/segments, to Session Replay for confirming patterns at the individual session level, and to Real User Monitoring (RUM) for checking technical conditions like errors, latency, and rage clicks. It shares the same Browser and Mobile SDKs as RUM, so no extra instrumentation is needed, and it can be saved as a standalone chart or added to dashboards.",
+      "insightKo": "운영·관측 관점에서 Journey Paths는 퍼널 지표만으로 놓치는 이탈·비효율 경로를 RUM 데이터와 결합해 진단할 수 있게 해주므로, 프런트엔드 성능·에러 이슈가 전환율에 미치는 영향을 하나의 워크플로에서 추적하는 데 유용하다.",
+      "insightEn": "From an ops/observability standpoint, Journey Paths lets teams tie behavioral drop-off patterns directly to RUM signals like errors and latency, making it easier to diagnose whether frontend performance issues are actually driving conversion loss in a single workflow."
     }
   ]
 }
