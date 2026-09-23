@@ -84,7 +84,7 @@ Hugging Face는 9월 21일, 토크나이저 라이브러리의 새 메이저 버
 
 ## 클라우드 업데이트
 
-### [Global AI routing with <1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
+### [Global AI routing with &lt;1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
 
 _Google Cloud_
 
