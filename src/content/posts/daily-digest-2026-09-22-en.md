@@ -84,7 +84,7 @@ Hugging Face released tokenizers v1, a major new version of its tokenizer librar
 
 ## Cloud Updates
 
-### [Global AI routing with <1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
+### [Global AI routing with &lt;1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
 
 _Google Cloud_
 
