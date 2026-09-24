@@ -46,13 +46,15 @@ PV annotation을 통해 quota가 `pending`, `applied`, `failed` 중 어떤 상�
 
 ## 파일시스템 지원
 
-| Filesystem | Mechanism | 특징 |
-|---|---|---|
-| **XFS** | `xfs_quota` / project quota | Kubernetes NFS 환경에서 주력 지원 |
-| **ext4** | `setquota` + project attribute | Linux project quota 기반 지원 |
-| **Btrfs** | qgroup quota | 대상이 subvolume이어야 함 |
+| Filesystem | Mechanism | Mount option | 최소 커널 | 특징 |
+|---|---|---|---|---|
+| **XFS** | `xfs_quota` / project quota | `prjquota` | 2.6+ | Kubernetes NFS 환경에서 주력 지원 |
+| **ext4** | `setquota` + project attribute | `prjquota` | 4.5+ (e2fsprogs 1.43+) | Linux project quota 기반 지원 |
+| **Btrfs** | qgroup quota (`btrfs quota enable`) | 불필요 | 3.4+ | 대상 디렉터리가 subvolume이어야 함 — 아니면 에이전트가 에러를 반환 |
 
 따라서 이 프로젝트는 단순한 Kubernetes controller라기보다 **Kubernetes + Linux filesystem 경계에서 동작하는 storage enforcement agent**에 가깝습니다.
+
+> **ext4 보안 한계**: ext4 project quota의 hard limit은 `CAP_SYS_RESOURCE` 권한을 가진 writer(root)에게는 강제되지 않습니다 — 커널의 `ignore_hardlimit()`(`fs/quota/dquot.c`)가 제한을 그냥 무시합니다. `no_root_squash`가 설정된 NFS export에서는 `knfsd`가 client의 자격증명으로 쓰기를 수행하므로, root로 동작하는 워크로드가 ext4 quota를 조용히 우회할 수 있습니다. XFS와 Btrfs는 writer의 권한과 무관하게 제한을 강제합니다. ext4 export에는 (기본값인) `root_squash`를 쓰고 테넌트 워크로드를 non-root로 실행하거나, root 워크로드가 있는 환경에서는 XFS/Btrfs를 우선 고려하세요.
 
 ## Kubernetes 배포 모델
 
@@ -75,17 +77,76 @@ PV annotation을 통해 quota가 `pending`, `applied`, `failed` 중 어떤 상�
 
 프로젝트에는 단순 quota 적용 외에도 실제 운영을 위한 선택 기능이 포함됩니다.
 
-- Prometheus metrics / ServiceMonitor
+- Prometheus metrics / ServiceMonitor, Grafana 대시보드 ConfigMap
 - PrometheusRule 기반 알림
+- `events.k8s.io/v1` Kubernetes Events + retry metrics (opt-in, RBAC 확장 동반)
 - Audit logging
 - Usage history
 - Orphan cleanup과 dry-run
-- Namespace quota policy
+- Namespace quota policy (advisory) + `QuotaPolicy` CRD 기반 선언적 enforcement
 - Optional Web UI
+- 선택적 NetworkPolicy 템플릿
+- Air-gapped(offline bundle) 설치와 cosign 서명 검증
 - RollingUpdate 기반 DaemonSet 배포
 - Helm chart를 통한 환경별 설정
 
-Namespace 정책을 사용할 때는 LimitRange, Namespace annotation, global default와 같은 Kubernetes 정책 모델을 활용해 quota의 기본값과 최대값을 관리할 수 있습니다.
+Namespace 정책을 사용할 때는 LimitRange, Namespace annotation, global default와 같은 Kubernetes 정책 모델을 활용해 quota의 기본값과 최대값을 관리할 수 있습니다(이 policy는 advisory 뷰일 뿐 실제 quota 크기에는 영향을 주지 않습니다). 실제로 quota 상한/하한을 강제하려면 아래 `QuotaPolicy` CRD를 사용합니다.
+
+### Helm 설정값 (주요 항목)
+
+| Key | 기본값 | 설명 |
+|---|---|---|
+| `image.digest` | `""` | 이미지를 digest로 고정 (air-gap 설치용, 설정 시 `tag` 무시) |
+| `config.provisionerName` | `nfs.csi.k8s.io` | 필터링할 provisioner |
+| `config.processAllNFS` | `false` | provisioner 무관하게 모든 NFS PV 처리 |
+| `config.syncInterval` | `30s` | quota 동기화 주기 |
+| `webUI.enabled` | `false` | Web UI 대시보드 |
+| `cleanup.enabled` / `cleanup.dryRun` | `false` / `true` | 자동 orphan cleanup, 기본은 dry-run |
+| `policy.enabled` | `false` | Web UI의 advisory namespace quota policy 뷰 (informational only) |
+| `quotaPolicy.enabled` / `quotaPolicy.singleWriter` | `false` / `false` | `QuotaPolicy` CRD 기반 강제 enforcement 활성화, status write-back을 담당할 단일 writer 지정 |
+| `events.enabled` | `false` | PV별 quota 결과를 Kubernetes Event로 발행 (RBAC 권한 확장 동반, 멀티테넌트 클러스터에서는 검토 필요) |
+| `dashboard.enabled` | `false` | Grafana 대시보드 ConfigMap 배포 |
+| `networkPolicy.enabled` | `false` | NetworkPolicy 템플릿 활성화 |
+| `nodeSelector` | `nfs-server: "true"` | 비워둘 수 없음 — 비어 있으면 render 단계에서 거부 |
+| `updateStrategy.rollingUpdate.maxUnavailable` | `1` | rolling update 시 동시 갱신 노드 수 |
+
+전체 값 목록은 저장소의 `charts/nfs-quota-agent/values.yaml`을 참고하세요.
+
+### QuotaPolicy CRD (선언적 filesystem quota policy)
+
+`QuotaPolicy`(`quota.nfs.io/v1alpha1`, 기본 비활성)는 PVC가 요청한 용량에만 의존하지 않고 filesystem quota 상한/하한을 Kubernetes 객체로 선언하는 강제 계층입니다. `ResourceQuota`/`LimitRange`를 대체하지 않고 그 위에 얹히는 정책입니다.
+
+```yaml
+# team-a 네임스페이스의 모든 PVC에 기본 5Gi, enforceMax로 20Gi 하드 캡
+apiVersion: quota.nfs.io/v1alpha1
+kind: QuotaPolicy
+metadata:
+  name: team-a-default
+  namespace: team-a
+spec:
+  selector: {}
+  priority: 100
+  defaultQuota: 5Gi
+  maxQuota: 20Gi
+  enforceMax: true
+```
+
+`selector`는 `pvcName`(가장 구체적, priority 무관하게 우선), `labelSelector`, `storageClassNames`(PV spec에서만 읽음, AND 조건)를 지원하며, `status.conditions`가 `Ready`/`Applied`/`Degraded`/`Drifted`/`LimitRangeConflict`/`StorageClassBinding`을 보고합니다.
+
+### CLI 명령
+
+```bash
+nfs-quota-agent run --nfs-base-path=/export --provisioner-name=nfs.csi.k8s.io   # 에이전트 실행 (기본)
+nfs-quota-agent status --path=/data                                             # quota/사용량 조회
+nfs-quota-agent top --path=/data -n 10 --watch                                  # 사용량 상위 디렉터리
+nfs-quota-agent report --path=/data --format=json|yaml|csv                      # 리포트 생성
+nfs-quota-agent cleanup --path=/data --kubeconfig=~/.kube/config [--dry-run=false] [--force]
+nfs-quota-agent ui --path=/data --addr=:8080                                    # Web UI
+```
+
+### Prometheus 메트릭
+
+`:9090/metrics`에서 `nfs_disk_total_bytes`, `nfs_disk_used_bytes`, `nfs_disk_available_bytes`, 디렉터리별 `nfs_quota_used_bytes`/`nfs_quota_limit_bytes`/`nfs_quota_used_percent`, 요약 지표 `nfs_quota_directories_total`, `nfs_quota_warning_count`, `nfs_quota_exceeded_count`를 노출합니다.
 
 ## 보안과 운영상의 핵심 경계
 
@@ -115,6 +176,15 @@ helm install nfs-quota-agent ./charts/nfs-quota-agent \
   --create-namespace
 ```
 
+모든 태그 릴리스는 외부 네트워크 접근이 전혀 없는 클러스터를 위한 `nfs-quota-agent-<version>-offline.tar.gz`(멀티아치 이미지 OCI 아카이브 + Helm chart + `hack/verify-release.py` + compatibility matrix)도 함께 배포하며, 매니페스트와 번들 모두 cosign으로 서명됩니다.
+
+## 현재 상태
+
+최신 릴리스는 **v0.5.0**(2026-09-22)이며, 프로젝트는 **Beta** 상태입니다. XFS/ext4/Btrfs quota enforcement 핵심 기능은 완성되어 실제 커널 위에서 CI로 검증되고 릴리스는 서명·재현 가능하지만, `QuotaPolicy` CRD는 아직 `v1alpha1`이라 v1.0 이전에 호환성 없이 바뀔 수 있습니다 — 운영 환경에서는 차트 버전을 고정하세요.
+
+- **v0.5.0**: Grafana 대시보드 ConfigMap과 메트릭 이름 lint, `events.k8s.io/v1` Events + retry metrics(`events.enabled`), 선택적 NetworkPolicy 템플릿, ext4 repquota 프로젝트 선택자 읽기/검증 수정과 ext4·btrfs 실커널 quota enforcement E2E 매트릭스, OpenSSF Scorecard 워크플로 및 이미지 Trivy 스캔 추가.
+- **v0.4.0~v0.4.3**: 릴리스 서명 파이프라인 안정화에 집중 — v0.4.0은 Helm chart OCI 서명 단계에서 cosign이 GHCR에 로그인하지 못해 partial release로 남았고(컨테이너 이미지·바이너리·SBOM은 정상 배포, 서명·release-manifest.json·offline bundle은 누락), v0.4.1~v0.4.3에서 로그인 수정과 egress-block 모드를 안정화해 완전한 릴리스로 마무리했습니다.
+
 ## 상세 기술 문서
 
 | 주제 | 문서 | 내용 |
@@ -137,9 +207,9 @@ helm install nfs-quota-agent ./charts/nfs-quota-agent \
 
 Narwhal에서는 NFS CSI 기반 스토리지와 함께 사용할 수 있으며, Kube-Ready-Box의 XFS Project Quota 튜닝과도 직접 연결되는 **스토리지 enforcement 계층**입니다.
 
-## 현재 상태와 검증 범위
+## 검증 범위와 파일시스템 전제
 
-현재 최신 릴리스는 **v0.4.3**이며 프로젝트 상태는 Beta입니다. XFS, ext4, Btrfs의 핵심 quota 적용 경로는 실제 Linux 커널을 사용하는 CI 시나리오에서 검증되고, 일반적인 기능 회귀는 Go 단위 테스트와 air-gapped E2E 테스트로 확인합니다. 다만 단위 테스트는 외부 quota 명령을 stub 처리하므로 실제 호스트 커널의 quota 강제를 대신 증명하지 않습니다.
+XFS, ext4, Btrfs의 핵심 quota 적용 경로는 실제 Linux 커널을 사용하는 CI 시나리오에서 검증되고, 일반적인 기능 회귀는 Go 단위 테스트와 air-gapped E2E 테스트로 확인합니다. 다만 단위 테스트는 외부 quota 명령을 stub 처리하므로 실제 호스트 커널의 quota 강제를 대신 증명하지 않습니다.
 
 파일시스템별 운영 전제도 다릅니다.
 

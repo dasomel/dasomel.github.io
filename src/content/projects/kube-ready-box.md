@@ -67,15 +67,15 @@ dasomel/ubuntu-26.04-xfs
 이미지는 다음과 같은 OS 수준 준비 작업을 포함합니다.
 
 - swap 비활성화
-- Kubernetes에 필요한 kernel modules
+- Kubernetes에 필요한 kernel modules (`br_netfilter`, `overlay`, `iscsi_tcp`)
 - IP forwarding / bridge networking
 - conntrack 및 network buffer 튜닝
-- `/sys/fs/bpf` 등 eBPF/CNI 관련 기반 준비
-- `open-iscsi`, `cryptsetup`, `dmsetup`, `nfs-common` 등 storage prerequisite
-- `chrony` 기반 시간 동기화
-- auditd 등 보안/감사 기반 도구
+- `/sys/fs/bpf` 영구 마운트 (Cilium eBPF 리소스 유지)
+- `open-iscsi`(+`iscsid` 활성화), `cryptsetup`, `dmsetup` — Longhorn V1 요구사항 · `nfs-common`
+- `chrony` 기반 시간 동기화 — Ubuntu 25.10+/26.04 기본값인 `systemd-timesyncd`를 대체, 한국 NTP 서버를 `/etc/chrony/sources.d/kr-ntp.sources`로 사전 구성 (etcd clock-skew 민감성 대응)
+- 보안 하드닝: `needrestart` 제거(Qualys 로컬 권한상승 CVE 5건 대응), `unattended-upgrades` 완전 purge(kubelet Graceful Node Shutdown 충돌 방지), `auditd` 설치 후 비활성화(CIS 대응, I/O 제한 포함), `apparmor-utils` 추가
 - `jq`, `yq`, network diagnostics, performance tools
-- 자동 disk/partition/LVM/filesystem 확장
+- 자동 disk/partition/LVM/filesystem 확장 (1TB thin-provisioned 디스크, box 크기는 ext4 약 2.2GB / XFS 약 3.4GB)
 
 ## 24.04와 26.04의 차이
 
@@ -142,6 +142,18 @@ vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 ```
 
 검증 포인트는 단순히 VM이 boot되는지가 아니라, kernel setting, network readiness, filesystem 및 Kubernetes prerequisite가 의도한 baseline과 일치하는지입니다.
+
+## 현재 상태
+
+최신 릴리스는 **v1.1.0**(2026-07-19)입니다. Ubuntu 26.04 LTS(Resolute Raccoon, kernel 7.0)를 24.04 LTS(Noble Numbat, 기본값)와 함께 정식 태그로 배포하는 첫 릴리스이며, 위 보안 하드닝과 chrony 전환, CSI/Longhorn 전제조건, bpffs 영구 마운트가 이 릴리스에서 추가됐습니다.
+
+| Provider | AMD64 | ARM64 | 비고 |
+|---|---|---|---|
+| VirtualBox | ✅ | ✅ | ARM64는 VirtualBox 7.1+ 필요 |
+| VMware Fusion | ✅* | ✅ | Apple Silicon 지원; *AMD64는 로컬 빌드만 — Vagrant Cloud는 CI runner 제약으로 ARM64만 배포 |
+
+- 별도 프로젝트로 선언형 NixOS 변형 `dasomel/nixos-kube-ready`(libvirt/arm64, Apple Silicon은 `vagrant-qemu` 경유)도 배포됩니다.
+- Packer 1.10+ (CI는 1.15.4 고정), 빌드 타임아웃은 `ssh_timeout` 1시간(`vmware-arm64`는 2시간), CI job 타임아웃 90분입니다.
 
 ## 상세 기술 문서
 

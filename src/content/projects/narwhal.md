@@ -34,15 +34,30 @@ README 기준 현재 reference implementation은 다음과 같은 상태입니�
 
 | 항목 | 현황 |
 |---|---|
-| Activity | 2026-02-08 이후 483 commits, 4 releases, latest v1.2.0 |
+| Activity | 2026-02-08 이후 612 commits (2026-09-23 기준), 4 releases, latest v1.2.0 |
 | Integration | 35 GitOps-managed applications |
-| Regression | 51 CI regression checks |
+| Regression | 192 CI regression checks |
 | Live verification | Cluster 120+ checks, SSO 49 checks |
-| Integration knowledge | 263 documented incidents |
+| Integration knowledge | 318 documented incidents |
 | Deployment | Vagrant ARM64, Kakao Cloud AMD64, air-gapped |
 | Offline bundle | Architecture별 104 container images, 27 Helm charts, binaries, manifests, OS packages |
 
 이 수치는 commit 수를 강조하기 위한 것이 아니라, **통합 복잡성을 얼마나 반복해서 검증했는지**를 설명하는 운영 증거입니다.
+
+## 현재 상태
+
+최신 릴리스는 **v1.2.0**(2026-08-09)이며, air-gap 설치를 "이미지만 번들"에서 "인터넷 경로 없이 실제로 완주하는 설치"로 바꾼 버전입니다. Kakao Cloud를 OpenTofu 기반 1급 provider로 승격했고, Chaos Mesh 2.8.3 + k6 load-test suite, 그리고 36개 static/runtime check로 구성된 clean-install regression suite를 CI에 추가했습니다.
+
+v1.2.0 이후 main 브랜치에서는 아직 태그되지 않은 보안 하드닝이 계속 누적되고 있습니다(2026-09-23 기준 커밋 로그로 확인):
+
+- Keycloak OIDC TLS 검증 강제 및 내부 CA trust 적용, ArgoCD/APISIX의 OIDC TLS bypass 제거
+- APISIX Admin API allowlist를 cluster pod CIDR로 제한
+- Kakao bastion/node SSH host-key 검증 강제, bastion SG와 node SG 분리
+- NFS export 기본값을 root_squash + non-world-writable root로 전환
+- DB namespace에 default-deny NetworkPolicy 적용, Kyverno로 node-tuning job SA를 admission-gate
+- Portal의 OpenBao 접근을 least-privilege로 축소(불필요한 `secret/data/*` 권한 제거)
+
+이 구간은 아직 released tag가 아니라 다음 릴리스 후보로 main에서 검증 중인 상태입니다.
 
 ## 핵심 구성
 
@@ -116,7 +131,7 @@ Regression Check
 Future Upgrade Gate
 ```
 
-각 incident에는 원인뿐 아니라 비슷하게 보이는 장애와 구분하기 위한 **discriminator**와 실패했던 접근까지 기록합니다. 이 방식이 누적되며 263건의 integration knowledge와 51개 CI checks로 연결되었습니다.
+각 incident에는 원인뿐 아니라 비슷하게 보이는 장애와 구분하기 위한 **discriminator**와 실패했던 접근까지 기록합니다. 이 방식이 누적되며 318건의 integration knowledge와 192개 CI checks로 연결되었습니다.
 
 ## 검증 계층
 
@@ -126,7 +141,7 @@ Narwhal은 “pod가 Running인가?”만 검증하지 않습니다.
 |---|---:|---|
 | Cluster Verification | 120+ | 클러스터와 플랫폼 application이 실제로 건강한가? |
 | SSO Verification | 49 | 여러 application의 identity flow가 end-to-end로 동작하는가? |
-| CI Regression | 51 | 과거에 해결한 integration failure가 다시 발생하지 않았는가? |
+| CI Regression | 192 | 과거에 해결한 integration failure가 다시 발생하지 않았는가? |
 
 실제 cluster 검증과 CI 회귀 검증을 분리함으로써 빠른 regression gate와 live environment verification을 동시에 유지합니다.
 

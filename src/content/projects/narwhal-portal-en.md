@@ -47,14 +47,30 @@ The portal does not try to replace every upstream UI. Kubernetes, Argo CD, Keycl
 
 ## Technology Stack
 
-- **Next.js 16 / React 19** — App Router application
-- **TypeScript** — typed frontend/API boundaries
-- **Tailwind CSS 4 / shadcn/ui** — reusable admin UI
+- **Next.js `^16.3.1` / React `19.2.8`** — App Router application
+- **TypeScript `^6.0.3`** — typed frontend/API boundaries
+- **Tailwind CSS `4.3.3` / shadcn/ui** — reusable admin UI
 - **TanStack Query / Zustand** — server/client state
-- **Keycloak OIDC** — authentication and sessions
-- **Valkey** — application cache
+- **NextAuth `5.0.0-beta.30` + Keycloak OIDC** — authentication and sessions
+- **Valkey** — application cache (a dedicated pub/sub client keeps long-lived subscriptions apart from the fail-fast cache client's short timeout/retry limits)
 - **OpenBao Agent Injector** — runtime secrets injection
 - **Skaffold / Kaniko** — Kubernetes inner-loop development and in-cluster image builds
+- **Vitest** — unit/regression suite wired into CI. Playwright-based browser-level e2e coverage is still planned, not claimed as implemented on main (`docs/IMPLEMENTATION-STATUS.md`, last verified 2026-09-14)
+- **pnpm `10.27.0`** (pinned via `packageManager`)
+
+## Current Status
+
+The latest tagged release is **v1.0.17** (2026-08-09). It made the platform-tool tile base domain configurable via `CLUSTER_BASE_DOMAIN`, derived node roles correctly from the Prometheus `kube_node_role` metric and K8s labels (both `control-plane` and the legacy `master` key), fixed compliance framework pass-rate scaling (0-1 ratios were rendering as 1%), and queried cluster-scoped `clusterinfraassessmentreports` alongside namespaced reports so trivy-operator node security findings are reflected. This release also introduced an automated GitHub Release workflow that publishes notes from `CHANGELOG.md` on tag push.
+
+Since v1.0.17, main has accumulated substantial security hardening without a new tag yet (as of 2026-09-23, the repository has 300 commits total):
+
+- Centralized role-string checks on `requireRole`/`requireAdmin` and enforced resource-scoping on the cost/security detail and trend APIs
+- Switched OpenBao authentication from a static token to Kubernetes auth login, and replaced the long-lived K8s service-account token with a projected short-lived token
+- Anchored the federated-logout redirect allowlist to close an open-redirect bypass
+- Enforced production TLS for Keycloak/Gitea integrations and restricted the health endpoint to cluster-admin
+- Applied an Agent Execution Security Contract to the privileged node-tuning path, with exact-invocation approval, server-side recomputation, and replay protection (PR #90)
+
+This work is under verification on main for a future release and is not yet part of a published tag.
 
 ## Deployment Model
 

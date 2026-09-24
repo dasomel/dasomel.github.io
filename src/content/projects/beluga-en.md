@@ -45,6 +45,8 @@ It intentionally focuses on **integration evidence**, not production-scale infra
 | Optional governance | OpenMetadata, OpenSearch | Catalog and lineage |
 | Observability | Prometheus Stack | Platform metrics |
 
+The single source of truth for exact versions/images/licenses is the repository's [`VERSIONS.md`](https://github.com/dasomel/beluga/blob/main/VERSIONS.md). Notable pins: Kubernetes v1.36 (k3s channel), Strimzi Kafka Operator 1.1.0 (KRaft, Kafka 4.3.0), Debezium 3.6.1.Final, Flink Kubernetes Operator 1.15.0 (runtime Flink 1.20.0), Lakekeeper v0.13.1, Trino 483, Airflow 3.3.0, Superset 6.1.0, Keycloak 26.7.1, CloudNativePG (PostgreSQL 17.6).
+
 ## Integration Model
 
 The platform is split into `beluga-platform` and `beluga-data` Helm layers, both deployed through Argo CD. This keeps platform services and data workloads independently understandable while maintaining a single bootstrap path.
@@ -109,13 +111,25 @@ Passwords are not committed to the repository. Bootstrap generates credentials a
 
 The repository also keeps policy declarations under `policies/` so identity, authorization, and database policy generation can remain aligned.
 
+## Operations Agent (read-only PoC)
+
+As the first safe-execution slice for issue #108, `scripts/agent/operations_agent.py` inspects the cluster, collects failure signals, and produces remediation **proposals only, without mutating the cluster**.
+
+- The execution path follows OpenForge Agent Execution Security principles: request → resolve fixed tool/target → canonical invocation digest → risk classification → request-side authorization → fixed argv executor (read-only only) → result hashing/findings → evidence record.
+- `configs/operations-agent-policy.json` declares a risk class per tool — `cluster.nodes`/`cluster.pods`/`cluster.events`/`gitops.applications` are `read-only-diagnostic` and executable, while `data.mutate`/`external.http`/`platform.privileged` are `approvalRequired: true` and `executable: false` in the PoC. An approval flag does not make a disabled class executable.
+- Safety invariants: no free-form shell/model-generated `kubectl` arguments reach execution — only code-owned argv defined in the script does; an isolated kubeconfig is required instead of the shared `~/.kube/config`; the Kubernetes context must always be `beluga`; evidence stores hashes/byte counts/status rather than raw output.
+- The design has seven roles (cluster-inspector, data-service-inspector, identity-inspector, storage-inspector, observability-inspector, hypothesis-agent, verifier), but the current implementation covers only the shared read-only inspection boundary — per-role graph orchestration remains future work.
+- `make test-agent` verifies the policy/security suite without a live cluster, backed by a permanent CI workflow (`operations-agent-security.yml`).
+
 ## Current Status
 
 Beluga is a **personal / learning-scale reference platform**.
 
-- Core Kafka/CDC → Flink → Iceberg → Trino/Superset/Airflow flow is implemented toward clean-install E2E validation.
-- The local cluster is not continuously running, so not every latest change has live-cluster validation.
+- Core Kafka/CDC → Flink → Iceberg → Trino/Superset/Airflow flow is implemented toward clean-install E2E validation and marked done (`docs/IMPLEMENTATION-STATUS.md`, verified 2026-09-14).
+- The local cluster is not continuously running (`vagrant status` shows all 4 VMs stopped), so not every latest change has live-cluster validation.
 - Governance/policy compiler integration continues as a separate evolution area.
+- The Operations Agent only runs its read-only diagnostic profile; data-mutation, external-egress, and privileged-operation execution remain contractually disabled.
+- Cluster-stability fixes have continued since 2026-08-28: scoping MetalLB's L2Advertisement to the private network interface, unblocking the ArgoCD/OpenMetadata UIs behind APISIX, setting explicit key usages on internal-CA certificates, renaming the VMware provider to `vagrant-vmware-desktop` (vmware_desktop), and tuning the VM RAM profile for 64GB hosts.
 
 ## Getting Started
 

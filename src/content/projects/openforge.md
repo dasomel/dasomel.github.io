@@ -2,7 +2,7 @@
 title: "OpenForge"
 description: "OSS Blueprint를 넘어 Engineering Operating Model, Executable Governance, Agent Security와 Portfolio Control Plane을 제공하는 오픈소스 엔지니어링 기반"
 github: "https://github.com/dasomel/openforge"
-tags: ["Open Source", "Engineering Standards", "GitHub", "CI/CD", "Security", "Supply Chain", "AI", "Agent", "Portfolio Governance", "Templates"]
+tags: ["Open Source", "Engineering Standards", "GitHub", "CI/CD", "Security", "Supply Chain", "AI", "Agent", "Portfolio Governance", "Templates", "Rust"]
 order: 2
 type: "own"
 featured: true
@@ -46,7 +46,36 @@ Observe / Learn / Improve
 
 OpenForge는 문서 규칙과 실행 가능한 규칙을 분리합니다. Formatter/linter, test, schema/policy validator, CI gate처럼 결정론적으로 검사할 수 있는 것은 executable owner를 갖게 하고, architecture fit이나 maintainability처럼 사람의 판단이 필요한 항목은 억지로 false-green 자동화로 바꾸지 않습니다.
 
-Agent Engineering Audit과 revision-bound portfolio matrix는 repository의 `AGENTS.md` 지침이 실제 executable check와 연결됐는지 점검합니다.
+Agent Engineering Audit과 revision-bound portfolio matrix는 repository의 `AGENTS.md` 지침이 실제 executable check와 연결됐는지 점검합니다. 이 audit은 `swallowed_failure_detector`를 통해 validator의 실패가 조건 없이 삼켜지는 패턴과, echo만으로 성공을 위장하는 echo-branch false-green 패턴을 함께 탐지합니다.
+
+### 리스크 기반 Change Package
+
+Class C/D처럼 영향 범위가 큰 변경과 복잡한 Class B 변경은, 넓은 구현 전에 짧게 유지되는 review-gated Change Package를 먼저 거칩니다. 이 Change Package는 requirements, acceptance scenario, task traceability, verification plan을 포함하며, 승인 이후 단명(short-lived)하는 문서로 취급됩니다.
+
+### Executable Maturity Assessment (Rust CLI)
+
+OpenForge는 standards를 문서로만 두지 않고, deterministic하고 evidence-based한 assessment 결과로 변환하는 독립 Rust CLI(`openforge`, Rust 2024 edition)를 제공합니다.
+
+```bash
+openforge assess . --format json
+openforge assess . --run-execution --format json
+openforge assess . --runtime --kube-context my-cluster --format json
+openforge compare baseline.json current.json --fail-on-regression
+```
+
+Assessment는 의도적으로 계층을 분리합니다.
+
+- **L1 Repository** — 문서, governance, security, CI/CD, release, platform/web-asset evidence
+- **L2 Execution** — 지원 생태계별 내장 build/test/lint probe
+- **L3 Runtime** — availability, policy coverage, RBAC/security, storage/CSI, certificate, backup/restore, observability, GitOps에 대한 read-only Kubernetes evidence
+- **Web runtime evidence** — 불변 cache policy(`WEB-008`)와 관측 가능한 cache 효과(`WEB-009`)에 대한 명시적 opt-in 체크
+- **Optional AI 분석** — AI는 완료된 report를 해석할 수 있지만 deterministic score, PASS/FAIL 상태, 수집된 evidence를 바꾸지 않음
+
+Profile, applicability, time-bounded waiver, baseline, comparison/regression gate를 지원해 성격이 다른 프로젝트를 동일한 scoring scope로 강제하지 않습니다.
+
+### Experimental Agent Harness Evaluation
+
+같은 model이라도 coding harness의 초기 instruction, tool schema, context 관리, retry 동작, execution loop가 다르면 결과가 달라질 수 있습니다. OpenForge는 이를 위해 실험적이고 non-normative한 harness dataset schema(`openforge-agent-harness-dataset/v1`), neutral comparison CLI, bilingual pilot protocol을 제공합니다. 이 profile은 기본 harness나 provider를 추천하지 않으며, task/revision/provider/OS/tool profile을 고정한 controlled cohort 안에서만 결과를 비교하도록 강제합니다.
 
 ### Agent Execution Security
 
@@ -88,6 +117,10 @@ canonical portfolio state
 ```
 
 Portfolio dashboard는 development status, adoption, relationship/impact, milestone뿐 아니라 maintenance lifecycle과 blast radius, review/exit-path readiness도 함께 표현합니다.
+
+Canonical portfolio state는 `portfolio/` 아래 `projects.json`, `relationships.json`, `milestones.json`, `maintenance.json`, `capability-ownership.json`, `agent-audit.json`, `legacy-evidence-catalog.json`으로 구조화돼 있습니다. 이 registry에는 **Siqoq**도 `category: Physical AI / Edge AI`, `role: experiment`, `development_status: active`로 등록되어 있어, portfolio governance가 kube-ready-box류의 인프라 프로젝트뿐 아니라 초기 단계의 실험적 프로젝트도 같은 evidence 계약으로 다룬다는 것을 보여줍니다.
+
+별도로 Python 기반 `templates/scripts/audit-portfolio.py` compliance audit engine이 존재해, 공유 엔지니어링 standards를 기준으로 reproducible scorecard와 delta comparison, actionable GitHub gap issue를 생성합니다. 현재 [Portfolio Scorecard](https://github.com/dasomel/openforge/blob/main/docs/portfolio-scorecard.md)는 14개 저장소의 adoption 상태를, [Reference Metrics](https://github.com/dasomel/openforge/blob/main/docs/reference-metrics.md)는 35개 표준 엔지니어링/성숙도 지표를 추적합니다.
 
 ### Documentation Freshness
 
