@@ -156,6 +156,17 @@ export function excerptFrom(raw, maxLen = 320) {
   return out;
 }
 
+// Publication gate for AI summaries: check-enrichment --strict rejects a
+// digest unless every summaryKo/summaryEn reaches this many sentences, and
+// enrich-apply refuses worker output below it so the shortfall surfaces at
+// merge time instead of at the fallback gate (2026-09-24: 4/44 blocked).
+export const MIN_SUMMARY_SENTENCES = 5;
+
+export const sentenceCount = (value) => String(value ?? '')
+  .split(/[.!?。！？]+(?:\s+|$)/)
+  .map((s) => s.trim())
+  .filter(Boolean).length;
+
 export function log(...args) {
   console.log('[digest]', ...args);
 }

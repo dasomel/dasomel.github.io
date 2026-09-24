@@ -2,6 +2,7 @@
 /** Verify daily digest AI enrichment; --strict is the automatic publication gate. */
 import fs from 'node:fs';
 import path from 'node:path';
+import { MIN_SUMMARY_SENTENCES, sentenceCount } from './lib/digest-feeds.mjs';
 
 const argv = process.argv.slice(2);
 const strict = argv.includes('--strict');
@@ -19,11 +20,7 @@ const DATA = path.join('src/content/posts/.digest-data', `${DATE}.json`);
 const KO = path.join('src/content/posts', `daily-digest-${DATE}.md`);
 const warn = (m) => console.log(`::warning::${m}`);
 const fail = (m) => { console.log(`::error::${m}`); process.exit(1); };
-const sentenceCount = (value) => String(value ?? '')
-  .split(/[.!?。！？]+(?:\s+|$)/)
-  .map((s) => s.trim())
-  .filter(Boolean).length;
-const detailedEnough = (value) => sentenceCount(value) >= 5;
+const detailedEnough = (value) => sentenceCount(value) >= MIN_SUMMARY_SENTENCES;
 
 console.log(`enrichment check — ${DATE}${strict ? ' (strict)' : ''}`);
 
@@ -61,7 +58,7 @@ if (strict && enriched.length !== articles.length) {
   fail(`${DATE} AI 보강이 불완전하다 (${enriched.length}/${articles.length}건, ${pct}%). 자동 발행을 중단한다.`);
 }
 if (strict && detailed.length !== articles.length) {
-  fail(`${DATE} 상세 요약이 불완전하다 (${detailed.length}/${articles.length}건, ${detailedPct}%). 각 기사 summaryKo/summaryEn은 최소 5문장이어야 한다.`);
+  fail(`${DATE} 상세 요약이 불완전하다 (${detailed.length}/${articles.length}건, ${detailedPct}%). 각 기사 summaryKo/summaryEn은 최소 ${MIN_SUMMARY_SENTENCES}문장이어야 한다.`);
 }
 
 if (fs.existsSync(KO)) {
