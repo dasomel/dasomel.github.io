@@ -77,7 +77,7 @@ function frontmatter({ title, description, date, tags }) {
 
 // MDX parses a bare `{...}` as a JSX expression and a bare `<` as a tag, so
 // JSON/object-literal text like {"mode": "EXPRESS"} or a statistic like p<0.05
-// in a summary breaks the build. Wrap any brace pair in inline code and
+// in a summary or article title breaks the build (2026-09-22: "<1% overhead"). Wrap any brace pair in inline code and
 // backslash-escape a `<` that cannot start a tag, skipping spans that are
 // already backtick-delimited so we never double-wrap.
 function escapeMdxBraces(text) {
@@ -192,7 +192,7 @@ function buildMarkdown(lang, { date, articles }, enrich = false, legacyKo = new 
   const lines = [];
 
   lines.push(`## ${L.headline}`, '');
-  lines.push(`### ${top.title}`, '');
+  lines.push(`### ${escapeMdxBraces(top.title)}`, '');
   const topBody = summaryOf(top);
   if (topBody) lines.push(topBody, '');
   const topInsight = insightOf(top);
@@ -205,7 +205,7 @@ function buildMarkdown(lang, { date, articles }, enrich = false, legacyKo = new 
     if (inCat.length === 0) continue;
     lines.push('---', '', `## ${categoryLabel(cat.key, lang)}`, '');
     for (const a of inCat) {
-      lines.push(`### [${a.title}](${a.link})`, '', `_${a.source}_`, '');
+      lines.push(`### [${escapeMdxBraces(a.title)}](${a.link})`, '', `_${a.source}_`, '');
       lines.push(summaryOf(a), '');
       const ins = insightOf(a);
       if (ins) lines.push(`> 💡 ${ins}`, '');
@@ -216,7 +216,7 @@ function buildMarkdown(lang, { date, articles }, enrich = false, legacyKo = new 
   if (briefs.length) {
     lines.push('---', '', `## ${L.quick}`, '');
     for (const a of briefs) {
-      lines.push(`- [${a.title}](${a.link}) — _${a.source}_`);
+      lines.push(`- [${escapeMdxBraces(a.title)}](${a.link}) — _${a.source}_`);
     }
     lines.push('');
   }

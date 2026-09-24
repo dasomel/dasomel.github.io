@@ -172,7 +172,7 @@ This Red Hat blog post discusses "AutoRAG," a pipeline optimization approach wit
 
 > 💡 Since demo-level RAG pipelines often degrade against real production data diversity, it's important to build automated pipeline tuning/evaluation into the infrastructure before deployment.
 
-### [Global AI routing with <1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
+### [Global AI routing with \<1% overhead on multi-cluster GKE Inference Gateway](https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway/)
 
 _Google Cloud_
 
