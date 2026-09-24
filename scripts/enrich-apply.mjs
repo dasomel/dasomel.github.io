@@ -28,6 +28,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { MIN_SUMMARY_SENTENCES, sentenceCount } from './lib/digest-feeds.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (name) => {
@@ -121,8 +122,12 @@ for (const a of articles) {
   if (a.excerpt && o.summaryEn && o.summaryEn.trim() === a.excerpt.trim()) {
     errs.push(`summaryEn 이 excerpt 복붙: ${short(a)}`);
   }
-  const sentences = (o.summaryKo?.match(/[.!?。]/g) || []).length;
-  if (sentences < 3) warns.push(`summaryKo 가 짧다(${sentences}문장): ${short(a)}`);
+  for (const f of ['summaryKo', 'summaryEn']) {
+    const n = sentenceCount(o[f]);
+    if (n < MIN_SUMMARY_SENTENCES) {
+      errs.push(`${f} 가 ${n}문장 — 발행 관문은 최소 ${MIN_SUMMARY_SENTENCES}문장: ${short(a)}`);
+    }
+  }
 }
 
 const extra = incoming.filter((o) => !articles.some((a) => a.link === o.link));
