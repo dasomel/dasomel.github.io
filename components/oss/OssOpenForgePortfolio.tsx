@@ -1,4 +1,13 @@
 import portfolioData from '@/src/data/openforge-portfolio.json';
+import {
+  capabilityRows,
+  evidenceLine,
+  getVerifiedProjects,
+  milestoneLine,
+  revisionLink,
+  statusLabel,
+  type ProjectStatus,
+} from '@/lib/oss-openforge-status';
 
 type Locale = 'ko' | 'en';
 
@@ -19,7 +28,9 @@ type Project = {
   adoption_percent: number | null;
   role: string;
   impact_score: number;
+  repository?: string;
   maintenance?: Maintenance | null;
+  status?: ProjectStatus;
 };
 
 type Milestone = {
@@ -74,6 +85,11 @@ const copy = {
     status: 'Development',
     updated: 'Registry updated',
     source: 'OpenForge registry',
+    verifiedStatus: '검증된 상태',
+    verifiedStatusDescription: 'OpenForge에 PR로 병합되어 검증까지 완료된 프로젝트만 표시합니다.',
+    verifiedMilestone: '마일스톤',
+    progress: '진행률',
+    evidenceHeader: 'Evidence (CI · Security · Runtime)',
   },
   en: {
     eyebrow: 'OPENFORGE PORTFOLIO CONTROL PLANE',
@@ -94,12 +110,13 @@ const copy = {
     status: 'Development',
     updated: 'Registry updated',
     source: 'OpenForge registry',
+    verifiedStatus: 'Verified status',
+    verifiedStatusDescription: 'Only projects with OpenForge-verified, PR-merged state are shown here.',
+    verifiedMilestone: 'Milestone',
+    progress: 'Progress',
+    evidenceHeader: 'Evidence (CI · Security · Runtime)',
   },
 } as const;
-
-function statusLabel(value: string) {
-  return value.replaceAll('-', ' ');
-}
 
 export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
   const t = copy[locale];
@@ -108,6 +125,7 @@ export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
   const maintenance = portfolio.maintenance?.summary;
   const topImpact = projects.sort((a, b) => b.impact_score - a.impact_score).slice(0, 6);
   const maxImpact = Math.max(...topImpact.map((project) => project.impact_score), 1);
+  const verifiedProjects = getVerifiedProjects(projects);
 
   return (
     <section className="mt-14 rounded-3xl p-6 sm:p-8" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--surface)' }}>
@@ -196,6 +214,51 @@ export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
           </div>
         </div>
       </div>
+
+      {verifiedProjects.length > 0 && (
+        <div className="mt-8">
+          <div className="text-xs font-semibold uppercase tracking-[0.14em]" style={{ color: 'var(--text-faint)' }}>{t.verifiedStatus}</div>
+          <p className="mt-2 text-xs leading-6" style={{ color: 'var(--text-muted)' }}>{t.verifiedStatusDescription}</p>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            {verifiedProjects.map((project) => {
+              const status = project.status;
+              const revision = revisionLink(project);
+              const milestone = milestoneLine(status, { milestone: t.verifiedMilestone, progress: t.progress });
+              const capabilities = capabilityRows(status);
+
+              return (
+                <div key={project.id} className="rounded-xl p-4" style={{ border: '1px solid var(--border)' }}>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="text-sm font-semibold">{project.name}</div>
+                    {revision && (
+                      revision.href ? (
+                        <a href={revision.href} target="_blank" rel="noreferrer" className="font-mono text-[10px]" style={{ color: 'var(--accent)' }}>{revision.short}</a>
+                      ) : (
+                        <span className="font-mono text-[10px]" style={{ color: 'var(--text-faint)' }}>{revision.short}</span>
+                      )
+                    )}
+                  </div>
+                  {milestone && (
+                    <div className="mt-2 text-[11px]" style={{ color: 'var(--text-faint)' }}>{milestone}</div>
+                  )}
+                  <div className="mt-2 text-[11px]" style={{ color: 'var(--text-faint)' }}>
+                    {t.evidenceHeader}: {evidenceLine(status)}
+                  </div>
+                  {capabilities.length > 0 && (
+                    <div className="mt-2 space-y-1">
+                      {capabilities.map((row) => (
+                        <div key={row.id} className="font-mono text-[10px]" style={{ color: 'var(--text-faint)' }}>
+                          {row.id}: {row.line}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <div className="mt-6 border-t pt-4 text-[10px] font-mono" style={{ borderColor: 'var(--border)', color: 'var(--text-faint)' }}>
         {t.updated}: {portfolio.updated_at} · openforge-dashboard/v1 · {portfolio.relationships.length} relationships
