@@ -7,7 +7,7 @@
     "portfolio/maintenance.json",
     "portfolio/agent-audit.json"
   ],
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-23",
   "portfolio": {
     "standard_metrics": 35,
     "standard_maturity_percent": 96.9,
@@ -302,10 +302,10 @@
         "operations-agent"
       ],
       "status": {
-        "revision": "8dedb46",
-        "updated_at": "2026-09-08",
+        "revision": "2f78873",
+        "updated_at": "2026-09-23",
         "milestone": "openforge-compliance-baseline",
-        "progress_percent": 85,
+        "progress_percent": 90,
         "capabilities": {
           "compliance-baseline": {
             "status": "implemented",
@@ -323,7 +323,17 @@
             "verification": {
               "unit": "pass",
               "integration": "pass",
-              "runtime": "partial",
+              "runtime": "pass",
+              "security": "pass"
+            }
+          },
+          "policy-compiler-seam": {
+            "status": "implemented",
+            "standard": "openforge/data-platform",
+            "verification": {
+              "unit": "pass",
+              "integration": "pass",
+              "runtime": "pass",
               "security": "pass"
             }
           }
@@ -331,16 +341,41 @@
         "evidence": {
           "issue": 114,
           "pull_request": null,
-          "commit": "8dedb4614da34752f07c15736ea06d3c3cbe9c4b",
+          "commit": "2f7887376cc4e048e04d715b7d429c1991ec4d60",
           "ci": "pass",
           "security": "pass",
-          "runtime": "partial"
+          "runtime": "pass"
         },
         "proposed_relationships": [
           {
             "target": "beluga-manager",
             "type": "provides",
             "scope": "data-platform management capabilities"
+          },
+          {
+            "target": "ldapium",
+            "type": "consumes",
+            "scope": "OpenLDAP directory data plane"
+          },
+          {
+            "target": "kube-ready-box",
+            "type": "consumes",
+            "scope": "node OS image; readiness evidence (expected)"
+          },
+          {
+            "target": "narwhal",
+            "type": "peer",
+            "scope": "shared platform patterns; no runtime dependency"
+          },
+          {
+            "target": "kubemetal",
+            "type": "unavailable",
+            "scope": "local/offline AI inference; no consumption point implemented yet"
+          },
+          {
+            "target": "nfs-quota-agent",
+            "type": "not-applicable",
+            "scope": "filesystem quota enforcement; no NFS/RWX storage class in any profile"
           }
         ]
       },
@@ -370,10 +405,10 @@
         "ui"
       ],
       "status": {
-        "revision": "670a076",
-        "updated_at": "2026-09-08",
+        "revision": "e6397c0",
+        "updated_at": "2026-09-23",
         "milestone": "reconcile-history",
-        "progress_percent": 80,
+        "progress_percent": 85,
         "capabilities": {
           "policy-compiler": {
             "status": "implemented",
@@ -389,7 +424,7 @@
         "evidence": {
           "issue": null,
           "pull_request": 49,
-          "commit": "670a076a86c84929ddb5eb83a057efea4ba26b27",
+          "commit": "e6397c01944bfc346299b16c578ab58497fc6298",
           "ci": "pass",
           "security": "pass",
           "runtime": "pass"
@@ -928,18 +963,18 @@
     "summary": {
       "repositories": 11,
       "repositories_with_false_green": 9,
-      "false_green_findings": 12,
-      "canonical_skills": 16,
+      "false_green_findings": 15,
+      "canonical_skills": 24,
       "skill_maturity": {
-        "draft": 15,
-        "verified": 1,
+        "draft": 6,
+        "verified": 10,
         "stable": 0,
         "deprecated": 0,
-        "unspecified": 0
+        "unspecified": 8
       },
-      "evidence_backed_mature_skills": 1,
-      "skill_audit_errors": 0,
-      "swallowed_failure_findings": 3,
+      "evidence_backed_mature_skills": 6,
+      "skill_audit_errors": 4,
+      "swallowed_failure_findings": 2,
       "swallowed_failure_findings_measured_repositories": 11,
       "repositories_with_local_ci_gate": 2,
       "local_ci_gate_measured_repositories": 11
@@ -947,11 +982,10 @@
     "repositories": [
       {
         "repository": "dasomel/narwhal",
-        "revision": "314b3187fa74caaac1439ada29b4ac4b2bf7a277",
+        "revision": "72102a7d7c70a9d7e5b71a542bdb3d33f211ec2c",
         "false_green_findings": [
           "deterministic validator failure is neutralized: .claude/commands/check.md:25 (yq eval '.' \"$f\" > /dev/null)",
           "deterministic validator failure is neutralized: .claude/commands/verify.md:22 (yq eval '.' \"$f\" > /dev/null 2>&1)",
-          "deterministic validator failure is neutralized: .github/workflows/lint.yml:209 (markdownlint --config .markdownlint.json --ignore node_modules 'docs/**/*.md' 'README.md' 'CHANGELOG.md')",
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
         "deterministic_controls": {
@@ -966,17 +1000,17 @@
           "canonical_count": 4,
           "adapter_count": 1,
           "maturity_counts": {
-            "draft": 4,
-            "verified": 0,
+            "draft": 2,
+            "verified": 2,
             "stable": 0,
             "deprecated": 0,
             "unspecified": 0
           },
-          "evidence_backed_mature_count": 0,
+          "evidence_backed_mature_count": 2,
           "error_count": 0,
           "warning_count": 0
         },
-        "swallowed_failure_count": 3,
+        "swallowed_failure_count": 2,
         "local_agent_ci_gate": {
           "configured": false,
           "evidence": null,
@@ -985,7 +1019,7 @@
       },
       {
         "repository": "dasomel/narwhal-portal",
-        "revision": "d27a2ea04b656083f50018dfba87a4e47d6a4ec2",
+        "revision": "816e958c75e6f1e714bec940b32bfc33dba0b76f",
         "false_green_findings": [],
         "deterministic_controls": {
           "formatting": true,
@@ -999,13 +1033,13 @@
           "canonical_count": 3,
           "adapter_count": 4,
           "maturity_counts": {
-            "draft": 3,
-            "verified": 0,
+            "draft": 1,
+            "verified": 2,
             "stable": 0,
             "deprecated": 0,
             "unspecified": 0
           },
-          "evidence_backed_mature_count": 0,
+          "evidence_backed_mature_count": 2,
           "error_count": 0,
           "warning_count": 0
         },
@@ -1018,7 +1052,7 @@
       },
       {
         "repository": "dasomel/beluga",
-        "revision": "9de23660020c597713fd9b602988411567aee0c5",
+        "revision": "d7023516422f19d708f4114475ec43dcd336c96f",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1053,7 +1087,7 @@
       },
       {
         "repository": "dasomel/beluga-manager",
-        "revision": "5e772ce46fbf7ad220347c41ea3cf95ffd73b2a5",
+        "revision": "df5378b0e42dda37108fb452d3b5385899d16557",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1062,8 +1096,8 @@
           "lint": true,
           "tests": true,
           "static-analysis": false,
-          "security-policy": false,
-          "generated-files": false
+          "security-policy": true,
+          "generated-files": true
         },
         "agent_skills": {
           "canonical_count": 1,
@@ -1088,8 +1122,9 @@
       },
       {
         "repository": "dasomel/kubemetal",
-        "revision": "b117c0f4bd3a38a8d7d6fc02f9c57c5cf648c950",
+        "revision": "8de686fcbf204441a882b48fe49ce3710c9a1a8f",
         "false_green_findings": [
+          "Agent Skills audit reports 1 error(s); maturity/evidence claims are not fully valid",
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
         "deterministic_controls": {
@@ -1104,14 +1139,14 @@
           "canonical_count": 1,
           "adapter_count": 0,
           "maturity_counts": {
-            "draft": 1,
-            "verified": 0,
+            "draft": 0,
+            "verified": 1,
             "stable": 0,
             "deprecated": 0,
             "unspecified": 0
           },
           "evidence_backed_mature_count": 0,
-          "error_count": 0,
+          "error_count": 1,
           "warning_count": 1
         },
         "swallowed_failure_count": 0,
@@ -1123,43 +1158,9 @@
       },
       {
         "repository": "dasomel/clusterdeck",
-        "revision": "2f19a2db89625129ca3419be29ee4c7767eb1d69",
+        "revision": "2a710c274088acd7d2aa456f933754e55f746191",
         "false_green_findings": [
-          "agent contract changes have no repository-local CI gate (no-gate-workflow)"
-        ],
-        "deterministic_controls": {
-          "formatting": true,
-          "lint": true,
-          "tests": true,
-          "static-analysis": true,
-          "security-policy": false,
-          "generated-files": true
-        },
-        "agent_skills": {
-          "canonical_count": 1,
-          "adapter_count": 0,
-          "maturity_counts": {
-            "draft": 1,
-            "verified": 0,
-            "stable": 0,
-            "deprecated": 0,
-            "unspecified": 0
-          },
-          "evidence_backed_mature_count": 0,
-          "error_count": 0,
-          "warning_count": 0
-        },
-        "swallowed_failure_count": 0,
-        "local_agent_ci_gate": {
-          "configured": false,
-          "evidence": null,
-          "reason": "no-gate-workflow"
-        }
-      },
-      {
-        "repository": "dasomel/ldapium",
-        "revision": "c1ba5b3a8c6463c7f7ce7450cf6a32d53a4f84a7",
-        "false_green_findings": [
+          "Agent Skills audit reports 1 error(s); maturity/evidence claims are not fully valid",
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
         "deterministic_controls": {
@@ -1174,14 +1175,50 @@
           "canonical_count": 1,
           "adapter_count": 0,
           "maturity_counts": {
-            "draft": 1,
-            "verified": 0,
+            "draft": 0,
+            "verified": 1,
             "stable": 0,
             "deprecated": 0,
             "unspecified": 0
           },
           "evidence_backed_mature_count": 0,
-          "error_count": 0,
+          "error_count": 1,
+          "warning_count": 0
+        },
+        "swallowed_failure_count": 0,
+        "local_agent_ci_gate": {
+          "configured": false,
+          "evidence": null,
+          "reason": "no-gate-workflow"
+        }
+      },
+      {
+        "repository": "dasomel/ldapium",
+        "revision": "ff0ca1674d3666bb5c1e453577f31fd5754dacc6",
+        "false_green_findings": [
+          "Agent Skills audit reports 1 error(s); maturity/evidence claims are not fully valid",
+          "agent contract changes have no repository-local CI gate (no-gate-workflow)"
+        ],
+        "deterministic_controls": {
+          "formatting": true,
+          "lint": true,
+          "tests": true,
+          "static-analysis": true,
+          "security-policy": true,
+          "generated-files": true
+        },
+        "agent_skills": {
+          "canonical_count": 1,
+          "adapter_count": 0,
+          "maturity_counts": {
+            "draft": 0,
+            "verified": 1,
+            "stable": 0,
+            "deprecated": 0,
+            "unspecified": 0
+          },
+          "evidence_backed_mature_count": 0,
+          "error_count": 1,
           "warning_count": 0
         },
         "swallowed_failure_count": 0,
@@ -1193,7 +1230,7 @@
       },
       {
         "repository": "dasomel/nfs-quota-agent",
-        "revision": "bb66077066d951685bf3b6e6f4c8cbf428d745cb",
+        "revision": "8de5a418dbb367b0314d2c465defa3141a35d7ee",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1228,7 +1265,7 @@
       },
       {
         "repository": "dasomel/egovframe-launcher",
-        "revision": "4e12355ca68c6e83e40cac77a4d761f5f322931b",
+        "revision": "e30597f5881639a1b7424572fe288cb5ed74b81f",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1263,7 +1300,7 @@
       },
       {
         "repository": "dasomel/kube-ready-box",
-        "revision": "c56de5dfa2b7d18380c5b29c25578cb545220d00",
+        "revision": "b4d3256de9c089c686b1cdf43c35442207c86e56",
         "false_green_findings": [],
         "deterministic_controls": {
           "formatting": true,
@@ -1274,18 +1311,18 @@
           "generated-files": true
         },
         "agent_skills": {
-          "canonical_count": 1,
+          "canonical_count": 9,
           "adapter_count": 0,
           "maturity_counts": {
-            "draft": 1,
-            "verified": 0,
+            "draft": 0,
+            "verified": 1,
             "stable": 0,
             "deprecated": 0,
-            "unspecified": 0
+            "unspecified": 8
           },
-          "evidence_backed_mature_count": 0,
+          "evidence_backed_mature_count": 1,
           "error_count": 0,
-          "warning_count": 1
+          "warning_count": 9
         },
         "swallowed_failure_count": 0,
         "local_agent_ci_gate": {
@@ -1296,8 +1333,9 @@
       },
       {
         "repository": "dasomel/siqoq",
-        "revision": "a967d6ca37232a8bc5356f698778fc92edf93f9f",
+        "revision": "a916914b336b3cab31f62b319157947b814d18bf",
         "false_green_findings": [
+          "Agent Skills audit reports 1 error(s); maturity/evidence claims are not fully valid",
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
         "deterministic_controls": {
@@ -1312,14 +1350,14 @@
           "canonical_count": 1,
           "adapter_count": 0,
           "maturity_counts": {
-            "draft": 1,
-            "verified": 0,
+            "draft": 0,
+            "verified": 1,
             "stable": 0,
             "deprecated": 0,
             "unspecified": 0
           },
           "evidence_backed_mature_count": 0,
-          "error_count": 0,
+          "error_count": 1,
           "warning_count": 0
         },
         "swallowed_failure_count": 0,
