@@ -1,0 +1,303 @@
+{
+  "date": "2026-09-26",
+  "generatedAt": "2026-09-25T23:21:22.226Z",
+  "count": 37,
+  "articles": [
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "AWS named a Leader in the 2026 Gartner Magic Quadrant for Container Management",
+      "link": "https://aws.amazon.com/blogs/containers/aws-named-a-leader-in-the-2026-gartner-magic-quadrant-for-container-management/",
+      "date": "2026-09-25T21:18:33.000Z",
+      "excerpt": "Gartner has recognized AWS as a Leader in the 2026 Gartner Magic Quadrant for Container Management for the fourth consecutive year. See what our latest container innovations across Amazon ECS and Amazon EKS mean for customers building and scaling on AWS."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "link": "https://openai.com/index/proaction",
+      "date": "2026-09-25T19:00:00.000Z",
+      "excerpt": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: How to build custom workflows with canvases",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+      "date": "2026-09-25T18:00:00.000Z",
+      "excerpt": "Describe the interface you need in plain English, then let the agent build a live surface you can both use and update—so you spend less time adapting to tools and more time getting work done."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft’s new Copilot agents get their own email, calendar — and a place in the org chart",
+      "link": "https://thenewstack.io/copilot-agents-identity-runtime/",
+      "date": "2026-09-25T17:16:31.000Z",
+      "excerpt": "Microsoft announced what it calls its biggest Copilot update to date on Friday, with CEO Satya Nadella describing Copilot as"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenTelemetry and Prometheus are getting along. What’s still missing?",
+      "link": "https://thenewstack.io/opentelemetry-prometheus-observability-interoperability/",
+      "date": "2026-09-25T16:56:47.000Z",
+      "excerpt": "Welcome to another edition of Road to KubeCon, where we’re tracking the major movements in the Kubernetes and cloud native"
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Trading a Cloud Identity for Your Own: Workload Attestation on Managed Compute",
+      "link": "https://netflixtechblog.com/trading-a-cloud-identity-for-your-own-workload-attestation-on-managed-compute-516d5a29b252?source=rss----2615bd06b42e---4",
+      "date": "2026-09-25T16:01:03.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Unlock 3x QPS and microsecond latency with Memorystore for Valkey 9.1",
+      "link": "https://cloud.google.com/blog/products/databases/memorystore-for-valkey-9-1-3x-qps-caching/",
+      "date": "2026-09-25T16:00:00.000Z",
+      "excerpt": "At Google Cloud, we are committed to delivering the best managed experience backed by open source software. Today, we’re announcing the general availability of Memorystore for Valkey 9."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Storage Intelligence advisor: Know what changed in your storage estate and act on it",
+      "link": "https://cloud.google.com/blog/products/storage-data-transfer/storage-intelligence-advisor-and-batch-operations-updates/",
+      "date": "2026-09-25T16:00:00.000Z",
+      "excerpt": "The volume of data being generated today brings both opportunity and massive operational complexity. Most teams that operate at scale don't discover issues until they appear on an invoice — and by the time an unusual access pattern shows up as a line item, it has often been running for weeks."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Best practices guide for customizing Gemini models via Reinforcement Learning (RL)",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/best-practices-guide-for-customizing-gemini-models/",
+      "date": "2026-09-25T16:00:00.000Z",
+      "excerpt": "Reinforcement learning (RL) has been a keystone of modern LLM post-training, but it demands large training clusters and access to model internals that external customers can't have with proprietary models like Gemini."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "One Amazon EKS, many edges: How to choose your edge container strategy on AWS",
+      "link": "https://aws.amazon.com/blogs/containers/one-amazon-eks-many-edges-how-to-choose-your-edge-container-strategy-on-aws/",
+      "date": "2026-09-25T15:52:19.000Z",
+      "excerpt": "Choosing the right edge container strategy across many locations can fragment your fleet into dozens of special cases."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Improving site performance by shipping more CSS",
+      "link": "https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/",
+      "date": "2026-09-25T15:00:00.000Z",
+      "excerpt": "How we fully migrated github.com away from CSS-in-JS."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Agents can now set up your website’s security with Turnstile Spin",
+      "link": "https://blog.cloudflare.com/turnstile-spin/",
+      "date": "2026-09-25T13:00:00.000Z",
+      "excerpt": "Misconfiguring Turnstile by skipping backend validation leaves sites exposed to bots. Turnstile Spin fixes incomplete setups by using your preferred AI coding agent to wire up server-side verification."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI and Cursor agree on agent coordinators. They disagree on who runs them.",
+      "link": "https://thenewstack.io/openai-cursor-coordinator-agents/",
+      "date": "2026-09-25T12:00:00.000Z",
+      "excerpt": "OpenAI opened its Agents API in public beta this month, exposing the harness that powers Codex with managed sessions, tool"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Security Slam 2026 – Fall edition",
+      "link": "https://www.cncf.io/blog/2026/09/25/security-slam-2026-fall-edition/",
+      "date": "2026-09-25T11:00:00.000Z",
+      "excerpt": "Security Slam 2026 – Fall Edition is a 30-day virtual event from October 5 through November 6, 2026. What Is the Security Slam?"
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "AI adoption is a security survival metric",
+      "link": "https://webflow.sysdig.com/blog/ai-adoption-is-a-security-survival-metric",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "AI is moving from experiment to infrastructure. Sysdig research shows more organizations building their own infrastructure, reducing the AI attack surface."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Enterprise Linux 10 STIG automation now matches DISA STIG V1R2",
+      "link": "https://www.redhat.com/en/blog/red-hat-enterprise-linux-10-stig-automation-now-matches-disa-stig-v1r2",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "For the U.S."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How to manage aircraft leases with AI agents",
+      "link": "https://www.redhat.com/en/blog/how-manage-aircraft-leases-ai-agents",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "AI quickstarts are a catalog of ready-to-run, industry-specific use cases for your Red Hat AI environment. Each aims to provide a simple and practical way to solve real-world problems using AI on enterprise open source infrastructure."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 25, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-25-2026-red-hat",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "The blueprint for scalable enterprise security in the age of AIThroughout this series, we will unpack how Red Hat can help customers implement a layered security defense, from the operating system (OS) foundation to autonomous AI agents, ensuring enterprise resilience in the age of AI and emerging threats."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Extend Datadog RUM and Product Analytics to Shopify and Salesforce",
+      "link": "https://www.datadoghq.com/blog/rum-product-analytics-shopify-salesforce/",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "Use Datadog RUM and Product Analytics to monitor checkout journeys on Shopify and customer experiences in Salesforce Experience Cloud."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "When chat is the wrong UI",
+      "link": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/",
+      "date": "2026-09-24T20:00:00.000Z",
+      "excerpt": "What is a developer to do when they need something more tangible than a chat box? Enter canvases."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Automating coherent long-form video generation",
+      "link": "https://research.google/blog/coherent-long-form-video-generation/",
+      "date": "2026-09-24T19:40:00.000Z",
+      "excerpt": "Generative AI"
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Ship agents faster with expanded model choice, voice agents, and continuous optimization",
+      "link": "https://azure.microsoft.com/en-us/blog/ship-agents-faster-with-expanded-model-choice-voice-agents-and-continuous-optimization/",
+      "date": "2026-09-24T18:00:00.000Z",
+      "excerpt": "The best model for your business will keep changing. Adopting it should move your business forward, not send your team back to rebuild the architecture around it."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Manufacturing Trust for AI Agents | Docker’s WeAreDevelopers Keynote",
+      "link": "https://www.docker.com/blog/manufacturing-trust-for-ai-agents-keynote/",
+      "date": "2026-09-24T17:15:00.000Z",
+      "excerpt": "Docker's WeAreDevelopers keynote shows how Sandboxes, Kits, and Cloud Sandboxes give AI agents strong isolation and reproducible authority."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "What if your agent's hallucinations had a budget? How to start using SLOs for agent behavior",
+      "link": "https://grafana.com/blog/what-if-your-agent-s-hallucinations-had-a-budget-how-to-start-using-slos-for-agent-behavior/",
+      "date": "2026-09-24T17:14:13.000Z",
+      "excerpt": "At Grafana Labs, observability is what we do. So as we started building AI agents, we naturally reached for the same instincts we bring to every system: measure it, set targets, and make reliability something you can reason about instead of hope for."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "From Dockerfile to Kit: the Docker Sandboxes Kit Specification",
+      "link": "https://www.docker.com/blog/docker-sandbox-kit-spec/",
+      "date": "2026-09-24T16:00:00.000Z",
+      "excerpt": "Docker's Sandbox Kit Specification v3 packages an AI agent's network rules, credentials, and volumes as an ordinary, pinnable OCI image."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker and CNCF partner on an open spec for agent permissions",
+      "link": "https://www.docker.com/blog/docker-sandbox-kit-spec-cncf/",
+      "date": "2026-09-24T16:00:00.000Z",
+      "excerpt": "Docker is bringing the open source Sandbox Kit Spec to the CNCF, so AI agent permissions become a neutral, vendor independent standard built on OCI."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How Cloudflare addressed a cross-tenant data exposure vulnerability in Containers",
+      "link": "https://blog.cloudflare.com/containers-cross-tenant-vulnerability/",
+      "date": "2026-09-24T15:00:00.000Z",
+      "excerpt": "External security researchers at Accomplish identified a vulnerability in Cloudflare Containers that could expose residual disk data from previous workloads. We explain how the issue worked, how we investigated it, and the steps we took to remediate it."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+      "date": "2026-09-24T14:08:57.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Observability Day: Where the community comes together at KubeCon + CloudNativeCon North America 2026",
+      "link": "https://www.cncf.io/blog/2026/09/24/observability-day-where-the-community-comes-together-at-kubecon-cloudnativecon-north-america-2026/",
+      "date": "2026-09-24T12:22:50.000Z",
+      "excerpt": "Observability Day returns to KubeCon + CloudNativeCon North America on November 9, 2026, in Salt Lake City, Utah, bringing together maintainers, operators, and end users from across the CNCF observability community. Observability has reached an important."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Why are SBOMs failing to stop supply chain attacks?",
+      "link": "https://webflow.sysdig.com/blog/why-are-sboms-failing-to-stop-supply-chain-attacks",
+      "date": "2026-09-24T11:50:00.000Z",
+      "excerpt": "A software bill of materials (SBOM) could prevent most supply chain attacks. Let’s analyze what’s holding back their broader adoption."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Your Vulnerability Backlog Is No Longer Technical Debt, It’s an Attack Surface",
+      "link": "https://snyk.io/blog/vulnerability-backlog-attack-surface/",
+      "date": "2026-09-24T04:00:00.000Z",
+      "excerpt": "A growing vulnerability backlog is more than technical debt: it is an attack surface. Learn why outdated risk assumptions, automated attackers, and chained findings demand a new approach."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Using TypeSafe’s Jev for evals in Datadog Agent Observability",
+      "link": "https://www.datadoghq.com/blog/jev-evals-agent-observability/",
+      "date": "2026-09-24T00:00:00.000Z",
+      "excerpt": "See how we wired Jev into online evals on live spans and offline evals inside Datadog experiments, using a single rubric for both."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Bringing Private Processing to Meta AI Glasses",
+      "link": "https://engineering.fb.com/2026/09/23/security/private-processing-meta-ai-glasses/",
+      "date": "2026-09-24T00:00:00.000Z",
+      "excerpt": "We believe glasses are the best form factor for having AI help throughout your day. They can understand your personal context better than other kinds of devices and keep you present without picking up a mobile phone."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Your architecture diagram is not your resilience",
+      "link": "https://azure.microsoft.com/en-us/blog/your-architecture-diagram-is-not-your-resilience/",
+      "date": "2026-09-23T16:00:00.000Z",
+      "excerpt": "For years, resilience was something you set up once. That kept the lights on, but it treated resilience as a project with an end date rather than a property you maintain."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Designing agent-first platforms: What changes when agents do the work",
+      "link": "https://azure.microsoft.com/en-us/blog/designing-agent-first-platforms-what-changes-when-agents-do-the-work/",
+      "date": "2026-09-23T15:00:00.000Z",
+      "excerpt": "The organizations pulling ahead are not simply adding AI to what they already have. They are designing for a different kind of software."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
+      "link": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
+      "date": "2026-09-23T12:00:00.000Z",
+      "excerpt": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How invideo improves color grading 3x with GPT‑6 Astra",
+      "link": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
+      "date": "2026-09-23T12:00:00.000Z",
+      "excerpt": "With GPT‑6 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day."
+    }
+  ]
+}
