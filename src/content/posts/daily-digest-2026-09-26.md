@@ -1,0 +1,325 @@
+---
+title: "📰 데일리 테크 다이제스트 - 2026-09-26"
+description: "2026-09-26 Cloud, Kubernetes, AI, DevOps 소식 37건 — 자동 큐레이션 다이제스트."
+pubDate: 2026-09-26
+tags: ["데일리 다이제스트", "Kubernetes", "Cloud Native", "AI", "DevOps"]
+featured: false
+draft: false
+---
+## 🔥 오늘의 주요 소식
+
+### AWS named a Leader in the 2026 Gartner Magic Quadrant for Container Management
+
+AWS가 2026년 가트너 매직 쿼드런트 컨테이너 관리 부문에서 4년 연속 리더로 선정됐다. AWS는 이번 평가가 Amazon ECS와 Amazon EKS 전반에 걸친 최신 컨테이너 기능 혁신을 반영한 결과라고 밝혔다. 다만 어떤 신기능이 평가에 반영됐는지, 정량적 점수나 경쟁사 대비 포지셔닝의 세부 내용은 공개된 자료에서 확인할 수 없다. 리더 포지션은 벤더가 스스로 발표한 것이므로, 실제 구매 결정에는 가트너 원본 보고서의 세부 평가 기준과 자사 워크로드 요구사항을 함께 대조해 보는 편이 안전하다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 **왜 중요한가**: 클러스터 운영자 입장에서는 애널리스트 인정 자체보다 ECS/EKS 로드맵에 실제로 반영되는 신기능(엣지, 보안, 비용 최적화)을 계속 추적하는 것이 더 중요하다.
+
+🔗 [원문 보기](https://aws.amazon.com/blogs/containers/aws-named-a-leader-in-the-2026-gartner-magic-quadrant-for-container-management/) · _AWS Containers_
+
+---
+
+## Kubernetes & Cloud Native
+
+### [One Amazon EKS, many edges: How to choose your edge container strategy on AWS](https://aws.amazon.com/blogs/containers/one-amazon-eks-many-edges-how-to-choose-your-edge-container-strategy-on-aws/)
+
+_AWS Containers_
+
+AWS 컨테이너 블로그가 Amazon EKS를 여러 엣지 위치에 배포할 때의 전략 선택법을 다룬다. 도입부에서는 위치별로 서로 다른 엣지 컨테이너 전략을 고르다 보면 플릿이 수십 개의 특수 케이스로 파편화될 수 있다는 문제의식을 제시한다. 발췌만으로는 구체적으로 어떤 엣지 옵션(EKS Anywhere, Local Zones, Outposts, Wavelength 등)을 비교하는지, 각 옵션의 장단점이나 선택 기준이 무엇인지는 확인되지 않는다. 이 문제는 특히 소매·통신처럼 지리적으로 분산된 수십~수백 개 사이트를 운영하는 조직에서 두드러지며, 위치마다 다른 하드웨어 제약과 네트워크 대역폭이 전략 선택에 영향을 준다는 점도 시사된다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 엣지 배포 전략을 위치별로 즉흥적으로 고르면 플랫폼팀의 운영 부담이 기하급수적으로 늘어나므로, 소수의 표준화된 EKS 엣지 패턴을 정하고 예외를 최소화하는 편이 낫다.
+
+### [Security Slam 2026 – Fall edition](https://www.cncf.io/blog/2026/09/25/security-slam-2026-fall-edition/)
+
+_CNCF_
+
+CNCF가 2026년 가을 시큐리티 슬램(Security Slam)을 10월 5일부터 11월 6일까지 30일간 온라인으로 개최한다고 발표했다. 이 행사는 CNCF 프로젝트들의 보안 강화를 목표로 커뮤니티가 참여하는 가상 이벤트로 소개된다. 참가 방법, 대상 프로젝트 목록, 시상 내역 등 세부 내용은 발췌가 '시큐리티 슬램이란 무엇인가?'라는 질문에서 끊겨 확인할 수 없다. 이런 행사는 CNCF 생태계 전반의 유지보수자와 기여자들이 한 기간에 집중적으로 보안 이슈를 해결하도록 유도하는 커뮤니티 주도형 캠페인의 성격을 띤다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 한 달간의 커뮤니티 참여형 보안 행사가 반복적으로 열린다는 것은, CNCF 프로젝트를 운영하는 팀이 이 기간을 활용해 자사 클러스터에서 쓰는 오픈소스 컴포넌트의 취약점 점검·패치를 앞당길 좋은 계기가 된다.
+
+### [AI adoption is a security survival metric](https://webflow.sysdig.com/blog/ai-adoption-is-a-security-survival-metric)
+
+_Sysdig_
+
+Sysdig의 리서치에 따르면 AI가 실험 단계에서 벗어나 인프라의 일부로 자리잡고 있으며, 점점 더 많은 조직이 서드파티 SaaS AI 대신 자체 AI 인프라를 구축해 AI 공격 표면(attack surface)을 줄이고 있다고 밝힌다. 제목은 'AI 도입이 곧 보안 생존 지표'라는 주장을 내세운다. 구체적으로 어떤 비율의 조직이 자체 인프라를 구축하는지, 조사 방법론이나 표본 규모는 확인되지 않는다. 이 주장은 AI 워크로드를 서드파티 SaaS에 맡기는 것 자체가 하나의 리스크 요인으로 재평가되고 있다는 업계 전반의 인식 변화를 반영하는 것으로 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 서드파티 AI SaaS 의존을 줄이고 자체 AI 인프라를 구축하는 흐름은 공격 표면을 좁히지만, 그만큼 GPU 클러스터·모델 서빙 스택 자체의 보안 운영 부담을 그 조직으로 옮겨온다는 트레이드오프를 동반한다.
+
+### [Manufacturing Trust for AI Agents | Docker’s WeAreDevelopers Keynote](https://www.docker.com/blog/manufacturing-trust-for-ai-agents-keynote/)
+
+_Docker_
+
+도커가 WeAreDevelopers 키노트에서 AI 에이전트를 위한 세 가지 제품을 발표했다. 즉시 사용 가능한 Docker Sandboxes는 각 에이전트에 별도의 마이크로VM과 커널을 부여해 파일 접근·네트워크 연결·자격 증명을 정책으로 제어하는 무료 CLI 도구다. 차세대 기능인 Docker Sandbox Kits는 에이전트, 도구, 접근 규칙을 하나의 버전화된 OCI 이미지로 패키징하며, 이 오픈 스펙은 CNCF에 벤더 중립 거버넌스로 제출될 예정이다. 즉시 사용 가능한 Docker Cloud Sandboxes는 로컬 마이크로VM 격리를 클라우드로 확장해 `sbx` CLI 명령 한 번으로 로컬에서 클라우드로 작업을 옮길 수 있으며, 사용량 기반 과금에 신규 계정 대상 250달러 컴퓨트 크레딧을 제공한다. 파트너 데모로 Nous Research의 Hermes 에이전트가 정식 Kit로 실행되는 모습이 소개됐다.
+
+> 💡 에이전트별로 독립된 마이크로VM 격리를 제공하고 그 권한을 OCI 이미지로 버전 관리하는 접근은, 컨테이너 오케스트레이션에서 이미 검증된 이미지/레지스트리 워크플로를 AI 에이전트 권한 관리에도 그대로 적용할 수 있게 해준다.
+
+### [From Dockerfile to Kit: the Docker Sandboxes Kit Specification](https://www.docker.com/blog/docker-sandbox-kit-spec/)
+
+_Docker_
+
+도커가 발표한 Sandbox Kit Specification v3는 아파치 2.0 라이선스의 오픈소스 표준으로, AI 에이전트의 권한과 실행 환경을 일반 OCI 이미지 하나로 패키징한다(`docker/sandbox-kit-spec` 공개). Kit은 네트워크 규칙(허용/거부 호스트), 자격 증명 주입, 볼륨, 라이프사이클 훅, 스킬/컨텍스트, 메타데이터를 `vnd.docker.sandbox.kit.descriptor`라는 단일 어노테이션에 선언하며, 사이드카 파일 없이 표준 `docker pull/push`와 `docker buildx build`로 배포·서명·스캔된다. 예시로 제시된 GitHub CLI 믹스인은 api.github.com에 대한 GET/HEAD/POST/PATCH/PUT/DELETE를 허용하면서도 /repos/** 경로의 DELETE는 별도로 거부하는 '거부 우선(deny wins)' 규칙을 보여주며, 실제 토큰은 프록시가 관리하고 샌드박스 내부에는 센티널만 노출된다. Kit은 워크로드(루트 파일시스템, 정확히 1개)와 믹스인(오버레이, 다중 허용) 두 종류로 구성되며, 권한이 넓어지거나 거부 규칙이 삭제되는 변경은 재승인이 필요하고 이는 PR 리뷰에서 diff로 드러난다. 또한 이 스펙은 Kit 아티팩트 검증과 런타임 동작 검증이라는 두 가지 정합성(conformance) 테스트 스위트를 정의해, 모든 규범적 조항이 실제 체크나 waiver로 뒷받침되도록 요구한다.
+
+> 💡 에이전트 권한을 코드처럼 diff로 리뷰 가능한 OCI 이미지 단위로 버전 관리하고 '거부 우선' 규칙을 강제하면, 권한 확대가 조용히 배포되는 사고를 PR 리뷰 단계에서 원천 차단할 수 있다.
+
+### [Docker and CNCF partner on an open spec for agent permissions](https://www.docker.com/blog/docker-sandbox-kit-spec-cncf/)
+
+_Docker_
+
+도커와 CNCF가 2026년 9월 24일 WeAreDevelopers에서 AI 에이전트 권한을 위한 오픈 스펙 'Docker Sandbox Kit Spec'의 협력을 발표했다. 이 스펙은 AI 에이전트(예: Claude Code, Codex), 에이전트 도구, 그리고 접근 가능한 호스트/네트워크·자격 증명·볼륨 마운트를 담은 타입이 지정된 권한 목록을 하나의 표준 OCI 이미지에 담는다. 아파치 2.0 라이선스이며 기존 OCI 확장 포인트를 사용해 일반 컨테이너 이미지처럼 빌드·푸시·풀·서명·스캔이 가능하다. 도커가 컨테이너 이미지 포맷과 Runc 런타임을 OCI에 기증했던 것과 같은 방식으로 CNCF의 중립적 거버넌스 아래 두기로 했다. 발표문 저자는 도커의 기술 제휴 총괄 Eli Aleyner와 AI 부문 PMM 총괄 Srini Sekaran이며, CNCF CTO Chris Aniszczyk가 추천사를 남겼다. AWS, Box, Datadog, Dynatrace, JFrog, NanoClaw, OpenClaw, Palo Alto Networks, Snyk 등이 참조 Kit 제작에 협력했다.
+
+> 💡 에이전트 권한 표준을 CNCF라는 벤더 중립 기구로 이관하는 것은, MCP가 도구 통신을 표준화한 것처럼 권한 패키징을 표준화해 조직 간 에이전트 이식성과 감사 가능성을 높이려는 시도로 볼 수 있다.
+
+### [Observability Day: Where the community comes together at KubeCon + CloudNativeCon North America 2026](https://www.cncf.io/blog/2026/09/24/observability-day-where-the-community-comes-together-at-kubecon-cloudnativecon-north-america-2026/)
+
+_CNCF_
+
+CNCF의 Observability Day가 2026년 11월 9일 유타주 솔트레이크시티에서 열리는 KubeCon + CloudNativeCon North America 2026에서 다시 개최된다. 이 행사는 CNCF 관측 가능성 커뮤니티 전반의 메인테이너, 오퍼레이터, 최종 사용자를 한자리에 모으는 코로케이션 이벤트다. 발췌가 '관측 가능성이 중요한 전환점에 도달했다'는 문장에서 끊겨, 구체적으로 어떤 세션이나 프로젝트가 다뤄지는지는 확인되지 않는다. 옵저버빌리티 데이는 매년 KubeCon 본 행사와 병행해 열리는 별도 등록 트랙으로 자리잡아 왔으며, 관측 가능성 관련 CNCF 프로젝트의 최신 로드맵을 한자리에서 들을 수 있는 자리로 알려져 있다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 KubeCon 병행 행사로 관측 가능성 커뮤니티 데이가 반복 개최된다는 것은, 클러스터 운영팀이 OTel/프로메테우스 등 자사가 쓰는 관측 스택의 로드맵 변화를 파악할 수 있는 정기적 창구로 활용할 수 있다는 뜻이다.
+
+### [Why are SBOMs failing to stop supply chain attacks?](https://webflow.sysdig.com/blog/why-are-sboms-failing-to-stop-supply-chain-attacks)
+
+_Sysdig_
+
+Sysdig 블로그는 SBOM(소프트웨어 자재 명세서)이 이론적으로는 대부분의 공급망 공격을 막을 수 있음에도 실제로는 그렇지 못한 이유를 분석한다. 제목에서 제기하듯 SBOM의 광범위한 도입을 가로막는 요인이 무엇인지를 다루는 논조다. 구체적으로 어떤 채택 장벽(포맷 표준 불일치, 도구 성숙도 부족 등)을 지적하는지, 어떤 통계나 사례가 인용되는지는 확인되지 않는다. SBOM 도입이 정체되는 문제는 공급망 보안 규제가 강화되는 흐름과 맞물려, 도구 벤더와 표준화 기구 양쪽이 계속 논의해온 주제이기도 하다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 SBOM을 생성만 하고 실제 취약점 탐지·대응 워크플로에 연결하지 않으면 무용지물이 되므로, 보안팀은 SBOM 생성 자체보다 그것을 CI/CD의 실시간 스캐닝·알림과 연동하는 데 더 집중해야 한다.
+
+---
+
+## AI & ML
+
+### [Proaction boosts sales 60% and saves 75+ hours with Codex](https://openai.com/index/proaction)
+
+_OpenAI_
+
+Proaction은 현대적 차량 관리(fleet management) 소프트웨어를 만드는 회사로, OpenAI의 Codex, GPT-Live-1, GPT-6 Astra를 도입해 개발·운영·영업 전 과정의 속도를 높였다고 밝혔다. 이 도입 이후 매출이 60% 증가하고 75시간 이상의 업무 시간을 절감했다는 수치가 제시됐다. 어떤 워크플로에 각 모델이 구체적으로 적용됐는지, 매출 60% 증가의 측정 기간이나 75시간 절감이 정확히 어느 업무에서 나온 것인지는 확인할 수 없다. 이런 사례는 OpenAI가 코딩 에이전트의 비즈니스 임팩트를 보여주는 고객 사례로 적극 활용하고 있음을 보여주지만, 독립적으로 검증된 수치는 아니라는 점도 함께 감안해야 한다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 코딩 에이전트(Codex) 도입 효과를 매출·시간 절감 같은 비즈니스 지표로 보고하는 사례가 늘고 있어, 플랫폼팀도 AI 도구 도입 ROI를 유사한 지표로 추적할 필요가 있다.
+
+### [Automating coherent long-form video generation](https://research.google/blog/coherent-long-form-video-generation/)
+
+_Google Research_
+
+구글 리서치 블로그가 일관성 있는 장편(long-form) 비디오 생성을 자동화하는 연구를 소개한다. 발췌 정보가 'Generative AI'라는 카테고리 태그 수준밖에 없어, 구체적으로 어떤 모델 아키텍처, 생성 가능한 비디오 길이, 벤치마크 점수, 시간적 일관성을 확보하는 기법 등은 확인할 수 없다. 이는 구글 리서치가 생성형 AI 분야에서 지속적으로 발표해온 비디오 생성 연구 라인의 연장선으로 보이며, 통상 이런 포스트는 학술 논문이나 데모 페이지로 이어지는 경우가 많다. 클라우드/데브옵스 독자 입장에서는 이런 모델이 실제 서비스로 제공될 경우 추론 인프라에 요구되는 GPU 자원과 지연시간 요구사항이 어느 정도인지가 핵심 관심사가 된다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 장편 비디오 생성에서 일관성 확보가 핵심 난제로 다뤄진다는 점은, 이런 모델을 서빙 인프라에 올릴 때 긴 시퀀스에 걸친 상태 유지와 그에 따른 GPU 메모리·추론 시간 비용을 함께 고려해야 함을 시사한다.
+
+### [Accelerating vision-language models with LFM2.5-VL-DSpark](https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark)
+
+_Hugging Face_
+
+허깅페이스 블로그에 Liquid AI가 게시한 이 글은 LFM2.5-VL-DSpark라는 비전-언어 모델(VLM)의 가속 기법을 다룬다. 제목만으로는 'DSpark'가 구체적으로 어떤 가속 기법(양자화, 추측 디코딩, 커널 최적화 등)을 가리키는지, 기반 모델(LFM2.5-VL)과의 관계, 파라미터 수나 벤치마크 속도 향상 수치는 확인할 수 없다. 발췌가 비어 있어 더 이상의 구체적 정보를 얻을 수 없었다. 리퀴드 AI(Liquid AI)는 LFM 계열 모델을 지속적으로 공개해온 스타트업으로, 이번 포스트도 그 연장선에서 비전-언어 모델 추론 효율화 연구를 다루는 것으로 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 비전-언어 모델의 추론 가속 기법이 계속 나오는 흐름은, VLM을 엣지나 비용 민감 서빙 환경에 배포하려는 팀이 최신 가속 옵션을 주기적으로 벤치마킹해야 할 필요성을 뒷받침한다.
+
+### [Harvey turns legal context into stronger drafts with GPT-6 Astra](https://openai.com/index/harvey-from-context-to-confidence-with-astra)
+
+_OpenAI_
+
+리걸테크 기업 하비(Harvey)가 OpenAI의 GPT-6 Astra를 도입해 법률 문서 초안 작성 품질을 높였다고 밝혔다. GPT-6 Astra가 더 구조화되고 맥락을 반영한 법률 문서를 생성해, 변호사들이 초안 작성보다 전략적 업무에 집중할 수 있게 됐다는 것이 핵심 주장이다. 구체적으로 어떤 문서 유형에 적용됐는지, 초안 작성 시간 단축 수치나 정확도 개선 지표는 확인되지 않는다. 리걸테크 분야는 문서의 정확성과 근거 추적이 특히 중요한 만큼, 이런 사례가 실제로 얼마나 광범위하게 적용됐는지는 하비 측의 별도 검증 자료를 통해 확인하는 것이 바람직하다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 도메인 특화 문서 생성 품질이 개선될수록, 법률처럼 규제·감사 요건이 엄격한 산업에서 AI 산출물에 대한 출처 추적과 검토 워크플로를 얼마나 갖췄는지가 도입 성패를 가르는 요인이 된다.
+
+### [How invideo improves color grading 3x with GPT‑6 Astra](https://openai.com/index/invideo-builds-with-gpt-6-astra)
+
+_OpenAI_
+
+영상 편집 스타트업 invideo가 OpenAI의 GPT-6 Astra를 도입해 편집 계획의 정밀도를 높이고 색보정·색그레이딩 성능을 3배 개선했으며, 하루 만에 50개의 커스텀 이펙트를 제작했다고 밝혔다. 구체적으로 '3배'가 어떤 지표를 기준으로 측정됐는지, 50개 커스텀 이펙트의 구체적 종류나 제작 파이프라인은 확인되지 않는다. 이 사례는 OpenAI가 GPT-6 Astra를 미디어·영상 편집 워크플로에 특화된 고객 사례로 홍보하는 시리즈의 일부로 보이며, 앞서 소개된 Harvey 사례와 마찬가지로 벤더가 직접 공개한 성과 지표라는 점을 감안해야 한다. 정확히 어떤 색보정 파이프라인 단계에 모델이 개입하는지, 3배 개선이 처리 속도인지 결과물 품질 평가인지는 발췌 정보만으로는 판단할 수 없다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 미디어 파이프라인에 생성형 모델을 통합해 정량적 개선(3배 그레이딩 품질, 하루 50개 이펙트)을 보고하는 사례는, 창작 도구 벤더들이 AI 모델 API 호출량 증가에 대응할 추론 비용·지연시간 관리 체계를 갖춰야 함을 시사한다.
+
+---
+
+## 클라우드 업데이트
+
+### [Unlock 3x QPS and microsecond latency with Memorystore for Valkey 9.1](https://cloud.google.com/blog/products/databases/memorystore-for-valkey-9-1-3x-qps-caching/)
+
+_Google Cloud_
+
+구글 클라우드가 2026년 9월 25일 Memorystore for Valkey 9.1의 정식 출시(GA)를 발표했다. 오픈소스 벤치마크 기준으로 기존 Memorystore for Redis Cluster 대비 최대 3배 QPS와 마이크로초 단위 지연시간을 달성했다고 밝혔다. 핵심은 정적 폴링을 대체하는 락프리(lock-free) 멀티큐 아키텍처로, 메인-IO 스레드 간 SPMC/MPSC 큐와 IO 스레드별 SPSC 큐를 사용하며, 메인 스레드 CPU 사용률이 30%를 넘으면 첫 백그라운드 IO 스레드가 켜지는 2단계 동적 스케일링을 적용한다. 신규 기능으로 DB 단위 접근 제어, 최대 16,384개 슬롯을 병렬 처리하는 CLUSTERSCAN 명령, 원자적 조회-삭제를 지원하는 HGETDEL, 여러 키에 공통 만료를 설정하는 MSETEX 등이 추가됐다. 노드 사이즈는 1.25GB Custom-Pico부터 16 vCPU/110GB의 Highmem-XXLarge까지 제공된다.
+
+> 💡 락프리 멀티큐 구조와 CPU 임계값 기반 동적 스레드 스케일링은 캐시 계층의 테일 레이턴시를 줄이면서도 유휴 시 리소스 낭비를 막아, 대규모 클러스터 운영 시 비용 대비 처리량 튜닝의 여지를 넓힌다.
+
+### [Storage Intelligence advisor: Know what changed in your storage estate and act on it](https://cloud.google.com/blog/products/storage-data-transfer/storage-intelligence-advisor-and-batch-operations-updates/)
+
+_Google Cloud_
+
+구글 클라우드가 2026년 9월 25일 Storage Intelligence advisor를 정식 출시(GA)했다. 별도 파이프라인이나 대시보드 설정 없이 조직/폴더/프로젝트 단위로 활성화하면 Coldline·Archive 스토리지에 대한 Class A/B 오퍼레이션 급증, 429 오류 급증, 리전 간 이그레스 급증, 기준선 대비 총 소비량 증가 등을 자동 탐지한다. 출시 후 30일 동안 수백 개 고객사에서 6,000건 이상의 발견 사항이 생성됐고, 10억 개 이상 오브젝트를 다루는 고객 기반은 2026년 한 해 동안 2배로 늘었다. 이상 징후는 월말 청구서 대신 발생 후 24시간 이내에 탐지된다. 함께 발표된 Storage Batch Operations 업데이트는 프로젝트당 최대 1,000개 버킷을 한 번에 처리하는 멀티 버킷 작업, 실행 전 영향을 미리 보는 드라이런, CEL 표현식 기반 필터링을 지원한다. Shipt는 이상 탐지 작업을 '대규모 엔지니어링 작업'에서 '단순 셀프서비스'로 줄였고, Palo Alto Networks는 수십억 개 오브젝트에 걸친 보존 잠금을 관리하고 있다고 사례로 인용됐다.
+
+> 💡 스토리지 이상 징후를 청구서가 아닌 24시간 내 탐지로 앞당기고 배치 작업을 1,000개 버킷 단위로 묶으면, FinOps 팀이 사후 비용 감사 대신 사전 예방적 스토리지 거버넌스로 전환할 수 있다.
+
+### [Best practices guide for customizing Gemini models via Reinforcement Learning (RL)](https://cloud.google.com/blog/topics/developers-practitioners/best-practices-guide-for-customizing-gemini-models/)
+
+_Google Cloud_
+
+구글 클라우드가 Gemini 모델을 맞춤화하기 위한 강화학습 파인튜닝(RLFT) 모범 사례 가이드를 공개했다. RLFT는 사용자가 프롬프트와 보상 함수만 제공하면 구글이 인프라와 모델 내부를 관리하는 방식으로, 여러 후보 응답을 생성해 보상 함수로 채점한 뒤 점수가 높은 응답이 더 자주 나오도록 모델을 개선한다. SFT(지도 파인튜닝)가 정체됐거나 정답이 여러 개 존재하는 개방형 과제에 RLFT를 쓰라고 권장하며, 게임 NPC(대화 흐름 채점), 개체 추출(정밀도·재현율 기반 규칙 보상), 콘텐츠 검열(Cloud Run 기반 보상), SQL/API 코드 실행(샌드박스 실행 보상), HTML 슬라이드 생성(렌더링 후 시각 품질 채점) 등 구체적 사용 사례와 보상 전략을 제시한다. 보상 함수는 사람의 선호와 상관관계가 있어야 하고, 형식이 깨진 출력에도 견고해야 하며, 앙상블 심사·길이 페널티 등으로 보상 해킹에 저항하도록 설계해야 한다고 조언한다. 가이드는 RLFT 시작을 위해 검증용 분할을 포함한 다양한 프롬프트 데이터셋과, 학습 곡선을 모니터링하며 마지막 스텝이 아니라 검증 보상이 포화하는 체크포인트를 선택하라는 구체적 절차도 함께 제시한다.
+
+> 💡 보상 함수를 코드로 정의하고 샌드박스 실행이나 앙상블 심사로 검증하는 RLFT 모범 사례는, 모델 파인튜닝을 사실상 CI/CD 가능한 소프트웨어 아티팩트로 다루라는 요구이므로 MLOps 파이프라인에 보상 함수 버전 관리와 오프라인 검증 단계를 넣어야 한다.
+
+### [Agents can now set up your website’s security with Turnstile Spin](https://blog.cloudflare.com/turnstile-spin/)
+
+_Cloudflare_
+
+클라우드플레어가 Turnstile Spin을 발표했다. Turnstile(봇 방지 위젯)을 설정할 때 백엔드 검증을 빠뜨리는 흔한 실수가 사이트를 봇에 노출시키는 문제를 해결하기 위한 기능으로, 사용자가 선호하는 AI 코딩 에이전트를 이용해 서버 사이드 검증 코드를 자동으로 연결해준다. 즉 프런트엔드 위젯만 붙이고 서버에서 토큰을 검증하지 않는 미완성 설정을 에이전트가 자동으로 고쳐준다는 것이 핵심이다. 어떤 AI 코딩 에이전트를 지원하는지, 생성되는 서버 코드의 언어/프레임워크 범위, GA 여부 등은 확인되지 않는다. 이런 접근은 보안 설정의 완성도를 개발자의 수동 작업에만 의존하지 않고 자동화된 코드 생성으로 보완하려는 시도로 읽힌다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 봇 방지 위젯의 실제 취약점이 프런트엔드 배치가 아니라 백엔드 검증 누락에서 발생한다는 점은, 보안팀이 설정 완료 여부를 코드 배포가 아니라 서버 측 검증 로직 존재로 확인해야 함을 시사한다.
+
+### [Red Hat Enterprise Linux 10 STIG automation now matches DISA STIG V1R2](https://www.redhat.com/en/blog/red-hat-enterprise-linux-10-stig-automation-now-matches-disa-stig-v1r2)
+
+_Red Hat_
+
+레드햇이 RHEL(Red Hat Enterprise Linux) 10용 STIG(Security Technical Implementation Guide) 자동화가 DISA STIG V1R2 버전과 일치하도록 업데이트됐다고 밝혔다. STIG는 미국 국방부(DoD) 산하 DISA가 발행하는 시스템 보안 강화 기준으로, 미국 연방/국방 기관에 시스템을 공급하는 조직에 특히 중요하다. 발췌가 'For the U.S.'에서 끊겨 구체적으로 어떤 자동화 도구를 사용하는지, V1R1에서 V1R2로 바뀐 세부 항목이 무엇인지는 확인되지 않는다. 이런 컴플라이언스 자동화 업데이트는 대개 새 OpenSCAP 프로파일이나 Ansible 하드닝 역할 배포와 함께 이뤄지는 경우가 많아, 실제 적용 여부는 해당 패키지 버전을 직접 확인해야 한다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 STIG 자동화 프로파일이 최신 DISA 버전을 따라가는지 여부는 연방/국방 규제 대상 워크로드를 운영하는 클러스터의 컴플라이언스 감사 통과 여부를 직접 좌우하므로, 해당 조직은 RHEL 10 이미지의 STIG 버전을 반드시 확인해야 한다.
+
+### [How to manage aircraft leases with AI agents](https://www.redhat.com/en/blog/how-manage-aircraft-leases-ai-agents)
+
+_Red Hat_
+
+레드햇이 'AI 퀵스타트(AI quickstarts)'라는 산업별 즉시 실행 가능한 유스케이스 카탈로그를 소개하며, 이번 사례로 항공기 리스(aircraft lease) 관리를 AI 에이전트로 처리하는 방법을 다룬다. 이 퀵스타트들은 Red Hat AI 환경과 엔터프라이즈 오픈소스 인프라 위에서 실제 업무 문제를 간단하고 실용적으로 해결하는 것을 목표로 한다. 항공기 리스 유스케이스에서 구체적으로 어떤 데이터를 처리하는지, 사용된 모델이나 파이프라인 구성 요소는 확인되지 않는다. 이런 산업 특화 퀵스타트 카탈로그는 항공 리스 외에도 다양한 수직 산업에 걸쳐 제공되는 것으로 보이며, 각 사례가 실제 운영 환경에서 얼마나 검증됐는지는 별도 확인이 필요하다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 산업별 'AI 퀵스타트' 카탈로그 접근법은 엔터프라이즈가 매번 파이프라인을 처음부터 설계하는 대신 검증된 참조 아키텍처를 재사용해 온프레미스/오픈소스 인프라 위에서 AI 도입 속도를 높이려는 전략으로 읽힌다.
+
+### [Friday Five — September 25, 2026 | Red Hat](https://www.redhat.com/en/blog/friday-five-september-25-2026-red-hat)
+
+_Red Hat_
+
+레드햇의 주간 요약 시리즈 'Friday Five' 9월 25일자 편으로, 대표 링크로 'AI 시대의 확장 가능한 엔터프라이즈 보안 청사진'이 소개된다. 이 시리즈는 운영체제 계층부터 자율 AI 에이전트에 이르기까지 다계층(layered) 보안 방어를 어떻게 구축해 엔터프라이즈 복원력을 유지할지를 연재로 다룬다. 나머지 4개 링크가 무엇인지, 이번 회차의 구체적 내용은 확인되지 않는다. 'Friday Five' 시리즈 자체는 레드햇이 한 주간 발행한 여러 블로그 글 중 주목할 만한 것들을 큐레이션해 전달하는 형식으로, 이번 회차는 보안을 대표 주제로 내세운 것으로 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 OS 계층부터 자율 에이전트까지 이어지는 '레이어드 보안' 프레이밍은, 에이전트를 다루는 보안팀이 방어를 애플리케이션 계층에만 국한하지 말고 운영체제/인프라 계층부터 재점검해야 한다는 신호다.
+
+### [Ship agents faster with expanded model choice, voice agents, and continuous optimization](https://azure.microsoft.com/en-us/blog/ship-agents-faster-with-expanded-model-choice-voice-agents-and-continuous-optimization/)
+
+_Azure_
+
+애저(Azure)가 에이전트를 더 빠르게 출시할 수 있도록 모델 선택 폭 확대, 음성 에이전트(voice agents), 지속적 최적화(continuous optimization) 기능을 발표했다. 핵심 메시지는 '비즈니스에 가장 적합한 모델은 계속 바뀌므로, 새 모델을 채택할 때마다 아키텍처를 다시 짜야 한다면 그것이 오히려 팀을 후퇴시킨다'는 것이다. 구체적으로 어떤 신규 모델이 추가됐는지, 음성 에이전트의 지연시간/언어 지원, '지속적 최적화'의 정확한 메커니즘은 확인되지 않는다. '음성 에이전트'와 '지속적 최적화'라는 표현은 애저가 에이전트 플랫폼을 단발성 배포가 아니라 지속적으로 튜닝되는 서비스로 포지셔닝하고 있음을 시사한다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 모델 교체가 아키텍처 재작업을 요구하지 않도록 설계하라는 메시지는, 에이전트 플랫폼팀이 처음부터 모델 프로바이더에 대한 추상화 계층을 두어야 벤더/모델 변경에 유연하게 대응할 수 있다는 점을 시사한다.
+
+### [How Cloudflare addressed a cross-tenant data exposure vulnerability in Containers](https://blog.cloudflare.com/containers-cross-tenant-vulnerability/)
+
+_Cloudflare_
+
+외부 보안 연구팀 Accomplish가 클라우드플레어 Containers에서 이전 워크로드의 잔여 디스크 데이터가 다른 테넌트에 노출될 수 있는 취약점을 발견했다. 클라우드플레어는 이 취약점이 어떻게 작동했는지, 어떻게 조사했는지, 그리고 어떤 조치로 수정했는지를 설명하는 사후 분석 성격의 글을 게시했다. 구체적으로 어느 컨테이너 격리 계층(디스크 초기화/스크러빙 로직 등)에 결함이 있었는지, 영향을 받은 기간이나 고객 수, CVE 식별자 등은 확인되지 않는다. 이런 유형의 취약점은 컨테이너나 마이크로VM을 다중 테넌트 간에 재사용하는 모든 서버리스/샌드박스 플랫폼에 공통적으로 해당될 수 있는 리스크로, 클라우드플레어만의 문제로 국한되지 않는다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 컨테이너 기반 멀티테넌트 서비스에서 이전 워크로드의 디스크 잔여물이 새 테넌트에 노출될 수 있다는 사례는, 컨테이너 재사용 시 디스크 스크러빙(scrubbing)을 격리 경계의 필수 통제로 검증해야 함을 다시 보여준다.
+
+### [Your architecture diagram is not your resilience](https://azure.microsoft.com/en-us/blog/your-architecture-diagram-is-not-your-resilience/)
+
+_Azure_
+
+애저 블로그는 '복원력(resilience)'을 한 번 설정하고 끝내는 프로젝트로 여겨온 오랜 관행을 비판하며, 이는 서비스 가동은 유지했지만 복원력을 종료일이 있는 프로젝트가 아니라 지속적으로 유지해야 할 속성으로 다루지 못했다고 지적한다. 제목의 '아키텍처 다이어그램이 곧 복원력은 아니다'라는 주장은, 설계도가 실제 장애 상황에서의 복원력을 보장하지 않는다는 메시지로 읽힌다. 구체적으로 어떤 지속적 복원력 관행(카오스 엔지니어링, 정기 장애 훈련 등)을 권장하는지는 확인되지 않는다. 이런 주장은 최근 SRE 업계에서 강조되는 '지속적 복원력 검증(continuous resilience validation)' 트렌드와 맥락을 같이하는 것으로 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 복원력을 한 번의 설계 프로젝트가 아니라 계속 유지·검증해야 할 속성으로 다루라는 메시지는, SRE 팀이 아키텍처 리뷰 문서 대신 정기적인 장애 주입·복구 훈련을 복원력 검증의 기본 관행으로 삼아야 함을 시사한다.
+
+### [Designing agent-first platforms: What changes when agents do the work](https://azure.microsoft.com/en-us/blog/designing-agent-first-platforms-what-changes-when-agents-do-the-work/)
+
+_Azure_
+
+애저 블로그는 앞서가는 조직들이 기존 소프트웨어에 AI를 단순히 얹는 것이 아니라, 에이전트가 실제 업무를 수행하는 것을 전제로 완전히 다른 종류의 소프트웨어를 설계하고 있다고 주장한다. 제목의 '에이전트 퍼스트 플랫폼'이라는 표현은 플랫폼 아키텍처 자체를 에이전트 중심으로 재설계해야 한다는 논지를 시사한다. 구체적으로 어떤 아키텍처 패턴(에이전트 오케스트레이션, 권한 모델, 상태 관리 등)이 '다른 종류의 소프트웨어'를 구성하는지는 확인되지 않는다. 이 글은 구체적 기술 스펙보다는 조직이 에이전트 도입을 바라보는 관점 전환을 촉구하는 사고 리더십(thought leadership) 성격의 포스트로 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 AI를 기존 소프트웨어에 얹는 것과 에이전트를 중심으로 플랫폼을 새로 설계하는 것은 근본적으로 다른 결정이므로, 플랫폼팀은 에이전트 도입을 기능 추가가 아니라 아키텍처 결정으로 취급해야 한다.
+
+---
+
+## DevOps & 인프라
+
+### [GitHub Copilot app for Beginners: How to build custom workflows with canvases](https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/)
+
+_GitHub_
+
+GitHub Copilot 앱에 '캔버스(canvases)'라는 기능이 소개됐다. 사용자가 자연어로 필요한 인터페이스를 설명하면 에이전트가 그 자리에서 사용하고 갱신할 수 있는 실시간 화면(live surface)을 만들어준다. 이 글은 초보자를 대상으로 채팅 UI 대신 캔버스를 활용해 커스텀 워크플로를 구축하는 방법을 설명하는 시리즈의 일부로 보인다. 구체적인 캔버스 생성 API, 지원 위젯 종류, 출시 버전 등은 확인되지 않는다. 목표는 도구에 맞춰 사용자가 적응하는 대신 도구가 사용자의 요구에 맞춰 즉석에서 만들어지는 경험을 제공하는 것으로 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 채팅 기반 코파일럿 UX가 커스텀 '캔버스' 화면 생성으로 확장되는 추세는, 플랫폼 엔지니어링 팀의 내부 도구 UI를 에이전트가 대신 만들어주는 방향으로 이어질 수 있다.
+
+### [Microsoft’s new Copilot agents get their own email, calendar — and a place in the org chart](https://thenewstack.io/copilot-agents-identity-runtime/)
+
+_The New Stack_
+
+마이크로소프트가 지금까지 중 최대 규모라고 자평하는 코파일럿 업데이트를 발표했다. 새 코파일럿 에이전트는 자체 이메일 계정과 캘린더를 부여받고 조직도(org chart)에 정식 위치를 갖게 된다. CEO 사티아 나델라가 이번 발표에서 코파일럿을 설명한 인용문은 발췌가 중간에서 끊겨 전체 내용은 확인할 수 없다. 이는 에이전트에게 사람과 유사한 아이덴티티와 런타임을 부여하는 방향으로 해석된다. 구체적으로 어떤 인증·디렉터리 서비스를 통해 이 신원이 발급·관리되는지는 발췌 정보에서 확인되지 않는다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 에이전트에 이메일·캘린더·조직도상 위치를 부여하는 것은 IAM/디렉터리 서비스에 '비인간 신원(non-human identity)' 관리 부담이 늘어난다는 뜻이므로, 클라우드 운영팀은 에이전트 계정에 대한 접근 제어·수명주기 관리를 별도로 설계해야 한다.
+
+### [OpenTelemetry and Prometheus are getting along. What’s still missing?](https://thenewstack.io/opentelemetry-prometheus-observability-interoperability/)
+
+_The New Stack_
+
+이 글은 KubeCon을 앞두고 쿠버네티스·클라우드 네이티브 생태계의 주요 동향을 추적하는 'Road to KubeCon' 시리즈의 일부로, OpenTelemetry와 Prometheus 간 상호운용성이 개선되고 있다는 내용을 다룬다. 발췌가 도입부에서 끊겨 구체적으로 어떤 기능(OTLP 수집, 네이티브 히스토그램, 익셈플러 지원 등)이 개선됐고 무엇이 여전히 부족한지는 확인할 수 없다. 제목상 '무엇이 아직 빠져 있는가'를 다루는 만큼 두 프로젝트 간 잔존 격차를 지적하는 논조로 보인다. 이런 시리즈 기사는 실제 프로덕션에서 두 프로젝트를 함께 운영하는 엔지니어에게 표준 규격이 어디까지 수렴했고 어디서 여전히 커스텀 브릿지나 변환 로직이 필요한지를 가늠하는 참고 자료로 쓰인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 OTel과 프로메테우스의 상호운용성 격차가 남아 있다는 점은, 관측 가능성 파이프라인을 이 둘에 걸쳐 설계하는 팀이 당분간 변환 계층(예: OTel Collector)에 계속 의존해야 함을 시사한다.
+
+### [Trading a Cloud Identity for Your Own: Workload Attestation on Managed Compute](https://netflixtechblog.com/trading-a-cloud-identity-for-your-own-workload-attestation-on-managed-compute-516d5a29b252?source=rss----2615bd06b42e---4)
+
+_Netflix_
+
+넷플릭스 기술 블로그의 이 글은 관리형 컴퓨트(managed compute) 환경에서 클라우드 제공업체의 신원을 자체 워크로드 신원으로 대체하는 '워크로드 어테스테이션(workload attestation)'을 다룬다. 제목에서 '클라우드 신원을 자신의 신원으로 교환한다'는 컨셉을 제시하고 있으나, 발췌가 비어 있어 어떤 프로토콜(SPIFFE/SPIRE 등)이나 신뢰 루트를 사용하는지, 어떤 관리형 컴퓨트 서비스를 대상으로 하는지는 확인할 수 없다. 이런 주제는 최근 클라우드 업계 전반에서 논의되는 '워크로드 아이덴티티(workload identity)' 흐름과 맞닿아 있어, 클라우드 IAM 역할을 워크로드 자체의 검증 가능한 신원으로 보완하려는 움직임의 일환으로 볼 수 있다. 넷플릭스처럼 대규모 관리형 컴퓨트를 운영하는 조직의 사례는 다른 엔지니어링 팀이 자체 신원 증명 체계를 설계할 때 참고할 만한 선례로 여겨진다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 관리형 컴퓨트에서도 클라우드 제공업체가 아닌 워크로드 자체의 신원을 증명하는 방식은, 제로 트러스트 아키텍처에서 서비스 간 인증을 클라우드 IAM에만 의존하지 않도록 만드는 방향으로 이어진다.
+
+### [Improving site performance by shipping more CSS](https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/)
+
+_GitHub_
+
+GitHub 엔지니어링 블로그가 github.com을 CSS-in-JS에서 완전히 벗어나 일반 CSS를 더 많이 배포하는 방식으로 마이그레이션한 과정을 다룬다. 제목에서 알 수 있듯 'CSS를 더 많이 보내는 것'이 오히려 사이트 성능을 개선했다는 역설적 결론을 제시한다. 구체적인 번들 크기 변화, 로딩 시간 개선 수치, 마이그레이션 기간 등은 확인되지 않는다. 이 사례는 자바스크립트 런타임에서 스타일을 계산하는 CSS-in-JS 방식이 대규모 트래픽 사이트에서는 오히려 병목이 될 수 있다는 것을 시사하며, 정적 CSS로의 회귀가 일종의 트렌드 반전으로 주목받고 있다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 대형 프로덕션 사이트가 CSS-in-JS에서 이탈해 정적 CSS로 회귀하는 사례는, 런타임 스타일 계산 비용이 번들 크기 증가보다 성능에 더 해로울 수 있다는 실무적 신호로 참고할 만하다.
+
+### [OpenAI and Cursor agree on agent coordinators. They disagree on who runs them.](https://thenewstack.io/openai-cursor-coordinator-agents/)
+
+_The New Stack_
+
+OpenAI가 이번 달 Agents API를 퍼블릭 베타로 공개했다. 이는 Codex를 구동하는 하네스(harness)를 관리형 세션과 도구 형태로 외부에 노출한 것이다(발췌가 여기서 끊김). 제목에 따르면 OpenAI와 Cursor는 '에이전트 코디네이터(agent coordinator)'라는 개념 자체에는 합의했지만, 그 코디네이터를 누가 운영·제어할 것인가를 두고는 이견이 있다. 구체적인 API 스펙, Cursor 측 대응 기능, 두 회사 간 이견의 세부 내용은 확인되지 않는다. 이런 논쟁은 에이전트 오케스트레이션 계층의 주도권을 모델 제공업체와 툴링 벤더 중 누가 쥘 것인가라는 업계 전반의 긴장을 보여준다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 에이전트 코디네이터의 통제권을 둘러싼 벤더 간 분쟁은, 여러 에이전트 플랫폼을 동시에 쓰는 조직이 벤더 종속 없는 오케스트레이션 계층을 스스로 확보해야 할 필요성을 키운다.
+
+### [Extend Datadog RUM and Product Analytics to Shopify and Salesforce](https://www.datadoghq.com/blog/rum-product-analytics-shopify-salesforce/)
+
+_Datadog_
+
+데이터독이 RUM(Real User Monitoring)과 Product Analytics 지원을 쇼피파이(Shopify)와 세일즈포스 Experience Cloud로 확장했다. 쇼피파이 연동은 테마에 Liquid 스니펫으로 Datadog Browser SDK를 심는 스토어프론트 추적과, 'Settings > Customer' 이벤트에 커스텀 픽셀을 배포하는 체크아웃 추적 두 확장 포인트를 사용한다. 이를 통해 checkout_started부터 checkout_completed까지를 하나의 연속 세션으로 추적할 수 있어, 쇼피파이가 checkout.liquid를 폐지하면서 생긴 모니터링 공백을 메운다. 단, 커스텀 픽셀은 쇼피파이 정책상 체크아웃 페이지 DOM에 접근할 수 없다. 세일즈포스 Experience Cloud 연동은 세일즈포스 전용 Browser SDK 번들을 정적 리소스로 업로드하고 Lightning Web Components의 loadScript로 로드하는 방식이며, Lightning Web Security의 격리 경계 안에서 콘솔/커스텀 에러와 클릭, 프러스트레이션 신호까지 수집한다.
+
+> 💡 체크아웃 흐름과 격리된 프런트엔드 프레임워크(Lightning Web Security 등) 안까지 RUM 계측을 확장하는 것은, SaaS 플랫폼 위에서 운영되는 비즈니스 크리티컬 사용자 여정을 한 관측 가능성 도구로 엔드투엔드 추적할 수 있게 해준다.
+
+### [When chat is the wrong UI](https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/)
+
+_GitHub_
+
+GitHub Copilot 블로그의 이 글은 채팅창이 적합하지 않은 상황에서 개발자가 무엇을 해야 하는지를 다루며, 그 답으로 '캔버스(canvases)'를 제시한다. 채팅 인터페이스가 시각적 레이아웃이나 반복 편집이 필요한 작업에는 부적합하다는 문제의식에서 출발해, 더 구체적이고 만질 수 있는(tangible) 작업 표면이 필요하다는 주장을 편다. 앞서 다룬 'Copilot app for Beginners' 기사와 같은 캔버스 기능을 다루는 것으로 보이지만, 이 글 자체의 구체적 예시나 데모 내용은 확인되지 않는다. 이 글은 앞서 소개된 캔버스 기능을 다른 각도, 즉 '언제 채팅이 부적합한가'라는 문제 정의에서 접근하는 것으로, 실제 신규 기능보다는 UX 철학을 설명하는 성격이 강해 보인다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 '채팅이 아닌 캔버스'라는 프레이밍은, 에이전트 UX 설계에서 대화형 인터페이스가 모든 작업에 최적은 아니며 작업 성격에 맞춰 시각적·상태 유지형 표면을 선택해야 한다는 일반 원칙을 보여준다.
+
+### [What if your agent's hallucinations had a budget? How to start using SLOs for agent behavior](https://grafana.com/blog/what-if-your-agent-s-hallucinations-had-a-budget-how-to-start-using-slos-for-agent-behavior/)
+
+_Grafana_
+
+그라파나 랩스가 자체적으로 AI 에이전트를 구축하면서, 기존 시스템에 적용해온 관측 가능성 방법론(측정하고, 목표를 세우고, 신뢰성을 추론 가능하게 만드는 것)을 에이전트 행동에도 그대로 적용하자는 제안을 담고 있다. 제목의 '환각(hallucination)에 예산을 두면 어떨까'라는 표현대로, 에러 버짓(error budget) 개념을 SLO(서비스 수준 목표) 형태로 에이전트의 환각률에 적용하는 아이디어를 다루는 것으로 보인다. 구체적으로 어떤 지표를 SLI로 삼는지, 실제 그라파나 스택과 어떻게 연동하는지는 확인되지 않는다. 이는 그라파나가 자사 관측 가능성 제품을 AI 에이전트라는 새로운 워크로드 유형에도 확장 적용하려는 실험적 시도로 볼 수 있다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 SRE의 에러 버짓 개념을 에이전트 환각률에 그대로 적용하자는 제안은, 관측 가능성 팀이 LLM 기반 시스템의 신뢰성도 기존 SLO 도구체인으로 측정·경보할 수 있는 대상으로 재정의해야 함을 시사한다.
+
+### [Your Vulnerability Backlog Is No Longer Technical Debt, It’s an Attack Surface](https://snyk.io/blog/vulnerability-backlog-attack-surface/)
+
+_Snyk_
+
+Snyk 블로그는 계속 쌓이는 취약점 백로그가 단순한 '기술 부채'가 아니라 그 자체로 하나의 공격 표면이 됐다고 주장한다. 낡은 위험 가정, 자동화된 공격자, 그리고 개별 취약점들이 연쇄적으로 결합되는 '체이닝(chained findings)'이 기존 접근 방식으로는 대응할 수 없는 새로운 위협 양상을 만든다고 지적한다. 구체적으로 어떤 자동화 공격 사례나 체이닝 시나리오, 백로그 규모 통계가 제시되는지는 확인되지 않는다. 이런 주장은 최근 몇 년간 보안 업계에서 CVSS 점수 단독 기반의 우선순위 지정 방식에 대한 비판이 커지는 흐름과 궤를 같이한다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 개별 취약점의 심각도만으로 우선순위를 매기던 방식은 체이닝 공격 앞에서 무너지므로, 취약점 관리팀은 백로그를 '연결 가능한 공격 경로' 관점에서 재평가하는 리스크 모델로 전환해야 한다.
+
+### [Using TypeSafe’s Jev for evals in Datadog Agent Observability](https://www.datadoghq.com/blog/jev-evals-agent-observability/)
+
+_Datadog_
+
+데이터독이 TypeSafe의 'Jev'라는 2026년 9월 출시된 판정(judge) 모델을 Datadog Agent Observability의 온라인·오프라인 평가(eval)에 통합한 사례를 소개한다. Jev는 상태(문자열 또는 JSON)와 타입이 지정된 질문 세트를 입력받아 확률이 포함된 타입 답변을 반환하며, 설명 없이 순수 판정만 내려 텍스트 생성기로 예/아니오를 물어보는 방식보다 저렴하다. 질문 타입은 참/거짓 확률을 반환하는 Noul, 카테고리와 각 옵션별 확률·신뢰도를 반환하는 Choice, 루브릭 단계의 확률 가중 평균을 반환하는 Score 세 가지다. 온라인 평가는 별도 워커가 turn_id 같은 도메인 키로 라이브 스팬을 비동기 채점하고, 결과는 Noul→score 메트릭, Choice→categorical 메트릭으로 매핑된다. 오프라인 평가는 캐시를 통해 같은 행에 대한 Jev 호출을 여러 평가자가 공유하며(예: '6개 중 첫 번째가 Jev 호출 비용을 내고 나머지 다섯은 캐시를 읽는다'), jev-1.13.0처럼 버전을 고정해 임계값 보정의 일관성을 유지하고, 원시 확률을 저장한 뒤 쿼리 단계에서 임계값을 적용해 재채점 없이 사후 튜닝이 가능하도록 설계했다.
+
+> 💡 설명 없이 확률만 반환하는 저비용 판정 모델로 온라인·오프라인 평가를 하나의 루브릭으로 통일하면, 프로덕션 모니터링과 오프라인 실험 비교를 같은 기준으로 묶을 수 있어 LLM 시스템 관측 가능성의 재현성이 높아진다.
+
+### [Bringing Private Processing to Meta AI Glasses](https://engineering.fb.com/2026/09/23/security/private-processing-meta-ai-glasses/)
+
+_Meta Engineering_
+
+메타 엔지니어링 블로그가 Meta AI 글래스에 '프라이빗 프로세싱(Private Processing)'을 도입한다고 발표했다. 안경형 폼팩터가 휴대폰을 꺼내지 않고도 하루 종일 개인 맥락을 더 잘 이해하며 AI의 도움을 받을 수 있는 최적의 형태라는 전제를 깔고 있다. 이 프라이빗 프로세싱이 구체적으로 어떤 암호화·하드웨어 신뢰 실행 환경(TEE) 기법을 쓰는지, 어떤 데이터(음성, 영상, 위치 등)를 로컬/서버 중 어디서 처리하는지는 확인되지 않는다. 이런 발표는 스마트 글래스 같은 상시 착용형 기기가 확산되는 가운데, 각 제조사가 개인 데이터 처리 위치와 방식을 어떻게 설계하는지가 경쟁 요소이자 규제 대응 포인트로 부상하고 있음을 보여준다. (원문 접근 실패로 제목/발췌 정보만 반영함)
+
+> 💡 상시 착용형 AI 디바이스가 늘어날수록 개인 맥락 데이터를 어디서(온디바이스 vs 서버) 어떻게(암호화·TEE) 처리하는지가 보안·프라이버시 아키텍처의 핵심 설계 축이 된다.
+
+---
+
+_이 다이제스트는 RSS 피드에서 수집한 뒤 AI(Claude)가 요약·정리했습니다. 자세한 내용은 원문 링크를 확인하세요._
