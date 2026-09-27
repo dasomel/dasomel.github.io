@@ -1,0 +1,167 @@
+{
+  "date": "2026-09-28",
+  "generatedAt": "2026-09-27T23:08:43.277Z",
+  "count": 20,
+  "articles": [
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare’s 2026 Annual Founders’ Letter",
+      "link": "https://blog.cloudflare.com/cloudflares-2026-annual-founders-letter/",
+      "date": "2026-09-27T17:00:00.000Z",
+      "excerpt": "The Internet is changing more today than at any point since Cloudflare launched back on September 27, 2010. As automated traffic surpasses human activity, we reflect on the rise of AI agents, new creators, and how we can help build a fair, sustainable future for the web."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Performance engineering from kernel analysis to AI: Adrian Cockcroft’s take",
+      "link": "https://thenewstack.io/cockcroft-performance-engineering-ai/",
+      "date": "2026-09-27T15:00:00.000Z",
+      "excerpt": "Over its five-year history, P99 CONF has hosted quite a few speakers who’ve offered pointed takedowns of the namesake metric."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The rise of agentic AI on Kubernetes: unleashing the new infrastructure layer",
+      "link": "https://thenewstack.io/agentic-ai-kubernetes-management/",
+      "date": "2026-09-27T14:00:00.000Z",
+      "excerpt": "AI is changing expectations around infrastructure and operations, including Kubernetes management. When models run close to the data they use,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Avoiding vendor lock-in through an open-source approach: a developer’s perspective",
+      "link": "https://thenewstack.io/avoiding-vendor-lock-in/",
+      "date": "2026-09-26T15:00:00.000Z",
+      "excerpt": "Every infrastructure team makes decisions that are difficult to reverse. Most of the time, that works out."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "AWS named a Leader in the 2026 Gartner Magic Quadrant for Container Management",
+      "link": "https://aws.amazon.com/blogs/containers/aws-named-a-leader-in-the-2026-gartner-magic-quadrant-for-container-management/",
+      "date": "2026-09-25T21:18:33.000Z",
+      "excerpt": "Gartner has recognized AWS as a Leader in the 2026 Gartner Magic Quadrant for Container Management for the fourth consecutive year. See what our latest container innovations across Amazon ECS and Amazon EKS mean for customers building and scaling on AWS."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "link": "https://openai.com/index/proaction",
+      "date": "2026-09-25T19:00:00.000Z",
+      "excerpt": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: How to build custom workflows with canvases",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+      "date": "2026-09-25T18:00:00.000Z",
+      "excerpt": "Describe the interface you need in plain English, then let the agent build a live surface you can both use and update—so you spend less time adapting to tools and more time getting work done."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Trading a Cloud Identity for Your Own: Workload Attestation on Managed Compute",
+      "link": "https://netflixtechblog.com/trading-a-cloud-identity-for-your-own-workload-attestation-on-managed-compute-516d5a29b252?source=rss----2615bd06b42e---4",
+      "date": "2026-09-25T16:01:03.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-09-25T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Unlock 3x QPS and microsecond latency with Memorystore for Valkey 9.1",
+      "link": "https://cloud.google.com/blog/products/databases/memorystore-for-valkey-9-1-3x-qps-caching/",
+      "date": "2026-09-25T16:00:00.000Z",
+      "excerpt": "At Google Cloud, we are committed to delivering the best managed experience backed by open source software. Today, we’re announcing the general availability of Memorystore for Valkey 9."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Storage Intelligence advisor: Know what changed in your storage estate and act on it",
+      "link": "https://cloud.google.com/blog/products/storage-data-transfer/storage-intelligence-advisor-and-batch-operations-updates/",
+      "date": "2026-09-25T16:00:00.000Z",
+      "excerpt": "The volume of data being generated today brings both opportunity and massive operational complexity. Most teams that operate at scale don't discover issues until they appear on an invoice — and by the time an unusual access pattern shows up as a line item, it has often been running for weeks."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "One Amazon EKS, many edges: How to choose your edge container strategy on AWS",
+      "link": "https://aws.amazon.com/blogs/containers/one-amazon-eks-many-edges-how-to-choose-your-edge-container-strategy-on-aws/",
+      "date": "2026-09-25T15:52:19.000Z",
+      "excerpt": "Choosing the right edge container strategy across many locations can fragment your fleet into dozens of special cases."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Improving site performance by shipping more CSS",
+      "link": "https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/",
+      "date": "2026-09-25T15:00:00.000Z",
+      "excerpt": "How we fully migrated github.com away from CSS-in-JS."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Agents can now set up your website’s security with Turnstile Spin",
+      "link": "https://blog.cloudflare.com/turnstile-spin/",
+      "date": "2026-09-25T13:00:00.000Z",
+      "excerpt": "Misconfiguring Turnstile by skipping backend validation leaves sites exposed to bots. Turnstile Spin fixes incomplete setups by using your preferred AI coding agent to wire up server-side verification."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Security Slam 2026 – Fall edition",
+      "link": "https://www.cncf.io/blog/2026/09/25/security-slam-2026-fall-edition/",
+      "date": "2026-09-25T11:00:00.000Z",
+      "excerpt": "Security Slam 2026 – Fall Edition is a 30-day virtual event from October 5 through November 6, 2026. What Is the Security Slam?"
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "AI adoption is a security survival metric",
+      "link": "https://webflow.sysdig.com/blog/ai-adoption-is-a-security-survival-metric",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "AI is moving from experiment to infrastructure. Sysdig research shows more organizations building their own infrastructure, reducing the AI attack surface."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Enterprise Linux 10 STIG automation now matches DISA STIG V1R2",
+      "link": "https://www.redhat.com/en/blog/red-hat-enterprise-linux-10-stig-automation-now-matches-disa-stig-v1r2",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "For the U.S."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How to manage aircraft leases with AI agents",
+      "link": "https://www.redhat.com/en/blog/how-manage-aircraft-leases-ai-agents",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "AI quickstarts are a catalog of ready-to-run, industry-specific use cases for your Red Hat AI environment. Each aims to provide a simple and practical way to solve real-world problems using AI on enterprise open source infrastructure."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — September 25, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-september-25-2026-red-hat",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "The blueprint for scalable enterprise security in the age of AIThroughout this series, we will unpack how Red Hat can help customers implement a layered security defense, from the operating system (OS) foundation to autonomous AI agents, ensuring enterprise resilience in the age of AI and emerging threats."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Extend Datadog RUM and Product Analytics to Shopify and Salesforce",
+      "link": "https://www.datadoghq.com/blog/rum-product-analytics-shopify-salesforce/",
+      "date": "2026-09-25T00:00:00.000Z",
+      "excerpt": "Use Datadog RUM and Product Analytics to monitor checkout journeys on Shopify and customer experiences in Salesforce Experience Cloud."
+    }
+  ]
+}
