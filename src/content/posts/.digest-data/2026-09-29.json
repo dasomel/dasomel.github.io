@@ -1,0 +1,199 @@
+{
+  "date": "2026-09-29",
+  "generatedAt": "2026-09-29T00:26:20.243Z",
+  "count": 24,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "You picked Claude Sonnet 5.5 — but Anthropic may send your request to Sonnet 5",
+      "link": "https://thenewstack.io/claude-sonnet-cyber-safeguards/",
+      "date": "2026-09-28T21:34:23.000Z",
+      "excerpt": "Anthropic’s Claude Sonnet 5.5, released Monday, is the first Sonnet model to launch with cyber safeguards and model fallbacks like"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI exposes “new variety of prompt injection” that can spread like computer worms",
+      "link": "https://thenewstack.io/openai-self-replicating-injections/",
+      "date": "2026-09-28T21:26:55.000Z",
+      "excerpt": "In a report published Friday, OpenAI shares evidence of a new variety of prompt injection that can self-propagate like a"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Enterprise AI desperately needs to protect data and models. Here’s how confidential AI could do it.",
+      "link": "https://thenewstack.io/confidential-ai-sensitive-enterprise-data/",
+      "date": "2026-09-28T20:22:00.000Z",
+      "excerpt": "Most people already understand what generative AI can do. But enterprises run into problems when they need to give a"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "How Property Finder automated incident management with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/how-property-finder-automated-incident-management-with-aws-devops-agent/",
+      "date": "2026-09-28T19:03:40.000Z",
+      "excerpt": "Property Finder built end-to-end autonomous incident management with AWS DevOps Agent. The full lifecycle, from alert to root cause analysis, Jira ticket, on-call page, and an auto-remediation pull request, completes in 14 minutes, down from 2 to 3 days for detection alone."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "date": "2026-09-28T19:00:00.000Z",
+      "excerpt": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How we found 24 Android vulnerabilities using our open source AI security agent",
+      "link": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent/",
+      "date": "2026-09-28T19:00:00.000Z",
+      "excerpt": "A look at the targeted AI taskflows behind these findings, the critical Android bugs they uncovered, and how to run the same open-source agent on your own app."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Highlights from Git 2.56",
+      "link": "https://github.blog/open-source/git/highlights-from-git-2-56/",
+      "date": "2026-09-28T17:23:33.000Z",
+      "excerpt": "The open source Git project just released Git 2.56."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Audit trails for autonomous agents with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/audit-trails-for-autonomous-agents-with-aws-devops-agent/",
+      "date": "2026-09-28T16:07:26.000Z",
+      "excerpt": "AWS DevOps Agent investigates production incidents and proposes or applies fixes on your behalf, raising two questions for every operation and security review: what did the agent do, and how do you understand its impact?"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Fix pod distribution drift in Amazon EKS with the Kubernetes descheduler",
+      "link": "https://aws.amazon.com/blogs/containers/fix-pod-distribution-drift-in-amazon-eks-with-the-kubernetes-descheduler/",
+      "date": "2026-09-28T16:01:43.000Z",
+      "excerpt": "A workload spread across three Availability Zones does not necessarily stay spread."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing Ask, a new Google Earth Engine feature to accelerate geospatial coding",
+      "link": "https://cloud.google.com/blog/products/data-analytics/accelerate-geospatial-coding-with-ai-in-google-earth-engine/",
+      "date": "2026-09-28T16:00:00.000Z",
+      "excerpt": "Whether you are mapping global forest cover, detecting changes in the built environment, or monitoring agricultural yields, writing scripts in Google Earth Engine is a powerful way to develop these insights."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Why your startup needs open models alongside frontier APIs",
+      "link": "https://cloud.google.com/blog/topics/startups/why-your-startup-needs-open-models-alongside-frontier-apis/",
+      "date": "2026-09-28T16:00:00.000Z",
+      "excerpt": "Every week, I talk with founders who are building at an unbelievable pace. Teams are moving from inception to product-market fit faster than ever, with foundation models wired deeply into their core product workflows."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Next.js applications, powered by Vite: introducing Vinext 1.0",
+      "link": "https://blog.cloudflare.com/vinext-nextjs-on-vite/",
+      "date": "2026-09-28T14:51:57.000Z",
+      "excerpt": "Vinext 1.0 graduates from an AI experiment to a production-ready framework, letting developers run Next."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing cf: the agentic CLI for the entire Cloudflare API",
+      "link": "https://blog.cloudflare.com/cloudflare-cf-cli-launch/",
+      "date": "2026-09-28T14:50:37.000Z",
+      "excerpt": "We are releasing cf, our new command-line tool that mirrors the entire Cloudflare API and supports programmatic TypeScript configuration. We are also open-sourcing Forge, our internal SDK generator."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How fast is the web? Explore billions of real-user measurements with BEACON",
+      "link": "https://blog.cloudflare.com/how-fast-is-the-web/",
+      "date": "2026-09-28T14:43:05.000Z",
+      "excerpt": "Cloudflare is open-sourcing the BEACON dataset, making billions of anonymized Real User Monitoring (RUM) performance records publicly available on Google BigQuery. Explore real-world Core Web Vitals, soft navigation metrics, and performance breakdowns across browsers and regions."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The case for a cloud native agent harness",
+      "link": "https://www.cncf.io/blog/2026/09/28/the-case-for-a-cloud-native-agent-harness/",
+      "date": "2026-09-28T11:00:00.000Z",
+      "excerpt": "Coding agents became useful when they stopped being a chat box. Four things changed the shape of the problem: capable tools, a shared repository and filesystem, subagents, and skills that capture what the system learned from."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Holo4: powering generalist computer-use agents",
+      "link": "https://huggingface.co/blog/Hcompany/holo4",
+      "date": "2026-09-28T09:44:05.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "link": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "date": "2026-09-28T07:00:00.000Z",
+      "excerpt": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Storage-optimized Z4D machine family, now GA, is designed for IO-intensive workloads",
+      "link": "https://cloud.google.com/blog/products/compute/storage-optimized-z4d-vm-and-bare-metal-instances/",
+      "date": "2026-09-28T07:00:00.000Z",
+      "excerpt": "Today, we’re excited to announce the general availability of our next-generation Storage-optimized Z4D machine series in Google Compute Engine with both Virtual Machine (VM) and bare-metal instances."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Are you a Codex Original?",
+      "link": "https://openai.com/form/codex-originals",
+      "date": "2026-09-28T00:00:00.000Z",
+      "excerpt": "We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+      "link": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "date": "2026-09-28T00:00:00.000Z",
+      "excerpt": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why Red Hat is building secure agent onboarding",
+      "link": "https://www.redhat.com/en/blog/why-red-hat-is-building-secure-agent-onboarding",
+      "date": "2026-09-28T00:00:00.000Z",
+      "excerpt": "Every enterprise AI conversation we’ve had this year ends in the same place. A team has an agent that works."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Securing AI agents requires securing the systems around them",
+      "link": "https://www.redhat.com/en/blog/securing-ai-agents-requires-securing-systems-around-them",
+      "date": "2026-09-28T00:00:00.000Z",
+      "excerpt": "Enterprise AI is changing from software that primarily generates information to software that can take action. AI agents can call APIs, invoke tools, access files and credentials, communicate over networks and interact directly with business systems."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "What's new in Git 2.56.0?",
+      "link": "https://about.gitlab.com/blog/whats-new-in-git-2-56-0/",
+      "date": "2026-09-28T00:00:00.000Z",
+      "excerpt": "The Git project recently released Git 2.56."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Travel’s AI dilemma at Skift Global Forum",
+      "link": "https://stripe.com/blog/travels-ai-dilemma-at-skift-global-forum",
+      "date": "2026-09-28T00:00:00.000Z",
+      "excerpt": "At the “great recalibration”-themed travel conference, Airbnb CEO Brian Chesky called AI “an existential risk” to his company and “literally the best thing to ever happen” to it in the same discussion. That sums up many travel leaders’ push-and-pull relationship with AI."
+    }
+  ]
+}
