@@ -10,10 +10,10 @@ Luna is a continuity/fallback layer. It does not replace the project's existing 
 - `output: export` and GitHub Pages deployment for `cne.io.kr`.
 - Build: `npm run build`.
 - Lint: `npm run lint` (`eslint .`); the expected baseline is 0 errors and 3 known warnings. Do not suppress the known warnings or silently accept new warnings.
-- CI deployment is gated by build; do not add a lint gate without an explicit project decision.
+- CI (`ci.yml`) and `deploy.yml` run `bun test`, `bun run lint`, and `bun run build`.
 - Content routes are under `app/[locale]/{posts,projects,docs,seminars,events}/[slug]`.
 - Preserve frontmatter and MD/MDX conventions used by existing posts.
-- Do not regenerate `package-lock.json` or change dependencies merely to make a task easier; follow the repository's existing lockfile and runtime requirements.
+- Do not regenerate `bun.lock` or change dependencies merely to make a task easier; follow the repository's existing lockfile and runtime requirements.
 - Do not change GitHub Actions publication behavior casually. In particular, preserve the explicit deployment dispatch behavior required for bot-created commits and the double-publication guards documented in `CLAUDE.md`.
 - Before claiming publication success, verify the repository's actual build/deploy evidence rather than inferring success from a green intermediate step.
 

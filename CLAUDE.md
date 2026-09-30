@@ -1,16 +1,15 @@
 # 프로젝트 지침 (dasomel.github.io)
 
-Next.js 15 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커스텀 도메인 **cne.io.kr**.
+Next.js 16 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커스텀 도메인 **cne.io.kr**.
 빌드 `npm run build` · 린트 `npm run lint`(=`eslint .`) · 라우트 `app/[locale]/{posts,projects,docs,seminars,events}/[slug]`.
 
 > 린트는 0 errors / **3 warnings** 상태가 정상이다. 남은 경고는 의도적이거나 오탐이라 룰을 끄지 않고 남겼다 —
 > `no-img-element` ×2(`output: export`라 `next/image` 최적화 불가), `no-page-custom-font`(App Router 오탐).
 > 새 경고가 붙으면 그건 새로 생긴 것이니 확인할 것.
-> **CI는 lint를 돌리지 않는다** — `deploy.yml`의 게이트는 `npm run build` 뿐이다.
+> CI(`ci.yml`)와 `deploy.yml`은 `bun test` → `bun run lint` → `bun run build`를 돌린다(패키지 매니저는 bun).
 
-**독자는 둘이다.** 세션 오케스트레이터(Opus 5 / Fable 5)와, `agyp`가 이 파일 전문을 주입해 받는 agy 워커다.
+**독자는 둘이다.** 세션 오케스트레이터(Opus 5.5 / Sonnet 5.5)와, `agyp`가 이 파일 전문을 주입해 받는 agy 워커다.
 그래서 절차 설명이 아니라 **불변식과 함정**만 적고, 워커가 그대로 따를 수 있게 명령형으로 쓴다.
-글로벌 `~/.claude/CLAUDE.md`의 라우팅 독트린·팀 기본값이 그대로 적용되며, 아래는 이 저장소에만 해당하는 차이다.
 
 ## 위임 기준 (이 저장소 한정)
 
@@ -27,20 +26,16 @@ Next.js 15 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커�
 
 **레인에 던질 때 지킬 것** — 이걸 빠뜨리면 레인이 조용히 헛돌거나 저장소를 망가뜨린다:
 
-- **프롬프트가 항상 첫 인자다.** `agyp "<프롬프트>" --model "…"`. 플래그를 앞에 두면 그게 태스크로
-  먹히고 `--model`이 조용히 떨어져 나간다(종료 코드는 0). 태스크와 무관한 응답이 오면 이걸 먼저 의심한다.
-- **출력은 파일로 받고 읽어들인다.** stdout을 그대로 메인 컨텍스트에 흘리지 말 것.
 - **읽기 전용 레인은 프롬프트에 금지 목록을 명시한다** — 수정 금지, `git`/`gh` 쓰기 금지. 안 적으면 한다.
 - **레인 결과를 그대로 믿지 말 것.** 발행·배포·빌드 주장은 오케스트레이터가 핵심 수치만 직접 재확인한다
   (2026-08-09 실측: 레인 보고 6개 항목 중 라이브 응답·Pages SHA를 직접 재검증해 일치 확인).
 - **`&&` 체인으로 `agyp`를 걸지 말 것.** 앞 명령이 실패하면 레인이 아예 실행되지 않는데
   결과 파일이 없는 것과 구분이 안 된다. 세미콜론으로 끊고 종료 코드를 따로 본다.
 
-**이 저장소에 agy를 던질 때는 반드시 `agyp`.** raw `agy -p`는 프로젝트 컨텍스트를 전혀 못 읽어서
-아래 lock 규칙과 배포 트리거 불변식이 워커에게 도달하지 않는다. 모르는 워커는 lock을 재생성하고 CI를 깬다.
+raw `agy -p`는 이 파일을 못 읽어 아래 lock 규칙과 배포 트리거 불변식이 워커에게 도달하지 않는다. 반드시 `agyp`.
 
 **워커 하드 제약** — 아래는 오케스트레이터가 판단할 일이니 워커 레인에서 직접 하지 말 것:
-`npm install`/lock 갱신(보강이 필요하면 보고), `git push`·PR 머지·`gh workflow run`, dev 서버 실행 중 `npm run build`.
+`bun install`/lock 갱신(보강이 필요하면 보고), `git push`·PR 머지·`gh workflow run`, dev 서버 실행 중 `npm run build`.
 
 **빌드/배포 주장은 항상 실측으로 증명한다.** 타입체크 통과나 워크플로 `success`는 발행 성공의 증거가 아니다 —
 Pages 배포 SHA(`gh api repos/dasomel/dasomel.github.io/deployments`)와 라이브 URL 응답 코드까지 확인한다.
@@ -162,25 +157,14 @@ fallback 머지는 06:47~07:53 KST 인데 보강 세션은 08:05 라, 보강이 
 **조용한 no-op을 만들지 말 것.** `gh ... || true` 로 실패를 삼키면 "머지할 것 없음"과 구분되지 않아
 발행이 멈춰도 워크플로는 초록으로 뜬다. 이번 사고의 본질이 그것이다 — 실패는 `::error::` + 비정상 종료로 드러낸다.
 
-## ⚠️ package-lock.json 규칙 (CI 빌드 깨짐 방지)
+## ⚠️ 락파일 규칙 (CI 빌드 깨짐 방지)
 
-CI는 **Linux + Node 22(npm 10)** 에서 `npm ci`. macOS(Apple Silicon) 로컬과 어긋나 **로컬 통과 / CI 실패**가 난다.
+패키지 매니저는 **bun**(`bun.lock`, 커밋됨)이고 CI는 `bun install --frozen-lockfile`(Bun 1.4.0)이다. `package-lock.json`은 없다.
 
-1. **lock을 처음부터 새로 만들지 말 것.** 기존 lock 유지 + `npm install --package-lock-only`로 *보강*만 한다.
-   전체 재생성하면 `@parcel/watcher`(next-intl 경유)의 13개 플랫폼 변종 중 호스트(`darwin-arm64`)만 남아
-   CI에서 `No prebuild or local build of @parcel/watcher found`로 깨진다.
-   ```bash
-   node -e "const l=require('./package-lock.json');console.log(Object.keys(l.packages).filter(p=>p.includes('@parcel/watcher-')).length)"  # 13
-   ```
-2. **CI와 같은 npm으로 검증.** 로컬 npm 11은 관대하고 CI npm 10은 엄격하다. 푸시 전 반드시:
-   ```bash
-   rm -rf node_modules .next && npx -y npm@10 ci && npm run build
-   ```
-   `EUSAGE ... can only install packages when ... in sync` = lock 불일치.
-3. **버전 드리프트 주의.** `^` 범위가 최신으로 튄다. `next-intl`은 `~4.11.2` 고정 — 함부로 올리지 말 것
-   (과거 `^4.9.1`→`4.13.0` 드리프트가 `@parcel/watcher`를 끌어와 CI를 깼다).
-4. **overrides는 직접 의존성 범위와 일치해야 한다.** 어긋나면 `EOVERRIDE ... conflicts with direct dependency`로
-   install 자체가 실패한다. 전이 의존성만 있고 버전대가 갈리면 선택자 문법을 쓴다: `"js-yaml@^3.0.0": "^3.15.0"`.
+1. **`bun.lock`을 처음부터 새로 만들지 말 것.** 기존 lock 유지 + 필요한 변경만 한다. 로컬 통과 / CI 실패의 원인이 된다.
+2. **푸시 전 CI와 같은 명령으로 검증.** `bun install --frozen-lockfile && bun test && bun run lint && bun run build`.
+3. **버전 드리프트 주의.** `^` 범위가 최신으로 튄다. 과거 `next-intl` 드리프트가 `@parcel/watcher`를 끌어와 CI를 깬 적이 있다.
+4. **overrides는 직접 의존성 범위와 일치해야 한다.** 어긋나면 install 자체가 실패한다.
 
 ## ⚠️ 이 클론은 혼자 쓰는 게 아니다 — 작업 전 브랜치를 확인하라
 
