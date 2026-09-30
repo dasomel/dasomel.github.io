@@ -1,0 +1,351 @@
+{
+  "date": "2026-10-01",
+  "generatedAt": "2026-09-30T23:57:44.463Z",
+  "count": 43,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Gemini 4 Argon is here: It’s great, and you can’t have it yet",
+      "link": "https://thenewstack.io/google-gemini-4-argon/",
+      "date": "2026-09-30T20:00:00.000Z",
+      "excerpt": "Google on Wednesday announced Gemini 4 Argon, the company’s long-awaited flagship model, and it looks like it was worth the"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Running production experiments with AWS AppConfig experimentation",
+      "link": "https://aws.amazon.com/blogs/devops/running-production-experiments-with-aws-appconfig-experimentation/",
+      "date": "2026-09-30T19:45:35.000Z",
+      "excerpt": "A redesigned checkout button is meant to lift sales. A longer cache time to live (TTL) is meant to cut backend load."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Running multi-day AZ evacuation drills with ARC Zonal Shift",
+      "link": "https://aws.amazon.com/blogs/architecture/running-multi-day-az-evacuation-drills-with-arc-zonal-shift/",
+      "date": "2026-09-30T19:01:57.000Z",
+      "excerpt": "Prove your multi-AZ architecture can sustain a real impairment."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cohere’s faster query model barely dents retrieval quality in its tests",
+      "link": "https://thenewstack.io/cohere-embed-pro-fast/",
+      "date": "2026-09-30T18:41:53.000Z",
+      "excerpt": "Cohere released Embed 5 on Wednesday, giving teams the option to index data with Embed 5 Pro and query those"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How MHK built a HIPAA-eligible agentic AI solution on Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/architecture/how-mhk-built-a-hipaa-eligible-agentic-ai-solution-on-amazon-bedrock/",
+      "date": "2026-09-30T18:30:24.000Z",
+      "excerpt": "MHK built the SmartProminence AI Orchestrator, a HIPAA-eligible agentic workflow framework on AWS using Amazon Bedrock, Amazon ECS, and event-driven patterns. It reduced manual medical review effort by 90% and cut new AI feature deployment from months to weeks."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "CloudBees just committed to an AI-first pivot. Here’s why it matters for enterprise DevOps teams",
+      "link": "https://thenewstack.io/cloudbees-ceo-ai-transformation/",
+      "date": "2026-09-30T18:08:49.000Z",
+      "excerpt": "When new CloudBees CEO Mo Plassnig took the job earlier this year, his board of directors handed him a mandate"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new in AI infrastructure and orchestration in September",
+      "link": "https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/",
+      "date": "2026-09-30T16:00:00.000Z",
+      "excerpt": "We hereby declare September to be scalability month! As the world prepares for a surge of agentic fleets, we are shoring up our AI infrastructure and orchestration offerings to gracefully — and quickly — respond to that demand, all while maintaining workload isolation and security, and keeping costs in check."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cloud CISO Perspectives: How cybersecurity startups can win CISOs",
+      "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-how-cybersecurity-startups-can-win-cisos/",
+      "date": "2026-09-30T16:00:00.000Z",
+      "excerpt": "Welcome to the second Cloud CISO Perspectives for September 2026. Today, Alicja Cade and Nick Godfrey, senior directors, Office of the CISO, share their guidance for cybersecurity startups on how to win over the CISOs who will become crucial business partners and customers."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Empower your agents with the Google Cloud CLI remote MCP server",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-cli-remote-mcp-server-in-preview/",
+      "date": "2026-09-30T16:00:00.000Z",
+      "excerpt": "Today, we’re expanding our ecosystem of managed remote MCP servers by introducing the Google Cloud CLI remote MCP server in preview."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Accelerating AS/400 business rule extraction with Kiro: Step-by-step guide",
+      "link": "https://aws.amazon.com/blogs/devops/accelerating-as-400-business-rule-extraction-with-kiro-step-by-step-guide/",
+      "date": "2026-09-30T15:43:51.000Z",
+      "excerpt": "AS/400 business rule extraction no longer requires months of manual effort."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "AI-powered EKS migration assessment with Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/containers/ai-powered-eks-migration-assessment-with-amazon-bedrock-agentcore/",
+      "date": "2026-09-30T15:34:19.000Z",
+      "excerpt": "Learn how to build an AI-powered migration assessment agent using Amazon Bedrock AgentCore and the Strands Agents SDK."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "ArgoCon North America 2026: What to expect as the Argo community looks toward CD 4.0",
+      "link": "https://www.cncf.io/blog/2026/09/30/argocon-north-america-2026-what-to-expect-as-the-argo-community-looks-toward-cd-4-0/",
+      "date": "2026-09-30T15:24:47.000Z",
+      "excerpt": "Work across the Argo Project is accelerating, with growing adoption, new use cases, and more maintainers contributing across the community. The community is also beginning the visioning process for Argo CD 4."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "How athenahealth modernized healthcare workloads with Amazon EKS Hybrid Nodes",
+      "link": "https://aws.amazon.com/blogs/containers/how-athenahealth-modernized-healthcare-workloads-with-amazon-eks-hybrid-nodes/",
+      "date": "2026-09-30T15:16:52.000Z",
+      "excerpt": "Learn how athenahealth used Amazon EKS Hybrid Nodes to modernize latency-sensitive healthcare workloads on premises, cutting response times in half, reducing hardware and operational costs by 50%, and maintaining a single Kubernetes operating model across its data center and the cloud while meeting HITRUST and data res…"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare Impact reaches $100 million in donations",
+      "link": "https://blog.cloudflare.com/100-million-donations/",
+      "date": "2026-09-30T13:01:55.000Z",
+      "excerpt": "This week, Cloudflare's Impact programs will reach $100 million in donated services. This milestone means that thousands of entities including journalists, civil society, state and local governments, election management bodies, and public schools are being protected from cyberattacks."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cut your AI spend with AI Gateway's Auto Router",
+      "link": "https://blog.cloudflare.com/auto-router/",
+      "date": "2026-09-30T13:00:00.000Z",
+      "excerpt": "Cloudflare AI Gateway now features a model router that evaluates request complexity using an edge-deployed classifier to select the optimal model. By balancing expected output quality against token costs, organizations can dramatically cut AI spend while maintaining performance."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Detect and send production issues straight to your agent",
+      "link": "https://blog.cloudflare.com/real-time-issue-detection/",
+      "date": "2026-09-30T13:00:00.000Z",
+      "excerpt": "You can now use built-in error monitoring in Cloudflare Workers to group production failures and send stack traces, logs, traces, and application context directly to a coding agent to investigate further and open a pull request."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "A Peek Behind Our UI Refresh",
+      "link": "https://www.honeycomb.io/blog/soft-launch-sharper-signals-ui-refresh",
+      "date": "2026-09-30T13:00:00.000Z",
+      "excerpt": "Sol walks through the reasoning behind a recent UI refresh: softer shadows and rounder corners, a new magma-inspired heatmap color ramp tuned for dark mode and accessibility, and small polish that makes a dense product feel calmer."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "From 40 seconds to under 10: rebuilding incident detection on OpenTelemetry, Apache Kafka, and Apache Flink on Kubernetes",
+      "link": "https://www.cncf.io/blog/2026/09/30/from-40-seconds-to-under-10-rebuilding-incident-detection-on-opentelemetry-apache-kafka-and-apache-flink-on-kubernetes/",
+      "date": "2026-09-30T11:00:00.000Z",
+      "excerpt": "Every SaaS company has the same uncomfortable question after a major incident: who noticed first, the monitoring or the customers? For a long time our honest answer was “it depends”."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Disrupting a coordinated model-distillation campaign",
+      "link": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+      "date": "2026-09-30T10:30:00.000Z",
+      "excerpt": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Helping small businesses put AI to work",
+      "link": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+      "date": "2026-09-30T10:00:00.000Z",
+      "excerpt": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "What Is Agentic AppSec?",
+      "link": "https://snyk.io/blog/what-is-agentic-appsec/",
+      "date": "2026-09-30T04:00:00.000Z",
+      "excerpt": "Learn how Agentic AppSec uses grounded, bounded, and independently verified AI agents to run the application security loop."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Evo ADS Govern Agent Behavior Goes GA: Bringing MCP Usage Under Control",
+      "link": "https://snyk.io/blog/evo-ads-govern-agent-behavior-ga/",
+      "date": "2026-09-30T04:00:00.000Z",
+      "excerpt": "Evo ADS Govern Agent Behavior is now generally available, starting with MCP Governance. Discover, approve, monitor, log, and block MCP server usage across leading AI coding agents."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "9인조 다람쥐 아이돌을 데뷔시켰습니다",
+      "link": "https://toss.tech/article/chipmunk",
+      "date": "2026-09-30T01:29:00.000Z",
+      "excerpt": "가입하고 한 번도 열어보지 않던 적금을, 매일 열어보게 만들었어요."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
+      "link": "https://huggingface.co/blog/open-tts-leaderboard",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Reimagining the enterprise innovation engine in the agentic era",
+      "link": "https://www.redhat.com/en/blog/reimagining-enterprise-innovation-engine-agentic-era",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "Four years ago, I outlined a playbook for building an enterprise innovation engine. The goal was straightforward: establish a repeatable model for discovering, aligning, developing, and commercializing emerging technologies before market shifts pass you by."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Migrate virtual machines with Red Hat OpenStack Services on OpenShift",
+      "link": "https://www.redhat.com/en/blog/migrate-virtual-machines-red-hat-openstack-services-openshift",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "IT decision makers and their teams often need a scalable private cloud to support optimizing IT operations as they adopt a foundation for cloud-native development. Red Hat OpenStack Services on OpenShift brings massive scale to Infrastructure-as-a-Service, allowing virtualized and cloud-native workloads to coexist."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Building an AI-powered multimodal compliance monitor: From training to tracking to chat",
+      "link": "https://www.redhat.com/en/blog/building-ai-powered-multimodal-compliance-monitor-training-tracking-chat",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "Organizations face a persistent challenge maintaining workplace safety, security, asset tracking, and operational compliance across facilities with multiple video feeds. Manual monitoring is resource-intensive, inherently reactive, and often misses critical events or patterns indicating safety risks."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we built an async-aware Python profiler",
+      "link": "https://www.datadoghq.com/blog/engineering/async-python-profiler/",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "Learn how we made Python profiling async-aware while reducing profiler overhead and preserving context across asyncio tasks."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "OUSD is now the default stablecoin on Stripe",
+      "link": "https://stripe.com/blog/ousd-now-live-on-stripe",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "Open USD (OUSD), a stablecoin built for global money movement, is now available across Stripe. Businesses can use OUSD to manage funds, make payments, and offer new financial services."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "How Diffusion Controller unifies and simplifies AI image generation",
+      "link": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
+      "date": "2026-09-29T18:38:27.000Z",
+      "excerpt": "Algorithms & Theory"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Building a Slack-powered AI development agent with Kiro CLI and headless authentication",
+      "link": "https://aws.amazon.com/blogs/devops/building-a-slack-powered-ai-development-agent-with-kiro-cli-and-headless-authentication/",
+      "date": "2026-09-29T16:02:43.000Z",
+      "excerpt": "Every code review discussion, incident response thread, and standup happens in Slack. But when an engineer needs to analyze a service or debug a failing test, they leave Slack, open a terminal, navigate to the repository, run commands, and paste the output back."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction",
+      "link": "https://huggingface.co/blog/nvidia/kumo-tabular",
+      "date": "2026-09-29T15:30:38.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Developer policy update: Transparency, state policy, and what’s ahead",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-transparency-state-policy-and-whats-ahead/",
+      "date": "2026-09-29T15:00:00.000Z",
+      "excerpt": "Explore GitHub’s latest transparency data and learn more about policy updates affecting developers and open source."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Build adaptive AI interfaces with the AG-UI protocol, agent swarms, and Nova Act on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/build-adaptive-ai-interfaces-with-the-ag-ui-protocol-agent-swarms-and-nova-act-on-aws/",
+      "date": "2026-09-29T13:44:23.000Z",
+      "excerpt": "Learn how to build AI interfaces that automatically adapt to your agents' variable outputs, using the AG-UI protocol for dynamic UI generation, the Strands Agents SDK swarm pattern for explainable multi-agent collaboration, and Amazon Nova Act to integrate legacy systems that lack APIs."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+      "date": "2026-09-29T13:07:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "Evolving our calendar assistant Reclaim to be AI-native without starting over",
+      "link": "https://dropbox.tech/machine-learning/evolving-calendar-assistant-reclaim-to-be-ai-native",
+      "date": "2026-09-29T13:00:00.000Z",
+      "excerpt": "How we redesigned Reclaim for AI and natural-language requests while preserving the scheduling experience people rely on."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Agents Need Context: Introducing Canvas Connectors, Fleet-wide AI Agent Visibility, and More",
+      "link": "https://www.honeycomb.io/blog/agents-need-context-canvas-connectors-ai-agent-visibility",
+      "date": "2026-09-29T12:57:00.000Z",
+      "excerpt": "Canvas agents can now read your code, incidents, runbooks and tickets, to get to the right solution, first time. Also new: AI Ecosystem and LLM cost tracking in early access, Anomaly Detection GA, and onboarding from your coding agent."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Introducing AI Ecosystem: Zoom Out to See Your Whole AI Agent Fleet",
+      "link": "https://www.honeycomb.io/blog/introducing-ai-ecosystem",
+      "date": "2026-09-29T12:57:00.000Z",
+      "excerpt": "Honeycomb is announcing early access to AI Ecosystem: an AI agent fleet-level analysis layer built on Honeycomb's context-rich data model."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing GPT-6.1 Sol",
+      "link": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "date": "2026-09-29T10:00:00.000Z",
+      "excerpt": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab and Claude Code: Fast, compliant AI",
+      "link": "https://about.gitlab.com/blog/gitlab-and-claude-code-fast-compliant-ai/",
+      "date": "2026-09-29T00:00:00.000Z",
+      "excerpt": "Government agencies are feeling twin pressures: While the U.S."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Helping personal agents shop more intelligently and reliably with Link",
+      "link": "https://stripe.com/blog/helping-personal-agents-shop-more-intelligently-and-reliably-with-link",
+      "date": "2026-09-29T00:00:00.000Z",
+      "excerpt": "As agents take on more purchases, agent builders have increasingly asked us to help agents navigate checkout and earn consumer trust. Today, we’re sharing three major improvements to support this broader set of needs."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Enhancing Microsoft Azure Virtual Machine lifecycle",
+      "link": "https://azure.microsoft.com/en-us/blog/enhancing-microsoft-azure-virtual-machine-lifecycle/",
+      "date": "2026-09-28T15:00:00.000Z",
+      "excerpt": "Our Virtual Machine Lifecycle policy guides how we manage these transitions, giving Azure customers transparency, predictability, and guidance."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Terraform 1.16 completes Actions lifecycles and brings imports into child modules",
+      "link": "https://www.hashicorp.com/blog/terraform-116-completes-actions-lifecycles-and-brings-imports-into-child-modules",
+      "date": "2026-09-28T07:00:00.000Z",
+      "excerpt": "Managing infrastructure rarely ends when a resource is created. Teams may need to take a final backup, deregister an asset, or clean up an external system before infrastructure disappears."
+    }
+  ]
+}
