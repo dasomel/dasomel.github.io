@@ -1,0 +1,383 @@
+{
+  "date": "2026-10-02",
+  "generatedAt": "2026-10-01T23:58:01.458Z",
+  "count": 47,
+  "articles": [
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "KubeCon + CloudNativeCon North America 2026: Build your application developer journey",
+      "link": "https://www.cncf.io/blog/2026/10/01/kubecon-cloudnativecon-north-america-2026-build-your-application-developer-journey/",
+      "date": "2026-10-01T23:52:52.000Z",
+      "excerpt": "Cloud native development increasingly means thinking beyond the application itself. How will it be built?"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI’s always-on agents are free, until one specific thing happens",
+      "link": "https://thenewstack.io/openai-dots-codex-usage/",
+      "date": "2026-10-01T22:00:57.000Z",
+      "excerpt": "OpenAI’s new Dots can work around the clock without drawing down a user’s normal usage allowance during the launch period,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Cloudflare brings paid access to MCP tools — who controls the agent’s spending?",
+      "link": "https://thenewstack.io/cloudflare-x402-agent-spending/",
+      "date": "2026-10-01T20:09:20.000Z",
+      "excerpt": "Cloudflare opened a closed beta of its Monetization Gateway on Wednesday, giving domain owners a way to charge AI agents"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“No human wants to look at billions of traces”: Dynatrace bought Arize because agents need a new kind of observability",
+      "link": "https://thenewstack.io/dynatrace-arize-agents-observability/",
+      "date": "2026-10-01T20:05:00.000Z",
+      "excerpt": "Observability has long been a staple of enterprise operations, giving companies a way to understand what their applications and infrastructure"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "KubeCon + CloudNativeCon North America 2026: Build your SRE journey",
+      "link": "https://www.cncf.io/blog/2026/10/01/kubecon-cloudnativecon-north-america-2026-build-your-sre-journey/",
+      "date": "2026-10-01T19:34:20.000Z",
+      "excerpt": "If your day starts with questions about reliability, performance, observability, incidents, scaling, or what is going to break next, there is no shortage of places to spend your time at KubeCon + CloudNativeCon North America 2026."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Trust Docker for the agents you don’t",
+      "link": "https://www.docker.com/blog/docker-cloud-sandboxes-wearedevelopers-recap/",
+      "date": "2026-10-01T18:26:12.000Z",
+      "excerpt": "At WeAreDevelopers, Docker introduced Cloud Sandboxes, the open Sandbox Kit specification, and a commitment to bring Kits to the CNCF for neutral governance."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The eternal complement",
+      "link": "https://openai.com/index/the-eternal-complement",
+      "date": "2026-10-01T17:00:00.000Z",
+      "excerpt": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Implementing feature flags in container environments with AWS AppConfig",
+      "link": "https://aws.amazon.com/blogs/containers/implementing-feature-flags-in-container-environments-with-aws-appconfig/",
+      "date": "2026-10-01T16:42:33.000Z",
+      "excerpt": "Learn how to implement dynamic feature flags in Amazon ECS and Amazon EKS using AWS AppConfig with the sidecar pattern. You set up an AWS AppConfig feature flag, deploy the AWS AppConfig Agent as a sidecar container, and toggle application behavior at runtime without rebuilding or redeploying your containers."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How Albertsons Companies is reimagining retail from the inside out",
+      "link": "https://openai.com/index/albertsons-reimagining-retail",
+      "date": "2026-10-01T16:00:00.000Z",
+      "excerpt": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Enabling Cloud Storage end-to-end checksums for improved data integrity and durability",
+      "link": "https://cloud.google.com/blog/products/storage-data-transfer/enabling-end-to-end-checksums-in-cloud-storage/",
+      "date": "2026-10-01T16:00:00.000Z",
+      "excerpt": "At Google Cloud, we know that you count on us to maintain the durability and integrity of your data at all times, both at rest and in transit."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Accelerating analytics: PayPal’s journey with Managed Service for Apache Spark",
+      "link": "https://cloud.google.com/blog/products/data-analytics/paypals-journey-with-managed-service-for-apache-spark/",
+      "date": "2026-10-01T16:00:00.000Z",
+      "excerpt": "In a data-driven world, PayPal’s ability to deliver timely and actionable insights is central to staying ahead. At PayPal, data powers everything from fraud detection to user experience enhancements."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Accelerating airline retailing innovation: how Datalex modernized with AWS Experience-Based Acceleration and agentic AI",
+      "link": "https://aws.amazon.com/blogs/architecture/accelerating-airline-retailing-innovation-how-datalex-modernized-with-aws-experience-based-acceleration-and-agentic-ai/",
+      "date": "2026-10-01T15:37:06.000Z",
+      "excerpt": "Datalex, a leader in airline ecommerce, partnered with AWS on a three-day Experience-Based Acceleration (EBA) workshop to prove modernization feasibility."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Clef: our open-source decision models, and new RL fine-tuning platform",
+      "link": "https://blog.cloudflare.com/clef-decision-models/",
+      "date": "2026-10-01T15:34:02.000Z",
+      "excerpt": "We are introducing Clef and Clef-flash, open-source decision models hosted on Workers AI for high-speed classification and agentic workflows. Also launching: a new reinforcement learning platform that allows developers to fine-tune decision models using their own data."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "10 technical talks I’m excited about at GitHub Universe 2026",
+      "link": "https://github.blog/news-insights/company-news/10-technical-talks-im-excited-about-at-github-universe-2026/",
+      "date": "2026-10-01T15:07:16.000Z",
+      "excerpt": "From verifying AI-written code to securing npm dependencies, these are the sessions I’m building my Universe agenda around."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+      "link": "https://huggingface.co/blog/allenai/olmocore3",
+      "date": "2026-10-01T15:01:43.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "How Mirelo AI brought sound design to the IDE with MCP and Kiro powers",
+      "link": "https://aws.amazon.com/blogs/devops/how-mirelo-ai-brought-sound-design-to-the-ide-with-mcp-and-kiro-powers/",
+      "date": "2026-10-01T14:49:24.000Z",
+      "excerpt": "Mirelo AI turned its hosted Model Context Protocol (MCP) server into a Kiro power, so developers can generate production-ready sound effects from a natural-language prompt without leaving their IDE. Learn how Mirelo built the integration and how AWS Enterprise Support helped bring it to the Kiro powers marketplace."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "One year later: Sovereign AI and the fight for choice",
+      "link": "https://blog.cloudflare.com/sovereign-ai-choice-one-year-later/",
+      "date": "2026-10-01T13:04:19.000Z",
+      "excerpt": "AI sovereignty is not a zero-sum game, but many governments now believe it is. Cloudflare's answer: more local open-source models, model-agnostic security tools, and a commitment to giving nations genuine choice."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Democratizing Managed Lustre with lower cost and frictionless development",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/democratizing-managed-lustre-with-lower-cost-and-frictionless-development/",
+      "date": "2026-10-01T13:00:00.000Z",
+      "excerpt": "This is the first of a two-part series exploring how Google Cloud is bringing the foundational values of a high-performance parallel filesystem–TB/s throughput, sub-ms latency at high client scale, and POSIX support–to a broader set of use cases and users."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Workers KV Instant — powered by Quicksilver",
+      "link": "https://blog.cloudflare.com/workers-kv-instant/",
+      "date": "2026-10-01T13:00:00.000Z",
+      "excerpt": "Workers KV Instant delivers sub-2ms p99 read latencies and 250ms global replication across Cloudflare’s 300+ edge locations. KV Instant eliminates cold-read penalties and uses the familiar Workers KV API."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Dr. Cat Hicks on the Psychology of Software Teams",
+      "link": "https://www.honeycomb.io/blog/cat-hicks-psychology-of-software-teams",
+      "date": "2026-10-01T13:00:00.000Z",
+      "excerpt": "Dr. Cat Hicks, author of The Psychology of Software Teams and founder of Catharsis, joins Charity Majors for episode two of Leading With Observability."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Guardrails, not gates: rethinking policy in platform teams",
+      "link": "https://www.cncf.io/blog/2026/10/01/guardrails-not-gates-rethinking-policy-in-platform-teams/",
+      "date": "2026-10-01T11:30:00.000Z",
+      "excerpt": "The most popular OPA-based policy tool for Kubernetes is literally called Gatekeeper. Admission controllers block."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Why AI Coding Agents Keep Writing Broken Access Control",
+      "link": "https://snyk.io/blog/ai-coding-agents-broken-access-control/",
+      "date": "2026-10-01T04:00:00.000Z",
+      "excerpt": "AI coding agents can produce authorization logic that compiles and passes review while exposing one tenant’s data to another. Learn why broken access control is difficult to detect and how to prevent it."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "추천 후보는 많을수록 좋을까? TopK를 최적화해 전환율을 높인 방법",
+      "link": "https://toss.tech/article/53545",
+      "date": "2026-10-01T01:26:00.000Z",
+      "excerpt": "TopK를 감이 아닌 최적화로 정한 이야기"
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "With AI agents, runtime is the only place truth lives",
+      "link": "https://webflow.sysdig.com/blog/with-ai-agents-runtime-is-the-only-place-truth-lives",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "Runtime security for AI agents: if an agent is compromised, so is its account of itself. Sysdig's founder on the only truth that can't be forged."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+      "link": "https://openai.com/index/the-den-family-social",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "An inside look at Red Hat’s high school internship program",
+      "link": "https://www.redhat.com/en/blog/inside-look-red-hats-high-school-internship-program",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "High School Internship program participants, pictured on their first day at Red HatIn July 2026, the second High School Internship Program kicked off in Boston and Raleigh."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we extended Apache DataFusion to execute one query across many machines",
+      "link": "https://www.datadoghq.com/blog/engineering/distributed-datafusion/",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "Learn how Datadog built Distributed DataFusion to scale interactive Apache DataFusion queries across multiple machines."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor warehouse data quality beyond pipeline health",
+      "link": "https://www.datadoghq.com/blog/monitor-warehouse-data-quality-beyond-pipeline-health/",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "Learn how to monitor warehouse data quality at rest, detect issues that happen even when pipelines succeed, and trace issues to their source."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Block malicious packages across your organization with Supply Chain Firewall and Datadog Code Security",
+      "link": "https://www.datadoghq.com/blog/supply-chain-firewall-code-security/",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "Datadog Code Security now supports Supply Chain Firewall, adding central management with allowlists, blocklists, and retroactive scanning of installed packages."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Why I tried to kill token billing (and why we kept it)",
+      "link": "https://stripe.com/blog/where-pricing-is-headed",
+      "date": "2026-10-01T00:00:00.000Z",
+      "excerpt": "Token billing is useful infrastructure, but usually a bad customer-facing pricing model. Your invoice should define the value your product delivers, not break down what it cost you to create it."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Running production experiments with AWS AppConfig experimentation",
+      "link": "https://aws.amazon.com/blogs/devops/running-production-experiments-with-aws-appconfig-experimentation/",
+      "date": "2026-09-30T19:45:35.000Z",
+      "excerpt": "A redesigned checkout button is meant to lift sales. A longer cache time to live (TTL) is meant to cut backend load."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Tempo 3.1 release: new features for Kafka, TraceQL metrics updates, trace redaction, and more",
+      "link": "https://grafana.com/blog/tempo-3-1-release-all-the-latest-features/",
+      "date": "2026-09-30T19:03:30.000Z",
+      "excerpt": "Building on the major release of Tempo 3.0, Tempo 3."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Running multi-day AZ evacuation drills with ARC Zonal Shift",
+      "link": "https://aws.amazon.com/blogs/architecture/running-multi-day-az-evacuation-drills-with-arc-zonal-shift/",
+      "date": "2026-09-30T19:01:57.000Z",
+      "excerpt": "Prove your multi-AZ architecture can sustain a real impairment."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How MHK built a HIPAA-eligible agentic AI solution on Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/architecture/how-mhk-built-a-hipaa-eligible-agentic-ai-solution-on-amazon-bedrock/",
+      "date": "2026-09-30T18:30:24.000Z",
+      "excerpt": "MHK built the SmartProminence AI Orchestrator, a HIPAA-eligible agentic workflow framework on AWS using Amazon Bedrock, Amazon ECS, and event-driven patterns. It reduced manual medical review effort by 90% and cut new AI feature deployment from months to weeks."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Accelerating AS/400 business rule extraction with Kiro: Step-by-step guide",
+      "link": "https://aws.amazon.com/blogs/devops/accelerating-as-400-business-rule-extraction-with-kiro-step-by-step-guide/",
+      "date": "2026-09-30T15:43:51.000Z",
+      "excerpt": "AS/400 business rule extraction no longer requires months of manual effort."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "AI-powered EKS migration assessment with Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/containers/ai-powered-eks-migration-assessment-with-amazon-bedrock-agentcore/",
+      "date": "2026-09-30T15:34:19.000Z",
+      "excerpt": "Learn how to build an AI-powered migration assessment agent using Amazon Bedrock AgentCore and the Strands Agents SDK."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "How athenahealth modernized healthcare workloads with Amazon EKS Hybrid Nodes",
+      "link": "https://aws.amazon.com/blogs/containers/how-athenahealth-modernized-healthcare-workloads-with-amazon-eks-hybrid-nodes/",
+      "date": "2026-09-30T15:16:52.000Z",
+      "excerpt": "Learn how athenahealth used Amazon EKS Hybrid Nodes to modernize latency-sensitive healthcare workloads on premises, cutting response times in half, reducing hardware and operational costs by 50%, and maintaining a single Kubernetes operating model across its data center and the cloud while meeting HITRUST and data res…"
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "A Peek Behind Our UI Refresh",
+      "link": "https://www.honeycomb.io/blog/soft-launch-sharper-signals-ui-refresh",
+      "date": "2026-09-30T13:00:00.000Z",
+      "excerpt": "Sol walks through the reasoning behind a recent UI refresh: softer shadows and rounder corners, a new magma-inspired heatmap color ramp tuned for dark mode and accessibility, and small polish that makes a dense product feel calmer."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "What Is Agentic AppSec?",
+      "link": "https://snyk.io/blog/what-is-agentic-appsec/",
+      "date": "2026-09-30T04:00:00.000Z",
+      "excerpt": "Learn how Agentic AppSec uses grounded, bounded, and independently verified AI agents to run the application security loop."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Evo ADS Govern Agent Behavior Goes GA: Bringing MCP Usage Under Control",
+      "link": "https://snyk.io/blog/evo-ads-govern-agent-behavior-ga/",
+      "date": "2026-09-30T04:00:00.000Z",
+      "excerpt": "Evo ADS Govern Agent Behavior is now generally available, starting with MCP Governance. Discover, approve, monitor, log, and block MCP server usage across leading AI coding agents."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "9인조 다람쥐 아이돌을 데뷔시켰습니다",
+      "link": "https://toss.tech/article/chipmunk",
+      "date": "2026-09-30T01:29:00.000Z",
+      "excerpt": "가입하고 한 번도 열어보지 않던 적금을, 매일 열어보게 만들었어요."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
+      "link": "https://huggingface.co/blog/open-tts-leaderboard",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Reimagining the enterprise innovation engine in the agentic era",
+      "link": "https://www.redhat.com/en/blog/reimagining-enterprise-innovation-engine-agentic-era",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "Four years ago, I outlined a playbook for building an enterprise innovation engine. The goal was straightforward: establish a repeatable model for discovering, aligning, developing, and commercializing emerging technologies before market shifts pass you by."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Migrate virtual machines with Red Hat OpenStack Services on OpenShift",
+      "link": "https://www.redhat.com/en/blog/migrate-virtual-machines-red-hat-openstack-services-openshift",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "IT decision makers and their teams often need a scalable private cloud to support optimizing IT operations as they adopt a foundation for cloud-native development. Red Hat OpenStack Services on OpenShift brings massive scale to Infrastructure-as-a-Service, allowing virtualized and cloud-native workloads to coexist."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "OUSD is now the default stablecoin on Stripe",
+      "link": "https://stripe.com/blog/ousd-now-live-on-stripe",
+      "date": "2026-09-30T00:00:00.000Z",
+      "excerpt": "Open USD (OUSD), a stablecoin built for global money movement, is now available across Stripe. Businesses can use OUSD to manage funds, make payments, and offer new financial services."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "SQL Server on Azure Local is now generally available",
+      "link": "https://www.microsoft.com/en-us/sql-server/blog/2026/09/28/sql-server-on-azure-local-is-now-generally-available/",
+      "date": "2026-09-29T16:40:06.000Z",
+      "excerpt": "With SQL Server on Azure Local, customers can modernize where their data resides while maintaining control over infrastructure, connectivity, and data placement."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents",
+      "link": "https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/",
+      "date": "2026-09-29T06:30:00.000Z",
+      "excerpt": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI."
+    }
+  ]
+}
