@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-04T23:18:13.200Z",
+  "count": 11,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Agents have made CI the bottleneck. Faster pipelines are the wrong fix.",
+      "link": "https://thenewstack.io/ci-bottleneck-agent-verification/",
+      "date": "2026-10-04T15:00:00.000Z",
+      "excerpt": "Three posts landed in September that I think engineering leaders should read together. Anthropic’s engineering team wrote that their continuous"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "The Agent Said It Was Done. The Database Disagreed.",
+      "link": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "date": "2026-10-03T22:56:48.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI is speeding up exploits. Vulnerability spreadsheets can’t keep up.",
+      "link": "https://thenewstack.io/cve-vulnerability-risk-management/",
+      "date": "2026-10-03T14:00:00.000Z",
+      "excerpt": "Artificial intelligence has changed almost every aspect of software development and cybersecurity. But perhaps one of the most profound changes"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic’s answer to Dots and Muse is already inside Claude",
+      "link": "https://thenewstack.io/claude-answer-to-dots-muse/",
+      "date": "2026-10-03T10:11:00.000Z",
+      "excerpt": "I’m Matt Burns, Chief Content Officer at Insight Media Group. Each week, I round up the most important AI developments,"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Cloudflare Traces: follow requests through our entire platform",
+      "link": "https://blog.cloudflare.com/cloudflare-tracing/",
+      "date": "2026-10-02T13:00:00.000Z",
+      "excerpt": "Cloudflare Traces shows how a request moves through security rules, transformations, cache, routing, Workers, and your origin, then follows it across services running anywhere in your stack."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Updates on our pledge to make Cloudflare features accessible to everyone",
+      "link": "https://blog.cloudflare.com/enterprise-for-all-update/",
+      "date": "2026-10-02T13:00:00.000Z",
+      "excerpt": "A year after pledging to eliminate two-tier product access, Cloudflare has expanded Logpush, multi-account governance, and higher platform limits to all accounts. Here is an update on our progress, how we dogfood these tools internally, and what is coming next."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Announcing Cloudflare OHTTP Gateway – expanding access to Cloudflare’s privacy-preserving infrastructure",
+      "link": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
+      "date": "2026-10-02T13:00:00.000Z",
+      "excerpt": "We’re announcing the closed beta of a self-serve Cloudflare OHTTP Gateway. We’re also renaming our Privacy Gateway to Cloudflare OHTTP Relay to better distinguish the two products."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How to implement long-term AI agent memory in AlloyDB and Memorystore for Valkey",
+      "link": "https://cloud.google.com/blog/products/databases/implementing-long-term-ai-agent-memory-in-alloydb-and-memorystore/",
+      "date": "2026-10-02T07:00:00.000Z",
+      "excerpt": "Enterprise AI agents need persistent memory to execute complex, multi-day workflows and long-horizon tasks."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "RHCOS 10 - Red Hat’s new worker node OS for OpenShift",
+      "link": "https://www.redhat.com/en/blog/rhcos10-red-hats-new-worker-node-os-openshift",
+      "date": "2026-10-02T00:00:00.000Z",
+      "excerpt": "ContextRed Hat OpenShift uses a purpose-built, immutable operating system for cluster nodes, commonly known as Red Hat Enterprise Linux CoreOS (RHCOS)."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — October 2, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-october-2-2026-red-hat",
+      "date": "2026-10-02T00:00:00.000Z",
+      "excerpt": "Securing AI agents requires securing the systems around themAs AI agents gain authority to act on enterprise systems, model safeguards alone are not enough."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "The first 72 hours of a ransomware attack: Why restored isn’t recovered",
+      "link": "https://www.datadoghq.com/blog/the-first-72-hours-of-a-ransomware-attack-why-restored-isnt-recovered/",
+      "date": "2026-10-02T00:00:00.000Z",
+      "excerpt": "Restoring servers isn’t the same as recovering the business. Plan ransomware recovery and use AI-assisted investigation to detect attacks sooner."
+    }
+  ]
+}
