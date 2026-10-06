@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-06T23:53:57.503Z",
+  "count": 36,
+  "articles": [
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Building Git infrastructure for agent-scale development",
+      "link": "https://github.blog/engineering/architecture-optimization/building-git-infrastructure-for-agent-scale-development/",
+      "date": "2026-10-06T20:57:56.000Z",
+      "excerpt": "We're rebuilding GitHub's Git infrastructure while GitHub keeps running, creating a foundation for agent-scale software development."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The CNCF is graduating projects faster than ever. AI agents are helping with the due diligence.",
+      "link": "https://thenewstack.io/open-source-ai-kubernetes/",
+      "date": "2026-10-06T20:02:17.000Z",
+      "excerpt": "Back in 2018, a scrappy startup called OpenAI used Kubernetes to balance compute loads across its own data centers and"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Announcing MCP Toolbox Java SDK v1.0: Agentic data access for the enterprise",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/announcing-mcp-toolbox-java-sdk-v10-agentic-data-access-for-the-enterprise/",
+      "date": "2026-10-06T19:00:00.000Z",
+      "excerpt": "Co-authors: Stenal Jolly, Strategic Cloud Engineer, Google Anubhav Dhawan, Software Engineer, Google Following the landmark announcement of MCP Toolbox v1.0, we're thrilled to announce that the MCP Toolbox Java SDK has officially reached version 1."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your phone’s vector index might be bigger than the AI model running it",
+      "link": "https://thenewstack.io/google-embeddinggemma-multimodal-search/",
+      "date": "2026-10-06T18:53:07.000Z",
+      "excerpt": "Google released EmbeddingGemma 2 on Tuesday, putting text, code, image, video, and audio retrieval into a 740-million-parameter open model that"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story.",
+      "link": "https://thenewstack.io/github-reviewbench-code-review/",
+      "date": "2026-10-06T18:06:25.000Z",
+      "excerpt": "If there’s one thing the AI software engineering world doesn’t lack, it’s benchmarks. Want to know whether an agent can"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
+      "link": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
+      "date": "2026-10-06T18:00:00.000Z",
+      "excerpt": "In Linux, cgroups (control groups) are a kernel feature used for managing system resources. Kubernetes uses cgroups to allocate resources like CPU and memory to containers, ensuring that applications run smoothly without interfering with each other."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The keys to the Internet change on October 11. Are you ready?",
+      "link": "https://blog.cloudflare.com/root-ksk-2024-rollover/",
+      "date": "2026-10-06T17:50:11.000Z",
+      "excerpt": "On October 11, 2026, the DNS root switches to a new key-signing key (KSK-2024). Learn what this means for you, and how RFC 8509 trust anchor sentinels allow you to test whether your DNS resolver is ready for the rollover."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "NTS: Authenticated Time at Meta",
+      "link": "https://engineering.fb.com/2026/10/06/production-engineering/nts-authenticated-time-at-meta/",
+      "date": "2026-10-06T16:00:06.000Z",
+      "excerpt": "Meta’s public time service now speaks NTS (Network Time Security, RFC 8915) at nts.meta."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "link": "https://openai.com/index/atlassian-partnership",
+      "date": "2026-10-06T16:00:00.000Z",
+      "excerpt": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Managed Apache Iceberg at scale: How Spanner powers Lakehouse runtime catalog",
+      "link": "https://cloud.google.com/blog/products/data-analytics/lakehouse-runtime-catalog-powered-by-spanner/",
+      "date": "2026-10-06T16:00:00.000Z",
+      "excerpt": "As customers modernize to lakehouse architectures, they are standardizing on open formats such as Apache Iceberg to create a shared data estate across compatible engines. This enables you to build AI-native lakehouses that turn data to semantic knowledge, enable proactive action, and operate at an agentic scale."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Migrating from NGINX Ingress to ALB: Handling oauth2-proxy",
+      "link": "https://aws.amazon.com/blogs/containers/migrating-from-nginx-ingress-to-alb-handling-oauth2-proxy/",
+      "date": "2026-10-06T15:54:29.000Z",
+      "excerpt": "The NGINX Ingress Controller is retired. If you run oauth2-proxy with NGINX for OpenID Connect authentication, switching to the AWS Load Balancer Controller can silently break your auth."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Unlocking Earth AI’s planetary geospatial foundation models for global public health",
+      "link": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+      "date": "2026-10-06T15:05:11.000Z",
+      "excerpt": "Earth AI"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How Jump Trading is scaling quant research with ChatGPT",
+      "link": "https://openai.com/index/jump-trading",
+      "date": "2026-10-06T12:00:00.000Z",
+      "excerpt": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Sharing AI progress in mathematics",
+      "link": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "date": "2026-10-06T12:00:00.000Z",
+      "excerpt": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Networking for AI inference model serving - GKE only and for all other backends",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/networking-for-ai-inference-model-serving-gke-only-and-for-all-other-backends/",
+      "date": "2026-10-06T12:00:00.000Z",
+      "excerpt": "Enterprises and individual developers frequently run multiple AI inference models. The right architecture can simplify how the models are called while also providing centralized governance."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The 2026-2028 CNCF ambassador cohort",
+      "link": "https://www.cncf.io/blog/2026/10/06/2026-2028-cncf-ambassador-cohort/",
+      "date": "2026-10-06T11:33:00.000Z",
+      "excerpt": "This year we accepted 58 new ambassadors and said goodbye to 48. All ambassadors have given their spare time to the ecosystem in one way or another, whether they are contributing to a CNCF project, preparing."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+      "link": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+      "date": "2026-10-06T06:44:39.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Three AI governance questions every executive needs to answer",
+      "link": "https://webflow.sysdig.com/blog/three-questions-every-executive-should-be-able-to-answer-about-ai-agents",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Sysdig's CEO on the three questions every executive must answer about AI governance. And why runtime security is the only way to answer them with evidence."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift: Enabling a resilient 5G autonomous edge for Telenor with AxyomCore",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-enabling-resilient-5g-autonomous-edge-telenor-axyomcore",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "5G networks are increasingly deployed as cloud-native platforms, enabling network functions to run consistently across central datacenters, regional sites, and the far edge of the network."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How Red Hat's support AI assistant contributes to accelerating enterprise support",
+      "link": "https://www.redhat.com/en/blog/how-red-hats-support-ai-assistant-contributes-accelerating-enterprise-support",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "In enterprise support, speed and clarity matter most. Yet, when a recurring issue or standard inquiry arises, the primary bottleneck is rarely a lack of technical know-how, but workflow friction."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Ship faster, improve reliability, and control CI costs with Datadog CI/CD Optimization",
+      "link": "https://www.datadoghq.com/blog/ci-cd-optimization/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Learn how Datadog CI/CD Optimization helps teams ship faster with shorter CI feedback loops, reliable builds, and controlled compute costs."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Transcend: Speed you can trust, all the way to production",
+      "link": "https://about.gitlab.com/blog/transcend-india-announcements/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "At Transcend, we made over a dozen announcements across all four layers of our architecture for agentic software engineering: agent orchestration, data and context, DevOps workflows, and governance and security. Watch the replay, or read on for what shipped and how to turn on the new capabilities."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Dependency Firewall: Block risky packages before the build",
+      "link": "https://about.gitlab.com/blog/transcend-dependency-firewall/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Attackers disguise malicious packages as ones you trust. In June 2026, GitLab researchers found five malicious PyPI packages, four of them typosquats of Flask, Requests, and NumPy, that run at install time and steal CI/CD credentials."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Every artifact your teams ship, assembled right the first time",
+      "link": "https://about.gitlab.com/blog/transcend-artifact-central/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Every software build is assembled from open source packages, base images, and libraries, with your code on top. When one of those components is missing or has drifted, the build fails."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubelet watches inodes. Just not until it’s an emergency.",
+      "link": "https://www.cncf.io/blog/2026/10/05/kubelet-watches-inodes-just-not-until-its-an-emergency/",
+      "date": "2026-10-05T21:27:03.000Z",
+      "excerpt": "A worker node pages with NodeFilesystemFilesFillingUp. It’s on course to run out of inodes."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+      "link": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+      "date": "2026-10-05T21:08:00.000Z",
+      "excerpt": "Generative AI"
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Scaling Kubernetes Workloads with Node Swap",
+      "link": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/",
+      "date": "2026-10-05T18:00:00.000Z",
+      "excerpt": "Memory is often the first hard limit a Kubernetes cluster hits. Nodes run out of RAM long before they run out of CPU, and the new wave of agentic AI workloads makes this worse."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Announcing the AWS Digital Sovereignty Lens for the Well-Architected Framework",
+      "link": "https://aws.amazon.com/blogs/architecture/announcing-the-aws-digital-sovereignty-well-architected-lens/",
+      "date": "2026-10-05T17:54:56.000Z",
+      "excerpt": "October 2026: This post was reviewed and updated for accuracy. Today we’re launching the AWS Digital Sovereignty Lens, a new Well-Architected lens providing customers with extended guidance for designing, building, and operating sovereign workloads on AWS."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "ReviewBench: An open benchmark for AI code review",
+      "link": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
+      "date": "2026-10-05T15:59:40.000Z",
+      "excerpt": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Restart EC2 and on-premises fleets faster with AWS CodeDeploy RESTART deployment mode",
+      "link": "https://aws.amazon.com/blogs/devops/restart-ec2-and-on-premises-fleets-faster-with-aws-codedeploy-restart-deployment-mode/",
+      "date": "2026-10-05T15:46:02.000Z",
+      "excerpt": "AWS CodeDeploy now offers a purpose-built RESTART deployment mode that reapplies the last successful revision to EC2 and on-premises fleets. It keeps restarts inside CodeDeploy with the same batch sizing, health checks, alarm monitoring, and rollback behavior as a standard deployment, and ran up to 6."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Everything we launched during Birthday Week 2026",
+      "link": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/",
+      "date": "2026-10-05T13:00:00.000Z",
+      "excerpt": "We celebrated our 16th birthday with 46 announcements across open source, post-quantum security, AI agents, and developer platform upgrades. Here’s a day-by-day roundup of everything we shipped."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "One year later: the power of 1.1.1.1 interns",
+      "link": "https://blog.cloudflare.com/one-year-later-1111-interns/",
+      "date": "2026-10-05T13:00:00.000Z",
+      "excerpt": "A year after announcing our goal to hire 1,111 interns, more than 750 early-career builders have shipped real products across 48 teams at Cloudflare. From Birthday Week launches to post-quantum security, our interns prove that AI amplifies human potential instead of replacing it."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "How Honeycomb Private Cloud Drinks From the Fire Hose",
+      "link": "https://www.honeycomb.io/blog/how-honeycomb-private-cloud-drinks-from-the-fire-hose",
+      "date": "2026-10-05T13:00:00.000Z",
+      "excerpt": "This post walks through how the Honeycomb Private Cloud team built an automated drift report, refactored their own config to make diffing possible, and layered on an AI triage skill to keep pace with changes across the org—plus the guiding principles that made the automation trustworthy."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Security briefing: September 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-september-2026",
+      "date": "2026-10-05T00:00:00.000Z",
+      "excerpt": "It may be October as you read this, but I bet many organizations got the creeps in September as environments were continuously breached. There were scams, old-fashioned human actors, a few agents making mistakes, and some persistent actors taking full advantage of a new vulnerability."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Building zero trust networks with Red Hat Ansible",
+      "link": "https://www.redhat.com/en/blog/building-zero-trust-networks-red-hat-ansible",
+      "date": "2026-10-05T00:00:00.000Z",
+      "excerpt": "With artificial intelligence (AI) models now capable of discovering thousands of vulnerabilities in days and developing exploits in hours, organizations are moving from preventing to containing the breach."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Process and route critical security logs to Exabeam with Observability Pipelines",
+      "link": "https://www.datadoghq.com/blog/observability-pipelines-exabeam-packs/",
+      "date": "2026-10-05T00:00:00.000Z",
+      "excerpt": "Learn how Observability Pipelines Packs reduce security log volume before data reaches Exabeam while preserving parser compatibility."
+    }
+  ]
+}
