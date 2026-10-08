@@ -1,0 +1,303 @@
+{
+  "date": "2026-10-08",
+  "generatedAt": "2026-10-08T00:16:01.800Z",
+  "count": 37,
+  "articles": [
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "CiliumCon is back at KubeCon + CloudNativeCon North America 2026",
+      "link": "https://www.cncf.io/blog/2026/10/07/ciliumcon-is-back-at-kubecon-cloudnativecon-north-america-2026/",
+      "date": "2026-10-07T22:38:50.000Z",
+      "excerpt": "Mark your calendars. On Monday, November 9, CilliumCon kicks off at KubeCon + CloudNativeCon North America in Salt Lake City."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "BackstageCon comes to KubeCon + CloudNativeCon North America 2026 in Salt Lake City",
+      "link": "https://www.cncf.io/blog/2026/10/07/backstagecon-comes-to-kubecon-cloudnativecon-north-america-2026-in-salt-lake-city/",
+      "date": "2026-10-07T21:59:53.000Z",
+      "excerpt": "BackstageCon takes place all day on Monday, November 9, 2026, the day before KubeCon + CloudNativeCon North America opens in Salt Lake City. We’re excited to bring together Backstage adopters, contributors, and maintainers to share how."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Kubernetes on Edge Day returns to KubeCon + CloudNativeCon North America 2026",
+      "link": "https://www.cncf.io/blog/2026/10/07/kubernetes-on-edge-day-returns-to-kubecon-cloudnativecon-north-america-2026/",
+      "date": "2026-10-07T21:33:31.000Z",
+      "excerpt": "Kubernetes on Edge Day returns to KubeCon + CloudNativeCon North America 2026 on November 9 in Salt Lake City, Utah, bringing together developers and adopters from across the cloud native ecosystem to share experiences and insights."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenSSH 10.6 deliberately breaks two features in the name of security",
+      "link": "https://thenewstack.io/openssh-breaks-compression-usernames/",
+      "date": "2026-10-07T21:27:33.000Z",
+      "excerpt": "OpenSSH 10.6, released Tuesday, makes compression less effective and rejects some usernames that previously worked, and the maintainers knew both"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Claude’s cyber safeguards are getting more flexible — but not for everyone.",
+      "link": "https://thenewstack.io/anthropic-cyber-access-tiers/",
+      "date": "2026-10-07T21:25:06.000Z",
+      "excerpt": "This week, Anthropic announced an expansion of its Cyber Verification Program (CVP), breaking access into three use case–based tiers and"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Decision models are suddenly everywhere. OpenAI’s is now public.",
+      "link": "https://thenewstack.io/openai-decision-models-deployment/",
+      "date": "2026-10-07T21:11:26.000Z",
+      "excerpt": "This week, OpenAI opened its Decisions API to public beta and added image inputs to make fast decisions from visual"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Does better work always mean better workers?",
+      "link": "https://research.google/blog/does-better-work-always-mean-better-workers/",
+      "date": "2026-10-07T20:19:57.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Secret protection must scale with software",
+      "link": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/",
+      "date": "2026-10-07T17:45:34.000Z",
+      "excerpt": "Developers aren’t becoming more careless; they’re being outpaced. The tools that let developers create more software should also take on more of the work of protecting it."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Multimodal open d1 decision models for the edge",
+      "link": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "date": "2026-10-07T16:54:33.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+      "link": "https://blog.cloudflare.com/agentic-security-operations/",
+      "date": "2026-10-07T16:30:36.000Z",
+      "excerpt": "Cloudflare Managed Defense uses a team of specialized AI agents built on Workers and global network telemetry to analyze security alerts. By separating deterministic evidence collection from model inference, the system delivers grounded recommendations to Managed Defense Analysts."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing Google Cloud’s U4 compute: Enabling ultra-low latency trading",
+      "link": "https://cloud.google.com/blog/topics/financial-services/ultra-low-latency-solution-with-u4-enables-high-velocity-trading/",
+      "date": "2026-10-07T16:00:00.000Z",
+      "excerpt": "In capital markets, operational success is built on predictable performance and low latency, where even tiny variations in packet timing alter queue priority and trade execution."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Manage synthetic checks at scale: Introducing folders in Grafana Cloud Synthetic Monitoring",
+      "link": "https://grafana.com/blog/manage-synthetic-checks-at-scale-introducing-folders-in-grafana-cloud-synthetic-monitoring/",
+      "date": "2026-10-07T15:00:41.000Z",
+      "excerpt": "As your use of Grafana Cloud Synthetic Monitoring grows, so does the number of checks you need to manage across services, environments, and teams. Eventually, a single flat list of checks becomes difficult to navigate, and even simple questions get harder to answer: Which checks belong to the payments team?"
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "OpenTelemetry Collector Configuration for LLM Observability",
+      "link": "https://www.honeycomb.io/blog/otel-collector-llm-observability",
+      "date": "2026-10-07T13:00:00.000Z",
+      "excerpt": "A complete, annotated OpenTelemetry Collector configuration for LLM observability: receiving traces over OTLP, normalizing OpenInference/OpenLLMetry schemas onto GenAI semantic conventions, redacting sensitive prompt and completion content, managing volume without sampling away conversations, exporting to Honeycomb, pl…"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+      "date": "2026-10-07T12:45:31.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Helping teens learn, plan, and shape the future of AI",
+      "link": "https://openai.com/index/teens-learn-and-plan",
+      "date": "2026-10-07T12:00:00.000Z",
+      "excerpt": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Introducing Playground: Create and play custom games",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "date": "2026-10-07T12:00:00.000Z",
+      "excerpt": "Playground is a new experimental gaming platform that lets you create, play, and share custom games."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+      "link": "https://openai.com/index/radisson",
+      "date": "2026-10-07T07:00:00.000Z",
+      "excerpt": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Frontier models found the vulnerabilities. Only the attacker found the chains.",
+      "link": "https://snyk.io/blog/frontier-models-vulnerabilities-attacker-chains/",
+      "date": "2026-10-07T04:00:00.000Z",
+      "excerpt": "Static analysis found the flaws, but only live attack testing proved how they could be chained into breaches. A comparison of Evo COS, Claude Security, and Claude Code Security."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "GPT-6 and Intelligent UI for everyone",
+      "link": "https://openai.com/index/gpt-6-for-everyone",
+      "date": "2026-10-07T00:00:00.000Z",
+      "excerpt": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "3 reasons to attend Red Hat Summit:Connect 2026",
+      "link": "https://www.redhat.com/en/3-reasons-to-attend-red-hat-summit-connect",
+      "date": "2026-10-07T00:00:00.000Z",
+      "excerpt": "Technology is moving faster than ever. From modernizing cloud infrastructure and virtualization strategies to keeping up with emerging enterprise AI capabilities, staying ahead requires more than reading documentation—it requires real-world context, hands-on application, and connection."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift Platform Plus bundle available on hyperscaler marketplaces",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-platform-plus-rosa-aws-marketplace",
+      "date": "2026-10-07T00:00:00.000Z",
+      "excerpt": "Note: This post was updated on October 7th with the latest information.Organizations using Red Hat OpenShift cloud services are increasingly seeking ways to extend their platform’s capabilities with enterprise-grade security and data management capabilities."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How global service providers achieve virtualization migration at scale with Red Hat OpenShift Virtualization",
+      "link": "https://www.redhat.com/en/blog/how-global-service-providers-achieve-virtualization-migration-scale-red-hat-openshift-virtualization",
+      "date": "2026-10-07T00:00:00.000Z",
+      "excerpt": "As the virtualization market undergoes historic shifts, service providers worldwide are re-evaluating their infrastructure foundations."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we replaced our host vulnerability scanner with the Datadog Agent",
+      "link": "https://www.datadoghq.com/blog/how-we-replaced-our-host-vulnerability-scanner-with-the-datadog-agent/",
+      "date": "2026-10-07T00:00:00.000Z",
+      "excerpt": "Learn how Datadog evaluated Agent-based host vulnerability scanning, compared detection results, and preserved coverage and audit reporting during the migration."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Autonomous Attacks Are Already Here. The Defense Has to Match Their Speed.",
+      "link": "https://snyk.io/blog/autonomous-attacks-already-here-defense-match-their-speed/",
+      "date": "2026-10-07T00:00:00.000Z",
+      "excerpt": "Autonomous attackers are shrinking the window for defense. Learn how continuous discovery, remediation, validation, and prevention can help security teams keep pace."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Building Git infrastructure for agent-scale development",
+      "link": "https://github.blog/engineering/architecture-optimization/building-git-infrastructure-for-agent-scale-development/",
+      "date": "2026-10-06T20:57:56.000Z",
+      "excerpt": "We're rebuilding GitHub's Git infrastructure while GitHub keeps running, creating a foundation for agent-scale software development."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Announcing MCP Toolbox Java SDK v1.0: Agentic data access for the enterprise",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/announcing-mcp-toolbox-java-sdk-v10-agentic-data-access-for-the-enterprise/",
+      "date": "2026-10-06T19:00:00.000Z",
+      "excerpt": "Co-authors: Stenal Jolly, Strategic Cloud Engineer, Google Anubhav Dhawan, Software Engineer, Google Following the landmark announcement of MCP Toolbox v1.0, we're thrilled to announce that the MCP Toolbox Java SDK has officially reached version 1."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
+      "link": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
+      "date": "2026-10-06T18:00:00.000Z",
+      "excerpt": "In Linux, cgroups (control groups) are a kernel feature used for managing system resources. Kubernetes uses cgroups to allocate resources like CPU and memory to containers, ensuring that applications run smoothly without interfering with each other."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The keys to the Internet change on October 11. Are you ready?",
+      "link": "https://blog.cloudflare.com/root-ksk-2024-rollover/",
+      "date": "2026-10-06T17:50:11.000Z",
+      "excerpt": "On October 11, 2026, the DNS root switches to a new key-signing key (KSK-2024). Learn what this means for you, and how RFC 8509 trust anchor sentinels allow you to test whether your DNS resolver is ready for the rollover."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "NTS: Authenticated Time at Meta",
+      "link": "https://engineering.fb.com/2026/10/06/production-engineering/nts-authenticated-time-at-meta/",
+      "date": "2026-10-06T16:00:06.000Z",
+      "excerpt": "Meta’s public time service now speaks NTS (Network Time Security, RFC 8915) at nts.meta."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Managed Apache Iceberg at scale: How Spanner powers Lakehouse runtime catalog",
+      "link": "https://cloud.google.com/blog/products/data-analytics/lakehouse-runtime-catalog-powered-by-spanner/",
+      "date": "2026-10-06T16:00:00.000Z",
+      "excerpt": "As customers modernize to lakehouse architectures, they are standardizing on open formats such as Apache Iceberg to create a shared data estate across compatible engines. This enables you to build AI-native lakehouses that turn data to semantic knowledge, enable proactive action, and operate at an agentic scale."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Migrating from NGINX Ingress to ALB: Handling oauth2-proxy",
+      "link": "https://aws.amazon.com/blogs/containers/migrating-from-nginx-ingress-to-alb-handling-oauth2-proxy/",
+      "date": "2026-10-06T15:54:29.000Z",
+      "excerpt": "The NGINX Ingress Controller is retired. If you run oauth2-proxy with NGINX for OpenID Connect authentication, switching to the AWS Load Balancer Controller can silently break your auth."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Unlocking Earth AI’s planetary geospatial foundation models for global public health",
+      "link": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+      "date": "2026-10-06T15:05:11.000Z",
+      "excerpt": "Earth AI"
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Three AI governance questions every executive needs to answer",
+      "link": "https://webflow.sysdig.com/blog/three-questions-every-executive-should-be-able-to-answer-about-ai-agents",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Sysdig's CEO on the three questions every executive must answer about AI governance. And why runtime security is the only way to answer them with evidence."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Ship faster, improve reliability, and control CI costs with Datadog CI/CD Optimization",
+      "link": "https://www.datadoghq.com/blog/ci-cd-optimization/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Learn how Datadog CI/CD Optimization helps teams ship faster with shorter CI feedback loops, reliable builds, and controlled compute costs."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Transcend: Speed you can trust, all the way to production",
+      "link": "https://about.gitlab.com/blog/transcend-india-announcements/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "At Transcend, we made over a dozen announcements across all four layers of our architecture for agentic software engineering: agent orchestration, data and context, DevOps workflows, and governance and security. Watch the replay, or read on for what shipped and how to turn on the new capabilities."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Dependency Firewall: Block risky packages before the build",
+      "link": "https://about.gitlab.com/blog/transcend-dependency-firewall/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Attackers disguise malicious packages as ones you trust. In June 2026, GitLab researchers found five malicious PyPI packages, four of them typosquats of Flask, Requests, and NumPy, that run at install time and steal CI/CD credentials."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Every artifact your teams ship, assembled right the first time",
+      "link": "https://about.gitlab.com/blog/transcend-artifact-central/",
+      "date": "2026-10-06T00:00:00.000Z",
+      "excerpt": "Every software build is assembled from open source packages, base images, and libraries, with your code on top. When one of those components is missing or has drifted, the build fails."
+    }
+  ]
+}
