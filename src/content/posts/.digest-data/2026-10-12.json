@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-11T23:45:07.596Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Claude Code found my app’s shared contract in two MCP calls. Then the records ran out.",
+      "link": "https://thenewstack.io/claude-code-mcp-records/",
+      "date": "2026-10-11T14:00:00.000Z",
+      "excerpt": "Every Claude Code user has watched a new session start from zero. You open it on a system you built"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Claude found 29,000 possible bugs in open source. Only 516 have been fixed.",
+      "link": "https://thenewstack.io/anthropic-oss-scanner-vulnerabilities/",
+      "date": "2026-10-11T13:00:00.000Z",
+      "excerpt": "Anthropic’s new OSS Scanner, launched last week as part of its broader Cyber Mission, exposes a problem inside the company’s"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "How to turn AI production feedback into better agents",
+      "link": "https://thenewstack.io/ai-agent-evaluation-loop/",
+      "date": "2026-10-10T16:00:00.000Z",
+      "excerpt": "Your agent is live. The service is healthy."
+    }
+  ]
+}
