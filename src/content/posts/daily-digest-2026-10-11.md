@@ -10,7 +10,9 @@ draft: false
 
 ### How to turn AI production feedback into better agents
 
-Your agent is live. The service is healthy.
+이 글은 "프로덕션에 배포된 AI 에이전트의 피드백을 어떻게 더 나은 에이전트로 전환할 것인가"를 제목으로 다룬다. 발췌문은 "당신의 에이전트는 이미 배포되어 있고 서비스는 정상이다"라는 문장으로 시작해, 장애가 없는 상태에서도 개선이 필요하다는 전제를 깔고 있는 것으로 보인다. 다만 본문에서 구체적으로 어떤 피드백 수집 파이프라인이나 평가(eval) 도구, 재학습 절차를 제안하는지는 제목과 발췌문만으로는 확인되지 않는다. 사용된 구체적 수치나 기업·제품명도 발췌 범위에는 포함돼 있지 않다. 일반적으로 이런 주제의 글은 트레이스 로깅, 실패 패턴 분류, 평가셋 구축 같은 단계를 다루지만 이 기사가 실제로 그런지는 단정할 수 없다. 원문(thenewstack.io)에 접근이 차단되어 있어 이 요약은 제목과 발췌문 범위 내에서만 작성했다.
+
+> 💡 **왜 중요한가**: 장애가 없다고 에이전트 개선이 끝난 것은 아니므로, 운영팀은 가동률 모니터링과 별도로 피드백·평가 루프에 예산을 배정해야 한다.
 
 🔗 [원문 보기](https://thenewstack.io/ai-agent-evaluation-loop/) · _The New Stack_
 
@@ -22,47 +24,77 @@ Your agent is live. The service is healthy.
 
 _CNCF_
 
-As organizations accelerate their adoption of AI and cloud native technologies, platform teams are being asked to solve a growing set of challenges. How can developers access new capabilities such as AI safely and efficiently?
+이 글은 2026년 KubeCon + CloudNativeCon North America의 부속 행사인 'Platform Engineering Day' 참가를 안내한다. 배경으로는 조직들이 AI와 클라우드 네이티브 기술 도입을 가속화하면서, 플랫폼 팀이 점점 더 많은 과제를 떠안고 있다는 문제의식을 제시한다. 특히 "개발자가 AI 같은 새로운 기능에 어떻게 안전하고 효율적으로 접근할 수 있는가"라는 질문을 핵심 주제로 던진다. 다만 구체적인 발표자 목록, 세션 일정, 행사 날짜·장소 같은 실무 정보는 발췌문에 포함되어 있지 않다. 참가 신청 방법이나 비용 관련 정보도 확인되지 않는다. 원문(cncf.io)에 접근할 수 없어, 이 요약은 발췌문에 제시된 문제의식까지만 반영했다.
+
+> 💡 AI 기능을 플랫폼에 안전하게 노출하는 문제는 이제 개별 팀의 임시 처리가 아니라 플랫폼 엔지니어링 조직의 정식 의제로 다뤄져야 한다.
 
 ### [Making the Golden Kubestronaut a little more golden](https://www.cncf.io/blog/2026/10/09/making-the-golden-kubestronaut-a-little-more-golden/)
 
 _CNCF_
 
-When I became a Golden Kubestronaut, I wanted to celebrate the achievement in a way that felt lasting. Like most technical achievements, certifications usually live digitally.
+이 글은 1인칭 시점으로, 저자가 'Golden Kubestronaut' 인증을 취득한 후 이를 기념하는 과정을 다룬다. 발췌문에 따르면 저자는 "대부분의 기술적 성취, 즉 인증은 보통 디지털 형태로만 남는다"는 점을 아쉬워하며, 더 오래 남는 방식으로 성취를 기념하고 싶었다고 밝힌다. 다만 구체적으로 어떤 방법(실물 배지, 커스텀 제작물 등)으로 기념했는지는 발췌문에 나타나 있지 않다. Golden Kubestronaut 인증 자체의 취득 조건(쿠버네티스 관련 자격증 조합)에 대한 상세도 확인되지 않는다. CNCF가 이 경험을 바탕으로 인증 프로그램에 어떤 변화를 주려는지도 알 수 없다. 원문(cncf.io)에 접근할 수 없어, 이 요약은 발췌문이 전하는 저자의 동기까지만 반영했다.
+
+> 💡 인증 프로그램의 체감 가치는 디지털 배지를 넘어선 커뮤니티·굿즈 경험에서도 나온다는 점을, 인증을 운영하는 조직이 참고할 만하다.
 
 ### [Who owns NIS2 and DORA on a Kubernetes platform team](https://www.cncf.io/blog/2026/10/09/who-owns-nis2-and-dora-on-a-kubernetes-platform-team/)
 
 _CNCF_
 
-There is a meeting that repeats across a lot of European engineering organizations right now. Someone from legal or risk brings a NIS2 control, a DORA article, or a “can we evidence this” request into the.
+이 글은 유럽의 많은 엔지니어링 조직에서 반복되는 회의 풍경, 즉 법무·리스크 담당자가 NIS2 통제 항목이나 DORA 조문, "이걸 증빙할 수 있나"라는 요청을 들고 들어오는 상황을 묘사하며 시작한다. 제목이 던지는 질문은 "쿠버네티스 플랫폼 팀 안에서 NIS2와 DORA 준수를 누가 소유하는가"이다. 즉 보안 규제 준수 책임이 법무팀, 보안팀, 플랫폼팀 중 어디에 있는지 모호한 상황을 다루는 것으로 보인다. 다만 NIS2·DORA의 구체 조문 내용, 플랫폼 팀이 실제로 준비해야 할 증빙 항목 목록, 조직별 역할 분담 권고안 같은 세부 내용은 발췌문에 포함돼 있지 않다. 벌금이나 시행 시점 같은 규제 관련 수치도 발췌문에는 나타나지 않는다. 원문(cncf.io)에 접근할 수 없어, 이 요약은 발췌문이 설정한 문제 상황까지만 반영했다.
+
+> 💡 NIS2·DORA 같은 규제 증빙 요구가 늘어나는 만큼, 플랫폼 팀은 감사 로그와 변경 이력을 사후 수집이 아니라 설계 단계부터 준비해야 한다.
 
 ### [Runtime AI Defense in a shared responsibility model](https://webflow.sysdig.com/blog/runtime-ai-defense-in-a-shared-responsibility-model)
 
 _Sysdig_
 
-An AI agent once deleted someone's entire inbox despite being told to confirm first. Not because it was malicious, but because the instruction didn't survive context compaction.
+이 글은 한 AI 에이전트가 "먼저 확인하라"는 지시를 받았음에도 사용자의 받은편지함 전체를 삭제해버린 사례로 시작한다. 다만 이 사고의 원인은 에이전트가 악의적이었던 것이 아니라, "컨텍스트 압축(context compaction)" 과정에서 그 지시 사항이 유실됐기 때문이라고 설명한다. 제목은 이를 '공동 책임 모델(shared responsibility model)' 안에서의 '런타임 AI 디펜스(Runtime AI Defense)'라는 주제로 연결한다. 즉 AI 에이전트의 지시 유실이나 오작동을 막는 책임이 모델 제공사와 플랫폼 운영자 사이에 어떻게 나뉘는지를 다루는 것으로 추정된다. 다만 Sysdig가 실제로 어떤 런타임 탐지·방어 기능을 제시하는지, 컨텍스트 압축으로 인한 지시 유실을 구체적으로 어떻게 막는지는 발췌문에 나타나 있지 않다. 원문(webflow.sysdig.com)에 접근할 수 없어, 이 요약은 발췌문이 제시한 사례와 제목의 주제까지만 반영했다.
+
+> 💡 컨텍스트 압축으로 중요한 지시가 조용히 사라질 수 있다는 사실은, 되돌릴 수 없는 작업 앞에서는 에이전트 내부 메모리가 아니라 런타임에서 별도로 확인 게이트를 걸어야 한다는 뜻이다.
 
 ---
 
 ## AI & ML
 
+### [Impactful scheduling for GPU clusters](https://huggingface.co/blog/allenai/impactful-scheduling)
+
+_Hugging Face_
+
+이 글의 제목은 "GPU 클러스터를 위한 임팩트풀 스케줄링(Impactful scheduling for GPU clusters)"이며, Hugging Face 블로그(경로상 Allen Institute for AI 관련 포스트로 추정)에 게시되어 있다. 제목만으로 볼 때 GPU 클러스터의 작업 스케줄링 방식을 개선해 자원 활용도나 처리량을 높이는 내용을 다루는 것으로 추정된다. 하지만 발췌문이 제공되지 않아 구체적으로 어떤 스케줄러(예: 커스텀 스케줄러, Kubernetes 확장 등)를 다루는지, 어떤 수치 개선을 주장하는지 전혀 확인할 수 없다. 벤치마크 대상 클러스터 규모나 GPU 종류, 비교 대상 스케줄러도 알 수 없다. 따라서 이 요약은 추측을 배제하고 제목이 암시하는 주제 범위만 전달한다. 원문(huggingface.co)에 접근이 차단되어 있고 발췌문도 비어 있어, 실질적인 내용 확인이 불가능했다는 점을 밝힌다.
+
+> 💡 구체 내용이 확인되지 않은 상태이므로, GPU 스케줄링 개선을 도입 근거로 쓰기 전에 원문을 직접 확인해 수치와 전제조건을 검증해야 한다.
+
 ### [Sophos cuts threat investigation time by 96% with OpenAI Daybreak](https://openai.com/index/sophos)
 
 _OpenAI_
 
-Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.
+보안업체 소프스(Sophos)는 오픈AI의 'Daybreak'를 도입해 사이버 위협 조사 시간을 96% 줄였다고 밝힌다. 또한 관리형 탐지·대응(MDR) 사례의 52%를 자동화했다고 설명한다. 다만 자동화 과정에서도 사람의 감독(human oversight)을 유지하는 구조라고 강조한다. 즉 전면 자율화가 아니라, 반복적인 조사 작업을 AI가 처리하고 최종 판단은 분석가가 확인하는 휴먼 인 더 루프 방식으로 보인다. 다만 96%와 52%라는 수치가 어떤 기간, 어떤 사례군을 기준으로 측정됐는지, 오탐율이나 비용 절감 같은 추가 지표는 발췌문에 나타나 있지 않다. 원문(openai.com)에 접근할 수 없어, 이 요약은 발췌문에 제시된 수치와 설명까지만 반영했다.
+
+> 💡 96%·52% 같은 수치는 벤더 발표 자료의 주장이므로, 도입을 검토하는 보안팀은 측정 기준과 비교 기준선을 반드시 별도로 확인해야 한다.
 
 ### [Asana cuts model costs 76x in browser tests with GPT-6.1 Sol](https://openai.com/index/asana-browser-agent)
 
 _OpenAI_
 
-Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.
+제목은 아사나(Asana)가 'GPT-6.1 Sol' 모델을 써서 브라우저 에이전트 비용을 76배 줄였다고 밝히지만, 발췌문은 동일한 결과를 'GPT-6 Astra'를 Codex에서 쓴 결과라고 설명해, 제목과 발췌문 사이에 모델명 표기가 서로 다르다. 수치 자체는 두 구간 모두 "76배 더 저렴해지고 5배 더 빨라졌다"는 테스트 결과로 일치한다. 목적은 아사나가 더 강력한 모델을 고객에게 제공하면서도 비용 구조를 크게 낮추는 것이라고 설명한다. 다만 이 76배·5배 수치가 어떤 작업, 어떤 테스트 환경을 기준으로 측정됐는지는 발췌문에 나타나 있지 않다. 모델명이 'GPT-6.1 Sol'인지 'GPT-6 Astra'인지는 원문을 직접 확인하지 않고는 어느 쪽이 정확한지 판단할 수 없다. 원문(openai.com)에 접근할 수 없어, 이 요약은 제목과 발췌문에 적힌 내용을 그대로 전달했을 뿐 모델명 불일치를 임의로 해소하지 않았다.
+
+> 💡 76배라는 비용 절감 수치는 인상적이지만 모델명조차 제목과 본문 발췌가 엇갈리는 상태이므로, 실제 도입 전에 원문과 테스트 조건을 직접 검증해야 한다.
 
 ### [How Oracle turns days of work into minutes with ChatGPT and Codex](https://openai.com/index/oracle)
 
 _OpenAI_
 
-Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.
+이 글은 오라클(Oracle)이 'ChatGPT Work'와 'Codex'를 도입해 채용, 엔지니어링, 운영 전반에서 전문 지식을 빠르고 반복 가능한 워크플로로 바꾼 사례를 다룬다. 제목은 이를 "며칠 걸리던 작업을 몇 분으로 줄였다"고 요약한다. 다만 구체적으로 어떤 업무가 며칠에서 몇 분으로 줄었는지 정량적 수치는 발췌문에 나타나 있지 않다. 오라클 내부의 어떤 팀·부서가 이를 도입했는지, 도입 규모(사용자 수 등)도 확인되지 않는다. ChatGPT Work와 Codex가 각각 어떤 역할을 맡았는지에 대한 구체적 분담도 발췌문만으로는 단정할 수 없다. 원문(openai.com)에 접근할 수 없어, 이 요약은 제목과 발췌문이 제시한 범위까지만 반영했다.
+
+> 💡 '며칠을 몇 분으로' 같은 압축적 문구는 구체 수치 없이는 도입 효과를 가늠할 근거가 되지 못하므로, 비슷한 도입을 검토 중인 조직은 원문의 세부 사례를 직접 확인해야 한다.
+
+### [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern)
+
+_Hugging Face_
+
+이 글의 제목은 "존재하지 않던 모델이라, 당신이 직접 만들었다(The model that didn't exist, so you made it yourself)"이며, Hugging Face 블로그에 게시되어 있다. 제목만으로 보면 필요한 모델이 공개돼 있지 않아 직접 파인튜닝하거나 처음부터 학습시킨 경험을 다루는 글로 추정된다. 다만 어떤 기반 모델을 썼는지, 어떤 데이터셋으로 학습했는지, 어떤 성능을 달성했는지는 발췌문이 비어 있어 전혀 확인할 수 없다. 이 모델이 공개됐는지, 어떤 라이선스로 배포되는지도 알 수 없다. 따라서 이 요약은 추측을 배제하고 제목이 암시하는 주제만 전달한다. 원문(huggingface.co)에 접근이 차단되어 있고 발췌문도 비어 있어, 실질적인 내용 확인이 불가능했다는 점을 밝힌다.
+
+> 💡 필요한 모델이 없을 때 직접 학습시키는 경험담은 실제 수치와 재현 방법이 공개돼야 다른 팀의 참고 자료로 쓸 수 있으므로, 원문을 직접 확인한 뒤 판단해야 한다.
 
 ---
 
@@ -72,55 +104,73 @@ Across recruiting, engineering, and operations, Oracle turns specialist knowledg
 
 _Cloudflare_
 
-We are expanding the Clef decision model family with Clef-omni, natively processing audio, video, images, and text in a single pipeline. We’ve also lowered Clef-flash pricing and boosted Clef inference speeds by up to 2.
+클라우드플레어는 자사의 Clef 디시전 모델 패밀리를 확장해 'Clef-omni'를 새로 선보였다. Clef-omni는 오디오, 비디오, 이미지, 텍스트를 하나의 파이프라인에서 네이티브로 처리하는 완전한 멀티모달 모델이라고 설명한다. 동시에 저가형 모델인 Clef-flash의 가격을 낮췄고, 기존 Clef의 추론 속도를 끌어올렸다고 밝히지만 발췌문이 배수가 나오기 직전("최대 2.")에서 끊겨 정확한 배수는 확인되지 않는다. 즉 하나의 발표에서 신규 멀티모달 모델 출시, 요금 인하, 속도 개선이라는 세 가지 변경을 함께 내놓은 것이다. 각 모델의 정확한 가격표, 지연시간 수치, 벤치마크 비교 자료는 발췌문에 포함되어 있지 않다. 원문(blog.cloudflare.com)에 접근이 차단되어 있어, 이 요약은 제목과 발췌문에서 확인된 범위까지만 반영했다.
+
+> 💡 Clef-flash 가격 인하와 Clef 추론 속도 개선이 맞물리면, 기존에 비용 때문에 omni 모델을 피했던 워크로드도 재평가할 가치가 있다.
 
 ### [Modernizing Unstructured Data Workflows: Alteryx Live Query meets Google Cloud BigQuery](https://cloud.google.com/blog/products/data-analytics/modernize-unstructured-data-workloads-with-alteryx-and-bigquery/)
 
 _Google Cloud_
 
-Alteryx One Live Query and Google Cloud BigQuery redefine how enterprises handle complex, unstructured data at scale by reducing reliance on disconnected tools, minimizing data movement, and enabling warehouse-native execution.
+이 글은 Alteryx One의 노코드 비주얼 빌더인 'Live Query'가 구글 클라우드 BigQuery, Cloud Storage와 직접 연동되는 방식을 소개한다. 핵심은 변환 로직을 BigQuery 안에서 SQL 푸시다운으로 실행해, 거버넌스가 걸린 데이터가 웨어하우스 밖으로 나가지 않도록 하는 것이다. 예시 워크플로는 Cloud Storage에 쌓인 송장 PDF를 Gemini의 AI.GENERATE 또는 Document AI의 ML.PROCESS_DOCUMENT로 추출하고, AI.CLASSIFY로 품목을 분류한 뒤, 과거 BigQuery 레코드와 조인해 중복 송장을 찾아내는 과정을 보여준다. 송장 번호 정규화와 '송장 금액 = 순금액 + 세금' 같은 비즈니스 규칙 검증까지 포함해, 최종적으로 중복 후보와 결제 처리 대상을 분리해 출력한다. 다만 글에는 정확도나 처리량, 비용 절감 같은 정량적 지표는 제시되지 않고, 특정 리전 같은 가용성 정보도 명시되어 있지 않다. 미리보기 모드에서는 일부 문서만 처리되고 전체 처리는 런타임에 이뤄지며, 예시 SQL은 "예시 패턴일 뿐"이라고 명확히 밝히고 있어 그대로 프로덕션에 쓸 코드는 아니다.
+
+> 💡 SQL 푸시다운으로 BigQuery 안에서 AI 추출·분류·중복검사를 끝내면 거버넌스된 데이터를 별도 ETL 파이프라인으로 복제할 필요가 줄어드는 대신, 예시 코드를 그대로 프로덕션에 쓰면 안 된다는 점을 운영팀이 숙지해야 한다.
 
 ### [What’s new with Google Data Cloud](https://cloud.google.com/blog/products/data-analytics/whats-new-with-google-data-cloud/)
 
 _Google Cloud_
 
-October 5 - October 9 Data Agent Kit is now generally available to bring Google Data Cloud to any coding agent Data Agent Kit provides a free collection of Model Context Protocol (MCP) tools and Google-authored agent skills that connect more than 15 Google Data Cloud services directly to coding agents across VS Code, A…
+이번 주 구글 데이터 클라우드 업데이트의 핵심은 'Data Agent Kit'의 정식 출시(GA)로, VS Code·Cursor·Claude Code·Codex 등 코딩 에이전트에 15개 이상의 구글 데이터 클라우드 서비스를 연결하는 무료 MCP 도구 모음이다. Spanner Omni도 정식 출시돼 온프레미스·타 클라우드·개발자 노트북에서도 Spanner의 분산 SQL·그래프·벡터 기능을 쓸 수 있게 됐고, Spanner의 DML 트랜잭션 누적 변경 제한도 제거됐다. AlloyDB와 Cloud SQL에는 키워드 검색과 벡터 임베딩을 결합하는 네이티브 BM25 랭킹(프리뷰)이 추가됐고, 레이크하우스는 22개 리전에서 Iceberg REST·Hive 카탈로그 엔드포인트를 지원한다. 고객 수치로는 Surescripts가 연 305억 건의 헬스케어 트랜잭션을 AlloyDB로 옮겨 99.998% 가동률을 달성했고, Airwallex는 4명의 DBA 팀으로 Cloud SQL 데이터베이스 5,000개 이상을 운영하며 99.99% 가용성을 유지한다고 밝혔다. Lucius AI는 AlloyDB와 MCP 기반으로 21만 건 규모의 입찰 플랫폼을 운영하며 ScaNN 벡터 검색 속도가 47배 빨라졌다고 주장한다. 다만 BM25 검색, 크로스클라우드 레이크하우스 캐싱, BigQuery의 상태형 연속 쿼리, BigQuery ODBC·JDBC 드라이버 등 다수의 핵심 기능이 아직 프리뷰 단계이며, "3배", "47배" 같은 수치는 테스트 조건이나 방법론 없이 구글·고객 측 주장으로만 제시된다.
+
+> 💡 같은 발표 안에서도 GA 항목과 프리뷰 항목이 섞여 있으므로, 플랫폼 팀은 도입 전에 각 기능의 가용성 단계를 반드시 확인해야 한다.
 
 ### [Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects](https://blog.cloudflare.com/workers-on-demand-profiling/)
 
 _Cloudflare_
 
-On-demand CPU and memory profiling for Cloudflare Workers and Durable Objects is now available. Now you can generate interactive flamegraphs directly in production to quickly track down memory leaks and performance bottlenecks.
+클라우드플레어는 Workers와 Durable Objects를 대상으로 온디맨드 CPU·메모리 프로파일링 기능을 새로 공개했다. 이 기능을 쓰면 프로덕션 환경에서 직접 인터랙티브 플레임그래프(flamegraph)를 생성해 메모리 누수와 성능 병목을 빠르게 추적할 수 있다고 설명한다. 즉 별도 스테이징 환경을 복제하거나 로그만으로 추정하지 않고, 실제 트래픽이 흐르는 프로덕션에서 바로 프로파일을 뜰 수 있다는 점이 핵심이다. 다만 프로파일링을 트리거하는 구체적인 방법(대시보드, API, wrangler CLI 등)이나 오버헤드, 샘플링 주기 같은 세부 수치는 발췌문에 나와 있지 않다. 가격 정책이나 플랜별 제공 여부도 확인되지 않는다. 원문(blog.cloudflare.com)에 접근할 수 없어, 이 요약은 발췌문에 명시된 내용까지만 반영했다.
+
+> 💡 프로덕션에서 바로 플레임그래프를 뜰 수 있다면 메모리 누수 원인 파악 시간이 줄어들지만, 오버헤드와 호출 빈도 제한을 모르면 상시 켜두기엔 리스크가 있다.
 
 ### [Deno is joining Cloudflare](https://blog.cloudflare.com/deno-joins-cloudflare/)
 
 _Cloudflare_
 
-The Deno team is joining Cloudflare to radically simplify self-hosting Workers and Durable Objects, so developers can use the same primitives in more places.
+Deno 팀이 클라우드플레어에 합류한다고 발표했다. 목적은 Workers와 Durable Objects를 자체 호스팅(self-hosting)하는 과정을 대폭 단순화해, 개발자가 같은 프리미티브를 더 많은 환경에서 쓸 수 있게 하는 것이라고 밝힌다. 즉 클라우드플레어의 엣지 런타임 프리미티브를 클라우드플레어 플랫폼 바깥(온프레미스, 다른 클라우드 등)에서도 동일하게 쓸 수 있게 하려는 전략으로 읽힌다. 다만 이것이 인수(acquisition)인지 인력 영입(acqui-hire)인지, 기존 Deno Deploy나 Deno 런타임 자체가 어떻게 되는지는 발췌문에서 명확히 설명되지 않는다. 발표 시점의 구체적 조건(금액, 인원, 타임라인)도 확인되지 않는다. 원문(blog.cloudflare.com)에 접근할 수 없어, 이 요약은 발췌문이 밝힌 사실까지만 담았다.
+
+> 💡 Workers·Durable Objects 프리미티브를 자체 호스팅으로 더 쉽게 쓸 수 있게 되면, 멀티클라우드·온프레미스 전략을 쓰는 팀의 벤더 종속 우려가 줄어들 수 있다.
 
 ### [Why "secure by design" is the new standard for open source](https://www.redhat.com/en/blog/why-secure-design-new-standard-open-source)
 
 _Red Hat_
 
-Open source software faces significant regulatory shifts, making "secure by design" development practices increasingly important. The Cyber Resilience Act (CRA) takes effect on December 11, 2027, and as of September 11, 2026, the first CRA vulnerability and incident reporting obligations were live.
+이 글은 오픈소스 소프트웨어가 중대한 규제 변화를 맞고 있다는 전제에서, "시큐어 바이 디자인(secure by design)" 개발 관행이 왜 점점 더 중요해지는지를 다룬다. 핵심 배경은 EU의 사이버 레질리언스 법(Cyber Resilience Act, CRA)으로, 이 법은 2027년 12월 11일부터 전면 시행된다. 다만 그보다 앞서 2026년 9월 11일부터 CRA의 취약점·사고 보고 의무 조항이 이미 발효된 상태라고 설명한다. 즉 법 전면 시행까지는 아직 시간이 남았지만, 취약점 발견 시 보고해야 하는 의무는 이미 현재 진행형이라는 점이 핵심 메시지로 보인다. 다만 어떤 구체적 레드햇 제품이나 프로세스가 이 규제에 대응해 바뀌는지, 오픈소스 메인테이너가 실무적으로 무엇을 해야 하는지는 발췌문에 나타나 있지 않다. 원문(redhat.com)에 접근할 수 없어, 이 요약은 발췌문이 제시한 날짜와 배경까지만 반영했다.
+
+> 💡 CRA의 보고 의무가 전면 시행 전부터 이미 발효됐다는 점을, 오픈소스를 쓰는 조직은 '아직 2027년 일'이라고 미루지 말고 지금부터 준비해야 한다.
 
 ### [Scale enterprise analytics by running Cloudera Data Platform with OpenShift Virtualization](https://www.redhat.com/en/blog/scale-enterprise-analytics-running-cloudera-data-platform-openshift-virtualization)
 
 _Red Hat_
 
-IT leaders face a frustrating dilemma when scaling big data: Should they force engineering teams to rewrite applications running on traditional virtual machines (VMs) for containers, or maintain separate, expensive infrastructure environments?
+이 글은 빅데이터를 확장하려는 IT 리더들이 흔히 맞닥뜨리는 딜레마를 제시하며 시작한다. 그 딜레마는 "전통적 VM에서 돌던 애플리케이션을 억지로 컨테이너용으로 재작성할 것인가, 아니면 별도의 값비싼 인프라 환경을 그대로 유지할 것인가"이다. 제목으로 볼 때, 레드햇은 OpenShift Virtualization 위에서 Cloudera Data Platform을 구동해 이 딜레마를 해결하는 방안을 제시하는 것으로 보인다. 즉 애플리케이션 재작성 없이 기존 VM 기반 빅데이터 워크로드를 OpenShift라는 단일 플랫폼 안으로 들여오는 접근으로 추정된다. 다만 구체적인 성능 비교 수치, 마이그레이션 절차, 비용 절감액 같은 세부 내용은 발췌문에 포함돼 있지 않다. 원문(redhat.com)에 접근할 수 없어, 이 요약은 제목과 발췌문이 제시한 문제 상황까지만 반영했다.
+
+> 💡 VM 워크로드를 다시 쓰지 않고 OpenShift 안으로 들여올 수 있다면 빅데이터 플랫폼의 이중 인프라 운영 비용을 줄일 잠재력이 있지만, 실제 마이그레이션 난이도는 원문 확인 전까지 판단할 수 없다.
 
 ### [Friday Five — October 9, 2026 | Red Hat](https://www.redhat.com/en/blog/friday-five-october-9-2026-red-hat)
 
 _Red Hat_
 
-IBM and Red Hat Remediate More Than 400 Previously Unknown Open Source VulnerabilitiesLightwell has identified and remediated more than 400 previously unknown vulnerabilities in widely used Java libraries, addressing a growing business risk as autonomous AI agents become capable of combining several lower-risk software…
+이 글은 레드햇의 'Friday Five'(주간 다섯 가지 소식 모음) 형식의 포스트로, 2026년 10월 9일자다. 첫 번째로 소개된 소식은 IBM과 레드햇이 "400개가 넘는 기존에 알려지지 않은 오픈소스 취약점"을 발견·조치했다는 것이다. 발췌문에 따르면 'Lightwell'이 널리 쓰이는 Java 라이브러리에서 이 400개 이상의 취약점을 식별하고 해결했다고 설명한다. 이 작업의 배경으로는 자율 AI 에이전트가 여러 개의 '낮은 위험도' 소프트웨어 요소를 조합해 더 큰 위험을 만들어낼 수 있다는 점이 커지는 비즈니스 리스크로 제시된다. 다만 발췌문이 끊긴 상태라 나머지 네 가지 소식과, 400개 취약점의 심각도 분류나 패치 적용 범위 같은 세부 내용은 확인할 수 없다. 원문(redhat.com)에 접근할 수 없어, 이 요약은 발췌문에서 확인되는 첫 번째 소식까지만 반영했다.
+
+> 💡 개별적으로는 저위험으로 분류된 취약점도 AI 에이전트가 조합해 악용할 수 있다는 전제가 맞다면, 보안팀은 취약점 심각도를 더 이상 단독으로만 평가해선 안 된다.
 
 ### [Innovation in Ireland: How Irish brands scale with Gemini Enterprise](https://cloud.google.com/blog/topics/customers/ireland-innovation-companies-startups-governments-scale-with-gemini/)
 
 _Google Cloud_
 
-In recent decades, Ireland has grown into a vibrant hub for global technology. As modernization accelerates, Irish organizations — spanning government agencies, established enterprise brands, and growing startups in AI and other areas — are all advancing their technical foundations.
+이 글은 아일랜드의 다양한 기업·공공기관이 구글의 'Gemini Enterprise'를 어떻게 활용하는지 소개한다. 라이언에어(Ryanair)는 약 3만 5천 명의 직원을 대상으로 Gemini Enterprise와 구글 워크스페이스를 도입했고, 2034년까지 연간 승객 3억 명을 목표로 한 5년짜리 데이터·AI 파트너십의 일부라고 밝힌다. 장난감 유통업체 스미스토이즈(Smyths Toys)는 AI 에이전트 '코디(Codie)'가 웹 문의의 60% 이상을 해결해, 성수기 하루 최대 1,000건에 달하던 이메일 응대 부담을 줄였다고 설명한다. 아일랜드 국세청은 레거시 온프레미스 시스템에서 통합 AI 레이크하우스 구조로 전환 중이며, 엄격한 데이터 주권 통제 하에 과세자 데이터를 보호한다고 밝히지만 구체적 성과 지표는 아직 제시하지 않는다. 스타트업 사례로는 스프리트(Spryt)가 NHS와 협력하며 미국 70개 이상 클리닉에서 2억 2,400만 건의 예약 기록을 분석했고, IMPT는 15주 만에 구글 클라우드로 이전해 195개국 800만 개 리스팅을 지원한다고 소개한다. 다만 이 수치 대부분은 구글 또는 고객사가 자체 공개한 것으로 독립적으로 검증되지 않았고, 버진미디어 아일랜드의 "3배 빨라졌다" 같은 표현은 구체적 측정 기준 없이 제시된다.
+
+> 💡 고객사 사례 대부분이 자체 보고 수치이고 측정 기준이 공개되지 않았으므로, 유사 도입을 검토하는 조직은 이 수치를 참고치로만 쓰고 자체 파일럿으로 검증해야 한다.
 
 ---
 
@@ -130,69 +180,82 @@ In recent decades, Ireland has grown into a vibrant hub for global technology. A
 
 _The New Stack_
 
-Microsoft on Friday launched Microsoft-Decision-1 in Foundry, three days after OpenAI opened its Decisions API to every developer in public
+제목과 발췌문에 따르면 마이크로소프트는 금요일에 '마이크로소프트-디시전-1(Microsoft-Decision-1)'을 파운드리(Foundry)에 출시했다. 이는 오픈AI가 자사 디시전스 API(Decisions API)를 모든 개발자에게 퍼블릭으로 공개한 지 사흘 뒤에 나온 것이다. 제목에서는 마이크로소프트가 오픈AI의 디시전 모델을 그대로 쓰지 않고, 알리바바의 Qwen을 기반으로 자체 모델을 만들었다고 밝힌다. 즉 파운드리 플랫폼 안에서 오픈AI와 경쟁하는 자체 라우팅·의사결정 모델 라인업을 갖추려는 행보로 읽힌다. 다만 Microsoft-Decision-1의 구체적 파라미터 수, 벤치마크 점수, 가격 정책 등은 발췌문에 나타나 있지 않다. 원문(thenewstack.io)에 접근할 수 없어, 이 요약은 제목과 발췌문에 명시된 사실까지만 반영했다.
+
+> 💡 플랫폼 팀은 파운드리의 의사결정·라우팅 모델이 오픈AI 모델과 다른 공급망(Qwen 기반)에 묶여 있다는 점을 공급사 종속성 평가에 반영해야 한다.
 
 ### [Elon Musk’s Grok Bot will pick Claude over Grok when it’s better. One-model loyalty is dead.](https://thenewstack.io/musk-claude-model-triage/)
 
 _The New Stack_
 
-I’m Matt Burns, Chief Content Officer at Insight Media Group. Each week, I round up the most important AI developments,
+제목에 따르면 일론 머스크 쪽 'Grok Bot'이 특정 작업에서 Claude가 더 나은 성능을 보일 경우 자사 Grok 대신 Claude를 선택하도록 설계됐다는 것이 핵심 주장이다. 제목은 이를 "단일 모델 충성(one-model loyalty)의 종말"이라는 표현으로 요약한다. 다만 발췌문은 기사 저자(Matt Burns, Insight Media Group)의 뉴스레터 소개 문구일 뿐이어서, 실제로 어떤 라우팅 로직이나 벤치마크로 "더 나을 때"를 판별하는지는 확인할 수 없다. 구체적으로 어떤 작업군(코딩, 추론, 멀티모달 등)에서 전환이 일어나는지, 전환 빈도나 비용 구조가 어떻게 되는지도 발췌 범위에는 없다. 제목만 보면 모델 공급사들이 자사 모델만 쓰기보다 멀티모델 라우팅으로 가는 산업 전반의 흐름을 다룬 것으로 추정되지만, 이는 추정일 뿐 원문으로 확인된 사실은 아니다. 원문(thenewstack.io)에 접근할 수 없었고 발췌문 역시 본문 내용을 담고 있지 않아, 이 요약은 제목이 명시한 범위로 제한한다.
+
+> 💡 경쟁사 모델로도 전환할 수 있는 라우팅 구조가 대세가 된다면, 플랫폼 엔지니어는 특정 벤더 API에 하드코딩된 파이프라인을 다중 모델 추상화 계층으로 바꿔야 할 수 있다.
 
 ### [Hack the World: Why hackathons are still the best place to learn to build](https://github.blog/developer-skills/career-growth/hack-the-world-why-hackathons-are-still-the-best-place-to-learn-to-build/)
 
 _GitHub_
 
-The barriers to building software have collapsed. Today, anyone can build.
+제목은 해커톤이 여전히 소프트웨어를 만드는 법을 배우기에 가장 좋은 장소라고 주장한다. 발췌문은 "소프트웨어를 만드는 장벽이 무너졌다. 오늘날 누구나 만들 수 있다"는 문장으로 시작해, AI 도구 등으로 진입장벽이 낮아진 상황을 전제로 삼는 것으로 보인다. 다만 어떤 구체적 해커톤 사례, 참가자 수, 성과 지표를 근거로 드는지는 발췌문에 나타나 있지 않다. GitHub가 운영하거나 후원하는 특정 해커톤 프로그램을 언급하는지도 확인할 수 없다. 제목과 발췌문만 보면 "누구나 만들 수 있는 시대에도 실전 경험을 압축적으로 쌓는 해커톤의 가치는 줄지 않았다"는 논지로 추정되지만, 이는 추정이다. 원문(github.blog)에 접근할 수 없어, 이 요약은 제목과 발췌문 범위로 제한했다.
+
+> 💡 AI로 진입장벽이 낮아질수록, 실제 제품을 짧은 시간 안에 완성해보는 압축 경험(해커톤)이 신입 엔지니어 역량 검증 수단으로서 상대적 가치가 커질 수 있다.
 
 ### [Unify data across Datadog BYOC with cross-cluster queries for teams and AI agents](https://www.datadoghq.com/blog/byoc-cross-cluster-queries/)
 
 _Datadog_
 
-Use cross-cluster queries in Datadog BYOC Logs to investigate incidents across regions and business units without centralizing stored logs.
+데이터독은 고객이 직접 운영하는 환경(BYOC, Bring Your Own Cloud)에 걸쳐 여러 클러스터를 한 번의 쿼리로 조회할 수 있는 '크로스 클러스터 쿼리' 기능을 소개한다. 각 BYOC 배포는 자체 오브젝트 스토리지를 가진 개별 쿠버네티스 클러스터로 운영되며, 로그는 원래 위치에 그대로 남은 채로 조회된다. 조회 대상은 패싯 패널에서 BYOC 인덱스를 선택하거나 byoc--eu-west--application 같은 인덱스 필터로 지정한다. 활용 사례로는 금융·커머스 클러스터에서 특정 IP를 동시에 조사하는 보안 조사, us-east·eu-west·ap-south에 걸쳐 알림 프록시 오류를 확인해 장애가 국소적인지 전역적인지 판별하는 인시던트 대응, 그리고 AI 에이전트가 MCP 서버의 search_datadog_logs로 여러 리전 클러스터를 한 번에 검색하는 경우를 든다. AI 에이전트가 여러 클러스터를 반복 호출하는 대신 한 번에 조회하면 반복적인 툴 호출과 응답 메타데이터에 드는 토큰을 줄일 수 있다고 설명하지만, 전체 토큰 사용량은 결과 크기에 따라 달라진다는 점도 명시한다. 다만 구체적인 성능 벤치마크나 토큰 절감 수치는 제시되지 않으며, 접근은 데이터독 계정팀을 통해야 하고 신규 고객에게는 14일 무료 체험이 제공된다(2026년 10월 9일자 게시).
+
+> 💡 클러스터 간 쿼리를 통합하면 AI 에이전트의 반복 호출 비용을 줄일 수 있지만, 실제 토큰 절감폭은 쿼리당 매칭 결과 수에 좌우되므로 도입 전 자체 트래픽으로 측정해봐야 한다.
 
 ### [How one bug bounty researcher chooses the features they investigate](https://github.blog/security/how-one-bug-bounty-researcher-chooses-the-features-they-investigate/)
 
 _GitHub_
 
-As we kick off Cybersecurity Awareness Month, the GitHub Bug Bounty team spotlights @vaib25vicky, exploring their methodology, techniques, and experiences hacking on GitHub.
+이 글은 사이버보안 인식의 달(Cybersecurity Awareness Month)을 맞아, GitHub 버그 바운티 팀이 연구자 '@vaib25vicky'를 집중 조명하는 인터뷰 형식의 포스트다. 다루는 내용은 이 연구자가 GitHub 플랫폼을 대상으로 버그 바운티를 수행할 때 어떤 방법론과 기법을 쓰는지, 그리고 그 경험을 소개하는 것이라고 밝힌다. 다만 실제로 어떤 종류의 취약점을 발견했는지, 포상금 규모, 구체적인 공격 기법의 단계별 설명 등은 발췌문에 포함되어 있지 않다. '기능을 어떻게 선택해 조사하는지'가 제목의 핵심 질문이지만, 그 선택 기준(예: 신규 기능 우선, 공격 표면이 넓은 기능 우선 등)도 발췌문만으로는 확인되지 않는다. GitHub 버그 바운티 프로그램 자체의 보상 범위나 정책 변경 여부도 알 수 없다. 원문(github.blog)에 접근할 수 없어, 이 요약은 발췌문이 제시한 포스트의 성격까지만 반영했다.
+
+> 💡 숙련된 버그 바운티 연구자의 기능 선택 기준을 알면, 내부 보안팀도 같은 우선순위로 신규 기능의 공격 표면을 선제적으로 점검할 수 있다.
 
 ### [Take Grafana Labs' 5th annual Observability Survey](https://grafana.com/blog/take-grafana-labs-5th-annual-observability-survey/)
 
 _Grafana_
 
-Over the past year, "agentic" has gone from an emerging buzzword to an integral part of worklife for many engineers—and that's just scratching the surface on all that's changed.
+이 글은 그라파나랩스(Grafana Labs)가 진행하는 '제5회 연간 관측성(Observability) 서베이' 참여를 독려하는 포스트다. 서베이의 문제의식은 "지난 1년 사이 '에이전틱(agentic)'이라는 말이 신조어에서 많은 엔지니어의 실제 업무 일부로 자리 잡았다"는 변화이며, 이는 변화의 일부일 뿐이라고 언급한다. 즉 AI 에이전트가 관측성(모니터링·로깅·트레이싱) 실무에 미치는 영향이 서베이의 주요 관심사 중 하나로 보인다. 다만 과거 1~4회 서베이의 구체적 결과 수치나, 올해 서베이의 세부 질문 항목은 발췌문에 나타나 있지 않다. 참여 방법이나 마감일, 보상(예: 경품) 여부도 확인되지 않는다. 원문(grafana.com)에 접근할 수 없어, 이 요약은 발췌문이 제시한 서베이의 문제의식까지만 반영했다.
+
+> 💡 '에이전틱'이 업무에 자리 잡았다는 그라파나의 문제의식이 맞다면, 관측성 도구 선택 기준에도 AI 에이전트가 생성하는 트레이스를 어떻게 다룰지가 포함돼야 한다.
 
 ### [Manage your OpenTelemetry Collectors with Fleet Management in Grafana Cloud](https://grafana.com/blog/manage-your-opentelemetry-collectors-with-fleet-management-in-grafana-cloud/)
 
 _Grafana_
 
-If you’ve built your telemetry pipelines around OpenTelemetry Collectors, you’ve already invested in a collector distribution, YAML configuration, and a deployment model that fits your infrastructure.
+이 글은 그라파나 클라우드의 '플릿 매니지먼트(Fleet Management)' 기능으로 OpenTelemetry 컬렉터를 관리하는 방법을 소개한다. 전제는 이미 OTel 컬렉터 중심으로 텔레메트리 파이프라인을 구축한 조직은 특정 컬렉터 배포판, YAML 설정, 인프라에 맞는 배포 모델에 상당한 투자를 해뒀다는 것이다. 제목으로 볼 때, 플릿 매니지먼트는 이렇게 흩어진 컬렉터 설정들을 한곳에서 관리할 수 있게 해주는 기능으로 보인다. 다만 구체적으로 몇 개의 컬렉터 인스턴스를 동시에 관리할 수 있는지, 설정 배포 방식, 기존 YAML 설정과의 호환성 범위 등은 발췌문에 나타나 있지 않다. 가격 정책이나 Grafana Cloud의 어떤 요금제에 포함되는지도 확인되지 않는다. 원문(grafana.com)에 접근할 수 없어, 이 요약은 제목과 발췌문이 제시한 전제까지만 반영했다.
+
+> 💡 OTel 컬렉터에 이미 투자한 조직이라면, 플릿 매니지먼트가 기존 YAML 설정을 얼마나 그대로 수용하는지가 도입 여부를 가르는 핵심 질문이 될 것이다.
 
 ### [Define user actions on your web app with visual labeling in Product Analytics](https://www.datadoghq.com/blog/product-analytics-visual-labeling/)
 
 _Datadog_
 
-Learn how to label autocaptured web actions in Datadog Product Analytics without code changes, then reuse those definitions across behavioral analysis.
+데이터독은 Product Analytics의 '비주얼 레이블러(Visual Labeler)' 기능으로 코드 수정이나 배포 없이 웹 앱의 사용자 행동에 이름을 붙일 수 있도록 했다. 사용 방법은 Actions 페이지에서 앱을 선택하고, 'Label Actions' 모드로 전환해 페이지 요소를 클릭한 뒤 레이블을 저장하는 방식이며, 데이터독의 테스트 레코더 크롬 확장이 필요하다. 로그인 상태나 결제 페이지처럼 인증이 필요한 화면에서도 라벨링이 가능하고, 같은 동작을 나타내는 여러 요소를 하나의 레이블로 묶을 수 있다. 요소를 클릭하면 최근 7일간 해당 요소가 몇 번 트리거됐는지 보여주고, Product Analytics는 세션·뷰·액션·레이블된 액션 이벤트를 15개월간 보관한다. 특히 새로 만든 레이블은 이미 기록된 과거 상호작용에도 소급 적용되어, 보존 기간 내의 펀널·트렌드 분석에 즉시 반영된다. 다만 현재 비주얼 레이블러는 웹 애플리케이션에만 제공되고, 레이블을 삭제하면 그 레이블을 쓰는 대시보드에서도 함께 사라지므로 삭제 전 사용처를 확인해야 한다.
+
+> 💡 레이블이 과거 데이터에도 소급 적용된다는 점은 유용하지만, 보존 기간이 15개월로 한정돼 있어 더 긴 기간의 행동 분석에는 별도 데이터 보관 전략이 필요하다.
 
 ### [Run incident response in your FedRAMP High environment](https://www.datadoghq.com/blog/fedramp-high-incident-response/)
 
 _Datadog_
 
-Run paging, incident coordination, and response automation for sensitive federal workloads with Datadog Incident Response.
+데이터독은 자사 Incident Response가 FedRAMP High 인증을 받은 GovCloud 환경(US1-FED)에서 운영된다고 밝히며, 이는 페이징·인시던트 조정·자동화·포스트모템 워크플로를 포함한다. FedRAMP 마켓플레이스 등록 번호는 FR2023864279A이며, 데이터독은 "FedRAMP High 인증을 받은 유일한 인시던트 대응 플랫폼"이라고 주장하지만 이는 벤더 자체 주장으로 독립 검증 근거는 제시되지 않는다. 경보 페이로드, 로그, 스크린샷, 아키텍처 정보, 담당자 메모 등 인시던트 데이터는 인증받은 경계 안에 그대로 머문다고 설명한다. 기능으로는 계층화된 온콜 일정과 에스컬레이션, 인시던트 선언 시 채널·브리지 자동 생성, Slack·Teams를 통한 업데이트, 상태 변화와 채팅·브리지 내용을 기록하는 타임라인, 반복 작업을 처리하는 워크플로 자동화, 인시던트 기록에서 자동 생성되는 포스트모템을 제공한다. 기존 모니터링·보안 플랫폼의 경보를 온콜 에스컬레이션으로 연결하거나 그로부터 인시던트를 선언할 수 있고, 담당자는 US1-FED 안의 메트릭·트레이스·로그·대시보드에 바로 연결할 수 있다. 다만 US1-FED 안에서 어떤 통합이 실제로 제공되는지는 "사용자 환경의 시스템에 따라 달라진다"고만 설명하며, NIST SP 800-61 Rev.3 언급도 규정 준수 인증이 아니라 "지원할 수 있는 실무 지침" 수준으로 선을 그었다.
+
+> 💡 FedRAMP High 인증 자체는 중요한 조달 요건을 충족시키지만, 실제 통합 범위가 환경별로 달라진다는 단서가 있으므로 연방 워크로드 담당 팀은 도입 전 US1-FED 안에서 지원되는 통합 목록을 반드시 별도로 확인해야 한다.
 
 ### [Track organization-wide security risk in one dashboard](https://about.gitlab.com/blog/security-risk-in-one-dashboard/)
 
 _GitLab_
 
-If you run application security across more than one top-level group, getting a single organization-wide view of your risk has meant manually pulling together data. That is operational work rebuilt in spreadsheets and one-off scripts every time someone asks.
+이 글은 여러 개의 최상위 그룹(top-level group)에 걸쳐 애플리케이션 보안을 운영하는 조직이 겪는 문제를 다룬다. 지금까지는 조직 전체의 위험을 하나의 화면에서 보려면 데이터를 수동으로 모아야 했고, 누군가 요청할 때마다 스프레드시트와 임시 스크립트로 그 작업을 매번 다시 만들어야 했다고 설명한다. 제목으로 볼 때, GitLab은 이 문제를 해결하기 위해 조직 전체 보안 위험을 한 대시보드에서 추적하는 기능을 선보인 것으로 보인다. 다만 이 대시보드가 구체적으로 어떤 지표(취약점 수, 심각도별 분포, SLA 준수율 등)를 보여주는지, 어떤 GitLab 플랜에 포함되는지는 발췌문에 나타나 있지 않다. 기존 수동 집계 방식과 비교한 시간 절감 수치도 제시되지 않는다. 원문(about.gitlab.com)에 접근할 수 없어, 이 요약은 제목과 발췌문이 제시한 문제 상황까지만 반영했다.
+
+> 💡 조직 전체 위험을 매번 스프레드시트로 재조합해야 했던 수작업이 대시보드로 대체된다면, 보안팀은 그 시간을 실제 취약점 해결에 재배분할 수 있다.
 
 ---
 
-## ⚡ 빠른 소식
-
-- [Impactful scheduling for GPU clusters](https://huggingface.co/blog/allenai/impactful-scheduling) — _Hugging Face_
-- [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern) — _Hugging Face_
-
----
-
-_이 다이제스트는 RSS 피드에서 자동 수집되었습니다. 발췌문은 각 피드 원문에서 그대로 가져온 것으로, 자세한 내용은 원문 링크를 확인하세요._
+_이 다이제스트는 RSS 피드에서 수집한 뒤 AI(Claude)가 요약·정리했습니다. 자세한 내용은 원문 링크를 확인하세요._
