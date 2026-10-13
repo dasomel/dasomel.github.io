@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import data from '../../src/data/project-repo-meta.json';
 
 type ActivityPoint = { week: number; total: number };
@@ -54,7 +56,10 @@ export function PortfolioPulse({ lang }: { lang: 'ko' | 'en' }) {
   ];
   return <section className="border-y" style={{borderColor:'var(--border)',backgroundColor:'var(--surface-hi)'}}>
     <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-16">
-      <div className="font-mono text-[10px] font-semibold tracking-[0.14em]" style={{color:'var(--signal)'}}>{copy.kicker}</div>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="font-mono text-xs font-semibold tracking-[0.12em]" style={{color:'var(--signal)'}}>{copy.kicker}</div>
+        <Link href={`/${lang}/oss/dashboard/`} className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2" style={{borderColor:'var(--border-hi)',color:'var(--accent)',backgroundColor:'var(--surface)',outlineColor:'var(--accent)'}}>{lang==='en'?'Explore portfolio dashboard':'OSS 포트폴리오 전체 보기'} <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></Link>
+      </div>
       <div className="mt-6 grid gap-y-7 sm:grid-cols-2 lg:grid-cols-5">
         {metrics.map(([value,label])=><div key={label} className="border-l pl-4" style={{borderColor:'var(--border-strong)'}}><div className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl" style={{color:'var(--text)'}}>{value}</div><div className="mt-1 font-mono text-[9px] uppercase tracking-[0.1em]" style={{color:'var(--text-faint)'}}>{label}</div></div>)}
       </div>

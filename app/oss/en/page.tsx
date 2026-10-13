@@ -13,6 +13,7 @@ import { OssPortfolioHealth } from '@/components/oss/OssPortfolioHealth';
 import { OssPortfolioReadiness } from '@/components/oss/OssPortfolioReadiness';
 import { OssAdoptionIntake } from '@/components/oss/OssAdoptionIntake';
 import { OssOpenForgePortfolio } from '@/components/oss/OssOpenForgePortfolio';
+import { OssDashboardEntry } from '@/components/oss/OssDashboardEntry';
 
 const groups = OSS_PORTFOLIO_GROUPS;
 
@@ -28,6 +29,8 @@ export default function OssHubEn() {
     <OssSubnav locale="en" active="hub" />
     <div className="mx-auto max-w-[1180px] px-5 py-14 sm:px-7 lg:py-20">
       <section className="max-w-5xl"><div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}><span className="h-px w-8" style={{ backgroundColor:'var(--accent)' }}/> OSS ENGINEERING LAB</div><h1 className="mt-5 text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">Not a repository list.<br/>A continuously evolving engineering workbench.</h1><p className="mt-5 max-w-4xl text-lg leading-8" style={{ color:'var(--text-muted)' }}>Real platform problems become OSS systems, integration seams are verified, and progress stays visible through commits, releases, documentation and operating records.</p><OssActivityFreshness locale="en" /></section>
+
+      <div className="mt-8"><OssDashboardEntry locale="en" /></div>
 
       <OssStartPaths locale="en" />
       <OssEvidenceStrip locale="en" />

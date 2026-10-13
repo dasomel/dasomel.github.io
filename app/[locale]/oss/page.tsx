@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { routing } from '@/i18n/routing';
 import { getProjects } from '@/lib/content';
+import { OssDashboardEntry } from '@/components/oss/OssDashboardEntry';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -78,6 +79,10 @@ export default async function LocalizedOssPage({ params }: { params: Promise<{ l
           </p>
         </div>
       </section>
+
+      <div className="mx-auto max-w-[1440px] px-5 pt-8 sm:px-8 sm:pt-10 lg:px-16">
+        <OssDashboardEntry locale={lang} />
+      </div>
 
       <section className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-14 lg:px-16">
         <div className="font-mono text-[11px] tracking-[0.1em]" style={{ color: 'var(--accent)' }}>ECOSYSTEM / LAYERS</div>

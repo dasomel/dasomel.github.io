@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import portfolioData from '@/src/data/openforge-portfolio.json';
 import {
   capabilityRows,
@@ -135,7 +137,10 @@ export function OssOpenForgePortfolio({ locale = 'ko' }: { locale?: Locale }) {
           <h2 className="mt-3 text-3xl font-semibold tracking-tight">{t.title}</h2>
           <p className="mt-3 text-sm leading-7" style={{ color: 'var(--text-muted)' }}>{t.description}</p>
         </div>
-        <a href="https://github.com/dasomel/openforge/blob/main/PORTFOLIO.md" target="_blank" rel="noreferrer" className="rounded-full px-4 py-2 text-xs font-semibold" style={{ border: '1px solid var(--border-hi)', color: 'var(--accent)' }}>{t.source} →</a>
+        <div className="flex flex-wrap items-center gap-3">
+          <Link href={`/${locale}/oss/dashboard/`} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2" style={{ backgroundColor: 'var(--accent)', color: 'var(--accent-fg)', outlineColor: 'var(--accent)' }}>{locale==='en'?'Explore interactive dashboard':'대시보드에서 전체 현황 보기'} <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></Link>
+          <a href="https://github.com/dasomel/openforge/blob/main/PORTFOLIO.md" target="_blank" rel="noreferrer" className="rounded-full px-4 py-2 text-xs font-semibold" style={{ border: '1px solid var(--border-hi)', color: 'var(--accent)' }}>{t.source} →</a>
+        </div>
       </div>
 
       <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
