@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-13T23:46:11.265Z",
+  "count": 36,
+  "articles": [
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Scope workloads and share resilience policies with AWS Resilience Hub",
+      "link": "https://aws.amazon.com/blogs/architecture/scope-workloads-and-share-resilience-policies-with-aws-resilience-hub/",
+      "date": "2026-10-13T21:30:10.000Z",
+      "excerpt": "The next generation of AWS Resilience Hub adds three capabilities to keep workload scope and resilience requirements aligned with your running environment: Amazon EKS label support for service input sources, generative AI-powered Dependency Insights, and resilience policy sharing through AWS Organizations."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Honeycomb Is Hiring a New VP of Engineering",
+      "link": "https://www.honeycomb.io/blog/honeycomb-hiring-vp-engineering",
+      "date": "2026-10-13T20:46:52.000Z",
+      "excerpt": "Honeycomb is hiring a new VP of Engineering as Emily Nakashima moves into an operational role after nine years leading engineering. We're looking for a partner to SVP Product Graham Siener."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub’s model for secret detection: Finding more secrets with less noise",
+      "link": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/",
+      "date": "2026-10-13T17:56:33.000Z",
+      "excerpt": "GitHub’s context-aware secret classifier improves detection quality, raises weighted acceptance by 11.5%, and reduces median scan execution time by 86%."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+      "date": "2026-10-13T17:05:48.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic’s red team ran AI on 15 cheap TV boxes. Then the math got unsettling.",
+      "link": "https://thenewstack.io/self-replicating-ai-worms/",
+      "date": "2026-10-13T16:40:24.000Z",
+      "excerpt": "For roughly $825, Anthropic’s Frontier Red Team built a cluster of 15 off-brand Android TV boxes that runs an AI"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Under the hood, off the hot path: How D1 scales to millions of databases",
+      "link": "https://blog.cloudflare.com/d1-control-plane/",
+      "date": "2026-10-13T16:20:18.000Z",
+      "excerpt": "A deep dive into how D1 architected its control plane to scale and manage millions of databases, while keeping data plane query operations at the edge. We share guiding principles on how to build on the Developer Platform effectively."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Meta’s Generative Ads Model (GEM): Scaling the Central Model and Compute Engine for Frontier Ads AI",
+      "link": "https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai/",
+      "date": "2026-10-13T16:01:00.000Z",
+      "excerpt": "Last year, we introduced GEM, the industry’s largest recommendation system (RecSys) foundation model. GEM established Meta’s first LLM-inspired paradigm for ads recommendation, driving major performance gains."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "date": "2026-10-13T16:00:00.000Z",
+      "excerpt": "We’re giving developers, enterprises, scientists, and consumers access to Gemini 4 Argon, our latest frontier model."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Cross-cloud conversational analytics made simple with open standards",
+      "link": "https://cloud.google.com/blog/products/data-analytics/cross-cloud-conversational-analytics-with-borderless-lakehouse/",
+      "date": "2026-10-13T16:00:00.000Z",
+      "excerpt": "The reality for most organizations is that data lives everywhere. As engineering teams expand and adopt specialized platforms for their workloads, enterprise data naturally disperses across multiple clouds and operational systems."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Gemini 4 Argon available on Google Cloud, built to help solve your business’ hardest problems",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud/",
+      "date": "2026-10-13T16:00:00.000Z",
+      "excerpt": "Last week we announced that Gemini Enterprise has evolved to make it even simpler to get work done, and introduced the Gemini agent, your new universal agent for work. It's always on and ready to answer your questions."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Gemini 4 Argon debuts with a unified 1M input/output token limit",
+      "link": "https://thenewstack.io/gemini-4-argon-live/",
+      "date": "2026-10-13T16:00:00.000Z",
+      "excerpt": "On Tuesday, Google made Gemini 4 Argon, the company’s new flagship model, available to developers on the paid tier of"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Rewinding the exponential: How we keep hardware usage down",
+      "link": "https://blog.cloudflare.com/rewinding-the-exponential/",
+      "date": "2026-10-13T15:51:41.000Z",
+      "excerpt": "Our strategies to optimize our data pipeline throughput without compromising data quality."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "The agent did the work. The audit log couldn’t say who asked.",
+      "link": "https://thenewstack.io/ai-agent-credentials-identity-provider/",
+      "date": "2026-10-13T15:00:48.000Z",
+      "excerpt": "More than 20 percent of the MCP-related access policies that Shawn Petty’s team reviewed across customer and prospect environments were"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Stopping business email compromise with AI-driven email security: How VIPRE protects modern enterprises on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/stopping-business-email-compromise-with-ai-driven-email-security-how-vipre-protects-modern-enterprises-on-aws/",
+      "date": "2026-10-13T14:32:42.000Z",
+      "excerpt": "Learn how VIPRE Security built an AI-powered email security solution on AWS to stop business email compromise."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Bulk Executor for Amazon DynamoDB, Part 2: Lessons we learned the hard way",
+      "link": "https://aws.amazon.com/blogs/architecture/bulk-executor-for-amazon-dynamodb-part-2-lessons-we-learned-the-hard-way/",
+      "date": "2026-10-13T14:23:33.000Z",
+      "excerpt": "In Part 2 of our Bulk Executor for Amazon DynamoDB series, we share how we built the tool: the design tradeoffs, surprises, and workarounds we hit while working with DynamoDB and AWS Glue. Consider it a travel guide for anyone building their own bulk tooling on AWS Glue."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "디자이너의 아이디어가 금융상품이 되기까지",
+      "link": "https://toss.tech/article/rpg-savings",
+      "date": "2026-10-13T13:00:00.000Z",
+      "excerpt": "요청받지 않은 경험 개선을, 팀이 출시할 이유로 바꾼 과정을 공유해요."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "One Agent Development Kit, five languages",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages/",
+      "date": "2026-10-13T12:22:00.000Z",
+      "excerpt": "When we talk about agents, that doesn't necessarily mean we're talking about Python. In today's modern ecosystem, an agent might run as a high-concurrency Go microservice on Cloud Run, or live inside a browser tab calling Chrome's on-device model."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Higgsfield takes AI video from 1 minute to over 10",
+      "link": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "date": "2026-10-13T12:00:00.000Z",
+      "excerpt": "Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "서비스 개발에 집중할 수 있는 AI 플랫폼 만들기",
+      "link": "https://toss.tech/article/ai-platform-foundation",
+      "date": "2026-10-13T01:34:00.000Z",
+      "excerpt": "서비스 팀의 반복되는 고민을 줄여주는 토스의 AI 플랫폼을 소개합니다."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Why Cybersecurity Awareness Month still comes back to the basics",
+      "link": "https://webflow.sysdig.com/blog/why-cybersecurity-awareness-month-still-comes-back-to-the-basics",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "What’s old is new: Lightwell discovers novel zero-day vulnerability in core Java framework",
+      "link": "https://www.redhat.com/en/blog/whats-old-new-lightwell-discovers-novel-zero-day-vulnerability-core-java-framework",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": "Enterprise IT runs on decades-old foundational code. The prevailing assumption around these mature components is that if code has been sitting untouched in production for ten years without breaking, it must be safe."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How AI is defining the ‘new’ architect",
+      "link": "https://www.redhat.com/en/blog/how-ai-defining-new-architect",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": "For decades, enterprise architecture focused on diagrams and system designs. Today, AI and autonomous agents are shifting the paradigm by automating technical execution—generating code and infrastructure in minutes."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How Datadog defines service criticality at scale",
+      "link": "https://www.datadoghq.com/blog/how-datadog-defines-service-criticality-at-scale/",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": "Learn how Datadog classifies internal services by criticality using incident history, APM traces, monitor data, and traffic signals."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Make every AI credit count: See, cap, and reduce agent spend",
+      "link": "https://about.gitlab.com/blog/make-every-ai-credit-count/",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": "Costs multiply with every task you hand to an agent. Each task consumes tokens and credits, and as agents spread across your teams and automations, consumption can grow faster than usage."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab's agent orchestration eliminates the wait between development stages",
+      "link": "https://about.gitlab.com/blog/gitlab-agent-orchestration/",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": "AI coding tools have changed how fast software gets written, but not how fast it ships. As code generation accelerates, the bottleneck moves downstream into verify, review, and ship."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "The “alien” economics of AI monetization",
+      "link": "https://stripe.com/blog/economics-of-ai-monetization",
+      "date": "2026-10-13T00:00:00.000Z",
+      "excerpt": "As usage, costs, and customer expectations change, AI companies are moving beyond traditional SaaS pricing."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "OCP Summit 2026: Powering AI with Open Innovations in Scale-Up, Scale-Out, and Scale-Across Networks",
+      "link": "https://engineering.fb.com/2026/10/12/open-source/ocp-summit-2026-powering-ai-with-open-innovations-in-scale-up-scale-out-and-scale-across-networks/",
+      "date": "2026-10-12T21:19:18.000Z",
+      "excerpt": "At the 2026 Open Compute Project Global Summit, Meta is sharing the next generation of open networking infrastructure, including: Our first liquid-cooled network rack (IcePack), and 102.4T switch platform (IceCube)."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase/",
+      "date": "2026-10-12T17:43:59.000Z",
+      "excerpt": "Learn how to add custom instructions and skills to your repository, use custom agents, and connect MCP servers like Playwright."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Shipping Media Over QUIC at Meta Scale for Instagram Live Ingest",
+      "link": "https://engineering.fb.com/2026/10/12/video-engineering/shipping-media-over-quic-at-meta-scale-for-instagram-live-ingest/",
+      "date": "2026-10-12T16:01:32.000Z",
+      "excerpt": "Meta has begun deploying Media over QUIC (MoQ), an emerging open protocol for real-time video streaming at scale. MoQ will help simplify our protocol stack for live streaming video and enhance overall user experience for live video."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker Hub security advisory: personal access tokens transferred during account-to-organization conversions",
+      "link": "https://www.docker.com/blog/docker-hub-security-advisory-cve-2026-105445/",
+      "date": "2026-10-12T16:00:00.000Z",
+      "excerpt": "CVE-2026-105445: Docker Hub account conversion could re-assign personal access tokens to a new owner. Read what happened, who was affected, and the fix."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Filter, reshape, and redact logs before export with Transformers",
+      "link": "https://blog.cloudflare.com/transformers-on-logpush/",
+      "date": "2026-10-12T14:44:59.000Z",
+      "excerpt": "Logpush now supports Transformers, allowing teams to filter, redact, and reshape log streams using SQL before export. Powered by Apache DataFusion and Apache Arrow, Transformers apply those changes directly to log data before it reaches the destination."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "From zero to agent builder: Running kagent on your laptop",
+      "link": "https://www.cncf.io/blog/2026/10/12/from-zero-to-agent-builder-running-kagent-on-your-laptop/",
+      "date": "2026-10-12T11:30:00.000Z",
+      "excerpt": "If you have seen a demo of a no-code agent builder, you know the moment. Someone types one sentence, waits a minute, and there it is: a new agent, running, with tools."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "CPU 뼛속까지 써먹고, Milvus 사이징 기준을 만들기까지",
+      "link": "https://toss.tech/article/milvus-optimization-and-sizing",
+      "date": "2026-10-12T01:00:00.000Z",
+      "excerpt": "검색 품질을 유지하며 같은 서버에서 처리량을 높인 토스증권의 Milvus 최적화 이야기"
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Developer-first innovation: Reducing technical debt with Red Hat Enterprise Linux",
+      "link": "https://www.redhat.com/en/blog/developer-first-innovation-reducing-technical-debt-red-hat-enterprise-linux",
+      "date": "2026-10-12T00:00:00.000Z",
+      "excerpt": "Managing software teams means balancing 2 conflicting priorities: developers want freedom to pick their tools, while leadership needs security and stability."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Critical Patch Release: 19.4.2, 19.3.4, 19.2.8",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/",
+      "date": "2026-10-12T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "if(kakao)26, 온라인 라이브로 함께해요!",
+      "link": "https://tech.kakao.com/posts/839",
+      "date": "2026-10-11T15:00:00.000Z",
+      "excerpt": "if(kakao)26, 온라인 라이브로 함께하세요 10월 13일과 14일, 카카오 AI 캠퍼스에서 if(kakao)26이 열립니다. 현장에 함께하기 어려운 분들도 온라인으로 발표를 만나보실 수 있습니다."
+    }
+  ]
+}
