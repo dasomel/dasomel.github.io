@@ -174,7 +174,7 @@ export default function ProjectDetailsDialog({
           </header>
 
           <div className="space-y-6 px-5 py-6 sm:px-7">
-            <div className="grid gap-3 sm:grid-cols-2">
+            <dl className="grid gap-3 sm:grid-cols-2">
               {[
                 [t.category, categoryLabel(project.category)],
                 [t.status, statusLabel(project.development_status)],
@@ -190,7 +190,7 @@ export default function ProjectDetailsDialog({
                   <dd className="mt-2 break-words text-base font-semibold text-white">{value}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
 
             <div className="rounded-xl border border-[#3b4e70] bg-[#21314d] p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
