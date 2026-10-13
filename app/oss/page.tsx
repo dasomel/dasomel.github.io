@@ -13,6 +13,7 @@ import { OssPortfolioHealth } from '@/components/oss/OssPortfolioHealth';
 import { OssPortfolioReadiness } from '@/components/oss/OssPortfolioReadiness';
 import { OssAdoptionIntake } from '@/components/oss/OssAdoptionIntake';
 import { OssOpenForgePortfolio } from '@/components/oss/OssOpenForgePortfolio';
+import { OssDashboardEntry } from '@/components/oss/OssDashboardEntry';
 
 const groups = OSS_PORTFOLIO_GROUPS;
 
@@ -37,6 +38,10 @@ export default function OssHubKo() {
         <OssActivityFreshness locale="ko" />
       </div>
     </section>
+
+    <div className="mx-auto max-w-[1180px] px-5 pt-8 sm:px-7 sm:pt-10">
+      <OssDashboardEntry locale="ko" />
+    </div>
 
     <div className="mx-auto max-w-[1180px] px-5 py-14 sm:px-7 lg:py-20">
       <section><div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color:'var(--accent)' }}>FLAGSHIP PROJECTS</div><h2 className="mt-3 text-3xl font-semibold">역할이 다른 핵심 OSS를 먼저 봅니다.</h2><p className="mt-3 max-w-4xl text-sm leading-7" style={{ color:'var(--text-muted)' }}>Narwhal은 flagship platform, NFS Quota Agent는 독립 재사용 컴포넌트, KubeMetal은 cloud-native AI 방향을 검증하는 emerging project입니다.</p><div className="mt-6 grid gap-5 lg:grid-cols-3">{featured.map((project) => project && <Link key={project.slug} href={`/oss/${project.slug}/`} className="group rounded-2xl p-7 transition hover:-translate-y-0.5" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}><div className="text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ color:'var(--accent)' }}>{project.slug==='narwhal'?'Flagship Platform':project.slug==='nfs-quota-agent'?'Reusable Component':'Emerging / AI'}</div><h3 className="mt-3 text-2xl font-semibold">{project.title}</h3><p className="mt-3 text-sm leading-6" style={{ color:'var(--text-muted)' }}>{project.description}</p><div className="mt-6 text-sm font-semibold" style={{ color:'var(--accent)' }}>Project system 보기 →</div></Link>)}</div></section>
