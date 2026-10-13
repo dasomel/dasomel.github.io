@@ -24,8 +24,8 @@ export default function PortfolioDashboard(){
  const selectedProject=projects.find(p=>p.id===selected);const graphNodes=projects.filter(p=>points[p.id]);const graphRelations=data.relationships.filter(r=>points[r.source]&&points[r.target]);
  const csv=['Project,Category,Status,Adoption,Impact,Repository',...filtered.map(p=>[p.name,p.category,p.development_status,p.adoption_percent??'',p.impact_score,p.repository].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(','))].join('\n');
  const exportReport=()=>{const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='openforge-portfolio.csv';a.click();URL.revokeObjectURL(url);};
- return <main className="bg-[#f0f1fa] text-[#1b2438] min-h-screen font-sans">
- <div className="mx-auto max-w-[1680px] min-h-[850px] flex shadow-xl">
+ return <main className="bg-[#f0f1fa] text-[#1b2438] font-sans">
+ <div className="mx-auto max-w-[1680px] flex shadow-xl">
  <aside className="hidden lg:flex w-[220px] shrink-0 flex-col bg-[#0c172b] text-[#eaf0ff] px-4 py-6">
   <Link href={`/${locale}/oss/`} className="text-xl font-bold tracking-tight">⬡ OpenForge<span className="block text-[10px] font-medium text-[#a5b5d2]">OSS Portfolio Control Plane</span></Link>
   <nav aria-label="Portfolio sections" className="mt-9 space-y-1 text-[12px]">{[['Portfolio Overview','#overview'],['Projects','#projects'],['Dependencies','#dependencies'],['Milestones','#governance'],['Governance','#governance'],['Maintenance','#governance'],['Reports','#reports']].map(([label,href],i)=><a key={label} href={href} className={`block rounded-lg px-3 py-3 transition hover:bg-[#293a60] ${i===0?'bg-[#394772] ring-1 ring-[#6576b7]':''}`}> <span className="mr-3 text-[#a9b9db]">{['⌂','⬡','♧','◷','⬢','⚒','▣'][i]}</span>{label}</a>)}</nav>
