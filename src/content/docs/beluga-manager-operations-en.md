@@ -1,24 +1,25 @@
 ---
 title: Deployment & Operations
-description: Operational and deployment-readiness criteria for an early control-plane design with no release artifact yet.
-project: Beluga Manager
-path: beluga-manager/operations
-order: 1603
-lastModified: 2026-09-14
+description: The current deployment boundary of manager/ — container images and compose exist, a cluster deployment chart does not.
+project: Beluga
+path: beluga/manager-operations
+order: 1508
+lastModified: 2026-10-15
 ---
 
 # Deployment & Operations
 
-Beluga Manager currently has no container image, Helm chart, or Kubernetes manifest. Examples such as `ghcr.io/dasomel/beluga-manager:v1.0.0` are not published artifacts and must not be used.
+## What exists today
 
-## Conditions for deployability
+- `manager/packages/domain-api/Dockerfile`, `manager/packages/web/Dockerfile` (nginx), and `manager/compose.yaml`. `make dev-up` starts both containers against fixtures. The containers run non-root with a read-only root filesystem, all capabilities dropped, and `no-new-privileges`.
+- Host ports are fixed at 5180 (web) and 8787 (API). Podman is documented as unverified.
+- Manager releases independently of the platform. CI is path-filtered to `manager/**`, so beluga-only PRs do not run it.
+- OpenForge status is no longer a separate entry; it is reported under `beluga` in the root `.openforge/status.json` (the `policy-compiler` capability).
 
-- selected application architecture and an accepted ADR
-- a versioned image that passes real build and test gates
-- SBOM, provenance, and a published digest
-- read-only service account and least privilege for every adapter
-- health/readiness probes and explicit dependency-failure states
-- image and manifest inventories for air-gapped environments
-- integration evidence against a real Beluga environment
+## What does not exist yet
 
-Until then, only documentation and CI/repository-verification workflows are operational assets in this repository.
+- A Helm chart or Argo CD `Application`. A separate manager deployment chart is not pursued (beluga ADR-0005); any in-cluster deployment will be decided in a new ADR under beluga's `docs/adr/`.
+- Authentication/authorization middleware. As a result, the opt-in Trino query history shows the service credential's view to every caller and requires an explicit acknowledgement.
+- Kafka, Debezium, and Airflow adapters, and node-level OPA filtering.
+
+Becoming deployable requires authN/authZ, read-only accounts with least privilege per adapter, health/readiness probes, and integration evidence against a real Beluga environment. These are tracked in beluga issues labeled `area:manager`.

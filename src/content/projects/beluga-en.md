@@ -1,8 +1,8 @@
 ---
 title: "Beluga"
-description: "A local Kubernetes data platform connecting Kafka, CDC, Flink, Iceberg, Trino, Superset, and Airflow"
+description: "A local Kubernetes data platform connecting Kafka, CDC, Flink, Iceberg, Trino, Superset, and Airflow, with its unified control plane (manager/) in the same repository"
 github: "https://github.com/dasomel/beluga"
-tags: ["Kubernetes", "k3s", "Data Platform", "Kafka", "Debezium", "Flink", "Iceberg", "Trino", "Airflow", "GitOps"]
+tags: ["Kubernetes", "k3s", "Data Platform", "Kafka", "Debezium", "Flink", "Iceberg", "Trino", "Airflow", "GitOps", "Control Plane"]
 order: 10
 type: "own"
 featured: true
@@ -127,9 +127,36 @@ Beluga is a **personal / learning-scale reference platform**.
 
 - Core Kafka/CDC → Flink → Iceberg → Trino/Superset/Airflow flow is implemented toward clean-install E2E validation and marked done (`docs/IMPLEMENTATION-STATUS.md`, verified 2026-09-14).
 - The local cluster is not continuously running (`vagrant status` shows all 4 VMs stopped), so not every latest change has live-cluster validation.
-- Governance/policy compiler integration continues as a separate evolution area.
+- The policy compiler now lives in `manager/` and runs from the same tree; governance continues to evolve.
 - The Operations Agent only runs its read-only diagnostic profile; data-mutation, external-egress, and privileged-operation execution remain contractually disabled.
 - Cluster-stability fixes have continued since 2026-08-28: scoping MetalLB's L2Advertisement to the private network interface, unblocking the ArgoCD/OpenMetadata UIs behind APISIX, setting explicit key usages on internal-CA certificates, renaming the VMware provider to `vagrant-vmware-desktop` (vmware_desktop), and tuning the VM RAM profile for 64GB hosts.
+
+## Beluga Manager (`manager/`)
+
+**Beluga Manager** is the unified control plane of the Beluga data platform. It used to be the separate repository `dasomel/beluga-manager`; on 2026-10-15, under [ADR-0005](https://github.com/dasomel/beluga/blob/main/docs/adr/0005-consolidate-beluga-manager-into-monorepo.md), it was consolidated with full history into the `manager/` directory of this repository, and the old repository was archived.
+
+Kafka, Flink, Iceberg, Trino, and Airflow remain authoritative for their own resources. Manager does not clone their UIs; it connects their APIs through adapters to answer platform-level questions (which topic leads to which job and table, which service is degraded).
+
+| Domain | Role |
+|---|---|
+| Pipeline | Cross-service correlation of the Kafka → Flink → Iceberg → Trino flow |
+| Data Asset | Catalog, schema, table, and query context |
+| Service | Each OSS as a platform capability (identity, version, health, dependencies) |
+| Operations | Health, events, resources, and dependencies in one context |
+
+<Mermaid chart={`flowchart TB
+  UI["Manager Web"] --> API["Domain API"]
+  API --> CORR["Discovery / Correlation"]
+  CORR --> ADAPTER["Capability-aware Adapters"]
+  ADAPTER --> OSS["Kafka · Flink · Iceberg · Trino · Airflow"]`} />
+
+**Repository layout** — `manager/` is an npm workspace (`packages/domain-api`, `packages/policy-compiler`, `packages/web`) with its own `package.json` and lockfile; `.github/workflows/manager-ci.yml` runs CI only for `manager/**` changes. It releases independently of the platform.
+
+**Policy compiler seam** — `manager/packages/policy-compiler` compiles the YAML in `policies/` into Keycloak configuration, Trino OPA Rego (`trino.rego`), and PostgreSQL DDL (`db-roles.sql`). Before consolidation, two workflows used external checkouts pinned to different SHAs; now test 14 and `ci.yml`/`release.yml` run the compiler from `manager/` in the same tree, so a compiler change and its regenerated artifacts land in one PR.
+
+**Current maturity (checked 2026-10-15)** — The Domain API, the web console (Overview, Services, Pipelines, Data Catalog, Query Workspace, Policy, and more), and the policy compiler are implemented and tested. However, the Domain API answers from in-repo fixtures (stubs) by default; the only opt-in read-only adapters are Flink, Trino query history, and Lakekeeper, and only the Flink adapter has a recorded live-cluster check. There are no Kafka, Debezium, or Airflow adapters, no authentication/authorization middleware, and no cluster deployment chart. Upstream hosts are hardcoded to `*.local.beluga.internal`. It is at a read-first stage, not a finished operations console.
+
+The 22 open beluga-manager issues were transferred to #239-#260 in this repository (label `area:manager`). See the [overview](/oss/en/beluga/manager-overview), [architecture](/oss/en/beluga/manager-architecture), [development](/oss/en/beluga/manager-development), and [operations](/oss/en/beluga/manager-operations) docs. The background is covered in the blog post [Why we consolidated beluga-manager into the beluga monorepo](/en/posts/beluga-manager-monorepo-consolidation).
 
 ## Getting Started
 
@@ -150,10 +177,14 @@ make test
 | Getting Started | [Cluster Setup](/oss/en/beluga/getting-started) | VM → k3s → GitOps bootstrap |
 | Operations | [Data Operations](/oss/en/beluga/operations) | Lifecycle and operational runbooks |
 | Troubleshooting | [Troubleshooting](/oss/en/beluga/troubleshooting) | Cluster, Kafka, Flink, and query issues |
+| Manager | [Manager Overview](/oss/en/beluga/manager-overview) | Scope and implementation state of the `manager/` control plane |
+| Manager Architecture | [Control Plane Architecture](/oss/en/beluga/manager-architecture) | Adapters, correlation, policy seam |
+| Manager Development | [Local Development](/oss/en/beluga/manager-development) | `cd manager && npm install` |
+| Manager Operations | [Deployment & Operations](/oss/en/beluga/manager-operations) | Current deployment boundary |
 
 ## Project Relationship
 
 <Mermaid chart={`flowchart TB
   READY["kube-ready-box"] --> K8S["Beluga local Kubernetes"]
   K8S --> FLOW["Kafka → Flink → Iceberg → Trino → Superset"]
-  FLOW --> MANAGER["Beluga Manager\nunified control plane · early stage"]`} />
+  FLOW --> MANAGER["manager/\nunified control plane · read-first"]`} />

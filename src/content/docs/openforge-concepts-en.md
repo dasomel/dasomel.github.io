@@ -17,7 +17,7 @@ OpenForge cleanly separates **Policy**, **Implementation**, and **Evidence**, li
 |---|---|---|
 | **[Standards](/oss/en/openforge/standards)** | Defines expected engineering outcomes and principles | Supply Chain Security Standard, CI/CD Resilience Standard |
 | **[Templates](/oss/en/openforge/templates)** | Provides safe, conservative, and ready-to-use starting assets | Multi-stage Dockerfiles, GitHub Workflows, K8s Manifests |
-| **[Reference Implementation](/oss/en/openforge/reference)** | Real-world OSS adoption, trade-offs, and empirical metrics | Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager |
+| **[Reference Implementation](/oss/en/openforge/reference)** | Real-world OSS adoption, trade-offs, and empirical metrics | Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager (beluga `manager/`) |
 
 ---
 
