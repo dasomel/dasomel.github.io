@@ -17,10 +17,10 @@
   },
   "maintenance": {
     "summary": {
-      "owned_projects": 15,
+      "owned_projects": 14,
       "unowned_projects": 0,
       "high_blast_radius_projects": 3,
-      "exit_path_review_required": 15,
+      "exit_path_review_required": 14,
       "review_cadence_default": "quarterly"
     },
     "projects": [
@@ -65,15 +65,6 @@
         "maintenance_owner": "dasomel",
         "maintenance_status": "owned",
         "strategic_role": "differentiator",
-        "blast_radius": "medium",
-        "exit_path_status": "review-required",
-        "review_cadence": "quarterly"
-      },
-      {
-        "project": "beluga-manager",
-        "maintenance_owner": "dasomel",
-        "maintenance_status": "owned",
-        "strategic_role": "enabler",
         "blast_radius": "medium",
         "exit_path_status": "review-required",
         "review_cadence": "quarterly"
@@ -178,7 +169,7 @@
         "compliance",
         "portfolio"
       ],
-      "impact_score": 28,
+      "impact_score": 26,
       "maintenance": {
         "project": "openforge",
         "maintenance_owner": "dasomel",
@@ -299,7 +290,9 @@
       "domains": [
         "kubernetes",
         "data-platform",
-        "operations-agent"
+        "operations-agent",
+        "management",
+        "ui"
       ],
       "status": {
         "revision": "2f78873",
@@ -336,6 +329,16 @@
               "runtime": "pass",
               "security": "pass"
             }
+          },
+          "policy-compiler": {
+            "status": "implemented",
+            "standard": "openforge/agent-engineering",
+            "verification": {
+              "unit": "pass",
+              "integration": "pass",
+              "runtime": "pass",
+              "security": "pass"
+            }
           }
         },
         "evidence": {
@@ -347,11 +350,6 @@
           "runtime": "pass"
         },
         "proposed_relationships": [
-          {
-            "target": "beluga-manager",
-            "type": "provides",
-            "scope": "data-platform management capabilities"
-          },
           {
             "target": "ldapium",
             "type": "consumes",
@@ -379,70 +377,12 @@
           }
         ]
       },
-      "impact_score": 10,
+      "impact_score": 4,
       "maintenance": {
         "project": "beluga",
         "maintenance_owner": "dasomel",
         "maintenance_status": "owned",
         "strategic_role": "differentiator",
-        "blast_radius": "medium",
-        "exit_path_status": "review-required",
-        "review_cadence": "quarterly"
-      }
-    },
-    {
-      "id": "beluga-manager",
-      "repository": "dasomel/beluga-manager",
-      "name": "Beluga Manager",
-      "category": "Data Platform Management",
-      "archetype": "Data Control Plane",
-      "development_status": "active",
-      "adoption_percent": null,
-      "role": "control-surface",
-      "domains": [
-        "data-platform",
-        "management",
-        "ui"
-      ],
-      "status": {
-        "revision": "e6397c0",
-        "updated_at": "2026-09-24",
-        "milestone": "web-console-i18n-ci-gate",
-        "progress_percent": 85,
-        "capabilities": {
-          "policy-compiler": {
-            "status": "implemented",
-            "standard": "openforge/agent-engineering",
-            "verification": {
-              "unit": "pass",
-              "integration": "pass",
-              "runtime": "pass",
-              "security": "pass"
-            }
-          }
-        },
-        "evidence": {
-          "issue": null,
-          "pull_request": 49,
-          "commit": "e6397c01944bfc346299b16c578ab58497fc6298",
-          "ci": "pass",
-          "security": "pass",
-          "runtime": "pass"
-        },
-        "proposed_relationships": [
-          {
-            "target": "beluga",
-            "type": "control-surface",
-            "scope": "data-platform management operations"
-          }
-        ]
-      },
-      "impact_score": 8,
-      "maintenance": {
-        "project": "beluga-manager",
-        "maintenance_owner": "dasomel",
-        "maintenance_status": "owned",
-        "strategic_role": "enabler",
         "blast_radius": "medium",
         "exit_path_status": "review-required",
         "review_cadence": "quarterly"
@@ -735,13 +675,6 @@
     },
     {
       "source": "openforge",
-      "target": "beluga-manager",
-      "type": "standardizes",
-      "impact": "medium",
-      "scope": "engineering and design-system standards"
-    },
-    {
-      "source": "openforge",
       "target": "egovframe-launcher",
       "type": "standardizes",
       "impact": "low",
@@ -809,20 +742,6 @@
       "type": "provides",
       "impact": "medium",
       "scope": "sandbox/runtime enforcement evidence"
-    },
-    {
-      "source": "beluga",
-      "target": "beluga-manager",
-      "type": "provides",
-      "impact": "high",
-      "scope": "data-platform management capabilities"
-    },
-    {
-      "source": "beluga-manager",
-      "target": "beluga",
-      "type": "control-surface",
-      "impact": "high",
-      "scope": "data-platform management operations"
     },
     {
       "source": "narwhal",
@@ -961,12 +880,12 @@
   "agent_audit": {
     "schema": "openforge-agent-audit-matrix/v1",
     "summary": {
-      "repositories": 11,
-      "repositories_with_false_green": 9,
-      "false_green_findings": 9,
-      "canonical_skills": 24,
+      "repositories": 10,
+      "repositories_with_false_green": 8,
+      "false_green_findings": 8,
+      "canonical_skills": 23,
       "skill_maturity": {
-        "draft": 12,
+        "draft": 11,
         "verified": 12,
         "stable": 0,
         "deprecated": 0,
@@ -975,9 +894,9 @@
       "evidence_backed_mature_skills": 12,
       "skill_audit_errors": 0,
       "swallowed_failure_findings": 0,
-      "swallowed_failure_findings_measured_repositories": 11,
+      "swallowed_failure_findings_measured_repositories": 10,
       "repositories_with_local_ci_gate": 2,
-      "local_ci_gate_measured_repositories": 11
+      "local_ci_gate_measured_repositories": 10
     },
     "repositories": [
       {
@@ -1059,41 +978,6 @@
           "lint": true,
           "tests": true,
           "static-analysis": false,
-          "security-policy": true,
-          "generated-files": true
-        },
-        "agent_skills": {
-          "canonical_count": 1,
-          "adapter_count": 0,
-          "maturity_counts": {
-            "draft": 1,
-            "verified": 0,
-            "stable": 0,
-            "deprecated": 0,
-            "unspecified": 0
-          },
-          "evidence_backed_mature_count": 0,
-          "error_count": 0,
-          "warning_count": 0
-        },
-        "swallowed_failure_count": 0,
-        "local_agent_ci_gate": {
-          "configured": false,
-          "evidence": null,
-          "reason": "no-gate-workflow"
-        }
-      },
-      {
-        "repository": "dasomel/beluga-manager",
-        "revision": "2081fef95dccac1960e7dbf1668d8daf4777e079",
-        "false_green_findings": [
-          "agent contract changes have no repository-local CI gate (no-gate-workflow)"
-        ],
-        "deterministic_controls": {
-          "formatting": false,
-          "lint": true,
-          "tests": true,
-          "static-analysis": true,
           "security-policy": true,
           "generated-files": true
         },
