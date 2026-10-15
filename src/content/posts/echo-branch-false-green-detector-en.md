@@ -53,6 +53,8 @@ $ python3 -m pytest -q
 
 After [OpenForge PR #96](https://github.com/dasomel/openforge/pull/96) regenerated the portfolio matrix (`portfolio/agent-audit.json`) against the extended detector, the false-green count across the tracked repositories went from 0 to 12 — narwhal alone accounts for 4 of them, with one apiece in beluga, beluga-manager, kubemetal, clusterdeck, ldapium, nfs-quota-agent, egovframe-launcher, and siqoq.
 
+> **Note 2026-10-15**: `beluga-manager` has since been consolidated into the `manager/` directory of `beluga` and is no longer tracked as a separate repository. The counts above reflect the state at that time.
+
 Two of narwhal's four are still open as of this writing: `.claude/commands/check.md` and `.claude/commands/verify.md` both still contain the same `yq eval ... > /dev/null && echo "OK: $f" || echo "FAIL: $f"` pattern in their documented verification steps, unfixed even though the Makefile target it was copied from was. That's the honest state of the portfolio right now, not a claim that the problem is closed everywhere it was found — the detector's job is to keep it visible until it is.
 
 ## The pattern, not just the bug

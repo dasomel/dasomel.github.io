@@ -64,4 +64,4 @@ OpenForge GitHub 저장소가 **구현 자산의 단일 진실 공급원(Source 
 - **구현 저장소**: [dasomel/openforge](https://github.com/dasomel/openforge)
 - **엔지니어링 표준**: [docs/](https://github.com/dasomel/openforge/tree/main/docs)
 - **재사용 템플릿**: [templates/](https://github.com/dasomel/openforge/tree/main/templates)
-- **참고 구현체**: Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager 등 실제 OSS 저장소
+- **참고 구현체**: Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager (beluga `manager/`) 등 실제 OSS 저장소

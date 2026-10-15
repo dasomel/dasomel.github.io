@@ -54,12 +54,7 @@ const EVIDENCE: Record<string, Evidence[]> = {
     { label: 'Validation', value: '2 E2E paths', detail: 'Uses synthetic clickstream and PostgreSQL CDC scenarios to verify actual data movement across system boundaries.' },
     { label: 'Deployment', value: 'GitOps', detail: 'Uses Helm and Argo CD App-of-Apps as the deployment contract rather than one-off local installation steps.' },
     { label: 'Scale', value: '32GB+ host', detail: 'Documents realistic local resource requirements instead of presenting the full stack as a lightweight demo.' },
-  ],
-  'beluga-manager': [
-    { label: 'Domain model', value: '4 domains', detail: 'Pipeline, Data Asset, Service, and Operations provide cross-system platform context.' },
-    { label: 'Integration', value: 'Adapter-based', detail: 'Keeps Kafka, Flink, Iceberg, Trino, and Airflow authoritative while normalizing access behind adapters.' },
-    { label: 'State model', value: '4 classes', detail: 'Separates authoritative state, short-lived cache, correlation index, and Beluga-owned metadata.' },
-    { label: 'Maturity', value: 'Early / read-first', detail: 'Prioritizes discovery, correlation, health, and drill-down before broad destructive operations.' },
+    { label: 'Control plane', value: 'manager/ · read-first', detail: 'Pipeline, Data Asset, Service, and Operations domains behind adapters; most data is still stub-backed, with opt-in read-only Flink, Trino, and Lakekeeper adapters.' },
   ],
   siqoq: [
     { label: 'Maturity', value: 'Bootstrap', detail: 'Separates the current Python/CLI/event-model core from target architecture claims.' },

@@ -10,7 +10,7 @@ const projects=[
   ['narwhal','dasomel/narwhal'],['narwhal-portal','dasomel/narwhal-portal'],
   ['nfs-quota-agent','dasomel/nfs-quota-agent'],['ldapium','dasomel/ldapium'],
   ['kube-ready-box','dasomel/kube-ready-box'],['clusterdeck','dasomel/clusterdeck'],
-  ['beluga','dasomel/beluga'],['beluga-manager','dasomel/beluga-manager'],
+  ['beluga','dasomel/beluga'],
   ['kubemetal','dasomel/kubemetal'],['openforge','dasomel/openforge'],
 ];
 

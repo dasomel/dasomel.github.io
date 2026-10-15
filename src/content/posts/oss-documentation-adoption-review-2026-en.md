@@ -71,6 +71,8 @@ Healthy Kafka, Flink, Trino, and Airflow pods do not prove the data platform. Fi
 
 ### Beluga Manager
 
+> **Update 2026-10-15**: Beluga Manager is no longer a separate repository; it was consolidated into the `manager/` directory of [beluga](/en/projects/beluga), and `dasomel/beluga-manager` is archived. The text below records the state at review time (2026-08). See the [consolidation post](/en/posts/beluga-manager-monorepo-consolidation) for the background.
+
 Architecture can easily outrun implementation. Documentation should distinguish `Implemented`, `Integrated`, and `Planned`, and provide one runnable read-only vertical slice before requiring the full target architecture.
 
 ### KubeMetal

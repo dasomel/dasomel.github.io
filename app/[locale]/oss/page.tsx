@@ -11,7 +11,7 @@ export function generateStaticParams() {
 const layers = [
   ['BASELINE', 'kube-ready-box · ldapium · nfs-quota-agent'],
   ['PLATFORM', 'Narwhal · Narwhal Portal'],
-  ['DATA', 'Beluga · Beluga Manager'],
+  ['DATA', 'Beluga (incl. manager/)'],
   ['AI / EDGE', 'KubeMetal · Siqoq'],
   ['STANDARDS', 'OpenForge'],
 ] as const;
@@ -34,15 +34,14 @@ const portfolioGuide = [
   { slug:'nfs-quota-agent', title:'Storage policy enforcement', problem:'NFS PV를 팀 단위로 공유할 때 용량 초과와 책임 경계가 불명확한 문제', architecture:'XFS/ext4/Btrfs project quota, Kubernetes workload, Helm, metrics와 CLI/UI', evidence:'quota 적용·초과·복구·관측성 테스트', status:'공유 스토리지를 운영 가능한 Kubernetes capability로 확장' },
   { slug:'narwhal', title:'Kubernetes IDP', problem:'클러스터를 구성해도 SSO·GitOps·보안·관측성이 따로 운영되는 문제', architecture:'HA Kubernetes, kube-vip, ArgoCD/Gitea, Keycloak OIDC, Cilium/Istio/APISIX, observability와 backup', evidence:'120+ cluster checks, 49 SSO tests, 51 regression checks', status:'전체 포트폴리오의 통합·운영 중심' },
   { slug:'narwhal-portal', title:'Platform experience', problem:'플랫폼 기능이 있어도 사용자가 어디서 무엇을 실행해야 하는지 알기 어려운 문제', architecture:'Next.js/React 기반으로 서비스·문서·상태·진입 경로를 하나의 portal experience로 구성', evidence:'route·link·콘텐츠 parity, build와 UI smoke 검증', status:'Narwhal의 운영 기능을 사용자 경험으로 노출' },
-  { slug:'beluga', title:'Cloud Native data platform', problem:'데이터 수집·저장·처리·조회 구성요소를 매번 별도로 조합하는 문제', architecture:'K3s 기반 위에 CDC, object/lake storage, query와 orchestration 경계를 조합', evidence:'서비스 기동, 데이터 흐름, endpoint와 운영 시나리오', status:'재현 가능한 data platform reference' },
-  { slug:'beluga-manager', title:'Data control-plane boundary', problem:'데이터 플랫폼의 target architecture와 현재 구현 범위가 섞이는 문제', architecture:'control-plane 계약·상태 모델·운영 경계를 먼저 정의하고 실제 구현과 planned adapter를 분리', evidence:'문서 계약, verify script, CI와 구현 범위의 명시적 구분', status:'실행 제품보다 architecture foundation에 가까운 단계' },
+  { slug:'beluga', title:'Cloud Native data platform', problem:'데이터 수집·저장·처리·조회 구성요소를 매번 별도로 조합하는 문제', architecture:'K3s 기반 위에 CDC, object/lake storage, query와 orchestration 경계를 조합하고, 같은 저장소의 manager/ control plane(Domain API·policy compiler)으로 확장', evidence:'서비스 기동, 데이터 흐름, endpoint와 운영 시나리오, manager/ CI', status:'재현 가능한 data platform reference (manager/ 는 stub 기반 read-first 단계)' },
   { slug:'siqoq', title:'Simulation-to-edge Physical AI', problem:'센서·이벤트·정책·액션을 하드웨어에 바로 연결하면 검증이 어려운 문제', architecture:'CPU-first event/action contract, safety gate, adapter와 simulation을 분리해 edge 확장', evidence:'mock→CPU→accelerator→hardware 단계별 parity와 trace', status:'Physical AI infrastructure를 검증하는 초기 foundation' },
 ] as const;
 
 const adoptionPaths = [
   ['01', '기반부터 시작', 'kube-ready-box → ldapium → nfs-quota-agent', '노드, identity, storage를 먼저 재현합니다.'],
   ['02', '플랫폼으로 통합', 'narwhal → narwhal-portal', 'GitOps, SSO, observability, policy를 하나의 운영 경로로 연결합니다.'],
-  ['03', '데이터 workload 확장', 'beluga → beluga-manager', '데이터 서비스와 control-plane의 경계를 확인합니다.'],
+  ['03', '데이터 workload 확장', 'beluga (manager/ 포함)', '데이터 서비스와 같은 저장소의 control-plane 경계를 확인합니다.'],
   ['04', 'AI / edge로 확장', 'kubemetal → siqoq', '로컬 AI compute와 Physical AI action contract를 검증합니다.'],
 ] as const;
 

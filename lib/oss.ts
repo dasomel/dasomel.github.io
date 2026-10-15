@@ -12,7 +12,7 @@ export const OSS_PORTFOLIO_GROUPS = [
   {
     label: 'Data Platform',
     description: 'CDC부터 lakehouse, query, orchestration까지 데이터 lifecycle을 통합하고 운영하는 프로젝트',
-    projects: ['beluga', 'beluga-manager'],
+    projects: ['beluga'],
   },
   {
     label: 'Edge / Local AI',

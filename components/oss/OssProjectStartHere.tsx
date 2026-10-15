@@ -47,11 +47,7 @@ const PATHS: Record<string, Path[]> = {
     { label:'UNDERSTAND', title:'Architecture', href:'/oss/beluga/architecture/', detailKo:'CDC → streaming → lakehouse → query → BI 전체 데이터 흐름을 먼저 봅니다.', detailEn:'Start with the CDC → streaming → lakehouse → query → BI data flow.' },
     { label:'START', title:'Getting Started', href:'/oss/beluga/getting-started/', detailKo:'VM, k3s, GitOps bootstrap과 local resource profile을 확인합니다.', detailEn:'Review the VM, k3s, GitOps bootstrap, and local resource profile.' },
     { label:'OPERATE', title:'Operations', href:'/oss/beluga/operations/', detailKo:'플랫폼 상태, upgrade와 data lifecycle 운영 경계를 확인합니다.', detailEn:'Review platform state, upgrade, and data-lifecycle operational boundaries.' },
-  ],
-  'beluga-manager': [
-    { label:'UNDERSTAND', title:'Architecture', href:'/oss/beluga-manager/architecture/', detailKo:'Adapter → correlation → domain API → UI 구조와 authoritative state 경계를 봅니다.', detailEn:'Understand the Adapter → correlation → domain API → UI structure and authoritative-state boundary.' },
-    { label:'BUILD', title:'Development', href:'/oss/beluga-manager/development/', detailKo:'Unified API와 frontend가 upstream OSS API와 어떻게 분리되는지 확인합니다.', detailEn:'See how the unified API and frontend remain separated from upstream OSS APIs.' },
-    { label:'OPERATE', title:'Operations', href:'/oss/beluga-manager/operations/', detailKo:'Early-stage control plane의 배포 및 운영 기준을 확인합니다.', detailEn:'Review deployment and operations criteria for the early-stage control plane.' },
+    { label:'CONTROL PLANE', title:'Manager Architecture', href:'/oss/beluga/manager-architecture/', detailKo:'manager/ 의 Adapter → correlation → domain API → UI 구조와 authoritative state 경계를 봅니다.', detailEn:'Understand the manager/ Adapter → correlation → domain API → UI structure and authoritative-state boundary.' },
   ],
   siqoq: [
     { label:'SCOPE', title:'Overview', href:'/oss/siqoq/overview/', detailKo:'현재 executable core와 target architecture의 경계를 먼저 확인합니다.', detailEn:'Start with the boundary between the executable core and target architecture.' },

@@ -15,8 +15,7 @@ const projects = [
   ['Narwhal Portal', 'Platform experience', 'narwhal-portal'],
   ['nfs-quota-agent', 'Storage enforcement', 'nfs-quota-agent'],
   ['ldapium', 'Identity infrastructure', 'ldapium'],
-  ['Beluga', 'Data platform', 'beluga'],
-  ['Beluga Manager', 'Planned data control plane', 'beluga-manager'],
+  ['Beluga', 'Data platform + manager/ control plane', 'beluga'],
   ['Siqoq', 'Simulation-to-edge Physical AI contracts', 'siqoq'],
   ['KubeMetal', 'Local AI / edge', 'kubemetal'],
 ] as const;

@@ -17,7 +17,6 @@ export const OSS_PORTFOLIO_PROJECTS: readonly OssPortfolioProject[] = [
   { slug:'kube-ready-box', repo:'dasomel/kube-ready-box', name:'Kube-Ready-Box', role:'Node Foundation', pulseRole:'Baseline', stage:'Reusable foundation', verification:'OS readiness validation', independence:'Independent' },
   { slug:'clusterdeck', repo:'dasomel/clusterdeck', name:'ClusterDeck', role:'Workstation Access Layer', pulseRole:'Workstation', stage:'MVP / early', verification:'SSH + kubeconfig + API', independence:'Independent' },
   { slug:'beluga', repo:'dasomel/beluga', name:'Beluga', role:'Data Platform Reference', pulseRole:'Data', stage:'Reference platform', verification:'2 E2E data paths', independence:'Reference environment' },
-  { slug:'beluga-manager', repo:'dasomel/beluga-manager', name:'Beluga Manager', role:'Data Control Plane', pulseRole:'Data Control', stage:'Early / read-first', verification:'Domain/API boundary', independence:'Beluga-oriented' },
   { slug:'kubemetal', repo:'dasomel/kubemetal', name:'KubeMetal', role:'Emerging / Cloud-native AI', pulseRole:'AI / Edge', stage:'Emerging', verification:'Measured local baseline', independence:'Independent lab system' },
   { slug:'openforge', repo:'dasomel/openforge', name:'OpenForge', role:'Engineering Foundation', pulseRole:'Standards', stage:'Standards system', verification:'Standards → reference loop', independence:'Cross-project' },
 ] as const;

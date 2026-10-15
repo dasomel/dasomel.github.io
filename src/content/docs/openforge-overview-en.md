@@ -64,4 +64,4 @@ While the OpenForge GitHub repository serves as the **authoritative source of tr
 - **Implementation Repository**: [dasomel/openforge](https://github.com/dasomel/openforge)
 - **Engineering Standards**: [docs/](https://github.com/dasomel/openforge/tree/main/docs)
 - **Reusable Templates**: [templates/](https://github.com/dasomel/openforge/tree/main/templates)
-- **Reference Implementations**: Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager
+- **Reference Implementations**: Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager (beluga `manager/`)

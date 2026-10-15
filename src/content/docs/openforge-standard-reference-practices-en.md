@@ -16,7 +16,7 @@ OpenForge standards represent codified best practices extracted from production 
 - **Narwhal**: 35 GitOps applications and 263 incident lessons codified into automated regression tests
 - **KubeMetal**: Bare-metal hardware compatibility matrices and Makefile automation
 - **nfs-quota-agent**: Go `gofumpt` linting standards, systemd templates, and integration testing
-- **Beluga Manager**: Multilingual UI resource bundles (`en-US`, `ko-KR`) and container security baselines
+- **Beluga Manager (beluga `manager/`)**: Multilingual UI resource bundles (`en-US`, `ko-KR`) and container security baselines
 
 Standards evolve continuously based on operational feedback and post-incident reviews.
 

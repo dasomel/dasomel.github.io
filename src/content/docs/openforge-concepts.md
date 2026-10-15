@@ -17,7 +17,7 @@ OpenForge는 **정책(Policy)**, **구현(Implementation)**, **증거(Evidence)*
 |---|---|---|
 | **[Standards](/oss/openforge/standards)** | 달성해야 할 엔지니어링 결과와 원칙 정의 | 공급망 보안 표준, CI/CD 복원력 표준, 문서화 표준 |
 | **[Templates](/oss/openforge/templates)** | 즉시 적용 가능한 보수적이고 안전한 구현 시작점 제공 | Multi-stage Dockerfile, GitHub Workflows, K8s Manifests |
-| **[Reference Implementation](/oss/openforge/reference)** | 실제 OSS 프로젝트 적용 사례, 제약사항 및 실측치 | Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager |
+| **[Reference Implementation](/oss/openforge/reference)** | 실제 OSS 프로젝트 적용 사례, 제약사항 및 실측치 | Narwhal, KubeMetal, nfs-quota-agent, Beluga Manager (beluga `manager/`) |
 
 ---
 

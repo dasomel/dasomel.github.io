@@ -100,6 +100,8 @@ Kafka, Flink, Trino, Airflow pod가 모두 healthy여도 data platform의 목적
 
 ### Beluga Manager
 
+> **2026-10-15 업데이트**: Beluga Manager는 별도 저장소가 아니라 [beluga](/ko/projects/beluga)의 `manager/` 디렉터리로 통합되었고 `dasomel/beluga-manager`는 아카이브되었습니다. 아래는 검토 시점(2026-08)의 기록입니다. 배경은 [통합 글](/ko/posts/beluga-manager-monorepo-consolidation)을 참고하세요.
+
 아키텍처가 구현보다 앞서가는 초기 프로젝트이기 때문에 문서에 세 가지 상태를 사용하도록 했습니다.
 
 ```text
