@@ -15,6 +15,7 @@ const categoryColors:Record<string,string> = {'Internal Developer Platform':'#b9
 const dark = 'rounded-xl bg-[#18243d] border border-[#3c4d6d] text-white shadow-sm';
 const title = 'text-lg font-semibold leading-snug tracking-tight';
 const subdued = 'text-sm leading-relaxed text-[#c0cde3]';
+// D4: 'beluga-manager' stays because the graph is keyed by src/data/openforge-portfolio.json (synced from openforge, which still lists it); nodes/links to site pages are not derived from it.
 const points:Record<string,[number,number]> = {narwhal:[102,85],'narwhal-portal':[265,54],kubemetal:[446,85],beluga:[98,208],openforge:[262,172],'beluga-manager':[450,208],'kube-ready-box':[207,294],'dasomel-github-io':[350,294]};
 const shortName=(s:string)=>s.replace('dasomel-github-io','dasomel.github.io');
 

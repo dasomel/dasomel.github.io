@@ -8,7 +8,7 @@ export function OssArchitectureFlow({ locale }: { locale: 'ko' | 'en' }) {
     { role:'Node & Access', name:'Kube-Ready-Box · ClusterDeck', href:`${prefix}/kube-ready-box/`, note:en?'reproducible nodes + workstation access':'재현 가능한 node + workstation access' },
     { role:'Platform', name:'Narwhal · Narwhal Portal', href:`${prefix}/narwhal/`, note:en?'platform runtime + developer/operator experience':'platform runtime + developer/operator experience' },
     { role:'Reusable Infra', name:'NFS Quota Agent · ldapium', href:`${prefix}/nfs-quota-agent/`, note:en?'storage enforcement + identity infrastructure':'storage enforcement + identity infrastructure' },
-    { role:'Data', name:'Beluga · Beluga Manager', href:`${prefix}/beluga/`, note:en?'reference data platform + control plane':'reference data platform + control plane' },
+    { role:'Data', name:'Beluga (incl. manager/)', href:`${prefix}/beluga/`, note:en?'reference data platform + control plane':'reference data platform + control plane' },
     { role:'AI / Edge', name:'KubeMetal · Siqoq', href:`${prefix}/siqoq/`, note:en?'local AI control/compute + simulation-to-edge contracts':'local AI control/compute + simulation-to-edge contract' },
   ];
 
