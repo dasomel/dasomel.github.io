@@ -53,6 +53,8 @@ $ python3 -m pytest -q
 
 확장된 탐지기로 포트폴리오 매트릭스(`portfolio/agent-audit.json`)를 다시 생성한 [OpenForge PR #96](https://github.com/dasomel/openforge/pull/96) 이후, 추적 대상 저장소 전체의 false-green 개수는 0에서 12로 늘었습니다 — narwhal 하나가 4건, beluga·beluga-manager·kubemetal·clusterdeck·ldapium·nfs-quota-agent·egovframe-launcher·siqoq에 각각 1건씩입니다.
 
+> **2026-10-15 참고**: 이후 `beluga-manager`는 `beluga`의 `manager/` 디렉터리로 통합되어 별도 저장소로는 더 이상 추적되지 않습니다. 위 수치는 당시 기준입니다.
+
 이 글을 쓰는 시점에도 narwhal의 4건 중 2건은 아직 열려 있습니다. `.claude/commands/check.md`와 `.claude/commands/verify.md`는 여전히 문서화된 검증 절차 안에 같은 `yq eval ... > /dev/null && echo "OK: $f" || echo "FAIL: $f"` 패턴을 그대로 담고 있고, 그 패턴이 나왔던 원본 Makefile 타겟은 고쳐졌는데도 이쪽은 아직 고쳐지지 않았습니다. 이것이 지금 포트폴리오의 정직한 상태입니다 — 문제가 발견된 곳 전부에서 해결됐다는 주장이 아니라, 탐지기의 역할은 해결될 때까지 그것을 계속 눈에 보이게 두는 것입니다.
 
 ## 버그가 아니라 패턴
