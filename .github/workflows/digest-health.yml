@@ -29,7 +29,7 @@ jobs:
           INPUT_DATE: ${{ inputs.date }}
         run: |
           if [ -n "$INPUT_DATE" ]; then
-            bun scripts/check-enrichment.mjs --date "$INPUT_DATE"
+            bun scripts/check-enrichment.mjs --strict --date "$INPUT_DATE"
           else
-            bun scripts/check-enrichment.mjs
+            bun scripts/check-enrichment.mjs --strict
           fi

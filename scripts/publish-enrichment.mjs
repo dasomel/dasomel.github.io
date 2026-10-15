@@ -22,12 +22,9 @@
  *                 main; the push triggers deploy.yml and the published post is
  *                 updated in place.
  *
- * main mode is not an edge case, it is the normal one. The fallback merge lands
- * at ~06:47-07:53 KST while the enrichment session runs at ~08:05, so by the
- * time enrichment finishes the branch is usually already merged and deleted.
- * Before this mode existed the script simply refused, and four days of Korean
- * summaries (2026-08-06..09) were generated and then thrown away — the 08-11
- * run had all 23 articles enriched on disk and could not publish a single one.
+ * The automatic merge requires complete enrichment. Branch mode requests
+ * that merge after pushing, without waiting for a cron. Main mode still repairs
+ * previously published digests.
  *
  * Re-running is always safe. It commits stranded work from an earlier run,
  * skips whatever is already done, and exits 0 when there is nothing left to do.
@@ -73,6 +70,20 @@ const die = (m) => {
 
 const git = (...args) =>
   execFileSync('git', args, { encoding: 'utf-8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+
+// D2: Completion may follow the final merge cron. One dispatch removes that
+// timing dependency; retry this command after failure, even with no new changes.
+const requestMerge = () => {
+  if (MODE !== 'branch') return;
+  try {
+    execFileSync('gh', ['workflow', 'run', 'digest-fallback.yml', '--ref', 'main'], {
+      stdio: 'inherit',
+    });
+  } catch {
+    die('보강은 원격에 있지만 자동 머지 요청에 실패했다. gh 인증을 확인하고 같은 명령을 재실행하라.');
+  }
+  log('자동 머지 요청 완료 — 실제 머지·Pages 배포 결과는 별도 확인해야 한다.');
+};
 
 log(`enrichment publish — ${DATE}${DRY ? ' (dry run)' : ''}`);
 
@@ -160,16 +171,10 @@ if (articles.length === 0) die(`${DATA} 에 기사가 없다.`);
 if (enriched.length === 0) {
   die(
     `보강 필드(summaryKo/summaryEn)가 하나도 없다 — 보강을 먼저 끝내라.\n` +
-      `  보강 없는 발행은 digest-fallback 이 알아서 한다. 이 스크립트가 할 일이 아니다.`
+      `  digest-fallback 도 보강 없는 발행을 차단한다.`
   );
 }
-if (enriched.length < articles.length) {
-  // Partial enrichment is publishable — generate-daily-digest falls back to the
-  // raw excerpt per field — but it is nearly always a truncated run, so say so.
-  log(`⚠ 부분 보강: ${enriched.length}/${articles.length} 건만 보강됨 (나머지는 발췌문으로 나간다)`);
-} else {
-  log(`보강 확인: ${enriched.length}/${articles.length} 건`);
-}
+log(`보강 확인: ${enriched.length}/${articles.length} 건 — 생성 후 strict 검사`);
 
 // --- 3. Regenerate markdown from the (possibly updated) JSON ---------------
 // Cheap and idempotent, so always re-run it: this is what keeps the .md files
@@ -185,6 +190,16 @@ if (!DRY) {
 const paths = [DATA, KO, EN];
 const missing = paths.filter((p) => !fs.existsSync(p));
 if (missing.length) die(`생성물이 없다: ${missing.join(', ')}\n  마크다운 생성이 실패했을 수 있다.`);
+
+// D3: Use the merge gate before committing as well. Cost: one local check;
+// incomplete enrichment must be repaired before retrying.
+try {
+  execFileSync('bun', ['scripts/check-enrichment.mjs', '--strict', '--date', DATE], {
+    stdio: 'inherit',
+  });
+} catch {
+  die('상세 보강 또는 생성물 검증 실패 — 커밋·push 하지 않았다.');
+}
 
 if (DRY) {
   log(`\n[dry run] 커밋 대상: ${paths.join(', ')}`);
@@ -214,6 +229,7 @@ try {
 
 if (ahead === '0') {
   log('원격이 이미 최신 — push 생략. 할 일 없음.');
+  requestMerge();
   process.exit(0);
 }
 
@@ -242,6 +258,8 @@ try {
 } catch {
   die(`push 실패 — 위 git 출력을 확인하라. 보강 커밋은 로컬에 남아 있으니 재실행하면 다시 시도한다.`);
 }
+
+requestMerge();
 
 log(
   MODE === 'main'

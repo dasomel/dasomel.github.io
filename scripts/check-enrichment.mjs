@@ -18,6 +18,7 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(DATE)) {
 
 const DATA = path.join('src/content/posts/.digest-data', `${DATE}.json`);
 const KO = path.join('src/content/posts', `daily-digest-${DATE}.md`);
+const EN = path.join('src/content/posts', `daily-digest-${DATE}-en.md`);
 const warn = (m) => console.log(`::warning::${m}`);
 const fail = (m) => { console.log(`::error::${m}`); process.exit(1); };
 const detailedEnough = (value) => sentenceCount(value) >= MIN_SUMMARY_SENTENCES;
@@ -61,14 +62,24 @@ if (strict && detailed.length !== articles.length) {
   fail(`${DATE} 상세 요약이 불완전하다 (${detailed.length}/${articles.length}건, ${detailedPct}%). 각 기사 summaryKo/summaryEn은 최소 ${MIN_SUMMARY_SENTENCES}문장이어야 한다.`);
 }
 
-if (fs.existsSync(KO)) {
+// D1: Check both artifacts and every summary to catch partial regeneration.
+// Cost: two file reads; use non-strict mode only for diagnostic inspection.
+for (const [file, field] of [[KO, 'summaryKo'], [EN, 'summaryEn']]) {
+  if (!fs.existsSync(file)) {
+    if (strict) fail(`${DATE}: 생성물이 없다: ${file}`);
+    warn(`${DATE}: 생성물이 없다: ${file}`);
+    continue;
+  }
   const squash = (s) => String(s).replace(/[^0-9A-Za-z가-힣]/g, '');
-  const needle = squash(enriched[0].summaryKo).slice(0, 40);
-  const haystack = squash(fs.readFileSync(KO, 'utf-8'));
-  if (needle.length >= 20 && !haystack.includes(needle)) {
-    if (strict) fail(`${DATE}: JSON에는 AI 보강이 있지만 ko 마크다운에 반영되지 않았다. 마크다운을 JSON에서 재생성하라.`);
-    warn(`${DATE}: JSON에는 AI 보강이 있지만 ko 마크다운에 반영되지 않았다. 마크다운을 JSON에서 재생성하라.`);
-    process.exit(0);
+  const haystack = squash(fs.readFileSync(file, 'utf-8'));
+  for (const article of enriched) {
+    const needle = squash(article[field]);
+    if (needle && !haystack.includes(needle)) {
+      const message = `${DATE}: ${file}에 ${field} 보강이 반영되지 않았다. 마크다운을 JSON에서 재생성하라.`;
+      if (strict) fail(message);
+      warn(message);
+      process.exit(0);
+    }
   }
 }
 

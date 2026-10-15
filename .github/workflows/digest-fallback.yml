@@ -33,8 +33,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          if ! gh pr list --repo "$REPO" --state open --draft --json number,headRefName \
-            --jq '[.[] | select(.headRefName | startswith("daily-digest/"))] | sort_by(.headRefName)[] | "\(.number)\t\(.headRefName)"' > /tmp/digest-prs.txt; then
+          # D4: Include ready PRs so a failed merge after `pr ready` can retry.
+          # Cost: recheck open digest PRs; already-published replacements remain manual.
+          if ! gh pr list --repo "$REPO" --state open --json number,headRefName,isDraft \
+            --jq '[.[] | select(.headRefName | test("^daily-digest/[0-9]{4}-[0-9]{2}-[0-9]{2}$"))] | sort_by(.headRefName)[] | "\(.number)\t\(.headRefName)\t\(.isDraft)"' > /tmp/digest-prs.txt; then
             echo "::error::gh pr list 실패 — 자동 발행을 중단한다."
             exit 1
           fi
@@ -48,24 +50,28 @@ jobs:
         run: |
           COUNT=0
           BLOCKED=0
-          while IFS=$'\t' read -r NUM BRANCH; do
+          while IFS=$'\t' read -r NUM BRANCH IS_DRAFT; do
             [ -z "$NUM" ] && continue
             DATE="${BRANCH#daily-digest/}"
             git fetch origin "$BRANCH" --quiet
             git checkout --detach "origin/$BRANCH"
+            VERIFIED_HEAD="$(git rev-parse HEAD)"
             if ! bun scripts/check-enrichment.mjs --strict --date "$DATE"; then
               echo "::warning::PR #${NUM} (${DATE}) — AI enrichment 미완료."
               BLOCKED=$((BLOCKED + 1))
               continue
             fi
+            git fetch origin main --quiet
             git checkout --detach origin/main
             if [ -f "src/content/posts/daily-digest-${DATE}.md" ]; then
               echo "::warning::PR #${NUM} (${DATE}) — 이미 main에 발행됨."
               BLOCKED=$((BLOCKED + 1))
               continue
             fi
-            gh pr ready "$NUM" --repo "$REPO"
-            gh pr merge "$NUM" --repo "$REPO" --squash --delete-branch --subject "📰 데일리 테크 다이제스트 ${DATE}"
+            if [ "$IS_DRAFT" = "true" ]; then
+              gh pr ready "$NUM" --repo "$REPO"
+            fi
+            gh pr merge "$NUM" --repo "$REPO" --match-head-commit "$VERIFIED_HEAD" --squash --delete-branch --subject "📰 데일리 테크 다이제스트 ${DATE}"
             COUNT=$((COUNT + 1))
           done < /tmp/digest-prs.txt
           echo "merged=$COUNT blocked=$BLOCKED"

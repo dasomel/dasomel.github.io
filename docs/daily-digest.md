@@ -1,101 +1,94 @@
 # Daily Tech Digest — 파이프라인 가이드
 
-Cloud / Kubernetes / AI / DevOps RSS 피드를 매일 수집해 한/영 다이제스트
-포스트를 자동 생성하는 시스템. **추가 API 비용 없음** — 수집은 GitHub
-Actions, AI 요약(선택)은 Claude 구독(Cowork) 스케줄 태스크로 처리한다.
+Cloud / Kubernetes / AI / DevOps RSS를 GitHub Actions에서 수집하고,
+Claude 구독 예약 작업이 한국어·영어 상세 요약을 보강한다.
+**보강은 필수**이며, 외부 모델 API를 호출하는 단계는 없다.
 
-## 구성 요소
+## 실행 순서
 
-| 파일 | 역할 |
-|---|---|
-| `scripts/collect-feeds.mjs` | RSS 수집 → `.digest-data/YYYY-MM-DD.json` 저장 |
-| `scripts/generate-daily-digest.mjs` | JSON → KO/EN 마크다운 포스트 생성 |
-| `scripts/lib/digest-feeds.mjs` | 피드 목록·카테고리 매핑·발췌 등 공용 헬퍼 |
-| `.github/workflows/daily-digest.yml` | 매일 00:00 UTC(09:00 KST) cron + 수동 실행 |
+1. `scheduler.yml` → `daily-digest.yml`: 수집 JSON과 한·영 초안을
+   `daily-digest/YYYY-MM-DD` 브랜치에 저장하고 draft PR을 만든다.
+2. 외부 보강 예약 작업: 원문을 확인하고 모든 기사의 `summaryKo`,
+   `summaryEn`(각 최소 5문장), `insightKo`, `insightEn`을 채운다.
+3. `npm run digest:enrich-publish -- --date YYYY-MM-DD`:
+   마크다운 재생성 → strict 검사 → 커밋 → push → 머지 워크플로 요청.
+   이미 push된 변경도 같은 명령으로 머지 요청을 재시도할 수 있다.
+4. `digest-fallback.yml`: 보강 검증, main 중복 발행 확인 후 검사한
+   PR 커밋만 squash merge한다. ready 전환 후 실패한 PR도 재시도한다.
+5. `deploy.yml`: fallback의 `workflow_run` 완료 이벤트를 받아 main을
+   빌드·배포한다. 워크플로 성공만으로 발행을 판정하지 말고 Pages 배포
+   SHA와 한·영 라이브 URL을 확인한다.
 
-## npm 스크립트
+이미 main에 발행된 날짜의 보강 수정도 지원한다. 이 경우 publisher는
+main에 push하며 기존 push 배포 경로를 사용한다.
+
+## 예약과 외부 의존성
+
+모든 GitHub cron의 정의는 `.github/workflows/scheduler.yml`에 있다.
+수집은 UTC 20:20 / 22:55, 머지는 21:15 / 01:05, 건강 검사는 00:35다.
+GitHub 예약은 지연될 수 있으며, 수집·보강·머지의 실제 순서는 시각만으로
+보장되지 않는다. 보강 완료 시 머지를 명시적으로 요청하는 이유다.
+
+보강 예약은 이 저장소의 Actions가 실행하지 않는다. Claude 예약 작업의
+활성 상태, 실행 이력, 저장소 접근 권한을 별도로 확인해야 한다.
+저장소의 프롬프트 파일 수정만으로 기존 원격 작업의 지침이 갱신되지는 않는다.
+
+보강 작업에는 `scripts/digest-enrich-prompt.md`를 적용한다. 오늘 수집이
+늦으면 미발행 `daily-digest/*` PR을 날짜순으로 확인한다. 수집물이 없을 때
+정상 완료로 처리하거나 첫 기사만 보고 전체 보강 완료를 판단하면 안 된다.
+
+## 검증과 장애 복구
 
 ```bash
-npm run digest:collect          # RSS 수집 → JSON
-npm run digest                  # JSON → 마크다운 (원문 발췌)
-npm run digest -- --enrich      # JSON → 마크다운 (AI 필드 우선, 없으면 발췌 폴백)
-npm run digest -- --date 2026-06-14   # 특정 날짜 재생성
+# 진단만 하는 기본 모드는 경고 후 0으로 끝날 수 있다.
+bun scripts/check-enrichment.mjs --date YYYY-MM-DD
+
+# 발행 및 건강 검사에는 반드시 strict 모드를 사용한다.
+bun scripts/check-enrichment.mjs --strict --date YYYY-MM-DD
+
+# 파일 재생성과 검증만 수행한다. 커밋·push는 하지 않는다.
+bun scripts/generate-daily-digest.mjs --enrich --date YYYY-MM-DD
+bun scripts/check-enrichment.mjs --strict --date YYYY-MM-DD
+
+# 보강 저장 및 자동 머지 요청. 저장소 쓰기 권한을 가진 예약 작업용이다.
+npm run digest:enrich-publish -- --date YYYY-MM-DD
 ```
 
-## 데이터 흐름
+strict 검사는 데이터 누락, 기사 0건, 부분 보강, 짧은 요약, 한·영 게시물
+누락, JSON과 마크다운 요약 불일치를 실패로 처리한다. 건강 검사는 main의
+발행 상태를 검사하므로 PR에만 있는 글도 실패한다. 검사 실패를 해결하기
+위해 보강 기준이나 이중 발행 방어를 우회하지 않는다.
 
-```
-[GitHub Actions / 매일]
-  collect-feeds.mjs → .digest-data/YYYY-MM-DD.json (원시 데이터)
-  generate-daily-digest.mjs → daily-digest-YYYY-MM-DD(.en).md (원문 발췌)
-  → draft PR 생성
+`force`로 만든 교체본은 이미 main에 같은 날짜가 있으면 자동 머지하지
+않는다. 수동 검토 대상이며 자동으로 닫지도 않는다.
 
-[Cowork 스케줄 태스크 / 선택 · Phase 2]
-  1. .digest-data/YYYY-MM-DD.json 읽기
-  2. Claude가 각 기사에 summaryKo/summaryEn/insightKo/insightEn 추가
-  3. JSON 덮어쓰기
-  4. npm run digest -- --enrich → 보강된 마크다운 재생성
-```
+## 2026-10-15 조사 기록
 
-## JSON 스키마 — `.digest-data/YYYY-MM-DD.json`
+- 기준 main: `129dc10711e3946dc8cd445734dcdeef9b4f48bf`.
+- [수집 실행 38653237033](https://github.com/dasomel/dasomel.github.io/actions/runs/38653237033):
+  08:19 KST에 [PR #389](https://github.com/dasomel/dasomel.github.io/pull/389)
+  생성. 35건 모두 AI 보강 필드가 없었다.
+- [머지 실행 38656860770](https://github.com/dasomel/dasomel.github.io/actions/runs/38656860770):
+  `AI 보강이 하나도 없다 (0/35건)`, `merged=0 blocked=1`.
+  수집 성공은 발행 성공을 의미하지 않았다.
+- 전날 [건강 검사 38515964182](https://github.com/dasomel/dasomel.github.io/actions/runs/38515964182)는
+  발행 데이터가 없다는 경고를 남기고도 성공했다. 기본 검사 모드가 원인이다.
+- 로컬 보강 예약에는 2026-09-23 원격 이전 기록이 있다. 로컬 비활성 상태만으로
+  원격 작업도 중지됐다고 결론 내릴 수 없다. 오늘 보강이 실행되지 않은 이유는
+  원격 예약 실행 이력에서 추가 확인해야 한다.
 
-```jsonc
-{
-  "date": "2026-06-15",            // KST 날짜
-  "generatedAt": "2026-06-15T00:00:00.000Z",
-  "count": 5,
-  "articles": [
-    {
-      // collect-feeds.mjs가 기록 (필수)
-      "source": "Kubernetes",            // 피드 이름
-      "category": "k8s",                 // k8s | ai | cloud | devops
-      "title": "원문 제목",
-      "link": "https://...",
-      "date": "2026-06-14T15:00:00.000Z",
-      "excerpt": "RSS 발췌 1-2문장 (없으면 \"\")",
+## 데이터와 콘텐츠 규칙
 
-      // Cowork/Claude가 나중에 추가 (선택) — --enrich 시 우선 사용
-      "summaryKo": "한국어 요약 2-3문장",
-      "summaryEn": "English summary, 2-3 sentences",
-      "insightKo": "왜 중요한가 (Cloud/DevOps 관점) 1문장",
-      "insightEn": "Why it matters, 1 sentence"
-    }
-  ]
-}
-```
+원본은 `src/content/posts/.digest-data/YYYY-MM-DD.json`이다. 기사에는
+`source`, `category`, `title`, `link`, `date`, `excerpt`가 있고, 보강은
+네 개의 summary/insight 필드만 추가한다. `enrich-apply.mjs`는 링크·개수·
+언어·요약 길이를 검증한 뒤 JSON에 반영한다.
 
-### 폴백 규칙 (`--enrich`)
+게시물은 `daily-digest-YYYY-MM-DD.md`와
+`daily-digest-YYYY-MM-DD-en.md`를 한 쌍으로 관리한다. `--enrich` 생성기는
+누락 필드를 발췌문으로 대체할 수 있지만, 그 결과는 strict 발행 검사를
+통과하지 못한다.
 
-- `summaryKo`/`summaryEn`가 있으면 본문으로 사용, 없으면 `excerpt`로 폴백.
-- `insightKo`/`insightEn`가 있으면 `> 💡 왜 중요한가` 블록으로 표시, 없으면 생략.
-- 한 기사가 summary/excerpt 모두 없으면 "⚡ 빠른 소식" 불릿으로만 노출.
-
-## Cowork 스케줄 태스크 작성 예시 (Phase 2)
-
-> 매일 09:30 KST 실행. `src/content/posts/.digest-data/`에서 오늘 날짜
-> JSON을 찾아 각 article에 `summaryKo`, `summaryEn`, `insightKo`,
-> `insightEn`을 채워 JSON을 덮어쓴 뒤, `npm run digest -- --enrich`를
-> 실행하고 변경된 포스트를 커밋·PR로 올린다. (요약은 Cloud/DevOps
-> 엔지니어 관점, 한국어/영어 각각.)
-
-**바로 사용할 수 있는 전체 프롬프트 템플릿: [`scripts/digest-enrich-prompt.md`](../scripts/digest-enrich-prompt.md)**
-— Cowork 스케줄 태스크에 이 파일 내용을 그대로 붙여 넣으면 된다.
-
-## 카테고리 매핑 (소스 기반, AI 불필요)
-
-피드는 한 매체가 다이제스트를 도배하지 않도록 여러 발행처로 넓게 분산돼 있다.
-전체 목록·URL은 `scripts/lib/digest-feeds.mjs`의 `FEEDS`가 단일 출처(33개 피드,
-2026-06-27 기준 전부 RSS 유효성 검증 완료).
-
-| 카테고리 | 피드 |
-|---|---|
-| Kubernetes & Cloud Native (`k8s`) | Kubernetes, CNCF, AWS Containers, Docker, Istio, Cilium, Sysdig |
-| AI & ML (`ai`) | OpenAI, Hugging Face, Google Research, Google AI |
-| 클라우드 업데이트 (`cloud`) | Google Cloud, AWS Architecture, Azure, Cloudflare, Red Hat |
-| DevOps & 인프라 (`devops`) | HashiCorp, The New Stack, Grafana, AWS DevOps, Datadog, Honeycomb, GitLab, Snyk, Netflix, Meta Engineering, GitHub, Stripe, Dropbox, 우아한형제들, 카카오, 토스, LINE |
-
-### 소스 쏠림 방지 — `PER_SOURCE_CAP`
-
-`collect-feeds.mjs`는 24시간 윈도우로 수집한 뒤, **소스당 최신 3건**(`PER_SOURCE_CAP = 3`)
-까지만 남기고 전역 상한(`MAX_ARTICLES = 60`)을 적용한다. 다작 매체(예: The New Stack)가
-하루치를 독점하던 문제를 막고, 매일 더 다양한 출처가 노출되도록 한다. 값만 바꾸면 조정 가능.
+수집 창은 72시간이며 과거 14일의 JSON 링크로 중복을 제거한다.
+`.digest-data` 파일을 삭제하거나 gitignore에 넣지 않는다. 피드 목록과
+소스별 상한은 `scripts/lib/digest-feeds.mjs`를 기준으로 한다.
