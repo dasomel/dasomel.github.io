@@ -1,0 +1,431 @@
+{
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-16T22:54:26.557Z",
+  "count": 53,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI agents turn one request into about 20. Kubernetes is evolving to handle it.",
+      "link": "https://thenewstack.io/kagent-kubernetes-ai-agents/",
+      "date": "2026-10-16T18:37:03.000Z",
+      "excerpt": "Welcome to another edition of Road to KubeCon, where we’re tracking interesting movements in the cloud-native and Kubernetes ecosystem as"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "link": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "date": "2026-10-16T18:11:34.000Z",
+      "excerpt": "General Science"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Automating secure container registry management for air-gapped AWS workloads",
+      "link": "https://aws.amazon.com/blogs/containers/automating-secure-container-registry-management-for-air-gapped-aws-workloads/",
+      "date": "2026-10-16T17:48:23.000Z",
+      "excerpt": "Organizations in regulated industries run container workloads in air-gapped AWS environments, which means migrating hundreds of Helm charts and images into private Amazon ECR with consistent security controls."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Day 0 support for Reflection’s Beam on Google Cloud: 5x faster perf with llm-d and NVIDIA Dynamo",
+      "link": "https://cloud.google.com/blog/topics/ai-infrastructure/day-0-support-with-5x-perf-for-reflection-beam-on-google-cloud/",
+      "date": "2026-10-16T17:00:00.000Z",
+      "excerpt": "Today, Reflection released Beam, its first open-weight model built to give developers, researchers, and enterprises open control and customization for frontier software engineering and long-horizon agentic tasks. Released under a permissive Apache 2."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Deploying, maintaining, and migrating production n8n on EKS",
+      "link": "https://www.cncf.io/blog/2026/10/16/deploying-maintaining-and-migrating-production-n8n-on-eks/",
+      "date": "2026-10-16T16:39:04.000Z",
+      "excerpt": "n8n is easy to try and harder to run under production traffic. A single container with SQLite works great for a quick demo."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Ontology-Driven Observability: Building an End-to-End Knowledge Graph at Netflix Scale",
+      "link": "https://netflixtechblog.com/ontology-driven-observability-building-an-end-to-end-knowledge-graph-at-netflix-scale-421392cf5adf?source=rss----2615bd06b42e---4",
+      "date": "2026-10-16T16:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "From Containers to Sandboxes: Developer Trust in the Agentic Era",
+      "link": "https://www.docker.com/blog/stack-overflow-survey-2026-ai-agent-trust/",
+      "date": "2026-10-16T16:00:00.000Z",
+      "excerpt": "The 2026 Stack Overflow Developer Survey shows only 7% of developers trust AI output for important decisions. Here’s what that means for running agents safely."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-10-16T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Architecting autonomy: A design pattern for high-compute, governed agents in biotech",
+      "link": "https://cloud.google.com/blog/topics/healthcare-life-sciences/architecting-scalable-agentic-biotech-workloads/",
+      "date": "2026-10-16T16:00:00.000Z",
+      "excerpt": "In production systems today, most AI agents operate as lightweight dispatchers. They parse a prompt, make an API call, retrieve a record, and hand back control."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Only 34% trust synthetic data’s referential integrity — and it’s holding adoption back",
+      "link": "https://thenewstack.io/synthetic-data-referential-integrity/",
+      "date": "2026-10-16T15:00:00.000Z",
+      "excerpt": "While enterprise leaders overwhelmingly believe in the promise of synthetic data, adoption lags. As a result, synthetic data has great,"
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Everything We Talked About at O11yDay London 2026",
+      "link": "https://www.honeycomb.io/blog/everything-we-talked-about-o11yday-london-2026",
+      "date": "2026-10-16T14:26:42.000Z",
+      "excerpt": "A recap of every session at O11yDay London 2026, from Sam Newman's cobots and dark factories to Corey Quinn on AI cost observability, plus how Honeycomb debugs its own agents with Canvas, Agent Timeline, and AI Ecosystem."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Continuous accountability for Verified bots",
+      "link": "https://blog.cloudflare.com/verified-bots-accountability/",
+      "date": "2026-10-16T13:00:00.000Z",
+      "excerpt": "Identity alone doesn't guarantee a bot will behave responsibly. We are introducing a system to continuously evaluate whether Verified bots honor site preferences, like robots."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Employees are vibe-coding their own apps. Cloudflare open-sources Void to give IT a handle on them",
+      "link": "https://thenewstack.io/cloudflare-voidzero-void-vibe-coding/",
+      "date": "2026-10-16T12:16:01.000Z",
+      "excerpt": "Many companies are keen to let employees build their own applications using AI, even those with little or no programming"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Putting Nepal on the CNCF Golden Kubestronaut map",
+      "link": "https://www.cncf.io/blog/2026/10/16/putting-nepal-on-the-cncf-golden-kubestronaut-map/",
+      "date": "2026-10-16T11:30:00.000Z",
+      "excerpt": "In this blog, I will share my Golden Kubestronaut journey, how I became the first and youngest Golden Kubestronaut from Nepal, what motivated me to pursue this path, and what it actually takes to earn the."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "실행은 도메인별로, 문맥은 한 레포에",
+      "link": "https://toss.tech/article/dw-airflow-migration",
+      "date": "2026-10-16T06:15:00.000Z",
+      "excerpt": "중앙 DW Airflow를 멈추지 않고 도메인별 DW로 나눈 9개월"
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "AI로 E2E 회귀 테스트 자동화하기: ‘딸깍’을 파이프라인으로 바꾸기까지",
+      "link": "https://techblog.lycorp.co.jp/ko/ai-e2e-test-automation",
+      "date": "2026-10-16T02:00:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 대만 Giftshop 서비스 QA를 담당하고 있는 김혜영입니다."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline",
+      "link": "https://huggingface.co/blog/nvidia/scaling-indic-pretraining",
+      "date": "2026-10-16T01:44:47.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "토스뱅크가 패키지를 관리하는 방식 #2: 토스뱅크 패키지의 세 가지 기준",
+      "link": "https://toss.tech/article/package-management-2",
+      "date": "2026-10-16T01:00:00.000Z",
+      "excerpt": "안정성, 예측 가능성, 디버깅 편의성. 패키지가 갖춰야 할 세 가지 기준과, 문법 변환과 번들링을 사용하는 서비스에 맡긴 이유를 소개해요."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "date": "2026-10-16T00:00:00.000Z",
+      "excerpt": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+      "link": "https://huggingface.co/blog/reflection-beam",
+      "date": "2026-10-16T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Model Context Protocol gateway for Red Hat OpenShift is now generally available",
+      "link": "https://www.redhat.com/en/blog/model-context-protocol-gateway-red-hat-openshift-now-generally-available",
+      "date": "2026-10-16T00:00:00.000Z",
+      "excerpt": "The Model Context Protocol (MCP) gateway is now generally available (GA) as part of the Red Hat Connectivity Link 1.5 release, and natively integrated into the Red Hat AI portfolio."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — October 16, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-october-16-2026-red-hat",
+      "date": "2026-10-16T00:00:00.000Z",
+      "excerpt": "Open Source Security Signals | Q3 2026Red Hat's inaugural Open Source Security Signals report examines how the ecosystem identifies meaningful risk, remediates vulnerabilities, and delivers reusable fixes."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "New ways for fintechs to move money and expand globally",
+      "link": "https://stripe.com/blog/new-ways-for-fintechs-to-move-money-and-expand-globally",
+      "date": "2026-10-16T00:00:00.000Z",
+      "excerpt": "We’re introducing three updates to help fintechs launch products and grow internationally more easily: simpler payout management with Stripe Global Payouts, support for stablecoin cards in more countries, and unified APIs for building global financial products."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Get observability in your pocket with the Grafana mobile app",
+      "link": "https://grafana.com/blog/get-observability-in-your-pocket-with-the-grafana-mobile-app/",
+      "date": "2026-10-15T22:39:33.000Z",
+      "excerpt": "When you’re on the go, your phone is often the only observability tool you have. And what you can do with it in the first few minutes matters."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Carbon as a first-class signal: Bringing software carbon intensity to OpenTelemetry",
+      "link": "https://www.cncf.io/blog/2026/10/15/carbon-as-a-first-class-signal-bringing-software-carbon-intensity-to-opentelemetry/",
+      "date": "2026-10-15T22:21:45.000Z",
+      "excerpt": "At Observability Summit Europe 2026 in Prague, I presented a keynote titled Carbon as a First-Class Signal: Designing a Standard for OpenTelemetry. The talk explored how Software Carbon Intensity (SCI) could become part of cloud-native observability."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint",
+      "link": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1",
+      "date": "2026-10-15T20:34:01.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "The next developer interface is ambient intelligence",
+      "link": "https://github.blog/news-insights/company-news/the-next-developer-interface-is-ambient-intelligence/",
+      "date": "2026-10-15T19:39:27.000Z",
+      "excerpt": "AI, agents, voice, and physical controls are shifting software development from operating tools to expressing intent—and helping developers stay focused on building."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "How Meta Built Forum With AI-Native Engineering",
+      "link": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
+      "date": "2026-10-15T19:00:03.000Z",
+      "excerpt": "Meta’s newest app, Forum, is for anyone who wants to go deeper into the conversations in their Facebook groups. To build Forum, Meta engineers adopted a whole new way of working by bringing an AI agent into the development cycle."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Bringing GPT-Rosalind to academic research labs",
+      "link": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "date": "2026-10-15T19:00:00.000Z",
+      "excerpt": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "2026 World Cup: Breaking Records, Spiky Charts and Reliability at Scale",
+      "link": "https://engineering.fb.com/2026/10/15/production-engineering/2026-world-cup-record-traffic-reliability-at-scale/",
+      "date": "2026-10-15T18:30:29.000Z",
+      "excerpt": "Every four years, the World Cup becomes the largest planned stress test of our infrastructure. This year it also set an all-time record!"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Staying Evergreen: How we automated secure access and repo hygiene in a shared org",
+      "link": "https://github.blog/engineering/platform-security/staying-evergreen-how-we-automated-secure-access-and-repo-hygiene-in-a-shared-org/",
+      "date": "2026-10-15T18:00:00.000Z",
+      "excerpt": "Put native GitHub features to work to review outside collaborator access and archive stale repositories."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "A fully programmable secure web gateway",
+      "link": "https://blog.cloudflare.com/programmable-gateway-dlp/",
+      "date": "2026-10-15T17:11:12.000Z",
+      "excerpt": "Cloudflare Gateway and Data Loss Prevention have inherited the flexibility and power of Cloudflare Workers through our full-stack integration with the Cloudflare Developer platform."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Sapienz Receives ISSTA 2026 Impact Paper Award",
+      "link": "https://engineering.fb.com/2026/10/15/developer-tools/sapienz-issta-2026-impact-paper-award-meta/",
+      "date": "2026-10-15T16:00:59.000Z",
+      "excerpt": "Ke Mao, Mark Harman, and Yue Jia have been recognized with the ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA) 2026 Most Influential Paper Award for their 2016 research, “Sapienz: multi-objective automated testing for Android applications."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Evolving the cloud-native foundation for the next generation of AI",
+      "link": "https://azure.microsoft.com/en-us/blog/evolving-the-cloud-native-foundation-for-the-next-generation-of-ai/",
+      "date": "2026-10-15T16:00:00.000Z",
+      "excerpt": "Discover how Azure is advancing cloud-native infrastructure to help organizations build, run, and optimize applications and agents at scale."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Dynata scaled AI across the development lifecycle with AI-DLC and Kiro IDE",
+      "link": "https://aws.amazon.com/blogs/architecture/how-dynata-scaled-ai-across-the-development-lifecycle-with-ai-dlc-and-kiro-ide/",
+      "date": "2026-10-15T15:50:31.000Z",
+      "excerpt": "Dynata reimagined its development lifecycle with AI, moving from AI-assisted coding to the AI-Driven Development Lifecycle (AI-DLC) methodology with Kiro IDE. Learn how the company reduced the development phase of full-stack features from three to four sprints to roughly one, with every team aligned from the start."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Deploy with Void",
+      "link": "https://blog.cloudflare.com/deploy-with-void/",
+      "date": "2026-10-15T14:00:00.000Z",
+      "excerpt": "Introducing Void: an open-source SDK, CLI, and self-hosted platform for building full-stack Vite apps and deploying them to Cloudflare."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Coverage-first or cost-first: two ways to automatically apply Adaptive Metrics' recommendations",
+      "link": "https://grafana.com/blog/coverage-first-or-cost-first-two-ways-to-automatically-apply-adaptive-metrics-recommendations/",
+      "date": "2026-10-15T13:50:51.000Z",
+      "excerpt": "Adaptive Metrics , which is part of the Adaptive Telemetry suite, looks at how your metrics are actually used and recommends how much detail you should keep for each metric. This helps you cut costs while still retaining the data you actually need."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Teaching students to think and learn through questions",
+      "link": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+      "date": "2026-10-15T13:00:00.000Z",
+      "excerpt": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "토스뱅크가 패키지를 관리하는 방식 #1: 패키지를 ESM으로만 제공하기로 했어요",
+      "link": "https://toss.tech/article/package-management-1",
+      "date": "2026-10-15T09:23:00.000Z",
+      "excerpt": "ESM과 CJS를 함께 제공할 때 생길 수 있는 상태 분리와 타입 누락 문제를 살펴보고, 패키지를 ESM-only로 전환한 이유를 소개해요."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Introducing Evo Agentic AppSec: Security That Keeps Up With AI Development",
+      "link": "https://snyk.io/blog/announcing-snyk-agentic-appsec/",
+      "date": "2026-10-15T04:00:00.000Z",
+      "excerpt": "AI-driven development is outpacing traditional security workflows. Snyk’s Agentic AppSec uses security agents to find, fix, and verify vulnerabilities continuously, while humans set the bar."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "VulnBump: Can AI Agents Fix Vulnerable Dependencies Without Breaking the Build?",
+      "link": "https://snyk.io/blog/vulnbump/",
+      "date": "2026-10-15T04:00:00.000Z",
+      "excerpt": "VulnBump tests AI agents on 307 real dependency upgrades. A fix counts only if the vulnerability is gone and the build and tests stay green."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Summit 2027 call for proposals is now open",
+      "link": "https://www.redhat.com/en/blog/red-hat-summit-2027-call-proposals-now-open",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Red Hat is headed back to Boston for our annual keystone event – Red Hat Summit! We’re building an agenda of technical and non-technical content for our experienced audience and looking for our community of experts — customers, partners, and associates — to share their knowledge and experiences."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Introducing Scout 1.0: A new SRE model powering Bits AI with frontier performance at a fraction of the cost",
+      "link": "https://www.datadoghq.com/blog/ai/introducing-scout-sre-specialized-model-bits-ai/",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Scout 1.0 is Datadog’s first AI model specialized for investigating production issues while achieving a better price-performance curve on our target scenarios when compared with general-purpose frontier models."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor the performance of critical steps in user journeys with RUM operations",
+      "link": "https://www.datadoghq.com/blog/rum-operations-monitoring/",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Learn how RUM Operations Monitoring helps you track the performance of application steps, investigate degradations, and connect operations to user journeys."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How Kubernetes DRA can improve GPU utilization and cut costs",
+      "link": "https://www.datadoghq.com/blog/how-kubernetes-dra-can-improve-gpu-utilization-and-cut-costs/",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Learn how Kubernetes Dynamic Resource Allocation raises GPU utilization, and what to watch to confirm it’s actually reducing your GPU costs."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Secrets Manager: Govern secrets like your code",
+      "link": "https://about.gitlab.com/blog/secrets-manager-ga/",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Credentials often start in an engineer's local dev environments, then get copied into unscoped CI/CD variables to keep pipelines running. Stored there as a raw value rather than a reference to a scoped secret, a signing key reaches every job in the pipeline — compromised or not."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Get every merge request in front of the right reviewer, faster",
+      "link": "https://about.gitlab.com/blog/recommend-reviewers-flow/",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "The code is written. Now who reviews it?"
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Connect your agents to your software lifecycle with the GitLab MCP server",
+      "link": "https://about.gitlab.com/blog/mcp-server-ga/",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Agents are working across your team's software development lifecycle, but most still operate as separate tools, leaving the context, handoffs, and permissions for your team to stitch together."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Sync real-time Stripe data to Postgres with Stripe Data Pipeline",
+      "link": "https://stripe.com/blog/real-time-stripe-data-postgres",
+      "date": "2026-10-15T00:00:00.000Z",
+      "excerpt": "Applications rely on current Stripe data to fulfill orders, update customer accounts, and manage access to paid features. Until now, developers have had to build and maintain custom integrations to keep application databases in sync with Stripe."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "TimeSeries Tiered Storage Journey: Kafka/Flink Streams to Native Cassandra Cold Reads",
+      "link": "https://netflixtechblog.com/timeseries-tiered-storage-journey-kafka-flink-streams-to-native-cassandra-cold-reads-e59d597c9d60?source=rss----2615bd06b42e---4",
+      "date": "2026-10-14T19:56:08.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Behind the Scenes: Evolving Netflix’s Ads Event Pipeline for Live — Part II",
+      "link": "https://netflixtechblog.com/behind-the-scenes-evolving-netflixs-ads-event-pipeline-for-live-part-ii-826ebf9ad9fb?source=rss----2615bd06b42e---4",
+      "date": "2026-10-14T19:51:35.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Server Virtualization Platforms",
+      "link": "https://azure.microsoft.com/en-us/blog/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-server-virtualization-platforms/",
+      "date": "2026-10-14T19:00:00.000Z",
+      "excerpt": "We're building operational consistency through Azure and Azure Arc, and infrastructure consistency through Hyper-V."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp",
+      "link": "https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/",
+      "date": "2026-10-14T18:35:00.000Z",
+      "excerpt": "You submit a Kubernetes Job and wait for its Pods to appear. A minute passes."
+    }
+  ]
+}
