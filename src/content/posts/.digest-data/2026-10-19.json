@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-18T22:28:58.332Z",
+  "count": 6,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Gemini 4 Argon vs. Claude Opus 5.5: Half the price and about half as accurate",
+      "link": "https://thenewstack.io/gemini-argon-claude-opus/",
+      "date": "2026-10-18T15:30:00.000Z",
+      "excerpt": "When Google announced Gemini 4 Argon to a small group of testers on September 30, it came with a benchmark"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Liquid AI caught its model cheating on coding tests — then it recognized the sandbox",
+      "link": "https://thenewstack.io/liquid-ai-reward-hacking/",
+      "date": "2026-10-18T14:30:00.000Z",
+      "excerpt": "Liquid AI’s new reasoning model was built to solve coding problems, but during training it kept combing Git history, GitHub,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Scale isn’t one number: three ways a Kubernetes control plane runs out of room",
+      "link": "https://thenewstack.io/scaling-kubernetes-control-planes/",
+      "date": "2026-10-18T14:00:00.000Z",
+      "excerpt": "Three clusters in trouble, and they look nothing alike. The first is a training fleet."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Announcing Wiz Runtime Sensor add-on for GKE: Turnkey threat detection for Kubernetes",
+      "link": "https://cloud.google.com/blog/products/identity-security/wiz-sensor-for-gke-turnkey-threat-detection-for-kubernetes/",
+      "date": "2026-10-16T16:00:00.000Z",
+      "excerpt": "Everything is moving faster in the age of AI, and that includes security threats. What used to take attackers weeks to exploit can now happen in just a few minutes."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Four evaluation engineering lessons learned from building agent plugins",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons/",
+      "date": "2026-10-16T16:00:00.000Z",
+      "excerpt": "The real challenge of building an agentic system isn't the construction, it's the measurement. Evaluation engineering is a critical foundation for building reliable AI systems."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The SAVE method: Learn the fundamentals to engineer trustworthy generative media",
+      "link": "https://cloud.google.com/blog/topics/consulting/fundamentals-to-engineer-trustworthy-gen-media/",
+      "date": "2026-10-16T16:00:00.000Z",
+      "excerpt": "Google Cloud Consulting works with organizations every day to build generative media that’s trustworthy, brand-aligned, and stands out. Instead of relying on clever or complicated prompting, we’ve identified four recurring basics to generate consistent results, what we call the “SAVE” method."
+    }
+  ]
+}
