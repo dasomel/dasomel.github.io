@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-19T23:48:37.641Z",
+  "count": 26,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "MiniMax just halved its token prices. Your AI agent bill may not follow.",
+      "link": "https://thenewstack.io/minimax-flash-agent-costs/",
+      "date": "2026-10-19T22:00:19.000Z",
+      "excerpt": "MiniMax released M3.1 Flash on Monday, saying it cuts agent costs by 70 percent."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cutting our inference bill by 68% by being obsessive about optimization",
+      "link": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "date": "2026-10-19T19:12:53.000Z",
+      "excerpt": "When our AI code reviewer's cost per run doubled, we dug into the token usage to find out why. Learn how we used prompt caching and intelligent model routing to slash our inference bill by 68% while speeding up reviews."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How to continue a GitHub Copilot app session in VS Code",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
+      "date": "2026-10-19T18:47:22.000Z",
+      "excerpt": "Learn how to move an agent session from the GitHub Copilot app into VS Code without losing the conversation, code changes, or working context."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "One sentence changed Claude Code’s overreach rate from 0% to 17.1%",
+      "link": "https://thenewstack.io/coding-agents-overstep-scope/",
+      "date": "2026-10-19T18:36:02.000Z",
+      "excerpt": "Anthropic is reportedly developing a model that can infer what users want from incomplete instructions. According to The Information, a"
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "6 improvements that make Grafana Assistant better at helping your workflows",
+      "link": "https://grafana.com/blog/six-improvements-that-make-grafana-assistant-better-at-helping-your-workflows/",
+      "date": "2026-10-19T18:10:01.000Z",
+      "excerpt": "When you ask Grafana Assistant to build a dashboard or investigate an alert, you're doing so because there's work to be done. To do that work effectively, you need the right data, changes you can inspect, and conclusions supported by evidence."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Clairic, a new System One class of extraction models",
+      "link": "https://blog.cloudflare.com/clairic-extraction-model/",
+      "date": "2026-10-19T17:48:26.000Z",
+      "excerpt": "Clairic is a new model from Cloudflare that is a System One extraction modeI, capable of extracting, computing, estimating, and forecasting data from unstructured inputs."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Automate Active Directory joins for Elastic Beanstalk Windows applications",
+      "link": "https://aws.amazon.com/blogs/devops/automate-active-directory-joins-for-elastic-beanstalk-windows-applications/",
+      "date": "2026-10-19T16:07:51.000Z",
+      "excerpt": "AWS Elastic Beanstalk now joins your Windows Server instances to an Active Directory domain automatically at launch, before your application deploys, with no join scripts and no stored domain credentials."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "GenRecs Tokenization: Transforming Ads Recommendation at Meta with Stable Model Vocabulary",
+      "link": "https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/",
+      "date": "2026-10-19T16:00:47.000Z",
+      "excerpt": "Generative Recommenders (GenRecs) represent a paradigm shift from scoring every ad to reasoning about ad content and user preferences together in order to predict the best outcome for advertisers."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "HERE Technologies and AWS: Accelerating NDS.Live with agentic AI",
+      "link": "https://aws.amazon.com/blogs/devops/here-technologies-and-aws-accelerating-nds-live-with-agentic-ai/",
+      "date": "2026-10-19T16:00:46.000Z",
+      "excerpt": "HERE Technologies is accelerating NDS.Live map data development with an orchestrated, multi-agent approach built on Kiro."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Building full virtual vehicles on Google Cloud: From AAOS to the smallest MCU",
+      "link": "https://cloud.google.com/blog/topics/manufacturing/building-full-virtual-vehicles-on-google-cloud-from-aaos-to-the-smallest-mcu/",
+      "date": "2026-10-19T16:00:00.000Z",
+      "excerpt": "Imagining traditional gearheads getting their hands on software-defined vehicles is an amusing thought experiment. With their socket wrenches and air compressors at the ready, they might be confused to encounter core functions more likely to run on 1s and 0s than oil and belts."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How to Use Python UDF Logging for Pipeline Observability",
+      "link": "https://cloud.google.com/blog/products/data-analytics/python-udf-logging-for-pipeline-observability-in-bigquery/",
+      "date": "2026-10-19T16:00:00.000Z",
+      "excerpt": "We are announcing a new logging feature that is now available in Python User-Defined Function (UDF) in BigQuery. Developers can now use Python’s standard logging library directly inside BigQuery UDFs to emit structured logs seamlessly into Cloud Logging—with zero external plugins or custom connectors required."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Developer’s guide to implementing MCP apps in Gemini",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/devs-guide-to-mcp-apps-in-gemini/",
+      "date": "2026-10-19T16:00:00.000Z",
+      "excerpt": "Enterprise assistants still respond mostly in text. However, that can break down for visual, multi-step work, where every adjustment costs another slow chat turn."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do",
+      "link": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
+      "date": "2026-10-19T15:30:37.000Z",
+      "excerpt": "Sometimes, giving an AI agent all of the knowledge it needs is the wrong approach."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "DeepSeek made its name with cheap AI models. Now it’s undercutting search API rivals, too.",
+      "link": "https://thenewstack.io/deepseek-web-search-api/",
+      "date": "2026-10-19T14:29:42.000Z",
+      "excerpt": "Not content with challenging the major frontier AI labs with lower-cost models, Chinese AI company DeepSeek is setting its sights"
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster",
+      "link": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
+      "date": "2026-10-19T13:00:10.000Z",
+      "excerpt": "With the recent release of the Muse family of foundational models, we want to take you inside the infrastructure that has made it all possible. The first phase of Prometheus, our gigawatt-scale supercluster, is already complete and we’re working toward scaling it to comprise ~1 million GPUs."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Beyond the patch: Protecting your NetScaler gateway against future vulnerabilities",
+      "link": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
+      "date": "2026-10-19T13:00:00.000Z",
+      "excerpt": "CVE-2026-88771 lets attackers run commands on NetScaler Gateway before anyone signs in. Patching takes time most teams don't have, so the sign-in decision has to move in front of the vulnerable code."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Advancing coding in low‑resource programming languages",
+      "link": "https://openai.com/index/low-resource-programming-languages",
+      "date": "2026-10-19T12:00:00.000Z",
+      "excerpt": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "How AI workloads are reshaping Kubernetes autoscaling",
+      "link": "https://www.cncf.io/blog/2026/10/19/how-ai-workloads-are-reshaping-kubernetes-autoscaling/",
+      "date": "2026-10-19T11:00:00.000Z",
+      "excerpt": "Kubernetes has quietly run much of the world’s containerized software on a division of labor between two control loops that rarely had to talk to each other. The scheduler places each pod on a node that."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "평균 CPU는 여유로운데, 커밋은 왜 느릴까?",
+      "link": "https://toss.tech/article/nic-interrupt-bottleneck",
+      "date": "2026-10-19T03:07:00.000Z",
+      "excerpt": "NIC 인터럽트에서 찾은 병목"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
+      "link": "https://huggingface.co/blog/hf-torchneuron",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Enterprise Linux is now a native offering on Oracle Cloud Infrastructure",
+      "link": "https://www.redhat.com/en/blog/red-hat-enterprise-linux-now-native-offering-oracle-cloud-infrastructure",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": "Organizations running mission-critical workloads face a fundamental challenge: how to take advantage of Oracle Cloud Infrastructure's performance and economics without sacrificing the stability, security, and multicloud consistency that enterprise operations demand. Today, that challenge has a clear answer."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "A patch only reduces risk when it runs in production",
+      "link": "https://www.redhat.com/en/blog/patch-only-reduces-risk-when-it-runs-production",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": "The patch was ready in days. It took months to ship."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "5-minute demo: DevSecOps with Red Hat OpenShift to speed up application delivery",
+      "link": "https://www.redhat.com/en/blog/5-minute-demo-devsecops-red-hat-openshift-speed-application-delivery",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": "If you're a platform engineer, you've likely lived this: your team has assembled a toolchain for CI/CD, monitoring, security scanning, GitOps, and networking."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Three developer tasks worth handing to an agent",
+      "link": "https://about.gitlab.com/blog/three-developer-tasks-worth-handing-to-an-agent/",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": "You already have an AI assistant. It completes your code, explains code you didn’t write, and maybe even drafts a whole feature while you sip your coffee."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Building AI security in the open",
+      "link": "https://about.gitlab.com/blog/gitlab-joins-open-secure-ai-alliance/",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": "When code becomes abundant trust becomes scarce. That is the argument GitLab CEO Bill Staples made in his recent essay: AI is collapsing the cost of producing software, and everything around production, including context, verification, governance, and evidence, becomes proportionally more important."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Stripe survey: Four trends reshaping how SaaS platforms compete in the AI era",
+      "link": "https://stripe.com/blog/saas-platform-trends-in-AI-era",
+      "date": "2026-10-19T00:00:00.000Z",
+      "excerpt": "AI is creating more SaaS competition, and platforms are feeling the pressure. A Stripe survey of 200 platform leaders shows how they plan to evolve pricing, grow revenue, and retain customers."
+    }
+  ]
+}
