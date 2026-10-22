@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-22",
+  "generatedAt": "2026-10-21T23:27:19.306Z",
+  "count": 40,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI found flaws in the code behind 70% of the web. The fix took two months.",
+      "link": "https://thenewstack.io/ai-php2shell-disclosure-framework/",
+      "date": "2026-10-21T22:17:07.000Z",
+      "excerpt": "PHP powers roughly 70% of the world’s websites, according to Wiz Research, so a flaw in its core engine affects"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Automate medical coding with Step Functions and Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/architecture/automate-medical-coding-with-step-functions-and-amazon-bedrock-agentcore/",
+      "date": "2026-10-21T21:26:23.000Z",
+      "excerpt": "Learn how to combine deterministic orchestration with bounded agentic reasoning using AWS Step Functions and the Amazon Bedrock AgentCore harness."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Amodei says Anthropic’s safety delay may have cost it an AI lead",
+      "link": "https://thenewstack.io/anthropic-mythos-safety-pace/",
+      "date": "2026-10-21T21:22:53.000Z",
+      "excerpt": "Anthropic first released Mythos-class models in February 2026, but CEO Dario Amodei said it delayed broader access until June to"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Broad access through consistent standards",
+      "link": "https://openai.com/index/broad-access-through-consistent-standards",
+      "date": "2026-10-21T21:00:00.000Z",
+      "excerpt": "How OpenAI works with distribution partners to uphold consistent safeguards, support responsible access, and clarify expectations in our Usage Policies."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
+      "link": "https://huggingface.co/blog/nvidia/kumo-relational",
+      "date": "2026-10-21T18:26:30.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
+      "link": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+      "date": "2026-10-21T17:35:36.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How AT&T is rethinking in-house legal work with OpenAI",
+      "link": "https://openai.com/index/att-legal",
+      "date": "2026-10-21T17:00:00.000Z",
+      "excerpt": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Empowering frontline maternal care with AI-assisted ultrasound",
+      "link": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+      "date": "2026-10-21T16:23:53.000Z",
+      "excerpt": "Health & Bioscience"
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Your Agent Runs in a Docker Sandbox. Now It Can Join a Team.",
+      "link": "https://www.docker.com/blog/band-ai-agents-docker-sandboxes/",
+      "date": "2026-10-21T16:10:49.000Z",
+      "excerpt": "Run AI agents in Docker Sandboxes with BAND AI. Learn how to connect isolated agents, collaborate across environments, and manage access securely."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
+      "link": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
+      "date": "2026-10-21T16:04:43.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "From baseline to Secure Software Factory: securing the systems that build your software",
+      "link": "https://www.docker.com/blog/from-baseline-to-secure-software-factory-securing-the-systems-that-build-your-software/",
+      "date": "2026-10-21T16:00:00.000Z",
+      "excerpt": "In July, Docker, Snyk and Keycard published Agent Baseline, an open, vendor-neutral reference architecture that defines security outcomes for running AI agents in the enterprise."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "BigQuery ObjectRef now GA: Build multimodal data platforms for conversational analytics entirely in SQL",
+      "link": "https://cloud.google.com/blog/products/data-analytics/analyze-unstructured-data-in-bigquery-with-objectref/",
+      "date": "2026-10-21T16:00:00.000Z",
+      "excerpt": "For data science, data engineering, and machine learning teams, unlocking the value of unstructured data, such as images, videos, audio, and documents, has historically meant managing siloed data pipelines for structured and unstructured data, and for analytics and AI/ML use cases."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "ZenteiQ scales batch inference 4x with GKE Inference Gateway powered by llm-d",
+      "link": "https://cloud.google.com/blog/products/containers-kubernetes/zenteiq-scales-physical-ai-inference-4x-with-gke-and-llm-d/",
+      "date": "2026-10-21T16:00:00.000Z",
+      "excerpt": "Today we hear from ZenteiQ, an artificial intelligence startup spun out of the Indian Institute of Science (IISc) and selected under the IndiaAI Mission to build sovereign scientific foundation models from the ground up."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "The bridge to agent-scale Git infrastructure",
+      "link": "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+      "date": "2026-10-21T16:00:00.000Z",
+      "excerpt": "We moved a copy of 99.99999% of GitHub's repositories to Azure."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Spend less time on operational busywork and resolve incidents faster with Grafana Workflows",
+      "link": "https://grafana.com/blog/spend-less-time-on-operational-busywork-and-resolve-incidents-faster-with-grafana-workflows/",
+      "date": "2026-10-21T15:06:02.000Z",
+      "excerpt": "You're investigating checkout errors when someone asks who's coordinating the incident. Support needs an update, and another responder is looking for the runbook."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing full transaction detection for Cloudflare WAF",
+      "link": "https://blog.cloudflare.com/full-transaction-waf/",
+      "date": "2026-10-21T14:10:42.000Z",
+      "excerpt": "Cloudflare's web application firewall can now correlate an HTTP request with its response. Full transaction detection helps every customer find successful exploits, data exposure, and risky misconfigurations that request-only inspection can miss."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Responding to core PHP vulnerabilities CVE-2026-109618 and CVE-2026-109619",
+      "link": "https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619/",
+      "date": "2026-10-21T14:00:00.000Z",
+      "excerpt": "Editor's note: This blog was updated at 3:30 p.m."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "From feral to fiduciary: making AI agents serve your interests",
+      "link": "https://thenewstack.io/ai-agent-trust-score/",
+      "date": "2026-10-21T14:00:00.000Z",
+      "excerpt": "Tech leaders face a dilemma as they prepare to put AI agents into production. They want the higher productivity and"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare deploys protections against php2shell vulnerability",
+      "link": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "date": "2026-10-21T13:56:45.000Z",
+      "excerpt": "Cloudflare has deployed default web application firewall (WAF) protections for newly disclosed PHP vulnerabilities before public disclosure. The rules use request and response signals to stop exploit attempts and prevent exposed data from reaching attackers."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+      "link": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+      "date": "2026-10-21T13:00:00.000Z",
+      "excerpt": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
+      "link": "https://blog.cloudflare.com/webmcp-commerce/",
+      "date": "2026-10-21T13:00:00.000Z",
+      "excerpt": "Almost 100,000 Commerce.com domains now give AI agents real shopping tools through WebMCP on Cloudflare."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Before you evaluate an AI SRE, give your existing agent context",
+      "link": "https://www.cncf.io/blog/2026/10/21/before-you-evaluate-an-ai-sre-give-your-existing-agent-context/",
+      "date": "2026-10-21T11:00:00.000Z",
+      "excerpt": "If you’re evaluating AI SRE products, you probably own most of one already. The coding agent your engineers use, whether that’s Claude Code, Codex or Cursor, can already investigate a Kubernetes cluster."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Southeast Asia’s digital economy to hit $368 billion",
+      "link": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
+      "date": "2026-10-21T04:00:00.000Z",
+      "excerpt": "Widespread AI adoption is propelling Southeast Asia's digital economy to a projected $368 billion in 2026 and $1 trillion by 2035."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "AI Model Risk Depends on What the Model Can Reach",
+      "link": "https://snyk.io/blog/ai-model-risk-model-reach/",
+      "date": "2026-10-21T04:00:00.000Z",
+      "excerpt": "A model’s risk score is only part of the picture: its impact depends on the data, tools, and actions its application can reach. Learn how security teams can verify that reach and choose targeted controls."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift Virtualization achieves NVIDIA-Certified Hypervisor status",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-virtualization-achieves-nvidia-certified-hypervisor-status",
+      "date": "2026-10-21T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift Virtualization 4.22 has achieved NVIDIA-Certified Hypervisor status for NVIDIA HGX systems, validating near bare-metal GPU performance for representative AI and accelerated computing workloads."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Securing AI agents in the enterprise AI factory: NVIDIA BlueField and DOCA Argus on Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/securing-ai-agents-enterprise-ai-factory-nvidia-bluefield-doca-argus-red-hat-openshift",
+      "date": "2026-10-21T00:00:00.000Z",
+      "excerpt": "The agent problem at scaleAutonomous agents are powerful because they act. But when instructions are ambiguous, when tools don't behave as expected, or when a complex task takes an unexpected turn, the agent makes judgment calls."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "RHEL for NVIDIA delivers trusted foundation for next-gen AI workloads",
+      "link": "https://www.redhat.com/en/blog/rhel-nvidia-delivers-trusted-foundation-next-gen-ai-workloads",
+      "date": "2026-10-21T00:00:00.000Z",
+      "excerpt": "New NVIDIA GPUs typically arrive before a standard enterprise Linux release can carry every driver, kernel change, and virtualization patch those systems need. The usual result is a bad choice: wait, or stand the first cluster up on an operating system the team does not intend to keep."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Critical Patch Release: 19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10, 18.11.13",
+      "link": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/",
+      "date": "2026-10-21T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "AI Is Calling In Every Risk You've Accepted: Seven Insights From The AI Security Panel: Unfiltered",
+      "link": "https://snyk.io/blog/ai-security-panel-unfiltered/",
+      "date": "2026-10-21T00:00:00.000Z",
+      "excerpt": "AI is making attacks cheaper and faster, exposing risks organizations already carry. Four security leaders share why machine-speed defense and faster remediation are now essential."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Limit agent permissions and spend in AWS Transform custom",
+      "link": "https://aws.amazon.com/blogs/devops/limit-agent-permissions-and-spend-in-aws-transform-custom/",
+      "date": "2026-10-20T19:04:02.000Z",
+      "excerpt": "AWS Transform custom runs an autonomous agent with shell access over your source code, using your AWS credentials. This post bounds it with three controls: a scoped trust allowlist, an execution identity separate from the one that authors, and a per-run agent-minute cap backed by an account budget."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "ObservabilityCON 2026: A guide to all the announcements from Grafana Labs",
+      "link": "https://grafana.com/blog/observabilitycon-2026-announcements/",
+      "date": "2026-10-20T16:30:02.000Z",
+      "excerpt": "Today at ObservabilityCON 2026 in San Francisco, we unveiled a range of new Grafana Cloud capabilities designed to reshape cloud economics, bring richer context and deeper visibility across your systems and end-user experiences, and help teams move toward autonomous operations."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Break the link between data volume and your observability bill with Adaptive Telemetry",
+      "link": "https://grafana.com/blog/cut-costs-keep-what-you-need-adaptive-telemetry/",
+      "date": "2026-10-20T16:30:02.000Z",
+      "excerpt": "In the AI era, where telemetry is generated by every model call, tool invocation, and agent step, organizations need more help than ever when it comes to navigating the economics of observability."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "How 3 Java Champions are using GitHub Copilot for increased productivity",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
+      "date": "2026-10-20T16:05:03.000Z",
+      "excerpt": "Three Java Champions share how they use GitHub Copilot to solve problems, accelerate development, and keep humans responsible for the results."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "글로벌 최고 수준의 자체 비전 인코더, Kanana-2-vision-encoder 개발기",
+      "link": "https://tech.kakao.com/posts/840",
+      "date": "2026-10-20T15:00:00.000Z",
+      "excerpt": "안녕하세요. 카카오 Multimodal Model Training팀에서 카나나를 연구·개발하는 Polar(엄지환)입니다."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Our Limits Are Not Our Imagination",
+      "link": "https://www.honeycomb.io/blog/our-limits-are-not-our-imagination",
+      "date": "2026-10-20T13:14:00.000Z",
+      "excerpt": "AI doesn't just make coding faster—used well, it can make code more rigorous than anything we wrote unassisted: property-based testing, formal verification, strict architecture checks, and more review than ever. The ceiling isn't our imagination."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Beyond container image signing: How we enforce software supply chain policies at Datadog",
+      "link": "https://www.datadoghq.com/blog/engineering/software-supply-chain-policy-enforcement/",
+      "date": "2026-10-20T00:00:00.000Z",
+      "excerpt": "Datadog built Turnstile to evaluate signed attestations and enforce software supply chain policies before container images are deployed."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Build better SLOs with RUM and synthetic SLIs",
+      "link": "https://www.datadoghq.com/blog/rum-synthetic-slos-slis/",
+      "date": "2026-10-20T00:00:00.000Z",
+      "excerpt": "Learn when to use RUM and synthetic monitoring for SLIs, what each source misses, and how to interpret their results together."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Redesign how your team ships software with AI agents",
+      "link": "https://about.gitlab.com/blog/redesign-how-your-team-ships-software-with-ai-agents/",
+      "date": "2026-10-20T00:00:00.000Z",
+      "excerpt": "AI agents are sending more and more code into review queues built for human-paced work. A coding assistant can speed up code writing, but it can’t show you whether review, security checks, and release approvals can keep pace with all that extra code."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Uncover the business logic vulnerabilities SAST scanners miss",
+      "link": "https://about.gitlab.com/blog/gitlab-business-logic-security-analyzer/",
+      "date": "2026-10-20T00:00:00.000Z",
+      "excerpt": "Broken object-level authorization ranks first on the OWASP API Security Top 10, and OWASP says that traditional static application security testing (SAST) tools struggle to find access control flaws. A missing authorization check is an absence of code, so a scanner that matches patterns has nothing to match."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Designing for sovereign AI: A shared foundation from edge to cloud",
+      "link": "https://azure.microsoft.com/en-us/blog/designing-for-sovereign-ai-a-shared-foundation-from-edge-to-cloud/",
+      "date": "2026-10-19T19:00:00.000Z",
+      "excerpt": "A flexible sovereign architecture allows organizations to place each workload in the right environment, apply the controls it requires, and maintain consistency."
+    }
+  ]
+}
