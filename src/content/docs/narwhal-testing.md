@@ -1,10 +1,10 @@
 ---
 title: 회귀 검증 & 카오스
-description: 263건의 인시던트 교훈을 반영한 51개 회귀 테스트 및 Chaos Mesh 실험.
+description: 440건의 인시던트 교훈을 반영한 51개 회귀 테스트 및 Chaos Mesh 실험.
 project: Narwhal
 path: narwhal/testing
 order: 1108
-lastModified: 2026-08-23
+lastModified: 2026-10-22
 ---
 
 # 회귀 검증 & 카오스
@@ -18,7 +18,7 @@ Narwhal의 차별화된 엔지니어링 경쟁력은 장애 경험을 영구적�
 2. **SSO & IAM Verification (49 Checks)**:
    - Keycloak OIDC 토큰 발급, OAuth2 Proxy 쿠키 검증, RBAC 권한 분리 테스트
 3. **CI Regression Suite (51 Checks)**:
-   - `docs/lessons-log.md`의 263건 장애 원인과 판별자를 바탕으로 작성된 전용 회귀 테스트
+   - `docs/common/lessons-log.md`의 440건 장애 원인과 판별자를 바탕으로 작성된 전용 회귀 테스트
 
 ## Chaos Mesh 카오스 엔지니어링
 

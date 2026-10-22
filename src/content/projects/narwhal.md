@@ -7,7 +7,7 @@ order: 6
 type: "own"
 featured: true
 problem: "수십 개 Cloud Native 프로젝트를 개별적으로 설치하면 DNS, TLS, identity, networking, startup order, version compatibility 같은 integration seam에서 반복적인 장애가 발생하고 업그레이드 때 다시 검증해야 함"
-solution: "35개 GitOps-managed application을 하나의 reproducible IDP로 통합하고, 263건의 incident knowledge를 51개 CI regression checks와 live verification suite로 연결"
+solution: "35개 GitOps-managed application을 하나의 reproducible IDP로 통합하고, 440건의 incident knowledge를 393개 regression checks와 live verification suite로 연결"
 ---
 
 ## 프로젝트 소개
@@ -34,11 +34,11 @@ README 기준 현재 reference implementation은 다음과 같은 상태입니�
 
 | 항목 | 현황 |
 |---|---|
-| Activity | 2026-02-08 이후 612 commits (2026-09-23 기준), 4 releases, latest v1.2.0 |
+| Activity | 2026-02-08 이후 1,207 commits (v1.3.0 기준), 5 releases, latest v1.3.0 |
 | Integration | 35 GitOps-managed applications |
-| Regression | 192 CI regression checks |
+| Regression | 393 regression checks (`regression-check-kakao.sh`), CI에서는 매 push마다 51-check suite 실행 |
 | Live verification | Cluster 120+ checks, SSO 49 checks |
-| Integration knowledge | 318 documented incidents |
+| Integration knowledge | 440 documented incidents |
 | Deployment | Vagrant ARM64, Kakao Cloud AMD64, air-gapped |
 | Offline bundle | Architecture별 104 container images, 27 Helm charts, binaries, manifests, OS packages |
 
@@ -46,18 +46,17 @@ README 기준 현재 reference implementation은 다음과 같은 상태입니�
 
 ## 현재 상태
 
-최신 릴리스는 **v1.2.0**(2026-08-09)이며, air-gap 설치를 "이미지만 번들"에서 "인터넷 경로 없이 실제로 완주하는 설치"로 바꾼 버전입니다. Kakao Cloud를 OpenTofu 기반 1급 provider로 승격했고, Chaos Mesh 2.8.3 + k6 load-test suite, 그리고 36개 static/runtime check로 구성된 clean-install regression suite를 CI에 추가했습니다.
+최신 릴리스는 **v1.3.0**(2026-10-22)으로, v1.2.0 이후 main에 쌓인 보안 하드닝을 묶은 **hardening release**입니다. 핵심은 air-gap/오프라인 업그레이드 번들에 무결성 체인을 붙이고, 컴포넌트 간 trust boundary를 좁힌 뒤 static CI gate로 고정한 것입니다.
 
-v1.2.0 이후 main 브랜치에서는 아직 태그되지 않은 보안 하드닝이 계속 누적되고 있습니다(2026-09-23 기준 커밋 로그로 확인):
+- **Air-gap 번들 무결성 체인**: 저장 시점 이미지별 digest inventory(`images.digests.json`), OCI layout 바이트 검증, image config의 `os/architecture` 검증을 `09` 관문에서 fail-closed로 확인
+- **오프라인 업그레이드 번들 파이프라인**: JSON schema·verifier·승인 기반 promotion gate·dry-run diff, 번들 age/provenance 검증. cert-manager가 첫 오케스트레이션 파일럿
+- **Trust boundary 축소**: Keycloak 클라이언트별 정확한 `webOrigins`, Velero·Portal RBAC least-privilege, `database` default-deny ingress, APISIX Admin API를 pod CIDR로 제한, gateway가 클라이언트가 보낸 `X-WEBAUTH-USER`를 더 이상 신뢰하지 않음, `root_squash` NFS export
+- **공급망 CI gate**: mutable 이미지 태그·패키지 설치 차단, pip hash 강제, license policy gate, 오프라인 번들 CycloneDX SBOM
+- **Service mesh static gate**(R242~R244): `PeerAuthentication` PERMISSIVE 예외를 검토된 allowlist로 고정
+- **OpenBao raft snapshot 암호화 백업**(Velero 연동) 추가 — 아직 어떤 클러스터에도 활성화되지 않았고 라이브 동작은 미검증
+- 컴포넌트: Kubernetes 1.35.7, nfs-quota-agent 0.5.0, Portal 이미지 1.1.0
 
-- Keycloak OIDC TLS 검증 강제 및 내부 CA trust 적용, ArgoCD/APISIX의 OIDC TLS bypass 제거
-- APISIX Admin API allowlist를 cluster pod CIDR로 제한
-- Kakao bastion/node SSH host-key 검증 강제, bastion SG와 node SG 분리
-- NFS export 기본값을 root_squash + non-world-writable root로 전환
-- DB namespace에 default-deny NetworkPolicy 적용, Kyverno로 node-tuning job SA를 admission-gate
-- Portal의 OpenBao 접근을 least-privilege로 축소(불필요한 `secret/data/*` 권한 제거)
-
-이 구간은 아직 released tag가 아니라 다음 릴리스 후보로 main에서 검증 중인 상태입니다.
+릴리스 노트의 Known issues도 그대로 남겨 둡니다. Kyverno 이미지 서명 정책은 `Audit` 전용이라 아직 아무것도 차단하지 않고, 부트스트랩 중에는 ArgoCD가 reconcile할 때까지 mesh-wide PERMISSIVE가 유지됩니다. 기존 클러스터·번들은 Upgrade notes의 운영자 조치가 필요합니다(예: digest inventory 이전에 만든 번들은 `02`를 다시 실행해야 `09`를 통과).
 
 ## 핵심 구성
 
@@ -131,7 +130,7 @@ Regression Check
 Future Upgrade Gate
 ```
 
-각 incident에는 원인뿐 아니라 비슷하게 보이는 장애와 구분하기 위한 **discriminator**와 실패했던 접근까지 기록합니다. 이 방식이 누적되며 318건의 integration knowledge와 192개 CI checks로 연결되었습니다.
+각 incident에는 원인뿐 아니라 비슷하게 보이는 장애와 구분하기 위한 **discriminator**와 실패했던 접근까지 기록합니다. 이 방식이 누적되며 440건의 integration knowledge와 393개 regression checks로 연결되었습니다.
 
 ## 검증 계층
 
@@ -141,7 +140,7 @@ Narwhal은 “pod가 Running인가?”만 검증하지 않습니다.
 |---|---:|---|
 | Cluster Verification | 120+ | 클러스터와 플랫폼 application이 실제로 건강한가? |
 | SSO Verification | 49 | 여러 application의 identity flow가 end-to-end로 동작하는가? |
-| CI Regression | 192 | 과거에 해결한 integration failure가 다시 발생하지 않았는가? |
+| Regression | 393 | 과거에 해결한 integration failure가 다시 발생하지 않았는가? |
 
 실제 cluster 검증과 CI 회귀 검증을 분리함으로써 빠른 regression gate와 live environment verification을 동시에 유지합니다.
 

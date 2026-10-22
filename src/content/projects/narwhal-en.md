@@ -7,7 +7,7 @@ order: 6
 type: "own"
 featured: true
 problem: "Integrating dozens of cloud-native components creates recurring DNS, TLS, identity, networking, startup-order, and version-compatibility failures that must be re-proven after upgrades"
-solution: "Integrate 35 GitOps-managed applications into one reproducible IDP and turn 263 documented incidents into 51 CI regression checks plus live cluster verification"
+solution: "Integrate 35 GitOps-managed applications into one reproducible IDP and turn 440 documented incidents into 393 regression checks plus live cluster verification"
 ---
 
 ## Project Overview
@@ -20,11 +20,11 @@ Narwhal is not primarily a Kubernetes installer. Its product boundary is the **i
 
 | Metric | Current state |
 |---|---|
-| Activity | 612 commits since 2026-02-08 (as of 2026-09-23), 4 releases, latest v1.2.0 |
+| Activity | 1,207 commits since 2026-02-08 (as of v1.3.0), 5 releases, latest v1.3.0 |
 | Integration | 35 GitOps-managed applications |
-| CI regression | 192 checks |
+| Regression | 393 checks (`regression-check-kakao.sh`); a 51-check suite runs in CI on every push |
 | Live verification | 120+ cluster checks, 49 SSO checks |
-| Integration knowledge | 318 documented incidents |
+| Integration knowledge | 440 documented incidents |
 | Deployment | Vagrant ARM64, Kakao Cloud AMD64, air-gapped |
 | Offline bundle | 104 images, 27 Helm charts, binaries, manifests, and OS packages per architecture |
 
@@ -32,18 +32,17 @@ These numbers are engineering evidence of repeated integration and verification,
 
 ## Current Status
 
-The latest tagged release is **v1.2.0** (2026-08-09), which turned air-gapped installation from "images only" into an install that genuinely completes with no route to the internet. It promoted Kakao Cloud to a first-class OpenTofu-provisioned provider and added a Chaos Mesh 2.8.3 + k6 load-test suite plus a 36-check clean-install regression suite in CI.
+The latest release is **v1.3.0** (2026-10-22), a **hardening release** that rolls up the security work accumulated on main since v1.2.0. It adds an integrity chain to the air-gapped and offline upgrade bundles, tightens the trust boundaries between components, and pins them with static CI gates.
 
-Since v1.2.0, main has accumulated further security hardening that is not yet in a tagged release (verified against the commit history as of 2026-09-23):
+- **Air-gap bundle integrity chain**: a save-time per-image digest inventory (`images.digests.json`), OCI layout byte verification, and image-config `os/architecture` checks, all enforced fail-closed by the `09` gate
+- **Offline upgrade bundle pipeline**: JSON schema, verifier, approval-based promotion gate, dry-run diff, and bundle age/provenance checks; cert-manager is the first orchestration pilot
+- **Tighter trust boundaries**: exact per-client Keycloak `webOrigins`, least-privilege Velero and Portal RBAC, default-deny ingress for `database`, the APISIX Admin API limited to the pod CIDR, the gateway no longer trusting a client-supplied `X-WEBAUTH-USER`, and `root_squash` NFS exports
+- **Supply-chain CI gates**: mutable image tags and package installs rejected, pip hashes required, a license policy gate, and a CycloneDX SBOM for the offline bundle
+- **Service mesh static gates** (R242–R244): `PeerAuthentication` PERMISSIVE exceptions pinned to a reviewed allowlist
+- **Encrypted OpenBao raft snapshots** for Velero — not yet enabled on any cluster, and live behavior is unverified
+- Components: Kubernetes 1.35.7, nfs-quota-agent 0.5.0, Portal image 1.1.0
 
-- Enforced Keycloak OIDC TLS verification and internal CA trust; removed ArgoCD/APISIX OIDC TLS bypasses
-- Restricted the APISIX Admin API allowlist to the cluster pod CIDR
-- Enforced SSH host-key verification on Kakao bastion/node paths and split the bastion security group from the node security group
-- Switched the default NFS export to root_squash with a non-world-writable root
-- Added a default-deny NetworkPolicy for the database namespace and a Kyverno admission gate for the node-tuning job service account
-- Narrowed the portal's OpenBao access to least privilege, removing unnecessary `secret/data/*` grants
-
-This work is release-candidate material still under verification on main, not yet part of a published tag.
+The release notes' known issues still apply: the Kyverno image-signature policy is `Audit`-only and blocks nothing yet, and a mesh-wide PERMISSIVE policy stays in effect during bootstrap until ArgoCD reconciles. Existing clusters and bundles need the operator actions in the upgrade notes (for example, a bundle saved before the digest inventory must re-run `02` to pass `09`).
 
 ## Platform Components
 
@@ -115,7 +114,7 @@ Regression Check
 Upgrade Gate
 ```
 
-The incident log records not only what fixed an incident, but also how to distinguish it from similar failures and which tempting fixes do not work. This knowledge base is connected to the regression suite, producing 318 documented incidents and 192 CI checks.
+The incident log records not only what fixed an incident, but also how to distinguish it from similar failures and which tempting fixes do not work. This knowledge base is connected to the regression suite, producing 440 documented incidents and 393 regression checks.
 
 ## Verification Model
 
@@ -125,7 +124,7 @@ Narwhal validates different layers for different questions.
 |---|---:|---|
 | Cluster verification | 120+ | Is the cluster and platform actually healthy? |
 | SSO verification | 49 | Does identity work end to end across integrated apps? |
-| CI regression | 192 | Have known integration failures returned? |
+| Regression | 393 | Have known integration failures returned? |
 
 This separation keeps fast CI regression checks independent from deeper live-cluster validation.
 

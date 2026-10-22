@@ -4,7 +4,7 @@ description: Narwhal IDP architectural philosophy, three-tier integration model,
 project: Narwhal
 path: narwhal/overview
 order: 1100
-lastModified: 2026-08-27
+lastModified: 2026-10-22
 ---
 
 # Platform Overview
@@ -14,7 +14,7 @@ lastModified: 2026-08-27
 ## Core Engineering Philosophy
 
 1. **Integration as a Product**: Rather than installing disparate tools separately, Narwhal resolves integration seam complexities (TLS, DNS, OIDC authentication, network routing) upfront.
-2. **Knowledge Codification**: 263 incident lessons documented in `lessons-log.md` are directly linked to 51 automated CI regression checks, preventing regression across upgrades.
+2. **Knowledge Codification**: 440 incident lessons documented in `lessons-log.md` are directly linked to 51 automated CI regression checks, preventing regression across upgrades.
 3. **Environment-Agnostic Reproducibility**: Runs identically across local developer workstations (Vagrant + Kube-Ready-Box), public cloud (Kakao Cloud AMD64), and air-gapped disconnected environments.
 
 ## Three-Tier Architecture Model
