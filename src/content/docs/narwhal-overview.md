@@ -4,7 +4,7 @@ description: Narwhal IDP의 아키텍처 철학, 3계층 통합 모델 및 35개
 project: Narwhal
 path: narwhal/overview
 order: 1100
-lastModified: 2026-08-27
+lastModified: 2026-10-22
 ---
 
 # 플랫폼 개요
@@ -14,7 +14,7 @@ lastModified: 2026-08-27
 ## 핵심 엔지니어링 철학
 
 1. **플랫폼 통합이 제품이다 (Integration as a Product)**: 단순히 Kubernetes 위에 도구들을 개별 설치하는 것이 아니라, 컴포넌트 간의 결합 경계(Integration Seams)에서 발생하는 TLS, DNS, OIDC 인증, 네트워크 라우팅 충돌을 사전에 해결하여 제공합니다.
-2. **지식의 테스트화 (Knowledge Codification)**: 플랫폼을 운영하며 겪은 263건의 인시던트 교훈을 `lessons-log.md`에 기록하고, 51개의 자동화된 CI 회귀 테스트로 연결하여 동일 장애의 재발을 원천 차단합니다.
+2. **지식의 테스트화 (Knowledge Codification)**: 플랫폼을 운영하며 겪은 440건의 인시던트 교훈을 `lessons-log.md`에 기록하고, 51개의 자동화된 CI 회귀 테스트로 연결하여 동일 장애의 재발을 원천 차단합니다.
 3. **환경 무관한 재현성 (Environment-Agnostic)**: 로컬 개발 환경(Vagrant + Kube-Ready-Box), 퍼블릭 클라우드(Kakao Cloud AMD64), 인터넷 연결이 차단된 에어갭(Air-Gap) 폐쇄망 환경 어디서나 동일한 아키텍처로 구동됩니다.
 
 ## 3계층 아키텍처 모델

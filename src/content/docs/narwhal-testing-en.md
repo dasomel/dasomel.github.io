@@ -1,10 +1,10 @@
 ---
 title: Regression & Chaos Testing
-description: 263 incident lessons codified into 51 CI regression checks and Chaos Mesh.
+description: 440 incident lessons codified into 51 CI regression checks and Chaos Mesh.
 project: Narwhal
 path: narwhal/testing
 order: 1108
-lastModified: 2026-08-23
+lastModified: 2026-10-22
 ---
 
 # Regression & Chaos Testing
@@ -18,7 +18,7 @@ Narwhal's core maintainability is driven by codifying real-world failure post-mo
 2. **SSO & IAM Verification (49 Checks)**:
    - Keycloak OIDC issuance, OAuth2 Proxy cookie validation, and RBAC boundary testing
 3. **CI Regression Suite (51 Checks)**:
-   - 51 specialized checks derived from 263 incident root causes and discriminators
+   - 51 specialized checks derived from 440 incident root causes and discriminators
 
 ## Chaos Engineering with Chaos Mesh
 
