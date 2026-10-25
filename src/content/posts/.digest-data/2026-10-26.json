@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-25T22:39:44.189Z",
+  "count": 3,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Is Kubernetes ready for AI agents?",
+      "link": "https://thenewstack.io/kubernetes-ready-ai-agents/",
+      "date": "2026-10-25T14:00:00.000Z",
+      "excerpt": "Kubernetes was built around a fairly simple assumption. It’s that software does what its developers told it to do."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Before you expand your GPU pool, measure the outcome",
+      "link": "https://thenewstack.io/optimize-kubernetes-gpu-pools/",
+      "date": "2026-10-24T12:00:00.000Z",
+      "excerpt": "For teams running AI workloads on Kubernetes, a fully allocated GPU pool and a growing batch-job queue might make expanding"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "A few engineers asked IT for Linux. Then it spread to 200 machines.",
+      "link": "https://thenewstack.io/linux-developer-device-management/",
+      "date": "2026-10-23T14:00:00.000Z",
+      "excerpt": "Linux is already part of the AI developer’s desktop toolkit. Nvidia’s DGX Spark, which became available to order on October"
+    }
+  ]
+}
