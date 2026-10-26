@@ -3,7 +3,7 @@ title: "포털 배포 & 보안"
 description: "Narwhal IDP 포털의 배포 전략과 클린 설치 시크릿 하드닝 절차"
 project: "Narwhal Portal"
 order: 203
-lastModified: 2026-07-17
+lastModified: 2026-10-27
 ---
 
 ## 배포 전략
@@ -20,7 +20,7 @@ lastModified: 2026-07-17
   end
 
   subgraph PROD["실제 프로덕션 배포 경로 (GitOps)"]
-    GHCR(["ghcr.io/dasomel/narwhal-portal:1.0.15<br/>(Pinned GHCR)"])
+    GHCR(["ghcr.io/dasomel/narwhal-portal:1.1.2<br/>(Pinned GHCR)"])
     ARGO["ArgoCD GitOps"]
     DEPLOY(["클러스터 배포"])
   end
@@ -44,7 +44,7 @@ lastModified: 2026-07-17
   style HAR fill:#f9fafb,stroke:#d1d5db,color:#111
 `} />
 
-- **배포 이미지**: `ghcr.io/dasomel/narwhal-portal:1.0.15`
+- **배포 이미지**: `ghcr.io/dasomel/narwhal-portal:1.1.2`
 - **인-클러스터 빌드 불필요**: 클러스터 내 리소스 소모 없이 직접 GHCR(GitHub Container Registry)에서 이미지를 풀(Pull) 받아 구동합니다.
 - **베이스 이미지 핀 고정**: 자체 이미지를 빌드할 경우에도 Supply Chain 공격을 방지하기 위해 `Dockerfile` 내 `node:22-alpine` 및 `oven/bun:1.3.13-alpine` 베이스 이미지 선언부에 `@sha256:` 다이제스트 핀 고정을 필수적으로 적용해야 합니다.
 

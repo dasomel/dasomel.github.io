@@ -60,13 +60,13 @@ Images follow the official Helm chart compatible naming convention.
 
 ```bash
 # Pull Harbor images (architecture auto-selected)
-docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.14.2
-docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.14.2
-docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.14.2
-docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.15.3
 
 # Trivy adapter
-docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.15.3
 ```
 
 ### Verifying Image Signatures
@@ -85,9 +85,9 @@ This fork is automatically synchronized with the official Harbor repository. Ups
 
 | Version | AMD64 | ARM64 | Upstream |
 |---------|-------|-------|----------|
-| v2.14.x | ✅ | ✅ | goharbor/harbor v2.14 |
-| v2.13.x | ✅ | ✅ | goharbor/harbor v2.13 |
-| v2.12.x | ✅ | ✅ | goharbor/harbor v2.12 |
+| v2.15.x | ✅ | ✅ | goharbor/harbor v2.15 |
+
+The latest release is **v2.15.3** (2026-10-06), which carries upstream's security-advisory fixes. The tags confirmed on GHCR are `v2.15.0` through `v2.15.3`; since v2.15.2 the internal cache image is Valkey (`valkey-photon`) instead of Redis.
 
 ## Change History
 

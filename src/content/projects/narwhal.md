@@ -166,7 +166,7 @@ ARM64와 AMD64에 맞는 bundle을 사전에 만들고, upstream artifact identi
 
 Narwhal은 **Narwhal Portal**을 함께 사용해 day-2 운영을 제공합니다.
 
-Portal은 dashboard, Argo CD status, security, cost, governance, catalog, architecture 등의 platform-level context를 하나의 UI로 제공합니다.
+Portal은 dashboard, Argo CD status, security, cost, governance, catalog, architecture 등의 platform-level context를 하나의 UI로 제공합니다. 포털 코드는 별도 저장소(`narwhal-portal`, 현재 아카이브)에서 이 저장소의 `portal/` 디렉토리로 이동했고, 릴리스는 `portal/vX.Y.Z` 태그(최신 Portal v1.1.2)로 발행됩니다.
 
 즉,
 

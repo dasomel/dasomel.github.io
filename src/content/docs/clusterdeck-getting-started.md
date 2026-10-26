@@ -4,7 +4,7 @@ description: macOS 개발 환경 준비와 Profile 기반 SSH·kubeconfig 연결
 project: ClusterDeck
 path: clusterdeck/getting-started
 order: 1452
-lastModified: 2026-09-22
+lastModified: 2026-10-27
 ---
 
 # ClusterDeck 시작하기
@@ -18,7 +18,7 @@ pnpm install
 pnpm tauri dev
 ```
 
-또는 [v0.1.0 릴리스](https://github.com/dasomel/clusterdeck/releases/tag/v0.1.0)의 macOS(Apple Silicon) `.dmg`를 내려받아 바로 실행할 수 있습니다. 아직 Apple Developer ID 서명이 없어 최초 실행 시 "확인되지 않은 개발자" 경고가 뜨므로, 앱을 우클릭 후 열기로 실행해야 합니다.
+또는 [v0.5.0 릴리스](https://github.com/dasomel/clusterdeck/releases/tag/v0.5.0)의 macOS(Apple Silicon `aarch64` 또는 Intel `x64`) `.dmg`를 내려받아 바로 실행할 수 있습니다. 아직 Apple Developer ID 서명이 없어 최초 실행 시 "확인되지 않은 개발자" 경고가 뜨므로, 앱을 우클릭 후 열기로 실행해야 합니다.
 
 기본 검증은 frontend production build와 Rust backend check를 함께 수행합니다.
 

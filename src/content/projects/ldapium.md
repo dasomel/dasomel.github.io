@@ -139,16 +139,18 @@ v0.1.0 GitHub Release에는 실제로 `ldapium.spdx.json`, `ldapium.cdx.json`, `
 
 ## 알려진 제한사항
 
-v0.1.0 CHANGELOG가 명시한 제한사항입니다.
+v0.1.0 CHANGELOG가 명시한 제한사항이며, 이후 릴리스에서 다시 검증한 항목은 아래 "현재 상태"에 따로 적습니다.
 
 - **TLS가 end-to-end로 검증되지 않았습니다.** 템플릿과 entrypoint는 인증서·TLS replication을 처리하지만 실제 클러스터에서 동작을 관찰한 적이 없습니다. 기본값은 off입니다.
 - **UI 설정 페이지의 모듈/overlay 목록은 실행 중인 서버가 아니라 설정값 기준입니다.** 해당 값은 UI 세션이 가질 수 없는 별도 admin identity를 요구하는 `cn=config`에 있어서, 목록은 `image/Dockerfile`과 수작업으로 동기화됩니다.
-- **업그레이드 경로가 아직 없습니다.** 0.1.0이 첫 릴리스이므로 업그레이드할 이전 버전이 없습니다.
+- **업그레이드 경로가 아직 없습니다.** 0.1.0이 첫 릴리스이므로 업그레이드할 이전 버전이 없습니다(v0.1.0 시점. v0.2.1·v0.3.0 릴리스 노트는 이전 버전에서 이미지/차트 버전 상향으로 올릴 수 있다고 명시).
 - **e2e 워크플로 자체는 CI에서 실행된 적이 없습니다.** kind 클러스터에 chart를 설치하고 `helm test`를 실행하는 워크플로이며, 테스트 스크립트 자체는 실제 디렉터리로 검증됐지만 그 CI 배선은 새로 추가된 상태입니다.
 
 ## 현재 상태
 
-**v0.1.0** (2026-09-23 릴리스, 첫 정식 릴리스) 기준 **Prototype**입니다. 기능과 packaging boundary는 실제 동작 여부를 기준으로 공개하지만, 아직 광범위한 외부 production adoption을 전제로 하지 않습니다. `ghcr.io/dasomel/ldapium:0.1.0`, `ghcr.io/dasomel/ldapium-ui:0.1.0`, Helm chart `oci://ghcr.io/dasomel/charts/ldapium:0.1.0`가 GHCR에 실제 게시된 것을 확인했으며, 위 "알려진 제한사항"은 그대로 유효합니다.
+최신 릴리스는 **v0.3.0**(2026-10-18)이며, 첫 정식 릴리스는 v0.1.0(2026-09-23)입니다. 이후 v0.1.1(09-24), v0.2.0(10-14), v0.2.1(10-16)이 있었습니다. v0.3.0은 multi-provider replication에서 두 provider가 같은 entry를 수 ms 안에 쓰면 속성이 삭제되거나 `entryCSN`이 빠진 채 복구되지 않을 수 있던 데이터 손실 race를 고쳤고(이미지에 OpenLDAP 2.6.15 syncrepl `retry_diff` 패치 포함, 그래서 서버 바이너리는 수정본), 옵트인 cross-provider divergence detector(`replication.check.divergence.enabled`, 기본 `false`)를 추가했습니다. v0.2.0은 machine `setPassword`와 사용자/그룹 목록 cursor 페이지네이션을 추가하면서 일부 동작을 바꾼 마이너 릴리스입니다(0.x 구간이라 호환성이 깨질 수 있음). 아래 상태 서술은 v0.1.0 시점에 확인한 내용입니다.
+
+**v0.1.0** 기준 **Prototype**입니다. 기능과 packaging boundary는 실제 동작 여부를 기준으로 공개하지만, 아직 광범위한 외부 production adoption을 전제로 하지 않습니다. `ghcr.io/dasomel/ldapium:0.1.0`, `ghcr.io/dasomel/ldapium-ui:0.1.0`, Helm chart `oci://ghcr.io/dasomel/charts/ldapium:0.1.0`가 GHCR에 실제 게시된 것을 확인했으며, 위 "알려진 제한사항"은 그대로 유효합니다.
 
 ## 상세 기술 문서
 

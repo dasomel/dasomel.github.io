@@ -4,7 +4,7 @@ description: pnpm 로컬 개발 환경, 환경변수 설정 및 Skaffold 라이�
 project: Narwhal Portal
 path: narwhal-portal/getting-started
 order: 1202
-lastModified: 2026-08-23
+lastModified: 2026-10-27
 ---
 
 # 개발 환경 설정
@@ -15,8 +15,8 @@ Narwhal Portal을 로컬 머신 또는 쿠버네티스 클러스터에서 개발
 
 ```bash
 # 저장소 클론 및 패키지 설치
-git clone https://github.com/dasomel/narwhal-portal.git
-cd narwhal-portal
+git clone https://github.com/dasomel/narwhal.git
+cd narwhal/portal
 pnpm install
 
 # 환경변수 파일 복사 및 설정

@@ -148,7 +148,7 @@ The bundle contains the artifacts required to reproduce the platform without rea
 
 ## Management Portal
 
-Narwhal Portal provides the day-2 user experience for the platform: dashboard, applications, security, cost, governance, catalog, and architecture views.
+Narwhal Portal provides the day-2 user experience for the platform: dashboard, applications, security, cost, governance, catalog, and architecture views. The portal code moved from the separate `narwhal-portal` repository (now archived) into this repository's `portal/` directory, and releases are tagged `portal/vX.Y.Z` (latest: Portal v1.1.2).
 
 The product boundary is therefore:
 

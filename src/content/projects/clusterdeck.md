@@ -46,15 +46,18 @@ Kubernetes Connectivity Check
 
 초기 비밀번호는 bootstrap용으로만 사용하고 저장하거나 로그에 남기지 않는 것을 원칙으로 합니다. 생성 kubeconfig는 제한된 파일 권한을 사용하고, 사용자 관리 SSH/Kubernetes 설정을 파괴적으로 덮어쓰지 않습니다.
 
-ClusterDeck이 `~/.clusterdeck/` 바깥에서 실제로 건드리는 것은 세 가지뿐이며, 전부 opt-in이거나 자기 소유 블록만 씁니다.
+ClusterDeck이 `~/.clusterdeck/` 바깥에서 실제로 건드리는 것은 네 가지뿐이며, 전부 opt-in이거나 자기 소유 블록만 씁니다.
 
 - **로그인 키체인** — 클러스터 내부 CA를 신뢰하도록 선택하면(엔드포인트별 opt-in, 또는 Settings → Trusted CAs) System이 아닌 **로그인 키체인**에 SSL/TLS 신뢰 정책 범위로만 추가합니다. Keychain Access.app에서 확인하거나 ClusterDeck에서 직접 해지할 수 있습니다.
 - **`/etc/hosts`** — 기본 off, Profile별 opt-in. 켜면 `# >>> ClusterDeck BEGIN (profile: <id>) >>>` 마커로 감싼 자기 블록만 admin 권한 프롬프트로 씁니다.
+- **로컬 DNS** (v0.5.0, Profile별 opt-in) — `host_mapping: local_dns`를 켜면 `# managed by ClusterDeck (profile: <id>)` 마커가 붙은 `/etc/resolver/<zone>` 파일만 admin 권한 프롬프트로 쓰고, 사용자 LaunchAgent `com.clusterdeck.dns`가 `127.0.0.1:15353`에서 loopback 전용 DNS 응답기를 실행합니다. Safari·URLSession이 `/etc/hosts`를 무시하는 환경을 위한 경로입니다.
 - **`~/.ssh/config`** — `Include ~/.clusterdeck/ssh/*.conf` 한 줄만 추가하고, 실제 per-profile SSH 옵션은 그 include 디렉터리 안에 둡니다.
 
 ## 다운로드
 
-[v0.1.0](https://github.com/dasomel/clusterdeck/releases/tag/v0.1.0)이 macOS(Apple Silicon) `.dmg`로 배포됩니다. Apple Developer ID 서명이 아직 없어 최초 실행 시 "확인되지 않은 개발자" 경고가 뜨며, 앱을 우클릭 후 열기로 실행해야 합니다.
+최신 릴리스 [v0.5.0](https://github.com/dasomel/clusterdeck/releases/tag/v0.5.0)(2026-10-26)이 macOS Apple Silicon(`aarch64`)과 Intel(`x64`) `.dmg`로 배포됩니다(CHANGELOG 기준 Intel 빌드는 Apple Silicon CI 러너에서 빌드되었고 Intel 하드웨어에서는 아직 실행 검증되지 않음). 서명되지 않은 ad-hoc 빌드이며 Apple Developer ID 서명이 아직 없어 최초 실행 시 "확인되지 않은 개발자" 경고가 뜨므로, 앱을 우클릭 후 열기로 실행해야 합니다.
+
+v0.5.0은 내장 로컬 DNS, bastion 뒤 클러스터 API용 앱 관리 SSH 터널, 로컬 VM 인벤토리(Colima·VirtualBox·VMware Fusion·Vagrant)와 Demo 모드(InfraDeck 흡수)를 추가했습니다.
 
 ## MVP 범위
 

@@ -3,7 +3,7 @@ title: "사용법"
 description: "KubeMetal 설치와 구동, 8개 탭의 역할, 모델 다운로드부터 파인튜닝·서빙까지의 워크플로와 실측 성능"
 project: "KubeMetal"
 order: 502
-lastModified: 2026-07-30
+lastModified: 2026-10-27
 ---
 
 ## 요구 사항
@@ -119,7 +119,7 @@ pnpm tauri build   # .app / .dmg 번들 생성 (서명 없음 로컬 빌드)
 산출물:
 
 - `src-tauri/target/release/bundle/macos/KubeMetal.app`
-- `src-tauri/target/release/bundle/dmg/KubeMetal_0.1.0_aarch64.dmg`
+- `src-tauri/target/release/bundle/dmg/KubeMetal_<version>_aarch64.dmg`
 
 키체인에 유효한 codesigning 아이덴티티가 있으면 `make app`이 자동으로 그것으로 서명합니다. LAN 클러스터에 접근하는 패키징 앱에는 안정된 코드 서명이 필요합니다 — 자세한 이유는 [외부 클러스터 연동](/ko/docs/kubemetal-integration) 문서를 참고하세요.
 

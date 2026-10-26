@@ -87,7 +87,7 @@ Requirements include macOS 14+, Apple Silicon, Homebrew, Colima, kubectl, Node 2
 
 ## Current Development Scope
 
-The repository README marks the core Phase 1–3 capabilities as complete, including Tauri/Colima lifecycle, MLflow/SeaweedFS provisioning, Model Hub, host MLX fine-tuning, serving, pipeline visualization, packaged app output, and resource/thermal guardrails.
+The latest release is **v0.2.0** (2026-08-09, Apple Silicon `aarch64` zip). The repository README marks the core Phase 1–3 capabilities as complete, including Tauri/Colima lifecycle, MLflow/SeaweedFS provisioning, Model Hub, host MLX fine-tuning, serving, pipeline visualization, packaged app output, and resource/thermal guardrails.
 
 Subsequent work continues around external-cluster integration, signing, GitOps boundaries, and real-world operational constraints.
 
