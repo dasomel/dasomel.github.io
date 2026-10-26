@@ -49,7 +49,7 @@ export const communityActivities: CommunityActivity[] = [
     ],
   },
   {
-    role: 'Committer',
+    role: 'Leader',
     org: 'OPDC (Open Platform Developer Community)',
     period: '2015 — Present',
     desc: '오픈플랫폼 및 오픈소스 소프트웨어 개발자의 역량 강화와 상호 교류를 위한 법인 커뮤니티',
