@@ -46,15 +46,18 @@ Kubernetes Connectivity Check
 
 Bootstrap passwords are one-time inputs and should not be stored or logged. Generated kubeconfigs use restrictive permissions, and destructive merges to user-managed SSH/Kubernetes configuration are avoided.
 
-Outside `~/.clusterdeck/`, ClusterDeck touches exactly three things, each opt-in or confined to its own marked block:
+Outside `~/.clusterdeck/`, ClusterDeck touches exactly four things, each opt-in or confined to its own marked block:
 
 - **Login Keychain** — trusting a cluster's CA (opt-in per discovered endpoint, or from Settings → Trusted CAs) adds it to your **login keychain** (never System), scoped to the SSL/TLS trust policy only. Inspect or remove it in Keychain Access.app or from ClusterDeck itself.
 - **`/etc/hosts`** — off by default, opt-in per Profile. When enabled, writes stay inside one marked block per profile (`# >>> ClusterDeck BEGIN (profile: <id>) >>>`) via an admin-privileged prompt.
+- **Local DNS** (v0.5.0, opt-in per Profile) — with `host_mapping: local_dns`, ClusterDeck writes only marker-owned `/etc/resolver/<zone>` files (`# managed by ClusterDeck (profile: <id>)`) via an admin-privileged prompt and runs a loopback-only DNS responder on `127.0.0.1:15353` as the user LaunchAgent `com.clusterdeck.dns`. It exists for setups where Safari and URLSession ignore `/etc/hosts`.
 - **`~/.ssh/config`** — gets a single `Include ~/.clusterdeck/ssh/*.conf` line; per-profile SSH options live in that included directory, not in your own config.
 
 ## Download
 
-[v0.1.0](https://github.com/dasomel/clusterdeck/releases/tag/v0.1.0) ships as a macOS (Apple Silicon) `.dmg`. There is no Apple Developer ID certificate yet, so macOS shows an "unidentified developer" warning on first launch — right-click the app and choose Open to run it anyway.
+The latest release, [v0.5.0](https://github.com/dasomel/clusterdeck/releases/tag/v0.5.0) (2026-10-26), ships as macOS Apple Silicon (`aarch64`) and Intel (`x64`) `.dmg` files (per the CHANGELOG, the Intel build is compiled on an Apple Silicon CI runner and has not been launched on Intel hardware). It is an unsigned, ad-hoc build: there is no Apple Developer ID certificate yet, so macOS shows an "unidentified developer" warning on first launch — right-click the app and choose Open to run it anyway.
+
+v0.5.0 adds built-in local DNS, an app-managed SSH tunnel for bastion-only cluster APIs, and local VM inventory (Colima, VirtualBox, VMware Fusion, Vagrant) with a Demo mode (InfraDeck absorbed into ClusterDeck).
 
 ## MVP
 

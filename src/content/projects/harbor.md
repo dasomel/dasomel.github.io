@@ -60,13 +60,13 @@ solution: "멀티 아키텍처 빌드 파이프라인을 구성하여 ARM 호환
 
 ```bash
 # Harbor 이미지 Pull (아키텍처 자동 선택)
-docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.14.2
-docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.14.2
-docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.14.2
-docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.15.3
 
 # Trivy 어댑터
-docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.14.2
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.15.3
 ```
 
 ### 이미지 서명 검증
@@ -85,9 +85,9 @@ cosign verify ghcr.io/dasomel/goharbor/harbor-core:latest \
 
 | 버전 | AMD64 | ARM64 | 업스트림 |
 |------|-------|-------|----------|
-| v2.14.x | ✅ | ✅ | goharbor/harbor v2.14 |
-| v2.13.x | ✅ | ✅ | goharbor/harbor v2.13 |
-| v2.12.x | ✅ | ✅ | goharbor/harbor v2.12 |
+| v2.15.x | ✅ | ✅ | goharbor/harbor v2.15 |
+
+최신 릴리스는 **v2.15.3**(2026-10-06)이며 업스트림의 보안 advisory 수정을 포함합니다. GHCR에서 확인되는 태그는 `v2.15.0`~`v2.15.3`이고, v2.15.2부터 내부 캐시가 Redis에서 Valkey(`valkey-photon`)로 바뀌었습니다.
 
 ## 주요 변경 이력
 

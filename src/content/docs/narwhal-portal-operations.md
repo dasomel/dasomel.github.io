@@ -4,7 +4,7 @@ description: Multi-stage 프로덕션 컨테이너 빌드, 헬스체크 및 쿠�
 project: Narwhal Portal
 path: narwhal-portal/operations
 order: 1203
-lastModified: 2026-08-23
+lastModified: 2026-10-27
 ---
 
 # 배포 및 운영
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: portal
-        image: ghcr.io/dasomel/narwhal-portal:v1.2.0
+        image: ghcr.io/dasomel/narwhal-portal:1.1.2
         ports:
         - containerPort: 3000
         livenessProbe:

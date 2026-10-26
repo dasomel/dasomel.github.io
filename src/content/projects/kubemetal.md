@@ -101,7 +101,7 @@ pnpm tauri dev
 
 ## 단계별 개발 상태
 
-README 기준으로 Phase 1~3의 핵심 기능이 구현된 상태이며, 이후 작업은 외부 cluster integration, hardware guardrails, GitOps 경계와 같은 실제 환경의 운영 조건을 다루는 방향으로 이어집니다.
+최신 릴리스는 **v0.2.0**(2026-08-09, Apple Silicon `aarch64` zip)입니다. README 기준으로 Phase 1~3의 핵심 기능이 구현된 상태이며, 이후 작업은 외부 cluster integration, hardware guardrails, GitOps 경계와 같은 실제 환경의 운영 조건을 다루는 방향으로 이어집니다.
 
 주요 완료 범위:
 

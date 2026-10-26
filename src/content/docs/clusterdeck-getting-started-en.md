@@ -4,7 +4,7 @@ description: macOS development setup and the Profile-oriented SSH/kubeconfig con
 project: ClusterDeck
 path: clusterdeck/getting-started
 order: 1452
-lastModified: 2026-09-22
+lastModified: 2026-10-27
 ---
 
 # ClusterDeck Getting Started
@@ -18,7 +18,7 @@ pnpm install
 pnpm tauri dev
 ```
 
-Alternatively, download the macOS (Apple Silicon) `.dmg` from the [v0.1.0 release](https://github.com/dasomel/clusterdeck/releases/tag/v0.1.0) and run it directly. There is no Apple Developer ID certificate yet, so macOS shows an "unidentified developer" warning on first launch — right-click the app and choose Open to run it anyway.
+Alternatively, download the macOS (Apple Silicon `aarch64` or Intel `x64`) `.dmg` from the [v0.5.0 release](https://github.com/dasomel/clusterdeck/releases/tag/v0.5.0) and run it directly. There is no Apple Developer ID certificate yet, so macOS shows an "unidentified developer" warning on first launch — right-click the app and choose Open to run it anyway.
 
 Validate both frontend and Rust backend:
 

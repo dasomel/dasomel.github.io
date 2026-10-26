@@ -3,7 +3,7 @@ title: "Usage"
 description: "Installing and running KubeMetal, what each of the eight tabs does, the model-to-serving workflow, and measured performance"
 project: "KubeMetal"
 order: 502
-lastModified: 2026-07-30
+lastModified: 2026-10-27
 ---
 
 ## Requirements
@@ -119,7 +119,7 @@ pnpm tauri build   # produces .app / .dmg bundles (unsigned local build)
 Outputs:
 
 - `src-tauri/target/release/bundle/macos/KubeMetal.app`
-- `src-tauri/target/release/bundle/dmg/KubeMetal_0.1.0_aarch64.dmg`
+- `src-tauri/target/release/bundle/dmg/KubeMetal_<version>_aarch64.dmg`
 
 If a valid codesigning identity exists in the keychain, `make app` signs with it automatically. A packaged app that reaches LAN clusters needs stable code signing — see [External Cluster Integration](/en/docs/kubemetal-integration) for why.
 

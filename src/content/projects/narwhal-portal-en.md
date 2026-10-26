@@ -60,17 +60,15 @@ The portal does not try to replace every upstream UI. Kubernetes, Argo CD, Keycl
 
 ## Current Status
 
-The latest tagged release is **v1.0.17** (2026-08-09). It made the platform-tool tile base domain configurable via `CLUSTER_BASE_DOMAIN`, derived node roles correctly from the Prometheus `kube_node_role` metric and K8s labels (both `control-plane` and the legacy `master` key), fixed compliance framework pass-rate scaling (0-1 ratios were rendering as 1%), and queried cluster-scoped `clusterinfraassessmentreports` alongside namespaced reports so trivy-operator node security findings are reflected. This release also introduced an automated GitHub Release workflow that publishes notes from `CHANGELOG.md` on tag push.
+**The `dasomel/narwhal-portal` repository is archived, and the portal code now lives in the [`portal/` directory of `dasomel/narwhal`](https://github.com/dasomel/narwhal/tree/main/portal)** (per the archived repository README: the 415-commit history was imported with `git-filter-repo`, and open issues were transferred to narwhal #356-#382). Versions are tracked as `portal/vX.Y.Z` tags in the narwhal repository; GitHub Releases titled "Portal v1.1.x" start at v1.1.1. The container image name stays `ghcr.io/dasomel/narwhal-portal`.
 
-Since v1.0.17, main has accumulated substantial security hardening without a new tag yet (as of 2026-09-23, the repository has 300 commits total):
+The latest release is **Portal v1.1.2** (`portal/v1.1.2`, 2026-10-26).
 
-- Centralized role-string checks on `requireRole`/`requireAdmin` and enforced resource-scoping on the cost/security detail and trend APIs
-- Switched OpenBao authentication from a static token to Kubernetes auth login, and replaced the long-lived K8s service-account token with a projected short-lived token
-- Anchored the federated-logout redirect allowlist to close an open-redirect bypass
-- Enforced production TLS for Keycloak/Gitea integrations and restricted the health endpoint to cluster-admin
-- Applied an Agent Execution Security Contract to the privileged node-tuning path, with exact-invocation approval, server-side recomputation, and replay protection (PR #90)
+- **v1.1.2 (2026-10-26)**: fixed the Architecture > Cluster infrastructure view showing 0 nodes, pods and namespaces on production (it now reads the in-cluster projected service-account token file, narwhal#475) and upgraded `zod` and `undici` past published advisories
+- **v1.1.1 (2026-10-23)**: security patch upgrading Auth.js (`next-auth` 5.0.0-beta.32, `@auth/core` ^0.41.3) past critical advisories, plus Next.js 16.4.2 and React 19.3.1. An OAuth login in flight during the rollout fails once and must be retried
+- **v1.1.0 (2026-10-15, tag only, no GitHub Release)**: first version cut from the monorepo. Production now requires authenticated Valkey TLS, OpenBao auth mode must be explicit, and write routes distinguish rejected, credential and outcome-unknown results so provider failures are no longer reported as healthy. Tags 1.0.18 and 1.0.19 were pushed but never published as GitHub Releases, so v1.1.0 covers everything since 1.0.17
 
-This work is under verification on main for a future release and is not yet part of a published tag.
+The last release of the old repository is v1.0.17 (2026-08-09). The narwhal v1.3.0 GitOps chart pins the portal image to `1.1.0`, and the chart on main pins `1.1.2`.
 
 ## Deployment Model
 
@@ -79,8 +77,8 @@ The production portal is served inside the Narwhal cluster at `https://portal.lo
 A local development loop is available with:
 
 ```bash
-git clone https://github.com/dasomel/narwhal-portal.git
-cd narwhal-portal
+git clone https://github.com/dasomel/narwhal.git
+cd narwhal/portal
 pnpm install
 pnpm dev
 ```

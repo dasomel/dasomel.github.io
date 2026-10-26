@@ -4,7 +4,7 @@ description: Multi-stage production container packaging, health probes, and K8s 
 project: Narwhal Portal
 path: narwhal-portal/operations
 order: 1203
-lastModified: 2026-08-23
+lastModified: 2026-10-27
 ---
 
 # Deployment & Operations
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: portal
-        image: ghcr.io/dasomel/narwhal-portal:v1.2.0
+        image: ghcr.io/dasomel/narwhal-portal:1.1.2
         ports:
         - containerPort: 3000
         livenessProbe:

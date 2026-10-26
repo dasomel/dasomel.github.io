@@ -3,7 +3,7 @@ title: "Portal Deployment & Security"
 description: "Deployment strategies for the Narwhal IDP Portal and secret hardening procedures for clean installs"
 project: "Narwhal Portal"
 order: 203
-lastModified: 2026-07-17
+lastModified: 2026-10-27
 ---
 
 ## Deployment Strategy
@@ -20,7 +20,7 @@ While the portal features a built-in, in-cluster Kaniko build pipeline that push
   end
 
   subgraph PROD["Actual Production Path (GitOps)"]
-    GHCR(["ghcr.io/dasomel/narwhal-portal:1.0.15<br/>(Pinned GHCR)"])
+    GHCR(["ghcr.io/dasomel/narwhal-portal:1.1.2<br/>(Pinned GHCR)"])
     ARGO["ArgoCD GitOps"]
     DEPLOY(["Cluster Deployment"])
   end
@@ -44,7 +44,7 @@ While the portal features a built-in, in-cluster Kaniko build pipeline that push
   style HAR fill:#f9fafb,stroke:#d1d5db,color:#111
 `} />
 
-- **Deployment Image**: `ghcr.io/dasomel/narwhal-portal:1.0.15`
+- **Deployment Image**: `ghcr.io/dasomel/narwhal-portal:1.1.2`
 - **No In-cluster Build Required**: The image is pulled directly from the GitHub Container Registry (GHCR) and run without consuming internal cluster build resources.
 - **Base Image Pinning**: Even if you choose to build your own images, to mitigate supply chain attacks, you must enforce `@sha256:` digest pinning in the `Dockerfile` for the `node:22-alpine` and `oven/bun:1.3.13-alpine` base image declarations.
 

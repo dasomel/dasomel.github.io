@@ -60,24 +60,22 @@ Portal은 Narwhal 클러스터와 분리된 별도 제품이 아니라 **Narwhal
 
 ## 현재 상태
 
-최신 릴리스는 **v1.0.17**(2026-08-09)이며, `CLUSTER_BASE_DOMAIN` 환경변수로 platform tool 타일의 base domain을 설정 가능하게 하고, node role을 Prometheus `kube_node_role` 메트릭과 K8s label(`control-plane`/legacy `master`)로 정확히 판별하며, compliance framework pass rate를 0-1 비율에서 퍼센트로 올바르게 스케일링하고, cluster-scoped `clusterinfraassessmentreports`까지 함께 조회해 trivy-operator node 보안 감사 결과를 반영하도록 고쳤습니다. 이 릴리스부터 태그 push 시 `CHANGELOG.md`로 GitHub Release 노트를 자동 발행합니다.
+**`dasomel/narwhal-portal` 저장소는 아카이브되었고, 포털 코드는 [`dasomel/narwhal`의 `portal/`](https://github.com/dasomel/narwhal/tree/main/portal) 디렉토리로 이동했습니다**(아카이브 저장소 README 기준: 커밋 415건 history를 `git-filter-repo`로 이관, 열린 이슈는 narwhal #356~#382로 이전). 버전은 narwhal 저장소의 `portal/vX.Y.Z` 태그로 관리되며, GitHub Release는 v1.1.1부터 "Portal v1.1.x" 제목으로 발행됩니다. 컨테이너 이미지 이름은 그대로 `ghcr.io/dasomel/narwhal-portal`입니다.
 
-v1.0.17 이후 main에서는 릴리스 태그 없이 대규모 보안 하드닝이 진행 중입니다(2026-09-23 기준, 저장소 총 300 commits):
+최신 릴리스는 **Portal v1.1.2**(`portal/v1.1.2`, 2026-10-26)입니다.
 
-- `requireRole`/`requireAdmin`으로 role 문자열 검사를 중앙화하고, cost/security 상세·트렌드 API에 resource-scope 강제
-- OpenBao 인증을 정적 토큰에서 Kubernetes auth login으로 전환, K8s Service Account 토큰도 projected short-lived 토큰으로 교체
-- federated logout redirect allowlist를 앵커링해 open-redirect 우회를 차단
-- Keycloak/Gitea 연동에 production TLS를 강제하고, health endpoint 인증을 cluster-admin으로 제한
-- Node-tuning 권한 작업에 exact-invocation 승인·서버 측 재계산·replay 방지를 포함한 Agent Execution Security Contract 적용(PR #90)
+- **v1.1.2 (2026-10-26)**: 프로덕션에서 Architecture > Cluster infrastructure 화면이 노드·파드·네임스페이스 0건으로 보이던 문제 수정(in-cluster projected 서비스 계정 토큰 파일 사용, narwhal#475), `zod`·`undici`를 공개된 advisory 이후 버전으로 상향
+- **v1.1.1 (2026-10-23)**: Auth.js(`next-auth` 5.0.0-beta.32, `@auth/core` ^0.41.3)를 critical advisory 이후 버전으로 올리는 보안 패치, Next.js 16.4.2 · React 19.3.1 반영. 롤아웃 중 진행 중이던 OAuth 로그인은 한 번 실패하므로 재시도가 필요
+- **v1.1.0 (2026-10-15, 태그만 · GitHub Release 없음)**: monorepo 이관 후 첫 버전. 프로덕션 Valkey TLS 인증 필수화, OpenBao 인증 방식 명시, provider 실패를 정상으로 가리지 않도록 write route 결과 구분 등 운영 자세 하드닝. 태그 1.0.18·1.0.19는 푸시됐으나 GitHub Release로 발행되지 않았고 v1.1.0이 1.0.17 이후 변경을 모두 포함
 
-이 구간은 아직 발행된 릴리스가 아니라 다음 버전을 위해 main에서 검증 중인 상태입니다.
+이전 저장소의 마지막 릴리스는 v1.0.17(2026-08-09)입니다. narwhal v1.3.0 GitOps 차트는 포털 이미지를 `1.1.0`으로, main 차트는 `1.1.2`로 핀 고정하고 있습니다.
 
 ## 개발 및 배포 모델
 
 ```bash
 # 로컬 개발
-git clone https://github.com/dasomel/narwhal-portal.git
-cd narwhal-portal
+git clone https://github.com/dasomel/narwhal.git
+cd narwhal/portal
 pnpm install
 pnpm dev
 ```

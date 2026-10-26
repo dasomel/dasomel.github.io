@@ -135,14 +135,16 @@ License handling separates the project's Apache-2.0 work from OpenLDAP's own lic
 
 ## Known Limitations
 
-As stated in the v0.1.0 CHANGELOG:
+As stated in the v0.1.0 CHANGELOG; items re-verified in later releases are noted under Current Status:
 
 - **TLS is unverified end to end.** The templates and entrypoint handle certificates and TLS-protected replication, but no one has watched it work against a live cluster. It is off by default.
 - **The UI's settings page lists modules and overlays from configuration, not the running server.** Those values live in `cn=config`, which requires an admin identity no UI session can hold, so the list is kept in sync with `image/Dockerfile` by hand.
-- **No upgrade path is promised yet.** 0.1.0 is the first release, so there is nothing to upgrade from.
+- **No upgrade path is promised yet.** 0.1.0 is the first release, so there is nothing to upgrade from (true at v0.1.0; the v0.2.1 and v0.3.0 release notes state that upgrading from the previous version is an image/chart version bump).
 - **The e2e workflow itself has never run in CI.** It installs the chart into a kind cluster and runs `helm test`; the test script itself was developed and verified against a live directory, but the CI wiring around it is new.
 
 ## Current Status
+
+The latest release is **v0.3.0** (2026-10-18); the first release was v0.1.0 (2026-09-23), followed by v0.1.1 (09-24), v0.2.0 (10-14) and v0.2.1 (10-16). v0.3.0 fixes a data-loss race in multi-provider replication, where two providers writing the same entry within milliseconds could leave one node with a deleted attribute or missing `entryCSN` that never healed (the image now carries an OpenLDAP 2.6.15 syncrepl `retry_diff` patch, so the server binaries are modified), and adds an opt-in cross-provider divergence detector (`replication.check.divergence.enabled`, default `false`). v0.2.0 added machine `setPassword` and cursor pagination for the Users and Groups lists, with some behaviour changes (on 0.x, minor releases may break compatibility). The status details below were confirmed at v0.1.0.
 
 **v0.1.0** (released 2026-09-23, the first release) — currently **Prototype**. The packaging and security model are intentionally public early, but release artifacts should be treated according to the actual GitHub Release, Actions, and GHCR state rather than README text alone. `ghcr.io/dasomel/ldapium:0.1.0`, `ghcr.io/dasomel/ldapium-ui:0.1.0`, and the Helm chart `oci://ghcr.io/dasomel/charts/ldapium:0.1.0` are confirmed published to GHCR, and the "Known Limitations" above still apply.
 

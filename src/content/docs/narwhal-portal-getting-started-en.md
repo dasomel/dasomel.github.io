@@ -4,7 +4,7 @@ description: pnpm local setup, environment variables, and Skaffold live reload w
 project: Narwhal Portal
 path: narwhal-portal/getting-started
 order: 1202
-lastModified: 2026-08-23
+lastModified: 2026-10-27
 ---
 
 # Development Setup
@@ -15,8 +15,8 @@ Step-by-step guide for local portal development and cluster inner-loop workflows
 
 ```bash
 # Clone repository and install dependencies
-git clone https://github.com/dasomel/narwhal-portal.git
-cd narwhal-portal
+git clone https://github.com/dasomel/narwhal.git
+cd narwhal/portal
 pnpm install
 
 # Setup local environment variables
