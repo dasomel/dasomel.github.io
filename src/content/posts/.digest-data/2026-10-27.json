@@ -1,0 +1,231 @@
+{
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-26T23:56:55.789Z",
+  "count": 28,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI halved its agent’s price. Its own safety report flagged a catch.",
+      "link": "https://thenewstack.io/openai-terra-bypassed-restrictions/",
+      "date": "2026-10-26T22:14:01.000Z",
+      "excerpt": "OpenAI launched GPT-6.1 Terra on Monday, cutting API prices in half and delivering major gains in coding and computer-use benchmarks."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
+      "link": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+      "date": "2026-10-26T22:01:23.000Z",
+      "excerpt": "A configuration mismatch in GLM 5.3 on Workers AI triggered an SGLang bug that exposed KV cache pages across requests."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+      "link": "https://openai.com/index/greptile-code-review-codex-astra",
+      "date": "2026-10-26T22:00:00.000Z",
+      "excerpt": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Easy to integrate, compliant by design: Bringing the Swiss Franc to Google Cloud Universal Ledger",
+      "link": "https://cloud.google.com/blog/topics/financial-services/easy-to-integrate-compliant-by-design-bringing-the-swiss-franc-to-google-cloud-universal-ledger/",
+      "date": "2026-10-26T20:00:00.000Z",
+      "excerpt": "Every day, countless financial transactions are interrupted by slow, expensive, and inflexible conventional payment systems. As a result, public commercial stablecoins like Tether, USDC, and PayPal USD have become increasingly popular by making it easy to move money efficiently with instant, 24/7 blockchain settlement."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI is changing Kubernetes; is your platform ready for 2027?",
+      "link": "https://thenewstack.io/kubernetes-agentic-ai-platforms/",
+      "date": "2026-10-26T19:51:04.000Z",
+      "excerpt": "AI workloads, including those using agentic AI, will only add to and change the questions Kubernetes teams have to answer. It’s no longer"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Most of Anthropic’s Q3 revenue came from models that barely existed six months ago",
+      "link": "https://thenewstack.io/anthropic-s1-models-revenue/",
+      "date": "2026-10-26T18:29:26.000Z",
+      "excerpt": "Anthropic’s long-awaited S-1, filed Monday ahead of its planned Nasdaq debut under the ticker ANT, shows how quickly customers are"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Data governance with annotations in Amazon S3",
+      "link": "https://aws.amazon.com/blogs/architecture/data-governance-with-annotations-in-amazon-s3/",
+      "date": "2026-10-26T18:00:26.000Z",
+      "excerpt": "Attach governance context such as classification, retention, residency, and PII flags directly to your Amazon S3 objects with S3 annotations. This post walks through the end-to-end pattern and the handful of S3 behaviors that decide whether your governance design is correct."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Recommended resilience testing in the next generation of AWS Resilience Hub",
+      "link": "https://aws.amazon.com/blogs/architecture/recommended-resilience-testing-in-the-next-generation-of-aws-resilience-hub/",
+      "date": "2026-10-26T17:35:01.000Z",
+      "excerpt": "The next generation of AWS Resilience Hub introduces recommended resilience testing: four pre-configured, AWS FIS-powered tests that validate how your service detects and recovers from failures across Availability Zones, dependencies, and Regions, turning your resilience policy into evidence-backed pass or fail results…"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Measuring developer experience on an Amazon EKS developer platform",
+      "link": "https://aws.amazon.com/blogs/containers/measuring-developer-experience-on-an-amazon-eks-developer-platform/",
+      "date": "2026-10-26T17:32:58.000Z",
+      "excerpt": "Most platform teams can't prove their internal developer platform is improving software delivery."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Tracing failures across Terraform state boundaries with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/tracing-failures-across-terraform-state-boundaries-with-aws-devops-agent/",
+      "date": "2026-10-26T17:21:23.000Z",
+      "excerpt": "When a change in one Terraform stack silently breaks an application in another, the team seeing the symptoms often doesn't own the stack that caused it. This post shows how AWS DevOps Agent traces the root cause across Terraform state boundaries, then pairs with Kiro to generate the fix."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Making Failure Diagnosis Reliable with Pensive AI",
+      "link": "https://netflixtechblog.com/making-failure-diagnosis-reliable-with-pensive-ai-6b0811a1c015?source=rss----2615bd06b42e---4",
+      "date": "2026-10-26T17:04:57.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Multi‑Ratio Video Resizing for Mobile Feed and Marketing",
+      "link": "https://netflixtechblog.com/multi-ratio-video-resizing-for-mobile-feed-and-marketing-2e6b42810f49?source=rss----2615bd06b42e---4",
+      "date": "2026-10-26T16:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Meta Networking at the 2026 OCP Global Summit: Open Innovation for Scale-Up, Scale-Out, and Scale-Across AI Networks",
+      "link": "https://engineering.fb.com/2026/10/26/open-source/ocp-summit-2026-meta-networking-talks/",
+      "date": "2026-10-26T16:00:07.000Z",
+      "excerpt": "At the 2026 Open Compute Project (OCP) Global Summit, Meta shared the networking innovations that are directly supporting our latest AI models, including Muse Wonder and Muse Spark, and our gigawatt-scale Prometheus cluster. Highlights IcePack & IceCube: Meta’s first liquid-cooled network rack with 102."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "link": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "date": "2026-10-26T16:00:00.000Z",
+      "excerpt": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Unifying enterprise context and semantics: LookML in Knowledge Catalog is now GA",
+      "link": "https://cloud.google.com/blog/products/business-intelligence/lookml-metadata-indexing-in-knowledge-catalog-is-now-ga/",
+      "date": "2026-10-26T16:00:00.000Z",
+      "excerpt": "As enterprises go from experimental AI agent prototypes to using them in production, data teams are realizing that access to data is not the same as understanding that data."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Scale agents securely with IAM Helper Agent Skills and MCP Tools",
+      "link": "https://cloud.google.com/blog/products/identity-security/scale-agents-securely-with-iam-helper-agent-skills-and-mcp-tools/",
+      "date": "2026-10-26T16:00:00.000Z",
+      "excerpt": "As organizations adopt autonomous agents to build applications, securing identities and access has become more challenging."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Scale reservoir uncertainty analysis with agile reservoir modeling",
+      "link": "https://azure.microsoft.com/en-us/blog/scale-reservoir-uncertainty-analysis-with-agile-reservoir-modeling/",
+      "date": "2026-10-26T16:00:00.000Z",
+      "excerpt": "As subsurface data grows in scale and complexity, teams need a faster, more connected way to transform uncertainty into actionable decisions."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Working with academic communities to build scientific understanding",
+      "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+      "date": "2026-10-26T14:30:00.000Z",
+      "excerpt": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+      "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+      "date": "2026-10-26T13:45:00.000Z",
+      "excerpt": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Isolation. Security. Scale.",
+      "link": "https://www.cncf.io/blog/2026/10/26/isolation-security-scale/",
+      "date": "2026-10-26T11:30:00.000Z",
+      "excerpt": "Without these three things, Agents cannot be properly implemented in a controlled environment, they will not have policy enforcement to ensure they do what they’re supposed to do, and there’s zero way of ensuring that the."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "Flava MCP Hub가 걸어온 길: AI 시대를 위한 배관 공사",
+      "link": "https://techblog.lycorp.co.jp/ko/flava-mcp-hub-ai-infrastructure",
+      "date": "2026-10-26T02:00:00.000Z",
+      "excerpt": "들어가며\"우리 서비스, 지금 어떤 상태야?\"AI 에이전트에게 이렇게 물어보신 적 있으신가요?"
+    },
+    {
+      "source": "Istio",
+      "category": "k8s",
+      "title": "Closing the Gap: Bringing Sidecar-Level Tracing to Istio's Ambient Mode with Kiali",
+      "link": "https://istio.io/latest/blog/2026/closing-the-gap-bringing-sidecar-level-tracing-to-istio-ambient-and-kiali/",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "Istio’s ambient mode has steadily evolved across recent releases. Although it achieved GA in version 1."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Enterprise AI needs a data strategy, not just a model strategy",
+      "link": "https://www.redhat.com/en/blog/enterprise-ai-needs-data-strategy-not-just-model-strategy",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "Many enterprise AI conversations start with the same question: Which model should we use? With models becoming more and more commoditized, the big differentiator is whether your data is ready for any model or any agent to use."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Responsible disclosure in the age of Vulnpocalypse",
+      "link": "https://www.redhat.com/en/blog/responsible-disclosure-age-vulnpocalypse",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "New tools can find potential flaws faster than teams can assess and fix them. When a serious flaw is discovered, the central challenge is ensuring maintainers, distributors, and operators receive the clear information and time necessary to defend their users."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "MLOps for edge AI: Keeping models accurate over time",
+      "link": "https://www.redhat.com/en/blog/mlops-edge-ai-keeping-models-accurate-over-time",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "If you followed Part 1, Part 2, and Part 3 of this edge AI machine learning operations (MLOps) series, you've seen how a model goes from training and optimization through packaging, signing, and deployment across an edge fleet."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Best practices for scaling A/B testing with experiment protocols",
+      "link": "https://www.datadoghq.com/blog/best-practices-for-scaling-ab-testing-with-experiment-protocols/",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "Learn how to standardize A/B testing at scale with experiment protocols. Define metrics, randomization, exposure, and analysis, then reuse them across teams."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Monitor Oracle AI Database across clouds with Datadog",
+      "link": "https://www.datadoghq.com/blog/monitor-oracle-ai-database-across-clouds/",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "Learn how you can use Datadog to monitor Oracle AI Database on AWS, Azure, and Google Cloud to optimize performance, validate migrations, and manage costs."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Pillow CVE-2026-112900: How to find and fix it with GitLab",
+      "link": "https://about.gitlab.com/blog/pillow-cve-find-and-fix-with-gitlab/",
+      "date": "2026-10-26T00:00:00.000Z",
+      "excerpt": "GitLab is not affected by CVE-2026-112900 or the other vulnerabilities fixed in Pillow 13.0."
+    }
+  ]
+}
