@@ -1,0 +1,431 @@
+{
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T00:04:29.460Z",
+  "count": 53,
+  "articles": [
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem",
+      "link": "https://www.cncf.io/blog/2026/10/28/volcano-v1-16-released-namespacequeue-fairshare-and-a-broader-hypernode-ecosystem/",
+      "date": "2026-10-28T20:45:08.000Z",
+      "excerpt": "Volcano v1.16."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Revinate accelerated API adoption with Amazon API Gateway",
+      "link": "https://aws.amazon.com/blogs/architecture/how-revinate-accelerated-api-adoption-with-amazon-api-gateway/",
+      "date": "2026-10-28T18:32:34.000Z",
+      "excerpt": "Accelerating API adoption while reducing operational overhead is a challenge that every growing organization faces. For Revinate, a hospitality provider serving over 12,500 hotels worldwide and powering more than 1."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Automating agentic AI Well-Architected reviews with the AWS Agentic AI Lens",
+      "link": "https://aws.amazon.com/blogs/architecture/automating-agentic-ai-well-architected-reviews-with-the-aws-agentic-ai-lens/",
+      "date": "2026-10-28T18:25:50.000Z",
+      "excerpt": "Smarsh used the AWS Well-Architected Framework's Agentic AI Lens to review its first agentic workload."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google just handed its rivals the keys to Android",
+      "link": "https://thenewstack.io/android-agents-build-debug/",
+      "date": "2026-10-28T17:43:09.000Z",
+      "excerpt": "Google is giving coding agents like Anthropic’s Claude Code and OpenAI’s Codex deeper access to its Android development tools, including"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "GitHub debuts Copilot Fusion, a new model selection & orchestration system that beats Claude Code for half the API cost",
+      "link": "https://thenewstack.io/github-copilot-fusion/",
+      "date": "2026-10-28T16:19:31.000Z",
+      "excerpt": "GitHub has debuted GitHub Copilot Fusion, a new system that handles model selection and orchestration for coding tasks so developers"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "GitHub saw 7.4B commits in September, adding 4M CPU cores and 160 PB of storage to keep up",
+      "link": "https://thenewstack.io/github-7-4b-commits-september/",
+      "date": "2026-10-28T16:10:00.000Z",
+      "excerpt": "GitHub is seeing unprecedented demand and is updating its core infrastructure to keep pace. In August, GitHub said it was"
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Universe 2026: Evolving every layer of the stack",
+      "link": "https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/",
+      "date": "2026-10-28T16:09:28.000Z",
+      "excerpt": "Today, we laid out our vision for GitHub as the most comprehensive, end-to-end software delivery system in the world."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Evaluate AI models for observability: o11y-bench joins Fireworks' Specialized Intelligence Index and reaches v1.1",
+      "link": "https://grafana.com/blog/evaluate-ai-models-for-observability-o11y-bench-joins-fireworks-specialized-intelligence-index-and-reaches-v1-1/",
+      "date": "2026-10-28T16:08:24.000Z",
+      "excerpt": "When evaluating AI models for observability, generating a plausible query or explanation isn't enough. Teams need to know whether an agent's conclusions are supported by telemetry, whether its changes to dashboards actually work, and whether it can deliver reliable results consistently."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents",
+      "link": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/",
+      "date": "2026-10-28T16:07:40.000Z",
+      "excerpt": "See how a record year of growth reached every industry, every field, and every kind of builder in the 2026 Octoverse report."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Meta Andromeda: Powering the Next Generation of Ads Retrieval Through Model-System Co-Design",
+      "link": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
+      "date": "2026-10-28T16:00:01.000Z",
+      "excerpt": "This post describes the next generation of Meta Andromeda, Meta’s personalized ads retrieval engine, and how co-designing the model, system, and GPU hardware unlocks a new efficiency frontier for ads retrieval."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing the AlloyDB Omni web UI for easier cluster observability",
+      "link": "https://cloud.google.com/blog/products/databases/alloydb-omni-delivers-a-web-ui-for-cluster-observability/",
+      "date": "2026-10-28T16:00:00.000Z",
+      "excerpt": "Managing PostgreSQL databases across on-premises, edge, and multi-cloud environments often forces administrators to rely on command-line tools, making it hard to see cluster health and quickly diagnose issues."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Near-zero downtime upgrades: Announcing Cloud SQL for MySQL blue-green deployments",
+      "link": "https://cloud.google.com/blog/products/databases/cloud-sql-blue-green-deployments/",
+      "date": "2026-10-28T16:00:00.000Z",
+      "excerpt": "Keeping production databases on supported versions shouldn’t require giving up your weekend. To stay secure, compliant, and with the best performance and newest AI capabilities, organizations need to run on the latest database engine versions."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Behind the scenes, two months later: How we ship Google Agent Skills like products",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/behind-the-scenes-two-months-later-how-we-ship-google-agent-skills-like-products/",
+      "date": "2026-10-28T16:00:00.000Z",
+      "excerpt": "In my previous post, I took you behind the scenes of Google Agent Skills, covering how the project started, how we maintain quality at scale, and how we handle governance."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "date": "2026-10-28T14:58:17.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "date": "2026-10-28T13:15:00.000Z",
+      "excerpt": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Win the Agentic Era, Together: Introducing the Docker Navigator Partner Program",
+      "link": "https://www.docker.com/blog/docker-navigator-partner-program/",
+      "date": "2026-10-28T13:00:00.000Z",
+      "excerpt": "Docker is launching the Navigator Partner Program, with three tiers, co-selling benefits, and a new incentive for every registered AI governance deal."
+    },
+    {
+      "source": "Cilium",
+      "category": "k8s",
+      "title": "Hardening Tetragon’s gRPC API with Tetragon",
+      "link": "https://cilium.io/blog/2026/10/28/tetragon-grpc",
+      "date": "2026-10-28T12:00:00.000Z",
+      "excerpt": "Tetragon versions before v1.7 expose an unauthenticated gRPC admin API on , and any pod running with on the same node can reach it."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The future of the firm",
+      "link": "https://openai.com/index/the-future-of-the-firm",
+      "date": "2026-10-28T10:00:00.000Z",
+      "excerpt": "How AI might enter the org chart—beneath, beside, and between us."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Legora is building the agentic operating system for legal work",
+      "link": "https://openai.com/index/legora",
+      "date": "2026-10-28T09:30:00.000Z",
+      "excerpt": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "PHP2Shell Won't Be the Last. Here's Where the Next One Will Show Up First.",
+      "link": "https://snyk.io/blog/php2shell-where-next-one-will-show-up-first/",
+      "date": "2026-10-28T04:00:00.000Z",
+      "excerpt": "PHP2Shell showed how quickly an engine-level flaw can put internet-facing applications at risk. Learn why outside-in inventory, rapid testing, and repeat checks matter before the next disclosure."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Building for tomorrow on Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/building-tomorrow-red-hat-openshift",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "IT leaders today must balance core operations to run smoothly while rapidly transforming infrastructure to drive new business value."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How Atos uses Red Hat AI to build smaller, specialized models for sovereign AI",
+      "link": "https://www.redhat.com/en/blog/how-atos-uses-red-hat-ai-build-smaller-specialized-models-sovereign-ai",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "For an enterprise, AI sovereignty starts with this primary requirement: Retain control of its own data and infrastructure. But as organizations move from experimenting with AI to deploying it in real business processes, control over the models themselves has become increasingly important."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Match monitoring depth to workload needs with Infrastructure Basic",
+      "link": "https://www.datadoghq.com/blog/infrastructure-monitoring-basic/",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "Monitor host health and resource usage across lower-priority workloads with the lightweight Infrastructure Basic tier from Datadog."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "What happens when vulnerabilities are discovered faster than you can fix them?",
+      "link": "https://about.gitlab.com/blog/security-at-machine-speed/",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "We're entering a new era of application security. Frontier AI models are uncovering complex flaws that traditional tools overlooked, and attackers are using the same models to exploit them faster."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Snyk UNFILTERED: Inside Our First-Ever Customer Summit",
+      "link": "https://snyk.io/blog/snyk-unfiltered-customer-summit/",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "At Snyk’s first customer summit, security leaders shared candid perspectives on AI risk, vulnerability remediation, and governing autonomous agents. Five themes reveal how teams are adapting security for AI speed."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+      "link": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "date": "2026-10-27T17:35:00.000Z",
+      "excerpt": "Education Innovation"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Publishing LMS courses with a Kiro SCORM pipeline",
+      "link": "https://aws.amazon.com/blogs/architecture/publishing-lms-courses-with-a-kiro-scorm-pipeline/",
+      "date": "2026-10-27T17:23:23.000Z",
+      "excerpt": "See how to use Kiro, an agentic AI, to automate converting raw training material into compliant SCORM packages that are ready to upload to a learning management system (LMS)."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Build specialized multimodal models with LFM3",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm3",
+      "date": "2026-10-27T17:16:52.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Can we trust LLMs to judge whether a research idea is novel?",
+      "link": "https://huggingface.co/blog/allenai/novelty-bench",
+      "date": "2026-10-27T16:12:42.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "PrivacyLib: Privacy Controls at the Data Access Boundary",
+      "link": "https://engineering.fb.com/2026/10/27/security/privacylib/",
+      "date": "2026-10-27T16:00:12.000Z",
+      "excerpt": "This latest deep dive into Meta’s Privacy Aware Infrastructure (PAI) takes a look at PrivacyLib. A privacy requirement must hold as data moves through Meta’s diverse data and processing systems."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Python Typing Survey 2026: AI Tools and the Shifting Checker Landscape",
+      "link": "https://engineering.fb.com/2026/10/27/developer-tools/python-typing-survey-2026-ai-tools-checker-landscape/",
+      "date": "2026-10-27T15:59:24.000Z",
+      "excerpt": "The 2026 Python Typing Survey received 1,794 responses. Type hint use changed little across three years, but checker selection changed sharply."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "팀이 신뢰할 수 있는 AI 분석 환경 만들기: 추천팀의 컨텍스트 설계",
+      "link": "https://tech.kakao.com/posts/844",
+      "date": "2026-10-27T15:00:00.000Z",
+      "excerpt": "안녕하세요. 카카오톡 숏폼 추천 모델을 개발하고 있는 루퍼트(rupert)입니다."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Agent Observability FAQ: Understand the value of monitoring, evaluating, and improving your AI agents",
+      "link": "https://grafana.com/blog/agent-observability-faq-understand-the-value-of-monitoring-evaluating-and-improving-your-ai-agents/",
+      "date": "2026-10-27T14:32:18.000Z",
+      "excerpt": "Agents have quickly become part of the tech landscape as organizations embrace AI across their businesses."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing the Cloudflare PHP Capture the Flag challenge",
+      "link": "https://blog.cloudflare.com/php-ctf/",
+      "date": "2026-10-27T13:00:00.000Z",
+      "excerpt": "We are launching a PHP Capture the Flag challenge integrated with our Bug Bounty program to test our WAF protections. Security researchers are invited to bypass our defenses and capture the flag to help make the Internet safer."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "What took the Internet offline in Q3 2026",
+      "link": "https://blog.cloudflare.com/q3-2026-internet-disruption-summary/",
+      "date": "2026-10-27T13:00:00.000Z",
+      "excerpt": "An examination of global Internet disruptions observed by Cloudflare Radar during the third quarter of 2026. This review analyzes how power failures, natural disasters, and government shutdowns impacted network connectivity and traffic."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Over 500 Golden Kubestronauts: The evolving standard for cloud native mastery",
+      "link": "https://www.cncf.io/blog/2026/10/27/over-500-golden-kubestronauts-the-evolving-standard-for-cloud-native-mastery/",
+      "date": "2026-10-27T11:30:00.000Z",
+      "excerpt": "Since launching the Kubestronaut program at KubeCon Paris in 2024, the community has grown faster than expected. Today, more than 570 professionals have reached an even higher bar: Golden Kubestronaut status."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "손가락 튕기기로 LLM 비용 줄이기",
+      "link": "https://toss.tech/article/snap-llm-cost-reduction",
+      "date": "2026-10-27T07:05:00.000Z",
+      "excerpt": "토스에서 늘어나는 LLM 비용을 빠르게 줄이는 방법을 소개합니다."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Announcing the Workload Conformance Working Group",
+      "link": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/",
+      "date": "2026-10-27T04:30:00.000Z",
+      "excerpt": "We are excited to announce that the Kubernetes community now has a Workload Conformance Working Group. The working group is writing a shared standard for how workloads behave at runtime on Kubernetes."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Mythos access is expanding: what this means for vulnerability management",
+      "link": "https://webflow.sysdig.com/blog/mythos-access-is-expanding-what-this-means-for-vulnerability-management",
+      "date": "2026-10-27T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "In a pickle: Why every pickle defense in machine learning is bypassed the same way",
+      "link": "https://webflow.sysdig.com/blog/in-a-pickle-why-every-pickle-defense-in-machine-learning-is-bypassed-the-same-way",
+      "date": "2026-10-27T00:00:00.000Z",
+      "excerpt": "Six documented bypasses beat PyTorch weights_only, Keras safe_mode, and picklescan. See which ML formats are safe and what runtime detection catches."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Three layers of open source defense for AI coding agents: OpenShell, Prempti, and Falco",
+      "link": "https://webflow.sysdig.com/blog/three-layers-of-open-source-defense-for-ai-coding-agents-openshell-prempti-and-falco",
+      "date": "2026-10-27T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Securing the enterprise software supply chain in the AI era",
+      "link": "https://www.redhat.com/en/blog/securing-enterprise-software-supply-chain-ai-era",
+      "date": "2026-10-27T00:00:00.000Z",
+      "excerpt": "Across Europe, the Middle East, and Africa (EMEA), enterprise IT is undergoing a fundamental shift. Artificial intelligence (AI) is no longer restricted to isolated sandboxes or pilot projects."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Extend GitLab Duo Agent Platform into your business systems",
+      "link": "https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-into-your-business-systems/",
+      "date": "2026-10-27T00:00:00.000Z",
+      "excerpt": "Developers mostly use GitLab Duo Agent Platform where they already work: the IDE, merge requests, and issues. But DevSecOps teams also support the business systems the rest of the company runs on, and those systems break too."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "How the fastest-growing enterprises on Stripe scale globally",
+      "link": "https://stripe.com/blog/how-the-fastest-growing-enterprises-on-stripe-scale-globally",
+      "date": "2026-10-27T00:00:00.000Z",
+      "excerpt": "Despite slower global economic growth and greater geopolitical fragmentation, the fastest-growing enterprises continue to look beyond their home markets and are investing in tools and workflows that make expansion faster and more repeatable."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
+      "link": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+      "date": "2026-10-26T22:01:23.000Z",
+      "excerpt": "A configuration mismatch in GLM 5.3 on Workers AI triggered an SGLang bug that exposed KV cache pages across requests."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Measuring developer experience on an Amazon EKS developer platform",
+      "link": "https://aws.amazon.com/blogs/containers/measuring-developer-experience-on-an-amazon-eks-developer-platform/",
+      "date": "2026-10-26T17:32:58.000Z",
+      "excerpt": "Most platform teams can't prove their internal developer platform is improving software delivery."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Tracing failures across Terraform state boundaries with AWS DevOps Agent",
+      "link": "https://aws.amazon.com/blogs/devops/tracing-failures-across-terraform-state-boundaries-with-aws-devops-agent/",
+      "date": "2026-10-26T17:21:23.000Z",
+      "excerpt": "When a change in one Terraform stack silently breaks an application in another, the team seeing the symptoms often doesn't own the stack that caused it. This post shows how AWS DevOps Agent traces the root cause across Terraform state boundaries, then pairs with Kiro to generate the fix."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Making Failure Diagnosis Reliable with Pensive AI",
+      "link": "https://netflixtechblog.com/making-failure-diagnosis-reliable-with-pensive-ai-6b0811a1c015?source=rss----2615bd06b42e---4",
+      "date": "2026-10-26T17:04:57.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Multi‑Ratio Video Resizing for Mobile Feed and Marketing",
+      "link": "https://netflixtechblog.com/multi-ratio-video-resizing-for-mobile-feed-and-marketing-2e6b42810f49?source=rss----2615bd06b42e---4",
+      "date": "2026-10-26T16:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "link": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "date": "2026-10-26T16:00:00.000Z",
+      "excerpt": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”"
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Scale reservoir uncertainty analysis with agile reservoir modeling",
+      "link": "https://azure.microsoft.com/en-us/blog/scale-reservoir-uncertainty-analysis-with-agile-reservoir-modeling/",
+      "date": "2026-10-26T16:00:00.000Z",
+      "excerpt": "As subsurface data grows in scale and complexity, teams need a faster, more connected way to transform uncertainty into actionable decisions."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Isolation. Security. Scale.",
+      "link": "https://www.cncf.io/blog/2026/10/26/isolation-security-scale/",
+      "date": "2026-10-26T11:30:00.000Z",
+      "excerpt": "Without these three things, Agents cannot be properly implemented in a controlled environment, they will not have policy enforcement to ensure they do what they’re supposed to do, and there’s zero way of ensuring that the."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "Flava MCP Hub가 걸어온 길: AI 시대를 위한 배관 공사",
+      "link": "https://techblog.lycorp.co.jp/ko/flava-mcp-hub-ai-infrastructure",
+      "date": "2026-10-26T02:00:00.000Z",
+      "excerpt": "들어가며\"우리 서비스, 지금 어떤 상태야?\"AI 에이전트에게 이렇게 물어보신 적 있으신가요?"
+    }
+  ]
+}
