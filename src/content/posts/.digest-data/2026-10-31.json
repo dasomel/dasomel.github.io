@@ -1,0 +1,367 @@
+{
+  "date": "2026-10-31",
+  "generatedAt": "2026-10-30T23:54:33.272Z",
+  "count": 45,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic just removed one of Claude’s biggest usage limits — but not for everyone",
+      "link": "https://thenewstack.io/claude-ultra-session-limit/",
+      "date": "2026-10-30T20:14:04.000Z",
+      "excerpt": "Claude Code users on Anthropic’s $200 plan will no longer face a rolling five-hour usage cap, provided their accounts are"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Busy GPUs can hide slow AI inference on Kubernetes",
+      "link": "https://thenewstack.io/ai-inference-kubernetes-observability/",
+      "date": "2026-10-30T19:56:41.000Z",
+      "excerpt": "A Kubernetes cluster can be healthy while the AI service running on it disappoints users. A model might return its"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "What worries Entire co-founder Thomas Dohmke about the future of tech?",
+      "link": "https://thenewstack.io/we-are-developers-tech-predictions/",
+      "date": "2026-10-30T19:37:46.000Z",
+      "excerpt": "Former GitHub CEO Thomas Dohmke is taking on his old company. His startup, Entire, launched a GitHub alternative this week,"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "nemotron-halloween",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+      "date": "2026-10-30T17:57:24.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
+      "link": "https://blog.cloudflare.com/emudhra-patching/",
+      "date": "2026-10-30T17:38:50.000Z",
+      "excerpt": "Four, just four: that’s the key to break into any unpatched connection on the Internet that is using eMudhra certificates. Here’s how we quickly patched Cloudflare, what evidence we can see of attempted exploitation, and how much of the rest of the Internet remains exposed."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new in AI infrastructure and orchestration in October",
+      "link": "https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/",
+      "date": "2026-10-30T16:00:00.000Z",
+      "excerpt": "The Google Cloud AI Infrastructure team had another busy month in October, filled with new product launches and updates to power today’s AI and agentic workloads scalably and efficiently."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "When the Kubernetes API went silent: A three-layer networking mystery",
+      "link": "https://cloud.google.com/blog/products/networking/the-three-layer-gke-network-mystery/",
+      "date": "2026-10-30T16:00:00.000Z",
+      "excerpt": "Every support engineer has a case that stays with them. The one that comes up at team lunches."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Innovate on your own business terms: Google Cloud spend caps now generally available",
+      "link": "https://cloud.google.com/blog/topics/cost-management/google-cloud-spend-caps-now-generally-available/",
+      "date": "2026-10-30T16:00:00.000Z",
+      "excerpt": "Today, we’re announcing that spend caps on Google Cloud Budgets are generally available. With this release, we’re delivering ways to protect your workloads from runaway costs without risking resource deletion."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare services for private origins is now generally available",
+      "link": "https://blog.cloudflare.com/private-origins-public-to-private/",
+      "date": "2026-10-30T14:23:43.000Z",
+      "excerpt": "Public traffic to private origins, with WAF, bot management, caching, and Workers, is now available to every customer with Cloudflare One connectivity."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Making it easier for websites to express AI training preferences",
+      "link": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "date": "2026-10-30T09:30:00.000Z",
+      "excerpt": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Community safety report and new protections for teens",
+      "link": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "date": "2026-10-30T09:00:00.000Z",
+      "excerpt": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "KubeCon + CloudNativeCon NA 2026: End User TAB recommendations and tips",
+      "link": "https://www.cncf.io/blog/2026/10/29/kubecon-cloudnativecon-na-2026-end-user-tab-recommendations-and-tips/",
+      "date": "2026-10-30T00:43:04.000Z",
+      "excerpt": "KubeCon + CloudNativeCon NA 2026 in Salt Lake City will bring the cloud native community together with projects, vendors and end users in what is one of the largest open source events. In this post, we."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Fair use benefits everyone",
+      "link": "https://openai.com/index/fair-use-benefits-everyone",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How parental leave helped 2 new parents find their rhythm",
+      "link": "https://www.redhat.com/en/blog/how-parental-leave-helped-2-new-parents-find-their-rhythm",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "Becoming a parent brings so much excitement, and can have its fair share of challenges. At Red Hat, parental leave is designed so work isn't one of those worries."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — October 30, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-october-30-2026-red-hat",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "Fierce Network - Telcos can cash in on AI, not just pay for it: Red HatRed Hat's Joe Fernandes discusses how open models can help telcos move from renting AI capacity to owning it and selling inference and agent services."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Direct VM networking in AWS: Introducing BGP cloud connector on Red Hat OpenShift Service on AWS",
+      "link": "https://www.redhat.com/en/blog/direct-vm-networking-aws-introducing-bgp-cloud-connector-red-hat-openshift-service-aws",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "When migrating virtual machines (VMs) to the cloud, virtualization engineers hit a familiar wall: how do you route traffic directly to a Red Hat OpenShift Virtualization guest VM using that VM’s own IP address?"
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we use Insights to improve the agent behind Insights",
+      "link": "https://www.datadoghq.com/blog/improving-insights-agent-observability/",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "Learn how Datadog uses Insights in Agent Observability to identify cost and reliability problems in its own AI agent and prepare fixes."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Stripe on Stripe: What we learned moving $1B in vendor payments to Global Payouts",
+      "link": "https://stripe.com/blog/stripe-on-stripe-what-we-learned-moving-1b-in-vendor-payments-to-global-payouts",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "In early 2026, we began moving our vendor payments to Global Payouts, Stripe’s product for paying recipients in 160+ countries. New-market setup fell from six weeks to one, with a 99."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How BMW Group accelerated connected vehicle workloads on AWS Graviton",
+      "link": "https://aws.amazon.com/blogs/architecture/how-bmw-group-accelerated-connected-vehicle-workloads-on-aws-graviton/",
+      "date": "2026-10-29T20:11:14.000Z",
+      "excerpt": "Learn how BMW Group migrated its connected vehicle platform from x86 to AWS Graviton."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How boAt delivers personalized fitness coaching with Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/architecture/how-boat-delivers-personalized-fitness-coaching-with-amazon-bedrock/",
+      "date": "2026-10-29T18:16:38.000Z",
+      "excerpt": "Learn how boAt built its AI Coach feature on Amazon Bedrock and AWS Lambda to deliver personalized, real-time fitness coaching to millions of smartwatch users across India, and the design choices that made the solution scalable and cost-effective."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The boundary problem in agentic AI is a platform problem",
+      "link": "https://www.cncf.io/blog/2026/10/29/the-boundary-problem-in-agentic-ai-is-a-platform-problem/",
+      "date": "2026-10-29T18:11:50.000Z",
+      "excerpt": "An autonomous agent will do exactly what its tools let it do, and no more. This sounds like a constraint."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale",
+      "link": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+      "date": "2026-10-29T16:00:12.000Z",
+      "excerpt": "Over the last year we’ve been sharing our work leveraging large language models to catch bugs on the fly — a novel approach we call Catching Just-in-Time Tests (JiTTests). Now, we’re sharing the results and positive impact we’ve seen with Catching JiTTests deployed into production."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Azure Cloud HSM Hardware Audit Logging: Verifiable audit trails for security and compliance",
+      "link": "https://azure.microsoft.com/en-us/blog/azure-cloud-hsm-hardware-audit-logging-verifiable-audit-trails-for-security-and-compliance/",
+      "date": "2026-10-29T16:00:00.000Z",
+      "excerpt": "Security, compliance, and operations teams can use this hardware-originated evidence for monitoring, compliance reporting, and forensic investigations."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Grafana 13.3 release: manage variables across dashboards, share findings with Notebooks, a UI refresh, and more",
+      "link": "https://grafana.com/blog/grafana-13-3-release-all-the-latest-features/",
+      "date": "2026-10-29T15:01:42.000Z",
+      "excerpt": "Grafana 13.3 is here, bringing more consistency and control to how you work across Grafana."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Granite Switch 4.1.1 — Update models like you update software",
+      "link": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+      "date": "2026-10-29T13:37:07.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Coding Agent Horror Stories: The CVE That Did Not Exist",
+      "link": "https://www.docker.com/blog/coding-agent-horror-stories-the-cve-that-did-not-exist/",
+      "date": "2026-10-29T13:00:00.000Z",
+      "excerpt": "An AI code review agent invented a CVE and recommended dangerous fixes. Learn how Docker Sandboxes contain agents and why their output needs verification."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants",
+      "link": "https://blog.cloudflare.com/ddos-threat-report-2026-q3/",
+      "date": "2026-10-29T12:55:00.000Z",
+      "excerpt": "Cloudflare mitigated over 8,200 DDoS attacks per hour in Q3 2026 as attackers shifted to shorter, high-frequency strikes. Explore the latest threat data, including the collapse of CLDAP vectors and the impact of recent botnet takedowns."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "From Working Group to SIG Architecture: spotlight on AI Conformance",
+      "link": "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/",
+      "date": "2026-10-29T05:00:00.000Z",
+      "excerpt": "In this SIG Architecture spotlight we talked with Janet Kuo (Google) and Yuan Tang (TensorScale AI) about the journey of AI Conformance in Kubernetes, from the initial Working Group to the integration SIG Architecture as a subproject."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+      "link": "https://huggingface.co/blog/announcing-project-protostar",
+      "date": "2026-10-29T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Datadog named a Leader in the Forrester Wave™: AIOps Platforms, Q4 2026",
+      "link": "https://www.datadoghq.com/blog/datadog-aiops-platforms-forrester-wave-2026/",
+      "date": "2026-10-29T00:00:00.000Z",
+      "excerpt": "Datadog has been named a Leader in this report, reflecting Datadog’s commitment to transforming observability into AI-powered, autonomous operations."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Trace voice agents with Datadog Agent Observability",
+      "link": "https://www.datadoghq.com/blog/agent-observability-voice-agent/",
+      "date": "2026-10-29T00:00:00.000Z",
+      "excerpt": "Use Agent Observability to replay voice interactions and investigate latency, cost, interruptions, and transcripts across OpenAI Realtime sessions."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Orbit is GA: Higher agent accuracy, lower token cost",
+      "link": "https://about.gitlab.com/blog/gitlab-orbit-ga/",
+      "date": "2026-10-29T00:00:00.000Z",
+      "excerpt": "An agent’s true cost isn’t only the tokens it burns. It’s the review that calls your code “safe to merge” after seeing the diff, but without any context on the pipeline."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Orbit: Find vulnerability blast radius without the manual hunt",
+      "link": "https://about.gitlab.com/blog/find-vulnerability-blast-radius-with-gitlab-orbit/",
+      "date": "2026-10-29T00:00:00.000Z",
+      "excerpt": "A critical vulnerability needs a fix and a map. The fix is usually fast."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem",
+      "link": "https://www.cncf.io/blog/2026/10/28/volcano-v1-16-released-namespacequeue-fairshare-and-a-broader-hypernode-ecosystem/",
+      "date": "2026-10-28T20:45:08.000Z",
+      "excerpt": "Volcano v1.16."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Revinate accelerated API adoption with Amazon API Gateway",
+      "link": "https://aws.amazon.com/blogs/architecture/how-revinate-accelerated-api-adoption-with-amazon-api-gateway/",
+      "date": "2026-10-28T18:32:34.000Z",
+      "excerpt": "Accelerating API adoption while reducing operational overhead is a challenge that every growing organization faces. For Revinate, a hospitality provider serving over 12,500 hotels worldwide and powering more than 1."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Introducing the Microsoft Copilot harness in Foundry Agent Service",
+      "link": "https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/",
+      "date": "2026-10-28T17:40:56.000Z",
+      "excerpt": "Today, we’re introducing the Microsoft Copilot harness in Foundry Agent Service in public preview."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "GitHub Universe 2026: Evolving every layer of the stack",
+      "link": "https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/",
+      "date": "2026-10-28T16:09:28.000Z",
+      "excerpt": "Today, we laid out our vision for GitHub as the most comprehensive, end-to-end software delivery system in the world."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Evaluate AI models for observability: o11y-bench joins Fireworks' Specialized Intelligence Index and reaches v1.1",
+      "link": "https://grafana.com/blog/evaluate-ai-models-for-observability-o11y-bench-joins-fireworks-specialized-intelligence-index-and-reaches-v1-1/",
+      "date": "2026-10-28T16:08:24.000Z",
+      "excerpt": "When evaluating AI models for observability, generating a plausible query or explanation isn't enough. Teams need to know whether an agent's conclusions are supported by telemetry, whether its changes to dashboards actually work, and whether it can deliver reliable results consistently."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents",
+      "link": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/",
+      "date": "2026-10-28T16:07:40.000Z",
+      "excerpt": "See how a record year of growth reached every industry, every field, and every kind of builder in the 2026 Octoverse report."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Meta Andromeda: Powering the Next Generation of Ads Retrieval Through Model-System Co-Design",
+      "link": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
+      "date": "2026-10-28T16:00:01.000Z",
+      "excerpt": "This post describes the next generation of Meta Andromeda, Meta’s personalized ads retrieval engine, and how co-designing the model, system, and GPU hardware unlocks a new efficiency frontier for ads retrieval."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Win the Agentic Era, Together: Introducing the Docker Navigator Partner Program",
+      "link": "https://www.docker.com/blog/docker-navigator-partner-program/",
+      "date": "2026-10-28T13:00:00.000Z",
+      "excerpt": "Docker is launching the Navigator Partner Program, with three tiers, co-selling benefits, and a new incentive for every registered AI governance deal."
+    },
+    {
+      "source": "Cilium",
+      "category": "k8s",
+      "title": "Hardening Tetragon’s gRPC API with Tetragon",
+      "link": "https://cilium.io/blog/2026/10/28/tetragon-grpc",
+      "date": "2026-10-28T12:00:00.000Z",
+      "excerpt": "Tetragon versions before v1.7 expose an unauthenticated gRPC admin API on , and any pod running with on the same node can reach it."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "PHP2Shell Won't Be the Last. Here's Where the Next One Will Show Up First.",
+      "link": "https://snyk.io/blog/php2shell-where-next-one-will-show-up-first/",
+      "date": "2026-10-28T04:00:00.000Z",
+      "excerpt": "PHP2Shell showed how quickly an engine-level flaw can put internet-facing applications at risk. Learn why outside-in inventory, rapid testing, and repeat checks matter before the next disclosure."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "What happens when vulnerabilities are discovered faster than you can fix them?",
+      "link": "https://about.gitlab.com/blog/security-at-machine-speed/",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "We're entering a new era of application security. Frontier AI models are uncovering complex flaws that traditional tools overlooked, and attackers are using the same models to exploit them faster."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Snyk UNFILTERED: Inside Our First-Ever Customer Summit",
+      "link": "https://snyk.io/blog/snyk-unfiltered-customer-summit/",
+      "date": "2026-10-28T00:00:00.000Z",
+      "excerpt": "At Snyk’s first customer summit, security leaders shared candid perspectives on AI risk, vulnerability remediation, and governing autonomous agents. Five themes reveal how teams are adapting security for AI speed."
+    }
+  ]
+}
