@@ -1,6 +1,6 @@
 ---
 title: "📰 Daily Tech Digest - 2026-11-01"
-description: "33 curated updates from the Cloud, Kubernetes, AI & DevOps world for 2026-11-01."
+description: "3 curated updates from the Cloud, Kubernetes, AI & DevOps world for 2026-11-01."
 pubDate: 2026-11-01
 tags: ["Daily Digest", "Kubernetes", "Cloud Native", "AI", "DevOps"]
 featured: false
@@ -10,135 +10,11 @@ draft: false
 
 ### The context problem: How Docusign built agents that understand the business behind contracts
 
-Ask a general-purpose language model to summarize a contract, and it will probably do a reasonable job. Ask it to
+Docusign detailed the architecture of Iris, its contract AI engine that powers the Intelligent Agreement Management (IAM) platform introduced in April 2024. Docusign CTO Sagnik Nandy explained that general LLMs treat amendments and revised pricing schedules as isolated PDF files, failing to grasp overarching contractual relationships without custom grouping logic. To address this, Iris structures context into four tiers: within-agreement, cross-agreement, organizational playbooks, and user preferences, combining extraction with semantic search. Answering queries such as renewals exceeding $1 million or multi-amendment payment obligations involves orchestrating five to six specialized tools across the contract lifecycle. Organizations maintain governance through Workflow Builder and Agent Studio, automating routine renewals below spending thresholds while routing high-value exceptions to human review. According to Docusign's 2026 Customer Awards, customer Experian reduced contract cycle times from approximately 10 days to hours by integrating Docusign with its CPQ system.
+
+> 💡 **Why it matters**: When deploying enterprise AI agents, teams must integrate domain-specific approval workflows and human-in-the-loop thresholds alongside LLM reasoning to prevent automated compliance failures.
 
 🔗 [Read more](https://thenewstack.io/docusign-contract-ai-agents/) · _The New Stack_
-
----
-
-## Kubernetes & Cloud Native
-
-### [KubeCon + CloudNativeCon NA 2026: End User TAB recommendations and tips](https://www.cncf.io/blog/2026/10/29/kubecon-cloudnativecon-na-2026-end-user-tab-recommendations-and-tips/)
-
-_CNCF_
-
-KubeCon + CloudNativeCon NA 2026 in Salt Lake City will bring the cloud native community together with projects, vendors and end users in what is one of the largest open source events. In this post, we.
-
-### [The boundary problem in agentic AI is a platform problem](https://www.cncf.io/blog/2026/10/29/the-boundary-problem-in-agentic-ai-is-a-platform-problem/)
-
-_CNCF_
-
-An autonomous agent will do exactly what its tools let it do, and no more. This sounds like a constraint.
-
-### [Coding Agent Horror Stories: The CVE That Did Not Exist](https://www.docker.com/blog/coding-agent-horror-stories-the-cve-that-did-not-exist/)
-
-_Docker_
-
-An AI code review agent invented a CVE and recommended dangerous fixes. Learn how Docker Sandboxes contain agents and why their output needs verification.
-
-### [From Working Group to SIG Architecture: spotlight on AI Conformance](https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/)
-
-_Kubernetes_
-
-In this SIG Architecture spotlight we talked with Janet Kuo (Google) and Yuan Tang (TensorScale AI) about the journey of AI Conformance in Kubernetes, from the initial Working Group to the integration SIG Architecture as a subproject.
-
----
-
-## AI & ML
-
-### [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences)
-
-_OpenAI_
-
-OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers.
-
-### [Community safety report and new protections for teens](https://openai.com/index/community-safety-report-and-new-protections-for-teens)
-
-_OpenAI_
-
-OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting.
-
-### [Fair use benefits everyone](https://openai.com/index/fair-use-benefits-everyone)
-
-_OpenAI_
-
-OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation.
-
----
-
-## Cloud Updates
-
-### [4 real? Tracking exploitation and patching of eMudhra’s weak keys](https://blog.cloudflare.com/emudhra-patching/)
-
-_Cloudflare_
-
-Four, just four: that’s the key to break into any unpatched connection on the Internet that is using eMudhra certificates. Here’s how we quickly patched Cloudflare, what evidence we can see of attempted exploitation, and how much of the rest of the Internet remains exposed.
-
-### [What’s new in AI infrastructure and orchestration in October](https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/)
-
-_Google Cloud_
-
-The Google Cloud AI Infrastructure team had another busy month in October, filled with new product launches and updates to power today’s AI and agentic workloads scalably and efficiently.
-
-### [When the Kubernetes API went silent: A three-layer networking mystery](https://cloud.google.com/blog/products/networking/the-three-layer-gke-network-mystery/)
-
-_Google Cloud_
-
-Every support engineer has a case that stays with them. The one that comes up at team lunches.
-
-### [Innovate on your own business terms: Google Cloud spend caps now generally available](https://cloud.google.com/blog/topics/cost-management/google-cloud-spend-caps-now-generally-available/)
-
-_Google Cloud_
-
-Today, we’re announcing that spend caps on Google Cloud Budgets are generally available. With this release, we’re delivering ways to protect your workloads from runaway costs without risking resource deletion.
-
-### [Cloudflare services for private origins is now generally available](https://blog.cloudflare.com/private-origins-public-to-private/)
-
-_Cloudflare_
-
-Public traffic to private origins, with WAF, bot management, caching, and Workers, is now available to every customer with Cloudflare One connectivity.
-
-### [How parental leave helped 2 new parents find their rhythm](https://www.redhat.com/en/blog/how-parental-leave-helped-2-new-parents-find-their-rhythm)
-
-_Red Hat_
-
-Becoming a parent brings so much excitement, and can have its fair share of challenges. At Red Hat, parental leave is designed so work isn't one of those worries.
-
-### [Friday Five — October 30, 2026 | Red Hat](https://www.redhat.com/en/blog/friday-five-october-30-2026-red-hat)
-
-_Red Hat_
-
-Fierce Network - Telcos can cash in on AI, not just pay for it: Red HatRed Hat's Joe Fernandes discusses how open models can help telcos move from renting AI capacity to owning it and selling inference and agent services.
-
-### [Direct VM networking in AWS: Introducing BGP cloud connector on Red Hat OpenShift Service on AWS](https://www.redhat.com/en/blog/direct-vm-networking-aws-introducing-bgp-cloud-connector-red-hat-openshift-service-aws)
-
-_Red Hat_
-
-When migrating virtual machines (VMs) to the cloud, virtualization engineers hit a familiar wall: how do you route traffic directly to a Red Hat OpenShift Virtualization guest VM using that VM’s own IP address?
-
-### [How BMW Group accelerated connected vehicle workloads on AWS Graviton](https://aws.amazon.com/blogs/architecture/how-bmw-group-accelerated-connected-vehicle-workloads-on-aws-graviton/)
-
-_AWS Architecture_
-
-Learn how BMW Group migrated its connected vehicle platform from x86 to AWS Graviton.
-
-### [How boAt delivers personalized fitness coaching with Amazon Bedrock](https://aws.amazon.com/blogs/architecture/how-boat-delivers-personalized-fitness-coaching-with-amazon-bedrock/)
-
-_AWS Architecture_
-
-Learn how boAt built its AI Coach feature on Amazon Bedrock and AWS Lambda to deliver personalized, real-time fitness coaching to millions of smartwatch users across India, and the design choices that made the solution scalable and cost-effective.
-
-### [Azure Cloud HSM Hardware Audit Logging: Verifiable audit trails for security and compliance](https://azure.microsoft.com/en-us/blog/azure-cloud-hsm-hardware-audit-logging-verifiable-audit-trails-for-security-and-compliance/)
-
-_Azure_
-
-Security, compliance, and operations teams can use this hardware-originated evidence for monitoring, compliance reporting, and forensic investigations.
-
-### [Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants](https://blog.cloudflare.com/ddos-threat-report-2026-q3/)
-
-_Cloudflare_
-
-Cloudflare mitigated over 8,200 DDoS attacks per hour in Q3 2026 as attackers shifted to shorter, high-frequency strikes. Explore the latest threat data, including the collapse of CLDAP vectors and the impact of recent botnet takedowns.
 
 ---
 
@@ -148,70 +24,18 @@ Cloudflare mitigated over 8,200 DDoS attacks per hour in Q3 2026 as attackers sh
 
 _The New Stack_
 
-OpenSearch has come a long way since Amazon Web Services first announced the project back in January 2021, in response
+Five years after AWS forked Elasticsearch in January 2021, OpenSearch is actively working to establish vendor-neutral credibility under the Linux Foundation. Speaking at Open Source Summit Europe in Prague, OpenSearch Software Foundation executive director Bianca Lewis emphasized that donating the project in September 2024 permanently secured its open-source license. According to foundation data, AWS's share of project contribution activities dropped from 91% in year one to 72% in 2025-26, while Amazon-affiliated core maintainers decreased from 95% in April 2022 to 71% today. The 2026 Open Data Infrastructure Report revealed that self-managed cloud deployments jumped from 37% in 2024 to 60%, outpacing Amazon Managed OpenSearch Service growth from 44% to 48%. Nonetheless, 24% of 71 surveyed non-adopters still cite AWS ties as a barrier, and AWS maintains 4 of 15 Technical Steering Committee seats with AWS engineer Andrew Ross reelected as chair in October. On the technical front, the September release of OpenSearch 3.9 expanded vector and hybrid search capabilities to target enterprise AI retrieval-augmented generation workloads.
+
+> 💡 The growing shift toward self-managed OpenSearch deployments underscores how platform teams prioritize avoiding cloud vendor lock-in for AI search infrastructure despite ongoing vendor influence in governance.
 
 ### [Developers ask AI which tool to use. Here’s how we track the answer.](https://thenewstack.io/tracking-ai-tool-recommendations/)
 
 _The New Stack_
 
-We asked Claude “Which CMS platforms support MCP integration?” It searched the web and put Webflow in its first group,
+With Stack Overflow's 2026 developer survey reporting that nearly 70% of respondents use AI agents to find answers, Webflow analyzed how AI search engines recommend developer tools. Between September 25 and October 19, the team executed 100 benchmark queries across ChatGPT, Claude, Gemini, and Perplexity using the prompt "Which CMS platforms support MCP integration?" Webflow appeared in 49 of the 100 responses, revealing substantial platform variance ranging from 22 out of 25 on Perplexity down to 4 out of 25 on Claude. Crucially, a single third-party guide on llmcms.org was cited in 60 of the 100 responses, demonstrating that AI answer engines heavily reference aggregated external summaries. To improve agent discoverability, the authors advise DevOps teams to verify AI crawler user-agents like GPTBot against CDN and firewall rules and expose clean text via `/llms.txt` or `.md` endpoints. The guide also emphasizes engineering intent-based MCP tool descriptions, embedding JSON-LD metadata, and restricting agent operations using scoped OAuth permissions.
 
-### [How we use Insights to improve the agent behind Insights](https://www.datadoghq.com/blog/improving-insights-agent-observability/)
-
-_Datadog_
-
-Learn how Datadog uses Insights in Agent Observability to identify cost and reliability problems in its own AI agent and prepare fixes.
-
-### [Stripe on Stripe: What we learned moving $1B in vendor payments to Global Payouts](https://stripe.com/blog/stripe-on-stripe-what-we-learned-moving-1b-in-vendor-payments-to-global-payouts)
-
-_Stripe_
-
-In early 2026, we began moving our vendor payments to Global Payouts, Stripe’s product for paying recipients in 160+ countries. New-market setup fell from six weeks to one, with a 99.
-
-### [Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale](https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/)
-
-_Meta Engineering_
-
-Over the last year we’ve been sharing our work leveraging large language models to catch bugs on the fly — a novel approach we call Catching Just-in-Time Tests (JiTTests). Now, we’re sharing the results and positive impact we’ve seen with Catching JiTTests deployed into production.
-
-### [Grafana 13.3 release: manage variables across dashboards, share findings with Notebooks, a UI refresh, and more](https://grafana.com/blog/grafana-13-3-release-all-the-latest-features/)
-
-_Grafana_
-
-Grafana 13.3 is here, bringing more consistency and control to how you work across Grafana.
-
-### [Datadog named a Leader in the Forrester Wave™: AIOps Platforms, Q4 2026](https://www.datadoghq.com/blog/datadog-aiops-platforms-forrester-wave-2026/)
-
-_Datadog_
-
-Datadog has been named a Leader in this report, reflecting Datadog’s commitment to transforming observability into AI-powered, autonomous operations.
-
-### [Trace voice agents with Datadog Agent Observability](https://www.datadoghq.com/blog/agent-observability-voice-agent/)
-
-_Datadog_
-
-Use Agent Observability to replay voice interactions and investigate latency, cost, interruptions, and transcripts across OpenAI Realtime sessions.
-
-### [GitLab Orbit is GA: Higher agent accuracy, lower token cost](https://about.gitlab.com/blog/gitlab-orbit-ga/)
-
-_GitLab_
-
-An agent’s true cost isn’t only the tokens it burns. It’s the review that calls your code “safe to merge” after seeing the diff, but without any context on the pipeline.
-
-### [GitLab Orbit: Find vulnerability blast radius without the manual hunt](https://about.gitlab.com/blog/find-vulnerability-blast-radius-with-gitlab-orbit/)
-
-_GitLab_
-
-A critical vulnerability needs a fix and a map. The fix is usually fast.
+> 💡 Platform and documentation teams must optimize beyond traditional SEO by maintaining `/llms.txt` endpoints and semantic schemas so internal tools and public services are accurately discovered by developer AI agents.
 
 ---
 
-## ⚡ Quick News
-
-- [nemotron-halloween](https://huggingface.co/blog/nvidia/nemotron-halloween) — _Hugging Face_
-- [Granite Switch 4.1.1 — Update models like you update software](https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1) — _Hugging Face_
-- [Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready](https://huggingface.co/blog/announcing-project-protostar) — _Hugging Face_
-
----
-
-_This digest was automatically collected from RSS feeds. Excerpts are taken verbatim from each source — see the original links for full details._
+_This digest was collected from RSS feeds and summarized by AI (Claude). See the original links for full details._
