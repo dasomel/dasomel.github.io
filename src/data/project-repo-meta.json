@@ -5,56 +5,16 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 101,
-    "language": "Shell",
+    "openIssues": 123,
+    "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-08-27T04:19:24Z",
+    "pushedAt": "2026-11-01T01:28:04Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 217,
-    "releaseCount": 0,
-    "contributorCount": 1,
+    "commitCount": 867,
+    "releaseCount": 1,
+    "contributorCount": 2,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762650000,
         "total": 0
@@ -213,17 +173,305 @@
       },
       {
         "week": 1786233600,
-        "total": 72
+        "total": 75
       },
       {
         "week": 1786838400,
-        "total": 88
+        "total": 118
       },
       {
         "week": 1787443200,
-        "total": 37
+        "total": 45
+      },
+      {
+        "week": 1788048000,
+        "total": 5
+      },
+      {
+        "week": 1788652800,
+        "total": 57
+      },
+      {
+        "week": 1789257600,
+        "total": 56
+      },
+      {
+        "week": 1789862400,
+        "total": 57
+      },
+      {
+        "week": 1790467200,
+        "total": 88
+      },
+      {
+        "week": 1791072000,
+        "total": 72
+      },
+      {
+        "week": 1791676800,
+        "total": 75
+      },
+      {
+        "week": 1792281600,
+        "total": 23
+      },
+      {
+        "week": 1792886400,
+        "total": 32
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
-    ]
+    ],
+    "latestRelease": {
+      "tag": "v0.1.0",
+      "name": "v0.1.0",
+      "publishedAt": "2026-10-15T12:35:43Z",
+      "url": "https://github.com/dasomel/beluga/releases/tag/v0.1.0"
+    },
+    "latestTag": {
+      "name": "v0.1.0",
+      "commitSha": "5adf8fc6cfb0fee26c5b3dc964e63f36762e113e",
+      "url": "https://api.github.com/repos/dasomel/beluga/commits/5adf8fc6cfb0fee26c5b3dc964e63f36762e113e"
+    }
+  },
+  "dasomel/clusterdeck": {
+    "repo": "dasomel/clusterdeck",
+    "htmlUrl": "https://github.com/dasomel/clusterdeck",
+    "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 7,
+    "language": "Rust",
+    "license": "Apache-2.0",
+    "createdAt": "2026-08-24T08:41:38Z",
+    "pushedAt": "2026-10-29T04:55:07Z",
+    "firstCommitAt": "2026-08-24T08:52:21Z",
+    "commitCount": 315,
+    "releaseCount": 6,
+    "contributorCount": 2,
+    "activity": [
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 78
+      },
+      {
+        "week": 1788048000,
+        "total": 4
+      },
+      {
+        "week": 1788652800,
+        "total": 7
+      },
+      {
+        "week": 1789257600,
+        "total": 6
+      },
+      {
+        "week": 1789862400,
+        "total": 80
+      },
+      {
+        "week": 1790467200,
+        "total": 9
+      },
+      {
+        "week": 1791072000,
+        "total": 6
+      },
+      {
+        "week": 1791676800,
+        "total": 40
+      },
+      {
+        "week": 1792281600,
+        "total": 14
+      },
+      {
+        "week": 1792886400,
+        "total": 7
+      },
+      {
+        "week": 1793491200,
+        "total": 0
+      }
+    ],
+    "latestRelease": {
+      "tag": "v0.5.0",
+      "name": "ClusterDeck v0.5.0",
+      "publishedAt": "2026-10-26T16:08:44Z",
+      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.5.0"
+    },
+    "latestTag": {
+      "name": "v0.5.0",
+      "commitSha": "b4b7e4c263a46f31a1098c90cab24ae55793c32d",
+      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/b4b7e4c263a46f31a1098c90cab24ae55793c32d"
+    }
   },
   "dasomel/egovframe-launcher": {
     "repo": "dasomel/egovframe-launcher",
@@ -231,56 +479,16 @@
     "description": "Local GUI launcher + CLI scripts for building, running, and debugging eGovFrame Standard Framework sample projects in VSCode (community)",
     "stars": 1,
     "forks": 0,
-    "openIssues": 6,
+    "openIssues": 5,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-07-14T15:01:24Z",
-    "pushedAt": "2026-08-27T16:19:48Z",
+    "pushedAt": "2026-10-22T04:13:43Z",
     "firstCommitAt": "2026-07-14T14:52:01Z",
-    "commitCount": 18,
+    "commitCount": 33,
     "releaseCount": 8,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762650000,
         "total": 0
@@ -448,6 +656,46 @@
       {
         "week": 1787443200,
         "total": 2
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 6
+      },
+      {
+        "week": 1789257600,
+        "total": 0
+      },
+      {
+        "week": 1789862400,
+        "total": 7
+      },
+      {
+        "week": 1790467200,
+        "total": 0
+      },
+      {
+        "week": 1791072000,
+        "total": 2
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -472,52 +720,12 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2025-12-26T21:37:41Z",
-    "pushedAt": "2026-08-26T01:23:24Z",
+    "pushedAt": "2026-11-01T22:52:22Z",
     "firstCommitAt": "2016-02-01T11:59:10Z",
-    "commitCount": 13023,
-    "releaseCount": 3,
-    "contributorCount": 344,
+    "commitCount": 13188,
+    "releaseCount": 5,
+    "contributorCount": 346,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -685,18 +893,58 @@
       {
         "week": 1787443200,
         "total": 0
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 0
+      },
+      {
+        "week": 1789257600,
+        "total": 0
+      },
+      {
+        "week": 1789862400,
+        "total": 0
+      },
+      {
+        "week": 1790467200,
+        "total": 0
+      },
+      {
+        "week": 1791072000,
+        "total": 0
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ],
     "latestRelease": {
-      "tag": "v2.15.1",
-      "name": "v2.15.1 (linux/amd64, linux/arm64)",
-      "publishedAt": "2026-07-07T11:27:49Z",
-      "url": "https://github.com/dasomel/harbor/releases/tag/v2.15.1"
+      "tag": "v2.15.4",
+      "name": "v2.15.4 (linux/amd64, linux/arm64)",
+      "publishedAt": "2026-11-01T16:19:05Z",
+      "url": "https://github.com/dasomel/harbor/releases/tag/v2.15.4"
     },
     "latestTag": {
-      "name": "v2.15.2",
-      "commitSha": "080b0220574cc853ae1e2946ce7a5610ba855757",
-      "url": "https://api.github.com/repos/dasomel/harbor/commits/080b0220574cc853ae1e2946ce7a5610ba855757"
+      "name": "v2.15.4",
+      "commitSha": "0a6bf30d54e779962ad5b862fc67e3e9f6b010d8",
+      "url": "https://api.github.com/repos/dasomel/harbor/commits/0a6bf30d54e779962ad5b862fc67e3e9f6b010d8"
     }
   },
   "dasomel/k-paas": {
@@ -714,46 +962,6 @@
     "releaseCount": 5,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 2
-      },
-      {
-        "week": 1757808000,
-        "total": 2
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 1
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -921,6 +1129,46 @@
       {
         "week": 1787443200,
         "total": 0
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 0
+      },
+      {
+        "week": 1789257600,
+        "total": 0
+      },
+      {
+        "week": 1789862400,
+        "total": 0
+      },
+      {
+        "week": 1790467200,
+        "total": 0
+      },
+      {
+        "week": 1791072000,
+        "total": 0
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -941,56 +1189,16 @@
     "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
     "stars": 1,
     "forks": 0,
-    "openIssues": 22,
+    "openIssues": 18,
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-08-27T16:14:08Z",
+    "pushedAt": "2026-11-01T17:46:00Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 226,
-    "releaseCount": 6,
-    "contributorCount": 1,
+    "commitCount": 338,
+    "releaseCount": 8,
+    "contributorCount": 2,
     "activity": [
-      {
-        "week": 1756594800,
-        "total": 0
-      },
-      {
-        "week": 1757199600,
-        "total": 0
-      },
-      {
-        "week": 1757804400,
-        "total": 0
-      },
-      {
-        "week": 1758409200,
-        "total": 0
-      },
-      {
-        "week": 1759014000,
-        "total": 0
-      },
-      {
-        "week": 1759618800,
-        "total": 0
-      },
-      {
-        "week": 1760223600,
-        "total": 0
-      },
-      {
-        "week": 1760828400,
-        "total": 0
-      },
-      {
-        "week": 1761433200,
-        "total": 0
-      },
-      {
-        "week": 1762038000,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -1158,13 +1366,53 @@
       {
         "week": 1787443200,
         "total": 34
+      },
+      {
+        "week": 1788048000,
+        "total": 6
+      },
+      {
+        "week": 1788652800,
+        "total": 14
+      },
+      {
+        "week": 1789257600,
+        "total": 21
+      },
+      {
+        "week": 1789862400,
+        "total": 10
+      },
+      {
+        "week": 1790467200,
+        "total": 9
+      },
+      {
+        "week": 1791072000,
+        "total": 5
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 15
+      },
+      {
+        "week": 1793491200,
+        "total": 22
       }
     ],
     "latestRelease": {
-      "tag": "v1.1.0",
-      "name": "v1.1.0 — Security hardening, chrony, K8s CSI prerequisites",
-      "publishedAt": "2026-07-19T05:36:03Z",
-      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v1.1.0"
+      "tag": "v0.3.1",
+      "name": "v0.3.1",
+      "publishedAt": "2026-11-01T17:45:38Z",
+      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1"
     },
     "latestTag": {
       "name": "v1.1.0",
@@ -1178,56 +1426,16 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 38,
-    "language": "TypeScript",
+    "openIssues": 30,
+    "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-08-27T16:18:14Z",
+    "pushedAt": "2026-11-01T15:25:26Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 154,
+    "commitCount": 480,
     "releaseCount": 2,
-    "contributorCount": 1,
+    "contributorCount": 2,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762650000,
         "total": 0
@@ -1394,7 +1602,47 @@
       },
       {
         "week": 1787443200,
-        "total": 3
+        "total": 4
+      },
+      {
+        "week": 1788048000,
+        "total": 89
+      },
+      {
+        "week": 1788652800,
+        "total": 22
+      },
+      {
+        "week": 1789257600,
+        "total": 27
+      },
+      {
+        "week": 1789862400,
+        "total": 54
+      },
+      {
+        "week": 1790467200,
+        "total": 58
+      },
+      {
+        "week": 1791072000,
+        "total": 25
+      },
+      {
+        "week": 1791676800,
+        "total": 7
+      },
+      {
+        "week": 1792281600,
+        "total": 7
+      },
+      {
+        "week": 1792886400,
+        "total": 25
+      },
+      {
+        "week": 1793491200,
+        "total": 2
       }
     ],
     "latestRelease": {
@@ -1415,56 +1663,16 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 16,
+    "openIssues": 6,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-08-27T16:17:52Z",
+    "pushedAt": "2026-10-28T18:36:19Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 175,
-    "releaseCount": 0,
+    "commitCount": 510,
+    "releaseCount": 5,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762650000,
         "total": 0
@@ -1632,65 +1840,76 @@
       {
         "week": 1787443200,
         "total": 48
+      },
+      {
+        "week": 1788048000,
+        "total": 17
+      },
+      {
+        "week": 1788652800,
+        "total": 21
+      },
+      {
+        "week": 1789257600,
+        "total": 27
+      },
+      {
+        "week": 1789862400,
+        "total": 29
+      },
+      {
+        "week": 1790467200,
+        "total": 5
+      },
+      {
+        "week": 1791072000,
+        "total": 123
+      },
+      {
+        "week": 1791676800,
+        "total": 63
+      },
+      {
+        "week": 1792281600,
+        "total": 4
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
-    ]
+    ],
+    "latestRelease": {
+      "tag": "v0.3.0",
+      "name": "v0.3.0",
+      "publishedAt": "2026-10-18T09:40:53Z",
+      "url": "https://github.com/dasomel/ldapium/releases/tag/v0.3.0"
+    },
+    "latestTag": {
+      "name": "v0.3.0",
+      "commitSha": "0bfe765102f309d43bb22cded35b7d46ad368677",
+      "url": "https://api.github.com/repos/dasomel/ldapium/commits/0bfe765102f309d43bb22cded35b7d46ad368677"
+    }
   },
   "dasomel/narwhal": {
     "repo": "dasomel/narwhal",
     "htmlUrl": "https://github.com/dasomel/narwhal",
-    "description": "Vagrant-based Kubernetes Internal Developer Platform (IDP)",
+    "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 158,
-    "language": "Shell",
+    "openIssues": 170,
+    "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-08-27T16:17:00Z",
+    "pushedAt": "2026-11-01T15:13:37Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 536,
-    "releaseCount": 4,
-    "contributorCount": 2,
+    "commitCount": 1261,
+    "releaseCount": 10,
+    "contributorCount": 3,
     "activity": [
-      {
-        "week": 1756594800,
-        "total": 0
-      },
-      {
-        "week": 1757199600,
-        "total": 0
-      },
-      {
-        "week": 1757804400,
-        "total": 0
-      },
-      {
-        "week": 1758409200,
-        "total": 0
-      },
-      {
-        "week": 1759014000,
-        "total": 0
-      },
-      {
-        "week": 1759618800,
-        "total": 0
-      },
-      {
-        "week": 1760223600,
-        "total": 0
-      },
-      {
-        "week": 1760828400,
-        "total": 0
-      },
-      {
-        "week": 1761433200,
-        "total": 0
-      },
-      {
-        "week": 1762038000,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -1769,7 +1988,7 @@
       },
       {
         "week": 1774137600,
-        "total": 7
+        "total": 8
       },
       {
         "week": 1774742400,
@@ -1781,7 +2000,7 @@
       },
       {
         "week": 1775952000,
-        "total": 2
+        "total": 3
       },
       {
         "week": 1776556800,
@@ -1797,7 +2016,7 @@
       },
       {
         "week": 1778371200,
-        "total": 0
+        "total": 1
       },
       {
         "week": 1778976000,
@@ -1813,35 +2032,35 @@
       },
       {
         "week": 1780790400,
-        "total": 56
+        "total": 112
       },
       {
         "week": 1781395200,
-        "total": 20
+        "total": 35
       },
       {
         "week": 1782000000,
-        "total": 17
+        "total": 19
       },
       {
         "week": 1782604800,
-        "total": 42
+        "total": 49
       },
       {
         "week": 1783209600,
-        "total": 92
+        "total": 123
       },
       {
         "week": 1783814400,
-        "total": 30
+        "total": 38
       },
       {
         "week": 1784419200,
-        "total": 10
+        "total": 20
       },
       {
         "week": 1785024000,
-        "total": 62
+        "total": 65
       },
       {
         "week": 1785628800,
@@ -1849,85 +2068,85 @@
       },
       {
         "week": 1786233600,
-        "total": 19
+        "total": 31
       },
       {
         "week": 1786838400,
-        "total": 14
+        "total": 34
       },
       {
         "week": 1787443200,
-        "total": 29
+        "total": 71
+      },
+      {
+        "week": 1788048000,
+        "total": 13
+      },
+      {
+        "week": 1788652800,
+        "total": 66
+      },
+      {
+        "week": 1789257600,
+        "total": 53
+      },
+      {
+        "week": 1789862400,
+        "total": 57
+      },
+      {
+        "week": 1790467200,
+        "total": 122
+      },
+      {
+        "week": 1791072000,
+        "total": 31
+      },
+      {
+        "week": 1791676800,
+        "total": 87
+      },
+      {
+        "week": 1792281600,
+        "total": 36
+      },
+      {
+        "week": 1792886400,
+        "total": 43
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ],
     "latestRelease": {
-      "tag": "v1.2.0",
-      "name": "v1.2.0",
-      "publishedAt": "2026-08-09T01:23:50Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/v1.2.0"
+      "tag": "portal/v1.1.5",
+      "name": "Portal v1.1.5",
+      "publishedAt": "2026-10-30T23:11:19Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.5"
     },
     "latestTag": {
-      "name": "v1.2.0",
-      "commitSha": "a8692ae73a949313fd921bad7c4f293f548d5524",
-      "url": "https://api.github.com/repos/dasomel/narwhal/commits/a8692ae73a949313fd921bad7c4f293f548d5524"
+      "name": "v1.3.0",
+      "commitSha": "00b08708bce934f05fa38e0d85b2f9cb58730b23",
+      "url": "https://api.github.com/repos/dasomel/narwhal/commits/00b08708bce934f05fa38e0d85b2f9cb58730b23"
     }
   },
   "dasomel/narwhal-portal": {
     "repo": "dasomel/narwhal-portal",
     "htmlUrl": "https://github.com/dasomel/narwhal-portal",
-    "description": "Narwhal IDP management portal (Next.js 16 + React 19)",
+    "description": "ARCHIVED — moved to dasomel/narwhal (portal/). Issues transferred to narwhal #356-#382; history imported.",
     "stars": 2,
     "forks": 0,
-    "openIssues": 52,
+    "openIssues": 0,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-07-07T12:19:04Z",
-    "pushedAt": "2026-08-27T16:11:48Z",
+    "pushedAt": "2026-10-15T11:42:30Z",
     "firstCommitAt": "2026-03-23T15:51:11Z",
-    "commitCount": 202,
+    "commitCount": 416,
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762650000,
         "total": 0
@@ -2094,7 +2313,47 @@
       },
       {
         "week": 1787443200,
-        "total": 33
+        "total": 38
+      },
+      {
+        "week": 1788048000,
+        "total": 6
+      },
+      {
+        "week": 1788652800,
+        "total": 41
+      },
+      {
+        "week": 1789257600,
+        "total": 30
+      },
+      {
+        "week": 1789862400,
+        "total": 32
+      },
+      {
+        "week": 1790467200,
+        "total": 59
+      },
+      {
+        "week": 1791072000,
+        "total": 18
+      },
+      {
+        "week": 1791676800,
+        "total": 23
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -2104,9 +2363,9 @@
       "url": "https://github.com/dasomel/narwhal-portal/releases/tag/v1.0.17"
     },
     "latestTag": {
-      "name": "v1.0.17",
-      "commitSha": "d6a3250cacfa843fa46872b2d04f355ace8d5916",
-      "url": "https://api.github.com/repos/dasomel/narwhal-portal/commits/d6a3250cacfa843fa46872b2d04f355ace8d5916"
+      "name": "v1.0.19",
+      "commitSha": "6c5ac48b2eed050f8505f810e4220636755fff01",
+      "url": "https://api.github.com/repos/dasomel/narwhal-portal/commits/6c5ac48b2eed050f8505f810e4220636755fff01"
     }
   },
   "dasomel/nfs-quota-agent": {
@@ -2115,56 +2374,16 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 6,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-08-27T16:17:13Z",
+    "pushedAt": "2026-10-12T02:43:22Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 221,
-    "releaseCount": 8,
+    "commitCount": 646,
+    "releaseCount": 16,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1756594800,
-        "total": 0
-      },
-      {
-        "week": 1757199600,
-        "total": 0
-      },
-      {
-        "week": 1757804400,
-        "total": 0
-      },
-      {
-        "week": 1758409200,
-        "total": 0
-      },
-      {
-        "week": 1759014000,
-        "total": 0
-      },
-      {
-        "week": 1759618800,
-        "total": 0
-      },
-      {
-        "week": 1760223600,
-        "total": 0
-      },
-      {
-        "week": 1760828400,
-        "total": 0
-      },
-      {
-        "week": 1761433200,
-        "total": 0
-      },
-      {
-        "week": 1762038000,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -2331,26 +2550,66 @@
       },
       {
         "week": 1787443200,
-        "total": 61
+        "total": 93
+      },
+      {
+        "week": 1788048000,
+        "total": 197
+      },
+      {
+        "week": 1788652800,
+        "total": 33
+      },
+      {
+        "week": 1789257600,
+        "total": 30
+      },
+      {
+        "week": 1789862400,
+        "total": 12
+      },
+      {
+        "week": 1790467200,
+        "total": 12
+      },
+      {
+        "week": 1791072000,
+        "total": 7
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ],
     "latestRelease": {
-      "tag": "v0.3.0",
-      "name": "v0.3.0",
-      "publishedAt": "2026-07-19T05:58:16Z",
-      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.3.0"
+      "tag": "v0.5.0",
+      "name": "v0.5.0",
+      "publishedAt": "2026-09-22T13:59:21Z",
+      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.5.0"
     },
     "latestTag": {
-      "name": "v0.3.0",
-      "commitSha": "fa79b6a9ea84644b5f9556a8f125fbcab6057094",
-      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/fa79b6a9ea84644b5f9556a8f125fbcab6057094"
+      "name": "v0.5.0",
+      "commitSha": "386ac455d5f9e609d39e8e42c295db6a362917cc",
+      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/386ac455d5f9e609d39e8e42c295db6a362917cc"
     }
   },
   "dasomel/oh-my-cursor": {
     "repo": "dasomel/oh-my-cursor",
     "htmlUrl": "https://github.com/dasomel/oh-my-cursor",
     "description": "Multi-agent orchestration rules for Cursor IDE, inspired by oh-my-claudecode",
-    "stars": 2,
+    "stars": 3,
     "forks": 1,
     "openIssues": 0,
     "language": "TypeScript",
@@ -2362,46 +2621,6 @@
     "releaseCount": 0,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1756594800,
-        "total": 0
-      },
-      {
-        "week": 1757199600,
-        "total": 0
-      },
-      {
-        "week": 1757804400,
-        "total": 0
-      },
-      {
-        "week": 1758409200,
-        "total": 0
-      },
-      {
-        "week": 1759014000,
-        "total": 0
-      },
-      {
-        "week": 1759618800,
-        "total": 0
-      },
-      {
-        "week": 1760223600,
-        "total": 0
-      },
-      {
-        "week": 1760828400,
-        "total": 0
-      },
-      {
-        "week": 1761433200,
-        "total": 0
-      },
-      {
-        "week": 1762038000,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -2569,6 +2788,46 @@
       {
         "week": 1787443200,
         "total": 0
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 0
+      },
+      {
+        "week": 1789257600,
+        "total": 0
+      },
+      {
+        "week": 1789862400,
+        "total": 0
+      },
+      {
+        "week": 1790467200,
+        "total": 0
+      },
+      {
+        "week": 1791072000,
+        "total": 0
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ]
   },
@@ -2578,56 +2837,16 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 0,
     "forks": 0,
-    "openIssues": 9,
+    "openIssues": 11,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-08-27T16:19:32Z",
+    "pushedAt": "2026-11-01T17:48:46Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
-    "commitCount": 131,
+    "commitCount": 279,
     "releaseCount": 0,
-    "contributorCount": 2,
+    "contributorCount": 3,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762650000,
         "total": 0
@@ -2794,7 +3013,272 @@
       },
       {
         "week": 1787443200,
-        "total": 56
+        "total": 57
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 79
+      },
+      {
+        "week": 1789257600,
+        "total": 14
+      },
+      {
+        "week": 1789862400,
+        "total": 13
+      },
+      {
+        "week": 1790467200,
+        "total": 6
+      },
+      {
+        "week": 1791072000,
+        "total": 22
+      },
+      {
+        "week": 1791676800,
+        "total": 9
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
+      }
+    ]
+  },
+  "dasomel/siqoq": {
+    "repo": "dasomel/siqoq",
+    "htmlUrl": "https://github.com/dasomel/siqoq",
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 1,
+    "language": "Python",
+    "license": "NOASSERTION",
+    "createdAt": "2026-08-25T13:32:05Z",
+    "pushedAt": "2026-10-04T06:56:45Z",
+    "firstCommitAt": "2026-08-25T13:33:51Z",
+    "commitCount": 97,
+    "releaseCount": 0,
+    "contributorCount": 2,
+    "activity": [
+      {
+        "week": 1762650000,
+        "total": 0
+      },
+      {
+        "week": 1763254800,
+        "total": 0
+      },
+      {
+        "week": 1763859600,
+        "total": 0
+      },
+      {
+        "week": 1764464400,
+        "total": 0
+      },
+      {
+        "week": 1765069200,
+        "total": 0
+      },
+      {
+        "week": 1765674000,
+        "total": 0
+      },
+      {
+        "week": 1766278800,
+        "total": 0
+      },
+      {
+        "week": 1766883600,
+        "total": 0
+      },
+      {
+        "week": 1767488400,
+        "total": 0
+      },
+      {
+        "week": 1768093200,
+        "total": 0
+      },
+      {
+        "week": 1768698000,
+        "total": 0
+      },
+      {
+        "week": 1769302800,
+        "total": 0
+      },
+      {
+        "week": 1769907600,
+        "total": 0
+      },
+      {
+        "week": 1770512400,
+        "total": 0
+      },
+      {
+        "week": 1771117200,
+        "total": 0
+      },
+      {
+        "week": 1771722000,
+        "total": 0
+      },
+      {
+        "week": 1772326800,
+        "total": 0
+      },
+      {
+        "week": 1772931600,
+        "total": 0
+      },
+      {
+        "week": 1773532800,
+        "total": 0
+      },
+      {
+        "week": 1774137600,
+        "total": 0
+      },
+      {
+        "week": 1774742400,
+        "total": 0
+      },
+      {
+        "week": 1775347200,
+        "total": 0
+      },
+      {
+        "week": 1775952000,
+        "total": 0
+      },
+      {
+        "week": 1776556800,
+        "total": 0
+      },
+      {
+        "week": 1777161600,
+        "total": 0
+      },
+      {
+        "week": 1777766400,
+        "total": 0
+      },
+      {
+        "week": 1778371200,
+        "total": 0
+      },
+      {
+        "week": 1778976000,
+        "total": 0
+      },
+      {
+        "week": 1779580800,
+        "total": 0
+      },
+      {
+        "week": 1780185600,
+        "total": 0
+      },
+      {
+        "week": 1780790400,
+        "total": 0
+      },
+      {
+        "week": 1781395200,
+        "total": 0
+      },
+      {
+        "week": 1782000000,
+        "total": 0
+      },
+      {
+        "week": 1782604800,
+        "total": 0
+      },
+      {
+        "week": 1783209600,
+        "total": 0
+      },
+      {
+        "week": 1783814400,
+        "total": 0
+      },
+      {
+        "week": 1784419200,
+        "total": 0
+      },
+      {
+        "week": 1785024000,
+        "total": 0
+      },
+      {
+        "week": 1785628800,
+        "total": 0
+      },
+      {
+        "week": 1786233600,
+        "total": 0
+      },
+      {
+        "week": 1786838400,
+        "total": 0
+      },
+      {
+        "week": 1787443200,
+        "total": 21
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 6
+      },
+      {
+        "week": 1789257600,
+        "total": 39
+      },
+      {
+        "week": 1789862400,
+        "total": 16
+      },
+      {
+        "week": 1790467200,
+        "total": 12
+      },
+      {
+        "week": 1791072000,
+        "total": 3
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
+        "total": 0
       }
     ]
   },
@@ -2814,46 +3298,6 @@
     "releaseCount": 3,
     "contributorCount": 35,
     "activity": [
-      {
-        "week": 1756598400,
-        "total": 0
-      },
-      {
-        "week": 1757203200,
-        "total": 0
-      },
-      {
-        "week": 1757808000,
-        "total": 0
-      },
-      {
-        "week": 1758412800,
-        "total": 0
-      },
-      {
-        "week": 1759017600,
-        "total": 0
-      },
-      {
-        "week": 1759622400,
-        "total": 0
-      },
-      {
-        "week": 1760227200,
-        "total": 0
-      },
-      {
-        "week": 1760832000,
-        "total": 0
-      },
-      {
-        "week": 1761436800,
-        "total": 0
-      },
-      {
-        "week": 1762041600,
-        "total": 0
-      },
       {
         "week": 1762646400,
         "total": 0
@@ -3020,6 +3464,46 @@
       },
       {
         "week": 1787443200,
+        "total": 0
+      },
+      {
+        "week": 1788048000,
+        "total": 0
+      },
+      {
+        "week": 1788652800,
+        "total": 0
+      },
+      {
+        "week": 1789257600,
+        "total": 0
+      },
+      {
+        "week": 1789862400,
+        "total": 0
+      },
+      {
+        "week": 1790467200,
+        "total": 0
+      },
+      {
+        "week": 1791072000,
+        "total": 0
+      },
+      {
+        "week": 1791676800,
+        "total": 0
+      },
+      {
+        "week": 1792281600,
+        "total": 0
+      },
+      {
+        "week": 1792886400,
+        "total": 0
+      },
+      {
+        "week": 1793491200,
         "total": 0
       }
     ],
