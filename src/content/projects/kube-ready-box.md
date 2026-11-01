@@ -7,7 +7,7 @@ order: 9
 type: "own"
 featured: true
 problem: "로컬 Kubernetes 클러스터를 반복해서 만들 때 OS 튜닝, kernel modules, networking, storage prerequisites를 매번 준비해야 하고 ARM64/AMD64와 provider별 차이까지 별도로 관리해야 함"
-solution: "Packer로 Kubernetes용 Ubuntu base image를 사전 구성하고 Vagrant Cloud로 배포해 동일한 OS baseline을 여러 로컬 클러스터 프로젝트에서 반복 사용"
+solution: "Packer로 Kubernetes용 Ubuntu base image를 사전 구성하고 GitHub Release와 GitHub Pages 카탈로그로 배포해 동일한 OS baseline을 여러 로컬 클러스터 프로젝트에서 반복 사용"
 ---
 
 ## 프로젝트 소개
@@ -16,7 +16,7 @@ solution: "Packer로 Kubernetes용 Ubuntu base image를 사전 구성하고 Vagr
 
 이 프로젝트의 핵심은 Kubernetes 자체를 포함하는 것이 아니라, Kubernetes가 올라가기 전에 필요한 **운영체제 수준의 준비 상태(OS readiness)**를 하나의 재현 가능한 이미지로 만드는 것입니다.
 
-현재 Ubuntu **24.04 LTS**와 **26.04 LTS**를 제공하며, ext4와 XFS filesystem variant를 분리합니다. Apple Silicon 환경을 포함한 ARM64와 AMD64를 지원하고 VirtualBox와 VMware Fusion 같은 로컬 hypervisor에서 사용할 수 있습니다.
+현재 Ubuntu **24.04 LTS**와 **26.04 LTS**를 제공하며, ext4와 XFS filesystem variant를 분리합니다. Apple Silicon 환경을 포함한 ARM64와 AMD64를 지원하고 VirtualBox와 VMware Fusion 같은 로컬 hypervisor용 템플릿을 제공합니다. 다만 최신 릴리스(v0.3.0)가 배포하는 박스는 arm64 전용입니다(자세한 내용은 [현재 상태](#현재-상태) 참고).
 
 > Kube-Ready-Box는 Kubernetes installer가 아닙니다. `kubelet`, `kubeadm`, `kubectl`, CNI 및 container runtime은 사용자가 원하는 버전을 선택해 이후 설치합니다.
 
@@ -53,14 +53,16 @@ Kube-Ready-Box는 이 중 **Kubernetes가 요구하는 OS baseline을 이미지 
 | 26.04 LTS | ext4 | 최신 LTS / cgroup v2-only 환경 |
 | 26.04 LTS | XFS | 최신 LTS + project quota 활용 |
 
-Vagrant Cloud의 주요 box 이름은 다음과 같습니다.
+Ubuntu 외에 Rocky 9(ext4/XFS, 0.1.1)와 NixOS(`nixos-kube-ready`, 0.2.2, libvirt)도 같은 카탈로그에서 제공합니다. 배포 카탈로그(GitHub Pages)의 box 이름은 다음과 같습니다.
 
 ```text
-dasomel/ubuntu-24.04-ext4
-dasomel/ubuntu-24.04-xfs
-dasomel/ubuntu-26.04-ext4
-dasomel/ubuntu-26.04-xfs
+ubuntu-24.04-ext4   ubuntu-24.04-xfs
+ubuntu-26.04-ext4   ubuntu-26.04-xfs
+rocky-9-ext4        rocky-9-xfs
+nixos-kube-ready
 ```
+
+`.box` 파일은 GitHub Release asset으로, Vagrant catalog JSON은 GitHub Pages로 제공합니다. 자세한 내용은 [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md)를 참고하세요.
 
 ## Kubernetes Readiness Baseline
 
@@ -75,7 +77,7 @@ dasomel/ubuntu-26.04-xfs
 - `chrony` 기반 시간 동기화 — Ubuntu 25.10+/26.04 기본값인 `systemd-timesyncd`를 대체, 한국 NTP 서버를 `/etc/chrony/sources.d/kr-ntp.sources`로 사전 구성 (etcd clock-skew 민감성 대응)
 - 보안 하드닝: `needrestart` 제거(Qualys 로컬 권한상승 CVE 5건 대응), `unattended-upgrades` 완전 purge(kubelet Graceful Node Shutdown 충돌 방지), `auditd` 설치 후 비활성화(CIS 대응, I/O 제한 포함), `apparmor-utils` 추가
 - `jq`, `yq`, network diagnostics, performance tools
-- 자동 disk/partition/LVM/filesystem 확장 (1TB thin-provisioned 디스크, box 크기는 ext4 약 2.2GB / XFS 약 3.4GB)
+- 자동 disk/partition/LVM/filesystem 확장 (box 크기는 1–2 GiB, root LV는 설치 시 16 GiB이며 첫 부팅 때 전체 디스크로 확장)
 
 ## 24.04와 26.04의 차이
 
@@ -101,7 +103,7 @@ provider-specific validation
        ↓
 Vagrant Box
        ↓
-Vagrant Cloud
+GitHub Release (.box) + GitHub Pages (catalog JSON)
        ↓
 Narwhal / Beluga / local K8s projects
 ```
@@ -118,19 +120,20 @@ Packer가 이미지를 생성하고 GitHub Actions가 provider와 architecture�
 
 ## 시작하기
 
+Vagrantfile에 box 이름과 catalog URL을 지정합니다.
+
+```ruby
+config.vm.box     = "dasomel/ubuntu-24.04-ext4"
+config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04-ext4.json"
+```
+
 ```bash
-# 안정적인 기본 이미지
-vagrant init dasomel/ubuntu-24.04-ext4
-vagrant up --provider=vmware_desktop
-
-# XFS / quota 환경
-vagrant init dasomel/ubuntu-24.04-xfs
-vagrant up --provider=vmware_desktop
-
-# Ubuntu 26.04
-vagrant init dasomel/ubuntu-26.04-ext4
 vagrant up --provider=vmware_desktop
 ```
+
+XFS / quota 환경이나 Ubuntu 26.04는 box 이름과 catalog JSON을 `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4` 등으로 바꿔 사용합니다.
+
+> 과거에 Vagrant Cloud에서 1.1.0을 받았다면 Vagrant가 1.1.0을 0.3.0보다 높은 버전으로 취급하므로 먼저 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 실행하세요.
 
 사용 후에는 box 자체가 Kubernetes cluster를 제공하는 것이 아니라는 점을 전제로 containerd, kubelet, kubeadm 또는 원하는 Kubernetes 배포판을 추가합니다.
 
@@ -145,14 +148,19 @@ vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 
 ## 현재 상태
 
-최신 릴리스는 **v1.1.0**(2026-07-19)입니다. Ubuntu 26.04 LTS(Resolute Raccoon, kernel 7.0)를 24.04 LTS(Noble Numbat, 기본값)와 함께 정식 태그로 배포하는 첫 릴리스이며, 위 보안 하드닝과 chrony 전환, CSI/Longhorn 전제조건, bpffs 영구 마운트가 이 릴리스에서 추가됐습니다.
+최신 릴리스는 [**v0.3.0**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)입니다. CVE 재빌드 릴리스로, 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다(이전 Rocky 9 0.1.0 계열은 438건(critical 5), 미배포 Ubuntu 26.04 빌드는 1,141건(critical 2)). 커널 CVE-2026-98432는 Ubuntu/Rocky 모두 아직 수정이 없어 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
+
+버전은 Ubuntu 박스 0.3.0, Rocky 9 박스 0.1.1, NixOS 박스 0.2.2(libvirt)입니다. Ubuntu 버전 라인은 초기화됐는데, 1.1.0은 Vagrant Cloud에만 올라간 버전이기 때문입니다. 위 보안 하드닝과 chrony 전환, CSI/Longhorn 전제조건, bpffs 영구 마운트는 그대로 포함됩니다.
+
+HashiCorp가 HCP Vagrant(Vagrant Cloud)를 종료합니다. 신규 box/registry 생성은 2026-10-01에 중단됐고, 지원은 2026-11-02에 종료되며, 호스팅된 모든 box는 2026-12-31에 폐기됩니다([공지](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). 그래서 배포 채널을 GitHub Release와 GitHub Pages로 옮겼습니다.
 
 | Provider | AMD64 | ARM64 | 비고 |
 |---|---|---|---|
-| VirtualBox | ✅ | ✅ | ARM64는 VirtualBox 7.1+ 필요 |
-| VMware Fusion | ✅* | ✅ | Apple Silicon 지원; *AMD64는 로컬 빌드만 — Vagrant Cloud는 CI runner 제약으로 ARM64만 배포 |
+| VirtualBox | 템플릿만* | 템플릿만* | ARM64는 VirtualBox 7.1+ 필요; *v0.3.0에는 미포함 — 빌드 호스트에서 VirtualBox SSH를 검증할 수 없음 |
+| VMware Fusion | 템플릿만* | ✅ | Apple Silicon 지원; *AMD64는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.0에 미포함 (로컬 빌드는 가능) |
 
-- 별도 프로젝트로 선언형 NixOS 변형 `dasomel/nixos-kube-ready`(libvirt/arm64, Apple Silicon은 `vagrant-qemu` 경유)도 배포됩니다.
+- v0.3.0은 arm64 전용입니다: Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt` 박스를 배포합니다.
+- 별도 변형인 선언형 NixOS 박스 `dasomel/nixos-kube-ready`(libvirt/arm64, Apple Silicon은 `vagrant-qemu` 경유)도 같은 카탈로그에서 배포됩니다.
 - Packer 1.10+ (CI는 1.15.4 고정), 빌드 타임아웃은 `ssh_timeout` 1시간(`vmware-arm64`는 2시간), CI job 타임아웃 90분입니다.
 
 ## 상세 기술 문서
@@ -162,7 +170,7 @@ vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 | Overview | [박스 개요](/oss/kube-ready-box/overview) | 프로젝트 목적과 지원 범위 |
 | Architecture | [시스템 구조](/oss/kube-ready-box/architecture) | Packer → Box → Vagrant 흐름 |
 | Getting Started | [사용 가이드](/oss/kube-ready-box/getting-started) | provider와 filesystem 선택 |
-| Operations | [빌드/릴리스](/oss/kube-ready-box/operations) | Packer와 Vagrant Cloud 운영 |
+| Operations | [빌드/릴리스](/oss/kube-ready-box/operations) | Packer와 GitHub Release/Pages 배포 |
 | Verification | [검증](/oss/kube-ready-box/verification) | OS readiness와 release validation |
 
 ## 프로젝트 관계

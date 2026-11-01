@@ -1,97 +1,81 @@
 ---
 title: "Release & Distribution"
-description: "Vagrant Cloud upload pipeline, HCP credential mechanism, and deployment checklist"
+description: "GitHub Release + GitHub Pages catalog distribution pipeline, weekly CVE scan, and deployment checklist"
 project: "Kube-Ready-Box"
 order: 303
-lastModified: 2026-07-21
+lastModified: 2026-11-01
 ---
 
-## Vagrant Cloud Distribution Strategy
+## Distribution Strategy
 
-Kube-Ready-Box utilizes a flexible distribution approach depending on architecture and Provider. Both the 24.04 and 26.04 versions share the same pipeline, providing separate Boxes for each filesystem (ext4, xfs).
+Kube-Ready-Box distributes `.box` files as **GitHub Release assets** and the Vagrant catalog JSON through **GitHub Pages** (`https://dasomel.github.io/kube-ready-box/boxes/<name>.json`). Boxes are split per filesystem (ext4, xfs); catalog names are `ubuntu-24.04-ext4`, `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, `ubuntu-26.04-xfs`, `rocky-9-ext4`, `rocky-9-xfs`, and `nixos-kube-ready`. See [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md).
 
-- **AMD64 (Intel/AMD)**: Automatically built and deployed via GitHub Actions (`build-amd64.yml`).
-- **ARM64 (Apple Silicon)**: Built locally and deployed manually using the `upload-boxes.sh` script.
+The latest release is [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) (2026-11-01): Ubuntu boxes 0.3.0, Rocky 9 boxes 0.1.1, NixOS 0.2.2 (libvirt). It ships **arm64 only** (`vmware_desktop` for Ubuntu/Rocky, `libvirt` for NixOS). VirtualBox boxes are not included because VirtualBox SSH cannot be verified on the build host, and amd64 boxes are not included because they cannot be built on the arm64 build host. The templates themselves can still be built locally.
 
-## HCP Credential Mechanism (Vagrant Cloud)
+## Vagrant Cloud Shutdown and Migration
 
-To avoid short-lived (1-hour) OAuth token expiration issues during Vagrant Cloud deployment, authentication is performed using an HCP (HashiCorp Cloud Platform) Service Principal.
-*Security Principle: No credential values are ever left in plaintext within the codebase or documentation.*
+HashiCorp is shutting down HCP Vagrant (Vagrant Cloud): new box/registry creation stopped on 2026-10-01, support ends 2026-11-02, and all hosted boxes are decommissioned on 2026-12-31 ([announcement](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). The former HCP Service Principal authentication and `vagrant cloud publish` upload pipeline are no longer used.
 
-1. **Issue Service Principal Key**: Generate the key securely using `hcp iam sp keys create vagrant-registry-publisher --output-cred-file=/tmp/hcp-cred.json`. (Due to HCP's key quota limits (max 2), you may need to `delete` older keys first.)
-2. **Verify and Update**: Use the GitHub CLI (`gh secret set`) to update the GitHub Secrets (`HCP_CLIENT_ID`, `HCP_CLIENT_SECRET`). **You must update both the Repository Secret and the Environment (production) Secret** to prevent `unauthorized` errors caused by masking.
-3. **Discard**: The temporary file (`/tmp/hcp-cred.json`) is deleted immediately.
+The Ubuntu version line was reset to 0.3.0. 1.1.0 was a Vagrant Cloud-only upload, and Vagrant ranks 1.1.0 above 0.3.0, so existing users must first run `vagrant box remove dasomel/<box> --box-version 1.1.0`.
 
-## Upload Pipeline
+```ruby
+config.vm.box     = "dasomel/ubuntu-24.04-ext4"
+config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04-ext4.json"
+```
 
-The upload process consists of adding Providers and mapping files. The following flowchart shows the entire process of how ARM64 and AMD64 builds are uploaded to Vagrant Cloud and released.
+## Distribution Pipeline
 
 <Mermaid chart={`flowchart TB
-  subgraph LOCAL["Local Build (ARM64)"]
-    LBOX(["Box Artifacts"])
-    UP["upload-boxes.sh"]
-    LBOX --> UP
+  subgraph BUILD["Build (arm64)"]
+    BOX(["Box Artifacts"])
+    SUM["SHA256 checksums"]
+    BOX --> SUM
   end
 
-  subgraph CI["GitHub Actions (AMD64)"]
-    CBOX(["Box Artifacts"])
-    GH["build-amd64.yml"]
-    CBOX --> GH
+  subgraph DIST["Distribution"]
+    REL["GitHub Release<br/>(.box assets)"]
+    CAT["GitHub Pages<br/>(boxes/*.json catalog)"]
+    REL --> CAT
   end
 
-  subgraph VC["Vagrant Cloud (Remote)"]
-    VER["Create Version<br/>(vagrant cloud publish)"]
-    PROV["Create Provider<br/>(vmware_desktop / virtualbox)"]
-    UPL["Upload Box<br/>(ext4 / xfs mapping)"]
-    REL["Transition to Released"]
-    
-    VER --> PROV
-    PROV --> UPL
-    UPL --> REL
+  subgraph SCAN["CVE Scan"]
+    CVE["box-cve-scan.yml<br/>(weekly)"]
   end
 
-  UP -->|"HCP SP Auth"| VER
-  GH -->|"HCP SP Auth"| VER
+  SUM --> REL
+  CAT -->|"download + checksum"| CVE
 
-  style LBOX fill:#f9fafb,stroke:#d1d5db,color:#111
-  style CBOX fill:#f9fafb,stroke:#d1d5db,color:#111
-  style UP fill:#f0fdf4,stroke:#059669,color:#111
-  style GH fill:#f0fdf4,stroke:#059669,color:#111
-  style VER fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#111
-  style PROV fill:#f0fdf4,stroke:#059669,color:#111
-  style UPL fill:#f0fdf4,stroke:#059669,color:#111
+  style BOX fill:#f9fafb,stroke:#d1d5db,color:#111
+  style SUM fill:#f0fdf4,stroke:#059669,color:#111
   style REL fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#111
-  style LOCAL fill:#fafafa,stroke:#d1d5db,color:#374151
-  style CI fill:#fafafa,stroke:#d1d5db,color:#374151
-  style VC fill:#fff,stroke:#9ca3af,color:#111
+  style CAT fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#111
+  style CVE fill:#f0fdf4,stroke:#059669,color:#111
+  style BUILD fill:#fafafa,stroke:#d1d5db,color:#374151
+  style DIST fill:#fff,stroke:#9ca3af,color:#111
+  style SCAN fill:#fafafa,stroke:#d1d5db,color:#374151
 `} />
 
-### Manual Upload (ARM64)
-Executing `bash upload-boxes.sh` locally will:
-- Verify the Vagrant Cloud login status.
-- Sequentially upload (publish) the VMware and VirtualBox Providers for each built filesystem (ext4 and xfs).
-- *Note: To upload a specific Ubuntu version, use `UBUNTU_VERSION=26.04 bash upload-boxes.sh`.*
+## Weekly CVE Scan
 
-### Automated Upload (AMD64)
-Pushing a Tag (e.g., `v0.2.3`) to GitHub automatically triggers the GitHub Actions workflow to:
-- Build the Box using Packer.
-- Create a new version via `vagrant cloud publish` if it is a new release.
-- Use `provider create` and `upload` commands to add the Box to an existing version, then transition it to a released state.
+The `.github/workflows/box-cve-scan.yml` workflow runs weekly and:
 
-*Recommended Sequence*: It is safest to manually upload the ARM64 versions locally first to create the initial version, and then push the Tag to GitHub to append the AMD64 versions.
+- Downloads the shipped boxes from the catalog and verifies their checksums.
+- Extracts the dpkg/rpm package databases from each box and scans them with Trivy (distro-fixable CVEs only).
+- Fails the run on CRITICAL/HIGH findings, which is the signal to rebuild.
+- Reports NixOS as `UNKNOWN` because it has no dpkg/rpm database. `UNKNOWN` is never treated as healthy.
+
+At release, v0.3.0 had 0 distro-fixable CVEs per Trivy on every box. Kernel CVE-2026-98432, which has no fix yet, is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
 
 ## Deployment Checklist
 
-Ensure the following points are verified for a safe release.
-
 ### Pre-release
 - [ ] Verify local build (successful `packer build` and `vagrant up` testing)
-- [ ] Validate Vagrant Cloud / HCP login status
-- [ ] Write the new version entry in CHANGELOG.md and update Release Notes (e.g., v1.1.0 - latest as of 2026-07-18, focusing on security hardening and K8s prereqs)
-- [ ] Verify Box file size (around 2~3.5GB based on Thin Provisioning)
+- [ ] Write the new version entry in CHANGELOG.md and update Release Notes (e.g., v0.3.0 - latest as of 2026-11-01, CVE rebuild)
+- [ ] Verify Box file size (around 1-2 GiB; the root LV is 16 GiB at install and grows to the full disk on first boot)
+- [ ] Confirm the box version is higher than previously distributed versions (Vagrant prefers the higher version)
 
 ### Post-release
-- [ ] Confirm that Provider (`vmware_desktop`, `virtualbox`) and Architecture (`arm64`, `amd64`) tags are correctly reflected in the Vagrant Cloud web dashboard
-- [ ] Check if the version is in the Released state
-- [ ] Perform a local download and boot test via `vagrant init dasomel/ubuntu-26.04-xfs`
-- [ ] Create a GitHub Release and attach the version notes
+- [ ] Confirm the `.box` assets and checksums are attached to the GitHub Release
+- [ ] Confirm the GitHub Pages catalog JSON points to the new version and asset URLs
+- [ ] Perform a local download and boot test via `config.vm.box_url`
+- [ ] Check the weekly `box-cve-scan` workflow result (rebuild on CRITICAL/HIGH)

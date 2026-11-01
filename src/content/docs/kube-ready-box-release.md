@@ -1,97 +1,81 @@
 ---
 title: "릴리스 & 배포"
-description: "Vagrant Cloud 업로드 파이프라인, HCP 인증 메커니즘 및 배포 체크리스트"
+description: "GitHub Release + GitHub Pages 카탈로그 배포 파이프라인, 주간 CVE 스캔 및 배포 체크리스트"
 project: "Kube-Ready-Box"
 order: 303
-lastModified: 2026-07-21
+lastModified: 2026-11-01
 ---
 
-## Vagrant Cloud 배포 전략
+## 배포 전략
 
-Kube-Ready-Box는 아키텍처와 Provider에 따라 유연한 배포 방식을 취합니다. 24.04와 26.04 버전 모두 동일한 파이프라인을 공유하며, 파일시스템(ext4, xfs)별로 Box를 각각 분리하여 제공합니다.
+Kube-Ready-Box는 `.box` 파일을 **GitHub Release asset**으로, Vagrant catalog JSON을 **GitHub Pages**(`https://dasomel.github.io/kube-ready-box/boxes/<name>.json`)로 배포합니다. 파일시스템(ext4, xfs)별로 Box를 분리하며 카탈로그 이름은 `ubuntu-24.04-ext4`, `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, `ubuntu-26.04-xfs`, `rocky-9-ext4`, `rocky-9-xfs`, `nixos-kube-ready`입니다. 자세한 내용은 [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md)를 참고하세요.
 
-- **AMD64 (Intel/AMD)**: GitHub Actions를 통해 자동 빌드 및 배포 (`build-amd64.yml`)
-- **ARM64 (Apple Silicon)**: 로컬에서 빌드 후 `upload-boxes.sh` 스크립트를 통한 수동 배포
+최신 릴리스는 [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)입니다. Ubuntu 박스 0.3.0, Rocky 9 박스 0.1.1, NixOS 박스 0.2.2(libvirt)이며, **arm64 전용**입니다(Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt`). VirtualBox 박스는 빌드 호스트에서 SSH를 검증할 수 없어, amd64 박스는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.0에 포함되지 않습니다. 템플릿 자체는 로컬 빌드가 가능합니다.
 
-## HCP 인증 메커니즘 (Vagrant Cloud)
+## Vagrant Cloud 종료와 마이그레이션
 
-Vagrant Cloud 배포 시 단기(1시간) OAuth 토큰 만료 문제를 방지하기 위해 HCP(HashiCorp Cloud Platform) Service Principal을 사용하여 인증합니다.
-*보안 원칙: 어떠한 자격증명 값도 코드베이스나 문서에 평문으로 남기지 않습니다.*
+HashiCorp가 HCP Vagrant(Vagrant Cloud)를 종료합니다. 신규 box/registry 생성은 2026-10-01에 중단됐고, 지원은 2026-11-02에 종료되며, 호스팅된 모든 box는 2026-12-31에 폐기됩니다([공지](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). 이전의 HCP Service Principal 인증과 `vagrant cloud publish` 기반 업로드 파이프라인은 더 이상 사용하지 않습니다.
 
-1. **Service Principal 계정 발급**: `hcp iam sp keys create vagrant-registry-publisher --output-cred-file=/tmp/hcp-cred.json` 명령어를 통해 안전하게 키를 발급받습니다. (HCP의 키 할당량 제한(최대 2개)으로 인해 오래된 키는 먼저 삭제(`delete`)해야 할 수 있습니다.)
-2. **검증 및 갱신**: GitHub CLI(`gh secret set`)를 활용하여 GitHub Secrets(`HCP_CLIENT_ID`, `HCP_CLIENT_SECRET`)를 갱신합니다. **반드시 Repository Secret과 Environment(production) Secret을 양쪽 모두 갱신**하여 덮어쓰기로 인한 `unauthorized` 오류를 방지해야 합니다.
-3. **폐기**: 임시 파일(`/tmp/hcp-cred.json`)은 즉시 삭제합니다.
+Ubuntu 버전 라인은 0.3.0으로 초기화됐습니다. 1.1.0은 Vagrant Cloud에만 올라간 버전이며 Vagrant는 1.1.0을 0.3.0보다 높게 취급하므로, 기존 사용자는 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 먼저 실행해야 합니다.
 
-## 업로드 파이프라인
+```ruby
+config.vm.box     = "dasomel/ubuntu-24.04-ext4"
+config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04-ext4.json"
+```
 
-업로드 과정은 Provider 추가 및 파일 매핑으로 이루어집니다. 다음은 ARM64와 AMD64 빌드가 Vagrant Cloud에 업로드되고 릴리스되는 전체 과정을 보여줍니다.
+## 배포 파이프라인
 
 <Mermaid chart={`flowchart TB
-  subgraph LOCAL["로컬 빌드 (ARM64)"]
-    LBOX(["Box 아티팩트"])
-    UP["upload-boxes.sh"]
-    LBOX --> UP
+  subgraph BUILD["빌드 (arm64)"]
+    BOX(["Box 아티팩트"])
+    SUM["SHA256 체크섬"]
+    BOX --> SUM
   end
 
-  subgraph CI["GitHub Actions (AMD64)"]
-    CBOX(["Box 아티팩트"])
-    GH["build-amd64.yml"]
-    CBOX --> GH
+  subgraph DIST["배포"]
+    REL["GitHub Release<br/>(.box assets)"]
+    CAT["GitHub Pages<br/>(boxes/*.json catalog)"]
+    REL --> CAT
   end
 
-  subgraph VC["Vagrant Cloud (원격)"]
-    VER["Version 생성<br/>(vagrant cloud publish)"]
-    PROV["Provider 생성<br/>(vmware_desktop / virtualbox)"]
-    UPL["Box 업로드<br/>(ext4 / xfs 매핑)"]
-    REL["Release 상태 전환"]
-    
-    VER --> PROV
-    PROV --> UPL
-    UPL --> REL
+  subgraph SCAN["CVE 스캔"]
+    CVE["box-cve-scan.yml<br/>(weekly)"]
   end
 
-  UP -->|"HCP SP 인증"| VER
-  GH -->|"HCP SP 인증"| VER
+  SUM --> REL
+  CAT -->|"download + checksum"| CVE
 
-  style LBOX fill:#f9fafb,stroke:#d1d5db,color:#111
-  style CBOX fill:#f9fafb,stroke:#d1d5db,color:#111
-  style UP fill:#f0fdf4,stroke:#059669,color:#111
-  style GH fill:#f0fdf4,stroke:#059669,color:#111
-  style VER fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#111
-  style PROV fill:#f0fdf4,stroke:#059669,color:#111
-  style UPL fill:#f0fdf4,stroke:#059669,color:#111
+  style BOX fill:#f9fafb,stroke:#d1d5db,color:#111
+  style SUM fill:#f0fdf4,stroke:#059669,color:#111
   style REL fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#111
-  style LOCAL fill:#fafafa,stroke:#d1d5db,color:#374151
-  style CI fill:#fafafa,stroke:#d1d5db,color:#374151
-  style VC fill:#fff,stroke:#9ca3af,color:#111
+  style CAT fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#111
+  style CVE fill:#f0fdf4,stroke:#059669,color:#111
+  style BUILD fill:#fafafa,stroke:#d1d5db,color:#374151
+  style DIST fill:#fff,stroke:#9ca3af,color:#111
+  style SCAN fill:#fafafa,stroke:#d1d5db,color:#374151
 `} />
 
-### 수동 업로드 (ARM64)
-로컬에서 `bash upload-boxes.sh` 스크립트를 실행하면:
-- Vagrant Cloud 로그인 상태를 확인합니다.
-- 빌드된 ext4 및 xfs 파일시스템별로 VMware와 VirtualBox의 Provider를 순차적으로 업로드(publish)합니다.
-- *참고: 특정 우분투 버전을 업로드하려면 `UBUNTU_VERSION=26.04 bash upload-boxes.sh`를 사용합니다.*
+## 주간 CVE 스캔
 
-### 자동 업로드 (AMD64)
-GitHub에 Tag(예: `v0.2.3`)를 푸시하면 GitHub Actions 워크플로우가 자동으로:
-- Packer를 통해 Box를 빌드합니다.
-- 신규 버전이면 `vagrant cloud publish`로 버전을 생성합니다.
-- 기존 버전이면 `provider create`와 `upload` 명령어로 Box를 추가하고, 릴리스 상태로 전환합니다.
+`.github/workflows/box-cve-scan.yml` 워크플로우가 매주 실행되어 다음을 수행합니다.
 
-*권장 순서*: 로컬에서 ARM64 버전을 먼저 수동 업로드하여 버전을 생성한 뒤, GitHub에 Tag를 푸시하여 AMD64 버전을 추가하는 것이 안전합니다.
+- 카탈로그에서 배포된 박스를 내려받고 체크섬을 검증합니다.
+- 박스에서 dpkg/rpm 패키지 DB를 추출해 Trivy로 스캔합니다(배포판이 수정한 CVE만 대상).
+- CRITICAL/HIGH가 발견되면 실행이 실패하며, 이는 재빌드 신호입니다.
+- NixOS 박스는 dpkg/rpm DB가 없어 `UNKNOWN`으로 보고됩니다. `UNKNOWN`은 정상으로 취급하지 않습니다.
+
+v0.3.0은 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다. 아직 수정이 없는 커널 CVE-2026-98432는 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
 
 ## 배포 체크리스트
 
-안전한 릴리스를 위해 다음 사항들을 반드시 확인합니다.
-
-### 업로드 전 (Pre-release)
+### 릴리스 전 (Pre-release)
 - [ ] 로컬 빌드 검증 (`packer build` 및 `vagrant up` 테스트 성공)
-- [ ] Vagrant Cloud / HCP 로그인 유효성 확인
-- [ ] CHANGELOG.md에 신규 버전 작성 및 Release Notes 갱신 (예: v1.1.0 - 2026-07-18 기준 최신, 보안 하드닝 및 K8s 전제조건 추가)
-- [ ] Box 파일 크기 검증 (Thin Provisioning 기준 2~3.5GB 내외)
+- [ ] CHANGELOG.md에 신규 버전 작성 및 Release Notes 갱신 (예: v0.3.0 - 2026-11-01 기준 최신, CVE 재빌드)
+- [ ] Box 파일 크기 검증 (1–2 GiB 내외, root LV는 설치 시 16 GiB이며 첫 부팅 때 전체 디스크로 확장)
+- [ ] 박스 버전이 기존에 배포된 버전보다 높은지 확인 (Vagrant는 높은 버전을 우선)
 
-### 업로드 후 (Post-release)
-- [ ] Vagrant Cloud 웹 대시보드에서 Provider(vmware_desktop, virtualbox) 및 Architecture(arm64, amd64) 태그 정상 반영 확인
-- [ ] 버전의 릴리스(Released) 상태 점검
-- [ ] `vagrant init dasomel/ubuntu-26.04-xfs`를 통한 로컬 다운로드 및 구동 테스트
-- [ ] GitHub Release 생성 및 버전 노트 작성
+### 릴리스 후 (Post-release)
+- [ ] GitHub Release에 `.box` asset과 체크섬이 올라갔는지 확인
+- [ ] GitHub Pages 카탈로그 JSON이 새 버전과 asset URL을 가리키는지 확인
+- [ ] `config.vm.box_url`로 로컬 다운로드 및 구동 테스트
+- [ ] 주간 `box-cve-scan` 워크플로우 결과 확인 (CRITICAL/HIGH 시 재빌드)

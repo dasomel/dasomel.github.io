@@ -7,7 +7,7 @@ order: 9
 type: "own"
 featured: true
 problem: "Local Kubernetes projects repeatedly rebuild the same OS, kernel, networking, storage, and diagnostic baseline across architectures and hypervisors"
-solution: "Reproducible Ubuntu Vagrant base boxes built with Packer so higher-level Kubernetes projects can start from a consistent node-ready operating system"
+solution: "Reproducible Ubuntu Vagrant base boxes built with Packer and distributed via GitHub Releases and a GitHub Pages catalog so higher-level Kubernetes projects can start from a consistent node-ready operating system"
 ---
 
 ## Project Overview
@@ -16,7 +16,7 @@ solution: "Reproducible Ubuntu Vagrant base boxes built with Packer so higher-le
 
 It deliberately does **not** include Kubernetes itself. Instead, it standardizes the repetitive work around kernel modules, networking, storage prerequisites, filesystem choices, diagnostics, time synchronization, and disk expansion so projects such as Narwhal and Beluga can focus on cluster bootstrap.
 
-The project publishes Ubuntu **24.04 LTS** and **26.04 LTS** variants for ext4 and XFS, with ARM64 and AMD64 support and common local hypervisors such as VirtualBox and VMware Fusion.
+The project provides Ubuntu **24.04 LTS** and **26.04 LTS** variants for ext4 and XFS, with templates for ARM64 and AMD64 and common local hypervisors such as VirtualBox and VMware Fusion. The boxes shipped in the latest release (v0.3.0) are arm64-only (see [Current Status](#current-status)).
 
 ## Why the Layer Exists
 
@@ -47,14 +47,16 @@ Kube-Ready-Box standardizes the left side of this boundary and leaves Kubernetes
 | 26.04 LTS | ext4 | Latest LTS / cgroup v2-only environment |
 | 26.04 LTS | XFS | Latest LTS with project quota use cases |
 
-Vagrant Cloud names include:
+Besides Ubuntu, the same catalog also serves Rocky 9 (ext4/XFS, 0.1.1) and NixOS (`nixos-kube-ready`, 0.2.2, libvirt). Catalog (GitHub Pages) box names include:
 
 ```text
-dasomel/ubuntu-24.04-ext4
-dasomel/ubuntu-24.04-xfs
-dasomel/ubuntu-26.04-ext4
-dasomel/ubuntu-26.04-xfs
+ubuntu-24.04-ext4   ubuntu-24.04-xfs
+ubuntu-26.04-ext4   ubuntu-26.04-xfs
+rocky-9-ext4        rocky-9-xfs
+nixos-kube-ready
 ```
+
+`.box` files are GitHub Release assets and the Vagrant catalog JSON is served from GitHub Pages. See [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md).
 
 ## Kubernetes Readiness Baseline
 
@@ -69,7 +71,7 @@ The boxes include OS-level preparation such as:
 - `chrony` time synchronization — replaces the `systemd-timesyncd` default on Ubuntu 25.10+/26.04, with Korean NTP servers preconfigured (`/etc/chrony/sources.d/kr-ntp.sources`) for etcd's clock-skew sensitivity
 - security hardening: `needrestart` removed (addresses 5 Qualys local-privilege-escalation CVEs), `unattended-upgrades` fully purged (avoids conflicting with kubelet Graceful Node Shutdown), `auditd` installed but disabled by default (CIS-ready, bounded I/O), `apparmor-utils` added
 - Kubernetes/network/performance CLI utilities
-- automatic disk/partition/LVM/filesystem expansion (1TB thin-provisioned disk; box size is ~2.2GB for ext4 and ~3.4GB for XFS)
+- automatic disk/partition/LVM/filesystem expansion (boxes are 1–2 GiB; the root LV is 16 GiB at install and grows to the full disk on first boot)
 
 Container runtimes and Kubernetes packages are intentionally left to the consumer project.
 
@@ -97,7 +99,7 @@ provider / architecture validation
        ↓
 Vagrant Box
        ↓
-Vagrant Cloud
+GitHub Release (.box) + GitHub Pages (catalog JSON)
        ↓
 Narwhal / Beluga / local Kubernetes
 ```
@@ -114,19 +116,20 @@ Useful for large files and filesystem quota scenarios. It is also the natural co
 
 ## Getting Started
 
+Set the box name and catalog URL in your Vagrantfile:
+
+```ruby
+config.vm.box     = "dasomel/ubuntu-24.04-ext4"
+config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04-ext4.json"
+```
+
 ```bash
-# Stable default
-vagrant init dasomel/ubuntu-24.04-ext4
-vagrant up --provider=vmware_desktop
-
-# XFS / quota-oriented environment
-vagrant init dasomel/ubuntu-24.04-xfs
-vagrant up --provider=vmware_desktop
-
-# Ubuntu 26.04
-vagrant init dasomel/ubuntu-26.04-ext4
 vagrant up --provider=vmware_desktop
 ```
+
+For the XFS / quota-oriented environment or Ubuntu 26.04, swap the box name and catalog JSON for `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, and so on.
+
+> If you previously pulled 1.1.0 from Vagrant Cloud, run `vagrant box remove dasomel/<box> --box-version 1.1.0` first: Vagrant ranks 1.1.0 above 0.3.0.
 
 After boot, install the Kubernetes/runtime versions required by the consuming project.
 
@@ -141,14 +144,19 @@ The goal is to verify OS readiness, not merely whether the VM starts.
 
 ## Current Status
 
-The latest release is **v1.1.0** (2026-07-19). It is the first tagged release to ship Ubuntu 26.04 LTS (Resolute Raccoon, kernel 7.0) alongside 24.04 LTS (Noble Numbat, the default), and it introduced the security hardening, chrony migration, CSI/Longhorn prerequisites, and persistent bpffs mount described above.
+The latest release is [**v0.3.0**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) (2026-11-01). It is a CVE rebuild: every box has 0 distro-fixable CVEs per Trivy at release (the previously shipped Rocky 9 0.1.0 line had 438, 5 critical; an unpublished Ubuntu 26.04 build had 1,141, 2 critical). Kernel CVE-2026-98432 has no Ubuntu/Rocky fix yet and is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
+
+Versions are Ubuntu boxes 0.3.0, Rocky 9 boxes 0.1.1, and NixOS 0.2.2 (libvirt). The Ubuntu version line was reset because 1.1.0 was a Vagrant Cloud-only upload. The security hardening, chrony migration, CSI/Longhorn prerequisites, and persistent bpffs mount described above are all still included.
+
+HashiCorp is shutting down HCP Vagrant (Vagrant Cloud): new box/registry creation stopped on 2026-10-01, support ends 2026-11-02, and all hosted boxes are decommissioned on 2026-12-31 ([announcement](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). Distribution therefore moved to GitHub Releases and GitHub Pages.
 
 | Provider | AMD64 | ARM64 | Notes |
 |---|---|---|---|
-| VirtualBox | ✅ | ✅ | VirtualBox 7.1+ required for ARM64 |
-| VMware Fusion | ✅* | ✅ | Apple Silicon supported; *AMD64 is local-build only — Vagrant Cloud publishes ARM64 only due to CI runner limitations |
+| VirtualBox | template only* | template only* | VirtualBox 7.1+ required for ARM64; *not in v0.3.0 — VirtualBox SSH cannot be verified on the build host |
+| VMware Fusion | template only* | ✅ | Apple Silicon supported; *AMD64 cannot be built on the arm64 build host, so it is not in v0.3.0 (local builds still work) |
 
-- A declarative NixOS variant, `dasomel/nixos-kube-ready`, is published separately (libvirt/arm64; usable on Apple Silicon via `vagrant-qemu`).
+- v0.3.0 ships arm64 only: `vmware_desktop` for Ubuntu/Rocky and `libvirt` for NixOS.
+- A declarative NixOS variant, `dasomel/nixos-kube-ready`, is distributed from the same catalog (libvirt/arm64; usable on Apple Silicon via `vagrant-qemu`).
 - Building from source requires Packer 1.10+ (CI pins 1.15.4); build timeouts are `ssh_timeout` 1h (2h for `vmware-arm64`), with a 90-minute CI job timeout.
 
 ## Documentation Index
@@ -158,7 +166,7 @@ The latest release is **v1.1.0** (2026-07-19). It is the first tagged release to
 | Overview | [Box Overview](/oss/en/kube-ready-box/overview) | Goals and supported scope |
 | Architecture | [System Architecture](/oss/en/kube-ready-box/architecture) | Packer → Box → Vagrant |
 | Getting Started | [Usage Guide](/oss/en/kube-ready-box/getting-started) | Provider and filesystem selection |
-| Operations | [Builds & Releases](/oss/en/kube-ready-box/operations) | Packer and Vagrant Cloud |
+| Operations | [Builds & Releases](/oss/en/kube-ready-box/operations) | Packer and GitHub Release/Pages distribution |
 | Verification | [Node Verification](/oss/en/kube-ready-box/verification) | Readiness checks and release validation |
 
 ## Project Relationship

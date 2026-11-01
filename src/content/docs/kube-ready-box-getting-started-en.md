@@ -16,7 +16,9 @@ Guide to defining multi-node Kubernetes clusters with Kube-Ready-Box.
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "dasomel/ubuntu-26.04-xfs"
-  config.vm.box_version = ">= 1.2.0"
+  config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-26.04-xfs.json"
+  config.vm.box_version = ">= 0.3.0"
+  # v0.3.0 ships vmware_desktop arm64 only (no VirtualBox box)
 
   # VMware Desktop Provider
   config.vm.provider "vmware_desktop" do |v|
