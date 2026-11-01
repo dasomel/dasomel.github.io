@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-01T23:03:32.654Z",
+  "count": 10,
+  "articles": [
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Game Off 2026: The theme is SHIFT",
+      "link": "https://github.blog/open-source/gaming/game-off-2026-the-theme-is-shift/",
+      "date": "2026-11-01T21:36:00.000Z",
+      "excerpt": "GitHub’s annual month-long game jam is back for its 14th year! This November, make a game inspired by the theme SHIFT."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Open-source security in the AI exploit era: Patch without changing a thing",
+      "link": "https://thenewstack.io/patchmageddon-open-source-security22842502/",
+      "date": "2026-11-01T16:00:00.000Z",
+      "excerpt": "Here’s how a vulnerability in a popular open-source library plays out in 2026: A maintainer merges a fix and publishes"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "A step-by-step guide for how to kill the line-by-line code review",
+      "link": "https://thenewstack.io/ai-code-review-invariants/",
+      "date": "2026-11-01T15:00:00.000Z",
+      "excerpt": "Agents verify; people decide. Most teams running AI code review today have it the other way around."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Amazon CEO predicts 6 to 8 AI models will be ‘good enough’ for almost everything",
+      "link": "https://thenewstack.io/jassy-bedrock-multimodel-prediction/",
+      "date": "2026-10-31T14:30:00.000Z",
+      "excerpt": "Amazon CEO Andy Jassy expects the frontier AI model race to produce several competitive models rather than a single winner,"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new with Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/",
+      "date": "2026-10-30T16:00:00.000Z",
+      "excerpt": "Want to know the latest from Google Cloud? Find it here in one handy location."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "ARTEX and Friends: Enter Agentic Offensive Frameworks",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/",
+      "date": "2026-10-30T14:00:00.000Z",
+      "excerpt": "Written by: Aurora Blum, David Mainor, Rohit Nambiar, Omar ElAhdan, Matthew McWhirt, Will Silverstone, Bhavesh Dhake, Chris Busse Introduction Recent intrusions in which threat actors have been observed weaponizing agentic frameworks to execute highly-automated intrusions has put a spotlight on evolving adversarial use…"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "New Gemini courses for financial services and legal teams",
+      "link": "https://cloud.google.com/blog/topics/training-certifications/new-gemini-courses-for-financial-services-and-legal-teams/",
+      "date": "2026-10-30T13:00:00.000Z",
+      "excerpt": "Today Google Skills is sharing new, industry-specific video learning bundles to get you into Gemini and using agents. One bundle is designed for financial services and one is built specifically for those in the legal profession."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Making it easier for websites to express AI training preferences",
+      "link": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "date": "2026-10-30T09:30:00.000Z",
+      "excerpt": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Community safety report and new protections for teens",
+      "link": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "date": "2026-10-30T09:00:00.000Z",
+      "excerpt": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Fair use benefits everyone",
+      "link": "https://openai.com/index/fair-use-benefits-everyone",
+      "date": "2026-10-30T00:00:00.000Z",
+      "excerpt": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation."
+    }
+  ]
+}
