@@ -12,6 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write            # deploy dispatch (bot push does not trigger on: push)
   contents: write
 
 concurrency:
@@ -46,6 +47,7 @@ jobs:
         run: bun scripts/refresh-project-metadata.mjs
 
       - name: Publish generated development pulse
+        id: publish
         run: |
           if git diff --quiet -- src/data/project-repo-meta.json; then
             echo 'No project metadata changes.'
@@ -54,10 +56,19 @@ jobs:
 
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/data/project-repo-meta.json
+          # The collector also rewrites the state file (generatedAt) on every run;
+          # leaving it unstaged makes `git pull --rebase` abort.
+          git add src/data/project-repo-meta.json src/data/project-repo-meta-state.json
           git commit -m 'chore: refresh OSS project development pulse'
 
           # Another maintenance job may have advanced main while metadata was
           # being collected. Rebase the generated-data-only commit and retry once.
           git pull --rebase origin main
           git push origin HEAD:main
+          echo 'pushed=true' >> "$GITHUB_OUTPUT"
+
+      - name: Trigger Pages deploy
+        if: steps.publish.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref main
