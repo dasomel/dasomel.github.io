@@ -29,8 +29,8 @@ packer build -only=virtualbox-iso.amd64 ubuntu-26.04.pkr.hcl
 ## 릴리스 배포 (GitHub Release + Pages)
 
 - 빌드 완료된 `.box` 아티팩트의 SHA256 체크섬을 검증하고 GitHub Release asset으로 올린 뒤, GitHub Pages의 `boxes/<name>.json` 카탈로그를 갱신합니다. 사용 시에는 `config.vm.box = "dasomel/ubuntu-24.04-ext4"`와 `config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04-ext4.json"`을 지정합니다.
-- 최신 릴리스는 [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)이며 **arm64 전용**입니다(Ubuntu/Rocky `vmware_desktop`, NixOS `libvirt`). VirtualBox와 amd64 박스는 포함되지 않습니다.
-- Ubuntu 버전 라인은 0.3.0으로 초기화됐습니다. Vagrant Cloud에만 있던 1.1.0이 0.3.0보다 높게 취급되므로 기존 사용자는 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 실행해야 합니다.
+- 최신 릴리스는 [v0.3.1](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02, Ubuntu 박스만 재빌드)이며 **arm64 전용**입니다(Ubuntu/Rocky `vmware_desktop`, NixOS `libvirt`). VirtualBox와 amd64 박스는 포함되지 않습니다.
+- Ubuntu 버전 라인은 0.3.0으로 초기화됐습니다. Vagrant Cloud에만 있던 1.1.0이 0.3.x보다 높게 취급되므로 기존 사용자는 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 실행해야 합니다.
 - HCP Vagrant(Vagrant Cloud)는 종료 중입니다: 신규 생성 중단 2026-10-01, 지원 종료 2026-11-02, 호스팅 box 폐기 2026-12-31 ([공지](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)).
 - 주간 `.github/workflows/box-cve-scan.yml`이 카탈로그의 박스를 내려받아 체크섬을 검증하고 dpkg/rpm DB를 추출해 Trivy(수정 가능 CVE만)로 스캔합니다. CRITICAL/HIGH는 재빌드 신호로 실행을 실패시키며, NixOS는 DB가 없어 `UNKNOWN`으로 보고됩니다.
 
