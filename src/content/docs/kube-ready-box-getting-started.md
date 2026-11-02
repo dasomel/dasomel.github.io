@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "dasomel/ubuntu-26.04-xfs"
   config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-26.04-xfs.json"
   config.vm.box_version = ">= 0.3.0"
-  # v0.3.0은 vmware_desktop arm64만 배포 (VirtualBox 박스 없음)
+  # v0.3.x는 vmware_desktop arm64만 배포 (VirtualBox 박스 없음)
 
   # VMware Desktop 프로바이더 설정
   config.vm.provider "vmware_desktop" do |v|

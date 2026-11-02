@@ -10,13 +10,13 @@ lastModified: 2026-11-01
 
 Kube-Ready-Box distributes `.box` files as **GitHub Release assets** and the Vagrant catalog JSON through **GitHub Pages** (`https://dasomel.github.io/kube-ready-box/boxes/<name>.json`). Boxes are split per filesystem (ext4, xfs); catalog names are `ubuntu-24.04-ext4`, `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, `ubuntu-26.04-xfs`, `rocky-9-ext4`, `rocky-9-xfs`, and `nixos-kube-ready`. See [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md).
 
-The latest release is [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) (2026-11-01): Ubuntu boxes 0.3.0, Rocky 9 boxes 0.1.1, NixOS 0.2.2 (libvirt). It ships **arm64 only** (`vmware_desktop` for Ubuntu/Rocky, `libvirt` for NixOS). VirtualBox boxes are not included because VirtualBox SSH cannot be verified on the build host, and amd64 boxes are not included because they cannot be built on the arm64 build host. The templates themselves can still be built locally.
+The latest release is [v0.3.1](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1) (2026-11-02): Ubuntu boxes 0.3.1 (v0.3.1 assets); Rocky 9 boxes 0.1.1 and NixOS 0.2.2 (libvirt) stay [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) assets. It ships **arm64 only** (`vmware_desktop` for Ubuntu/Rocky, `libvirt` for NixOS). VirtualBox boxes are not included because VirtualBox SSH cannot be verified on the build host, and amd64 boxes are not included because they cannot be built on the arm64 build host. The templates themselves can still be built locally.
 
 ## Vagrant Cloud Shutdown and Migration
 
 HashiCorp is shutting down HCP Vagrant (Vagrant Cloud): new box/registry creation stopped on 2026-10-01, support ends 2026-11-02, and all hosted boxes are decommissioned on 2026-12-31 ([announcement](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). The former HCP Service Principal authentication and `vagrant cloud publish` upload pipeline are no longer used.
 
-The Ubuntu version line was reset to 0.3.0. 1.1.0 was a Vagrant Cloud-only upload, and Vagrant ranks 1.1.0 above 0.3.0, so existing users must first run `vagrant box remove dasomel/<box> --box-version 1.1.0`.
+The Ubuntu version line was reset to 0.3.0. 1.1.0 was a Vagrant Cloud-only upload, and Vagrant ranks 1.1.0 above 0.3.x, so existing users must first run `vagrant box remove dasomel/<box> --box-version 1.1.0`.
 
 ```ruby
 config.vm.box     = "dasomel/ubuntu-24.04-ext4"
@@ -64,7 +64,7 @@ The `.github/workflows/box-cve-scan.yml` workflow runs weekly and:
 - Fails the run on CRITICAL/HIGH findings, which is the signal to rebuild.
 - Reports NixOS as `UNKNOWN` because it has no dpkg/rpm database. `UNKNOWN` is never treated as healthy.
 
-At release, v0.3.0 had 0 distro-fixable CVEs per Trivy on every box. Kernel CVE-2026-98432, which has no fix yet, is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
+At release, v0.3.0 and v0.3.1 (Ubuntu) had 0 distro-fixable CVEs per Trivy on every box. Kernel CVE-2026-98432, which has no fix yet, is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
 
 ## Deployment Checklist
 

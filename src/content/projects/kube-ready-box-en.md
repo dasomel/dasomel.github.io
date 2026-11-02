@@ -129,7 +129,7 @@ vagrant up --provider=vmware_desktop
 
 For the XFS / quota-oriented environment or Ubuntu 26.04, swap the box name and catalog JSON for `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, and so on.
 
-> If you previously pulled 1.1.0 from Vagrant Cloud, run `vagrant box remove dasomel/<box> --box-version 1.1.0` first: Vagrant ranks 1.1.0 above 0.3.0.
+> If you previously pulled 1.1.0 from Vagrant Cloud, run `vagrant box remove dasomel/<box> --box-version 1.1.0` first: Vagrant ranks 1.1.0 above 0.3.x.
 
 After boot, install the Kubernetes/runtime versions required by the consuming project.
 
@@ -144,18 +144,20 @@ The goal is to verify OS readiness, not merely whether the VM starts.
 
 ## Current Status
 
-The latest release is [**v0.3.0**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) (2026-11-01). It is a CVE rebuild: every box has 0 distro-fixable CVEs per Trivy at release (the previously shipped Rocky 9 0.1.0 line had 438, 5 critical; an unpublished Ubuntu 26.04 build had 1,141, 2 critical). Kernel CVE-2026-98432 has no Ubuntu/Rocky fix yet and is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
+The latest release is [**v0.3.1**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1) (2026-11-02). It rebuilds only the Ubuntu boxes to remove the kernel arguments the installer left in GRUB (`autoinstall ds=nocloud-net;s=http://<build-host>/`) and the leftover installer kernel after the upgrade. A Trivy scan right after release again found 0 fixable CVEs on all four Ubuntu boxes.
 
-Versions are Ubuntu boxes 0.3.0, Rocky 9 boxes 0.1.1, and NixOS 0.2.2 (libvirt). The Ubuntu version line was reset because 1.1.0 was a Vagrant Cloud-only upload. The security hardening, chrony migration, CSI/Longhorn prerequisites, and persistent bpffs mount described above are all still included.
+The previous release, [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) (2026-11-01), was a CVE rebuild: every box has 0 distro-fixable CVEs per Trivy at release (the previously shipped Rocky 9 0.1.0 line had 438, 5 critical; an unpublished Ubuntu 26.04 build had 1,141, 2 critical). Kernel CVE-2026-98432 has no Ubuntu/Rocky fix yet and is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
+
+Versions are Ubuntu boxes 0.3.1, Rocky 9 boxes 0.1.1, and NixOS 0.2.2 (libvirt). The Ubuntu version line was reset because 1.1.0 was a Vagrant Cloud-only upload. The security hardening, chrony migration, CSI/Longhorn prerequisites, and persistent bpffs mount described above are all still included.
 
 HashiCorp is shutting down HCP Vagrant (Vagrant Cloud): new box/registry creation stopped on 2026-10-01, support ends 2026-11-02, and all hosted boxes are decommissioned on 2026-12-31 ([announcement](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). Distribution therefore moved to GitHub Releases and GitHub Pages.
 
 | Provider | AMD64 | ARM64 | Notes |
 |---|---|---|---|
-| VirtualBox | template only* | template only* | VirtualBox 7.1+ required for ARM64; *not in v0.3.0 — VirtualBox SSH cannot be verified on the build host |
-| VMware Fusion | template only* | ✅ | Apple Silicon supported; *AMD64 cannot be built on the arm64 build host, so it is not in v0.3.0 (local builds still work) |
+| VirtualBox | template only* | template only* | VirtualBox 7.1+ required for ARM64; *not in v0.3.x — VirtualBox SSH cannot be verified on the build host |
+| VMware Fusion | template only* | ✅ | Apple Silicon supported; *AMD64 cannot be built on the arm64 build host, so it is not in v0.3.x (local builds still work) |
 
-- v0.3.0 ships arm64 only: `vmware_desktop` for Ubuntu/Rocky and `libvirt` for NixOS.
+- v0.3.x ships arm64 only: `vmware_desktop` for Ubuntu/Rocky and `libvirt` for NixOS.
 - A declarative NixOS variant, `dasomel/nixos-kube-ready`, is distributed from the same catalog (libvirt/arm64; usable on Apple Silicon via `vagrant-qemu`).
 - Building from source requires Packer 1.10+ (CI pins 1.15.4); build timeouts are `ssh_timeout` 1h (2h for `vmware-arm64`), with a 90-minute CI job timeout.
 

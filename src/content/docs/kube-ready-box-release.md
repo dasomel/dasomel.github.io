@@ -10,13 +10,13 @@ lastModified: 2026-11-01
 
 Kube-Ready-Box는 `.box` 파일을 **GitHub Release asset**으로, Vagrant catalog JSON을 **GitHub Pages**(`https://dasomel.github.io/kube-ready-box/boxes/<name>.json`)로 배포합니다. 파일시스템(ext4, xfs)별로 Box를 분리하며 카탈로그 이름은 `ubuntu-24.04-ext4`, `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, `ubuntu-26.04-xfs`, `rocky-9-ext4`, `rocky-9-xfs`, `nixos-kube-ready`입니다. 자세한 내용은 [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md)를 참고하세요.
 
-최신 릴리스는 [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)입니다. Ubuntu 박스 0.3.0, Rocky 9 박스 0.1.1, NixOS 박스 0.2.2(libvirt)이며, **arm64 전용**입니다(Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt`). VirtualBox 박스는 빌드 호스트에서 SSH를 검증할 수 없어, amd64 박스는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.0에 포함되지 않습니다. 템플릿 자체는 로컬 빌드가 가능합니다.
+최신 릴리스는 [v0.3.1](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02)입니다. Ubuntu 박스 0.3.1(v0.3.1 자산), Rocky 9 박스 0.1.1과 NixOS 박스 0.2.2(libvirt)([v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) 자산)이며, **arm64 전용**입니다(Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt`). VirtualBox 박스는 빌드 호스트에서 SSH를 검증할 수 없어, amd64 박스는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.x에 포함되지 않습니다. 템플릿 자체는 로컬 빌드가 가능합니다.
 
 ## Vagrant Cloud 종료와 마이그레이션
 
 HashiCorp가 HCP Vagrant(Vagrant Cloud)를 종료합니다. 신규 box/registry 생성은 2026-10-01에 중단됐고, 지원은 2026-11-02에 종료되며, 호스팅된 모든 box는 2026-12-31에 폐기됩니다([공지](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). 이전의 HCP Service Principal 인증과 `vagrant cloud publish` 기반 업로드 파이프라인은 더 이상 사용하지 않습니다.
 
-Ubuntu 버전 라인은 0.3.0으로 초기화됐습니다. 1.1.0은 Vagrant Cloud에만 올라간 버전이며 Vagrant는 1.1.0을 0.3.0보다 높게 취급하므로, 기존 사용자는 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 먼저 실행해야 합니다.
+Ubuntu 버전 라인은 0.3.0으로 초기화됐습니다. 1.1.0은 Vagrant Cloud에만 올라간 버전이며 Vagrant는 1.1.0을 0.3.x보다 높게 취급하므로, 기존 사용자는 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 먼저 실행해야 합니다.
 
 ```ruby
 config.vm.box     = "dasomel/ubuntu-24.04-ext4"
@@ -64,7 +64,7 @@ config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04
 - CRITICAL/HIGH가 발견되면 실행이 실패하며, 이는 재빌드 신호입니다.
 - NixOS 박스는 dpkg/rpm DB가 없어 `UNKNOWN`으로 보고됩니다. `UNKNOWN`은 정상으로 취급하지 않습니다.
 
-v0.3.0은 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다. 아직 수정이 없는 커널 CVE-2026-98432는 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
+v0.3.0과 v0.3.1(Ubuntu)은 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다. 아직 수정이 없는 커널 CVE-2026-98432는 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
 
 ## 배포 체크리스트
 

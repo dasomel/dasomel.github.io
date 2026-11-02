@@ -133,7 +133,7 @@ vagrant up --provider=vmware_desktop
 
 XFS / quota 환경이나 Ubuntu 26.04는 box 이름과 catalog JSON을 `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4` 등으로 바꿔 사용합니다.
 
-> 과거에 Vagrant Cloud에서 1.1.0을 받았다면 Vagrant가 1.1.0을 0.3.0보다 높은 버전으로 취급하므로 먼저 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 실행하세요.
+> 과거에 Vagrant Cloud에서 1.1.0을 받았다면 Vagrant가 1.1.0을 0.3.x보다 높은 버전으로 취급하므로 먼저 `vagrant box remove dasomel/<box> --box-version 1.1.0`을 실행하세요.
 
 사용 후에는 box 자체가 Kubernetes cluster를 제공하는 것이 아니라는 점을 전제로 containerd, kubelet, kubeadm 또는 원하는 Kubernetes 배포판을 추가합니다.
 
@@ -148,18 +148,20 @@ vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 
 ## 현재 상태
 
-최신 릴리스는 [**v0.3.0**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)입니다. CVE 재빌드 릴리스로, 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다(이전 Rocky 9 0.1.0 계열은 438건(critical 5), 미배포 Ubuntu 26.04 빌드는 1,141건(critical 2)). 커널 CVE-2026-98432는 Ubuntu/Rocky 모두 아직 수정이 없어 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
+최신 릴리스는 [**v0.3.1**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02)입니다. Ubuntu 박스만 다시 빌드해, 설치기가 GRUB에 남긴 커널 인자(`autoinstall ds=nocloud-net;s=http://<빌드 호스트>/`)와 업그레이드 뒤 남은 설치용 커널 잔재를 지웠습니다. 릴리스 직후 Trivy 스캔도 Ubuntu 4종 모두 수정 가능 CVE 0건입니다.
 
-버전은 Ubuntu 박스 0.3.0, Rocky 9 박스 0.1.1, NixOS 박스 0.2.2(libvirt)입니다. Ubuntu 버전 라인은 초기화됐는데, 1.1.0은 Vagrant Cloud에만 올라간 버전이기 때문입니다. 위 보안 하드닝과 chrony 전환, CSI/Longhorn 전제조건, bpffs 영구 마운트는 그대로 포함됩니다.
+그 전 [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)은 CVE 재빌드 릴리스로, 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다(이전 Rocky 9 0.1.0 계열은 438건(critical 5), 미배포 Ubuntu 26.04 빌드는 1,141건(critical 2)). 커널 CVE-2026-98432는 Ubuntu/Rocky 모두 아직 수정이 없어 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
+
+버전은 Ubuntu 박스 0.3.1, Rocky 9 박스 0.1.1, NixOS 박스 0.2.2(libvirt)입니다. Ubuntu 버전 라인은 초기화됐는데, 1.1.0은 Vagrant Cloud에만 올라간 버전이기 때문입니다. 위 보안 하드닝과 chrony 전환, CSI/Longhorn 전제조건, bpffs 영구 마운트는 그대로 포함됩니다.
 
 HashiCorp가 HCP Vagrant(Vagrant Cloud)를 종료합니다. 신규 box/registry 생성은 2026-10-01에 중단됐고, 지원은 2026-11-02에 종료되며, 호스팅된 모든 box는 2026-12-31에 폐기됩니다([공지](https://developer.hashicorp.com/hcp/docs/vagrant/hcp-vagrant-eol)). 그래서 배포 채널을 GitHub Release와 GitHub Pages로 옮겼습니다.
 
 | Provider | AMD64 | ARM64 | 비고 |
 |---|---|---|---|
-| VirtualBox | 템플릿만* | 템플릿만* | ARM64는 VirtualBox 7.1+ 필요; *v0.3.0에는 미포함 — 빌드 호스트에서 VirtualBox SSH를 검증할 수 없음 |
-| VMware Fusion | 템플릿만* | ✅ | Apple Silicon 지원; *AMD64는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.0에 미포함 (로컬 빌드는 가능) |
+| VirtualBox | 템플릿만* | 템플릿만* | ARM64는 VirtualBox 7.1+ 필요; *v0.3.x에는 미포함 — 빌드 호스트에서 VirtualBox SSH를 검증할 수 없음 |
+| VMware Fusion | 템플릿만* | ✅ | Apple Silicon 지원; *AMD64는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.x에 미포함 (로컬 빌드는 가능) |
 
-- v0.3.0은 arm64 전용입니다: Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt` 박스를 배포합니다.
+- v0.3.x는 arm64 전용입니다: Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt` 박스를 배포합니다.
 - 별도 변형인 선언형 NixOS 박스 `dasomel/nixos-kube-ready`(libvirt/arm64, Apple Silicon은 `vagrant-qemu` 경유)도 같은 카탈로그에서 배포됩니다.
 - Packer 1.10+ (CI는 1.15.4 고정), 빌드 타임아웃은 `ssh_timeout` 1시간(`vmware-arm64`는 2시간), CI job 타임아웃 90분입니다.
 
