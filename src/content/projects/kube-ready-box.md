@@ -16,7 +16,7 @@ solution: "Packer로 Kubernetes용 Ubuntu base image를 사전 구성하고 GitH
 
 이 프로젝트의 핵심은 Kubernetes 자체를 포함하는 것이 아니라, Kubernetes가 올라가기 전에 필요한 **운영체제 수준의 준비 상태(OS readiness)**를 하나의 재현 가능한 이미지로 만드는 것입니다.
 
-현재 Ubuntu **24.04 LTS**와 **26.04 LTS**를 제공하며, ext4와 XFS filesystem variant를 분리합니다. Apple Silicon 환경을 포함한 ARM64와 AMD64를 지원하고 VirtualBox와 VMware Fusion 같은 로컬 hypervisor용 템플릿을 제공합니다. 다만 최신 릴리스(v0.3.0)가 배포하는 박스는 arm64 전용입니다(자세한 내용은 [현재 상태](#현재-상태) 참고).
+현재 Ubuntu **24.04 LTS**와 **26.04 LTS**를 제공하며, ext4와 XFS filesystem variant를 분리합니다. Apple Silicon 환경을 포함한 ARM64와 AMD64를 지원하고 VirtualBox와 VMware Fusion 같은 로컬 hypervisor용 템플릿을 제공합니다. 최신 릴리스(v0.3.1)는 Ubuntu 박스를 arm64(`vmware_desktop`)와 amd64(`virtualbox`)로 배포합니다(자세한 내용은 [현재 상태](#현재-상태) 참고).
 
 > Kube-Ready-Box는 Kubernetes installer가 아닙니다. `kubelet`, `kubeadm`, `kubectl`, CNI 및 container runtime은 사용자가 원하는 버전을 선택해 이후 설치합니다.
 
@@ -148,7 +148,7 @@ vagrant ssh -c "/bin/bash /etc/vagrant-box/check-tuning.sh"
 
 ## 현재 상태
 
-최신 릴리스는 [**v0.3.1**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02)입니다. Ubuntu 박스만 다시 빌드해, 설치기가 GRUB에 남긴 커널 인자(`autoinstall ds=nocloud-net;s=http://<빌드 호스트>/`)와 업그레이드 뒤 남은 설치용 커널 잔재를 지웠습니다. 릴리스 직후 Trivy 스캔도 Ubuntu 4종 모두 수정 가능 CVE 0건입니다.
+최신 릴리스는 [**v0.3.1**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02)입니다. Ubuntu 박스만 다시 빌드해, 설치기가 GRUB에 남긴 커널 인자(`autoinstall ds=nocloud-net;s=http://<빌드 호스트>/`)와 업그레이드 뒤 남은 설치용 커널 잔재를 지웠습니다. 릴리스 직후 Trivy 스캔도 Ubuntu 4종 모두 수정 가능 CVE 0건입니다. 2026-11-03에는 같은 v0.3.1에 Ubuntu VirtualBox amd64 박스 4종을 추가했습니다. GitHub x86 러너에서 빌드하고 같은 러너에서 VirtualBox로 부팅 검증을 통과한 것만 올렸으며, 스캔 결과도 수정 가능 CVE 0건입니다.
 
 그 전 [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0)(2026-11-01)은 CVE 재빌드 릴리스로, 릴리스 시점 Trivy 기준 모든 박스의 배포판 수정 가능 CVE가 0건입니다(이전 Rocky 9 0.1.0 계열은 438건(critical 5), 미배포 Ubuntu 26.04 빌드는 1,141건(critical 2)). 커널 CVE-2026-98432는 Ubuntu/Rocky 모두 아직 수정이 없어 [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md)에서 추적합니다.
 
@@ -158,10 +158,10 @@ HashiCorp가 HCP Vagrant(Vagrant Cloud)를 종료합니다. 신규 box/registry 
 
 | Provider | AMD64 | ARM64 | 비고 |
 |---|---|---|---|
-| VirtualBox | 템플릿만* | 템플릿만* | ARM64는 VirtualBox 7.1+ 필요; *v0.3.x에는 미포함 — 빌드 호스트에서 VirtualBox SSH를 검증할 수 없음 |
-| VMware Fusion | 템플릿만* | ✅ | Apple Silicon 지원; *AMD64는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.x에 미포함 (로컬 빌드는 가능) |
+| VirtualBox | ✅ (Ubuntu) | 템플릿만* | AMD64는 GitHub x86 러너에서 빌드·부팅 검증; ARM64는 VirtualBox 7.1+ 필요, *빌드 호스트에서 VirtualBox SSH를 검증할 수 없어 미배포 |
+| VMware Fusion | 템플릿만* | ✅ | Apple Silicon 지원; *AMD64는 러너에서 VMware를 돌릴 수 없어 미배포 (로컬 빌드는 가능) |
 
-- v0.3.x는 arm64 전용입니다: Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt` 박스를 배포합니다.
+- Ubuntu는 `vmware_desktop`(arm64)과 `virtualbox`(amd64), Rocky는 `vmware_desktop`(arm64), NixOS는 `libvirt`(arm64) 박스를 배포합니다. Intel/AMD 호스트에서는 `vagrant up --provider virtualbox`로 씁니다.
 - 별도 변형인 선언형 NixOS 박스 `dasomel/nixos-kube-ready`(libvirt/arm64, Apple Silicon은 `vagrant-qemu` 경유)도 같은 카탈로그에서 배포됩니다.
 - Packer 1.10+ (CI는 1.15.4 고정), 빌드 타임아웃은 `ssh_timeout` 1시간(`vmware-arm64`는 2시간), CI job 타임아웃 90분입니다.
 

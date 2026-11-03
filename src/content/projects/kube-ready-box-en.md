@@ -16,7 +16,7 @@ solution: "Reproducible Ubuntu Vagrant base boxes built with Packer and distribu
 
 It deliberately does **not** include Kubernetes itself. Instead, it standardizes the repetitive work around kernel modules, networking, storage prerequisites, filesystem choices, diagnostics, time synchronization, and disk expansion so projects such as Narwhal and Beluga can focus on cluster bootstrap.
 
-The project provides Ubuntu **24.04 LTS** and **26.04 LTS** variants for ext4 and XFS, with templates for ARM64 and AMD64 and common local hypervisors such as VirtualBox and VMware Fusion. The boxes shipped in the latest release (v0.3.0) are arm64-only (see [Current Status](#current-status)).
+The project provides Ubuntu **24.04 LTS** and **26.04 LTS** variants for ext4 and XFS, with templates for ARM64 and AMD64 and common local hypervisors such as VirtualBox and VMware Fusion. The latest release (v0.3.1) ships the Ubuntu boxes for arm64 (`vmware_desktop`) and amd64 (`virtualbox`) (see [Current Status](#current-status)).
 
 ## Why the Layer Exists
 
@@ -144,7 +144,7 @@ The goal is to verify OS readiness, not merely whether the VM starts.
 
 ## Current Status
 
-The latest release is [**v0.3.1**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1) (2026-11-02). It rebuilds only the Ubuntu boxes to remove the kernel arguments the installer left in GRUB (`autoinstall ds=nocloud-net;s=http://<build-host>/`) and the leftover installer kernel after the upgrade. A Trivy scan right after release again found 0 fixable CVEs on all four Ubuntu boxes.
+The latest release is [**v0.3.1**](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1) (2026-11-02). It rebuilds only the Ubuntu boxes to remove the kernel arguments the installer left in GRUB (`autoinstall ds=nocloud-net;s=http://<build-host>/`) and the leftover installer kernel after the upgrade. A Trivy scan right after release again found 0 fixable CVEs on all four Ubuntu boxes. On 2026-11-03 the same v0.3.1 gained four Ubuntu VirtualBox amd64 boxes, built on GitHub's x86 runners and shipped only after they boot-verified with VirtualBox on the same runner; their scan also found 0 fixable CVEs.
 
 The previous release, [v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) (2026-11-01), was a CVE rebuild: every box has 0 distro-fixable CVEs per Trivy at release (the previously shipped Rocky 9 0.1.0 line had 438, 5 critical; an unpublished Ubuntu 26.04 build had 1,141, 2 critical). Kernel CVE-2026-98432 has no Ubuntu/Rocky fix yet and is tracked in [security-response.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/security-response.md).
 
@@ -154,10 +154,10 @@ HashiCorp is shutting down HCP Vagrant (Vagrant Cloud): new box/registry creatio
 
 | Provider | AMD64 | ARM64 | Notes |
 |---|---|---|---|
-| VirtualBox | template only* | template only* | VirtualBox 7.1+ required for ARM64; *not in v0.3.x — VirtualBox SSH cannot be verified on the build host |
-| VMware Fusion | template only* | ✅ | Apple Silicon supported; *AMD64 cannot be built on the arm64 build host, so it is not in v0.3.x (local builds still work) |
+| VirtualBox | ✅ (Ubuntu) | template only* | AMD64 built and boot-verified on GitHub's x86 runners; VirtualBox 7.1+ required for ARM64, *not shipped because VirtualBox SSH cannot be verified on the build host |
+| VMware Fusion | template only* | ✅ | Apple Silicon supported; *AMD64 not shipped because the runners cannot run VMware (local builds still work) |
 
-- v0.3.x ships arm64 only: `vmware_desktop` for Ubuntu/Rocky and `libvirt` for NixOS.
+- Ubuntu ships `vmware_desktop` (arm64) and `virtualbox` (amd64), Rocky `vmware_desktop` (arm64), and NixOS `libvirt` (arm64). On Intel/AMD hosts use `vagrant up --provider virtualbox`.
 - A declarative NixOS variant, `dasomel/nixos-kube-ready`, is distributed from the same catalog (libvirt/arm64; usable on Apple Silicon via `vagrant-qemu`).
 - Building from source requires Packer 1.10+ (CI pins 1.15.4); build timeouts are `ssh_timeout` 1h (2h for `vmware-arm64`), with a 90-minute CI job timeout.
 
