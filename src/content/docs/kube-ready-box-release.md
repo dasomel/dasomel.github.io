@@ -3,14 +3,16 @@ title: "릴리스 & 배포"
 description: "GitHub Release + GitHub Pages 카탈로그 배포 파이프라인, 주간 CVE 스캔 및 배포 체크리스트"
 project: "Kube-Ready-Box"
 order: 303
-lastModified: 2026-11-01
+lastModified: 2026-11-03
 ---
 
 ## 배포 전략
 
 Kube-Ready-Box는 `.box` 파일을 **GitHub Release asset**으로, Vagrant catalog JSON을 **GitHub Pages**(`https://dasomel.github.io/kube-ready-box/boxes/<name>.json`)로 배포합니다. 파일시스템(ext4, xfs)별로 Box를 분리하며 카탈로그 이름은 `ubuntu-24.04-ext4`, `ubuntu-24.04-xfs`, `ubuntu-26.04-ext4`, `ubuntu-26.04-xfs`, `rocky-9-ext4`, `rocky-9-xfs`, `nixos-kube-ready`입니다. 자세한 내용은 [box-distribution.md](https://github.com/dasomel/kube-ready-box/blob/main/docs/box-distribution.md)를 참고하세요.
 
-최신 릴리스는 [v0.3.1](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02)입니다. Ubuntu 박스 0.3.1(v0.3.1 자산), Rocky 9 박스 0.1.1과 NixOS 박스 0.2.2(libvirt)([v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) 자산)이며, **arm64 전용**입니다(Ubuntu/Rocky는 `vmware_desktop`, NixOS는 `libvirt`). VirtualBox 박스는 빌드 호스트에서 SSH를 검증할 수 없어, amd64 박스는 arm64 빌드 호스트에서 빌드할 수 없어 v0.3.x에 포함되지 않습니다. 템플릿 자체는 로컬 빌드가 가능합니다.
+최신 릴리스는 [v0.3.1](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1)(2026-11-02)입니다. Ubuntu 박스 0.3.1(v0.3.1 자산), Rocky 9 박스 0.1.1과 NixOS 박스 0.2.2(libvirt)([v0.3.0](https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.0) 자산)입니다. Ubuntu 0.3.1은 `vmware_desktop` arm64와 `virtualbox` amd64를 같은 카탈로그 버전에 함께 담고 있어, Vagrant가 호스트에 맞는 provider와 아키텍처를 고릅니다. Rocky는 `vmware_desktop` arm64, NixOS는 `libvirt` arm64입니다.
+
+amd64 박스는 arm64 빌드 호스트에서 만들 수 없어 GitHub x86 러너(`build-amd64.yml`)에서 빌드하고, 같은 러너에서 VirtualBox로 띄워 설치 인자 제거, 실행 중 커널만 남음, 루트 디스크 확장, `vagrant reload`, `verify_box.sh` failures=0을 확인한 것만 배포합니다(2026-11-03 v0.3.1에 추가). 러너에서 VMware를 돌릴 수 없어 VMware amd64 박스는 없고, VirtualBox arm64 박스(빌드 호스트에서 SSH 검증 불가)와 Rocky/NixOS amd64 박스도 없습니다.
 
 ## Vagrant Cloud 종료와 마이그레이션
 
@@ -26,7 +28,7 @@ config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04
 ## 배포 파이프라인
 
 <Mermaid chart={`flowchart TB
-  subgraph BUILD["빌드 (arm64)"]
+  subgraph BUILD["빌드 (arm64 로컬 · amd64 CI)"]
     BOX(["Box 아티팩트"])
     SUM["SHA256 체크섬"]
     BOX --> SUM
@@ -60,7 +62,7 @@ config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-24.04
 `.github/workflows/box-cve-scan.yml` 워크플로우가 매주 실행되어 다음을 수행합니다.
 
 - 카탈로그에서 배포된 박스를 내려받고 체크섬을 검증합니다.
-- 박스에서 dpkg/rpm 패키지 DB를 추출해 Trivy로 스캔합니다(배포판이 수정한 CVE만 대상).
+- 박스에서 dpkg/rpm 패키지 DB를 추출해 Trivy로 스캔합니다(배포판이 수정한 CVE만 대상). Ubuntu는 `vmware_desktop` arm64와 `virtualbox` amd64를 각각 스캔하며, 요청한 provider가 카탈로그에 없으면 다른 provider로 대신하지 않고 `UNKNOWN`입니다.
 - CRITICAL/HIGH가 발견되면 실행이 실패하며, 이는 재빌드 신호입니다.
 - NixOS 박스는 dpkg/rpm DB가 없어 `UNKNOWN`으로 보고됩니다. `UNKNOWN`은 정상으로 취급하지 않습니다.
 

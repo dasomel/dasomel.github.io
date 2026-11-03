@@ -4,7 +4,7 @@ description: 멀티 프로바이더 설정, 리소스 할당 및 클러스터 �
 project: Kube-Ready-Box
 path: kube-ready-box/getting-started
 order: 1402
-lastModified: 2026-08-23
+lastModified: 2026-11-03
 ---
 
 # Vagrantfile 가이드
@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "dasomel/ubuntu-26.04-xfs"
   config.vm.box_url = "https://dasomel.github.io/kube-ready-box/boxes/ubuntu-26.04-xfs.json"
   config.vm.box_version = ">= 0.3.0"
-  # v0.3.x는 vmware_desktop arm64만 배포 (VirtualBox 박스 없음)
+  # Ubuntu 0.3.1: Apple Silicon은 vmware_desktop(arm64), Intel/AMD는 virtualbox(amd64)
 
   # VMware Desktop 프로바이더 설정
   config.vm.provider "vmware_desktop" do |v|
@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
     v.gui = false
   end
 
-  # VirtualBox 프로바이더 설정
+  # VirtualBox 프로바이더 설정 (amd64 호스트)
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 4
     vb.memory = 8192
