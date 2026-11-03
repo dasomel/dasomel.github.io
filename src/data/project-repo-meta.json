@@ -242,13 +242,13 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 14,
+    "openIssues": 7,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-02T17:00:56Z",
+    "pushedAt": "2026-11-03T17:20:46Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 315,
+    "commitCount": 323,
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
@@ -458,7 +458,7 @@
       },
       {
         "week": 1793491200,
-        "total": 0
+        "total": 4
       }
     ],
     "latestRelease": {
@@ -720,9 +720,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2025-12-26T21:37:41Z",
-    "pushedAt": "2026-11-02T13:48:15Z",
+    "pushedAt": "2026-11-03T10:43:37Z",
     "firstCommitAt": "2016-02-01T11:59:10Z",
-    "commitCount": 13192,
+    "commitCount": 13195,
     "releaseCount": 5,
     "contributorCount": 346,
     "activity": [
@@ -1193,9 +1193,9 @@
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-02T23:39:35Z",
+    "pushedAt": "2026-11-03T00:58:54Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 338,
+    "commitCount": 341,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -1405,7 +1405,7 @@
       },
       {
         "week": 1793491200,
-        "total": 22
+        "total": 24
       }
     ],
     "latestRelease": {
@@ -1900,13 +1900,13 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 168,
+    "openIssues": 171,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-02T17:50:34Z",
+    "pushedAt": "2026-11-03T16:50:53Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1271,
+    "commitCount": 1280,
     "releaseCount": 10,
     "contributorCount": 3,
     "activity": [
@@ -2116,7 +2116,7 @@
       },
       {
         "week": 1793491200,
-        "total": 10
+        "total": 19
       }
     ],
     "latestRelease": {
