@@ -3,8 +3,9 @@
 Next.js 16 + next-intl 정적 사이트. `output: export` → GitHub Pages, 커스텀 도메인 **cne.io.kr**.
 빌드 `npm run build` · 린트 `npm run lint`(=`eslint .`) · 라우트 `app/[locale]/{posts,projects,docs,seminars,events}/[slug]`.
 
-> 린트는 0 errors / **3 warnings** 상태가 정상이다. 남은 경고는 의도적이거나 오탐이라 룰을 끄지 않고 남겼다 —
-> `no-img-element` ×2(`output: export`라 `next/image` 최적화 불가), `no-page-custom-font`(App Router 오탐).
+> 린트는 0 errors / **5 warnings** 상태가 정상이다. 남은 경고는 의도적이거나 오탐이라 룰을 끄지 않고 남겼다 —
+> `no-img-element` ×3(`output: export`라 `next/image` 최적화 불가), `no-page-custom-font`(App Router 오탐),
+> `react-hooks/exhaustive-deps` ×1(`oss/dashboard`의 `projects`는 정적 import 데이터라 바뀌지 않는다).
 > 새 경고가 붙으면 그건 새로 생긴 것이니 확인할 것.
 > CI(`ci.yml`)와 `deploy.yml`은 `bun test` → `bun run lint` → `bun run build`를 돌린다(패키지 매니저는 bun).
 
