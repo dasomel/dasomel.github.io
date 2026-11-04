@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 123,
+    "openIssues": 117,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-01T01:28:04Z",
+    "pushedAt": "2026-11-04T22:52:37Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 867,
+    "commitCount": 878,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1793491200,
-        "total": 0
+        "total": 11
       }
     ],
     "latestRelease": {
@@ -242,14 +242,14 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 8,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-03T17:20:46Z",
+    "pushedAt": "2026-11-04T22:53:10Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 323,
-    "releaseCount": 6,
+    "commitCount": 331,
+    "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
       {
@@ -458,19 +458,19 @@
       },
       {
         "week": 1793491200,
-        "total": 4
+        "total": 8
       }
     ],
     "latestRelease": {
-      "tag": "v0.5.0",
-      "name": "ClusterDeck v0.5.0",
-      "publishedAt": "2026-10-26T16:08:44Z",
-      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.5.0"
+      "tag": "v0.6.1",
+      "name": "ClusterDeck v0.6.1",
+      "publishedAt": "2026-11-04T22:18:47Z",
+      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.6.1"
     },
     "latestTag": {
-      "name": "v0.5.0",
-      "commitSha": "b4b7e4c263a46f31a1098c90cab24ae55793c32d",
-      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/b4b7e4c263a46f31a1098c90cab24ae55793c32d"
+      "name": "v0.6.1",
+      "commitSha": "3669dc491163ea5a1fc62af110192f5de42c1b94",
+      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/3669dc491163ea5a1fc62af110192f5de42c1b94"
     }
   },
   "dasomel/egovframe-launcher": {
@@ -720,9 +720,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2025-12-26T21:37:41Z",
-    "pushedAt": "2026-11-03T10:43:37Z",
+    "pushedAt": "2026-11-04T19:40:58Z",
     "firstCommitAt": "2016-02-01T11:59:10Z",
-    "commitCount": 13195,
+    "commitCount": 13197,
     "releaseCount": 5,
     "contributorCount": 346,
     "activity": [
@@ -1193,9 +1193,9 @@
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-03T00:58:54Z",
+    "pushedAt": "2026-11-04T14:06:31Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 341,
+    "commitCount": 345,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -1405,7 +1405,7 @@
       },
       {
         "week": 1793491200,
-        "total": 24
+        "total": 26
       }
     ],
     "latestRelease": {
@@ -1663,13 +1663,13 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 3,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-02T13:05:39Z",
+    "pushedAt": "2026-11-04T20:26:45Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 510,
+    "commitCount": 516,
     "releaseCount": 5,
     "contributorCount": 2,
     "activity": [
@@ -1879,7 +1879,7 @@
       },
       {
         "week": 1793491200,
-        "total": 0
+        "total": 6
       }
     ],
     "latestRelease": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 171,
+    "openIssues": 175,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-03T16:50:53Z",
+    "pushedAt": "2026-11-04T23:10:20Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1280,
-    "releaseCount": 10,
+    "commitCount": 1292,
+    "releaseCount": 11,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1793491200,
-        "total": 19
+        "total": 31
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.5",
-      "name": "Portal v1.1.5",
-      "publishedAt": "2026-10-30T23:11:19Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.5"
+      "tag": "portal/v1.1.6",
+      "name": "Portal v1.1.6",
+      "publishedAt": "2026-11-04T22:08:39Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.6"
     },
     "latestTag": {
       "name": "v1.3.0",
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 9,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-02T00:55:35Z",
+    "pushedAt": "2026-11-04T23:07:18Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 646,
+    "commitCount": 666,
     "releaseCount": 16,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1793491200,
-        "total": 0
+        "total": 15
       }
     ],
     "latestRelease": {
@@ -2837,13 +2837,13 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 0,
     "forks": 0,
-    "openIssues": 4,
+    "openIssues": 2,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-02T13:46:30Z",
+    "pushedAt": "2026-11-04T22:53:58Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
-    "commitCount": 283,
+    "commitCount": 292,
     "releaseCount": 0,
     "contributorCount": 3,
     "activity": [
@@ -3053,7 +3053,7 @@
       },
       {
         "week": 1793491200,
-        "total": 4
+        "total": 13
       }
     ]
   },
