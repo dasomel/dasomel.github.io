@@ -1,0 +1,383 @@
+{
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T00:56:50.615Z",
+  "count": 47,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic found a way to prove which AI model answered you — but there’s a costly catch",
+      "link": "https://thenewstack.io/anthropic-flashprove-model-verification/",
+      "date": "2026-11-04T22:50:18.000Z",
+      "excerpt": "Developers using AI APIs have little way of knowing whether the model answering their requests is actually the one they’re"
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Good Agents Need Good Managers: What We Heard at Innovation Week",
+      "link": "https://www.honeycomb.io/blog/good-agents-need-good-managers-innovation-week",
+      "date": "2026-11-04T19:00:00.000Z",
+      "excerpt": "Recapping the questions that came up at Innovation Week: what a good goal looks like, how an agent earns more autonomy, how to get a fleet-wide signal, and what stays human as agents take on more of the work."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Agile Deliberation: How AI helps humans define the gray areas",
+      "link": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+      "date": "2026-11-04T18:07:05.000Z",
+      "excerpt": "Data Mining & Modeling"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Render just removed its AI sandbox time limit — and Vercel still has a 24-hour cap",
+      "link": "https://thenewstack.io/render-vercel-ai-sandboxes/",
+      "date": "2026-11-04T18:04:17.000Z",
+      "excerpt": "Render is taking on Vercel with AI sandboxes that can run indefinitely, along with new tools for managing long-running agent"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Fortra says AI could save file transfer admins up to 160 hours a year",
+      "link": "https://thenewstack.io/failed-file-transfer-ai-troubleshooting/",
+      "date": "2026-11-04T17:53:47.000Z",
+      "excerpt": "Fortra makes software that moves files between companies on a schedule and says AI could give admins back up to"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
+      "link": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+      "date": "2026-11-04T17:50:10.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Helping you build and defend at machine-speed in the agentic era",
+      "link": "https://cloud.google.com/blog/products/identity-security/helping-you-build-and-defend-at-machine-speed-in-the-agentic-era/",
+      "date": "2026-11-04T17:00:00.000Z",
+      "excerpt": "As both a frontier lab and the operator of the world's most comprehensive threat intelligence network, Google occupies a unique vantage point: We see exactly how Large Language Models are engineered, and how adversaries are targeting them in the wild. Passive defense is no longer viable."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Highlights and reflections from Google Public Sector Summit: Where mission meets moonshot",
+      "link": "https://cloud.google.com/blog/topics/public-sector/highlights-and-reflections-from-google-public-sector-summit-where-mission-meets-moonshot/",
+      "date": "2026-11-04T17:00:00.000Z",
+      "excerpt": "Over 2,700 government leaders, innovators, and industry partners convened across two-days at our Google Public Sector Summit in Washington D.C."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing Compute Engine API multi-versioning: Predictable evolution without breaking production",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/introducing-compute-engine-api-multi-versioning-predictable-evolution-without-breaking-production/",
+      "date": "2026-11-04T16:00:00.000Z",
+      "excerpt": "Ready to modernize your infrastructure without risking production stability? API multi-versioning for Compute Engine, now in general availability, helps you do just that."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
+      "link": "https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/",
+      "date": "2026-11-04T16:00:00.000Z",
+      "excerpt": "Azure Failure Prediction and Detection (AFPD) helps reduce interruptions by predicting hardware failures, moving eligible workloads, and notifying customers when action is needed. See what that means for SAP on Azure and other mission-critical workloads."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
+      "link": "https://openai.com/index/openai-to-acquire-pierre",
+      "date": "2026-11-04T14:30:00.000Z",
+      "excerpt": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "See the agents, set the terms: new visibility and control for personal agents",
+      "link": "https://blog.cloudflare.com/personal-agents-visibility-control/",
+      "date": "2026-11-04T14:00:00.000Z",
+      "excerpt": "Personal AI agents have changed how users interact with the web, blurring the lines between automated and human traffic. Learn how Cloudflare gives site owners visibility and control to manage personal agent access."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "OpenShell on Kubernetes: A guide for platform engineers",
+      "link": "https://www.cncf.io/blog/2026/11/04/openshell-on-kubernetes-a-guide-for-platform-engineers/",
+      "date": "2026-11-04T12:00:00.000Z",
+      "excerpt": "What OpenShell is AI agents do more than call APIs. They run shells, install packages, read files, and open network connections."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "A thousand fewer paths to root",
+      "link": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "date": "2026-11-04T08:00:00.000Z",
+      "excerpt": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
+      "link": "https://openai.com/index/daybreak-red-aws-govcloud",
+      "date": "2026-11-04T07:00:00.000Z",
+      "excerpt": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Snyk Named a Leader in The Forrester Wave™: Agentic Development Security Tools, Q4 2026",
+      "link": "https://snyk.io/blog/snyk-named-leader-forrester-wave-agentic-development-security-tools-q4-2026/",
+      "date": "2026-11-04T04:00:00.000Z",
+      "excerpt": "Snyk is a Leader in The Forrester Wave™: Agentic Development Security Tools, Q4 2026, with the highest score in the strategy category."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "What one organization revealed about AI agent risk",
+      "link": "https://webflow.sysdig.com/blog/a-first-look-under-the-hood-of-ai-agents",
+      "date": "2026-11-04T00:00:00.000Z",
+      "excerpt": "One company monitored AI agent activity for a month. See what Sysdig AI Defense found, from unapproved agents to unlogged credential reads."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Introducing Sysdig AI Defense: See, stop, and prove what agents do",
+      "link": "https://webflow.sysdig.com/blog/introducing-sysdig-ai-defense",
+      "date": "2026-11-04T00:00:00.000Z",
+      "excerpt": "Sysdig AI Defense is runtime security and governance for every AI agent your teams run, from the laptop where an agent starts its work to the cloud where its actions land. It starts by showing you what’s there."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Why Lightwell pairs dependency backports with upstream collaboration",
+      "link": "https://www.redhat.com/en/blog/why-lightwell-pairs-dependency-backports-upstream-collaboration",
+      "date": "2026-11-04T00:00:00.000Z",
+      "excerpt": "Enterprise applications rarely break because of custom business logic; instead, the issue is often related to changes in underlying open source dependencies."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift is now generally available in Google Cloud’s sovereign regions",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-now-generally-available-google-clouds-sovereign-regions",
+      "date": "2026-11-04T00:00:00.000Z",
+      "excerpt": "Data residency rules and sovereignty mandates often determine where a workload is allowed to run. To meet those requirements and keep the platform your teams know and trust, Red Hat is expanding its commitment to digital sovereignty."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Compare AI agent changes with Online Experiments in Agent Observability",
+      "link": "https://www.datadoghq.com/blog/online-experiments-agent-observability/",
+      "date": "2026-11-04T00:00:00.000Z",
+      "excerpt": "Learn how Datadog Online Experiments, available through Agent Observability, enables you to test AI agent changes against real production traffic so you can compare response quality, cost, latency, and errors."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Migrate Splunk queries, alerts, and dashboards to Datadog",
+      "link": "https://www.datadoghq.com/blog/migrate-queries-alerts-dashboards-to-datadog/",
+      "date": "2026-11-04T00:00:00.000Z",
+      "excerpt": "Use Datadog Log Management’s Translate and Import tools to migrate Splunk SPL queries, alerts, and dashboards, as well as track migration progress."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Bridging Alloy and OpenTelemetry: the OTel engine is now in Public Preview",
+      "link": "https://grafana.com/blog/bridging-alloy-and-opentelemetry-the-otel-engine-is-now-in-public-preview/",
+      "date": "2026-11-03T21:32:18.000Z",
+      "excerpt": "Many Grafana Cloud customers love what Alloy offers them, but we're also seeing a growing base of users who feel the same way about the OpenTelemetry Collector. We want to make it easy for customers to make the decision that makes the most sense, regardless of their preference."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "StateBench: Testing how language models track state changes over long documents",
+      "link": "https://huggingface.co/blog/allenai/statebench",
+      "date": "2026-11-03T17:15:21.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
+      "link": "https://engineering.fb.com/2026/11/03/ml-applications/f3-lightning-how-meta-accelerates-ads-ml-features-to-production/",
+      "date": "2026-11-03T17:00:35.000Z",
+      "excerpt": "Facebook Feature Framework (F3) is Meta’s framework for authoring, compiling, and serving the machine learning features underlying ads ranking models, where a single request can require more than 20,000 features. We first presented F3 at AI @ Scale 2020."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Deep dive: Auto scaling response times on Amazon ECS",
+      "link": "https://aws.amazon.com/blogs/containers/deep-dive-auto-scaling-response-times-on-amazon-ecs/",
+      "date": "2026-11-03T16:37:37.000Z",
+      "excerpt": "Amazon ECS now publishes high-resolution 20-second CPU and memory utilization metrics for target tracking, so service auto scaling detects and responds to load changes faster. This post shares AWS benchmarking results across AWS Fargate and ECS Managed Instances and shows how to turn the feature on."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Palette: teaching a small model to build decks in your design language",
+      "link": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+      "date": "2026-11-03T16:35:36.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Arnis turns any place on Earth into a Minecraft world",
+      "link": "https://github.blog/open-source/maintainers/arnis-turns-any-place-on-earth-into-a-minecraft-world/",
+      "date": "2026-11-03T16:00:00.000Z",
+      "excerpt": "Louis Erbkamm built the first prototype in his free time. Now GitHub Copilot helps him maintain it alone."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Trace linkage: connect the dots between your app traces and database queries",
+      "link": "https://grafana.com/blog/trace-linkage-connect-the-dots-between-your-app-traces-and-database-queries/",
+      "date": "2026-11-03T15:05:03.000Z",
+      "excerpt": "When an application request slows down, a trace can show a database call. Finding the database query behind it can be tedious, requiring you to switch between traces and database telemetry, as well as match timestamps or query text by hand."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Introducing Zero Wire, a hub for investigating critical Internet vulnerabilities",
+      "link": "https://blog.cloudflare.com/zero-wire/",
+      "date": "2026-11-03T14:00:00.000Z",
+      "excerpt": "Zero Wire on Cloudflare Radar pairs plain-language briefings with global attack telemetry and remediation steps. Triage critical CVEs faster and decide how to protect your infrastructure."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Honeycomb Team Agents: AI SRE Done Right",
+      "link": "https://www.honeycomb.io/blog/honeycomb-team-agents-ai-sre-done-right",
+      "date": "2026-11-03T13:58:00.000Z",
+      "excerpt": "Honeycomb Team Agents are AI SRE coworkers that join your team proactively, not just reactively. Personal agents answer questions about production with evidence; team agents run on goals you define, checking releases, instrumentation, cost, agent quality, and resolving incidents with autonomy you match to risk."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation",
+      "link": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/",
+      "date": "2026-11-03T12:00:00.000Z",
+      "excerpt": "About OpenKruise Agents OpenKruise Agents is a sub-project of OpenKruise, the CNCF open-source application automation and workload orchestration project. It provides full lifecycle management for Agent Sandboxes running at scale on Kubernetes, together with a complete."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "Introducing IBM Cloud Secrets Manager Vault Dedicated: HashiCorp Vault Enterprise, managed by IBM",
+      "link": "https://www.hashicorp.com/blog/introducing-ibm-cloud-secrets-manager-vault-dedicated",
+      "date": "2026-11-03T08:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Security briefing: October 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-october-2026",
+      "date": "2026-11-03T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Trustworthy AI starts with community governance",
+      "link": "https://www.redhat.com/en/blog/trustworthy-ai-starts-community-governance",
+      "date": "2026-11-03T00:00:00.000Z",
+      "excerpt": "Developers are using AI to write code, generate tests, and ship features faster than ever. The tools are becoming more capable, and the amount of work they can perform is expanding quickly."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Evaluate your AI agents with Fireworks AI models in Datadog Agent Observability",
+      "link": "https://www.datadoghq.com/blog/fireworks-ai-integration/",
+      "date": "2026-11-03T00:00:00.000Z",
+      "excerpt": "Learn how you can evaluate your AI agents and compare models in the Playground by using Fireworks AI models in Datadog Agent Observability."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "The Platform Behind the Next AI Breakthrough",
+      "link": "https://www.wired.com/sponsored/story/the-platform-behind-the-next-ai-breakthrough/",
+      "date": "2026-11-02T20:52:22.000Z",
+      "excerpt": "The next frontier of AI is coming into focus as agents take on longer, more strategic work."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The latest AI news we announced in October 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+      "date": "2026-11-02T17:45:00.000Z",
+      "excerpt": "Here are Google’s latest AI updates from October 2026"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How to run a DR readiness engagement",
+      "link": "https://aws.amazon.com/blogs/architecture/how-to-run-a-dr-readiness-engagement/",
+      "date": "2026-11-02T17:26:49.000Z",
+      "excerpt": "This final post turns the DR framework into a repeatable engagement: a five-step sequence from kickoff and gap assessment through progressive validation to an updated recovery commitment, with a real before-and-after example and ways to compress the timeline from months to weeks. Part 3 of a three-part series."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Validating your DR commitment: From controlled test to real-world readiness",
+      "link": "https://aws.amazon.com/blogs/architecture/validating-your-dr-commitment-from-controlled-test-to-real-world-readiness/",
+      "date": "2026-11-02T17:26:33.000Z",
+      "excerpt": "After you define your DR targets, testing tells you whether they hold. This post walks through a four-level progressive validation model (tabletop, planned failover, surprise drill, and game day) and shows how each level surfaces a different class of recovery gap that feeds back into your commitment."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Three business decisions that define your DR success",
+      "link": "https://aws.amazon.com/blogs/architecture/three-business-decisions-that-define-your-dr-success/",
+      "date": "2026-11-02T17:26:26.000Z",
+      "excerpt": "A disaster recovery strategy is only as strong as the business decisions behind it. Before you choose an architecture pattern, three decisions shape whether recovery succeeds: what you're actually recovering, what the business needs from that recovery, and what your dependencies allow you to commit to."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Instrumentation Hub in Grafana Cloud: start easier, stay in control",
+      "link": "https://grafana.com/blog/instrumentation-hub-start-your-observability-journey-easier-and-still-stay-in-control/",
+      "date": "2026-11-02T15:44:53.000Z",
+      "excerpt": "It's no secret that getting started with observability can be much harder than it should be. That's why, at ObservabilityCon 2025, we introduced Instrumentation Hub: a guided, scalable way to roll out observability coverage while still keeping you in control."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "옮기는 것보다 증명이 어렵다",
+      "link": "https://tech.kakao.com/posts/845",
+      "date": "2026-11-02T15:00:00.000Z",
+      "excerpt": "클레임 검색 색인의 CDC 전환과 검증 기록 요약 커머스 클레임(취소·교환·반품) 검색 색인의 변경 수집 방식을 변경 알림 기반에서 데이터베이스 변경 로그 기반, 즉 CDC로 전환했습니다. 기존 구조에서는 알림이 발행되지 않은 변경이 색인에 반영되지 않았고, 건의 체류 시간을 계산하는 기준시각이 무관한 필드 수정에 갱신되는 문제가 있었습니다."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Ecosystem is the Answer: Docker, the Blueprint Alliance, and the Importance of Collaboration in the Agentic Era",
+      "link": "https://www.docker.com/blog/docker-blueprint-alliance-agent-baseline/",
+      "date": "2026-11-02T14:00:00.000Z",
+      "excerpt": "Docker is a founding member of the Blueprint Alliance, a 12-company reference architecture for securing AI agents, built around four governance questions."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Where should your code live in a Docker Sandbox?",
+      "link": "https://www.docker.com/blog/docker-sandbox-code-checkout-workflows/",
+      "date": "2026-11-02T14:00:00.000Z",
+      "excerpt": "Docker Sandboxes support three ways to organize an agent’s code: shared mounts, Git worktrees, and clone mode. Here’s how to choose between them."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How we halved DNS build delay and cut memory use by 85%",
+      "link": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
+      "date": "2026-11-02T14:00:00.000Z",
+      "excerpt": "Zone setting changes used to rebuild entire DNS zones, even ones with tens of millions of records. Here is how we built a planner that picks the smallest safe build, cutting full builds by 40%, peak memory by 85%, and halving build delay."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The Linkerd Story: The People Behind The Service Mesh — A new documentary premieres at KubeCon + CloudNativeCon North America 2026",
+      "link": "https://www.cncf.io/blog/2026/11/02/the-linkerd-story-the-people-behind-the-service-mesh-a-new-documentary-premieres-at-kubecon-cloudnativecon-north-america-2026/",
+      "date": "2026-11-02T12:00:00.000Z",
+      "excerpt": "Join CNCF and Buoyant on November 9 in Salt Lake City for the premiere of a new documentary celebrating a decade of Linkerd, the evolution of service mesh technology, and the people who helped make it."
+    }
+  ]
+}
