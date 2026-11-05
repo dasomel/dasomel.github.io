@@ -7,7 +7,7 @@
     "portfolio/maintenance.json",
     "portfolio/agent-audit.json"
   ],
-  "updated_at": "2026-11-04",
+  "updated_at": "2026-11-05",
   "portfolio": {
     "standard_metrics": 35,
     "standard_maturity_percent": 96.9,
@@ -267,8 +267,8 @@
         "ui"
       ],
       "status": {
-        "revision": "2f78873",
-        "updated_at": "2026-09-23",
+        "revision": "f148f6d2d878a23f207a8e763888856e25975200",
+        "updated_at": "2026-11-05",
         "milestone": "openforge-compliance-baseline",
         "progress_percent": 90,
         "capabilities": {
@@ -276,50 +276,50 @@
             "status": "implemented",
             "standard": "openforge/compliance-baseline",
             "verification": {
-              "unit": "pass",
-              "integration": "pass",
+              "unit": "not-run",
+              "integration": "not-run",
               "runtime": "not-applicable",
-              "security": "pass"
+              "security": "not-run"
             }
           },
           "stream-iceberg": {
             "status": "implemented",
             "standard": "openforge/data-platform",
             "verification": {
-              "unit": "pass",
-              "integration": "pass",
-              "runtime": "pass",
-              "security": "pass"
+              "unit": "not-run",
+              "integration": "not-run",
+              "runtime": "not-run",
+              "security": "not-run"
             }
           },
           "policy-compiler-seam": {
             "status": "implemented",
             "standard": "openforge/data-platform",
             "verification": {
-              "unit": "pass",
-              "integration": "pass",
-              "runtime": "pass",
-              "security": "pass"
+              "unit": "not-run",
+              "integration": "not-run",
+              "runtime": "not-run",
+              "security": "not-run"
             }
           },
           "policy-compiler": {
             "status": "implemented",
             "standard": "openforge/agent-engineering",
             "verification": {
-              "unit": "pass",
-              "integration": "pass",
-              "runtime": "pass",
-              "security": "pass"
+              "unit": "not-run",
+              "integration": "not-run",
+              "runtime": "not-run",
+              "security": "not-run"
             }
           }
         },
         "evidence": {
           "issue": 114,
           "pull_request": null,
-          "commit": "2f7887376cc4e048e04d715b7d429c1991ec4d60",
+          "commit": "f148f6d2d878a23f207a8e763888856e25975200",
           "ci": "pass",
           "security": "pass",
-          "runtime": "pass"
+          "runtime": "not-run"
         },
         "proposed_relationships": [
           {
@@ -943,7 +943,7 @@
     "repositories": [
       {
         "repository": "dasomel/narwhal",
-        "revision": "31f8a5ba17e62620746f8cf112b67ebfb5942e20",
+        "revision": "1c45aaafc76503d2e99cebb6773df81779ccf479",
         "false_green_findings": [],
         "deterministic_controls": {
           "formatting": true,
@@ -976,7 +976,7 @@
       },
       {
         "repository": "dasomel/beluga",
-        "revision": "f93d6fb3e9396200394f41840e1ef155518b241b",
+        "revision": "2256da106fe6c00508f89acdac28678fd57c04a9",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1011,7 +1011,7 @@
       },
       {
         "repository": "dasomel/kubemetal",
-        "revision": "8362307612dd9f4e9408116afb3327b496b85dfd",
+        "revision": "44931433ea92ed9a92ea4a01d81d51d131d4a76a",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1046,7 +1046,7 @@
       },
       {
         "repository": "dasomel/clusterdeck",
-        "revision": "ec3f193d037e97e5bd61864b82c16805fea61bf0",
+        "revision": "874d193c708fd309516c379d00de8d9633c535a9",
         "false_green_findings": [
           "agent contract changes have no repository-local CI gate (no-gate-workflow)"
         ],
@@ -1186,14 +1186,14 @@
       },
       {
         "repository": "dasomel/kube-ready-box",
-        "revision": "961ac32cac3f35079633fda04af4dff2cd3d54a7",
+        "revision": "a4098a9e11a54d799793da04423de1a601f3494a",
         "false_green_findings": [],
         "deterministic_controls": {
           "formatting": true,
           "lint": true,
           "tests": true,
           "static-analysis": false,
-          "security-policy": false,
+          "security-policy": true,
           "generated-files": true
         },
         "agent_skills": {
@@ -1352,7 +1352,7 @@
       {
         "repository": "dasomel/narwhal",
         "revision": "626ed66fd365a2e7104e94cbfe4bbaecad262212",
-        "observed_at": "2026-10-15T11:44:48Z",
+        "observed_at": "2026-11-04T22:15:41Z",
         "overall": "fail",
         "signal_counts": {
           "total": 6,
@@ -1372,10 +1372,10 @@
         },
         "scorecard": {
           "status": "partial",
-          "score": 4.1,
+          "score": 5.0,
           "tool_version": "v5.6.0",
-          "observed_at": "2026-10-15T11:44:48Z",
-          "commit": "bb1e12fbbd7d9dd42fcf749f99d06757e501339f"
+          "observed_at": "2026-11-04T22:15:41Z",
+          "commit": "e91fc6b0ba9020acc7733f9e0966032b62d09952"
         },
         "evidence": {
           "record": "portfolio/security-readiness/narwhal.json",
