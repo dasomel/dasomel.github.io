@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 117,
+    "openIssues": 119,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-04T22:52:37Z",
+    "pushedAt": "2026-11-06T07:35:50Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 878,
+    "commitCount": 882,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1793491200,
-        "total": 11
+        "total": 15
       }
     ],
     "latestRelease": {
@@ -242,13 +242,13 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 8,
+    "openIssues": 7,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-04T22:53:10Z",
+    "pushedAt": "2026-11-04T23:35:11Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 331,
+    "commitCount": 332,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -458,7 +458,7 @@
       },
       {
         "week": 1793491200,
-        "total": 8
+        "total": 9
       }
     ],
     "latestRelease": {
@@ -483,9 +483,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-07-14T15:01:24Z",
-    "pushedAt": "2026-10-22T04:13:43Z",
+    "pushedAt": "2026-11-05T04:14:29Z",
     "firstCommitAt": "2026-07-14T14:52:01Z",
-    "commitCount": 33,
+    "commitCount": 34,
     "releaseCount": 8,
     "contributorCount": 1,
     "activity": [
@@ -695,7 +695,7 @@
       },
       {
         "week": 1793491200,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -720,11 +720,11 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2025-12-26T21:37:41Z",
-    "pushedAt": "2026-11-04T19:40:58Z",
+    "pushedAt": "2026-11-06T10:41:57Z",
     "firstCommitAt": "2016-02-01T11:59:10Z",
-    "commitCount": 13197,
+    "commitCount": 13207,
     "releaseCount": 5,
-    "contributorCount": 346,
+    "contributorCount": 347,
     "activity": [
       {
         "week": 1762646400,
@@ -1189,13 +1189,13 @@
     "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
     "stars": 1,
     "forks": 0,
-    "openIssues": 18,
+    "openIssues": 19,
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-04T14:06:31Z",
+    "pushedAt": "2026-11-05T03:24:33Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 345,
+    "commitCount": 346,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -1405,7 +1405,7 @@
       },
       {
         "week": 1793491200,
-        "total": 26
+        "total": 27
       }
     ],
     "latestRelease": {
@@ -1426,13 +1426,13 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 30,
+    "openIssues": 38,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-01T15:25:26Z",
+    "pushedAt": "2026-11-05T16:17:31Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 480,
+    "commitCount": 481,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1793491200,
-        "total": 2
+        "total": 3
       }
     ],
     "latestRelease": {
@@ -1667,9 +1667,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-04T20:26:45Z",
+    "pushedAt": "2026-11-05T00:19:08Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 516,
+    "commitCount": 517,
     "releaseCount": 5,
     "contributorCount": 2,
     "activity": [
@@ -1879,7 +1879,7 @@
       },
       {
         "week": 1793491200,
-        "total": 6
+        "total": 7
       }
     ],
     "latestRelease": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 175,
+    "openIssues": 170,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-04T23:10:20Z",
+    "pushedAt": "2026-11-06T06:23:54Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1292,
-    "releaseCount": 11,
+    "commitCount": 1319,
+    "releaseCount": 13,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1793491200,
-        "total": 31
+        "total": 58
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.6",
-      "name": "Portal v1.1.6",
-      "publishedAt": "2026-11-04T22:08:39Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.6"
+      "tag": "portal/v1.1.8",
+      "name": "Portal v1.1.8",
+      "publishedAt": "2026-11-06T06:09:56Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.8"
     },
     "latestTag": {
       "name": "v1.3.0",
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 9,
+    "openIssues": 6,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-04T23:07:18Z",
+    "pushedAt": "2026-11-06T02:09:36Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 666,
+    "commitCount": 686,
     "releaseCount": 16,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1793491200,
-        "total": 15
+        "total": 24
       }
     ],
     "latestRelease": {
@@ -2837,13 +2837,13 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 0,
     "forks": 0,
-    "openIssues": 2,
+    "openIssues": 1,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-04T22:53:58Z",
+    "pushedAt": "2026-11-04T23:36:59Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
-    "commitCount": 292,
+    "commitCount": 293,
     "releaseCount": 0,
     "contributorCount": 3,
     "activity": [
@@ -3053,7 +3053,7 @@
       },
       {
         "week": 1793491200,
-        "total": 13
+        "total": 14
       }
     ]
   },
@@ -3066,9 +3066,9 @@
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-25T13:32:05Z",
-    "pushedAt": "2026-10-04T06:56:45Z",
+    "pushedAt": "2026-11-04T23:35:08Z",
     "firstCommitAt": "2026-08-25T13:33:51Z",
-    "commitCount": 97,
+    "commitCount": 98,
     "releaseCount": 0,
     "contributorCount": 2,
     "activity": [
@@ -3278,7 +3278,7 @@
       },
       {
         "week": 1793491200,
-        "total": 0
+        "total": 1
       }
     ]
   },
