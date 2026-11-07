@@ -1,0 +1,383 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-07T23:41:42.365Z",
+  "count": 47,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "How we review 4x more AI code without reading every line",
+      "link": "https://thenewstack.io/scale-ai-code-reviews/",
+      "date": "2026-11-07T17:30:00.000Z",
+      "excerpt": "Do you need to read every line of AI-generated code to trust it? Not necessarily."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "In the software factory, engineers become process engineers",
+      "link": "https://thenewstack.io/engineers-become-process-engineers/",
+      "date": "2026-11-07T16:30:00.000Z",
+      "excerpt": "For most of software’s history, the scarce resource was people who could write code. Every process the industry built assumed"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why AWS wants developers to stop babysitting their AI agents",
+      "link": "https://thenewstack.io/kiro-bots-agent-memory/",
+      "date": "2026-11-07T15:30:00.000Z",
+      "excerpt": "AWS first introduced Kiro, its agentic, spec-driven development environment, in July 2025. It also introduced Kiro Crew in August of"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "We organized Sustainability Month. Here’s what we learned. 🌱",
+      "link": "https://www.cncf.io/blog/2026/11/07/we-organized-sustainability-month-heres-what-we-learned-%f0%9f%8c%b1/",
+      "date": "2026-11-07T12:30:00.000Z",
+      "excerpt": "What do Kubernetes resource allocation, eBPF, carbon observability, and GPUs have in common? Quite a lot, actually."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Beyond code generation: A developer’s guide to agentic engineering",
+      "link": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+      "date": "2026-11-06T22:15:59.000Z",
+      "excerpt": "Writing code got faster. The work around it didn't."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Building the next generation of multimodal AI experiences with fal in Microsoft Foundry",
+      "link": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/building-the-next-generation-of-multimodal-ai-experiences-with-fal-in-microsoft-/4570032",
+      "date": "2026-11-06T19:08:44.000Z",
+      "excerpt": "Microsoft and fal partner to expand video generation in Microsoft Foundry, helping developers bring creative ideas into enterprise applications."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Any agent anywhere: How to use Grafana Cloud with Claude, Cursor, and any other AI agent",
+      "link": "https://grafana.com/blog/any-agent-anywhere-how-to-use-grafana-cloud-with-claude-cursor-and-any-other-ai-agent/",
+      "date": "2026-11-06T18:37:07.000Z",
+      "excerpt": "AI agents are becoming part of everyday engineering workflows, helping teams write code, troubleshoot issues, and automate tasks. But to be truly useful in production, these agents need access to more than code."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Your Guide to the Developer Tools Track at AWS re:Invent 2026",
+      "link": "https://aws.amazon.com/blogs/devops/your-guide-to-the-developer-tools-track-at-aws-reinvent-2026/",
+      "date": "2026-11-06T18:20:09.000Z",
+      "excerpt": "AWS re:Invent 2026 is almost here, and if you’re a developer, the Developer Tools (DVT) track is where you’ll want to spend your week. This year is all about agentic development, from multi-agent workflows to autonomous agents that keep working while you sleep."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Run Maestro tests on real Android devices using AWS Device Farm",
+      "link": "https://aws.amazon.com/blogs/devops/run-maestro-tests-on-real-android-devices-using-aws-device-farm/",
+      "date": "2026-11-06T18:13:33.000Z",
+      "excerpt": "Learn how ManoMano runs Maestro mobile UI tests on real Android devices using the AWS Device Farm custom test environment."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing Z4M: storage-optimized compute for AI/ML and parallel file systems",
+      "link": "https://cloud.google.com/blog/products/compute/storage-optimized-z4m-machine-series-are-ga/",
+      "date": "2026-11-06T17:00:00.000Z",
+      "excerpt": "Today, we’re excited to announce the general availability of our next-generation Storage-optimized Z4M machine series in Google Compute Engine, available as both Virtual Machine (VM) and bare-metal instances."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The Blueprint: Orchestrating 5,000+ AI assets for a World Cup TV spot",
+      "link": "https://cloud.google.com/blog/products/media-entertainment/how-mito-orchestrated-5000-plus-ai-assets-for-a-world-cup-tv-spot/",
+      "date": "2026-11-06T17:00:00.000Z",
+      "excerpt": "Welcome back to The Blueprint, a regular feature where we highlight how Google Cloud customers are tackling unique and common challenges across industries using the latest AI and cloud technologies. We hope to inspire others looking to innovate in their work."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+      "link": "https://huggingface.co/blog/allenai/toyblocks",
+      "date": "2026-11-06T14:00:48.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The post-quantum future of web privacy",
+      "link": "https://blog.cloudflare.com/vole-mole/",
+      "date": "2026-11-06T14:00:00.000Z",
+      "excerpt": "Cryptographic protocols like Privacy Pass help keep web sites safe from abuse while keeping their users private. This post looks at the quantum threat to these protocols, and some new post-quantum cryptography that may help close the gap."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Faster LLM inference startup: What you need to know",
+      "link": "https://www.cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know/",
+      "date": "2026-11-06T12:00:00.000Z",
+      "excerpt": "Adding an inference replica creates capacity only after the new instance can serve requests. Between starting a process and generating a response, an LLM server may need to load weights, initialize GPU resources, compile kernels, capture."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "link": "https://openai.com/index/partnering-with-hacktron",
+      "date": "2026-11-06T08:00:00.000Z",
+      "excerpt": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Zero-shot predictions in Pandas using the new BigQuery Accessor",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-ai-functions-in-pandas/",
+      "date": "2026-11-06T08:00:00.000Z",
+      "excerpt": "Imagine running advanced machine learning workflows—from forecasting and classification to high-dimensional embedding generation—without ever leaving your familiar pandas DataFrame. With the new ."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker Sandboxes vs. Containers: Choosing the Right Isolation for AI Agents",
+      "link": "https://www.docker.com/blog/docker-sandboxes-vs-containers/",
+      "date": "2026-11-06T03:17:04.000Z",
+      "excerpt": "A container shares the host kernel. Docker Sandboxes are microVMs with their own kernel and private Docker Engine."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "녹화 버튼 뒤에서 일어나는 일: LINE 프리미엄콜 개발기",
+      "link": "https://techblog.lycorp.co.jp/ko/line-premium-call-recording",
+      "date": "2026-11-06T02:00:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE 앱에서 VoIP(voice over Internet protocol, 인터넷 기반 음성 통화) Android 서비스 개발을 담당하고 있는 안덕용입니다."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How OrderServ achieved up to 64% cost savings with multi-tenant ECS",
+      "link": "https://aws.amazon.com/blogs/architecture/how-orderserv-achieved-up-to-64-cost-savings-with-multi-tenant-ecs/",
+      "date": "2026-11-06T00:09:41.000Z",
+      "excerpt": "See how Cognizant and AWS Professional Services transformed the OrderServ food-ordering platform into a multi-tenant SaaS offering on shared Amazon ECS, cutting compute costs up to 64%, reducing scaling time from minutes to seconds, and lowering authentication costs by 80%."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "link": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+      "link": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — November 6, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-november-6-2026-red-hat",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "Smart Talks with IBM: The $5 Billion effort to help secure the world’s shared softwareProject Lightwell commits $5 billion and aims for 20,000 engineers to help secure open source software."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "5-minute demo: How to manage applications at scale with Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/5-minute-demo-how-manage-applications-scale-red-hat-openshift",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "Operating cloud-native applications at enterprise scale is rarely a single-cluster affair. As businesses continue to expand across public cloud providers, private datacenters, and edge locations, platform and security teams run into a common operational issue sprawl."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we investigated prompt cache misses with Datadog",
+      "link": "https://www.datadoghq.com/blog/prompt-cache-investigation-ccm-agent-observability/",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "An investigation of prompt cache misses in internal AI applications by using Datadog Cloud Cost Management and Agent Observability."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "The Pentagon wants to know who checks code when AI writes it",
+      "link": "https://about.gitlab.com/blog/department-of-war-instruction-for-ai-generated-code/",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "The Department of War now treats AI-generated code as unverified until it’s proven otherwise. DoW Instruction 8430."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Inside GitHub’s new Git storage architecture",
+      "link": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/",
+      "date": "2026-11-05T20:23:21.000Z",
+      "excerpt": "GitHub's new Git storage architecture is built so thousands of agents can push to a single repository at once. Here's how it works."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Cult.fit builds operational muscle with Codex",
+      "link": "https://openai.com/index/cultfit-builds-with-codex",
+      "date": "2026-11-05T20:00:00.000Z",
+      "excerpt": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+      "link": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+      "date": "2026-11-05T19:35:16.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "What’s new with Grafana variables: less clutter, easier reuse across dashboards, and more",
+      "link": "https://grafana.com/blog/whats-new-with-grafana-variables-less-clutter-easier-reuse-across-dashboards-and-more/",
+      "date": "2026-11-05T19:25:32.000Z",
+      "excerpt": "Template variables are one of the most used features in Grafana, providing users with a dropdown to turn one dashboard into hundreds: pick a different cluster, region, or service, and every panel updates. For most of Grafana's history, variables had a single home at the top of the dashboard."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How TUI scales threat modeling for 100+ teams with Amazon Bedrock",
+      "link": "https://aws.amazon.com/blogs/architecture/how-tui-scales-threat-modeling-for-100-teams-with-amazon-bedrock/",
+      "date": "2026-11-05T18:45:07.000Z",
+      "excerpt": "Learn how TUI, the world's leading tourism group, built an AI-powered threat modeling system on Amazon Bedrock and Amazon Bedrock AgentCore to scale security assessments across more than 100 product teams, cutting threat modeling time by up to 70% while applying security standards consistently."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Agents aren’t humans (but they kinda are)",
+      "link": "https://blog.cloudflare.com/trusted-agent-delegation/",
+      "date": "2026-11-05T17:03:04.000Z",
+      "excerpt": "AI agents act for millions, but servers see intermediaries that strip user visibility. This post defines the problem space and introduces a collaborative approach to safely identifying, allowing, and managing this automated traffic."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "date": "2026-11-05T17:00:00.000Z",
+      "excerpt": "Gemini Omni 1.2 Flash brings native 15-second video generation and editing, stronger consistency, and 30% lower pricing."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Stop treating agents as one-off projects and start running them as a continuous discipline",
+      "link": "https://azure.microsoft.com/en-us/blog/stop-treating-agents-as-one-off-projects-and-start-running-them-as-a-continuous-discipline/",
+      "date": "2026-11-05T17:00:00.000Z",
+      "excerpt": "AI must be selected, architected, and managed as a continuous business discipline, not a series of isolated projects."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Detecting signs of hypertension using wearable sensors",
+      "link": "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/",
+      "date": "2026-11-05T16:01:08.000Z",
+      "excerpt": "Health & Bioscience"
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200",
+      "link": "https://azure.microsoft.com/en-us/blog/designing-azure-silicon-on-azure-silicon-eda-workloads-on-cobalt-200/",
+      "date": "2026-11-05T16:00:00.000Z",
+      "excerpt": "Discover how Microsoft is accelerating electronic design automation (EDA) workloads with Azure Cobalt 200 VMs. Explore early performance results demonstrating faster simulation, verification, and static timing analysis, along with the benefits of scalable cloud infrastructure for silicon design and development."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Accessibility statements now have a home on GitHub",
+      "link": "https://github.blog/open-source/maintainers/accessibility-statements-now-have-a-home-on-github/",
+      "date": "2026-11-05T16:00:00.000Z",
+      "excerpt": "GitHub now highlights ACCESSIBILITY.md files and helps maintainers document accessibility goals, known barriers, supported environments, contributor expectations, and reporting processes."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker and ActiveState Extending Secure Defaults to the Packages Developers Install",
+      "link": "https://www.docker.com/blog/docker-activestate-trusted-content/",
+      "date": "2026-11-05T15:28:22.000Z",
+      "excerpt": "Docker partners with ActiveState to continue to provide one standard for trusted content across everything you and your teams build on."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "AI 에이전트를 위한 멀티모달 의사결정 모델 ‘Kanana-2-v-decide’ 오픈소스 공개",
+      "link": "https://tech.kakao.com/posts/846",
+      "date": "2026-11-05T15:00:00.000Z",
+      "excerpt": "안녕하세요, 카카오 Applied AI Model팀의 Shawn(정성효), Michael(이주영)입니다. 고객 문의를 분류하고, 상품 사진을 확인하고, 에이전트가 다음 작업에 사용할 도구를 고르는 일."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program",
+      "link": "https://www.docker.com/blog/cncf-score-project-improved-its-security-posture-by-joining-the-docker-sponsored-open-source-program/",
+      "date": "2026-11-05T14:00:00.000Z",
+      "excerpt": "See how CNCF Score improved container security with Docker Scout, Hardened Images, and the Docker-Sponsored Open Source Program."
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "How two engineer side projects became the agent taking action inside Dropbox",
+      "link": "https://dropbox.tech/machine-learning/how-two-engineer-side-projects-became-the-agent-taking-action-inside-dropbox",
+      "date": "2026-11-05T14:00:00.000Z",
+      "excerpt": "Two side projects explored a new way to get work done with files already in Dropbox. Here’s how engineers brought them together and turned those experiments into a new customer experience."
+    },
+    {
+      "source": "Dropbox",
+      "category": "devops",
+      "title": "How AI-assisted development helped us build the new Dropbox experience",
+      "link": "https://dropbox.tech/machine-learning/how-aiassisted-development-helped-us-build-the-new-dropbox-experience",
+      "date": "2026-11-05T14:00:00.000Z",
+      "excerpt": "From sharing features across web and desktop to testing the details customers depend on, this is how AI-assisted development helped our engineers deliver the updated Dropbox experience."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "kpt v1.0.0 is released",
+      "link": "https://www.cncf.io/blog/2026/11/05/kpt-v1-0-0-is-released/",
+      "date": "2026-11-05T12:00:00.000Z",
+      "excerpt": "After many years and much development, the kpt community has released v1.0."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Refreshing the 555 Benchmark for Cloud Detection and Response in the AI era",
+      "link": "https://webflow.sysdig.com/blog/refreshing-the-555-benchmark-for-cloud-detection-and-response-in-the-ai-era",
+      "date": "2026-11-05T00:00:00.000Z",
+      "excerpt": "The 555 Benchmark for Cloud Detection and Response gives organizations a framework to meet the reality of AI-assisted attacks."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Bridging the open source remediation gap: Introducing two new lessons on Lightwell",
+      "link": "https://www.redhat.com/en/blog/bridging-open-source-remediation-gap-introducing-two-new-lessons-lightwell",
+      "date": "2026-11-05T00:00:00.000Z",
+      "excerpt": "Modern enterprise development runs on open source. With this reliance, securing the open source software supply chain has reached a critical inflection point, especially as AI-assisted vulnerability discovery accelerates the speed and volume of CVE disclosures."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we continuously validate formal specifications in production",
+      "link": "https://www.datadoghq.com/blog/engineering/continuous-formal-spec-validation/",
+      "date": "2026-11-05T00:00:00.000Z",
+      "excerpt": "Learn how Datadog built FETCh to continuously validate production behavior against TLA+ specifications and uncover a subtle bug that conventional testing had not exposed."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Manage Kubernetes observability with DatadogInstrumentation",
+      "link": "https://www.datadoghq.com/blog/manage-kubernetes-observability-with-datadoginstrumentation/",
+      "date": "2026-11-05T00:00:00.000Z",
+      "excerpt": "Configure Kubernetes checks, logs, tracing, and profiling with DatadogInstrumentation while keeping workload changes separate from Agent deployments."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Analyze your Stripe data directly with your agent",
+      "link": "https://stripe.com/blog/analyze-your-stripe-data-directly-with-your-agent",
+      "date": "2026-11-05T00:00:00.000Z",
+      "excerpt": "You can now use natural language to create an investor slide deck highlighting where your business outperformed in the previous quarter, or build a custom dashboard to understand why your Stripe revenue changed."
+    }
+  ]
+}
