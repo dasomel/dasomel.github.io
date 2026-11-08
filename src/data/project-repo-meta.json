@@ -5,20 +5,16 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 119,
+    "openIssues": 120,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-06T07:35:50Z",
+    "pushedAt": "2026-11-08T16:10:24Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 882,
+    "commitCount": 896,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -222,6 +218,10 @@
       {
         "week": 1793491200,
         "total": 15
+      },
+      {
+        "week": 1794096000,
+        "total": 14
       }
     ],
     "latestRelease": {
@@ -252,10 +252,6 @@
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -459,6 +455,10 @@
       {
         "week": 1793491200,
         "total": 9
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -489,10 +489,6 @@
     "releaseCount": 8,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -696,6 +692,10 @@
       {
         "week": 1793491200,
         "total": 1
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -726,10 +726,6 @@
     "releaseCount": 5,
     "contributorCount": 347,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -933,6 +929,10 @@
       {
         "week": 1793491200,
         "total": 0
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -962,10 +962,6 @@
     "releaseCount": 5,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -1169,6 +1165,10 @@
       {
         "week": 1793491200,
         "total": 0
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -1193,16 +1193,12 @@
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-05T03:24:33Z",
+    "pushedAt": "2026-11-08T12:47:17Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 346,
-    "releaseCount": 8,
+    "commitCount": 363,
+    "releaseCount": 9,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -1406,13 +1402,17 @@
       {
         "week": 1793491200,
         "total": 27
+      },
+      {
+        "week": 1794096000,
+        "total": 12
       }
     ],
     "latestRelease": {
-      "tag": "v0.3.1",
-      "name": "v0.3.1",
-      "publishedAt": "2026-11-01T17:45:38Z",
-      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.1"
+      "tag": "v0.3.2",
+      "name": "v0.3.2 - Security rebuild",
+      "publishedAt": "2026-11-08T12:06:52Z",
+      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.2"
     },
     "latestTag": {
       "name": "v1.1.0",
@@ -1426,20 +1426,16 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 38,
+    "openIssues": 30,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-05T16:17:31Z",
+    "pushedAt": "2026-11-08T13:29:55Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 481,
+    "commitCount": 498,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -1642,7 +1638,11 @@
       },
       {
         "week": 1793491200,
-        "total": 3
+        "total": 10
+      },
+      {
+        "week": 1794096000,
+        "total": 10
       }
     ],
     "latestRelease": {
@@ -1673,10 +1673,6 @@
     "releaseCount": 5,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -1880,6 +1876,10 @@
       {
         "week": 1793491200,
         "total": 7
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -1900,20 +1900,16 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 170,
+    "openIssues": 167,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-06T06:23:54Z",
+    "pushedAt": "2026-11-08T16:17:45Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1319,
-    "releaseCount": 13,
+    "commitCount": 1332,
+    "releaseCount": 15,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -2117,18 +2113,22 @@
       {
         "week": 1793491200,
         "total": 58
+      },
+      {
+        "week": 1794096000,
+        "total": 13
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.8",
-      "name": "Portal v1.1.8",
-      "publishedAt": "2026-11-06T06:09:56Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.8"
+      "tag": "v1.4.0",
+      "name": "v1.4.0",
+      "publishedAt": "2026-11-08T16:17:47Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/v1.4.0"
     },
     "latestTag": {
-      "name": "v1.3.0",
-      "commitSha": "00b08708bce934f05fa38e0d85b2f9cb58730b23",
-      "url": "https://api.github.com/repos/dasomel/narwhal/commits/00b08708bce934f05fa38e0d85b2f9cb58730b23"
+      "name": "v1.4.0",
+      "commitSha": "b2ba25eebe7e2b3c6fee1f0b6b7bedceca4d4bfb",
+      "url": "https://api.github.com/repos/dasomel/narwhal/commits/b2ba25eebe7e2b3c6fee1f0b6b7bedceca4d4bfb"
     }
   },
   "dasomel/narwhal-portal": {
@@ -2147,10 +2147,6 @@
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -2354,6 +2350,10 @@
       {
         "week": 1793491200,
         "total": 0
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -2374,20 +2374,16 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 6,
+    "openIssues": 1,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-06T02:09:36Z",
+    "pushedAt": "2026-11-08T15:15:23Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 686,
-    "releaseCount": 16,
+    "commitCount": 706,
+    "releaseCount": 18,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -2590,19 +2586,23 @@
       },
       {
         "week": 1793491200,
-        "total": 24
+        "total": 29
+      },
+      {
+        "week": 1794096000,
+        "total": 6
       }
     ],
     "latestRelease": {
-      "tag": "v0.5.0",
-      "name": "v0.5.0",
-      "publishedAt": "2026-09-22T13:59:21Z",
-      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.5.0"
+      "tag": "v0.5.1",
+      "name": "v0.5.1",
+      "publishedAt": "2026-11-08T15:12:45Z",
+      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.5.1"
     },
     "latestTag": {
-      "name": "v0.5.0",
-      "commitSha": "386ac455d5f9e609d39e8e42c295db6a362917cc",
-      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/386ac455d5f9e609d39e8e42c295db6a362917cc"
+      "name": "v0.5.1",
+      "commitSha": "87bb9d890927f68cae00e968318c308ce6b07b9a",
+      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/87bb9d890927f68cae00e968318c308ce6b07b9a"
     }
   },
   "dasomel/oh-my-cursor": {
@@ -2621,10 +2621,6 @@
     "releaseCount": 0,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -2828,6 +2824,10 @@
       {
         "week": 1793491200,
         "total": 0
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ]
   },
@@ -2837,20 +2837,16 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 0,
     "forks": 0,
-    "openIssues": 1,
+    "openIssues": 3,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-04T23:36:59Z",
+    "pushedAt": "2026-11-08T16:18:09Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
     "commitCount": 293,
     "releaseCount": 0,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -3054,6 +3050,10 @@
       {
         "week": 1793491200,
         "total": 14
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ]
   },
@@ -3072,10 +3072,6 @@
     "releaseCount": 0,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1762650000,
-        "total": 0
-      },
       {
         "week": 1763254800,
         "total": 0
@@ -3279,6 +3275,10 @@
       {
         "week": 1793491200,
         "total": 1
+      },
+      {
+        "week": 1794096000,
+        "total": 0
       }
     ]
   },
@@ -3298,10 +3298,6 @@
     "releaseCount": 3,
     "contributorCount": 35,
     "activity": [
-      {
-        "week": 1762646400,
-        "total": 0
-      },
       {
         "week": 1763251200,
         "total": 0
@@ -3504,6 +3500,10 @@
       },
       {
         "week": 1793491200,
+        "total": 0
+      },
+      {
+        "week": 1794096000,
         "total": 0
       }
     ],
