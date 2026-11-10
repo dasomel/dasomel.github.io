@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 120,
+    "openIssues": 118,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-08T16:10:24Z",
+    "pushedAt": "2026-11-10T00:24:41Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 896,
+    "commitCount": 910,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1794096000,
-        "total": 14
+        "total": 28
       }
     ],
     "latestRelease": {
@@ -246,9 +246,9 @@
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-04T23:35:11Z",
+    "pushedAt": "2026-11-09T19:45:03Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 332,
+    "commitCount": 333,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -458,7 +458,7 @@
       },
       {
         "week": 1794096000,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -483,9 +483,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-07-14T15:01:24Z",
-    "pushedAt": "2026-11-05T04:14:29Z",
+    "pushedAt": "2026-11-09T19:44:57Z",
     "firstCommitAt": "2026-07-14T14:52:01Z",
-    "commitCount": 34,
+    "commitCount": 35,
     "releaseCount": 8,
     "contributorCount": 1,
     "activity": [
@@ -695,7 +695,7 @@
       },
       {
         "week": 1794096000,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -1189,15 +1189,15 @@
     "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
     "stars": 1,
     "forks": 0,
-    "openIssues": 19,
+    "openIssues": 18,
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-08T12:47:17Z",
+    "pushedAt": "2026-11-10T01:05:29Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 363,
-    "releaseCount": 9,
-    "contributorCount": 2,
+    "commitCount": 385,
+    "releaseCount": 10,
+    "contributorCount": 3,
     "activity": [
       {
         "week": 1763251200,
@@ -1405,14 +1405,14 @@
       },
       {
         "week": 1794096000,
-        "total": 12
+        "total": 25
       }
     ],
     "latestRelease": {
-      "tag": "v0.3.2",
-      "name": "v0.3.2 - Security rebuild",
-      "publishedAt": "2026-11-08T12:06:52Z",
-      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.2"
+      "tag": "v0.3.3",
+      "name": "v0.3.3 - yq security rebuild",
+      "publishedAt": "2026-11-10T01:05:11Z",
+      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.3"
     },
     "latestTag": {
       "name": "v1.1.0",
@@ -1426,13 +1426,13 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 30,
+    "openIssues": 26,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-08T13:29:55Z",
+    "pushedAt": "2026-11-09T19:45:06Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 498,
+    "commitCount": 508,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1794096000,
-        "total": 10
+        "total": 20
       }
     ],
     "latestRelease": {
@@ -1667,10 +1667,10 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-05T00:19:08Z",
+    "pushedAt": "2026-11-10T00:11:30Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 517,
-    "releaseCount": 5,
+    "commitCount": 525,
+    "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
       {
@@ -1879,19 +1879,19 @@
       },
       {
         "week": 1794096000,
-        "total": 0
+        "total": 8
       }
     ],
     "latestRelease": {
-      "tag": "v0.3.0",
-      "name": "v0.3.0",
-      "publishedAt": "2026-10-18T09:40:53Z",
-      "url": "https://github.com/dasomel/ldapium/releases/tag/v0.3.0"
+      "tag": "v0.3.1",
+      "name": "v0.3.1",
+      "publishedAt": "2026-11-09T09:44:28Z",
+      "url": "https://github.com/dasomel/ldapium/releases/tag/v0.3.1"
     },
     "latestTag": {
-      "name": "v0.3.0",
-      "commitSha": "0bfe765102f309d43bb22cded35b7d46ad368677",
-      "url": "https://api.github.com/repos/dasomel/ldapium/commits/0bfe765102f309d43bb22cded35b7d46ad368677"
+      "name": "v0.3.1",
+      "commitSha": "d883c6ca153196a1977616afad3ae482c61505dc",
+      "url": "https://api.github.com/repos/dasomel/ldapium/commits/d883c6ca153196a1977616afad3ae482c61505dc"
     }
   },
   "dasomel/narwhal": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 167,
+    "openIssues": 160,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-08T16:17:45Z",
+    "pushedAt": "2026-11-10T00:27:59Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1332,
-    "releaseCount": 15,
+    "commitCount": 1343,
+    "releaseCount": 16,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794096000,
-        "total": 13
+        "total": 24
       }
     ],
     "latestRelease": {
-      "tag": "v1.4.0",
-      "name": "v1.4.0",
-      "publishedAt": "2026-11-08T16:17:47Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/v1.4.0"
+      "tag": "portal/v1.1.10",
+      "name": "Portal v1.1.10",
+      "publishedAt": "2026-11-09T19:31:37Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.10"
     },
     "latestTag": {
       "name": "v1.4.0",
@@ -2378,9 +2378,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-08T15:15:23Z",
+    "pushedAt": "2026-11-09T22:36:15Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 706,
+    "commitCount": 725,
     "releaseCount": 18,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1794096000,
-        "total": 6
+        "total": 17
       }
     ],
     "latestRelease": {
@@ -2837,13 +2837,13 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 0,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 5,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-08T16:18:09Z",
+    "pushedAt": "2026-11-10T01:08:55Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
-    "commitCount": 293,
+    "commitCount": 294,
     "releaseCount": 0,
     "contributorCount": 3,
     "activity": [
@@ -3053,7 +3053,7 @@
       },
       {
         "week": 1794096000,
-        "total": 0
+        "total": 1
       }
     ]
   },
@@ -3066,9 +3066,9 @@
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-25T13:32:05Z",
-    "pushedAt": "2026-11-04T23:35:08Z",
+    "pushedAt": "2026-11-09T19:45:12Z",
     "firstCommitAt": "2026-08-25T13:33:51Z",
-    "commitCount": 98,
+    "commitCount": 99,
     "releaseCount": 0,
     "contributorCount": 2,
     "activity": [
@@ -3278,7 +3278,7 @@
       },
       {
         "week": 1794096000,
-        "total": 0
+        "total": 1
       }
     ]
   },
