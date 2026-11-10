@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 118,
+    "openIssues": 119,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-10T00:24:41Z",
+    "pushedAt": "2026-11-10T15:37:24Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 910,
+    "commitCount": 919,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1794096000,
-        "total": 28
+        "total": 37
       }
     ],
     "latestRelease": {
@@ -1667,9 +1667,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-10T00:11:30Z",
+    "pushedAt": "2026-11-10T20:52:55Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 525,
+    "commitCount": 526,
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
@@ -1879,7 +1879,7 @@
       },
       {
         "week": 1794096000,
-        "total": 8
+        "total": 9
       }
     ],
     "latestRelease": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 160,
+    "openIssues": 171,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-10T00:27:59Z",
+    "pushedAt": "2026-11-10T19:12:30Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1343,
-    "releaseCount": 16,
+    "commitCount": 1351,
+    "releaseCount": 18,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794096000,
-        "total": 24
+        "total": 32
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.10",
-      "name": "Portal v1.1.10",
-      "publishedAt": "2026-11-09T19:31:37Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.10"
+      "tag": "portal/v1.1.12",
+      "name": "Portal v1.1.12",
+      "publishedAt": "2026-11-10T03:13:03Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.12"
     },
     "latestTag": {
       "name": "v1.4.0",
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 1,
+    "openIssues": 2,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-09T22:36:15Z",
+    "pushedAt": "2026-11-10T22:53:40Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 725,
+    "commitCount": 731,
     "releaseCount": 18,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1794096000,
-        "total": 17
+        "total": 22
       }
     ],
     "latestRelease": {
