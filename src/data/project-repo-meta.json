@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 119,
+    "openIssues": 118,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-10T15:37:24Z",
+    "pushedAt": "2026-11-11T23:37:14Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 919,
+    "commitCount": 930,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1794096000,
-        "total": 37
+        "total": 48
       }
     ],
     "latestRelease": {
@@ -1426,13 +1426,13 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 26,
+    "openIssues": 27,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-09T19:45:06Z",
+    "pushedAt": "2026-11-11T23:42:31Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 508,
+    "commitCount": 529,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1794096000,
-        "total": 20
+        "total": 41
       }
     ],
     "latestRelease": {
@@ -1663,13 +1663,13 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 7,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-10T20:52:55Z",
+    "pushedAt": "2026-11-11T23:45:01Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 526,
+    "commitCount": 529,
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
@@ -1879,7 +1879,7 @@
       },
       {
         "week": 1794096000,
-        "total": 9
+        "total": 12
       }
     ],
     "latestRelease": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 171,
+    "openIssues": 176,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-10T19:12:30Z",
+    "pushedAt": "2026-11-11T23:18:47Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1351,
-    "releaseCount": 18,
+    "commitCount": 1360,
+    "releaseCount": 20,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794096000,
-        "total": 32
+        "total": 41
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.12",
-      "name": "Portal v1.1.12",
-      "publishedAt": "2026-11-10T03:13:03Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.12"
+      "tag": "portal/v1.1.14",
+      "name": "Portal v1.1.14",
+      "publishedAt": "2026-11-11T02:08:57Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.14"
     },
     "latestTag": {
       "name": "v1.4.0",
@@ -2378,9 +2378,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-10T22:53:40Z",
+    "pushedAt": "2026-11-11T22:50:20Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 731,
+    "commitCount": 743,
     "releaseCount": 18,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1794096000,
-        "total": 22
+        "total": 31
       }
     ],
     "latestRelease": {
@@ -2835,7 +2835,7 @@
     "repo": "dasomel/openforge",
     "htmlUrl": "https://github.com/dasomel/openforge",
     "description": "Open Source Project Blueprint & Engineering Standards",
-    "stars": 0,
+    "stars": 1,
     "forks": 0,
     "openIssues": 5,
     "language": "Python",
