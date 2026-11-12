@@ -9,9 +9,9 @@
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-11T23:37:14Z",
+    "pushedAt": "2026-11-12T20:02:18Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 930,
+    "commitCount": 933,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1794096000,
-        "total": 48
+        "total": 51
       }
     ],
     "latestRelease": {
@@ -242,11 +242,11 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 8,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-09T19:45:03Z",
+    "pushedAt": "2026-11-12T04:54:08Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
     "commitCount": 333,
     "releaseCount": 8,
@@ -483,7 +483,7 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-07-14T15:01:24Z",
-    "pushedAt": "2026-11-09T19:44:57Z",
+    "pushedAt": "2026-11-12T04:14:34Z",
     "firstCommitAt": "2026-07-14T14:52:01Z",
     "commitCount": 35,
     "releaseCount": 8,
@@ -1193,9 +1193,9 @@
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-10T01:05:29Z",
+    "pushedAt": "2026-11-12T20:15:53Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 385,
+    "commitCount": 399,
     "releaseCount": 10,
     "contributorCount": 3,
     "activity": [
@@ -1405,7 +1405,7 @@
       },
       {
         "week": 1794096000,
-        "total": 25
+        "total": 32
       }
     ],
     "latestRelease": {
@@ -1426,13 +1426,13 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 27,
+    "openIssues": 32,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-11T23:42:31Z",
+    "pushedAt": "2026-11-12T16:15:38Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 529,
+    "commitCount": 536,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1794096000,
-        "total": 41
+        "total": 48
       }
     ],
     "latestRelease": {
@@ -1663,13 +1663,13 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 3,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-11T23:45:01Z",
+    "pushedAt": "2026-11-12T22:52:32Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 529,
+    "commitCount": 534,
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
@@ -1879,7 +1879,7 @@
       },
       {
         "week": 1794096000,
-        "total": 12
+        "total": 17
       }
     ],
     "latestRelease": {
@@ -1904,9 +1904,9 @@
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-11T23:18:47Z",
+    "pushedAt": "2026-11-12T03:55:19Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1360,
+    "commitCount": 1361,
     "releaseCount": 20,
     "contributorCount": 3,
     "activity": [
@@ -2116,7 +2116,7 @@
       },
       {
         "week": 1794096000,
-        "total": 41
+        "total": 42
       }
     ],
     "latestRelease": {
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 4,
     "forks": 0,
-    "openIssues": 2,
+    "openIssues": 1,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-11T22:50:20Z",
+    "pushedAt": "2026-11-12T16:19:21Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 743,
+    "commitCount": 757,
     "releaseCount": 18,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1794096000,
-        "total": 31
+        "total": 41
       }
     ],
     "latestRelease": {
@@ -2837,11 +2837,11 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 1,
     "forks": 0,
-    "openIssues": 5,
+    "openIssues": 6,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-10T01:08:55Z",
+    "pushedAt": "2026-11-12T15:43:16Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
     "commitCount": 294,
     "releaseCount": 0,
