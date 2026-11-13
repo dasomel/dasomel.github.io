@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 118,
+    "openIssues": 119,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-12T20:02:18Z",
+    "pushedAt": "2026-11-13T23:04:47Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 933,
+    "commitCount": 936,
     "releaseCount": 1,
     "contributorCount": 2,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1794096000,
-        "total": 51
+        "total": 54
       }
     ],
     "latestRelease": {
@@ -242,13 +242,13 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 8,
+    "openIssues": 2,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-12T04:54:08Z",
+    "pushedAt": "2026-11-13T19:13:38Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 333,
+    "commitCount": 347,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -450,7 +450,7 @@
       },
       {
         "week": 1792886400,
-        "total": 7
+        "total": 11
       },
       {
         "week": 1793491200,
@@ -458,7 +458,7 @@
       },
       {
         "week": 1794096000,
-        "total": 1
+        "total": 4
       }
     ],
     "latestRelease": {
@@ -1426,13 +1426,13 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 32,
+    "openIssues": 25,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-12T16:15:38Z",
+    "pushedAt": "2026-11-13T19:11:50Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 536,
+    "commitCount": 575,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1794096000,
-        "total": 48
+        "total": 87
       }
     ],
     "latestRelease": {
@@ -1663,14 +1663,14 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 2,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-12T22:52:32Z",
+    "pushedAt": "2026-11-13T20:38:10Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 534,
-    "releaseCount": 6,
+    "commitCount": 538,
+    "releaseCount": 7,
     "contributorCount": 2,
     "activity": [
       {
@@ -1879,19 +1879,19 @@
       },
       {
         "week": 1794096000,
-        "total": 17
+        "total": 21
       }
     ],
     "latestRelease": {
-      "tag": "v0.3.1",
-      "name": "v0.3.1",
-      "publishedAt": "2026-11-09T09:44:28Z",
-      "url": "https://github.com/dasomel/ldapium/releases/tag/v0.3.1"
+      "tag": "v0.3.2",
+      "name": "v0.3.2",
+      "publishedAt": "2026-11-13T00:43:17Z",
+      "url": "https://github.com/dasomel/ldapium/releases/tag/v0.3.2"
     },
     "latestTag": {
-      "name": "v0.3.1",
-      "commitSha": "d883c6ca153196a1977616afad3ae482c61505dc",
-      "url": "https://api.github.com/repos/dasomel/ldapium/commits/d883c6ca153196a1977616afad3ae482c61505dc"
+      "name": "v0.3.2",
+      "commitSha": "57d3bccb6b9da17e5cc8518080e5364f27600b89",
+      "url": "https://api.github.com/repos/dasomel/ldapium/commits/57d3bccb6b9da17e5cc8518080e5364f27600b89"
     }
   },
   "dasomel/narwhal": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 176,
+    "openIssues": 178,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-12T03:55:19Z",
+    "pushedAt": "2026-11-13T19:56:54Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1361,
-    "releaseCount": 20,
+    "commitCount": 1367,
+    "releaseCount": 21,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794096000,
-        "total": 42
+        "total": 48
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.14",
-      "name": "Portal v1.1.14",
-      "publishedAt": "2026-11-11T02:08:57Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.14"
+      "tag": "portal/v1.1.15",
+      "name": "Portal v1.1.15",
+      "publishedAt": "2026-11-13T19:24:12Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.15"
     },
     "latestTag": {
       "name": "v1.4.0",
@@ -2372,16 +2372,16 @@
     "repo": "dasomel/nfs-quota-agent",
     "htmlUrl": "https://github.com/dasomel/nfs-quota-agent",
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
-    "stars": 4,
+    "stars": 5,
     "forks": 0,
-    "openIssues": 1,
+    "openIssues": 2,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-12T16:19:21Z",
+    "pushedAt": "2026-11-13T23:03:31Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 757,
-    "releaseCount": 18,
+    "commitCount": 769,
+    "releaseCount": 21,
     "contributorCount": 3,
     "activity": [
       {
@@ -2590,19 +2590,19 @@
       },
       {
         "week": 1794096000,
-        "total": 41
+        "total": 49
       }
     ],
     "latestRelease": {
-      "tag": "v0.5.1",
-      "name": "v0.5.1",
-      "publishedAt": "2026-11-08T15:12:45Z",
-      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.5.1"
+      "tag": "v0.6.0",
+      "name": "v0.6.0",
+      "publishedAt": "2026-11-13T18:42:21Z",
+      "url": "https://github.com/dasomel/nfs-quota-agent/releases/tag/v0.6.0"
     },
     "latestTag": {
-      "name": "v0.5.1",
-      "commitSha": "87bb9d890927f68cae00e968318c308ce6b07b9a",
-      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/87bb9d890927f68cae00e968318c308ce6b07b9a"
+      "name": "v0.6.0",
+      "commitSha": "0b136533a460bbac5b212de353ed46f1750135ba",
+      "url": "https://api.github.com/repos/dasomel/nfs-quota-agent/commits/0b136533a460bbac5b212de353ed46f1750135ba"
     }
   },
   "dasomel/oh-my-cursor": {
