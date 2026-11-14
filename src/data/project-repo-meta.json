@@ -9,10 +9,10 @@
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-13T23:04:47Z",
+    "pushedAt": "2026-11-14T02:01:59Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
     "commitCount": 936,
-    "releaseCount": 1,
+    "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
       {
@@ -225,15 +225,15 @@
       }
     ],
     "latestRelease": {
-      "tag": "v0.1.0",
-      "name": "v0.1.0",
-      "publishedAt": "2026-10-15T12:35:43Z",
-      "url": "https://github.com/dasomel/beluga/releases/tag/v0.1.0"
+      "tag": "v0.2.0",
+      "name": "v0.2.0",
+      "publishedAt": "2026-11-14T02:04:29Z",
+      "url": "https://github.com/dasomel/beluga/releases/tag/v0.2.0"
     },
     "latestTag": {
-      "name": "v0.1.0",
-      "commitSha": "5adf8fc6cfb0fee26c5b3dc964e63f36762e113e",
-      "url": "https://api.github.com/repos/dasomel/beluga/commits/5adf8fc6cfb0fee26c5b3dc964e63f36762e113e"
+      "name": "v0.2.0",
+      "commitSha": "3a3eef887f3176b13fe150a4862d248fa0540775",
+      "url": "https://api.github.com/repos/dasomel/beluga/commits/3a3eef887f3176b13fe150a4862d248fa0540775"
     }
   },
   "dasomel/clusterdeck": {
@@ -246,9 +246,9 @@
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-13T19:13:38Z",
+    "pushedAt": "2026-11-14T01:59:35Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 347,
+    "commitCount": 351,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -458,7 +458,7 @@
       },
       {
         "week": 1794096000,
-        "total": 4
+        "total": 6
       }
     ],
     "latestRelease": {
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 178,
+    "openIssues": 177,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-13T19:56:54Z",
+    "pushedAt": "2026-11-14T03:38:22Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1367,
-    "releaseCount": 21,
+    "commitCount": 1370,
+    "releaseCount": 22,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,19 +2116,19 @@
       },
       {
         "week": 1794096000,
-        "total": 48
+        "total": 51
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.15",
-      "name": "Portal v1.1.15",
-      "publishedAt": "2026-11-13T19:24:12Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.15"
+      "tag": "v1.5.0",
+      "name": "v1.5.0",
+      "publishedAt": "2026-11-14T03:38:39Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/v1.5.0"
     },
     "latestTag": {
-      "name": "v1.4.0",
-      "commitSha": "b2ba25eebe7e2b3c6fee1f0b6b7bedceca4d4bfb",
-      "url": "https://api.github.com/repos/dasomel/narwhal/commits/b2ba25eebe7e2b3c6fee1f0b6b7bedceca4d4bfb"
+      "name": "v1.5.0",
+      "commitSha": "c9ea9ec5f3ce2170bb6b3b698fc82c5ec3857c7e",
+      "url": "https://api.github.com/repos/dasomel/narwhal/commits/c9ea9ec5f3ce2170bb6b3b698fc82c5ec3857c7e"
     }
   },
   "dasomel/narwhal-portal": {
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 5,
     "forks": 0,
-    "openIssues": 2,
+    "openIssues": 1,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-13T23:03:31Z",
+    "pushedAt": "2026-11-14T01:53:53Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 769,
+    "commitCount": 771,
     "releaseCount": 21,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1794096000,
-        "total": 49
+        "total": 50
       }
     ],
     "latestRelease": {
@@ -2837,11 +2837,11 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 1,
     "forks": 0,
-    "openIssues": 6,
+    "openIssues": 7,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-12T15:43:16Z",
+    "pushedAt": "2026-11-14T03:38:51Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
     "commitCount": 294,
     "releaseCount": 0,
