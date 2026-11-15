@@ -9,16 +9,12 @@
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-14T02:01:59Z",
+    "pushedAt": "2026-11-15T16:40:12Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 936,
+    "commitCount": 948,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -222,6 +218,10 @@
       {
         "week": 1794096000,
         "total": 54
+      },
+      {
+        "week": 1794700800,
+        "total": 12
       }
     ],
     "latestRelease": {
@@ -242,20 +242,16 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 2,
+    "openIssues": 8,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-14T01:59:35Z",
+    "pushedAt": "2026-11-15T22:15:10Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 351,
-    "releaseCount": 8,
+    "commitCount": 361,
+    "releaseCount": 10,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -459,18 +455,22 @@
       {
         "week": 1794096000,
         "total": 6
+      },
+      {
+        "week": 1794700800,
+        "total": 5
       }
     ],
     "latestRelease": {
-      "tag": "v0.6.1",
-      "name": "ClusterDeck v0.6.1",
-      "publishedAt": "2026-11-04T22:18:47Z",
-      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.6.1"
+      "tag": "v0.7.1",
+      "name": "ClusterDeck v0.7.1",
+      "publishedAt": "2026-11-15T15:51:12Z",
+      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.7.1"
     },
     "latestTag": {
-      "name": "v0.6.1",
-      "commitSha": "3669dc491163ea5a1fc62af110192f5de42c1b94",
-      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/3669dc491163ea5a1fc62af110192f5de42c1b94"
+      "name": "v0.7.1",
+      "commitSha": "b7b9b38346232f5faf1706ce17ae2e6e5c4bdc10",
+      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/b7b9b38346232f5faf1706ce17ae2e6e5c4bdc10"
     }
   },
   "dasomel/egovframe-launcher": {
@@ -489,10 +489,6 @@
     "releaseCount": 8,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -696,6 +692,10 @@
       {
         "week": 1794096000,
         "total": 1
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -726,10 +726,6 @@
     "releaseCount": 5,
     "contributorCount": 347,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 0
@@ -933,6 +929,10 @@
       {
         "week": 1794096000,
         "total": 0
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -962,10 +962,6 @@
     "releaseCount": 5,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 3
@@ -1169,6 +1165,10 @@
       {
         "week": 1794096000,
         "total": 0
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -1193,16 +1193,12 @@
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-12T20:15:53Z",
+    "pushedAt": "2026-11-15T18:29:26Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 399,
-    "releaseCount": 10,
+    "commitCount": 403,
+    "releaseCount": 11,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 0
@@ -1406,13 +1402,17 @@
       {
         "week": 1794096000,
         "total": 32
+      },
+      {
+        "week": 1794700800,
+        "total": 4
       }
     ],
     "latestRelease": {
-      "tag": "v0.3.3",
-      "name": "v0.3.3 - yq security rebuild",
-      "publishedAt": "2026-11-10T01:05:11Z",
-      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.3"
+      "tag": "v0.3.4",
+      "name": "v0.3.4 - Ubuntu glibc/perl security rebuild, NixOS kernel refresh",
+      "publishedAt": "2026-11-15T18:29:18Z",
+      "url": "https://github.com/dasomel/kube-ready-box/releases/tag/v0.3.4"
     },
     "latestTag": {
       "name": "v1.1.0",
@@ -1430,16 +1430,12 @@
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-13T19:11:50Z",
+    "pushedAt": "2026-11-15T17:11:44Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 575,
+    "commitCount": 588,
     "releaseCount": 2,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -1643,6 +1639,10 @@
       {
         "week": 1794096000,
         "total": 87
+      },
+      {
+        "week": 1794700800,
+        "total": 13
       }
     ],
     "latestRelease": {
@@ -1673,10 +1673,6 @@
     "releaseCount": 7,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -1880,6 +1876,10 @@
       {
         "week": 1794096000,
         "total": 21
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -1900,20 +1900,16 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 0,
     "forks": 1,
-    "openIssues": 177,
+    "openIssues": 162,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-14T03:38:22Z",
+    "pushedAt": "2026-11-15T22:02:50Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1370,
+    "commitCount": 1380,
     "releaseCount": 22,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 0
@@ -2117,6 +2113,10 @@
       {
         "week": 1794096000,
         "total": 51
+      },
+      {
+        "week": 1794700800,
+        "total": 10
       }
     ],
     "latestRelease": {
@@ -2147,10 +2147,6 @@
     "releaseCount": 6,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -2354,6 +2350,10 @@
       {
         "week": 1794096000,
         "total": 0
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -2378,16 +2378,12 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-14T01:53:53Z",
+    "pushedAt": "2026-11-15T02:05:47Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
     "commitCount": 771,
     "releaseCount": 21,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 0
@@ -2591,6 +2587,10 @@
       {
         "week": 1794096000,
         "total": 50
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ],
     "latestRelease": {
@@ -2621,10 +2621,6 @@
     "releaseCount": 0,
     "contributorCount": 1,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 0
@@ -2828,6 +2824,10 @@
       {
         "week": 1794096000,
         "total": 0
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ]
   },
@@ -2837,20 +2837,16 @@
     "description": "Open Source Project Blueprint & Engineering Standards",
     "stars": 1,
     "forks": 0,
-    "openIssues": 7,
+    "openIssues": 8,
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-14T03:38:51Z",
+    "pushedAt": "2026-11-15T18:30:06Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
     "commitCount": 294,
     "releaseCount": 0,
     "contributorCount": 3,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -3054,6 +3050,10 @@
       {
         "week": 1794096000,
         "total": 1
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ]
   },
@@ -3072,10 +3072,6 @@
     "releaseCount": 0,
     "contributorCount": 2,
     "activity": [
-      {
-        "week": 1763254800,
-        "total": 0
-      },
       {
         "week": 1763859600,
         "total": 0
@@ -3279,6 +3275,10 @@
       {
         "week": 1794096000,
         "total": 1
+      },
+      {
+        "week": 1794700800,
+        "total": 0
       }
     ]
   },
@@ -3298,10 +3298,6 @@
     "releaseCount": 3,
     "contributorCount": 35,
     "activity": [
-      {
-        "week": 1763251200,
-        "total": 0
-      },
       {
         "week": 1763856000,
         "total": 0
@@ -3504,6 +3500,10 @@
       },
       {
         "week": 1794096000,
+        "total": 0
+      },
+      {
+        "week": 1794700800,
         "total": 0
       }
     ],
