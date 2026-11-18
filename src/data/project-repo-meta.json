@@ -242,14 +242,14 @@
     "description": "A macOS desktop app for managing SSH access, kubeconfig, local CA trust, and connectivity across Kubernetes clusters.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 6,
+    "openIssues": 5,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-16T16:03:54Z",
+    "pushedAt": "2026-11-17T15:05:11Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 381,
-    "releaseCount": 12,
+    "commitCount": 385,
+    "releaseCount": 13,
     "contributorCount": 3,
     "activity": [
       {
@@ -458,19 +458,19 @@
       },
       {
         "week": 1794700800,
-        "total": 15
+        "total": 17
       }
     ],
     "latestRelease": {
-      "tag": "v0.8.1",
-      "name": "ClusterDeck v0.8.1",
-      "publishedAt": "2026-11-16T15:01:31Z",
-      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.8.1"
+      "tag": "v0.8.2",
+      "name": "ClusterDeck v0.8.2",
+      "publishedAt": "2026-11-17T15:11:17Z",
+      "url": "https://github.com/dasomel/clusterdeck/releases/tag/v0.8.2"
     },
     "latestTag": {
-      "name": "v0.8.1",
-      "commitSha": "47d00cc8f1e8ed3c1c5dfec0f314379e4903a607",
-      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/47d00cc8f1e8ed3c1c5dfec0f314379e4903a607"
+      "name": "v0.8.2",
+      "commitSha": "0d7f669666f2af1e7aaeae13a09927067ca9b5fd",
+      "url": "https://api.github.com/repos/dasomel/clusterdeck/commits/0d7f669666f2af1e7aaeae13a09927067ca9b5fd"
     }
   },
   "dasomel/egovframe-launcher": {
@@ -1189,7 +1189,7 @@
     "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
     "stars": 1,
     "forks": 0,
-    "openIssues": 18,
+    "openIssues": 19,
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
@@ -1667,9 +1667,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-16T06:49:14Z",
+    "pushedAt": "2026-11-17T16:16:19Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
-    "commitCount": 538,
+    "commitCount": 539,
     "releaseCount": 7,
     "contributorCount": 2,
     "activity": [
@@ -1879,7 +1879,7 @@
       },
       {
         "week": 1794700800,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -1898,16 +1898,16 @@
     "repo": "dasomel/narwhal",
     "htmlUrl": "https://github.com/dasomel/narwhal",
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
-    "stars": 0,
-    "forks": 1,
-    "openIssues": 166,
+    "stars": 3,
+    "forks": 4,
+    "openIssues": 173,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-16T16:46:56Z",
+    "pushedAt": "2026-11-18T00:40:23Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1388,
-    "releaseCount": 24,
+    "commitCount": 1399,
+    "releaseCount": 26,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794700800,
-        "total": 18
+        "total": 29
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.17",
-      "name": "Portal v1.1.17",
-      "publishedAt": "2026-11-16T16:26:52Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.17"
+      "tag": "portal/v1.1.19",
+      "name": "Portal v1.1.19",
+      "publishedAt": "2026-11-17T23:59:43Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.19"
     },
     "latestTag": {
       "name": "v1.5.0",
