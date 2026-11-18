@@ -1663,11 +1663,11 @@
     "description": "ldapium — OpenLDAP 2.6 compiled from upstream source: server image, management UI, and Helm chart. No sample data, no default admin password.",
     "stars": 0,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 6,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-17T16:16:19Z",
+    "pushedAt": "2026-11-18T14:18:16Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
     "commitCount": 539,
     "releaseCount": 7,
@@ -1900,13 +1900,13 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 3,
     "forks": 4,
-    "openIssues": 173,
+    "openIssues": 179,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-18T00:40:23Z",
+    "pushedAt": "2026-11-18T23:57:31Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1399,
+    "commitCount": 1402,
     "releaseCount": 26,
     "contributorCount": 3,
     "activity": [
@@ -2116,7 +2116,7 @@
       },
       {
         "week": 1794700800,
-        "total": 29
+        "total": 32
       }
     ],
     "latestRelease": {
