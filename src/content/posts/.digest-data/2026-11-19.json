@@ -1,0 +1,455 @@
+{
+  "date": "2026-11-19",
+  "generatedAt": "2026-11-19T01:55:43.491Z",
+  "count": 56,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google’s Gemini 4 Neon tripled its coding score without changing the model",
+      "link": "https://thenewstack.io/gemini-neon-antigravity-harness/",
+      "date": "2026-11-19T00:45:11.000Z",
+      "excerpt": "Google’s new Gemini 4 Neon resolved 12.8% of the SWE-sweep coding benchmark using the mini-SWE harness, but that score jumped"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Aderant modernizes analytics data pipeline with Apache Iceberg and AWS Lambda",
+      "link": "https://aws.amazon.com/blogs/architecture/aderant-modernizes-analytics-data-pipeline-with-apache-iceberg-and-aws-lambda/",
+      "date": "2026-11-19T00:36:23.000Z",
+      "excerpt": "Learn how Aderant modernized the data pipeline behind its Stridyn legal analytics platform with Apache Iceberg, AWS Lambda, and AWS Glue, moving from 15-minute batch cycles to an event-driven medallion architecture that processes change data capture events in single-digit seconds for 700 tenants, with 10-26x faster que…"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Get more from your Kiro investment with credit pooling: A guide for admins",
+      "link": "https://aws.amazon.com/blogs/devops/get-more-from-your-kiro-investment-with-credit-pooling-a-guide-for-admins/",
+      "date": "2026-11-18T23:49:12.000Z",
+      "excerpt": "Kiro credit pooling gives admins new decisions: how many seats to keep, how many credits to buy, and what per-user limits to set. This hands-on guide shows how to size your pool and set limits from your own Kiro user activity reports using Amazon Athena, plus best practices for governing shared usage."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team",
+      "link": "https://blog.cloudflare.com/open-clairic/",
+      "date": "2026-11-18T22:00:00.000Z",
+      "excerpt": "Add your teaser here. It should complement the headline, not repeat it."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "A bridge to modernization: What IDC’s Market Note says about Cameyo by Google",
+      "link": "https://cloud.google.com/blog/products/chrome-enterprise/a-bridge-to-modernization-what-idcs-market-note-says-about-cameyo-by-google/",
+      "date": "2026-11-18T21:36:00.000Z",
+      "excerpt": "Organizations are increasingly adopting generative and agentic AI as they look for ways to unlock more business value."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Microsoft says Bing serves 1B people. Its next search engine isn’t for them.",
+      "link": "https://thenewstack.io/microsoft-web-iq-agents/",
+      "date": "2026-11-18T20:38:31.000Z",
+      "excerpt": "Microsoft says its Bing search engine now has one billion monthly users. The company says those are humans — not"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How United Airlines streams database changes to Apache Iceberg with Amazon Data Firehose",
+      "link": "https://aws.amazon.com/blogs/architecture/how-united-airlines-streams-database-changes-to-apache-iceberg-with-amazon-data-firehose/",
+      "date": "2026-11-18T20:37:39.000Z",
+      "excerpt": "United Airlines built a near-real-time change data capture pipeline that replicates reference data from Amazon Aurora MySQL to open Apache Iceberg tables using AWS DMS, Amazon Kinesis Data Streams, and Amazon Data Firehose."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“The best escape room players that you’ve ever met”: What Red Hat’s AI architect really thinks about agents.",
+      "link": "https://thenewstack.io/openshell-ai-agent-security/",
+      "date": "2026-11-18T20:25:18.000Z",
+      "excerpt": "Last week at KubeCon + CloudNativeCon North America, a major gathering of the open-source and cloud-native communities, many speakers —"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Resilience testing your agents on Amazon Bedrock AgentCore",
+      "link": "https://aws.amazon.com/blogs/architecture/resilience-testing-your-agents-on-amazon-bedrock-agentcore/",
+      "date": "2026-11-18T20:06:14.000Z",
+      "excerpt": "When an AI agent's tools fail or return corrupted data, does it fail safe or confidently fabricate an answer?"
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "link": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "date": "2026-11-18T19:54:56.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Why your fine-tuning job takes longer than the FLOPs say",
+      "link": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "date": "2026-11-18T18:53:43.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Running GitHub Actions runners with Amazon EKS Auto Mode",
+      "link": "https://aws.amazon.com/blogs/containers/running-github-actions-runners-with-amazon-eks-auto-mode/",
+      "date": "2026-11-18T17:54:16.000Z",
+      "excerpt": "Learn how to run self-hosted GitHub Actions runners on Amazon EKS Auto Mode. Actions Runner Controller with EKS Auto Mode, EC2 Spot Instances, and AWS Graviton scales runners to match CI/CD demand and scales to zero when idle, cutting idle compute costs and manual node operations."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "ObservabilityCON on the Road: New sessions coming to you in 2027",
+      "link": "https://grafana.com/blog/observabilitycon-on-the-road-new-sessions-coming-to-you-in-2027/",
+      "date": "2026-11-18T17:48:45.000Z",
+      "excerpt": "If you couldn't make it to San Francisco for ObservabilityCON 2026, don’t worry. We’re bringing the highlights of ObservabilityCON to five more international destinations in 2027."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "EMEA startups building the next-generation of agents on Google Cloud",
+      "link": "https://cloud.google.com/blog/topics/startups/google-cloud-highlights-emea-startup-momentum-at-slush-2026/",
+      "date": "2026-11-18T17:30:00.000Z",
+      "excerpt": "As thousands of founders, investors, and technology leaders gather in Helsinki for Slush 2026, the European startup ecosystem is undergoing a profound transformation. The conversation has moved from AI experiments to operating agents."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The Gemini app is now available on lower-memory Android devices.",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What’s new in OKF v0.3: enterprise-ready knowledge, use cases, and skills",
+      "link": "https://cloud.google.com/blog/products/data-analytics/introducing-okf-v0-3/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "In June we introduced the Open Knowledge Format (OKF), an open specification that provides plain markdown and YAML to give agents the context they need. In July, v0."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
+      "date": "2026-11-18T16:59:38.000Z",
+      "excerpt": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model space, creating a rising tide that lifts all the boats."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+      "link": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+      "date": "2026-11-18T15:00:23.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)",
+      "link": "https://blog.cloudflare.com/java4shell-waf-protection/",
+      "date": "2026-11-18T14:52:10.000Z",
+      "excerpt": "Java4Shell is a critical memory-corruption flaw in OpenJDK's Base64 decoder that can lead to remote code execution. Cloudflare has released six WAF managed rules for paid plans that logs matching requests by default."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Trust Layer: Securing Agentic AI with Docker AI Governance",
+      "link": "https://www.docker.com/blog/agentic-ai-security-docker-governance/",
+      "date": "2026-11-18T14:00:00.000Z",
+      "excerpt": "Learn how Docker AI Governance secures agentic AI with sandbox policies, MCP tool governance, and audit visibility to support controlled AI agent workflows."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Optimizing Kubernetes admission control: Where Kyverno’s CEL admission cost actually goes",
+      "link": "https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/",
+      "date": "2026-11-18T12:30:00.000Z",
+      "excerpt": "Kyverno’s CEL (Common Expression Language)-based engines exist to evaluate policy expressions. So when we profiled the admission path, we expected to find the bulk of the cost in CEL evaluation."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "The Silent Consensus",
+      "link": "https://openai.com/index/the-silent-consensus",
+      "date": "2026-11-18T10:00:00.000Z",
+      "excerpt": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Research acceleration: The jagged frontier",
+      "link": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "date": "2026-11-18T08:00:00.000Z",
+      "excerpt": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+      "link": "https://openai.com/business/customer-stories/sumitomo-life",
+      "date": "2026-11-18T08:00:00.000Z",
+      "excerpt": "Sumitomo Life uses ChatGPT Enterprise to research insurers, prepare proposals, and draft code for investment analysis. Early use by executives helped drive adoption."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Announcing the Sysdig MCP Server for Monitoring",
+      "link": "https://webflow.sysdig.com/blog/announcing-the-sysdig-mcp-server-for-monitoring",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "The new Sysdig Monitor MCP server connects the AI assistant your team already uses to live container, Kubernetes, and cloud monitoring data."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Java4Shell (CVE-2026-114938): Pre-auth RCE in OpenJDK, and the challenge of image and feature bloat",
+      "link": "https://webflow.sysdig.com/blog/java4shell-cve-2026-114938-pre-auth-rce-in-openjdk",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "On 11/17/26, Oracle and OpenJDK shipped fixes for Java4Shell (CVE-2026-114938), a heap memory corruption bug in the AVX-512 accelerated Base64 decoder."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift 5 is now available on Azure Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-5-now-available-azure-red-hat-openshift",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift 5 is here and it's generally available on Microsoft Azure Red Hat OpenShift with hosted control planes."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Bring Datadog BYOC to your on-premises data with MinIO AIStor",
+      "link": "https://www.datadoghq.com/blog/datadog-byoc-minio-aistor/",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "Learn how Datadog BYOC and MinIO AIStor work together to help you search, monitor, and investigate logs while keeping your telemetry on-premises."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we built Datadog’s agentic vulnerability hunting system",
+      "link": "https://www.datadoghq.com/blog/datadogs-agentic-vulnerability-hunting-system/",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "We developed threat packs that give our agents the context they need to run efficient, repeatable hunts. Learn how we did it."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we fine-tuned a faster model for Patterns on Baseten",
+      "link": "https://www.datadoghq.com/blog/fine-tuning-patterns-baseten/",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "Datadog fine-tuned a summarization model using production traces, cutting average generation time from about 45 seconds to under one second."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "GitLab Transcend Hackathon: Meet the 'Life After Code' winners",
+      "link": "https://about.gitlab.com/blog/gitlab-transcend-hackathon-life-after-code/",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "Code generation is the easy part now. The hard part is everything that comes after it: getting software from a working change to running in production."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Reducing database incident MTTR by 73% with a custom AWS DevOps Agent Skill",
+      "link": "https://aws.amazon.com/blogs/devops/reducing-database-incident-mttr-by-73-with-a-custom-aws-devops-agent-skill/",
+      "date": "2026-11-17T22:27:48.000Z",
+      "excerpt": "Database incidents routinely take 45 to 60 minutes to triage."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Quad9’s withdrawal from France: A canary in the coal mine",
+      "link": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+      "date": "2026-11-17T20:24:27.000Z",
+      "excerpt": "Quad9's forced withdrawal from France highlights the dangers of mandating DNS-level blocking. We explore why forcing public resolvers to act as content filters is technically flawed and threatens the open Internet."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Enforcing zero-trust dependency policies in AWS CodeBuild with JFrog Curation",
+      "link": "https://aws.amazon.com/blogs/devops/enforcing-zero-trust-dependency-policies-in-aws-codebuild-with-jfrog-curation/",
+      "date": "2026-11-17T20:08:18.000Z",
+      "excerpt": "Integrate JFrog Curation into an AWS CodeBuild pipeline to block vulnerable and malicious open source packages at download time. A package that violates policy returns an HTTP 403 (Access Denied) error that fails the build, so a risky dependency never becomes a container image or reaches Amazon ECR."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Maintainers don’t need more AI bug reports. They need fixes.",
+      "link": "https://github.blog/open-source/maintainers/maintainers-dont-need-more-ai-bug-reports-they-need-fixes/",
+      "date": "2026-11-17T18:29:29.000Z",
+      "excerpt": "In the Codename MDASH pilot, GitHub and Microsoft turned thousands of raw AI findings into 99 checked, private reports with suggested fixes for six widely used open source projects. Maintainers have already fixed more than half."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Building the Agent Host Protocol for sessions that continue across devices",
+      "link": "https://github.blog/engineering/engineering-principles/building-the-agent-host-protocol-for-sessions-that-continue-across-devices/",
+      "date": "2026-11-17T18:20:40.000Z",
+      "excerpt": "Discover how we built the open Agent Host Protocol to keep your agent sessions accessible across editors, apps, phones, and the cloud."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Engineering AI Discover",
+      "link": "https://netflixtechblog.com/engineering-ai-discover-e244944cdc38?source=rss----2615bd06b42e---4",
+      "date": "2026-11-17T17:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Put Gemini to work for you",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+      "date": "2026-11-17T17:00:00.000Z",
+      "excerpt": "Tasks in Gemini is now free of charge in six countries, with new features starting in the U.S."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Find the log line that matters faster with full-text search in Grafana Cloud Logs",
+      "link": "https://grafana.com/blog/find-the-log-line-that-matters-faster-with-full-text-search-in-grafana-cloud-logs/",
+      "date": "2026-11-17T16:53:32.000Z",
+      "excerpt": "A support ticket comes in with one clue: a transaction ID. The answer is somewhere in your logs, but you don't know which service logged it, which pod handled it, or which day it happened."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "같은 GPU로 더 많은 AI 요청을 처리할 수 있을까? ― KV 캐시 오프로딩 × EPP 라우팅: 계산 결과를 오래 남기고, 다음 요청이 그 결과를 찾아가게 하기",
+      "link": "https://tech.kakao.com/posts/848",
+      "date": "2026-11-17T15:00:00.000Z",
+      "excerpt": "“같은 GPU 32장, 같은 요청 3,456건. 처리 시간이 121."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Is your OpenTelemetry pipeline becoming a performance bottleneck?",
+      "link": "https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/",
+      "date": "2026-11-17T12:21:00.000Z",
+      "excerpt": "At Cloud Native Days Austria 2026, I presented a talk called How to Defeat OTel’s Silent Killer: The Performance Overhead, exploring a problem that is easy to overlook when building observability pipelines: the cost of collecting."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "지표 뒤에 숨은 맥락을 한눈에: New20 Timeline Hub 만들기",
+      "link": "https://toss.tech/article/new20-timeline-hub",
+      "date": "2026-11-17T09:39:00.000Z",
+      "excerpt": "흩어진 정책, 배포, 실험 기록을 하나의 시간축으로 연결해 분석가의 질문에 답하는 허브를 만든 경험을 공유합니다."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "From exposed secrets to managed credentials: Reducing credential risk across the application lifecycle",
+      "link": "https://www.hashicorp.com/blog/from-exposed-secrets-to-managed-credentials",
+      "date": "2026-11-17T08:00:00.000Z",
+      "excerpt": "A recent software supply chain attack affecting tens of thousands of GitHub repositories highlights a security problem that is easy to underestimate: a credential does not stop being exposed simply because it has been deleted from the latest version of the code."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "판단에만 집중하세요: 토스 타겟팅 모델 개발 자동화",
+      "link": "https://toss.tech/article/targeting-model-automation",
+      "date": "2026-11-17T07:14:00.000Z",
+      "excerpt": "피쳐 개수 자동 결정부터 모델 비교, 평가 보고서 자동 생성, 메트릭 확인까지"
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "같은 모델, 다른 예측",
+      "link": "https://toss.tech/article/training-serving-skew",
+      "date": "2026-11-17T01:00:00.000Z",
+      "excerpt": "Training–Serving Skew를 줄인 과정을 소개합니다."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "High-quality cost-effective AI image generation on Amazon ECS",
+      "link": "https://aws.amazon.com/blogs/containers/high-quality-cost-effective-ai-image-generation-on-amazon-ecs/",
+      "date": "2026-11-17T00:19:06.000Z",
+      "excerpt": "Learn how to run Z-Image-Turbo, a 6-billion-parameter diffusion transformer, on AWS Inferentia2 and Amazon ECS to generate high-quality images at a fraction of a cent each, with auto-scaling, arbitrary resolution support, and a complete CI/CD pipeline."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How to write a standout Red Hat Summit proposal",
+      "link": "https://www.redhat.com/en/blog/how-write-standout-red-hat-summit-proposal",
+      "date": "2026-11-17T00:00:00.000Z",
+      "excerpt": "Every year, the Red Hat Summit review committee evaluates roughly 1,500 proposals to build a catalog of around 350 sessions.You may be wondering: What distinguishes a successful abstract from one that falls flat?"
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Azure Red Hat OpenShift with hosted control planes is now generally available",
+      "link": "https://www.redhat.com/en/blog/azure-red-hat-openshift-hosted-control-planes-now-generally-available",
+      "date": "2026-11-17T00:00:00.000Z",
+      "excerpt": "Microsoft Azure Red Hat OpenShift with hosted control planes is now generally available to help teams reduce infrastructure costs, simplify Day 2 operations, and provision clusters with more flexibility."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "What CISA’s new cyber strategy means for how you ship software",
+      "link": "https://about.gitlab.com/blog/cisa-2030-cyber-strategy/",
+      "date": "2026-11-17T00:00:00.000Z",
+      "excerpt": "On October 26, 2026, the Cybersecurity and Infrastructure Security Agency released CISA 2030: Defend, Harden, Prevail, three pillars of a four-year strategy for securing the nation’s critical infrastructure."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "How Salesforce efficiently right-sizes Kubernetes workloads at scale on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/containers/how-salesforce-efficiently-right-sizes-kubernetes-workloads-at-scale-on-amazon-eks/",
+      "date": "2026-11-16T20:40:26.000Z",
+      "excerpt": "Salesforce operates one of the largest multi-tenant Kubernetes platforms on Amazon EKS, spanning 1,400+ clusters."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Scheduling the removal of the kube-proxy IPVS backend",
+      "link": "https://kubernetes.io/blog/2026/11/16/ipvs-removal/",
+      "date": "2026-11-16T18:35:00.000Z",
+      "excerpt": "The ipvs backend for kube-proxy was an experiment in providing a service proxy implementation with better performance than the iptables backend."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "HCP introduces IBMid support and new enterprise governance capabilities",
+      "link": "https://www.hashicorp.com/blog/hcp-introduces-ibmid-support-and-new-enterprise-governance-capabilities",
+      "date": "2026-11-16T17:00:00.000Z",
+      "excerpt": "Over the past quarter, the HashiCorp Cloud Platform (HCP) team has continued investing in the foundations that help organizations securely adopt and operate HashiCorp products at scale."
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "if(kakao)26 현장 스케치",
+      "link": "https://tech.kakao.com/posts/849",
+      "date": "2026-11-16T15:00:00.000Z",
+      "excerpt": "지난 10월 13일과 14일, 카카오 AI 캠퍼스에서 if(kakao)26이 열렸습니다. ‘모든 연결에 지능을’이라는 주제 아래, 카카오가 만들어가는 AI 기술과 서비스를 소개하고 개발과 운영 과정에서 쌓은 경험을 나눴습니다."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Give sandboxed agents live web access with the Firecrawl kit for Docker Sandboxes",
+      "link": "https://www.docker.com/blog/docker-sandboxes-firecrawl-web-access/",
+      "date": "2026-11-16T14:00:00.000Z",
+      "excerpt": "Give AI coding agents live web access with the Firecrawl kit for Docker Sandboxes. Learn to search, scrape, and crawl websites with network controls."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "New Ask Maps features to help with holiday travel and prep",
+      "link": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "date": "2026-11-16T14:00:00.000Z",
+      "excerpt": "Plan holiday road trips, get route tips, find local appointments, and search your saved lists with new Ask Maps features."
+    }
+  ]
+}
