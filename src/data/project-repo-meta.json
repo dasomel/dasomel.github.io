@@ -1426,11 +1426,11 @@
     "description": "Apple Silicon hybrid MLOps desktop app — K8s control plane (Colima/K3s) + macOS host MLX compute. Tauri v2 (Rust) + React.",
     "stars": 1,
     "forks": 0,
-    "openIssues": 25,
+    "openIssues": 31,
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-16T14:18:14Z",
+    "pushedAt": "2026-11-19T16:15:11Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
     "commitCount": 599,
     "releaseCount": 2,
@@ -1900,14 +1900,14 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 3,
     "forks": 4,
-    "openIssues": 179,
+    "openIssues": 166,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-18T23:57:31Z",
+    "pushedAt": "2026-11-19T16:52:51Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1402,
-    "releaseCount": 26,
+    "commitCount": 1425,
+    "releaseCount": 29,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794700800,
-        "total": 32
+        "total": 55
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.19",
-      "name": "Portal v1.1.19",
-      "publishedAt": "2026-11-17T23:59:43Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.19"
+      "tag": "portal/v1.1.22",
+      "name": "Portal v1.1.22",
+      "publishedAt": "2026-11-19T10:41:46Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.22"
     },
     "latestTag": {
       "name": "v1.5.0",
