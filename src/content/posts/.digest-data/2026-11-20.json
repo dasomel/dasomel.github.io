@@ -1,0 +1,487 @@
+{
+  "date": "2026-11-20",
+  "generatedAt": "2026-11-20T01:48:33.222Z",
+  "count": 60,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Does your AI agent need an LLM to decide what to do next?",
+      "link": "https://thenewstack.io/aws-decider-models-agents/",
+      "date": "2026-11-20T01:37:32.000Z",
+      "excerpt": "Say “good morning” to an AI agent, and it might search its long-term memory before saying hello back. Somewhere in"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "AI coding agents on Amazon EC2 Mac: How Cognition scales Devin for macOS",
+      "link": "https://aws.amazon.com/blogs/architecture/ai-coding-agents-on-amazon-ec2-mac-how-cognition-scales-devin-for-macos/",
+      "date": "2026-11-20T01:10:14.000Z",
+      "excerpt": "Cognition gave its AI software engineer, Devin, a cloud Mac. Each Devin session gets a fresh macOS VM on Amazon EC2 Mac bare metal hosts, so Devin can build, run, and test iOS and macOS apps."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Announcing custom execution roles for AWS CloudFormation StackSets",
+      "link": "https://aws.amazon.com/blogs/devops/announcing-custom-execution-roles-for-aws-cloudformation-stacksets/",
+      "date": "2026-11-20T00:46:23.000Z",
+      "excerpt": "AWS CloudFormation StackSets now supports custom execution role templates, so you can define the IAM role StackSets uses in each member account instead of the default AdministratorAccess role. Scope permissions to least privilege, and deploy service-managed stack sets that use nested stacks, macros, and transforms."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Track AWS CloudFormation StackSets deployments with progress visibility",
+      "link": "https://aws.amazon.com/blogs/devops/track-aws-cloudformation-stacksets-deployments-with-progress-visibility/",
+      "date": "2026-11-20T00:40:44.000Z",
+      "excerpt": "AWS CloudFormation StackSets now adds deployment progress visibility, a stage-by-stage view of where each stack set operation stands. See how much work is complete and which accounts and stack instances need attention, and follow a deployment while it runs across tens or thousands of accounts."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Karpenter v1.15: GPU-aware provisioning, smarter node repair, and more",
+      "link": "https://aws.amazon.com/blogs/containers/karpenter-v1-15-gpu-aware-provisioning-smarter-node-repair-and-more/",
+      "date": "2026-11-19T23:07:32.000Z",
+      "excerpt": "Karpenter v1."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Country Road Group built a pattern-driven integration solution on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/how-country-road-group-built-a-pattern-driven-integration-solution-on-aws/",
+      "date": "2026-11-19T23:07:30.000Z",
+      "excerpt": "Country Road Group replaced Microsoft BizTalk with a pattern-driven, serverless integration platform on AWS. Learn how its Strategic Integration Platform works across four processing lanes, and get the open-source Enterprise Integration Patterns CDK library to apply the same approach to your own middleware."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Your guide to containers at AWS re:Invent 2026",
+      "link": "https://aws.amazon.com/blogs/containers/your-guide-to-containers-at-aws-reinvent-2026/",
+      "date": "2026-11-19T23:05:29.000Z",
+      "excerpt": "AWS re:Invent 2026 returns to Las Vegas, November 30 to December 4."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "What’s new in AWS Transform – continuous modernization for re:Invent 2026",
+      "link": "https://aws.amazon.com/blogs/devops/whats-new-in-aws-transform-continuous-modernization-for-reinvent-2026/",
+      "date": "2026-11-19T23:01:00.000Z",
+      "excerpt": "Ahead of re:Invent 2026, AWS Transform continuous modernization is faster to start, easier to act on, and easier to extend. A new AWS Health integration takes you from a planned lifecycle event straight to the affected code, and remediations now arrive as one clean pull request per repository."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The Blueprint: How Kult built a gaming companion that actually knows your game",
+      "link": "https://cloud.google.com/blog/products/gaming/kult-built-a-gaming-companion-with-gemini-that-actually-knows-your-game/",
+      "date": "2026-11-19T23:00:00.000Z",
+      "excerpt": "Welcome to The Blueprint, our ongoing series where we highlight how Google Cloud customers are tackling unique and common challenges across industries using the latest AI and cloud technologies. We hope to inspire others looking to innovate in their work."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google just gave Gemini the run of your Mac — three days after Apple tightened the rules",
+      "link": "https://thenewstack.io/gemini-mac-computer-use/",
+      "date": "2026-11-19T21:35:09.000Z",
+      "excerpt": "Google is adding computer use to its Gemini app for macOS. The assistant can now work across desktop applications and"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "An engineer didn’t message his AI for 22 of 44 days. It built an Android app anyway.",
+      "link": "https://thenewstack.io/cognition-devin-bots-management/",
+      "date": "2026-11-19T20:22:18.000Z",
+      "excerpt": "Cognition has spent nearly three years developing Devin as an autonomous engineer that takes a ticket and ships a pull"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Use Amazon ECR global authentication token across AWS Regions",
+      "link": "https://aws.amazon.com/blogs/containers/use-amazon-ecr-global-authentication-token-across-aws-regions/",
+      "date": "2026-11-19T20:09:23.000Z",
+      "excerpt": "Amazon ECR now supports global authentication tokens: request one token from AWS Sign-In and use it to push and pull images across AWS Regions in the same partition, with a lifetime from 5 minutes to 12 hours. This post shows how to request a global token and use it with Docker in two Regions."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "A game you cannot win unless you have a quantum computer",
+      "link": "https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/",
+      "date": "2026-11-19T20:03:00.000Z",
+      "excerpt": "Quantum"
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Introducing Tool Retrieval in the Gemini API",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "date": "2026-11-19T18:00:00.000Z",
+      "excerpt": "Give your agents access to hundreds of tools while using fewer tokens with Tool Retrieval, now in preview in the Gemini API."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker patches Java4Shell and the NGINX HTTP/2 with Docker Hardened Images",
+      "link": "https://www.docker.com/blog/docker-patches-java4shell-and-the-nginx-http-2-with-docker-hardened-images/",
+      "date": "2026-11-19T17:38:08.000Z",
+      "excerpt": "Docker publishes fixed images for both Java4Shell and the NGINX HTTP/2 in the Docker Hardened Images (DHI) catalog."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Meet the New Docker: Built to Run on Trust",
+      "link": "https://www.docker.com/blog/meet-the-new-docker-built-to-run-on-trust/",
+      "date": "2026-11-19T17:00:00.000Z",
+      "excerpt": "Docker launches a new brand built on trust. Learn why Docker is evolving for AI agents, what stays the same, and how to run agents securely with Docker."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Walter Isaacson on curiosity and creativity in the AI age.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
+      "date": "2026-11-19T17:00:00.000Z",
+      "excerpt": "Walter Isaacson joins Google to discuss how history’s greatest innovators inspire creativity and human judgment in the AI age. Watch the episode."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing object enrichments: Transform unstructured data into agent-ready context",
+      "link": "https://cloud.google.com/blog/products/storage-data-transfer/cost-effective-ai-context-extraction-from-unstructured-gcs-data/",
+      "date": "2026-11-19T17:00:00.000Z",
+      "excerpt": "The vast majority of enterprise information is unstructured, locked away in object storage as petabytes of images, PDFs, videos, and audio files. This data holds the institutional knowledge AI agents need to do business-critical work."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Helping our partners market smarter, together, with Gemini",
+      "link": "https://cloud.google.com/blog/topics/partners/helping-our-partners-market-smarter-together-with-gemini/",
+      "date": "2026-11-19T17:00:00.000Z",
+      "excerpt": "At Google Cloud, our commitment to agentic transformation extends to everyone, including the partners who build and grow alongside us. Today, we are excited to introduce new Gemini-powered co-marketing capabilities directly within everyday go-to-market workflows for our partners."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Grafana Labs’ First Executive Briefing Center Coming to Ginza",
+      "link": "https://grafana.com/blog/grafana-labs-ebc1/",
+      "date": "2026-11-19T16:32:02.000Z",
+      "excerpt": "Grafana Labs does not have a headquarters office. Since its founding in 2014, it has been fully remote-first."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "The best things in open source are built together",
+      "link": "https://github.blog/open-source/maintainers/the-best-things-in-open-source-are-built-together/",
+      "date": "2026-11-19T16:00:00.000Z",
+      "excerpt": "Introducing Replica and the Open Source Accessibility Framework, new open source projects for collaboration and inclusion."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Bring charts, queries, and context into one shareable document: Introducing Grafana Notebooks",
+      "link": "https://grafana.com/blog/bring-charts-queries-and-context-into-one-shareable-document-introducing-grafana-notebooks/",
+      "date": "2026-11-19T15:22:49.000Z",
+      "excerpt": "A teammate asks why you think a deployment caused checkout failures. You have an error-rate chart in your dashboard, a query that narrows the failures to one payment provider, and an explanation you've been exploring with Grafana Assistant."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Internet traffic and attacks during the 2026 U.S. midterm elections",
+      "link": "https://blog.cloudflare.com/internet-traffic-2026-us-election/",
+      "date": "2026-11-19T14:00:00.000Z",
+      "excerpt": "On November 3, 2026 U.S."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+      "link": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+      "date": "2026-11-19T08:00:00.000Z",
+      "excerpt": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Why the Harness Matters: Early Lessons From the Evo Code Scanning Agent Preview",
+      "link": "https://snyk.io/blog/why-harness-matters-evo-code-scanning-agent/",
+      "date": "2026-11-19T04:00:00.000Z",
+      "excerpt": "In early tests, Evo Code Scanning Agent’s security harness found more known vulnerabilities than Claude Security and Codex Security at the same compute budget, with lower precision. See what the results reveal about the role of the harness in AI code scanning."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Aderant modernizes analytics data pipeline with Apache Iceberg and AWS Lambda",
+      "link": "https://aws.amazon.com/blogs/architecture/aderant-modernizes-analytics-data-pipeline-with-apache-iceberg-and-aws-lambda/",
+      "date": "2026-11-19T00:36:23.000Z",
+      "excerpt": "Learn how Aderant modernized the data pipeline behind its Stridyn legal analytics platform with Apache Iceberg, AWS Lambda, and AWS Glue, moving from 15-minute batch cycles to an event-driven medallion architecture that processes change data capture events in single-digit seconds for 700 tenants, with 10-26x faster que…"
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "NGINX2Root: Five RCE bugs in NGINX, a Linux kernel path to root, and how to detect exploitation",
+      "link": "https://webflow.sysdig.com/blog/nginx2root",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Runtime security for Amazon EKS Auto Mode with Sysdig",
+      "link": "https://webflow.sysdig.com/blog/runtime-security-for-amazon-eks-auto-mode",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Sysdig integrates with Amazon EKS Auto Mode hands node management to AWS, giving you immutable, Bottlerocket-based nodes with read-only root filesystems and no kernel module loading. But the shared responsibility model still applies: what happens inside your workloads at runtime is on you."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Deploying Daybreak Red",
+      "link": "https://openai.com/business/learn/deploying-daybreak-red",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "See PR scans in action",
+      "link": "https://openai.com/business/learn/pr-scans-demo",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "BGP cloud connector for Microsoft Azure Red Hat OpenShift now available",
+      "link": "https://www.redhat.com/en/blog/bgp-cloud-connector-microsoft-azure-red-hat-openshift-now-available",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Organizations are reassessing where and how they run their virtual machines (VMs). Evolving cloud strategies, the need for a modern platform, and cost pressures are prompting many to reconsider their virtualization options."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How Datadog resolves evolving OpenTelemetry semantics at query time",
+      "link": "https://www.datadoghq.com/blog/engineering/semantic-translation-otel/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "OpenTelemetry conventions evolve, but queries still need to work across old, current, and Datadog-native telemetry. Learn how Datadog uses a knowledge graph and query-time translation to resolve conditional semantic equivalences and validate them against real data."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Retain more logs for longer with Flex Logs BYOBucket",
+      "link": "https://www.datadoghq.com/blog/flex-logs-bring-your-own-bucket/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Store Flex Logs in your cloud bucket with unlimited retention to control storage costs and keep logs searchable in Datadog for investigations and audits."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Track Lighthouse scores alongside real-user data in Datadog",
+      "link": "https://www.datadoghq.com/blog/lighthouse-audits-rum-synthetic-monitoring/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Run scheduled Lighthouse audits with Datadog Synthetic Monitoring, compare lab results with field data in RUM, and track page health across releases."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Rotate a leaked GitLab token and let GitLab Duo fix the code",
+      "link": "https://about.gitlab.com/blog/secret-detection-token-rotate-and-fix/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Secret detection alerts you when an active personal access token (PAT) is exposed in your default branch. Acting on that finding is harder: revoking the token breaks dependent pipelines, and replacing it safely takes several manual steps."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Turn Slack conversations into trusted software, faster",
+      "link": "https://about.gitlab.com/blog/gitlab-slack-integration-for-software-factory/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Most software starts as a conversation: a customer requests a new capability, a product manager weighs it against the roadmap, an engineer checks feasibility, and a security lead asks what it touches. Then someone has to turn it into work."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Keep recurring work moving with scheduled automations",
+      "link": "https://about.gitlab.com/blog/gitlab-scheduled-automations/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Every engineering team has work that needs regular attention, like triaging new issues or investigating incidents. Among DevSecOps professionals using AI tools, 43% say automating repetitive tasks has created the most efficiency, according to GitLab’s Global DevSecOps report."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Give your agents controlled access to analyze your data and move funds",
+      "link": "https://stripe.com/blog/give-your-agents-controlled-access-to-analyze-your-data-and-move-funds",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Stripe Treasury now lets agents transfer funds, convert currencies, and pay vendors within limits you set. Give agents the access they need to help run your business, with customizable controls and human approvals."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team",
+      "link": "https://blog.cloudflare.com/open-clairic/",
+      "date": "2026-11-18T22:00:00.000Z",
+      "excerpt": "Clairic graduates from preview, while Clairic-flash joins the repertoire on Workers AI. We’re doing an open-weight release for both extraction models."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "link": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "date": "2026-11-18T19:54:56.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Why your fine-tuning job takes longer than the FLOPs say",
+      "link": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "date": "2026-11-18T18:53:43.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "ObservabilityCON on the Road: New sessions coming to you in 2027",
+      "link": "https://grafana.com/blog/observabilitycon-on-the-road-new-sessions-coming-to-you-in-2027/",
+      "date": "2026-11-18T17:48:45.000Z",
+      "excerpt": "If you couldn't make it to San Francisco for ObservabilityCON 2026, don’t worry. We’re bringing the highlights of ObservabilityCON to five more international destinations in 2027."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The Gemini app is now available on lower-memory Android devices.",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
+      "date": "2026-11-18T16:59:38.000Z",
+      "excerpt": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model space, creating a rising tide that lifts all the boats."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+      "link": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+      "date": "2026-11-18T15:00:23.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)",
+      "link": "https://blog.cloudflare.com/java4shell-waf-protection/",
+      "date": "2026-11-18T14:52:10.000Z",
+      "excerpt": "Java4Shell is a critical memory-corruption flaw in OpenJDK's Base64 decoder that can lead to remote code execution. Cloudflare has released six WAF managed rules for paid plans that logs matching requests by default."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Trust Layer: Securing Agentic AI with Docker AI Governance",
+      "link": "https://www.docker.com/blog/agentic-ai-security-docker-governance/",
+      "date": "2026-11-18T14:00:00.000Z",
+      "excerpt": "Learn how Docker AI Governance secures agentic AI with sandbox policies, MCP tool governance, and audit visibility to support controlled AI agent workflows."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Optimizing Kubernetes admission control: Where Kyverno’s CEL admission cost actually goes",
+      "link": "https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/",
+      "date": "2026-11-18T12:30:00.000Z",
+      "excerpt": "Kyverno’s CEL (Common Expression Language)-based engines exist to evaluate policy expressions. So when we profiled the admission path, we expected to find the bulk of the cost in CEL evaluation."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Announcing the Sysdig MCP Server for Monitoring",
+      "link": "https://webflow.sysdig.com/blog/announcing-the-sysdig-mcp-server-for-monitoring",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "The new Sysdig Monitor MCP server connects the AI assistant your team already uses to live container, Kubernetes, and cloud monitoring data."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat OpenShift 5 is now available on Azure Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/red-hat-openshift-5-now-available-azure-red-hat-openshift",
+      "date": "2026-11-18T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift 5 is here and it's generally available on Microsoft Azure Red Hat OpenShift with hosted control planes."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Microsoft and Oracle bring agentic AI into flow of enterprise work",
+      "link": "https://azure.microsoft.com/en-us/blog/microsoft-and-oracle-bring-agentic-ai-into-flow-of-enterprise-work/",
+      "date": "2026-11-17T18:35:00.000Z",
+      "excerpt": "Our new integrations let AI agents reason across Oracle’s business-critical data."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Introducing Azure Catalyst agentic modernization and new AI infrastructure innovations",
+      "link": "https://azure.microsoft.com/en-us/blog/introducing-azure-catalyst-agentic-modernization-and-new-ai-infrastructure-innovations/",
+      "date": "2026-11-17T18:35:00.000Z",
+      "excerpt": "At Microsoft Ignite 2026, we’ll showcase what’s possible when models, silicon, and cloud infrastructure converge into a single, co-engineered system."
+    },
+    {
+      "source": "Azure",
+      "category": "cloud",
+      "title": "Microsoft Ignite 2026: What’s new in Azure, the platform purpose-built for AI",
+      "link": "https://azure.microsoft.com/en-us/blog/microsoft-ignite-2026-whats-new-in-azure-the-platform-purpose-built-for-ai/",
+      "date": "2026-11-17T18:35:00.000Z",
+      "excerpt": "At Microsoft Ignite, we're sharing what's new across every layer of the platform. New capabilities spanning compute, storage, and networking let you run AI at scale with the control of your own infrastructure, without having to build, secure, and operate all of it yourself."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Maintainers don’t need more AI bug reports. They need fixes.",
+      "link": "https://github.blog/open-source/maintainers/maintainers-dont-need-more-ai-bug-reports-they-need-fixes/",
+      "date": "2026-11-17T18:29:29.000Z",
+      "excerpt": "In the Codename MDASH pilot, GitHub and Microsoft turned thousands of raw AI findings into 99 checked, private reports with suggested fixes for six widely used open source projects. Maintainers have already fixed more than half."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Building the Agent Host Protocol for sessions that continue across devices",
+      "link": "https://github.blog/engineering/engineering-principles/building-the-agent-host-protocol-for-sessions-that-continue-across-devices/",
+      "date": "2026-11-17T18:20:40.000Z",
+      "excerpt": "Discover how we built the open Agent Host Protocol to keep your agent sessions accessible across editors, apps, phones, and the cloud."
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Engineering AI Discover",
+      "link": "https://netflixtechblog.com/engineering-ai-discover-e244944cdc38?source=rss----2615bd06b42e---4",
+      "date": "2026-11-17T17:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "카카오",
+      "category": "devops",
+      "title": "같은 GPU로 더 많은 AI 요청을 처리할 수 있을까? ― KV 캐시 오프로딩 × EPP 라우팅: 계산 결과를 오래 남기고, 다음 요청이 그 결과를 찾아가게 하기",
+      "link": "https://tech.kakao.com/posts/848",
+      "date": "2026-11-17T15:00:00.000Z",
+      "excerpt": "“같은 GPU 32장, 같은 요청 3,456건. 처리 시간이 121."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Is your OpenTelemetry pipeline becoming a performance bottleneck?",
+      "link": "https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/",
+      "date": "2026-11-17T12:21:00.000Z",
+      "excerpt": "At Cloud Native Days Austria 2026, I presented a talk called How to Defeat OTel’s Silent Killer: The Performance Overhead, exploring a problem that is easy to overlook when building observability pipelines: the cost of collecting."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "지표 뒤에 숨은 맥락을 한눈에: New20 Timeline Hub 만들기",
+      "link": "https://toss.tech/article/new20-timeline-hub",
+      "date": "2026-11-17T09:39:00.000Z",
+      "excerpt": "흩어진 정책, 배포, 실험 기록을 하나의 시간축으로 연결해 분석가의 질문에 답하는 허브를 만든 경험을 공유합니다."
+    }
+  ]
+}
