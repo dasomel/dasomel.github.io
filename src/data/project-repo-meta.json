@@ -1430,9 +1430,9 @@
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-19T16:15:11Z",
+    "pushedAt": "2026-11-20T08:41:33Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 599,
+    "commitCount": 607,
     "releaseCount": 2,
     "contributorCount": 3,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1794700800,
-        "total": 24
+        "total": 32
       }
     ],
     "latestRelease": {
@@ -1904,10 +1904,10 @@
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-19T16:52:51Z",
+    "pushedAt": "2026-11-20T08:20:28Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1425,
-    "releaseCount": 29,
+    "commitCount": 1429,
+    "releaseCount": 30,
     "contributorCount": 3,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1794700800,
-        "total": 55
+        "total": 59
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.22",
-      "name": "Portal v1.1.22",
-      "publishedAt": "2026-11-19T10:41:46Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.22"
+      "tag": "portal/v1.1.23",
+      "name": "Portal v1.1.23",
+      "publishedAt": "2026-11-20T05:21:57Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.23"
     },
     "latestTag": {
       "name": "v1.5.0",
@@ -2374,11 +2374,11 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 5,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 5,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-16T14:14:59Z",
+    "pushedAt": "2026-11-20T08:31:58Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
     "commitCount": 786,
     "releaseCount": 21,
