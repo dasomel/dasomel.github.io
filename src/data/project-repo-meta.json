@@ -720,9 +720,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2025-12-26T21:37:41Z",
-    "pushedAt": "2026-11-06T10:41:57Z",
+    "pushedAt": "2026-11-21T10:07:07Z",
     "firstCommitAt": "2016-02-01T11:59:10Z",
-    "commitCount": 13207,
+    "commitCount": 13215,
     "releaseCount": 5,
     "contributorCount": 347,
     "activity": [
@@ -942,9 +942,9 @@
       "url": "https://github.com/dasomel/harbor/releases/tag/v2.15.4"
     },
     "latestTag": {
-      "name": "v2.15.4",
-      "commitSha": "0a6bf30d54e779962ad5b862fc67e3e9f6b010d8",
-      "url": "https://api.github.com/repos/dasomel/harbor/commits/0a6bf30d54e779962ad5b862fc67e3e9f6b010d8"
+      "name": "v2.16.0",
+      "commitSha": "e69b1bfab9c945cdbddf74d04d19200011108af0",
+      "url": "https://api.github.com/repos/dasomel/harbor/commits/e69b1bfab9c945cdbddf74d04d19200011108af0"
     }
   },
   "dasomel/k-paas": {
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 5,
     "forks": 0,
-    "openIssues": 5,
+    "openIssues": 3,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-20T08:31:58Z",
+    "pushedAt": "2026-11-21T02:20:49Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 786,
+    "commitCount": 791,
     "releaseCount": 21,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1794700800,
-        "total": 11
+        "total": 14
       }
     ],
     "latestRelease": {
