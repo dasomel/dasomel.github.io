@@ -1,0 +1,463 @@
+{
+  "date": "2026-11-21",
+  "generatedAt": "2026-11-21T01:36:17.030Z",
+  "count": 57,
+  "articles": [
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "How Google Duplex evolved to also call businesses for you in Gemini",
+      "link": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/",
+      "date": "2026-11-20T23:30:30.000Z",
+      "excerpt": "Generative AI"
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
+      "link": "https://blog.cloudflare.com/ruby2shell-waf-protection/",
+      "date": "2026-11-20T20:24:38.000Z",
+      "excerpt": "ruby2shell lets attackers corrupt memory in default Rails and Sinatra apps without logging in. Cloudflare WAF blocks it for every customer, including Free plans."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws",
+      "link": "https://blog.cloudflare.com/phpaftershell-waf-protection/",
+      "date": "2026-11-20T20:00:45.000Z",
+      "excerpt": "phpAfterShell is a critical flaw in PHP's default session handler that can lead to code execution. Cloudflare WAF blocks it for all customers, including Free plans, and adds new rules for other PHP flaws fixed in the same release."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "“We are not querying like humans anymore”: OpenSearch’s Bianca Lewis on why AI agent mistakes look like successes",
+      "link": "https://thenewstack.io/opensearch-ai-agent-observability/",
+      "date": "2026-11-20T19:37:08.000Z",
+      "excerpt": "This situation is more common than one might think: An AI agent calls the wrong API, gets a perfectly good"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Bee implemented Zero Operator Access for personal AI on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/how-bee-implemented-zero-operator-access-for-personal-ai-on-aws/",
+      "date": "2026-11-20T18:49:05.000Z",
+      "excerpt": "Bee, an Amazon company, built a personal AI wearable with no mechanism for operators (Bee engineers, other Amazon employees, or AWS infrastructure operators) to access customer data. Learn how Bee uses Amazon EC2 instance attestation and the AWS Nitro System to achieve Zero Operator Access (ZOA)."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Ultimate guide for fixing your team’s API keys",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/how-to-fix-your-teams-api-keys/",
+      "date": "2026-11-20T17:00:00.000Z",
+      "excerpt": "Most Gemini prototypes start the same way. You grab an API key from Google AI Studio, then paste it into your coding agent to start building a prototype."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Drowning in clicks: Scaling Black Friday pipelines with Managed Airflow agents",
+      "link": "https://cloud.google.com/blog/products/data-analytics/scaling-airflow-pipelines-with-ai-agents-on-managed-airflow/",
+      "date": "2026-11-20T17:00:00.000Z",
+      "excerpt": "When an Airflow pipeline fails in production, the hard part is rarely the fix. It's finding out what to fix."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Frontier and Center: Why your data agents need a “wind tunnel”",
+      "link": "https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents/",
+      "date": "2026-11-20T17:00:00.000Z",
+      "excerpt": "Imagine you're building a data agent to answer questions about an enterprise data warehouse. Ideally, you'd develop and test it against production data, but access restrictions and data sensitivity make that difficult – especially when the engineers building the agent sit outside the team that owns the data."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI agent’s “memory problem” may be something else",
+      "link": "https://thenewstack.io/ai-agent-memory-boundaries/",
+      "date": "2026-11-20T17:00:00.000Z",
+      "excerpt": "An agent may need additional context to continue when a user returns the next day. A workflow may resume from"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic says Claude writes and reviews 90% of its team’s code. The catch is how it checks the work.",
+      "link": "https://thenewstack.io/anthropic-claude-code-verification/",
+      "date": "2026-11-20T16:41:28.000Z",
+      "excerpt": "Anthropic says Claude writes and reviews roughly 90% of the code produced by the team building Claude Code, and the"
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "From AI agents to fishing dashboards: The latest stories from Unprompted, the Grafana Labs engineering blog",
+      "link": "https://grafana.com/blog/from-ai-agents-to-fishing-dashboards-the-latest-stories-from-unprompted/",
+      "date": "2026-11-20T15:07:25.000Z",
+      "excerpt": "Some of the best technical insights come from sharing what you've built and what you've learned along the way. That's one of the core ideas behind Unprompted, the blog we launched on Medium earlier this year to give Grafana Labs engineers and our broader OSS community a space to showcase their work."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "When a sync window closes: How Argo CD self-heal skipped the migration hook",
+      "link": "https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/",
+      "date": "2026-11-20T12:30:00.000Z",
+      "excerpt": "The uncomfortable question A few days ago, a customer asked me a question that sounded simple: “Argo CD said the sync succeeded, so why didn’t our migration run?” They had pushed a release while a deny."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Combatting adversarial distillation",
+      "link": "https://openai.com/index/combatting-adversarial-distillation",
+      "date": "2026-11-20T10:00:00.000Z",
+      "excerpt": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "디자인 시스템 만들던 디자이너가 3D 그래픽을 그린다면",
+      "link": "https://toss.tech/article/bankbook_graphic",
+      "date": "2026-11-20T08:34:00.000Z",
+      "excerpt": "통장 개설 UI를 그리면서 AI와 함께 상상의 폭을 넓혀 본 과정을 소개합니다."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "AI 시대 필수 보안: 외부 가드레일 완벽 가이드",
+      "link": "https://techblog.lycorp.co.jp/ko/external-guardrails-for-ai-security",
+      "date": "2026-11-20T02:00:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE Plus에서 AI 서비스를 안전하게 사용하기 위한 가드레일을 개발하고 있는 김영현, 한종우, 장혁재, 이수아입니다."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
+      "link": "https://blog.cloudflare.com/nginx2root/",
+      "date": "2026-11-20T01:58:29.000Z",
+      "excerpt": "Five memory corruption bugs in nginx, called nginx2root, can let an unauthenticated attacker run code on a server. Here’s how they work, and why origins behind Cloudflare's proxy are shielded from the most serious of these bugs."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "AI coding agents on Amazon EC2 Mac: How Cognition scales Devin for macOS",
+      "link": "https://aws.amazon.com/blogs/architecture/ai-coding-agents-on-amazon-ec2-mac-how-cognition-scales-devin-for-macos/",
+      "date": "2026-11-20T01:10:14.000Z",
+      "excerpt": "Cognition gave its AI software engineer, Devin, a cloud Mac. Each Devin session gets a fresh macOS VM on Amazon EC2 Mac bare metal hosts, so Devin can build, run, and test iOS and macOS apps."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Announcing custom execution roles for AWS CloudFormation StackSets",
+      "link": "https://aws.amazon.com/blogs/devops/announcing-custom-execution-roles-for-aws-cloudformation-stacksets/",
+      "date": "2026-11-20T00:46:23.000Z",
+      "excerpt": "AWS CloudFormation StackSets now supports custom execution role templates, so you can define the IAM role StackSets uses in each member account instead of the default AdministratorAccess role. Scope permissions to least privilege, and deploy service-managed stack sets that use nested stacks, macros, and transforms."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Track AWS CloudFormation StackSets deployments with progress visibility",
+      "link": "https://aws.amazon.com/blogs/devops/track-aws-cloudformation-stacksets-deployments-with-progress-visibility/",
+      "date": "2026-11-20T00:40:44.000Z",
+      "excerpt": "AWS CloudFormation StackSets now adds deployment progress visibility, a stage-by-stage view of where each stack set operation stands. See how much work is complete and which accounts and stack instances need attention, and follow a deployment while it runs across tens or thousands of accounts."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "ARTEX, and the offensive tool powered by LLMjacking five months earlier",
+      "link": "https://webflow.sysdig.com/blog/artex-and-the-offensive-tool-powered-by-llmjacking-five-months-earlier",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "Who's accountable when the worker is an agent?",
+      "link": "https://webflow.sysdig.com/blog/whos-accountable-when-the-worker-is-an-agent",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "If something goes wrong with your work, you know you're accountable. But what takes the place of accountability when an AI agent is doing the work?"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "link": "https://openai.com/business/customer-stories/hebbia",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Can AI help scientists identify promising drug candidates?",
+      "link": "https://openai.com/index/introducing-medchembench",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+      "link": "https://huggingface.co/blog/inkling2mini",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+      "link": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat at Microsoft Ignite 2026: Partnership in action",
+      "link": "https://www.redhat.com/en/blog/red-hat-microsoft-ignite-2026-partnership-action",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "Microsoft Ignite is one of the defining moments each year for the Red Hat and Microsoft partnership—and this year's show demonstrates how far that collaboration has come."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — November 20, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-november-20-2026-red-hat",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "SiliconANGLE - Red Hat and Microsoft bring OpenShift virtual machines to AzureRed Hat and Microsoft are expanding OpenShift Virtualization on Azure with Microsoft’s direct virtualization technology, aiming for near-bare-metal hardware access for VMs alongside containers and AI workloads."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Build and troubleshoot Observability Pipelines with AI agents",
+      "link": "https://www.datadoghq.com/blog/observability-pipelines-mcp-server-ai-agents/",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "Use AI agents and the Datadog MCP Server to build and validate pipelines, troubleshoot pipeline health, and measure log volume reduction."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Let your AI agent set up Datadog with Agentic Onboarding",
+      "link": "https://www.datadoghq.com/blog/agentic-onboarding/",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "Learn how Agentic Onboarding simplifies Datadog setup across applications and infrastructure through the Pup CLI or an MCP-compatible coding assistant."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Let your product dashboards report to you with the Dashboard Reporter Agent",
+      "link": "https://www.datadoghq.com/blog/agentic-reporting-product-analytics/",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "Get proactive product insights delivered to your team with Datadog Product Analytics, then investigate conversion drops with Bits AI and unified telemetry."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Java4Shell: GitLab helps find and remediate a critical Java flaw",
+      "link": "https://about.gitlab.com/blog/java4shell-critical-java-flaw-how-gitlab-helps/",
+      "date": "2026-11-20T00:00:00.000Z",
+      "excerpt": "GitLab has internally assessed the impact of Java4Shell, and concluded it is not exploitable in GitLab-managed infrastructure. Exploitation requires a specific combination of conditions, which we confirmed are not present in our production environment."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Karpenter v1.15: GPU-aware provisioning, smarter node repair, and more",
+      "link": "https://aws.amazon.com/blogs/containers/karpenter-v1-15-gpu-aware-provisioning-smarter-node-repair-and-more/",
+      "date": "2026-11-19T23:07:32.000Z",
+      "excerpt": "Karpenter v1."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Country Road Group built a pattern-driven integration solution on AWS",
+      "link": "https://aws.amazon.com/blogs/architecture/how-country-road-group-built-a-pattern-driven-integration-solution-on-aws/",
+      "date": "2026-11-19T23:07:30.000Z",
+      "excerpt": "Country Road Group replaced Microsoft BizTalk with a pattern-driven, serverless integration platform on AWS. Learn how its Strategic Integration Platform works across four processing lanes, and get the open-source Enterprise Integration Patterns CDK library to apply the same approach to your own middleware."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Your guide to containers at AWS re:Invent 2026",
+      "link": "https://aws.amazon.com/blogs/containers/your-guide-to-containers-at-aws-reinvent-2026/",
+      "date": "2026-11-19T23:05:29.000Z",
+      "excerpt": "AWS re:Invent 2026 returns to Las Vegas, November 30 to December 4."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "What’s new in AWS Transform – continuous modernization for re:Invent 2026",
+      "link": "https://aws.amazon.com/blogs/devops/whats-new-in-aws-transform-continuous-modernization-for-reinvent-2026/",
+      "date": "2026-11-19T23:01:00.000Z",
+      "excerpt": "Ahead of re:Invent 2026, AWS Transform continuous modernization is faster to start, easier to act on, and easier to extend. A new AWS Health integration takes you from a planned lifecycle event straight to the affected code, and remediations now arrive as one clean pull request per repository."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "Use Amazon ECR global authentication token across AWS Regions",
+      "link": "https://aws.amazon.com/blogs/containers/use-amazon-ecr-global-authentication-token-across-aws-regions/",
+      "date": "2026-11-19T20:09:23.000Z",
+      "excerpt": "Amazon ECR now supports global authentication tokens: request one token from AWS Sign-In and use it to push and pull images across AWS Regions in the same partition, with a lifetime from 5 minutes to 12 hours. This post shows how to request a global token and use it with Docker in two Regions."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "A game you cannot win unless you have a quantum computer",
+      "link": "https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/",
+      "date": "2026-11-19T20:03:00.000Z",
+      "excerpt": "Quantum"
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Introducing Tool Retrieval in the Gemini API",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "date": "2026-11-19T18:00:00.000Z",
+      "excerpt": "Give your agents access to hundreds of tools while using fewer tokens with Tool Retrieval, now in preview in the Gemini API."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker patches Java4Shell and the NGINX HTTP/2 with Docker Hardened Images",
+      "link": "https://www.docker.com/blog/docker-patches-java4shell-and-the-nginx-http-2-with-docker-hardened-images/",
+      "date": "2026-11-19T17:38:08.000Z",
+      "excerpt": "Docker publishes fixed images for both Java4Shell and the NGINX HTTP/2 in the Docker Hardened Images (DHI) catalog."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Meet the New Docker: Built to Run on Trust",
+      "link": "https://www.docker.com/blog/meet-the-new-docker-built-to-run-on-trust/",
+      "date": "2026-11-19T17:00:00.000Z",
+      "excerpt": "Docker launches a new brand built on trust. Learn why Docker is evolving for AI agents, what stays the same, and how to run agents securely with Docker."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Walter Isaacson on curiosity and creativity in the AI age.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
+      "date": "2026-11-19T17:00:00.000Z",
+      "excerpt": "Walter Isaacson joins Google to discuss how history’s greatest innovators inspire creativity and human judgment in the AI age. Watch the episode."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Grafana Labs’ First Executive Briefing Center Coming to Ginza",
+      "link": "https://grafana.com/blog/grafana-labs-ebc1/",
+      "date": "2026-11-19T16:32:02.000Z",
+      "excerpt": "Grafana Labs does not have a headquarters office. Since its founding in 2014, it has been fully remote-first."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "The best things in open source are built together",
+      "link": "https://github.blog/open-source/maintainers/the-best-things-in-open-source-are-built-together/",
+      "date": "2026-11-19T16:00:00.000Z",
+      "excerpt": "Introducing Replica and the Open Source Accessibility Framework, new open source projects for collaboration and inclusion."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Bring charts, queries, and context into one shareable document: Introducing Grafana Notebooks",
+      "link": "https://grafana.com/blog/bring-charts-queries-and-context-into-one-shareable-document-introducing-grafana-notebooks/",
+      "date": "2026-11-19T15:22:49.000Z",
+      "excerpt": "A teammate asks why you think a deployment caused checkout failures. You have an error-rate chart in your dashboard, a query that narrows the failures to one payment provider, and an explanation you've been exploring with Grafana Assistant."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "How to support your app on Kubernetes environments you don’t control",
+      "link": "https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/",
+      "date": "2026-11-19T11:18:00.000Z",
+      "excerpt": "Running an application in Kubernetes is one thing, but supporting that application in Kubernetes environments your customers run is something else entirely. You don’t control the cluster configuration, its upgrade schedule, the surrounding tooling, or the."
+    },
+    {
+      "source": "Snyk",
+      "category": "devops",
+      "title": "Why the Harness Matters: Early Lessons From the Evo Code Scanning Agent Preview",
+      "link": "https://snyk.io/blog/why-harness-matters-evo-code-scanning-agent/",
+      "date": "2026-11-19T04:00:00.000Z",
+      "excerpt": "In early tests, Evo Code Scanning Agent’s security harness found more known vulnerabilities than Claude Security and Codex Security at the same compute budget, with lower precision. See what the results reveal about the role of the harness in AI code scanning."
+    },
+    {
+      "source": "Sysdig",
+      "category": "k8s",
+      "title": "NGINX2Root: Five RCE bugs in NGINX, a Linux kernel path to root, and how to detect exploitation",
+      "link": "https://webflow.sysdig.com/blog/nginx2root",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "BGP cloud connector for Microsoft Azure Red Hat OpenShift now available",
+      "link": "https://www.redhat.com/en/blog/bgp-cloud-connector-microsoft-azure-red-hat-openshift-now-available",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Organizations are reassessing where and how they run their virtual machines (VMs). Evolving cloud strategies, the need for a modern platform, and cost pressures are prompting many to reconsider their virtualization options."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Rotate a leaked GitLab token and let GitLab Duo fix the code",
+      "link": "https://about.gitlab.com/blog/secret-detection-token-rotate-and-fix/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Secret detection alerts you when an active personal access token (PAT) is exposed in your default branch. Acting on that finding is harder: revoking the token breaks dependent pipelines, and replacing it safely takes several manual steps."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "Turn Slack conversations into trusted software, faster",
+      "link": "https://about.gitlab.com/blog/gitlab-slack-integration-for-software-factory/",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Most software starts as a conversation: a customer requests a new capability, a product manager weighs it against the roadmap, an engineer checks feasibility, and a security lead asks what it touches. Then someone has to turn it into work."
+    },
+    {
+      "source": "Stripe",
+      "category": "devops",
+      "title": "Give your agents controlled access to analyze your data and move funds",
+      "link": "https://stripe.com/blog/give-your-agents-controlled-access-to-analyze-your-data-and-move-funds",
+      "date": "2026-11-19T00:00:00.000Z",
+      "excerpt": "Stripe Treasury now lets agents transfer funds, convert currencies, and pay vendors within limits you set. Give agents the access they need to help run your business, with customizable controls and human approvals."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "link": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "date": "2026-11-18T19:54:56.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The Gemini app is now available on lower-memory Android devices.",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/",
+      "date": "2026-11-18T17:00:00.000Z",
+      "excerpt": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
+      "date": "2026-11-18T16:59:38.000Z",
+      "excerpt": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model space, creating a rising tide that lifts all the boats."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Trust Layer: Securing Agentic AI with Docker AI Governance",
+      "link": "https://www.docker.com/blog/agentic-ai-security-docker-governance/",
+      "date": "2026-11-18T14:00:00.000Z",
+      "excerpt": "Learn how Docker AI Governance secures agentic AI with sandbox policies, MCP tool governance, and audit visibility to support controlled AI agent workflows."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Optimizing Kubernetes admission control: Where Kyverno’s CEL admission cost actually goes",
+      "link": "https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/",
+      "date": "2026-11-18T12:30:00.000Z",
+      "excerpt": "Kyverno’s CEL (Common Expression Language)-based engines exist to evaluate policy expressions. So when we profiled the admission path, we expected to find the bulk of the cost in CEL evaluation."
+    }
+  ]
+}
