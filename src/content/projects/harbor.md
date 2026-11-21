@@ -5,10 +5,12 @@ github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
 order: 3
 type: "fork"
-featured: true
+featured: false
 problem: "Harbor가 ARM 아키텍처를 공식 지원하지 않아 ARM 기반 Kubernetes 클러스터에서 사용 불가"
 solution: "멀티 아키텍처 빌드 파이프라인을 구성하여 ARM 호환 이미지 생성"
 ---
+
+> **2026-11-21 종료 안내**: Harbor v2.16.0(2026-11-10)부터 공식 이미지가 arm64를 지원하므로 이 fork의 자동 동기화와 릴리스 빌드를 종료했습니다. 마지막 릴리스는 **v2.15.4**입니다. arm64가 필요하면 [공식 Harbor](https://github.com/goharbor/harbor/releases) v2.16 이상을 사용하세요. 종료 배경과 운영 기록은 [Harbor arm64 fork를 정리하며](/ko/posts/harbor-arm64-fork-retirement/) 글에 정리했습니다.
 
 ## 프로젝트 소개
 
@@ -60,13 +62,13 @@ solution: "멀티 아키텍처 빌드 파이프라인을 구성하여 ARM 호환
 
 ```bash
 # Harbor 이미지 Pull (아키텍처 자동 선택)
-docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.15.3
-docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.15.3
-docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.15.3
-docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.15.4
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.15.4
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.15.4
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.15.4
 
 # Trivy 어댑터
-docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.15.4
 ```
 
 ### 이미지 서명 검증
@@ -85,9 +87,10 @@ cosign verify ghcr.io/dasomel/goharbor/harbor-core:latest \
 
 | 버전 | AMD64 | ARM64 | 업스트림 |
 |------|-------|-------|----------|
-| v2.15.x | ✅ | ✅ | goharbor/harbor v2.15 |
+| v2.15.x | ✅ | ✅ | goharbor/harbor v2.15 (v2.15.0~v2.15.4) |
+| v2.16+ | — | — | 공식 Harbor가 amd64·arm64 제공 |
 
-최신 릴리스는 **v2.15.3**(2026-10-06)이며 업스트림의 보안 advisory 수정을 포함합니다. GHCR에서 확인되는 태그는 `v2.15.0`~`v2.15.3`이고, v2.15.2부터 내부 캐시가 Redis에서 Valkey(`valkey-photon`)로 바뀌었습니다.
+마지막 릴리스는 **v2.15.4**(2026-11-01)입니다. GHCR에서 확인되는 태그는 `v2.15.0`~`v2.15.4`이고, v2.15.2부터 내부 캐시가 Redis에서 Valkey(`valkey-photon`)로 바뀌었습니다. v2.15.5는 2.15 라인의 베이스 이미지(`goharbor/photon:5.0-legacy`)가 amd64 전용이 되어 arm64로 빌드하지 않았습니다.
 
 ## 주요 변경 이력
 

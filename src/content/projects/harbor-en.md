@@ -5,10 +5,12 @@ github: "https://github.com/dasomel/harbor"
 tags: ["Container Registry", "Multi-Arch", "ARM64", "Security"]
 order: 3
 type: "fork"
-featured: true
+featured: false
 problem: "Harbor lacks official ARM architecture support, unusable on ARM-based Kubernetes clusters"
 solution: "Configured multi-architecture build pipeline to generate ARM-compatible images"
 ---
+
+> **Retired on 2026-11-21**: official Harbor images support arm64 starting with v2.16.0 (2026-11-10), so this fork's automated sync and release builds have ended. The last release is **v2.15.4**. If you need arm64, use [official Harbor](https://github.com/goharbor/harbor/releases) v2.16 or later. The background and lessons are in [Retiring my Harbor arm64 fork](/en/posts/harbor-arm64-fork-retirement/).
 
 ## Project Overview
 
@@ -60,13 +62,13 @@ Images follow the official Helm chart compatible naming convention.
 
 ```bash
 # Pull Harbor images (architecture auto-selected)
-docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.15.3
-docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.15.3
-docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.15.3
-docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/harbor-core:v2.15.4
+docker pull ghcr.io/dasomel/goharbor/harbor-portal:v2.15.4
+docker pull ghcr.io/dasomel/goharbor/harbor-registryctl:v2.15.4
+docker pull ghcr.io/dasomel/goharbor/harbor-jobservice:v2.15.4
 
 # Trivy adapter
-docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.15.3
+docker pull ghcr.io/dasomel/goharbor/trivy-adapter-photon:v2.15.4
 ```
 
 ### Verifying Image Signatures
@@ -85,9 +87,10 @@ This fork is automatically synchronized with the official Harbor repository. Ups
 
 | Version | AMD64 | ARM64 | Upstream |
 |---------|-------|-------|----------|
-| v2.15.x | ✅ | ✅ | goharbor/harbor v2.15 |
+| v2.15.x | ✅ | ✅ | goharbor/harbor v2.15 (v2.15.0–v2.15.4) |
+| v2.16+ | — | — | official Harbor ships amd64 and arm64 |
 
-The latest release is **v2.15.3** (2026-10-06), which carries upstream's security-advisory fixes. The tags confirmed on GHCR are `v2.15.0` through `v2.15.3`; since v2.15.2 the internal cache image is Valkey (`valkey-photon`) instead of Redis.
+The last release is **v2.15.4** (2026-11-01). The tags confirmed on GHCR are `v2.15.0` through `v2.15.4`; since v2.15.2 the internal cache image is Valkey (`valkey-photon`) instead of Redis. v2.15.5 was not built for arm64 because the 2.15 line's base image (`goharbor/photon:5.0-legacy`) became amd64-only.
 
 ## Change History
 
