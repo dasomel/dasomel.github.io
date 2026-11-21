@@ -1,0 +1,199 @@
+{
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T02:26:42.366Z",
+  "count": 24,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "OpenAI built itself a new Git backend, too",
+      "link": "https://thenewstack.io/openai-pando-git-backend/",
+      "date": "2026-11-03T00:00:00.000Z",
+      "excerpt": "OpenAI on Monday detailed how it built a new Git backend for its monorepo to power the ever-increasing number of"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Developers are downgrading their AI on purpose — and it’s working",
+      "link": "https://thenewstack.io/claude-code-developer-refusals/",
+      "date": "2026-11-02T21:03:31.000Z",
+      "excerpt": "Anthropic has confirmed that it added new restrictions to Claude Code to prevent users from recreating existing video games. But"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Your AI coding agent now runs on a budget — and it can cut you off mid-task",
+      "link": "https://thenewstack.io/22842541cognition-devin-hierarchical-budgets/",
+      "date": "2026-11-02T19:03:38.000Z",
+      "excerpt": "The days of pointing an AI agent at a backlog and letting it burn through compute without much oversight may"
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Google Cloud Developer plugin now available in Antigravity Marketplace",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/google-cloud-developer-plugin-now-available-in-antigravity-marketplace/",
+      "date": "2026-11-02T18:00:00.000Z",
+      "excerpt": "Building cloud solutions with autonomous AI agents should feel fast, safe, and reliable. Without cloud-specific context, coding agents often struggle."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "The latest AI news we announced in October 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+      "date": "2026-11-02T17:45:00.000Z",
+      "excerpt": "Here are Google’s latest AI updates from October 2026"
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How to run a DR readiness engagement",
+      "link": "https://aws.amazon.com/blogs/architecture/how-to-run-a-dr-readiness-engagement/",
+      "date": "2026-11-02T17:26:49.000Z",
+      "excerpt": "This final post turns the DR framework into a repeatable engagement: a five-step sequence from kickoff and gap assessment through progressive validation to an updated recovery commitment, with a real before-and-after example and ways to compress the timeline from months to weeks. Part 3 of a three-part series."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Validating your DR commitment: From controlled test to real-world readiness",
+      "link": "https://aws.amazon.com/blogs/architecture/validating-your-dr-commitment-from-controlled-test-to-real-world-readiness/",
+      "date": "2026-11-02T17:26:33.000Z",
+      "excerpt": "After you define your DR targets, testing tells you whether they hold. This post walks through a four-level progressive validation model (tabletop, planned failover, surprise drill, and game day) and shows how each level surfaces a different class of recovery gap that feeds back into your commitment."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Three business decisions that define your DR success",
+      "link": "https://aws.amazon.com/blogs/architecture/three-business-decisions-that-define-your-dr-success/",
+      "date": "2026-11-02T17:26:26.000Z",
+      "excerpt": "A disaster recovery strategy is only as strong as the business decisions behind it. Before you choose an architecture pattern, three decisions shape whether recovery succeeds: what you're actually recovering, what the business needs from that recovery, and what your dependencies allow you to commit to."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Beyond Migration: Using Database Migration Service for disk shrinking",
+      "link": "https://cloud.google.com/blog/products/databases/use-dms-to-shrink-cloud-sql-for-sql-server-disk/",
+      "date": "2026-11-02T17:00:00.000Z",
+      "excerpt": "When database engineers hear “database migration\", they typically think of a one-time onboarding pathway—moving databases from on-premises environments to the cloud, or between different cloud providers. However, Google Cloud's Database Migration Service (DMS) supports Cloud SQL for SQL Server as a source."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "What Google Cloud announced in AI this month",
+      "link": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month/",
+      "date": "2026-11-02T16:00:00.000Z",
+      "excerpt": "Editor’s note: Want to keep up with the latest from Google Cloud? Check back here for a monthly recap of our latest updates, announcements, resources, events, learning opportunities, and more."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Instrumentation Hub in Grafana Cloud: start easier, stay in control",
+      "link": "https://grafana.com/blog/instrumentation-hub-start-your-observability-journey-easier-and-still-stay-in-control/",
+      "date": "2026-11-02T15:44:53.000Z",
+      "excerpt": "It's no secret that getting started with observability can be much harder than it should be. That's why, at ObservabilityCon 2025, we introduced Instrumentation Hub: a guided, scalable way to roll out observability coverage while still keeping you in control."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Scaling Git at OpenAI",
+      "link": "https://openai.com/index/scaling-git-at-openai",
+      "date": "2026-11-02T15:30:00.000Z",
+      "excerpt": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Introducing the Grid Protectors Program",
+      "link": "https://openai.com/index/grid-protectors-program",
+      "date": "2026-11-02T15:00:00.000Z",
+      "excerpt": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "The Ecosystem is the Answer: Docker, the Blueprint Alliance, and the Importance of Collaboration in the Agentic Era",
+      "link": "https://www.docker.com/blog/docker-blueprint-alliance-agent-baseline/",
+      "date": "2026-11-02T14:00:00.000Z",
+      "excerpt": "Docker is a founding member of the Blueprint Alliance, a 12-company reference architecture for securing AI agents, built around four governance questions."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Where should your code live in a Docker Sandbox?",
+      "link": "https://www.docker.com/blog/docker-sandbox-code-checkout-workflows/",
+      "date": "2026-11-02T14:00:00.000Z",
+      "excerpt": "Docker Sandboxes support three ways to organize an agent’s code: shared mounts, Git worktrees, and clone mode. Here’s how to choose between them."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "How we halved DNS build delay and cut memory use by 85%",
+      "link": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
+      "date": "2026-11-02T14:00:00.000Z",
+      "excerpt": "Zone setting changes used to rebuild entire DNS zones, even ones with tens of millions of records. Here is how we built a planner that picks the smallest safe build, cutting full builds by 40%, peak memory by 85%, and halving build delay."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "The Linkerd Story: The People Behind The Service Mesh — A new documentary premieres at KubeCon + CloudNativeCon North America 2026",
+      "link": "https://www.cncf.io/blog/2026/11/02/the-linkerd-story-the-people-behind-the-service-mesh-a-new-documentary-premieres-at-kubecon-cloudnativecon-north-america-2026/",
+      "date": "2026-11-02T12:00:00.000Z",
+      "excerpt": "Join CNCF and Buoyant on November 9 in Salt Lake City for the premiere of a new documentary celebrating a decade of Linkerd, the evolution of service mesh technology, and the people who helped make it."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "LifeVal",
+      "link": "https://openai.com/index/lifeval",
+      "date": "2026-11-02T09:00:00.000Z",
+      "excerpt": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "What’s new in Red Hat OpenShift migration advisor: Clearer reports and smarter planning",
+      "link": "https://www.redhat.com/en/blog/whats-new-red-hat-openshift-migration-advisor-clearer-reports-and-smarter-planning",
+      "date": "2026-11-02T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift migration advisor helps you assess your VMware inventory of virtual machines (VMs) and plan migrations to Red Hat OpenShift Virtualization."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Sovereignty in the AI era: Choice, control, and autonomy",
+      "link": "https://www.redhat.com/en/blog/sovereignty-ai-era-choice-control-and-autonomy",
+      "date": "2026-11-02T00:00:00.000Z",
+      "excerpt": "For the past few years, AI felt like a high-stakes exhibition game. Teams across every industry were on the pitch experimenting with large language models, running rapid proofs-of-concept, and testing what was possible."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Extend RUM to Electron’s main process with the Datadog Electron SDK",
+      "link": "https://www.datadoghq.com/blog/datadog-electron-sdk/",
+      "date": "2026-11-02T00:00:00.000Z",
+      "excerpt": "Use the Datadog Electron SDK to connect RUM data across Node.js and Chromium, capture main process failures, and trace requests."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Store and recover user sessions with RUM Managed Archive",
+      "link": "https://www.datadoghq.com/blog/rum-managed-archive/",
+      "date": "2026-11-02T00:00:00.000Z",
+      "excerpt": "Store every ingested RUM session and recover specific sessions on demand for support, debugging, incident investigations, and audits."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Export RUM and Product Analytics data with Export Pipelines",
+      "link": "https://www.datadoghq.com/blog/export-pipelines/",
+      "date": "2026-11-02T00:00:00.000Z",
+      "excerpt": "Send Datadog RUM and Product Analytics events to your cloud storage for data analysis, ML model training, and long-term data access."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "10 questions to ask any software vendor about sovereignty",
+      "link": "https://about.gitlab.com/blog/10-questions-to-ask-any-software-vendor-about-sovereignty/",
+      "date": "2026-11-02T00:00:00.000Z",
+      "excerpt": "Sovereignty is moving from buzzword to buying criterion. The European Commission’s proposed Cloud and AI Development Act (CADA) would set assurance levels for the cloud and AI services public authorities buy, defining where data should live and who can access it."
+    }
+  ]
+}
