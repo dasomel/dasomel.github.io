@@ -1,0 +1,207 @@
+{
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17T03:00:03.670Z",
+  "count": 25,
+  "articles": [
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "같은 모델, 다른 예측",
+      "link": "https://toss.tech/article/training-serving-skew",
+      "date": "2026-11-17T01:00:00.000Z",
+      "excerpt": "Training–Serving Skew를 줄인 과정을 소개합니다."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "High-quality cost-effective AI image generation on Amazon ECS",
+      "link": "https://aws.amazon.com/blogs/containers/high-quality-cost-effective-ai-image-generation-on-amazon-ecs/",
+      "date": "2026-11-17T00:19:06.000Z",
+      "excerpt": "Learn how to run Z-Image-Turbo, a 6-billion-parameter diffusion transformer, on AWS Inferentia2 and Amazon ECS to generate high-quality images at a fraction of a cent each, with auto-scaling, arbitrary resolution support, and a complete CI/CD pipeline."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "AI agents were all over KubeCon. Production is another story",
+      "link": "https://thenewstack.io/cncf-bryce-ai-agents/",
+      "date": "2026-11-16T22:08:42.000Z",
+      "excerpt": "AI agents are testing systems that were originally built for people, and Jonathan Bryce thinks the cloud-native community has a"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Google found hackers using autonomous AI agents to turn security patches into exploits",
+      "link": "https://thenewstack.io/autonomous-ai-exploit-agents/",
+      "date": "2026-11-16T21:27:38.000Z",
+      "excerpt": "Google’s Threat Intelligence Group says attackers are using autonomous AI agents to reverse-engineer security patches, generate exploits, and attempt to"
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "How Salesforce efficiently right-sizes Kubernetes workloads at scale on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/containers/how-salesforce-efficiently-right-sizes-kubernetes-workloads-at-scale-on-amazon-eks/",
+      "date": "2026-11-16T20:40:26.000Z",
+      "excerpt": "Salesforce operates one of the largest multi-tenant Kubernetes platforms on Amazon EKS, spanning 1,400+ clusters."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "How British Airways is accelerating the modernization of its Java services",
+      "link": "https://aws.amazon.com/blogs/devops/how-british-airways-is-accelerating-the-modernization-of-its-java-services/",
+      "date": "2026-11-16T20:16:41.000Z",
+      "excerpt": "Learn how British Airways is using AWS Transform custom, agentic AI, and automation to accelerate the modernization of its Java services, migrating more than 250 business services from Amazon EC2 to a containerized, auto scaling architecture on Amazon ECS with AWS Fargate and AWS Graviton."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Announcing updates to the AWS Well-Architected Framework",
+      "link": "https://aws.amazon.com/blogs/architecture/announcing-updates-to-the-aws-well-architected-framework-3/",
+      "date": "2026-11-16T20:03:26.000Z",
+      "excerpt": "Updates to the AWS Well-Architected Framework reorganize it into Well-Architected Cloud Foundations and Well-Architected Cloud Workloads, add new best practices, and bring the general availability of the AWS Well-Architected Agent for analyzing workloads and guiding remediation."
+    },
+    {
+      "source": "Kubernetes",
+      "category": "k8s",
+      "title": "Scheduling the removal of the kube-proxy IPVS backend",
+      "link": "https://kubernetes.io/blog/2026/11/16/ipvs-removal/",
+      "date": "2026-11-16T18:35:00.000Z",
+      "excerpt": "The ipvs backend for kube-proxy was an experiment in providing a service proxy implementation with better performance than the iptables backend."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Dax Raad rebuilt his browser tool in Rust for $60. Then memory use fell 97%.",
+      "link": "https://thenewstack.io/opencode-browse-rust-rewrite/",
+      "date": "2026-11-16T17:59:39.000Z",
+      "excerpt": "OpenCode developer Dax Raad says he rebuilt the project’s browser automation tool in Rust for $60, replacing the parts of"
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "A governed AI-driven development lifecycle for financial services with Kiro and AWS Frontier Agents",
+      "link": "https://aws.amazon.com/blogs/devops/a-governed-ai-driven-development-lifecycle-for-financial-services-with-kiro-and-aws-frontier-agents/",
+      "date": "2026-11-16T17:33:13.000Z",
+      "excerpt": "A hands-on walkthrough of a governed, AI-driven development lifecycle for financial services that wires Kiro, AWS Security Agent, and AWS DevOps Agent into a shared GitHub-based pipeline, so every change is authored, reviewed, security-gated, deployed to AWS Lambda, and monitored in production with human approval and t…"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Broadening access to AI for scientists",
+      "link": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "date": "2026-11-16T17:00:00.000Z",
+      "excerpt": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+      "link": "https://openai.com/index/strengthening-online-child-safety",
+      "date": "2026-11-16T17:00:00.000Z",
+      "excerpt": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Beyond the compute bottleneck: Maximizing the ROI of AI accelerators with purpose-built storage",
+      "link": "https://cloud.google.com/blog/products/storage-data-transfer/maximizing-ai-accelerator-roi-with-purpose-built-storage/",
+      "date": "2026-11-16T17:00:00.000Z",
+      "excerpt": "There’s a lot more to AI infrastructure than just buying accelerators. Indeed, the infrastructure mandate for enterprise AI has shifted from acquiring accelerators to keeping them fully utilized."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "PHP2Shell: Using AWS Transform to move legacy PHP onto a patched runtime",
+      "link": "https://aws.amazon.com/blogs/devops/php2shell-using-aws-transform-to-move-legacy-php-onto-a-patched-runtime/",
+      "date": "2026-11-16T16:09:17.000Z",
+      "excerpt": "Teams on PHP 8.1 or older can't patch the PHP2Shell vulnerabilities (CVE-2026-109618 and CVE-2026-109619) in place."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Give sandboxed agents live web access with the Firecrawl kit for Docker Sandboxes",
+      "link": "https://www.docker.com/blog/docker-sandboxes-firecrawl-web-access/",
+      "date": "2026-11-16T14:00:00.000Z",
+      "excerpt": "Give AI coding agents live web access with the Firecrawl kit for Docker Sandboxes. Learn to search, scrape, and crawl websites with network controls."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "New Ask Maps features to help with holiday travel and prep",
+      "link": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "date": "2026-11-16T14:00:00.000Z",
+      "excerpt": "Plan holiday road trips, get route tips, find local appointments, and search your saved lists with new Ask Maps features."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold/",
+      "date": "2026-11-16T14:00:00.000Z",
+      "excerpt": "Written by: Aurora Blum, Kelli Vanderlee, Jess Xia, David Mainor Executive Summary As threat actors increasingly move beyond basic prompting to deploying autonomous multi-agent frameworks, automated vulnerability exploitation pipelines, and alternative monetization schemes like LLMJacking, the adversarial AI landscape…"
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Science at the Frontier: How scientists use ChatGPT",
+      "link": "https://openai.com/index/science-at-the-frontier",
+      "date": "2026-11-16T12:00:00.000Z",
+      "excerpt": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Google is a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud Operational Database Management Systems",
+      "link": "https://cloud.google.com/blog/products/databases/2026-gartner-mq-cloud-operational-databases-management-systems/",
+      "date": "2026-11-16T08:30:00.000Z",
+      "excerpt": "Google has been recognized as a Leader and positioned furthest in vision in the 2026 Gartner® Magic Quadrant™ for Cloud Operational Database Management Systems (Cloud ODBMS). This recognition comes as we cross into the era of agentic AI."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+      "link": "https://huggingface.co/blog/openrouter",
+      "date": "2026-11-16T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Unlocking mission-critical innovation: Microsoft Azure Red Hat OpenShift IL5 is Now Available on JWCC",
+      "link": "https://www.redhat.com/en/blog/unlocking-mission-critical-innovation-microsoft-azure-red-hat-openshift-il5-now-available-jwcc",
+      "date": "2026-11-16T00:00:00.000Z",
+      "excerpt": "As previously announced, Microsoft Azure Red Hat OpenShift on Microsoft Azure Government (MAG) has officially achieved Impact Level 5 (IL5) certification."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Introducing Red Hat OpenShift Service Mesh 3.5",
+      "link": "https://www.redhat.com/en/blog/introducing-red-hat-openshift-service-mesh-35",
+      "date": "2026-11-16T00:00:00.000Z",
+      "excerpt": "Red Hat OpenShift Service Mesh 3.5 is now generally available with Red Hat OpenShift Container Platform."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "How Red Hat OpenShift console connects virtual machines to the networks they use",
+      "link": "https://www.redhat.com/en/blog/how-red-hat-openshift-console-connects-virtual-machines-networks-they-use",
+      "date": "2026-11-16T00:00:00.000Z",
+      "excerpt": "In Red Hat OpenShift Virtualization 4.21, we shipped networking workflows that simplify how you create and connect virtual machine (VM) networks."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How to check if your EC2 workloads are ready for IMDSv2",
+      "link": "https://www.datadoghq.com/blog/check-ec2-workloads-imdsv2-readiness/",
+      "date": "2026-11-16T00:00:00.000Z",
+      "excerpt": "Learn how you can use Datadog to find EC2 workloads that still use IMDSv1, identify the callers, and test IMDSv2 enforcement before you migrate your fleet."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Get useful logs from any source with Datadog Auto-Processing",
+      "link": "https://www.datadoghq.com/blog/auto-processing-log-pipelines/",
+      "date": "2026-11-16T00:00:00.000Z",
+      "excerpt": "Use Auto-Processing to structure logs with custom formats and keep them structured without manually building pipelines or updating parsing rules."
+    }
+  ]
+}
