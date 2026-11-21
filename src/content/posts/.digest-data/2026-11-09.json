@@ -1,0 +1,207 @@
+{
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-08T23:49:10.793Z",
+  "count": 25,
+  "articles": [
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout",
+      "link": "https://thenewstack.io/docusign-ai-engineering-adoption/",
+      "date": "2026-11-08T17:00:00.000Z",
+      "excerpt": "Docusign rolled out AI coding tools across its engineering teams, expecting them to help developers write code faster and do"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework",
+      "link": "https://thenewstack.io/scaling-autonomous-agents-framework/",
+      "date": "2026-11-08T16:30:00.000Z",
+      "excerpt": "QA teams shipping complex products generate test failures around the clock. Every failure needs a bug ticket with steps, screenshots,"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Perplexity’s AI agents keep working after you close the tab",
+      "link": "https://thenewstack.io/perplexity-teammates-agent-orchestration/",
+      "date": "2026-11-08T15:30:00.000Z",
+      "excerpt": "Perplexity’s new Teammates can coordinate multiple agents, remember where previous sessions left off, and keep working without another prompt. The"
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Lima v2.3: Native on Windows, VMnet on Linux, and menu TUI",
+      "link": "https://www.cncf.io/blog/2026/11/08/lima-v2-3-native-on-windows-vmnet-on-linux-and-menu-tui/",
+      "date": "2026-11-08T12:30:00.000Z",
+      "excerpt": "Back in July with v2.2, we added support for Windows guests."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "We organized Sustainability Month. Here’s what we learned. 🌱",
+      "link": "https://www.cncf.io/blog/2026/11/07/we-organized-sustainability-month-heres-what-we-learned-%f0%9f%8c%b1/",
+      "date": "2026-11-07T12:30:00.000Z",
+      "excerpt": "What do Kubernetes resource allocation, eBPF, carbon observability, and GPUs have in common? Quite a lot, actually."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Beyond code generation: A developer’s guide to agentic engineering",
+      "link": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+      "date": "2026-11-06T22:15:59.000Z",
+      "excerpt": "Writing code got faster. The work around it didn't."
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Any agent anywhere: How to use Grafana Cloud with Claude, Cursor, and any other AI agent",
+      "link": "https://grafana.com/blog/any-agent-anywhere-how-to-use-grafana-cloud-with-claude-cursor-and-any-other-ai-agent/",
+      "date": "2026-11-06T18:37:07.000Z",
+      "excerpt": "AI agents are becoming part of everyday engineering workflows, helping teams write code, troubleshoot issues, and automate tasks. But to be truly useful in production, these agents need access to more than code."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Your Guide to the Developer Tools Track at AWS re:Invent 2026",
+      "link": "https://aws.amazon.com/blogs/devops/your-guide-to-the-developer-tools-track-at-aws-reinvent-2026/",
+      "date": "2026-11-06T18:20:09.000Z",
+      "excerpt": "AWS re:Invent 2026 is almost here, and if you’re a developer, the Developer Tools (DVT) track is where you’ll want to spend your week. This year is all about agentic development, from multi-agent workflows to autonomous agents that keep working while you sleep."
+    },
+    {
+      "source": "AWS DevOps",
+      "category": "devops",
+      "title": "Run Maestro tests on real Android devices using AWS Device Farm",
+      "link": "https://aws.amazon.com/blogs/devops/run-maestro-tests-on-real-android-devices-using-aws-device-farm/",
+      "date": "2026-11-06T18:13:33.000Z",
+      "excerpt": "Learn how ManoMano runs Maestro mobile UI tests on real Android devices using the AWS Device Farm custom test environment."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing Z4M: storage-optimized compute for AI/ML and parallel file systems",
+      "link": "https://cloud.google.com/blog/products/compute/storage-optimized-z4m-machine-series-are-ga/",
+      "date": "2026-11-06T17:00:00.000Z",
+      "excerpt": "Today, we’re excited to announce the general availability of our next-generation Storage-optimized Z4M machine series in Google Compute Engine, available as both Virtual Machine (VM) and bare-metal instances."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "The Blueprint: Orchestrating 5,000+ AI assets for a World Cup TV spot",
+      "link": "https://cloud.google.com/blog/products/media-entertainment/how-mito-orchestrated-5000-plus-ai-assets-for-a-world-cup-tv-spot/",
+      "date": "2026-11-06T17:00:00.000Z",
+      "excerpt": "Welcome back to The Blueprint, a regular feature where we highlight how Google Cloud customers are tackling unique and common challenges across industries using the latest AI and cloud technologies. We hope to inspire others looking to innovate in their work."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+      "link": "https://huggingface.co/blog/allenai/toyblocks",
+      "date": "2026-11-06T14:00:48.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "The post-quantum future of web privacy",
+      "link": "https://blog.cloudflare.com/vole-mole/",
+      "date": "2026-11-06T14:00:00.000Z",
+      "excerpt": "Cryptographic protocols like Privacy Pass help keep web sites safe from abuse while keeping their users private. This post looks at the quantum threat to these protocols, and some new post-quantum cryptography that may help close the gap."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Faster LLM inference startup: What you need to know",
+      "link": "https://www.cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know/",
+      "date": "2026-11-06T12:00:00.000Z",
+      "excerpt": "Adding an inference replica creates capacity only after the new instance can serve requests. Between starting a process and generating a response, an LLM server may need to load weights, initialize GPU resources, compile kernels, capture."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "link": "https://openai.com/index/partnering-with-hacktron",
+      "date": "2026-11-06T08:00:00.000Z",
+      "excerpt": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Zero-shot predictions in Pandas using the new BigQuery Accessor",
+      "link": "https://cloud.google.com/blog/products/data-analytics/bigquery-ai-functions-in-pandas/",
+      "date": "2026-11-06T08:00:00.000Z",
+      "excerpt": "Imagine running advanced machine learning workflows—from forecasting and classification to high-dimensional embedding generation—without ever leaving your familiar pandas DataFrame. With the new ."
+    },
+    {
+      "source": "Docker",
+      "category": "k8s",
+      "title": "Docker Sandboxes vs. Containers: Choosing the Right Isolation for AI Agents",
+      "link": "https://www.docker.com/blog/docker-sandboxes-vs-containers/",
+      "date": "2026-11-06T03:17:04.000Z",
+      "excerpt": "A container shares the host kernel. Docker Sandboxes are microVMs with their own kernel and private Docker Engine."
+    },
+    {
+      "source": "LINE",
+      "category": "devops",
+      "title": "녹화 버튼 뒤에서 일어나는 일: LINE 프리미엄콜 개발기",
+      "link": "https://techblog.lycorp.co.jp/ko/line-premium-call-recording",
+      "date": "2026-11-06T02:00:00.000Z",
+      "excerpt": "들어가며안녕하세요. LINE 앱에서 VoIP(voice over Internet protocol, 인터넷 기반 음성 통화) Android 서비스 개발을 담당하고 있는 안덕용입니다."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How OrderServ achieved up to 64% cost savings with multi-tenant ECS",
+      "link": "https://aws.amazon.com/blogs/architecture/how-orderserv-achieved-up-to-64-cost-savings-with-multi-tenant-ecs/",
+      "date": "2026-11-06T00:09:41.000Z",
+      "excerpt": "See how Cognizant and AWS Professional Services transformed the OrderServ food-ordering platform into a multi-tenant SaaS offering on shared Amazon ECS, cutting compute costs up to 64%, reducing scaling time from minutes to seconds, and lowering authentication costs by 80%."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "link": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+      "link": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Friday Five — November 6, 2026 | Red Hat",
+      "link": "https://www.redhat.com/en/blog/friday-five-november-6-2026-red-hat",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "Smart Talks with IBM: The $5 Billion effort to help secure the world’s shared softwareProject Lightwell commits $5 billion and aims for 20,000 engineers to help secure open source software."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "5-minute demo: How to manage applications at scale with Red Hat OpenShift",
+      "link": "https://www.redhat.com/en/blog/5-minute-demo-how-manage-applications-scale-red-hat-openshift",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "Operating cloud-native applications at enterprise scale is rarely a single-cluster affair. As businesses continue to expand across public cloud providers, private datacenters, and edge locations, platform and security teams run into a common operational issue sprawl."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "How we investigated prompt cache misses with Datadog",
+      "link": "https://www.datadoghq.com/blog/prompt-cache-investigation-ccm-agent-observability/",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "An investigation of prompt cache misses in internal AI applications by using Datadog Cloud Cost Management and Agent Observability."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "The Pentagon wants to know who checks code when AI writes it",
+      "link": "https://about.gitlab.com/blog/department-of-war-instruction-for-ai-generated-code/",
+      "date": "2026-11-06T00:00:00.000Z",
+      "excerpt": "The Department of War now treats AI-generated code as unverified until it’s proven otherwise. DoW Instruction 8430."
+    }
+  ]
+}
