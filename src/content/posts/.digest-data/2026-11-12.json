@@ -1,0 +1,351 @@
+{
+  "date": "2026-11-12",
+  "generatedAt": "2026-11-12T01:56:17.949Z",
+  "count": 43,
+  "articles": [
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "Gilbert + Tobin rethinks the business of law with AI",
+      "link": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "date": "2026-11-12T00:00:00.000Z",
+      "excerpt": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "How Zillow runs 100 million daily notifications on AWS Step Functions",
+      "link": "https://aws.amazon.com/blogs/architecture/how-zillow-runs-100-million-daily-notifications-on-aws-step-functions/",
+      "date": "2026-11-11T23:25:00.000Z",
+      "excerpt": "Zillow sends more than 100 million personalized notifications a day, each as a short-lived AWS Step Functions Express workflow. See how the Comms Experience team replaced more than 10 campaign generators with one configuration-driven orchestration platform and a library of reusable content modules."
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching",
+      "link": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+      "date": "2026-11-11T19:54:00.000Z",
+      "excerpt": "Health & Bioscience"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Anthropic built a model that beats Opus. It recommends Opus anyway.",
+      "link": "https://thenewstack.io/anthropic-fable-opus-cost/",
+      "date": "2026-11-11T19:15:21.000Z",
+      "excerpt": "Anthropic just released a coding model that beats Opus 5.5 on two major benchmarks and can complete certain difficult tasks"
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Why Nvidia gave OpenShell to the CNCF",
+      "link": "https://thenewstack.io/nvidia-donates-openshell-cncf/",
+      "date": "2026-11-11T19:13:54.000Z",
+      "excerpt": "Nvidia this week donated OpenShell, its open-source runtime for securing and governing AI agents, to the Cloud Native Computing Foundation."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "date": "2026-11-11T18:00:00.000Z",
+      "excerpt": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions."
+    },
+    {
+      "source": "The New Stack",
+      "category": "devops",
+      "title": "Expensive accelerators, no workload-level visibility: Introducing Amazon CloudWatch accelerated compute insights",
+      "link": "https://thenewstack.io/cloudwatch-accelerated-compute-insights/",
+      "date": "2026-11-11T18:00:00.000Z",
+      "excerpt": "Accelerator bills have become one of the largest lines in the infrastructure budget. GPUs have become the most expensive resource"
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Intelligent Delivery: Making Every Unit of Compute Serve Better Ads",
+      "link": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
+      "date": "2026-11-11T17:00:38.000Z",
+      "excerpt": "Ads ranking models are growing toward LLM scale faster than the hardware to run them can keep up. An extra unit of compute has more impact on some ad requests, models, and chips than on others."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "How lemonflow built real-time agents for EV charging using Gemma and TPUs",
+      "link": "https://cloud.google.com/blog/topics/startups/building-real-time-agents-for-ev-charging-using-gemma-and-tpus/",
+      "date": "2026-11-11T17:00:00.000Z",
+      "excerpt": "Welcome back to The Blueprint, a regular feature where we highlight how Google Cloud customers are tackling unique and common challenges across industries using the latest AI and cloud technologies. We hope to inspire others looking to innovate in their work."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Introducing new AI functions for AlloyDB: ai.classify and ai.extract",
+      "link": "https://cloud.google.com/blog/products/databases/ai-classify-and-ai-extract-functions-in-alloydb-ai/",
+      "date": "2026-11-11T17:00:00.000Z",
+      "excerpt": "Transactional databases store vast amounts of unstructured text — clinical notes, customer reviews, support tickets, invoices, and property descriptions."
+    },
+    {
+      "source": "Google Cloud",
+      "category": "cloud",
+      "title": "Don’t just prompt AI — architect it: Introducing the Professional Agentic Architect Certification",
+      "link": "https://cloud.google.com/blog/topics/training-certifications/google-cloud-agentic-architect-certification-dont-just-prompt-ai-design-it/",
+      "date": "2026-11-11T17:00:00.000Z",
+      "excerpt": "It just got easier to prove your expertise in building production-ready agents. Today, Google Cloud is introducing the Professional Agentic Architect certification as the latest milestone in our Gemini Agent Ready (GEAR) initiative."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Introducing CNCF User Groups: Long-lived homes for End User collaboration",
+      "link": "https://www.cncf.io/blog/2026/11/11/introducing-cncf-user-groups-long-lived-homes-for-end-user-collaboration/",
+      "date": "2026-11-11T16:41:17.000Z",
+      "excerpt": "The CNCF End User Community is launching its User Group Program at KubeCon + CloudNativeCon North America. These are long-lived groups, each built around an industry vertical or problem domain, that serves the common need of."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+      "date": "2026-11-11T16:00:00.000Z",
+      "excerpt": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "OpenShell on Kubernetes: A guide for platform engineers",
+      "link": "https://www.cncf.io/blog/2026/11/11/openshell-on-kubernetes-a-guide-for-platform-engineers/",
+      "date": "2026-11-11T15:50:30.000Z",
+      "excerpt": "What OpenShell is AI agents do more than call APIs. They run shells, install packages, read files, and open network connections."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Choosing QuePaxa, an unusual consensus algorithm",
+      "link": "https://blog.cloudflare.com/choosing-quepaxa/",
+      "date": "2026-11-11T14:24:46.000Z",
+      "excerpt": "Cloudflare is building an experimental consensus service using a never-before-deployed consensus algorithm, QuePaxa. In this post we explain how QuePaxa works and why we chose it."
+    },
+    {
+      "source": "CNCF",
+      "category": "k8s",
+      "title": "Platform engineering needs to become more human…and less",
+      "link": "https://www.cncf.io/blog/2026/11/11/platform-engineering-needs-to-become-more-humanand-less/",
+      "date": "2026-11-11T12:00:00.000Z",
+      "excerpt": "Even my family thinks I’m a little robotic. Logical, linear, sequential, methodical."
+    },
+    {
+      "source": "Google AI",
+      "category": "ai",
+      "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+      "link": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
+      "date": "2026-11-11T09:00:00.000Z",
+      "excerpt": "A new online archive of Esther Mahlangu’s life and art is now on Google Arts & Culture."
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "ChatGPT Plus for veterans and servicemembers",
+      "link": "https://openai.com/index/chatgpt-plus-for-veterans",
+      "date": "2026-11-11T08:00:00.000Z",
+      "excerpt": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+      "link": "https://huggingface.co/blog/qvac/botpsy",
+      "date": "2026-11-11T05:01:16.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "OpenAI",
+      "category": "ai",
+      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "link": "https://openai.com/index/jiostar-vijay-seshadri",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
+      "link": "https://huggingface.co/blog/token-pooling",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Guide to observability with Red Hat OpenShift 5",
+      "link": "https://www.redhat.com/en/blog/guide-observability-red-hat-openshift-5",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": "In Red Hat OpenShift 5, observability, powered by Red Hat OpenShift Lightspeed, transforms cluster management through 3 core capabilities designed to accelerate incident response while maintaining enterprise-grade safety and human control."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Unlocking next-generation workloads: What’s new in Red Hat OpenShift Virtualization 5",
+      "link": "https://www.redhat.com/en/blog/unlocking-next-generation-workloads-whats-new-red-hat-openshift-virtualization-5",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": "As organizations navigate rising hypervisor licensing costs, ongoing hardware scarcity and procurement delays, and the race to support AI workloads, IT teams face a difficult balancing act."
+    },
+    {
+      "source": "Red Hat",
+      "category": "cloud",
+      "title": "Red Hat Advanced Cluster Management for Kubernetes 5.0: Run your Kubernetes fleet with more control",
+      "link": "https://www.redhat.com/en/blog/red-hat-advanced-cluster-management-kubernetes-5",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": "A growing Kubernetes fleet brings more than compute. It also creates more places to search, policies to maintain, and upgrade paths to watch."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Where to run AWS workloads and how to limit their access",
+      "link": "https://www.datadoghq.com/blog/aws-account-management/",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": "Learn how to organize AWS workloads and shared services, how that affects security, and which permissions to review as you set up or reorganize your accounts."
+    },
+    {
+      "source": "GitLab",
+      "category": "devops",
+      "title": "How to prevent leaks from Claude Code's 'Don't ask again' file",
+      "link": "https://about.gitlab.com/blog/prevent-leaks-from-claude-code-dont-ask-again-file/",
+      "date": "2026-11-11T00:00:00.000Z",
+      "excerpt": "This guide details how to find and remove secrets that were inadvertently committed to projects and repositories hosted on GitLab. We’ve confirmed that GitLab’s own infrastructure secrets are protected."
+    },
+    {
+      "source": "GitHub",
+      "category": "devops",
+      "title": "Git security vulnerabilities announced",
+      "link": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/",
+      "date": "2026-11-10T18:00:00.000Z",
+      "excerpt": "Git is releasing updates addressing six security vulnerabilities affecting recursive clones, reference handling, merges, binary patches, and imports. Here is what users need to know."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "Your Algorithm: Giving People More Ways to Personalize Facebook Recommendations",
+      "link": "https://engineering.fb.com/2026/11/10/ml-applications/your-algorithm-giving-people-more-ways-to-personalize-facebook-recommendations/",
+      "date": "2026-11-10T17:00:49.000Z",
+      "excerpt": "Your algorithm is a suite of AI-powered tools that makes Facebook recommendations more transparent and steerable, with a single editable view of the interests that shape Feed and Reels."
+    },
+    {
+      "source": "HashiCorp",
+      "category": "devops",
+      "title": "From insight to action: improving infrastructure risk posture with Terraform and Concert",
+      "link": "https://www.hashicorp.com/blog/from-insight-to-action-improving-infrastructure-risk-posture-with-terraform-and-c",
+      "date": "2026-11-10T17:00:00.000Z",
+      "excerpt": "Advances in AI are accelerating vulnerability discovery, uncovering previously unknown weaknesses and complex attack paths."
+    },
+    {
+      "source": "Meta Engineering",
+      "category": "devops",
+      "title": "How We Built TLX: A Hardware-Native GPU Compiler for Production ML at Scale",
+      "link": "https://engineering.fb.com/2026/11/10/open-source/tlx-a-hardware-native-gpu-compiler-for-production-ml/",
+      "date": "2026-11-10T16:59:31.000Z",
+      "excerpt": "Triton Low-Level Extensions (TLX), is an extension to Triton that helps engineers optimize GPU performance while preserving Triton’s productive programming model. TLX introduces explicit warp-group and cluster-level orchestration, letting developers adopt new hardware capabilities without sacrificing velocity."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Self-service regional failover with Amazon Application Recovery Controller Region Switch and centralized ingress controls",
+      "link": "https://aws.amazon.com/blogs/architecture/self-service-regional-failover-with-amazon-application-recovery-controller-region-switch-and-centralized-ingress-controls/",
+      "date": "2026-11-10T16:48:09.000Z",
+      "excerpt": "Application teams in regulated enterprises can execute self-service regional failover with Amazon Application Recovery Controller (ARC) Region Switch, even behind centrally managed ingress proxy fleets."
+    },
+    {
+      "source": "Honeycomb",
+      "category": "devops",
+      "title": "Is Your Observability Stack Just Monitoring in Disguise?",
+      "link": "https://www.honeycomb.io/blog/rick-clark-o11ywashing",
+      "date": "2026-11-10T14:11:17.000Z",
+      "excerpt": "Charity Majors sits down with Rick Clark for episode three of Leading With Observability to talk o11ywashing: when vendors rename monitoring tools as observability."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "실행은 격리하고, 세션은 이어간다: 망분리 환경의 Agent Platform 설계기",
+      "link": "https://toss.tech/article/agent-platform-foundation",
+      "date": "2026-11-10T07:02:00.000Z",
+      "excerpt": "토스 망분리 환경의 Agent Platform 설계 과정을 소개합니다."
+    },
+    {
+      "source": "Hugging Face",
+      "category": "ai",
+      "title": "Pay for Hugging Face Hub with your Google Cloud Account",
+      "link": "https://huggingface.co/blog/hub-gcp-marketplace",
+      "date": "2026-11-10T00:00:00.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Troubleshoot Kubernetes inference workloads with Datadog",
+      "link": "https://www.datadoghq.com/blog/kubernetes-inference-workload-monitoring/",
+      "date": "2026-11-10T00:00:00.000Z",
+      "excerpt": "Investigate Kubernetes inference workloads with model and resource context to troubleshoot readiness, scheduling, and capacity issues."
+    },
+    {
+      "source": "Datadog",
+      "category": "devops",
+      "title": "Detect and respond to PHP2Shell with Datadog",
+      "link": "https://www.datadoghq.com/blog/detect-respond-php2shell-datadog/",
+      "date": "2026-11-10T00:00:00.000Z",
+      "excerpt": "Learn how to identify vulnerable PHP deployments, prioritize patching, detect exploitation attempts, and investigate PHP2Shell activity with Datadog Security."
+    },
+    {
+      "source": "AWS Architecture",
+      "category": "cloud",
+      "title": "Transforming fleet analytics for Novus Hi-Tech through agentic AI",
+      "link": "https://aws.amazon.com/blogs/architecture/transforming-fleet-analytics-for-novus-hi-tech-through-agentic-ai/",
+      "date": "2026-11-09T20:34:35.000Z",
+      "excerpt": "Learn how Novus Hi-Tech, with the AWS Prototyping and AI Customer Engineering (PACE) team, built FleetGPT, an agentic AI solution on Amazon Bedrock that turns fleet IoT data into real-time safety interventions through natural language querying, automated investigation, and AI-powered driver voice calls, cutting road-be…"
+    },
+    {
+      "source": "Google Research",
+      "category": "ai",
+      "title": "Exploring the world's languages with Language Explorer",
+      "link": "https://research.google/blog/exploring-the-worlds-languages-with-language-explorer/",
+      "date": "2026-11-09T20:29:39.000Z",
+      "excerpt": "Natural Language Processing"
+    },
+    {
+      "source": "Netflix",
+      "category": "devops",
+      "title": "Fact-Checking at Scale: Building a More Accurate and Efficient Synopsis Factuality System",
+      "link": "https://netflixtechblog.com/fact-checking-at-scale-building-a-more-accurate-and-efficient-synopsis-factuality-system-d7d85859d808?source=rss----2615bd06b42e---4",
+      "date": "2026-11-09T17:01:02.000Z",
+      "excerpt": ""
+    },
+    {
+      "source": "Grafana",
+      "category": "devops",
+      "title": "Run cost-effective, always-on agents to monitor your environment: the engineering behind Watchers",
+      "link": "https://grafana.com/blog/run-cost-effective-always-on-agents-to-monitor-your-environment-the-engineering-behind-watchers/",
+      "date": "2026-11-09T16:30:31.000Z",
+      "excerpt": "Alert rules are great for the failures you can predict, but they fall short on the ones you can't. With the advent of modern AI, you might think the solution is to swarm your stack with agents that monitor every last detail, but that can quickly lead to astronomical bills."
+    },
+    {
+      "source": "AWS Containers",
+      "category": "k8s",
+      "title": "AWS Nitro Sandboxes: Hardware-enforced workload isolation on Amazon EKS",
+      "link": "https://aws.amazon.com/blogs/containers/aws-nitro-sandboxes-hardware-enforced-workload-isolation-on-amazon-eks/",
+      "date": "2026-11-09T15:51:50.000Z",
+      "excerpt": "AWS Nitro Sandboxes bring hardware-enforced, per-pod isolation to Amazon EKS. Every sandboxed pod runs in its own lightweight virtual machine with the isolation of a dedicated Amazon EC2 instance and the simplicity of a Kubernetes pod."
+    },
+    {
+      "source": "Cloudflare",
+      "category": "cloud",
+      "title": "Launching the Vite Ecosystem Fund",
+      "link": "https://blog.cloudflare.com/launching-vite-ecosystem-fund/",
+      "date": "2026-11-09T13:00:00.000Z",
+      "excerpt": "Cloudflare is distributing the first $301,300 of the Vite Ecosystem Fund to open source projects and maintainers. The recipients were chosen by a panel of Vite stack core team members, including maintainers not employed by Cloudflare."
+    },
+    {
+      "source": "토스",
+      "category": "devops",
+      "title": "TASTE, 토스의 추천 파운데이션 플랫폼",
+      "link": "https://toss.tech/article/taste",
+      "date": "2026-11-09T06:54:00.000Z",
+      "excerpt": "공동학습과 지식 전이로 추천 파운데이션 모델의 초석 놓기"
+    }
+  ]
+}
