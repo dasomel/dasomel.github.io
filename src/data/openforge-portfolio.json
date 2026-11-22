@@ -7,7 +7,7 @@
     "portfolio/maintenance.json",
     "portfolio/agent-audit.json"
   ],
-  "updated_at": "2026-11-05",
+  "updated_at": "2026-11-22",
   "portfolio": {
     "standard_metrics": 35,
     "standard_maturity_percent": 96.9,
@@ -189,15 +189,15 @@
         "operations"
       ],
       "status": {
-        "revision": "00b08708bce934f05fa38e0d85b2f9cb58730b23",
-        "updated_at": "2026-10-22",
+        "revision": "c9ea9ec5f3ce2170bb6b3b698fc82c5ec3857c7e",
+        "updated_at": "2026-11-14",
         "milestone": "release",
         "progress_percent": null,
         "capabilities": {},
         "evidence": {
           "ci": "pass",
-          "commit": "00b08708bce934f05fa38e0d85b2f9cb58730b23",
-          "workflow": "https://github.com/dasomel/narwhal/actions/runs/39712292486"
+          "commit": "c9ea9ec5f3ce2170bb6b3b698fc82c5ec3857c7e",
+          "workflow": "https://github.com/dasomel/narwhal/actions/runs/43552669035"
         }
       },
       "impact_score": 23,
@@ -377,8 +377,8 @@
         "evidence"
       ],
       "status": {
-        "revision": "2b6e00d01cff18ca25bacfc96265a0b6b0f6dae7",
-        "updated_at": "2026-11-01",
+        "revision": "52c2c3d21a8e6cd49579edc364c65bdc455ec69e",
+        "updated_at": "2026-11-22",
         "milestone": null,
         "progress_percent": null,
         "capabilities": {
@@ -450,8 +450,8 @@
         },
         "evidence": {
           "ci": "pass",
-          "commit": "2b6e00d01cff18ca25bacfc96265a0b6b0f6dae7",
-          "workflow": "https://github.com/dasomel/kube-ready-box/actions/runs/41333107551"
+          "commit": "52c2c3d21a8e6cd49579edc364c65bdc455ec69e",
+          "workflow": "https://github.com/dasomel/kube-ready-box/actions/runs/45039906622"
         }
       },
       "impact_score": 10,
@@ -1352,7 +1352,7 @@
       {
         "repository": "dasomel/narwhal",
         "revision": "626ed66fd365a2e7104e94cbfe4bbaecad262212",
-        "observed_at": "2026-11-04T22:15:41Z",
+        "observed_at": "2026-11-22T16:07:47Z",
         "overall": "fail",
         "signal_counts": {
           "total": 6,
@@ -1372,10 +1372,10 @@
         },
         "scorecard": {
           "status": "partial",
-          "score": 5.0,
-          "tool_version": "v5.6.0",
-          "observed_at": "2026-11-04T22:15:41Z",
-          "commit": "e91fc6b0ba9020acc7733f9e0966032b62d09952"
+          "score": 6.2,
+          "tool_version": "v5.7.0",
+          "observed_at": "2026-11-22T16:07:47Z",
+          "commit": "412cf3a0a6c59d898ab0a19d4214d3d78d664367"
         },
         "evidence": {
           "record": "portfolio/security-readiness/narwhal.json",
