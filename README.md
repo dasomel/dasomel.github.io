@@ -12,7 +12,7 @@ This repository is more than a personal blog. It is the source of the public **O
 
 - **Projects** — OSS projects, experiments, forks, and platform components
 - **Notes** — original engineering writing and development notes
-- **Tech Digest** — automated bilingual technology digest, kept separate from original Notes
+- **Tech Digest** — archive of the automated bilingual technology digest (retired 2026-11-24), kept separate from original Notes
 - **Talks** — seminars, presentations, and technical sessions
 - **Docs / Events** — project documentation and selected engineering events
 - **Knowledge Graph** — explicit relationships between Projects, Notes, and Tech Digest entries
@@ -88,23 +88,8 @@ Each published Notes entry is intended to have a matching English counterpart so
 
 ### Tech Digest
 
-Daily Tech Digest is generated separately from original Notes.
-
-```text
-RSS collection
-    ↓
-Korean + English digest generation
-    ↓
-AI enrichment / validation
-    ↓
-Draft PR
-    ↓
-Fallback publication when needed
-    ↓
-GitHub Pages deployment
-```
-
-The pipeline includes duplicate-publication guards, fallback handling, enrichment validation, and explicit separation between automated digest content and original Notes.
+The Daily Tech Digest ran from June to early November 2026 and was retired on 2026-11-24.
+Published entries stay available as an archive, separate from original Notes; no new digests are generated.
 
 ## AI-assisted development
 

@@ -15,12 +15,7 @@
     "festivals:fetch": "bun scripts/fetch-festivals.mjs",
     "start": "bun run next start",
     "lint": "bun run eslint .",
-    "projects:refresh": "bun scripts/refresh-project-metadata.mjs && bun scripts/refresh-project-audit.mjs && bun scripts/refresh-oss-issues.mjs && bun scripts/refresh-oss-open-issues.mjs && bun scripts/refresh-oss-adoption-discovery.mjs",
-    "digest:collect": "bun scripts/collect-feeds.mjs",
-    "digest": "bun scripts/generate-daily-digest.mjs",
-    "digest:enrich-publish": "bun scripts/publish-enrichment.mjs",
-    "digest:check": "bun scripts/check-enrichment.mjs",
-    "digest:enrich-apply": "bun scripts/enrich-apply.mjs"
+    "projects:refresh": "bun scripts/refresh-project-metadata.mjs && bun scripts/refresh-project-audit.mjs && bun scripts/refresh-oss-issues.mjs && bun scripts/refresh-oss-open-issues.mjs && bun scripts/refresh-oss-adoption-discovery.mjs"
   },
   "dependencies": {
     "next-mdx-remote-client": "^2.1.12",

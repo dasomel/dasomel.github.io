@@ -19,7 +19,7 @@ Luna is a continuity/fallback layer. It does not replace the project's existing 
 
 ## Content work
 
-For article creation, translation, or enrichment, inspect representative existing posts first and preserve the site's current tone, metadata, links, and structure. When an English daily digest exists without an equivalent Korean post, treat the Korean post as a missing publication artifact and repair it without changing the English source unless necessary.
+For article creation, translation, or enrichment, inspect representative existing posts first and preserve the site's current tone, metadata, links, and structure.
 
 ## Luna behavior
 
