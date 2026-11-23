@@ -15,6 +15,7 @@ Even when AWS managed services fill each area of a platform, the seams between t
 - **The AWS view and the Day-0/1/2 frame**: the seven platform areas and their AWS counterparts, the seams, and the vertical integration map
 - **Role of each project**: Kube-Ready-Box (Day-0, with daily CVE scanning and continuous security updates, and its move from Vagrant Cloud to GitHub), Narwhal (Day-0 to 2), NFS Quota Agent, Narwhal Portal, ClusterDeck (Day-2)
 - **Recent releases**: Narwhal v1.4.0 and v1.5.0 (incidents that changed the design, and the limits that remain), Kube-Ready-Box security rebuilds and its move to a new distribution channel, broader verification in NFS Quota Agent v0.6.0
+- **One ecosystem**: how the projects connect, and retiring the Harbor arm64 fork (set down once upstream v2.16.0 added arm64)
 - **Verification across the whole span**: OpenForge evidence classes and portfolio metrics, and discussions with outside developers
 - **Running an AI agent team**: how it works, failure cases, lessons
 
@@ -27,5 +28,6 @@ Even when AWS managed services fill each area of a platform, the seams between t
 ## Related
 
 - [Write-up of the October 28 meetup talk: Vertical Integration of a Kubernetes Platform with AI Agents](/en/posts/k8s-platform-vertical-2026/)
+- [Retiring the Harbor arm64 fork](/en/posts/harbor-arm64-fork-retirement/)
 - [View the slides](https://cne.io.kr/slides/k8s-platform-vertical-awskrug/#1)
 - [OSS overview](https://cne.io.kr/oss/)

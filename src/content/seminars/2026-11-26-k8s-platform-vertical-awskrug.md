@@ -15,6 +15,7 @@ AWS의 관리형 서비스가 플랫폼의 각 영역을 채워 주더라도, �
 - **AWS 관점과 Day-0/1/2 프레임**: 플랫폼의 일곱 영역과 AWS 대응물, 이음새, 수직 계열화 지도
 - **프로젝트별 역할**: Kube-Ready-Box(Day-0, 매일 CVE 스캔과 지속 보안 업데이트, Vagrant Cloud 종료에 따른 GitHub 이전), Narwhal(Day-0~2), NFS Quota Agent, Narwhal Portal, ClusterDeck(Day-2)
 - **최근 릴리스**: Narwhal v1.4.0 · v1.5.0(사고가 설계를 바꾼 사례, 아직 남은 한계), Kube-Ready-Box의 보안 재빌드와 배포 채널 이전, NFS Quota Agent v0.6.0의 검증 확대
+- **하나의 생태계**: 프로젝트 간 연결, Harbor arm64 fork 종료(upstream v2.16.0이 arm64를 지원해 내려놓은 기록)
 - **전 구간 검증**: OpenForge의 증거 등급과 포트폴리오 지표, 외부 개발자와 오간 논의
 - **AI 에이전트 팀 운영**: 일하는 방식, 실패 사례, 교훈
 
@@ -27,5 +28,6 @@ AWS의 관리형 서비스가 플랫폼의 각 영역을 채워 주더라도, �
 ## 관련 자료
 
 - [10월 28일 밋업 발표 내용 정리: AI 에이전트와 Kubernetes 플랫폼 수직 계열화](/ko/posts/k8s-platform-vertical-2026/)
+- [Harbor arm64 fork를 정리하며: upstream이 따라와 준 날](/ko/posts/harbor-arm64-fork-retirement/)
 - [발표자료 바로 보기](https://cne.io.kr/slides/k8s-platform-vertical-awskrug/#1)
 - [OSS 소개](https://cne.io.kr/oss/)
