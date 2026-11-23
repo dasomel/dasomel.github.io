@@ -27,8 +27,8 @@ jobs:
           set -euo pipefail
 
           HEAD_REF=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefName --jq '.headRefName')
-          if [[ "$HEAD_REF" == daily-digest/* ]]; then
-            echo "Daily digest PRs are gated by digest-fallback.yml; skipping generic auto-merge."
+          if [[ "$HEAD_REF" == daily-digest/* || "$HEAD_REF" == ai-infra-weekly/* ]]; then
+            echo "Digest archive and AI Infra Weekly PRs require manual review; skipping generic auto-merge."
             exit 0
           fi
 
@@ -52,8 +52,8 @@ jobs:
           set -euo pipefail
 
           HEAD_REF=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefName --jq '.headRefName' 2>/dev/null || true)
-          if [[ "$HEAD_REF" == daily-digest/* ]]; then
-            echo "Daily digest deployment is handled by its dedicated merge flow."
+          if [[ "$HEAD_REF" == daily-digest/* || "$HEAD_REF" == ai-infra-weekly/* ]]; then
+            echo "Skipping deploy for a review-gated branch."
             exit 0
           fi
 

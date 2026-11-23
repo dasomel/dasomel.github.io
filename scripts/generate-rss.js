@@ -28,13 +28,18 @@ function isTechDigest(post) {
   return post.slug.startsWith('daily-digest-');
 }
 
+function isAIInfraWeekly(post) {
+  return post.slug.startsWith('ai-infra-weekly-');
+}
+
 function generateFeed(lang, kind) {
   const isEn = lang === 'en';
   const isDigest = kind === 'tech-digest';
+  const isWeekly = kind === 'ai-infra';
   const base = isEn ? `${BASE_URL}/en` : `${BASE_URL}/ko`;
-  const section = isDigest ? 'tech-digest' : 'notes';
-  const title = isDigest ? 'dasomel Tech Digest' : 'dasomel Notes';
-  const description = isDigest
+  const section = isWeekly ? 'ai-infra' : isDigest ? 'tech-digest' : 'notes';
+  const title = isWeekly ? 'AI Infrastructure Weekly' : isDigest ? 'dasomel Tech Digest' : 'dasomel Notes';
+  const description = isWeekly ? (isEn ? 'AI infrastructure research and operational implications.' : 'AI 인프라 기술 연구와 운영 시사점.') : isDigest
     ? (isEn ? 'Curated technology news and developments from dasomel.' : 'dasomel이 큐레이션한 기술 소식과 변화.')
     : (isEn ? 'Engineering notes on Cloud Native, OSS, and AI-assisted development.' : 'Cloud Native, OSS, AI-assisted 개발에 대한 엔지니어링 노트.');
 
@@ -51,12 +56,12 @@ function generateFeed(lang, kind) {
   });
 
   getPosts(lang)
-    .filter(post => (isDigest ? isTechDigest(post) : !isTechDigest(post)))
+    .filter(post => (isWeekly ? isAIInfraWeekly(post) : isDigest ? isTechDigest(post) : !isTechDigest(post) && !isAIInfraWeekly(post)))
     .forEach(post => {
       feed.addItem({
         title: post.title,
-        id: `${base}/${section}/${post.slug}/`,
-        link: `${base}/${section}/${post.slug}/`,
+        id: `${base}/${isWeekly ? 'posts' : section}/${post.slug}/`,
+        link: `${base}/${isWeekly ? 'posts' : section}/${post.slug}/`,
         description: post.description || '',
         date: new Date(post.pubDate),
       });
@@ -80,4 +85,6 @@ fs.writeFileSync(path.join(outDir, 'rss.xml'), koNotes.rss2());
 fs.writeFileSync(path.join(outDir, 'rss-en.xml'), enNotes.rss2());
 fs.writeFileSync(path.join(outDir, 'tech-digest.xml'), koDigest.rss2());
 fs.writeFileSync(path.join(outDir, 'tech-digest-en.xml'), enDigest.rss2());
-console.log('RSS feeds generated: rss.xml, rss-en.xml, tech-digest.xml, tech-digest-en.xml');
+fs.writeFileSync(path.join(outDir, 'ai-infra.xml'), generateFeed('ko', 'ai-infra').rss2());
+fs.writeFileSync(path.join(outDir, 'ai-infra-en.xml'), generateFeed('en', 'ai-infra').rss2());
+console.log('RSS feeds generated: ai-infra.xml, ai-infra-en.xml, rss.xml, rss-en.xml, tech-digest.xml, tech-digest-en.xml');

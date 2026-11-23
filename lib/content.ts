@@ -138,7 +138,15 @@ export function getPosts(lang: 'ko' | 'en' = 'ko'): Post[] {
 }
 
 export function getNotes(lang: 'ko' | 'en' = 'ko'): Post[] {
-  return getPosts(lang).filter(post => !isTechDigest(post));
+  return getPosts(lang).filter(post => !isTechDigest(post) && !isAIInfraWeekly(post));
+}
+
+function isAIInfraWeekly(post: Post): boolean {
+  return post.slug.startsWith('ai-infra-weekly-');
+}
+
+export function getAIInfraWeekly(lang: 'ko' | 'en' = 'ko'): Post[] {
+  return getPosts(lang).filter(isAIInfraWeekly);
 }
 
 export function getTechDigests(lang: 'ko' | 'en' = 'ko'): Post[] {
