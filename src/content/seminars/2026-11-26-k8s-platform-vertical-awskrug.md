@@ -13,7 +13,7 @@ AWS의 관리형 서비스가 플랫폼의 각 영역을 채워 주더라도, �
 ## 구성
 
 - **AWS 관점과 Day-0/1/2 프레임**: 플랫폼의 일곱 영역과 AWS 대응물, 이음새, 수직 계열화 지도
-- **프로젝트별 역할**: Kube-Ready-Box(Day-0, 매일 CVE 스캔과 지속 보안 업데이트), Narwhal(Day-0~2), NFS Quota Agent, Narwhal Portal, ClusterDeck(Day-2)
+- **프로젝트별 역할**: Kube-Ready-Box(Day-0, 매일 CVE 스캔과 지속 보안 업데이트, Vagrant Cloud 종료에 따른 GitHub 이전), Narwhal(Day-0~2), NFS Quota Agent, Narwhal Portal, ClusterDeck(Day-2)
 - **최근 릴리스**: Narwhal v1.4.0 · v1.5.0(사고가 설계를 바꾼 사례, 아직 남은 한계), Kube-Ready-Box의 보안 재빌드와 배포 채널 이전, NFS Quota Agent v0.6.0의 검증 확대
 - **전 구간 검증**: OpenForge의 증거 등급과 포트폴리오 지표, 외부 개발자와 오간 논의
 - **AI 에이전트 팀 운영**: 일하는 방식, 실패 사례, 교훈
