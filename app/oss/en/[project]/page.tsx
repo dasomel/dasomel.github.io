@@ -19,7 +19,7 @@ export default async function OssProjectHomeEn({ params }: { params: Promise<{ p
   const project = getProjectBySlug(projectSlug, 'en');
   if (!project) notFound();
   const docs = getDocs('en').filter((d) => d.slug.startsWith(`${projectSlug}/`));
-  const latestDocDate = docs.map((doc) => doc.lastModified || doc.date).filter(Boolean).sort().at(-1);
+  const latestDocDate = docs.map((doc) => doc.lastModified || doc.date).filter(Boolean).sort().at(-1)?.slice(0, 10);
 
   return (
     <OssProjectShell project={project.meta} docs={docs} locale="en">

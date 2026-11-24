@@ -22,7 +22,7 @@ export default async function OssProjectHome({ params }: { params: Promise<{ pro
   const project = getProjectBySlug(projectSlug, 'ko');
   if (!project) notFound();
   const docs = getDocs('ko').filter((d) => d.slug.startsWith(`${projectSlug}/`));
-  const latestDocDate = docs.map((doc) => doc.lastModified || doc.date).filter(Boolean).sort().at(-1);
+  const latestDocDate = docs.map((doc) => doc.lastModified || doc.date).filter(Boolean).sort().at(-1)?.slice(0, 10);
 
   return <OssProjectShell project={project.meta} docs={docs} locale="ko">
     <div className="relative mb-8 overflow-hidden rounded-2xl p-7 sm:p-9" style={{ border:'1px solid var(--border)', backgroundColor:'var(--surface)' }}>
