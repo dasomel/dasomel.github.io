@@ -5,13 +5,13 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 118,
+    "openIssues": 120,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-22T15:56:23Z",
+    "pushedAt": "2026-11-24T00:16:17Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
-    "commitCount": 961,
+    "commitCount": 963,
     "releaseCount": 2,
     "contributorCount": 3,
     "activity": [
@@ -221,7 +221,7 @@
       },
       {
         "week": 1795305600,
-        "total": 8
+        "total": 10
       }
     ],
     "latestRelease": {
@@ -246,9 +246,9 @@
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-08-24T08:41:38Z",
-    "pushedAt": "2026-11-22T15:30:09Z",
+    "pushedAt": "2026-11-23T07:33:25Z",
     "firstCommitAt": "2026-08-24T08:52:21Z",
-    "commitCount": 396,
+    "commitCount": 397,
     "releaseCount": 15,
     "contributorCount": 3,
     "activity": [
@@ -458,7 +458,7 @@
       },
       {
         "week": 1795305600,
-        "total": 5
+        "total": 6
       }
     ],
     "latestRelease": {
@@ -483,9 +483,9 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-07-14T15:01:24Z",
-    "pushedAt": "2026-11-16T06:27:46Z",
+    "pushedAt": "2026-11-23T07:37:15Z",
     "firstCommitAt": "2026-07-14T14:52:01Z",
-    "commitCount": 36,
+    "commitCount": 37,
     "releaseCount": 8,
     "contributorCount": 2,
     "activity": [
@@ -695,7 +695,7 @@
       },
       {
         "week": 1795305600,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -1193,9 +1193,9 @@
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
-    "pushedAt": "2026-11-22T15:43:55Z",
+    "pushedAt": "2026-11-23T07:34:58Z",
     "firstCommitAt": "2026-01-22T15:37:23Z",
-    "commitCount": 407,
+    "commitCount": 408,
     "releaseCount": 12,
     "contributorCount": 3,
     "activity": [
@@ -1405,7 +1405,7 @@
       },
       {
         "week": 1795305600,
-        "total": 3
+        "total": 4
       }
     ],
     "latestRelease": {
@@ -1430,9 +1430,9 @@
     "language": "Rust",
     "license": "Apache-2.0",
     "createdAt": "2026-07-30T09:34:58Z",
-    "pushedAt": "2026-11-20T08:41:33Z",
+    "pushedAt": "2026-11-23T07:49:00Z",
     "firstCommitAt": "2026-07-20T13:19:01Z",
-    "commitCount": 607,
+    "commitCount": 608,
     "releaseCount": 2,
     "contributorCount": 3,
     "activity": [
@@ -1642,7 +1642,7 @@
       },
       {
         "week": 1795305600,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -1667,7 +1667,7 @@
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T04:07:34Z",
-    "pushedAt": "2026-11-18T14:18:16Z",
+    "pushedAt": "2026-11-23T07:55:12Z",
     "firstCommitAt": "2026-08-11T12:38:59Z",
     "commitCount": 539,
     "releaseCount": 7,
@@ -1900,13 +1900,13 @@
     "description": "Reproducible Kubernetes IDP for cloud, on-prem and air-gapped environments",
     "stars": 3,
     "forks": 4,
-    "openIssues": 166,
+    "openIssues": 168,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-22T22:56:40Z",
+    "pushedAt": "2026-11-24T02:47:04Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1439,
+    "commitCount": 1444,
     "releaseCount": 31,
     "contributorCount": 3,
     "activity": [
@@ -2116,7 +2116,7 @@
       },
       {
         "week": 1795305600,
-        "total": 10
+        "total": 15
       }
     ],
     "latestRelease": {
@@ -2374,13 +2374,13 @@
     "description": "NFS Quota Agent for Kubernetes - Enforce storage quotas on NFS PVs",
     "stars": 5,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 6,
     "language": "Go",
     "license": "Apache-2.0",
     "createdAt": "2026-01-24T23:38:08Z",
-    "pushedAt": "2026-11-21T02:20:49Z",
+    "pushedAt": "2026-11-23T07:31:16Z",
     "firstCommitAt": "2026-01-24T23:36:25Z",
-    "commitCount": 791,
+    "commitCount": 792,
     "releaseCount": 21,
     "contributorCount": 3,
     "activity": [
@@ -2590,7 +2590,7 @@
       },
       {
         "week": 1795305600,
-        "total": 0
+        "total": 1
       }
     ],
     "latestRelease": {
@@ -2841,7 +2841,7 @@
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-20T04:09:52Z",
-    "pushedAt": "2026-11-22T16:14:35Z",
+    "pushedAt": "2026-11-23T07:51:45Z",
     "firstCommitAt": "2026-08-20T04:10:19Z",
     "commitCount": 298,
     "releaseCount": 0,
@@ -3066,9 +3066,9 @@
     "language": "Python",
     "license": "NOASSERTION",
     "createdAt": "2026-08-25T13:32:05Z",
-    "pushedAt": "2026-11-16T06:21:25Z",
+    "pushedAt": "2026-11-23T07:30:06Z",
     "firstCommitAt": "2026-08-25T13:33:51Z",
-    "commitCount": 100,
+    "commitCount": 101,
     "releaseCount": 0,
     "contributorCount": 3,
     "activity": [
@@ -3278,7 +3278,7 @@
       },
       {
         "week": 1795305600,
-        "total": 0
+        "total": 1
       }
     ]
   },
