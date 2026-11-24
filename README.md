@@ -86,6 +86,10 @@ Recent examples include:
 
 Each published Notes entry is intended to have a matching English counterpart so the bilingual content model stays consistent.
 
+### AI Infrastructure Weekly
+
+AI-assisted weekly research on Kubernetes AI platforms, accelerators, distributed training and inference, MLflow, and MLX. Korean and English editions share the `ai-infra-weekly-YYYY-MM-DD` slug, with a separate archive at `/ko/ai-infra/` and `/en/ai-infra/`. Historical retrospectives are labeled as such. New issues are submitted through review-only `ai-infra-weekly/` branches; verify sources and CI before manual merge. No Daily Tech Digest automation is restarted.
+
 ### Tech Digest
 
 The Daily Tech Digest ran from June to early November 2026 and was retired on 2026-11-24.

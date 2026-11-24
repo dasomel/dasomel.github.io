@@ -1,0 +1,8 @@
+# AI Infrastructure Weekly editorial policy
+
+- Publish weekly, not daily. Scan developments throughout the week, then select three to five meaningful topics; combine domestic/global ecosystem coverage and OSS discovery with research depth.
+- Primary sources, actual dates and maturity labels are required for new issues. Distinguish measured findings, vendor claims, preprints and proposed experiments. Exclude unverified specifics and duplicate stories. If no meaningful new content, report no issue.
+- Include architecture, operational implications, trade-offs, actionable validation criteria, read/test/watch, and project applicability only where relevant. Do not present suggested integrations as completed work.
+- Generate paired Korean/English Markdown at src/content/posts/ai-infra-weekly-YYYY-MM-DD[-en].md. The date identifies the source issue in historical retrospectives, not the actual publication date. Clearly disclose AI assistance and reconstruction. No private material, career details, temporary image links or tracking URLs.
+- New issues: create a review-only PR on ai-infra-weekly/YYYY-MM-DD from main; check duplicate files and existing PRs; do not auto-merge. A human verifies sources and CI before merge. Verify Pages deployment separately.
+- Historical archive: Daily Tech Briefing source recovered for 2026-08-30 through 2026-09-19 (21 dates) and 2026-10-15 through 2026-10-17 (three recovered topic records). Weekly records recovered for 2026-09-25, 2026-10-02 and 2026-11-13 (partial). Retrospectives are intentionally identified as partial historical summaries and do not imply current source verification. Unavailable dates are not synthesized from the schedule. The existing Tech Digest archive is preserved.

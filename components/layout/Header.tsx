@@ -38,10 +38,12 @@ export default function Header({ locale }: HeaderProps) {
     knowledge,
     about,
   ];
-  const desktopPrimary = [work, oss, knowledge, techDigest, about];
+  const aiInfra = { href: `${base}/ai-infra`, label: 'AI Infra Weekly', aliases: [`${base}/ai-infra`] };
+  const desktopPrimary = [work, oss, knowledge, aiInfra, about];
   const mobileExtra = [
     { href: `${base}/oss/story`, label: locale === 'en' ? 'Engineering Story' : '엔지니어링 스토리' },
     { href: `${base}/notes`, label: locale === 'en' ? 'Field Notes' : '필드 노트' },
+    aiInfra,
     techDigest,
     { href: `${base}/seminars`, label: t('talks') },
     { href: `${base}/docs`, label: t('docs') },
