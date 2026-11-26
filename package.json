@@ -21,7 +21,7 @@
     "next-mdx-remote-client": "^2.1.12",
     "@radix-ui/react-separator": "^1.2.0",
     "@radix-ui/react-slot": "^1.5.0",
-    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/postcss": "^4.3.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "feed": "^6.0.0",
