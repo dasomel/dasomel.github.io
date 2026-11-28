@@ -5,11 +5,11 @@
     "description": "Beluga — a self-hosted data platform on a local Kubernetes cluster: Kafka(+CDC) → Flink → Iceberg lakehouse → Trino/Superset → Airflow, deployed as IaC (Vagrant + Helm + ArgoCD).",
     "stars": 0,
     "forks": 0,
-    "openIssues": 119,
+    "openIssues": 120,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-08-19T13:22:36Z",
-    "pushedAt": "2026-11-26T16:06:22Z",
+    "pushedAt": "2026-11-27T14:15:23Z",
     "firstCommitAt": "2026-08-09T14:44:19Z",
     "commitCount": 969,
     "releaseCount": 2,
@@ -1189,7 +1189,7 @@
     "description": "Kubernetes-ready Ubuntu 24.04/26.04 LTS Vagrant Box",
     "stars": 1,
     "forks": 0,
-    "openIssues": 18,
+    "openIssues": 19,
     "language": "Shell",
     "license": "MIT",
     "createdAt": "2026-01-22T15:37:13Z",
@@ -1904,10 +1904,10 @@
     "language": "TypeScript",
     "license": "Apache-2.0",
     "createdAt": "2026-02-19T15:40:31Z",
-    "pushedAt": "2026-11-26T23:30:45Z",
+    "pushedAt": "2026-11-27T15:21:06Z",
     "firstCommitAt": "2026-02-08T11:11:20Z",
-    "commitCount": 1496,
-    "releaseCount": 40,
+    "commitCount": 1499,
+    "releaseCount": 41,
     "contributorCount": 4,
     "activity": [
       {
@@ -2116,14 +2116,14 @@
       },
       {
         "week": 1795305600,
-        "total": 67
+        "total": 70
       }
     ],
     "latestRelease": {
-      "tag": "portal/v1.1.33",
-      "name": "Portal v1.1.33",
-      "publishedAt": "2026-11-26T21:42:55Z",
-      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.33"
+      "tag": "portal/v1.1.34",
+      "name": "Portal v1.1.34",
+      "publishedAt": "2026-11-27T12:30:35Z",
+      "url": "https://github.com/dasomel/narwhal/releases/tag/portal/v1.1.34"
     },
     "latestTag": {
       "name": "v1.5.0",
